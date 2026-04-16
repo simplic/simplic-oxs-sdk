@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **References** | [**List&lt;BillingLineReferenceModel&gt;**](BillingLineReferenceModel.md) | Gets or sets a set of additional references. | [optional] 
 **IsManualBillingLine** | **bool** | Gets or sets the flag indicating whether the billing line was created manually. | [optional] 
 **State** | **BillingLineState** |  | [optional] 
+**Locked** | **bool** | Gets or sets the locked state of this billing line. | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** | Gets or sets a set of additional properties. | [optional] 
 **AssignedTransactionId** | **Guid?** | Gets or sets the transaction this billing line has been assigned to (either draft or finalized).     This information is used to easily determine whether the billing line is assigned to a particular draft transaction.   | [optional] 
 

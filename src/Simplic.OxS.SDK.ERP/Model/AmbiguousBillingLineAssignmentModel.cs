@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the model for a billing line whose split-configuration-based assignment  is ambiguous because multiple eligible draft transactions were found.
+    /// Represents the model for a group of billing lines whose split-configuration-based assignment  is ambiguous because they all matched the same set of multiple eligible draft transactions.
     /// </summary>
     [DataContract(Name = "AmbiguousBillingLineAssignmentModel")]
     public partial class AmbiguousBillingLineAssignmentModel : IEquatable<AmbiguousBillingLineAssignmentModel>, IValidatableObject
@@ -36,25 +36,25 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="AmbiguousBillingLineAssignmentModel" /> class.
         /// </summary>
-        /// <param name="billingLineId">Gets or sets the ID of the billing line with an ambiguous assignment..</param>
-        /// <param name="eligibleTransactions">Gets or sets the set of draft transactions eligible to receive this billing line..</param>
-        public AmbiguousBillingLineAssignmentModel(Guid billingLineId = default(Guid), List<TransactionModel> eligibleTransactions = default(List<TransactionModel>))
+        /// <param name="billingLineIds">Gets or sets the IDs of the billing lines that share this ambiguous assignment..</param>
+        /// <param name="eligibleTransactions">Gets or sets the set of draft transactions eligible to receive these billing lines..</param>
+        public AmbiguousBillingLineAssignmentModel(List<Guid> billingLineIds = default(List<Guid>), List<TransactionModel> eligibleTransactions = default(List<TransactionModel>))
         {
-            this.BillingLineId = billingLineId;
+            this.BillingLineIds = billingLineIds;
             this.EligibleTransactions = eligibleTransactions;
         }
 
         /// <summary>
-        /// Gets or sets the ID of the billing line with an ambiguous assignment.
+        /// Gets or sets the IDs of the billing lines that share this ambiguous assignment.
         /// </summary>
-        /// <value>Gets or sets the ID of the billing line with an ambiguous assignment.</value>
-        [DataMember(Name = "billingLineId", EmitDefaultValue = false)]
-        public Guid BillingLineId { get; set; }
+        /// <value>Gets or sets the IDs of the billing lines that share this ambiguous assignment.</value>
+        [DataMember(Name = "billingLineIds", EmitDefaultValue = true)]
+        public List<Guid> BillingLineIds { get; set; }
 
         /// <summary>
-        /// Gets or sets the set of draft transactions eligible to receive this billing line.
+        /// Gets or sets the set of draft transactions eligible to receive these billing lines.
         /// </summary>
-        /// <value>Gets or sets the set of draft transactions eligible to receive this billing line.</value>
+        /// <value>Gets or sets the set of draft transactions eligible to receive these billing lines.</value>
         [DataMember(Name = "eligibleTransactions", EmitDefaultValue = true)]
         public List<TransactionModel> EligibleTransactions { get; set; }
 
@@ -66,7 +66,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AmbiguousBillingLineAssignmentModel {\n");
-            sb.Append("  BillingLineId: ").Append(BillingLineId).Append("\n");
+            sb.Append("  BillingLineIds: ").Append(BillingLineIds).Append("\n");
             sb.Append("  EligibleTransactions: ").Append(EligibleTransactions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -104,9 +104,10 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
-                    this.BillingLineId == input.BillingLineId ||
-                    (this.BillingLineId != null &&
-                    this.BillingLineId.Equals(input.BillingLineId))
+                    this.BillingLineIds == input.BillingLineIds ||
+                    this.BillingLineIds != null &&
+                    input.BillingLineIds != null &&
+                    this.BillingLineIds.SequenceEqual(input.BillingLineIds)
                 ) && 
                 (
                     this.EligibleTransactions == input.EligibleTransactions ||
@@ -125,9 +126,9 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.BillingLineId != null)
+                if (this.BillingLineIds != null)
                 {
-                    hashCode = (hashCode * 59) + this.BillingLineId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.BillingLineIds.GetHashCode();
                 }
                 if (this.EligibleTransactions != null)
                 {

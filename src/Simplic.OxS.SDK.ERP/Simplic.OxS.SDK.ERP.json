@@ -497,7 +497,7 @@
                 "tags": [
                     "BillingLine"
                 ],
-                "summary": "Locks a billing line. The operation is only executed if the billing line is in state\r\nSimplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),\r\n`false` if the billing line was in an illegal state for locking.",
+                "summary": "Locks a billing line.",
                 "parameters": [
                     {
                         "name": "id",
@@ -599,7 +599,7 @@
                 "tags": [
                     "BillingLine"
                 ],
-                "summary": "Unlocks a billing line. The operation is only executed if the billing line is in state\r\nSimplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked\r\nstate is already considered unlocked.",
+                "summary": "Unlocks a billing line.",
                 "parameters": [
                     {
                         "name": "id",
@@ -3109,6 +3109,378 @@
                     },
                     "401": {
                         "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/PersonalAccountGroup": {
+            "post": {
+                "tags": [
+                    "PersonalAccountGroup"
+                ],
+                "summary": "Creates a new personal account group.",
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PersonalAccountGroupRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PersonalAccountGroupRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PersonalAccountGroupRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "PersonalAccountGroup"
+                ],
+                "summary": "Gets all personal account groups.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/PersonalAccountGroup/{id}": {
+            "patch": {
+                "tags": [
+                    "PersonalAccountGroup"
+                ],
+                "summary": "Patches a personal account group.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdatePersonalAccountGroupRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdatePersonalAccountGroupRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdatePersonalAccountGroupRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "PersonalAccountGroup"
+                ],
+                "summary": "Deletes a personal account group.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "PersonalAccountGroup"
+                ],
+                "summary": "Gets a personal account group by ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PersonalAccountGroupModel"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -7148,22 +7520,26 @@
             "AmbiguousBillingLineAssignmentModel": {
                 "type": "object",
                 "properties": {
-                    "billingLineId": {
-                        "type": "string",
-                        "description": "Gets or sets the ID of the billing line with an ambiguous assignment.",
-                        "format": "uuid"
+                    "billingLineIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "description": "Gets or sets the IDs of the billing lines that share this ambiguous assignment.",
+                        "nullable": true
                     },
                     "eligibleTransactions": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/TransactionModel"
                         },
-                        "description": "Gets or sets the set of draft transactions eligible to receive this billing line.",
+                        "description": "Gets or sets the set of draft transactions eligible to receive these billing lines.",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the model for a billing line whose split-configuration-based assignment\r\nis ambiguous because multiple eligible draft transactions were found."
+                "description": "Represents the model for a group of billing lines whose split-configuration-based assignment\r\nis ambiguous because they all matched the same set of multiple eligible draft transactions."
             },
             "AssignmentMode": {
                 "enum": [
@@ -7407,6 +7783,10 @@
                     "state": {
                         "$ref": "#/components/schemas/BillingLineState"
                     },
+                    "locked": {
+                        "type": "boolean",
+                        "description": "Gets or sets the locked state of this billing line."
+                    },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
@@ -7462,7 +7842,6 @@
                 "enum": [
                     0,
                     1,
-                    2,
                     3
                 ],
                 "type": "integer",
@@ -8053,6 +8432,12 @@
                     "taxGroupId": {
                         "type": "string",
                         "description": "Gets or sets the id of the tax group.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "personalAccountGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the personal account group.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -10170,6 +10555,45 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the model for a personal account address."
+            },
+            "PersonalAccountGroupModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.PersonalAccountGroup."
+            },
+            "PersonalAccountGroupRequest": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to create a Simplic.OxS.ERP.PersonalAccountGroup."
             },
             "PersonalAccountModel": {
                 "type": "object",
@@ -13398,6 +13822,23 @@
                 "additionalProperties": false,
                 "description": "Represents a request to update a Simplic.OxS.ERP.PaymentMethod."
             },
+            "UpdatePersonalAccountGroupRequest": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to update a Simplic.OxS.ERP.PersonalAccountGroup."
+            },
             "UpdatePersonalAccountRequest": {
                 "type": "object",
                 "properties": {
@@ -13447,6 +13888,12 @@
                     "taxGroupId": {
                         "type": "string",
                         "description": "Gets or sets the id of the tax group.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "personalAccountGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the personal account group.",
                         "format": "uuid",
                         "nullable": true
                     }

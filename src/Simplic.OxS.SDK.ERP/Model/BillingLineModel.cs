@@ -63,9 +63,10 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="references">Gets or sets a set of additional references..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="state">state.</param>
+        /// <param name="locked">Gets or sets the locked state of this billing line..</param>
         /// <param name="addon">Gets or sets a set of additional properties..</param>
         /// <param name="assignedTransactionId">Gets or sets the transaction this billing line has been assigned to (either draft or finalized).     This information is used to easily determine whether the billing line is assigned to a particular draft transaction.  .</param>
-        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), double quantity = default(double), QuantityUnitModel quantityUnit = default(QuantityUnitModel), QuantityUnitModel priceUnit = default(QuantityUnitModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?))
+        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), double quantity = default(double), QuantityUnitModel quantityUnit = default(QuantityUnitModel), QuantityUnitModel priceUnit = default(QuantityUnitModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), bool locked = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -88,6 +89,7 @@ namespace Simplic.OxS.SDK.ERP
             this.References = references;
             this.IsManualBillingLine = isManualBillingLine;
             this.State = state;
+            this.Locked = locked;
             this.Addon = addon;
             this.AssignedTransactionId = assignedTransactionId;
         }
@@ -225,6 +227,13 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsManualBillingLine { get; set; }
 
         /// <summary>
+        /// Gets or sets the locked state of this billing line.
+        /// </summary>
+        /// <value>Gets or sets the locked state of this billing line.</value>
+        [DataMember(Name = "locked", EmitDefaultValue = true)]
+        public bool Locked { get; set; }
+
+        /// <summary>
         /// Gets or sets a set of additional properties.
         /// </summary>
         /// <value>Gets or sets a set of additional properties.</value>
@@ -267,6 +276,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  References: ").Append(References).Append("\n");
             sb.Append("  IsManualBillingLine: ").Append(IsManualBillingLine).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  Locked: ").Append(Locked).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  AssignedTransactionId: ").Append(AssignedTransactionId).Append("\n");
             sb.Append("}\n");
@@ -408,6 +418,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.State.Equals(input.State)
                 ) && 
                 (
+                    this.Locked == input.Locked ||
+                    this.Locked.Equals(input.Locked)
+                ) && 
+                (
                     this.Addon == input.Addon ||
                     this.Addon != null &&
                     input.Addon != null &&
@@ -498,6 +512,7 @@ namespace Simplic.OxS.SDK.ERP
                 }
                 hashCode = (hashCode * 59) + this.IsManualBillingLine.GetHashCode();
                 hashCode = (hashCode * 59) + this.State.GetHashCode();
+                hashCode = (hashCode * 59) + this.Locked.GetHashCode();
                 if (this.Addon != null)
                 {
                     hashCode = (hashCode * 59) + this.Addon.GetHashCode();

@@ -8,9 +8,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**GetByStateStateGet**](BillingLineClient.md#billinglinegetbystatestateget) | **GET** /BillingLine/get-by-state/{state} | Gets all billing lines with a given state. |
 | [**Delete**](BillingLineClient.md#billinglineiddelete) | **DELETE** /BillingLine/{id} | Deletes a billing line. |
 | [**Get**](BillingLineClient.md#billinglineidget) | **GET** /BillingLine/{id} | Gets a billing line by ID. |
-| [**Lock**](BillingLineClient.md#billinglineidlockput) | **PUT** /BillingLine/{id}/lock | Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. |
+| [**Lock**](BillingLineClient.md#billinglineidlockput) | **PUT** /BillingLine/{id}/lock | Locks a billing line. |
 | [**Patch**](BillingLineClient.md#billinglineidpatch) | **PATCH** /BillingLine/{id} | Patches a billing line. |
-| [**Unlock**](BillingLineClient.md#billinglineidunlockput) | **PUT** /BillingLine/{id}/unlock | Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. |
+| [**Unlock**](BillingLineClient.md#billinglineidunlockput) | **PUT** /BillingLine/{id}/unlock | Unlocks a billing line. |
 | [**Post**](BillingLineClient.md#billinglinepost) | **POST** /BillingLine | Creates a new billing line. |
 
 <a id="billinglineget"></a>
@@ -402,7 +402,7 @@ catch (ApiException e)
 # **Lock**
 > LockBillingLineResultModel Lock (Guid id)
 
-Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),  `false` if the billing line was in an illegal state for locking.
+Locks a billing line.
 
 ### Example
 ```csharp
@@ -433,7 +433,7 @@ namespace Example
 
             try
             {
-                // Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),  `false` if the billing line was in an illegal state for locking.
+                // Locks a billing line.
                 LockBillingLineResultModel result = apiInstance.Lock(id);
                 Debug.WriteLine(result);
             }
@@ -454,7 +454,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns `true` if locked (or already was locked),  `false` if the billing line was in an illegal state for locking.
+    // Locks a billing line.
     ApiResponse<LockBillingLineResultModel> response = apiInstance.LockWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -604,7 +604,7 @@ catch (ApiException e)
 # **Unlock**
 > UnlockBillingLineResultModel Unlock (Guid id)
 
-Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked  state is already considered unlocked.
+Unlocks a billing line.
 
 ### Example
 ```csharp
@@ -635,7 +635,7 @@ namespace Example
 
             try
             {
-                // Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked  state is already considered unlocked.
+                // Unlocks a billing line.
                 UnlockBillingLineResultModel result = apiInstance.Unlock(id);
                 Debug.WriteLine(result);
             }
@@ -656,7 +656,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns `true` since any non-locked  state is already considered unlocked.
+    // Unlocks a billing line.
     ApiResponse<UnlockBillingLineResultModel> response = apiInstance.UnlockWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

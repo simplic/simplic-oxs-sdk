@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **SaleTermsOfPaymentId** | **Guid?** | Gets or sets the id of the sale terms of payment. | [optional] 
 **PurchaseTermsOfPaymentId** | **Guid?** | Gets or sets the id of the purchase terms of payment. | [optional] 
 **TaxGroupId** | **Guid?** | Gets or sets the id of the tax group. | [optional] 
+**PersonalAccountGroupId** | **Guid?** | Gets or sets the id of the personal account group. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

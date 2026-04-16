@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **SaleTermsOfPaymentId** | **Guid?** | Gets or sets the id of the sale terms of payment. | [optional] 
 **PurchaseTermsOfPaymentId** | **Guid?** | Gets or sets the id of the purchase terms of payment. | [optional] 
 **TaxGroupId** | **Guid?** | Gets or sets the id of the tax group. | [optional] 
+**PersonalAccountGroupId** | **Guid?** | Gets or sets the id of the personal account group. | [optional] 
 **Number** | **string** | gets or sets the number. | [optional] 
 **VatId** | **string** | Gets or sets the vat id. | [optional] 
 **Type** | **string** | Gets or sets the personal account type. (creditor / debitor) | [optional] 

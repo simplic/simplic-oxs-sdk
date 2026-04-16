@@ -45,7 +45,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="saleTermsOfPaymentId">Gets or sets the id of the sale terms of payment..</param>
         /// <param name="purchaseTermsOfPaymentId">Gets or sets the id of the purchase terms of payment..</param>
         /// <param name="taxGroupId">Gets or sets the id of the tax group..</param>
-        public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?))
+        /// <param name="personalAccountGroupId">Gets or sets the id of the personal account group..</param>
+        public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?), Guid? personalAccountGroupId = default(Guid?))
         {
             this.Id = id;
             this.Number = number;
@@ -56,6 +57,7 @@ namespace Simplic.OxS.SDK.ERP
             this.SaleTermsOfPaymentId = saleTermsOfPaymentId;
             this.PurchaseTermsOfPaymentId = purchaseTermsOfPaymentId;
             this.TaxGroupId = taxGroupId;
+            this.PersonalAccountGroupId = personalAccountGroupId;
         }
 
         /// <summary>
@@ -120,6 +122,13 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? TaxGroupId { get; set; }
 
         /// <summary>
+        /// Gets or sets the id of the personal account group.
+        /// </summary>
+        /// <value>Gets or sets the id of the personal account group.</value>
+        [DataMember(Name = "personalAccountGroupId", EmitDefaultValue = true)]
+        public Guid? PersonalAccountGroupId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -136,6 +145,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SaleTermsOfPaymentId: ").Append(SaleTermsOfPaymentId).Append("\n");
             sb.Append("  PurchaseTermsOfPaymentId: ").Append(PurchaseTermsOfPaymentId).Append("\n");
             sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
+            sb.Append("  PersonalAccountGroupId: ").Append(PersonalAccountGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -216,6 +226,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.TaxGroupId == input.TaxGroupId ||
                     (this.TaxGroupId != null &&
                     this.TaxGroupId.Equals(input.TaxGroupId))
+                ) && 
+                (
+                    this.PersonalAccountGroupId == input.PersonalAccountGroupId ||
+                    (this.PersonalAccountGroupId != null &&
+                    this.PersonalAccountGroupId.Equals(input.PersonalAccountGroupId))
                 );
         }
 
@@ -263,6 +278,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.TaxGroupId != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxGroupId.GetHashCode();
+                }
+                if (this.PersonalAccountGroupId != null)
+                {
+                    hashCode = (hashCode * 59) + this.PersonalAccountGroupId.GetHashCode();
                 }
                 return hashCode;
             }

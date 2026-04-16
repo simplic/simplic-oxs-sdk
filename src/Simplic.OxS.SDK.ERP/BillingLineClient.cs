@@ -176,7 +176,7 @@ public interface IBillingLineClient
 
 
     /// <summary>
-    /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+    /// Locks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -184,7 +184,7 @@ public interface IBillingLineClient
     LockBillingLineResultModel Lock(Guid id);
 
     /// <summary>
-    /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+    /// Locks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -192,7 +192,7 @@ public interface IBillingLineClient
     ApiResponse<LockBillingLineResultModel> LockWithHttpInfo(Guid id);
         
     /// <summary>
-    /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+    /// Locks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -201,7 +201,7 @@ public interface IBillingLineClient
     Task<LockBillingLineResultModel> LockAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+    /// Locks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -250,7 +250,7 @@ public interface IBillingLineClient
 
 
     /// <summary>
-    /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+    /// Unlocks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -258,7 +258,7 @@ public interface IBillingLineClient
     UnlockBillingLineResultModel Unlock(Guid id);
 
     /// <summary>
-    /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+    /// Unlocks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -266,7 +266,7 @@ public interface IBillingLineClient
     ApiResponse<UnlockBillingLineResultModel> UnlockWithHttpInfo(Guid id);
         
     /// <summary>
-    /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+    /// Unlocks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -275,7 +275,7 @@ public interface IBillingLineClient
     Task<UnlockBillingLineResultModel> UnlockAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+    /// Unlocks a billing line. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -682,7 +682,7 @@ public interface IBillingLineClient
             }
         }    
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -700,7 +700,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -718,7 +718,7 @@ public interface IBillingLineClient
         } 
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -737,7 +737,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -832,7 +832,7 @@ public interface IBillingLineClient
             }
         }    
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -850,7 +850,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -868,7 +868,7 @@ public interface IBillingLineClient
         } 
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -887,7 +887,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1069,7 +1069,7 @@ public interface IBillingLineClient
         /// <returns>ApiResponse of BillingLineModel</returns>
         ApiResponse<BillingLineModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking.
+        /// Locks a billing line.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1078,7 +1078,7 @@ public interface IBillingLineClient
         LockBillingLineResultModel Lock(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking.
+        /// Locks a billing line.
         /// </summary>
         /// <remarks>
         /// 
@@ -1111,7 +1111,7 @@ public interface IBillingLineClient
         /// <returns>ApiResponse of BillingLineResultModel</returns>
         ApiResponse<BillingLineResultModel> PatchWithHttpInfo(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0);
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
+        /// Unlocks a billing line.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1120,7 +1120,7 @@ public interface IBillingLineClient
         UnlockBillingLineResultModel Unlock(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
+        /// Unlocks a billing line.
         /// </summary>
         /// <remarks>
         /// 
@@ -1258,7 +1258,7 @@ public interface IBillingLineClient
         /// <returns>Task of ApiResponse (BillingLineModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<BillingLineModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking.
+        /// Locks a billing line.
         /// </summary>
         /// <remarks>
         /// 
@@ -1271,7 +1271,7 @@ public interface IBillingLineClient
         System.Threading.Tasks.Task<LockBillingLineResultModel> LockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking.
+        /// Locks a billing line.
         /// </summary>
         /// <remarks>
         /// 
@@ -1310,7 +1310,7 @@ public interface IBillingLineClient
         /// <returns>Task of ApiResponse (BillingLineResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<BillingLineResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateBillingLineRequest? updateBillingLineRequest = default(UpdateBillingLineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
+        /// Unlocks a billing line.
         /// </summary>
         /// <remarks>
         /// 
@@ -1323,7 +1323,7 @@ public interface IBillingLineClient
         System.Threading.Tasks.Task<UnlockBillingLineResultModel> UnlockAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked.
+        /// Unlocks a billing line.
         /// </summary>
         /// <remarks>
         /// 
@@ -2110,7 +2110,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2123,7 +2123,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2186,7 +2186,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2200,7 +2200,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Locks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Drafted. Returns &#x60;true&#x60; if locked (or already was locked),  &#x60;false&#x60; if the billing line was in an illegal state for locking. 
+        /// Locks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2434,7 +2434,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2447,7 +2447,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2510,7 +2510,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2524,7 +2524,7 @@ public interface IBillingLineClient
         }
 
         /// <summary>
-        /// Unlocks a billing line. The operation is only executed if the billing line is in state  Simplic.OxS.ERP.BillingLineState.Locked. Always returns &#x60;true&#x60; since any non-locked  state is already considered unlocked. 
+        /// Unlocks a billing line. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
