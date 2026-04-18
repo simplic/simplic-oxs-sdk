@@ -1744,6 +1744,10 @@
                     "target": {
                         "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
                     },
@@ -1840,6 +1844,10 @@
                     "target": {
                         "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
                     },
@@ -1884,9 +1892,6 @@
             "NodeInstance": {
                 "type": "object",
                 "properties": {
-                    "setup": {
-                        "$ref": "#/components/schemas/NodeInstanceSetup"
-                    },
                     "id": {
                         "type": "string",
                         "format": "uuid"
@@ -1947,21 +1952,6 @@
                     }
                 },
                 "additionalProperties": false
-            },
-            "NodeInstanceSetup": {
-                "type": "object",
-                "properties": {
-                    "action": {
-                        "$ref": "#/components/schemas/NodeInstanceSetupAction"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "NodeInstanceSetupAction": {
-                "enum": [
-                    "CreateSchedule"
-                ],
-                "type": "string"
             },
             "NodePackageRequest": {
                 "required": [
@@ -2145,6 +2135,10 @@
                     "target": {
                         "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
                     },
@@ -2222,6 +2216,10 @@
                     },
                     "target": {
                         "$ref": "#/components/schemas/NodeDefinitionTarget"
+                    },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2328,6 +2326,10 @@
                     "target": {
                         "$ref": "#/components/schemas/NodeDefinitionTarget"
                     },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
                     },
@@ -2405,6 +2407,10 @@
                     },
                     "target": {
                         "$ref": "#/components/schemas/NodeDefinitionTarget"
+                    },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
