@@ -44,9 +44,9 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="model">Gets or sets the LLM model, e.g. gpt-4o-mini, gpt-4 (required).</param>
         /// <param name="context">context.</param>
         /// <param name="embedding">embedding.</param>
-        /// <param name="connector">connector.</param>
         /// <param name="message">Gets or sets the initial message (required).</param>
-        public StartConversationRequest(string model = default(string), ConversationContextModel context = default(ConversationContextModel), EmbeddingModel embedding = default(EmbeddingModel), LLMConnectorModel connector = default(LLMConnectorModel), string message = default(string))
+        /// <param name="blobs">Gets or sets optional binary blobs (e.g. images) to attach to the message.</param>
+        public StartConversationRequest(string model = default(string), ConversationContextModel context = default(ConversationContextModel), EmbeddingModel embedding = default(EmbeddingModel), string message = default(string), List<MessageBlobModel> blobs = default(List<MessageBlobModel>))
         {
             // to ensure "model" is required (not null)
             if (model == null)
@@ -62,7 +62,7 @@ namespace Simplic.OxS.SDK.Ai
             this.Message = message;
             this.Context = context;
             this.Embedding = embedding;
-            this.Connector = connector;
+            this.Blobs = blobs;
         }
 
         /// <summary>
@@ -85,17 +85,18 @@ namespace Simplic.OxS.SDK.Ai
         public EmbeddingModel Embedding { get; set; }
 
         /// <summary>
-        /// Gets or Sets Connector
-        /// </summary>
-        [DataMember(Name = "connector", EmitDefaultValue = false)]
-        public LLMConnectorModel Connector { get; set; }
-
-        /// <summary>
         /// Gets or sets the initial message
         /// </summary>
         /// <value>Gets or sets the initial message</value>
         [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
         public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or sets optional binary blobs (e.g. images) to attach to the message
+        /// </summary>
+        /// <value>Gets or sets optional binary blobs (e.g. images) to attach to the message</value>
+        [DataMember(Name = "blobs", EmitDefaultValue = true)]
+        public List<MessageBlobModel> Blobs { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -108,8 +109,8 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Model: ").Append(Model).Append("\n");
             sb.Append("  Context: ").Append(Context).Append("\n");
             sb.Append("  Embedding: ").Append(Embedding).Append("\n");
-            sb.Append("  Connector: ").Append(Connector).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Blobs: ").Append(Blobs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -161,14 +162,15 @@ namespace Simplic.OxS.SDK.Ai
                     this.Embedding.Equals(input.Embedding))
                 ) && 
                 (
-                    this.Connector == input.Connector ||
-                    (this.Connector != null &&
-                    this.Connector.Equals(input.Connector))
-                ) && 
-                (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Blobs == input.Blobs ||
+                    this.Blobs != null &&
+                    input.Blobs != null &&
+                    this.Blobs.SequenceEqual(input.Blobs)
                 );
         }
 
@@ -193,13 +195,13 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.Embedding.GetHashCode();
                 }
-                if (this.Connector != null)
-                {
-                    hashCode = (hashCode * 59) + this.Connector.GetHashCode();
-                }
                 if (this.Message != null)
                 {
                     hashCode = (hashCode * 59) + this.Message.GetHashCode();
+                }
+                if (this.Blobs != null)
+                {
+                    hashCode = (hashCode * 59) + this.Blobs.GetHashCode();
                 }
                 return hashCode;
             }

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **Body** | **string** | Gets or sets the message body | [optional] 
 **ModelReference** | **string** | Gets or sets an optional model reference for the message | [optional] 
 **Type** | **MessageType** |  | [optional] 
+**Blobs** | [**List&lt;MessageBlobModel&gt;**](MessageBlobModel.md) | Gets or sets binary blobs attached to this message | [optional] 
+**Reasoning** | **string** | Gets or sets reasoning/thinking content from the LLM (if supported) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

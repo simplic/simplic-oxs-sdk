@@ -176,6 +176,41 @@ public interface IConversationClient
 
 
     /// <summary>
+    /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="replyToConversationRequest"> (optional)</param>
+    /// <returns></returns>
+    void ReplyStream(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?));
+
+    /// <summary>
+    /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="replyToConversationRequest"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> ReplyStreamWithHttpInfo(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?));
+        
+    /// <summary>
+    /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="replyToConversationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task ReplyStreamAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="replyToConversationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> ReplyStreamWithHttpInfoAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -208,6 +243,41 @@ public interface IConversationClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (ConversationModel)</returns>
     Task<ApiResponse<ConversationModel>> StartWithHttpInfoAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="startConversationRequest"> (optional)</param>
+    /// <returns></returns>
+    void StartStream(StartConversationRequest? startConversationRequest = default(StartConversationRequest?));
+
+    /// <summary>
+    /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="startConversationRequest"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> StartStreamWithHttpInfo(StartConversationRequest? startConversationRequest = default(StartConversationRequest?));
+        
+    /// <summary>
+    /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="startConversationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task StartStreamAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="startConversationRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> StartStreamWithHttpInfoAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -573,6 +643,79 @@ public interface IConversationClient
             }
         }    
         /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <returns></returns>
+        public void ReplyStream(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?))
+        {
+            try
+            {
+                _internalClient.ReplyStream(replyToConversationRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> ReplyStreamWithHttpInfo(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?))
+        {
+            try
+            {
+                return _internalClient.ReplyStreamWithHttpInfo(replyToConversationRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task ReplyStreamAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ReplyStreamAsync(replyToConversationRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ReplyStreamWithHttpInfoAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ReplyStreamWithHttpInfoAsync(replyToConversationRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -639,6 +782,79 @@ public interface IConversationClient
             try
             {
                 return _internalClient.StartWithHttpInfoAsync(startConversationRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <returns></returns>
+        public void StartStream(StartConversationRequest? startConversationRequest = default(StartConversationRequest?))
+        {
+            try
+            {
+                _internalClient.StartStream(startConversationRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> StartStreamWithHttpInfo(StartConversationRequest? startConversationRequest = default(StartConversationRequest?))
+        {
+            try
+            {
+                return _internalClient.StartStreamWithHttpInfo(startConversationRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task StartStreamAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.StartStreamAsync(startConversationRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> StartStreamWithHttpInfoAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.StartStreamWithHttpInfoAsync(startConversationRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -737,6 +953,26 @@ public interface IConversationClient
         /// <returns>ApiResponse of MessageModel</returns>
         ApiResponse<MessageModel> ReplyWithHttpInfo(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0);
         /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void ReplyStream(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ReplyStreamWithHttpInfo(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0);
+        /// <summary>
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -756,6 +992,26 @@ public interface IConversationClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConversationModel</returns>
         ApiResponse<ConversationModel> StartWithHttpInfo(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void StartStream(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> StartStreamWithHttpInfo(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -864,6 +1120,31 @@ public interface IConversationClient
         /// <returns>Task of ApiResponse (MessageModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageModel>> ReplyWithHttpInfoAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ReplyStreamAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ReplyStreamWithHttpInfoAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// 
         /// </summary>
         /// <remarks>
@@ -888,6 +1169,31 @@ public interface IConversationClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConversationModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConversationModel>> StartWithHttpInfoAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task StartStreamAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> StartStreamWithHttpInfoAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1641,6 +1947,168 @@ public interface IConversationClient
         }
 
         /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void ReplyStream(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0)
+        {
+            ReplyStreamWithHttpInfo(replyToConversationRequest);
+        }
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> ReplyStreamWithHttpInfo(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = replyToConversationRequest;
+
+            localVarRequestOptions.Operation = "ConversationClient.ConversationReplyStreamPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/Conversation/reply-stream", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConversationReplyStreamPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ReplyStreamAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ReplyStreamWithHttpInfoAsync(replyToConversationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="replyToConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ReplyStreamWithHttpInfoAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = replyToConversationRequest;
+
+            localVarRequestOptions.Operation = "ConversationClient.ConversationReplyStreamPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Conversation/reply-stream", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConversationReplyStreamPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1795,6 +2263,168 @@ public interface IConversationClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ConversationStartPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void StartStream(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0)
+        {
+            StartStreamWithHttpInfo(startConversationRequest);
+        }
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> StartStreamWithHttpInfo(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = startConversationRequest;
+
+            localVarRequestOptions.Operation = "ConversationClient.ConversationStartStreamPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/Conversation/start-stream", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConversationStartStreamPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task StartStreamAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await StartStreamWithHttpInfoAsync(startConversationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startConversationRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> StartStreamWithHttpInfoAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = startConversationRequest;
+
+            localVarRequestOptions.Operation = "ConversationClient.ConversationStartStreamPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Conversation/start-stream", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConversationStartStreamPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

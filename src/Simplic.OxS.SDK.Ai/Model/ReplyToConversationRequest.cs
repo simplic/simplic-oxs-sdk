@@ -43,7 +43,8 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="conversationId">Gets or sets the conversation id (required).</param>
         /// <param name="message">Gets or sets the initial message (required).</param>
-        public ReplyToConversationRequest(Guid conversationId = default(Guid), string message = default(string))
+        /// <param name="blobs">Gets or sets optional binary blobs (e.g. images) to attach to the message.</param>
+        public ReplyToConversationRequest(Guid conversationId = default(Guid), string message = default(string), List<MessageBlobModel> blobs = default(List<MessageBlobModel>))
         {
             this.ConversationId = conversationId;
             // to ensure "message" is required (not null)
@@ -52,6 +53,7 @@ namespace Simplic.OxS.SDK.Ai
                 throw new ArgumentNullException("message is a required property for ReplyToConversationRequest and cannot be null");
             }
             this.Message = message;
+            this.Blobs = blobs;
         }
 
         /// <summary>
@@ -69,6 +71,13 @@ namespace Simplic.OxS.SDK.Ai
         public string Message { get; set; }
 
         /// <summary>
+        /// Gets or sets optional binary blobs (e.g. images) to attach to the message
+        /// </summary>
+        /// <value>Gets or sets optional binary blobs (e.g. images) to attach to the message</value>
+        [DataMember(Name = "blobs", EmitDefaultValue = true)]
+        public List<MessageBlobModel> Blobs { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -78,6 +87,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class ReplyToConversationRequest {\n");
             sb.Append("  ConversationId: ").Append(ConversationId).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Blobs: ").Append(Blobs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,6 +132,12 @@ namespace Simplic.OxS.SDK.Ai
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Blobs == input.Blobs ||
+                    this.Blobs != null &&
+                    input.Blobs != null &&
+                    this.Blobs.SequenceEqual(input.Blobs)
                 );
         }
 
@@ -141,6 +157,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Message != null)
                 {
                     hashCode = (hashCode * 59) + this.Message.GetHashCode();
+                }
+                if (this.Blobs != null)
+                {
+                    hashCode = (hashCode * 59) + this.Blobs.GetHashCode();
                 }
                 return hashCode;
             }

@@ -48,7 +48,9 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="body">Gets or sets the message body.</param>
         /// <param name="modelReference">Gets or sets an optional model reference for the message.</param>
         /// <param name="type">type.</param>
-        public MessageModel(Guid id = default(Guid), Guid? senderId = default(Guid?), DateTime dateTime = default(DateTime), string body = default(string), string modelReference = default(string), MessageType? type = default(MessageType?))
+        /// <param name="blobs">Gets or sets binary blobs attached to this message.</param>
+        /// <param name="reasoning">Gets or sets reasoning/thinking content from the LLM (if supported).</param>
+        public MessageModel(Guid id = default(Guid), Guid? senderId = default(Guid?), DateTime dateTime = default(DateTime), string body = default(string), string modelReference = default(string), MessageType? type = default(MessageType?), List<MessageBlobModel> blobs = default(List<MessageBlobModel>), string reasoning = default(string))
         {
             this.Id = id;
             this.SenderId = senderId;
@@ -56,6 +58,8 @@ namespace Simplic.OxS.SDK.Ai
             this.Body = body;
             this.ModelReference = modelReference;
             this.Type = type;
+            this.Blobs = blobs;
+            this.Reasoning = reasoning;
         }
 
         /// <summary>
@@ -94,6 +98,20 @@ namespace Simplic.OxS.SDK.Ai
         public string ModelReference { get; set; }
 
         /// <summary>
+        /// Gets or sets binary blobs attached to this message
+        /// </summary>
+        /// <value>Gets or sets binary blobs attached to this message</value>
+        [DataMember(Name = "blobs", EmitDefaultValue = true)]
+        public List<MessageBlobModel> Blobs { get; set; }
+
+        /// <summary>
+        /// Gets or sets reasoning/thinking content from the LLM (if supported)
+        /// </summary>
+        /// <value>Gets or sets reasoning/thinking content from the LLM (if supported)</value>
+        [DataMember(Name = "reasoning", EmitDefaultValue = true)]
+        public string Reasoning { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,6 +125,8 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Body: ").Append(Body).Append("\n");
             sb.Append("  ModelReference: ").Append(ModelReference).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Blobs: ").Append(Blobs).Append("\n");
+            sb.Append("  Reasoning: ").Append(Reasoning).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -170,6 +190,17 @@ namespace Simplic.OxS.SDK.Ai
                 (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
+                ) && 
+                (
+                    this.Blobs == input.Blobs ||
+                    this.Blobs != null &&
+                    input.Blobs != null &&
+                    this.Blobs.SequenceEqual(input.Blobs)
+                ) && 
+                (
+                    this.Reasoning == input.Reasoning ||
+                    (this.Reasoning != null &&
+                    this.Reasoning.Equals(input.Reasoning))
                 );
         }
 
@@ -203,6 +234,14 @@ namespace Simplic.OxS.SDK.Ai
                     hashCode = (hashCode * 59) + this.ModelReference.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                if (this.Blobs != null)
+                {
+                    hashCode = (hashCode * 59) + this.Blobs.GetHashCode();
+                }
+                if (this.Reasoning != null)
+                {
+                    hashCode = (hashCode * 59) + this.Reasoning.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -98,6 +98,78 @@
                 }
             }
         },
+        "/Conversation/start-stream": {
+            "post": {
+                "tags": [
+                    "Conversation"
+                ],
+                "summary": "Start a conversation with Server-Sent Events streaming.\nStreams reasoning and content tokens as they arrive from the LLM.\nEvent types: \"reasoning\" (thinking tokens) and \"content\" (response tokens).\nFinal event is \"done\" with the complete conversation as JSON data.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StartConversationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StartConversationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StartConversationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Conversation/reply": {
             "post": {
                 "tags": [
@@ -142,6 +214,78 @@
                                 }
                             }
                         }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Conversation/reply-stream": {
+            "post": {
+                "tags": [
+                    "Conversation"
+                ],
+                "summary": "Reply to a conversation with Server-Sent Events streaming.\nStreams reasoning and content tokens as they arrive from the LLM.\nEvent types: \"reasoning\" (thinking tokens) and \"content\" (response tokens).\nFinal event is \"done\" with the complete message as JSON data.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ReplyToConversationRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ReplyToConversationRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ReplyToConversationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1701,332 +1845,6 @@
                                     "items": {
                                         "$ref": "#/components/schemas/LLMTypeModel"
                                     }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/LLMTask/{id}": {
-            "get": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/LLMTask": {
-            "post": {
-                "tags": [
-                    "LLMTask"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "text/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        },
-                        "application/*+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateLLMTaskRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/LLMTaskResponse"
                                 }
                             }
                         }
@@ -3817,39 +3635,6 @@
                 "additionalProperties": false,
                 "description": "Represents a LLM conversation"
             },
-            "CreateLLMTaskRequest": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "Gets or sets the name of the task",
-                        "nullable": true
-                    },
-                    "reason": {
-                        "type": "string",
-                        "description": "Gets or sets the reason that will be used from a llm, to use this task",
-                        "nullable": true
-                    },
-                    "requires": {
-                        "type": "string",
-                        "description": "Gets or sets the required information, to use this task",
-                        "nullable": true
-                    },
-                    "definition": {
-                        "$ref": "#/components/schemas/LLMTaskDefinitionModel"
-                    },
-                    "optionalSubtask": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "Gets or sets subtask, which should be included automatically",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Request object for creating an llm task"
-            },
             "CreateTextClassificationModelRequest": {
                 "type": "object",
                 "properties": {
@@ -4118,69 +3903,6 @@
                 },
                 "additionalProperties": false
             },
-            "LLMConnectorModel": {
-                "type": "object",
-                "properties": {
-                    "disable": {
-                        "type": "boolean",
-                        "description": "Gets or sets whether disabling the embedding model",
-                        "default": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Contains the settings for the llm connector"
-            },
-            "LLMTaskDefinitionModel": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "description": "Gets the type to deserialize",
-                        "nullable": true,
-                        "readOnly": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents an abstract version of a llm task"
-            },
-            "LLMTaskResponse": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the task",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Gets or sets the name of the task",
-                        "nullable": true
-                    },
-                    "reason": {
-                        "type": "string",
-                        "description": "Gets or sets the reason that will be used from a llm, to use this task",
-                        "nullable": true
-                    },
-                    "requires": {
-                        "type": "string",
-                        "description": "Gets or sets the required information, to use this task",
-                        "nullable": true
-                    },
-                    "definition": {
-                        "$ref": "#/components/schemas/LLMTaskDefinitionModel"
-                    },
-                    "optionalSubtask": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "Gets or sets subtask, which should be included automatically",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false,
-                "description": "Represents an llm task"
-            },
             "LLMTypeModel": {
                 "type": "object",
                 "properties": {
@@ -4190,6 +3912,32 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "MessageBlobModel": {
+                "required": [
+                    "contentType",
+                    "data"
+                ],
+                "type": "object",
+                "properties": {
+                    "contentType": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the MIME content type (e.g. image/png, application/pdf)"
+                    },
+                    "data": {
+                        "type": "string",
+                        "description": "Gets or sets the blob data. Serialized as base64 in JSON.",
+                        "format": "byte"
+                    },
+                    "fileName": {
+                        "type": "string",
+                        "description": "Gets or sets an optional file name",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a binary blob attached to a message"
             },
             "MessageModel": {
                 "type": "object",
@@ -4222,6 +3970,19 @@
                     },
                     "type": {
                         "$ref": "#/components/schemas/MessageType"
+                    },
+                    "blobs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/MessageBlobModel"
+                        },
+                        "description": "Gets or sets binary blobs attached to this message",
+                        "nullable": true
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "Gets or sets reasoning/thinking content from the LLM (if supported)",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -4344,6 +4105,14 @@
                         "minLength": 1,
                         "type": "string",
                         "description": "Gets or sets the initial message"
+                    },
+                    "blobs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/MessageBlobModel"
+                        },
+                        "description": "Gets or sets optional binary blobs (e.g. images) to attach to the message",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -4519,13 +4288,18 @@
                     "embedding": {
                         "$ref": "#/components/schemas/EmbeddingModel"
                     },
-                    "connector": {
-                        "$ref": "#/components/schemas/LLMConnectorModel"
-                    },
                     "message": {
                         "minLength": 1,
                         "type": "string",
                         "description": "Gets or sets the initial message"
+                    },
+                    "blobs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/MessageBlobModel"
+                        },
+                        "description": "Gets or sets optional binary blobs (e.g. images) to attach to the message",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -4675,9 +4449,6 @@
         },
         {
             "name": "LLM"
-        },
-        {
-            "name": "LLMTask"
         },
         {
             "name": "OrganizationSettings"
