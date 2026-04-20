@@ -3580,7 +3580,8 @@
                     "id": {
                         "type": "string",
                         "description": "Gets or sets the id of the referenced context.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "name": {
                         "type": "string",

@@ -39,7 +39,7 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="id">Gets or sets the id of the referenced context..</param>
         /// <param name="name">Gets or sets the name of the context system.</param>
         /// <param name="contextMessage">Gets or sets a message, that represents a manual context. If this is set, togehter with Name and Id, both will be passed to the AI.</param>
-        public ConversationContextModel(Guid id = default(Guid), string name = default(string), string contextMessage = default(string))
+        public ConversationContextModel(Guid? id = default(Guid?), string name = default(string), string contextMessage = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -50,8 +50,8 @@ namespace Simplic.OxS.SDK.Ai
         /// Gets or sets the id of the referenced context.
         /// </summary>
         /// <value>Gets or sets the id of the referenced context.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = true)]
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the context system
