@@ -1430,6 +1430,13 @@
                     "dateTime": {
                         "type": "string",
                         "format": "date-time"
+                    },
+                    "warnings": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

@@ -37,9 +37,11 @@ namespace Simplic.OxS.SDK.Flow
         /// Initializes a new instance of the <see cref="DeploymentInfo" /> class.
         /// </summary>
         /// <param name="dateTime">dateTime.</param>
-        public DeploymentInfo(DateTime dateTime = default(DateTime))
+        /// <param name="warnings">warnings.</param>
+        public DeploymentInfo(DateTime dateTime = default(DateTime), List<string> warnings = default(List<string>))
         {
             this.DateTime = dateTime;
+            this.Warnings = warnings;
         }
 
         /// <summary>
@@ -47,6 +49,12 @@ namespace Simplic.OxS.SDK.Flow
         /// </summary>
         [DataMember(Name = "dateTime", EmitDefaultValue = false)]
         public DateTime DateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Warnings
+        /// </summary>
+        [DataMember(Name = "warnings", EmitDefaultValue = true)]
+        public List<string> Warnings { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,6 +65,7 @@ namespace Simplic.OxS.SDK.Flow
             StringBuilder sb = new StringBuilder();
             sb.Append("class DeploymentInfo {\n");
             sb.Append("  DateTime: ").Append(DateTime).Append("\n");
+            sb.Append("  Warnings: ").Append(Warnings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,6 +105,12 @@ namespace Simplic.OxS.SDK.Flow
                     this.DateTime == input.DateTime ||
                     (this.DateTime != null &&
                     this.DateTime.Equals(input.DateTime))
+                ) && 
+                (
+                    this.Warnings == input.Warnings ||
+                    this.Warnings != null &&
+                    input.Warnings != null &&
+                    this.Warnings.SequenceEqual(input.Warnings)
                 );
         }
 
@@ -111,6 +126,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.DateTime != null)
                 {
                     hashCode = (hashCode * 59) + this.DateTime.GetHashCode();
+                }
+                if (this.Warnings != null)
+                {
+                    hashCode = (hashCode * 59) + this.Warnings.GetHashCode();
                 }
                 return hashCode;
             }
