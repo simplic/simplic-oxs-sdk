@@ -836,6 +836,73 @@
                 }
             }
         },
+        "/Flow/schedules": {
+            "get": {
+                "tags": [
+                    "Flow"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/GetScheduledFlowResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/GetScheduledFlowResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/GetScheduledFlowResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/NodeDefinition/{id}": {
             "get": {
                 "tags": [
@@ -1788,6 +1855,53 @@
                 },
                 "additionalProperties": false
             },
+            "GetScheduledFlowResponse": {
+                "required": [
+                    "createdAt",
+                    "cron",
+                    "eventName",
+                    "flowId",
+                    "flowName",
+                    "jobId",
+                    "status",
+                    "updatedAt"
+                ],
+                "type": "object",
+                "properties": {
+                    "flowId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "flowName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eventName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "jobId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "cron": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/ScheduledFlowStatus"
+                    }
+                },
+                "additionalProperties": false
+            },
             "Machine": {
                 "type": "object",
                 "properties": {
@@ -2451,6 +2565,13 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "ScheduledFlowStatus": {
+                "enum": [
+                    "ok",
+                    "flowNotFound"
+                ],
+                "type": "string"
             },
             "StringFlowOptionValueRequest": {
                 "type": "object",

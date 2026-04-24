@@ -4225,6 +4225,10 @@
                     },
                     "type": {
                         "$ref": "#/components/schemas/ImportVehicleTypeResponse"
+                    },
+                    "vin": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

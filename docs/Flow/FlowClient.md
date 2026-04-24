@@ -12,6 +12,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 | [**ExecuteAsync**](FlowClient.md#flownameexecuteasyncpost) | **POST** /Flow/{name}/execute-async |  |
 | [**Execute**](FlowClient.md#flownameexecutepost) | **POST** /Flow/{name}/execute |  |
 | [**Post**](FlowClient.md#flowpost) | **POST** /Flow |  |
+| [**Schedules**](FlowClient.md#flowschedulesget) | **GET** /Flow/schedules |  |
 
 <a id="flowget"></a>
 # **Get**
@@ -774,6 +775,102 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="flowschedulesget"></a>
+# **Schedules**
+> List&lt;GetScheduledFlowResponse&gt; Schedules (string? name = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class SchedulesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FlowClient(config);
+            var name = "name_example";  // string? |  (optional) 
+
+            try
+            {
+                List<GetScheduledFlowResponse> result = apiInstance.Schedules(name);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FlowClient.Schedules: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SchedulesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<GetScheduledFlowResponse>> response = apiInstance.SchedulesWithHttpInfo(name);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FlowClient.SchedulesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **name** | **string?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;GetScheduledFlowResponse&gt;**](GetScheduledFlowResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

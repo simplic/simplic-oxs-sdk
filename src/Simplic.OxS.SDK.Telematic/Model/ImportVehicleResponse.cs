@@ -40,12 +40,14 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="matchCode">matchCode.</param>
         /// <param name="externalIdentifier">externalIdentifier.</param>
         /// <param name="type">type.</param>
-        public ImportVehicleResponse(string registrationPlate = default(string), string matchCode = default(string), string externalIdentifier = default(string), ImportVehicleTypeResponse type = default(ImportVehicleTypeResponse))
+        /// <param name="vin">vin.</param>
+        public ImportVehicleResponse(string registrationPlate = default(string), string matchCode = default(string), string externalIdentifier = default(string), ImportVehicleTypeResponse type = default(ImportVehicleTypeResponse), string vin = default(string))
         {
             this.RegistrationPlate = registrationPlate;
             this.MatchCode = matchCode;
             this.ExternalIdentifier = externalIdentifier;
             this.Type = type;
+            this.Vin = vin;
         }
 
         /// <summary>
@@ -73,6 +75,12 @@ namespace Simplic.OxS.SDK.Telematic
         public ImportVehicleTypeResponse Type { get; set; }
 
         /// <summary>
+        /// Gets or Sets Vin
+        /// </summary>
+        [DataMember(Name = "vin", EmitDefaultValue = true)]
+        public string Vin { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +92,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
             sb.Append("  ExternalIdentifier: ").Append(ExternalIdentifier).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Vin: ").Append(Vin).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +147,11 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Vin == input.Vin ||
+                    (this.Vin != null &&
+                    this.Vin.Equals(input.Vin))
                 );
         }
 
@@ -165,6 +179,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Type != null)
                 {
                     hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                }
+                if (this.Vin != null)
+                {
+                    hashCode = (hashCode * 59) + this.Vin.GetHashCode();
                 }
                 return hashCode;
             }
