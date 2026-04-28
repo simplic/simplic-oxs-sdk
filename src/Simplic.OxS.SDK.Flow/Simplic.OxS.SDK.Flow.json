@@ -1863,6 +1863,8 @@
                     "flowId",
                     "flowName",
                     "jobId",
+                    "lastRun",
+                    "nextRun",
                     "status",
                     "updatedAt"
                 ],
@@ -1898,6 +1900,16 @@
                     },
                     "status": {
                         "$ref": "#/components/schemas/ScheduledFlowStatus"
+                    },
+                    "nextRun": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "lastRun": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

@@ -55,7 +55,9 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt (required).</param>
         /// <param name="status">status (required).</param>
-        public GetScheduledFlowResponse(Guid flowId = default(Guid), string flowName = default(string), string eventName = default(string), string jobId = default(string), string cron = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), ScheduledFlowStatus status = default(ScheduledFlowStatus))
+        /// <param name="nextRun">nextRun (required).</param>
+        /// <param name="lastRun">lastRun (required).</param>
+        public GetScheduledFlowResponse(Guid flowId = default(Guid), string flowName = default(string), string eventName = default(string), string jobId = default(string), string cron = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), ScheduledFlowStatus status = default(ScheduledFlowStatus), DateTime? nextRun = default(DateTime?), DateTime? lastRun = default(DateTime?))
         {
             this.FlowId = flowId;
             // to ensure "flowName" is required (not null)
@@ -85,6 +87,18 @@ namespace Simplic.OxS.SDK.Flow
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Status = status;
+            // to ensure "nextRun" is required (not null)
+            if (nextRun == null)
+            {
+                throw new ArgumentNullException("nextRun is a required property for GetScheduledFlowResponse and cannot be null");
+            }
+            this.NextRun = nextRun;
+            // to ensure "lastRun" is required (not null)
+            if (lastRun == null)
+            {
+                throw new ArgumentNullException("lastRun is a required property for GetScheduledFlowResponse and cannot be null");
+            }
+            this.LastRun = lastRun;
         }
 
         /// <summary>
@@ -130,6 +144,18 @@ namespace Simplic.OxS.SDK.Flow
         public DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// Gets or Sets NextRun
+        /// </summary>
+        [DataMember(Name = "nextRun", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime? NextRun { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LastRun
+        /// </summary>
+        [DataMember(Name = "lastRun", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime? LastRun { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -145,6 +171,8 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  NextRun: ").Append(NextRun).Append("\n");
+            sb.Append("  LastRun: ").Append(LastRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -218,6 +246,16 @@ namespace Simplic.OxS.SDK.Flow
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
+                ) && 
+                (
+                    this.NextRun == input.NextRun ||
+                    (this.NextRun != null &&
+                    this.NextRun.Equals(input.NextRun))
+                ) && 
+                (
+                    this.LastRun == input.LastRun ||
+                    (this.LastRun != null &&
+                    this.LastRun.Equals(input.LastRun))
                 );
         }
 
@@ -259,6 +297,14 @@ namespace Simplic.OxS.SDK.Flow
                     hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.NextRun != null)
+                {
+                    hashCode = (hashCode * 59) + this.NextRun.GetHashCode();
+                }
+                if (this.LastRun != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastRun.GetHashCode();
+                }
                 return hashCode;
             }
         }
