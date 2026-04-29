@@ -1865,7 +1865,6 @@
                     "jobId",
                     "lastRun",
                     "nextRun",
-                    "status",
                     "updatedAt"
                 ],
                 "type": "object",
@@ -1897,9 +1896,6 @@
                     "updatedAt": {
                         "type": "string",
                         "format": "date-time"
-                    },
-                    "status": {
-                        "$ref": "#/components/schemas/ScheduledFlowStatus"
                     },
                     "nextRun": {
                         "type": "string",
@@ -2577,13 +2573,6 @@
                     }
                 },
                 "additionalProperties": false
-            },
-            "ScheduledFlowStatus": {
-                "enum": [
-                    "ok",
-                    "flowNotFound"
-                ],
-                "type": "string"
             },
             "StringFlowOptionValueRequest": {
                 "type": "object",

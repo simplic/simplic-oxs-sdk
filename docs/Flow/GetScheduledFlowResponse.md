@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **Cron** | **string** |  | 
 **CreatedAt** | **DateTime** |  | 
 **UpdatedAt** | **DateTime** |  | 
-**Status** | **ScheduledFlowStatus** |  | 
 **NextRun** | **DateTime?** |  | 
 **LastRun** | **DateTime?** |  | 
 

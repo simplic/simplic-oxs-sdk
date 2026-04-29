@@ -33,12 +33,6 @@ namespace Simplic.OxS.SDK.Flow
     [DataContract(Name = "GetScheduledFlowResponse")]
     public partial class GetScheduledFlowResponse : IEquatable<GetScheduledFlowResponse>, IValidatableObject
     {
-
-        /// <summary>
-        /// Gets or Sets Status
-        /// </summary>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
-        public ScheduledFlowStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetScheduledFlowResponse" /> class.
         /// </summary>
@@ -54,10 +48,9 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="cron">cron (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt (required).</param>
-        /// <param name="status">status (required).</param>
         /// <param name="nextRun">nextRun (required).</param>
         /// <param name="lastRun">lastRun (required).</param>
-        public GetScheduledFlowResponse(Guid flowId = default(Guid), string flowName = default(string), string eventName = default(string), string jobId = default(string), string cron = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), ScheduledFlowStatus status = default(ScheduledFlowStatus), DateTime? nextRun = default(DateTime?), DateTime? lastRun = default(DateTime?))
+        public GetScheduledFlowResponse(Guid flowId = default(Guid), string flowName = default(string), string eventName = default(string), string jobId = default(string), string cron = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), DateTime? nextRun = default(DateTime?), DateTime? lastRun = default(DateTime?))
         {
             this.FlowId = flowId;
             // to ensure "flowName" is required (not null)
@@ -86,7 +79,6 @@ namespace Simplic.OxS.SDK.Flow
             this.Cron = cron;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Status = status;
             // to ensure "nextRun" is required (not null)
             if (nextRun == null)
             {
@@ -170,7 +162,6 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  Cron: ").Append(Cron).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  NextRun: ").Append(NextRun).Append("\n");
             sb.Append("  LastRun: ").Append(LastRun).Append("\n");
             sb.Append("}\n");
@@ -244,10 +235,6 @@ namespace Simplic.OxS.SDK.Flow
                     this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
-                ) && 
-                (
                     this.NextRun == input.NextRun ||
                     (this.NextRun != null &&
                     this.NextRun.Equals(input.NextRun))
@@ -296,7 +283,6 @@ namespace Simplic.OxS.SDK.Flow
                 {
                     hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.NextRun != null)
                 {
                     hashCode = (hashCode * 59) + this.NextRun.GetHashCode();
