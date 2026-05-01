@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | **string** |  | [optional] 
 **Nodes** | [**List&lt;NodeInstance&gt;**](NodeInstance.md) |  | [optional] 
-**Variables** | [**List&lt;FlowVariableInstance&gt;**](FlowVariableInstance.md) |  | [optional] 
+**Variables** | [**Dictionary&lt;string, FlowVariable&gt;**](FlowVariable.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

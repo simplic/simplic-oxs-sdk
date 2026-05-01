@@ -1545,9 +1545,9 @@
                         "nullable": true
                     },
                     "variables": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/FlowVariableInstance"
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/FlowVariable"
                         },
                         "nullable": true
                     }
@@ -1673,14 +1673,10 @@
                 },
                 "additionalProperties": false
             },
-            "FlowVariableInstance": {
+            "FlowVariable": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
+                    "type": {
                         "type": "string",
                         "nullable": true
                     },
@@ -1761,9 +1757,9 @@
                         "nullable": true
                     },
                     "variables": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/FlowVariableInstance"
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/FlowVariable"
                         },
                         "nullable": true
                     },
@@ -2177,9 +2173,9 @@
                         "nullable": true
                     },
                     "variables": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/FlowVariableInstance"
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/FlowVariable"
                         },
                         "nullable": true
                     },

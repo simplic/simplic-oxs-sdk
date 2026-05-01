@@ -47,7 +47,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="nodes">nodes (required).</param>
         /// <param name="variables">variables (required).</param>
         /// <param name="options">options (required).</param>
-        public GetFlowResponse(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>), FlowOptionsResponse options = default(FlowOptionsResponse))
+        public GetFlowResponse(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), Dictionary<string, FlowVariable> variables = default(Dictionary<string, FlowVariable>), FlowOptionsResponse options = default(FlowOptionsResponse))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -110,7 +110,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Gets or Sets Variables
         /// </summary>
         [DataMember(Name = "variables", IsRequired = true, EmitDefaultValue = true)]
-        public List<FlowVariableInstance> Variables { get; set; }
+        public Dictionary<string, FlowVariable> Variables { get; set; }
 
         /// <summary>
         /// Gets or Sets Options

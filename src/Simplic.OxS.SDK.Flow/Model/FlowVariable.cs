@@ -28,35 +28,27 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// FlowVariableInstance
+    /// FlowVariable
     /// </summary>
-    [DataContract(Name = "FlowVariableInstance")]
-    public partial class FlowVariableInstance : IEquatable<FlowVariableInstance>, IValidatableObject
+    [DataContract(Name = "FlowVariable")]
+    public partial class FlowVariable : IEquatable<FlowVariable>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FlowVariableInstance" /> class.
+        /// Initializes a new instance of the <see cref="FlowVariable" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
+        /// <param name="type">type.</param>
         /// <param name="value">value.</param>
-        public FlowVariableInstance(Guid id = default(Guid), string name = default(string), Object value = default(Object))
+        public FlowVariable(string type = default(string), Object value = default(Object))
         {
-            this.Id = id;
-            this.Name = name;
+            this.Type = type;
             this.Value = value;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
@@ -71,9 +63,8 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class FlowVariableInstance {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class FlowVariable {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -95,15 +86,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FlowVariableInstance);
+            return this.Equals(input as FlowVariable);
         }
 
         /// <summary>
-        /// Returns true if FlowVariableInstance instances are equal
+        /// Returns true if FlowVariable instances are equal
         /// </summary>
-        /// <param name="input">Instance of FlowVariableInstance to be compared</param>
+        /// <param name="input">Instance of FlowVariable to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(FlowVariableInstance input)
+        public bool Equals(FlowVariable input)
         {
             if (input == null)
             {
@@ -111,14 +102,9 @@ namespace Simplic.OxS.SDK.Flow
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
                     this.Value == input.Value ||
@@ -136,13 +122,9 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.Type != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
                 if (this.Value != null)
                 {

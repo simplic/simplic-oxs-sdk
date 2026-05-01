@@ -46,7 +46,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="description">description.</param>
         /// <param name="nodes">nodes.</param>
         /// <param name="variables">variables.</param>
-        public FlowInstance(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), List<FlowVariableInstance> variables = default(List<FlowVariableInstance>))
+        public FlowInstance(Guid id = default(Guid), string name = default(string), string description = default(string), List<NodeInstance> nodes = default(List<NodeInstance>), Dictionary<string, FlowVariable> variables = default(Dictionary<string, FlowVariable>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -88,7 +88,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Gets or Sets Variables
         /// </summary>
         [DataMember(Name = "variables", EmitDefaultValue = true)]
-        public List<FlowVariableInstance> Variables { get; set; }
+        public Dictionary<string, FlowVariable> Variables { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
