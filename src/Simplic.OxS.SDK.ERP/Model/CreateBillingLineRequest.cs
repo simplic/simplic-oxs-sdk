@@ -40,9 +40,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="date">Gets or sets the date associated with this billing line.     A billing line stores all necessary information to create a transaction based on itself or a   set of billing lines.  .</param>
         /// <param name="deliveryDate">Gets or sets the delivery date associated with this billing line..</param>
         /// <param name="text">Gets or sets the text describing this billing line..</param>
-        /// <param name="quantity">Gets or sets the quantity of the item or service described by this billing line..</param>
-        /// <param name="quantityUnitId">Gets or sets the unit of measurement for the total quantity by ID..</param>
-        /// <param name="priceUnitId">Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured   in tons.  .</param>
+        /// <param name="quantity">quantity.</param>
         /// <param name="singlePrice">Gets or sets the price for a single unit of the item or service described   by this billing line..</param>
         /// <param name="totalPrice">Gets or sets the total price of the item or service described by this billing line..</param>
         /// <param name="isGross">Gets or sets a value indicating whether the billing line price is gross or net..</param>
@@ -51,17 +49,16 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="costObjects">Gets or sets the cost object assignments associated with this billing line..</param>
         /// <param name="generalLedgerAccountGroupId">Gets or sets the general ledger account group for this billing line by ID.     The general ledger account group is used in the financial accounting process to   determine the general ledger account.  .</param>
         /// <param name="reference">Gets or sets the main reference..</param>
+        /// <param name="references">Gets or sets a set of additional references..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="addon">Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line..</param>
-        public CreateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), double quantity = default(double), Guid quantityUnitId = default(Guid), Guid? priceUnitId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), Guid taxRateId = default(Guid), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), bool isManualBillingLine = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        public CreateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityRequest quantity = default(BillingLineQuantityRequest), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), Guid taxRateId = default(Guid), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool isManualBillingLine = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             this.FinancialPartner = financialPartner;
             this.Date = date;
             this.DeliveryDate = deliveryDate;
             this.Text = text;
             this.Quantity = quantity;
-            this.QuantityUnitId = quantityUnitId;
-            this.PriceUnitId = priceUnitId;
             this.SinglePrice = singlePrice;
             this.TotalPrice = totalPrice;
             this.IsGross = isGross;
@@ -70,6 +67,7 @@ namespace Simplic.OxS.SDK.ERP
             this.CostObjects = costObjects;
             this.GeneralLedgerAccountGroupId = generalLedgerAccountGroupId;
             this.Reference = reference;
+            this.References = references;
             this.IsManualBillingLine = isManualBillingLine;
             this.Addon = addon;
         }
@@ -102,25 +100,10 @@ namespace Simplic.OxS.SDK.ERP
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets the quantity of the item or service described by this billing line.
+        /// Gets or Sets Quantity
         /// </summary>
-        /// <value>Gets or sets the quantity of the item or service described by this billing line.</value>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public double Quantity { get; set; }
-
-        /// <summary>
-        /// Gets or sets the unit of measurement for the total quantity by ID.
-        /// </summary>
-        /// <value>Gets or sets the unit of measurement for the total quantity by ID.</value>
-        [DataMember(Name = "quantityUnitId", EmitDefaultValue = false)]
-        public Guid QuantityUnitId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured   in tons.  
-        /// </summary>
-        /// <value>Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured   in tons.  </value>
-        [DataMember(Name = "priceUnitId", EmitDefaultValue = true)]
-        public Guid? PriceUnitId { get; set; }
+        public BillingLineQuantityRequest Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets the price for a single unit of the item or service described   by this billing line.
@@ -179,6 +162,13 @@ namespace Simplic.OxS.SDK.ERP
         public string Reference { get; set; }
 
         /// <summary>
+        /// Gets or sets a set of additional references.
+        /// </summary>
+        /// <value>Gets or sets a set of additional references.</value>
+        [DataMember(Name = "references", EmitDefaultValue = true)]
+        public List<BillingLineReferenceRequest> References { get; set; }
+
+        /// <summary>
         /// Gets or sets the flag indicating whether the billing line was created manually.
         /// </summary>
         /// <value>Gets or sets the flag indicating whether the billing line was created manually.</value>
@@ -205,8 +195,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  QuantityUnitId: ").Append(QuantityUnitId).Append("\n");
-            sb.Append("  PriceUnitId: ").Append(PriceUnitId).Append("\n");
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  IsGross: ").Append(IsGross).Append("\n");
@@ -215,6 +203,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
             sb.Append("  GeneralLedgerAccountGroupId: ").Append(GeneralLedgerAccountGroupId).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
+            sb.Append("  References: ").Append(References).Append("\n");
             sb.Append("  IsManualBillingLine: ").Append(IsManualBillingLine).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("}\n");
@@ -274,17 +263,8 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
-                    this.Quantity.Equals(input.Quantity)
-                ) && 
-                (
-                    this.QuantityUnitId == input.QuantityUnitId ||
-                    (this.QuantityUnitId != null &&
-                    this.QuantityUnitId.Equals(input.QuantityUnitId))
-                ) && 
-                (
-                    this.PriceUnitId == input.PriceUnitId ||
-                    (this.PriceUnitId != null &&
-                    this.PriceUnitId.Equals(input.PriceUnitId))
+                    (this.Quantity != null &&
+                    this.Quantity.Equals(input.Quantity))
                 ) && 
                 (
                     this.SinglePrice == input.SinglePrice ||
@@ -328,6 +308,12 @@ namespace Simplic.OxS.SDK.ERP
                     this.Reference.Equals(input.Reference))
                 ) && 
                 (
+                    this.References == input.References ||
+                    this.References != null &&
+                    input.References != null &&
+                    this.References.SequenceEqual(input.References)
+                ) && 
+                (
                     this.IsManualBillingLine == input.IsManualBillingLine ||
                     this.IsManualBillingLine.Equals(input.IsManualBillingLine)
                 ) && 
@@ -364,14 +350,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Text.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
-                if (this.QuantityUnitId != null)
+                if (this.Quantity != null)
                 {
-                    hashCode = (hashCode * 59) + this.QuantityUnitId.GetHashCode();
-                }
-                if (this.PriceUnitId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PriceUnitId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
                 }
                 if (this.SinglePrice != null)
                 {
@@ -401,6 +382,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Reference != null)
                 {
                     hashCode = (hashCode * 59) + this.Reference.GetHashCode();
+                }
+                if (this.References != null)
+                {
+                    hashCode = (hashCode * 59) + this.References.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsManualBillingLine.GetHashCode();
                 if (this.Addon != null)

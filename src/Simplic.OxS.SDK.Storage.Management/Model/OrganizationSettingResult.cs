@@ -43,7 +43,10 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="defaultValue">defaultValue.</param>
         /// <param name="valueTypeName">valueTypeName.</param>
         /// <param name="options">options.</param>
-        public OrganizationSettingResult(string internalName = default(string), string displayName = default(string), string displayKey = default(string), Object value = default(Object), Object defaultValue = default(Object), string valueTypeName = default(string), List<SettingOption> options = default(List<SettingOption>))
+        /// <param name="groupKey">groupKey.</param>
+        /// <param name="groupDisplayKey">groupDisplayKey.</param>
+        /// <param name="groupDisplayName">groupDisplayName.</param>
+        public OrganizationSettingResult(string internalName = default(string), string displayName = default(string), string displayKey = default(string), Object value = default(Object), Object defaultValue = default(Object), string valueTypeName = default(string), List<SettingOption> options = default(List<SettingOption>), string groupKey = default(string), string groupDisplayKey = default(string), string groupDisplayName = default(string))
         {
             this.InternalName = internalName;
             this.DisplayName = displayName;
@@ -52,6 +55,9 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.DefaultValue = defaultValue;
             this.ValueTypeName = valueTypeName;
             this.Options = options;
+            this.GroupKey = groupKey;
+            this.GroupDisplayKey = groupDisplayKey;
+            this.GroupDisplayName = groupDisplayName;
         }
 
         /// <summary>
@@ -111,6 +117,24 @@ namespace Simplic.OxS.SDK.Storage.Management
             return false;
         }
         /// <summary>
+        /// Gets or Sets GroupKey
+        /// </summary>
+        [DataMember(Name = "groupKey", EmitDefaultValue = true)]
+        public string GroupKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GroupDisplayKey
+        /// </summary>
+        [DataMember(Name = "groupDisplayKey", EmitDefaultValue = true)]
+        public string GroupDisplayKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GroupDisplayName
+        /// </summary>
+        [DataMember(Name = "groupDisplayName", EmitDefaultValue = true)]
+        public string GroupDisplayName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -126,6 +150,9 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  ValueTypeName: ").Append(ValueTypeName).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  HasOptions: ").Append(HasOptions).Append("\n");
+            sb.Append("  GroupKey: ").Append(GroupKey).Append("\n");
+            sb.Append("  GroupDisplayKey: ").Append(GroupDisplayKey).Append("\n");
+            sb.Append("  GroupDisplayName: ").Append(GroupDisplayName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -200,6 +227,21 @@ namespace Simplic.OxS.SDK.Storage.Management
                 (
                     this.HasOptions == input.HasOptions ||
                     this.HasOptions.Equals(input.HasOptions)
+                ) && 
+                (
+                    this.GroupKey == input.GroupKey ||
+                    (this.GroupKey != null &&
+                    this.GroupKey.Equals(input.GroupKey))
+                ) && 
+                (
+                    this.GroupDisplayKey == input.GroupDisplayKey ||
+                    (this.GroupDisplayKey != null &&
+                    this.GroupDisplayKey.Equals(input.GroupDisplayKey))
+                ) && 
+                (
+                    this.GroupDisplayName == input.GroupDisplayName ||
+                    (this.GroupDisplayName != null &&
+                    this.GroupDisplayName.Equals(input.GroupDisplayName))
                 );
         }
 
@@ -241,6 +283,18 @@ namespace Simplic.OxS.SDK.Storage.Management
                     hashCode = (hashCode * 59) + this.Options.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.HasOptions.GetHashCode();
+                if (this.GroupKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.GroupKey.GetHashCode();
+                }
+                if (this.GroupDisplayKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.GroupDisplayKey.GetHashCode();
+                }
+                if (this.GroupDisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.GroupDisplayName.GetHashCode();
+                }
                 return hashCode;
             }
         }

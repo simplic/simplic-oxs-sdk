@@ -36,6 +36,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchLoadingAidBookingRequest" /> class.
         /// </summary>
+        /// <param name="number">number.</param>
         /// <param name="sourceAccountId">sourceAccountId.</param>
         /// <param name="destinationAccountId">destinationAccountId.</param>
         /// <param name="quantity">quantity.</param>
@@ -48,8 +49,9 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="qualityTypeId">qualityTypeId.</param>
         /// <param name="voucher">voucher.</param>
         /// <param name="resources">resources.</param>
-        public PatchLoadingAidBookingRequest(Guid? sourceAccountId = default(Guid?), Guid? destinationAccountId = default(Guid?), double? quantity = default(double?), Guid? loadingAidTypeId = default(Guid?), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), DateTime? dateTime = default(DateTime?), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>))
+        public PatchLoadingAidBookingRequest(string number = default(string), Guid? sourceAccountId = default(Guid?), Guid? destinationAccountId = default(Guid?), double? quantity = default(double?), Guid? loadingAidTypeId = default(Guid?), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), DateTime? dateTime = default(DateTime?), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>))
         {
+            this.Number = number;
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
             this.Quantity = quantity;
@@ -63,6 +65,12 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.Voucher = voucher;
             this.Resources = resources;
         }
+
+        /// <summary>
+        /// Gets or Sets Number
+        /// </summary>
+        [DataMember(Name = "number", EmitDefaultValue = true)]
+        public string Number { get; set; }
 
         /// <summary>
         /// Gets or Sets SourceAccountId
@@ -144,6 +152,7 @@ namespace Simplic.OxS.SDK.Storage.Management
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PatchLoadingAidBookingRequest {\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  SourceAccountId: ").Append(SourceAccountId).Append("\n");
             sb.Append("  DestinationAccountId: ").Append(DestinationAccountId).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
@@ -191,6 +200,11 @@ namespace Simplic.OxS.SDK.Storage.Management
                 return false;
             }
             return 
+                (
+                    this.Number == input.Number ||
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
+                ) && 
                 (
                     this.SourceAccountId == input.SourceAccountId ||
                     (this.SourceAccountId != null &&
@@ -263,6 +277,10 @@ namespace Simplic.OxS.SDK.Storage.Management
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Number != null)
+                {
+                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
                 if (this.SourceAccountId != null)
                 {
                     hashCode = (hashCode * 59) + this.SourceAccountId.GetHashCode();
@@ -322,6 +340,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Quantity (double?) maximum
+            if (this.Quantity > (double?)1.7976931348623157E+308)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value less than or equal to 1.7976931348623157E+308.", new [] { "Quantity" });
+            }
+
             // Quantity (double?) minimum
             if (this.Quantity < (double?)0)
             {

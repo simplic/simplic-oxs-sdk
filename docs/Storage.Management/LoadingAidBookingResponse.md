@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | [optional] 
+**Number** | **string** |  | [optional] 
 **SourceAccount** | [**LoadingAidBookingBookingAccountResponse**](LoadingAidBookingBookingAccountResponse.md) |  | [optional] 
 **DestinationAccount** | [**LoadingAidBookingBookingAccountResponse**](LoadingAidBookingBookingAccountResponse.md) |  | [optional] 
 **Quantity** | **double** |  | [optional] 

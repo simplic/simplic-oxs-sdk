@@ -1766,6 +1766,96 @@
                 }
             }
         },
+        "/internal/InternalTransaction/add-billing-lines": {
+            "post": {
+                "tags": [
+                    "InternalTransaction"
+                ],
+                "summary": "Creates a set of billing lines and adds them to an existing transaction.",
+                "requestBody": {
+                    "description": "The request containing the transaction ID and billing lines to create and add.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddBillingLinesToTransactionRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddBillingLinesToTransactionRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddBillingLinesToTransactionRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/OrganizationSettings": {
             "get": {
                 "tags": [
@@ -7412,6 +7502,26 @@
                 "additionalProperties": false,
                 "description": "Represents the model for the result of adding a set of billing lines to a single draft\r\ntransaction, together with the IDs of all billing lines that were added."
             },
+            "AddBillingLinesToTransactionRequest": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "type": "string",
+                        "description": "Gets or sets the ID of the transaction to add billing lines to.",
+                        "format": "uuid"
+                    },
+                    "billingLines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateBillingLineRequest"
+                        },
+                        "description": "Gets or sets the billing lines to create and add to the transaction.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to add a set of billing lines to an existing transaction."
+            },
             "AdditionalReferencedDocumentContentRequest": {
                 "type": "object",
                 "properties": {
@@ -7715,15 +7825,7 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "type": "number",
-                        "description": "Gets or sets the quantity of the item or service described by this billing line.",
-                        "format": "double"
-                    },
-                    "quantityUnit": {
-                        "$ref": "#/components/schemas/QuantityUnitModel"
-                    },
-                    "priceUnit": {
-                        "$ref": "#/components/schemas/QuantityUnitModel"
+                        "$ref": "#/components/schemas/BillingLineQuantityModel"
                     },
                     "singlePrice": {
                         "type": "number",
@@ -7783,10 +7885,6 @@
                     "state": {
                         "$ref": "#/components/schemas/BillingLineState"
                     },
-                    "locked": {
-                        "type": "boolean",
-                        "description": "Gets or sets the locked state of this billing line."
-                    },
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
@@ -7803,15 +7901,63 @@
                 "additionalProperties": false,
                 "description": "Represents the response model for Simplic.OxS.ERP.BillingLine."
             },
+            "BillingLineQuantityModel": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the quantity value of the item or service.",
+                        "format": "double"
+                    },
+                    "quantityUnit": {
+                        "$ref": "#/components/schemas/QuantityUnitModel"
+                    },
+                    "priceUnit": {
+                        "$ref": "#/components/schemas/QuantityUnitModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the response model for Simplic.OxS.ERP.BillingLineQuantity."
+            },
+            "BillingLineQuantityRequest": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the quantity value of the item or service.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "quantityUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit of measurement for the total quantity by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "priceUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured\r\nin tons.\r\n",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the quantity information in a billing line request."
+            },
             "BillingLineReferenceModel": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the unique identifier of this reference entry.",
+                        "format": "uuid"
+                    },
                     "dataType": {
                         "type": "string",
                         "description": "Gets or sets the data type associated with the property.",
                         "nullable": true
                     },
-                    "id": {
+                    "referenceId": {
                         "type": "string",
                         "description": "Gets or sets the reference ID.",
                         "nullable": true
@@ -7819,6 +7965,32 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for Simplic.OxS.ERP.BillingLineReference."
+            },
+            "BillingLineReferenceRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the unique identifier of this reference entry.",
+                        "format": "uuid"
+                    },
+                    "dataType": {
+                        "type": "string",
+                        "description": "Gets or sets the data type associated with the property.",
+                        "nullable": true
+                    },
+                    "referenceId": {
+                        "type": "string",
+                        "description": "Gets or sets the reference ID.",
+                        "nullable": true
+                    },
+                    "_remove": {
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request model for Simplic.OxS.ERP.BillingLineReference."
             },
             "BillingLineResultModel": {
                 "type": "object",
@@ -7842,6 +8014,7 @@
                 "enum": [
                     0,
                     1,
+                    2,
                     3
                 ],
                 "type": "integer",
@@ -8266,20 +8439,7 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "type": "number",
-                        "description": "Gets or sets the quantity of the item or service described by this billing line.",
-                        "format": "double"
-                    },
-                    "quantityUnitId": {
-                        "type": "string",
-                        "description": "Gets or sets the unit of measurement for the total quantity by ID.",
-                        "format": "uuid"
-                    },
-                    "priceUnitId": {
-                        "type": "string",
-                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured \r\nin tons.\r\n",
-                        "format": "uuid",
-                        "nullable": true
+                        "$ref": "#/components/schemas/BillingLineQuantityRequest"
                     },
                     "singlePrice": {
                         "type": "number",
@@ -8327,6 +8487,14 @@
                     "reference": {
                         "type": "string",
                         "description": "Gets or sets the main reference.",
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReferenceRequest"
+                        },
+                        "description": "Gets or sets a set of additional references.",
                         "nullable": true
                     },
                     "isManualBillingLine": {
@@ -13656,22 +13824,7 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "type": "number",
-                        "description": "Gets or sets the quantity of the item or service.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "quantityUnitId": {
-                        "type": "string",
-                        "description": "Gets or sets the unit of measurement for the total quantity by ID.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "priceUnitId": {
-                        "type": "string",
-                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured \r\nin tons.\r\n",
-                        "format": "uuid",
-                        "nullable": true
+                        "$ref": "#/components/schemas/BillingLineQuantityRequest"
                     },
                     "singlePrice": {
                         "type": "number",
@@ -13721,6 +13874,14 @@
                     "reference": {
                         "type": "string",
                         "description": "Gets or sets the main reference.",
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReferenceRequest"
+                        },
+                        "description": "Gets or sets a set of additional references.",
                         "nullable": true
                     },
                     "isManualBillingLine": {

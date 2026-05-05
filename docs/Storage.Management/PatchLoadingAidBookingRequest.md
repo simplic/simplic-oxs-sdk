@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Number** | **string** |  | [optional] 
 **SourceAccountId** | **Guid?** |  | [optional] 
 **DestinationAccountId** | **Guid?** |  | [optional] 
 **Quantity** | **double?** |  | [optional] 

@@ -49,9 +49,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="date">Gets or sets the date associated with this billing line..</param>
         /// <param name="deliveryDate">Gets or sets the delivery date associated with this billing line..</param>
         /// <param name="text">Gets or sets the text describing this billing line..</param>
-        /// <param name="quantity">Gets or sets the quantity of the item or service described by this billing line..</param>
-        /// <param name="quantityUnit">quantityUnit.</param>
-        /// <param name="priceUnit">priceUnit.</param>
+        /// <param name="quantity">quantity.</param>
         /// <param name="singlePrice">Gets or sets the price for a single unit..</param>
         /// <param name="totalPrice">Gets or sets the total price..</param>
         /// <param name="isGross">Gets or sets a value indicating whether the billing line price is gross or net..</param>
@@ -63,10 +61,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="references">Gets or sets a set of additional references..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="state">state.</param>
-        /// <param name="locked">Gets or sets the locked state of this billing line..</param>
         /// <param name="addon">Gets or sets a set of additional properties..</param>
         /// <param name="assignedTransactionId">Gets or sets the transaction this billing line has been assigned to (either draft or finalized).     This information is used to easily determine whether the billing line is assigned to a particular draft transaction.  .</param>
-        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), double quantity = default(double), QuantityUnitModel quantityUnit = default(QuantityUnitModel), QuantityUnitModel priceUnit = default(QuantityUnitModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), bool locked = default(bool), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?))
+        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityModel quantity = default(BillingLineQuantityModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -76,8 +73,6 @@ namespace Simplic.OxS.SDK.ERP
             this.DeliveryDate = deliveryDate;
             this.Text = text;
             this.Quantity = quantity;
-            this.QuantityUnit = quantityUnit;
-            this.PriceUnit = priceUnit;
             this.SinglePrice = singlePrice;
             this.TotalPrice = totalPrice;
             this.IsGross = isGross;
@@ -89,7 +84,6 @@ namespace Simplic.OxS.SDK.ERP
             this.References = references;
             this.IsManualBillingLine = isManualBillingLine;
             this.State = state;
-            this.Locked = locked;
             this.Addon = addon;
             this.AssignedTransactionId = assignedTransactionId;
         }
@@ -140,23 +134,10 @@ namespace Simplic.OxS.SDK.ERP
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets the quantity of the item or service described by this billing line.
+        /// Gets or Sets Quantity
         /// </summary>
-        /// <value>Gets or sets the quantity of the item or service described by this billing line.</value>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public double Quantity { get; set; }
-
-        /// <summary>
-        /// Gets or Sets QuantityUnit
-        /// </summary>
-        [DataMember(Name = "quantityUnit", EmitDefaultValue = false)]
-        public QuantityUnitModel QuantityUnit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PriceUnit
-        /// </summary>
-        [DataMember(Name = "priceUnit", EmitDefaultValue = false)]
-        public QuantityUnitModel PriceUnit { get; set; }
+        public BillingLineQuantityModel Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets the price for a single unit.
@@ -227,13 +208,6 @@ namespace Simplic.OxS.SDK.ERP
         public bool IsManualBillingLine { get; set; }
 
         /// <summary>
-        /// Gets or sets the locked state of this billing line.
-        /// </summary>
-        /// <value>Gets or sets the locked state of this billing line.</value>
-        [DataMember(Name = "locked", EmitDefaultValue = true)]
-        public bool Locked { get; set; }
-
-        /// <summary>
         /// Gets or sets a set of additional properties.
         /// </summary>
         /// <value>Gets or sets a set of additional properties.</value>
@@ -263,8 +237,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
-            sb.Append("  PriceUnit: ").Append(PriceUnit).Append("\n");
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  IsGross: ").Append(IsGross).Append("\n");
@@ -276,7 +248,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  References: ").Append(References).Append("\n");
             sb.Append("  IsManualBillingLine: ").Append(IsManualBillingLine).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Locked: ").Append(Locked).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  AssignedTransactionId: ").Append(AssignedTransactionId).Append("\n");
             sb.Append("}\n");
@@ -350,17 +321,8 @@ namespace Simplic.OxS.SDK.ERP
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
-                    this.Quantity.Equals(input.Quantity)
-                ) && 
-                (
-                    this.QuantityUnit == input.QuantityUnit ||
-                    (this.QuantityUnit != null &&
-                    this.QuantityUnit.Equals(input.QuantityUnit))
-                ) && 
-                (
-                    this.PriceUnit == input.PriceUnit ||
-                    (this.PriceUnit != null &&
-                    this.PriceUnit.Equals(input.PriceUnit))
+                    (this.Quantity != null &&
+                    this.Quantity.Equals(input.Quantity))
                 ) && 
                 (
                     this.SinglePrice == input.SinglePrice ||
@@ -418,10 +380,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.State.Equals(input.State)
                 ) && 
                 (
-                    this.Locked == input.Locked ||
-                    this.Locked.Equals(input.Locked)
-                ) && 
-                (
                     this.Addon == input.Addon ||
                     this.Addon != null &&
                     input.Addon != null &&
@@ -468,14 +426,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Text.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
-                if (this.QuantityUnit != null)
+                if (this.Quantity != null)
                 {
-                    hashCode = (hashCode * 59) + this.QuantityUnit.GetHashCode();
-                }
-                if (this.PriceUnit != null)
-                {
-                    hashCode = (hashCode * 59) + this.PriceUnit.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
                 }
                 if (this.SinglePrice != null)
                 {
@@ -512,7 +465,6 @@ namespace Simplic.OxS.SDK.ERP
                 }
                 hashCode = (hashCode * 59) + this.IsManualBillingLine.GetHashCode();
                 hashCode = (hashCode * 59) + this.State.GetHashCode();
-                hashCode = (hashCode * 59) + this.Locked.GetHashCode();
                 if (this.Addon != null)
                 {
                     hashCode = (hashCode * 59) + this.Addon.GetHashCode();

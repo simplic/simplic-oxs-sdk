@@ -36,13 +36,22 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingLineReferenceModel" /> class.
         /// </summary>
+        /// <param name="id">Gets or sets the unique identifier of this reference entry..</param>
         /// <param name="dataType">Gets or sets the data type associated with the property..</param>
-        /// <param name="id">Gets or sets the reference ID..</param>
-        public BillingLineReferenceModel(string dataType = default(string), string id = default(string))
+        /// <param name="referenceId">Gets or sets the reference ID..</param>
+        public BillingLineReferenceModel(Guid id = default(Guid), string dataType = default(string), string referenceId = default(string))
         {
-            this.DataType = dataType;
             this.Id = id;
+            this.DataType = dataType;
+            this.ReferenceId = referenceId;
         }
+
+        /// <summary>
+        /// Gets or sets the unique identifier of this reference entry.
+        /// </summary>
+        /// <value>Gets or sets the unique identifier of this reference entry.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the data type associated with the property.
@@ -55,8 +64,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the reference ID.
         /// </summary>
         /// <value>Gets or sets the reference ID.</value>
-        [DataMember(Name = "id", EmitDefaultValue = true)]
-        public string Id { get; set; }
+        [DataMember(Name = "referenceId", EmitDefaultValue = true)]
+        public string ReferenceId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,8 +75,9 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class BillingLineReferenceModel {\n");
-            sb.Append("  DataType: ").Append(DataType).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  DataType: ").Append(DataType).Append("\n");
+            sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,14 +114,19 @@ namespace Simplic.OxS.SDK.ERP
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.DataType == input.DataType ||
                     (this.DataType != null &&
                     this.DataType.Equals(input.DataType))
                 ) && 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.ReferenceId == input.ReferenceId ||
+                    (this.ReferenceId != null &&
+                    this.ReferenceId.Equals(input.ReferenceId))
                 );
         }
 
@@ -124,13 +139,17 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.DataType != null)
                 {
                     hashCode = (hashCode * 59) + this.DataType.GetHashCode();
                 }
-                if (this.Id != null)
+                if (this.ReferenceId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
                 }
                 return hashCode;
             }
