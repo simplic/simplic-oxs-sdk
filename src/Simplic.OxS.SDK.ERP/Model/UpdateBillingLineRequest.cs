@@ -52,7 +52,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="references">Gets or sets a set of additional references..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="addon">Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line..</param>
-        public UpdateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityRequest quantity = default(BillingLineQuantityRequest), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), Guid? taxRateId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        /// <param name="sourceBillingLineId">Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID)..</param>
+        public UpdateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityRequest quantity = default(BillingLineQuantityRequest), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), Guid? taxRateId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? sourceBillingLineId = default(Guid?))
         {
             this.FinancialPartner = financialPartner;
             this.Date = date;
@@ -70,6 +71,7 @@ namespace Simplic.OxS.SDK.ERP
             this.References = references;
             this.IsManualBillingLine = isManualBillingLine;
             this.Addon = addon;
+            this.SourceBillingLineId = sourceBillingLineId;
         }
 
         /// <summary>
@@ -183,6 +185,13 @@ namespace Simplic.OxS.SDK.ERP
         public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
+        /// Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).
+        /// </summary>
+        /// <value>Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).</value>
+        [DataMember(Name = "sourceBillingLineId", EmitDefaultValue = true)]
+        public Guid? SourceBillingLineId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -206,6 +215,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  References: ").Append(References).Append("\n");
             sb.Append("  IsManualBillingLine: ").Append(IsManualBillingLine).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
+            sb.Append("  SourceBillingLineId: ").Append(SourceBillingLineId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -324,6 +334,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Addon != null &&
                     input.Addon != null &&
                     this.Addon.SequenceEqual(input.Addon)
+                ) && 
+                (
+                    this.SourceBillingLineId == input.SourceBillingLineId ||
+                    (this.SourceBillingLineId != null &&
+                    this.SourceBillingLineId.Equals(input.SourceBillingLineId))
                 );
         }
 
@@ -399,6 +414,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Addon != null)
                 {
                     hashCode = (hashCode * 59) + this.Addon.GetHashCode();
+                }
+                if (this.SourceBillingLineId != null)
+                {
+                    hashCode = (hashCode * 59) + this.SourceBillingLineId.GetHashCode();
                 }
                 return hashCode;
             }

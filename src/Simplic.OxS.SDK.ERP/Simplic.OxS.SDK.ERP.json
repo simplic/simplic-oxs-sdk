@@ -7896,6 +7896,12 @@
                         "description": "Gets or sets the transaction this billing line has been assigned to (either draft or finalized).\r\n\n\r\nThis information is used to easily determine whether the billing line is assigned to a particular draft transaction.\r\n",
                         "format": "uuid",
                         "nullable": true
+                    },
+                    "sourceBillingLineId": {
+                        "type": "string",
+                        "description": "Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -8505,6 +8511,12 @@
                         "type": "object",
                         "additionalProperties": {},
                         "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
+                        "nullable": true
+                    },
+                    "sourceBillingLineId": {
+                        "type": "string",
+                        "description": "Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).",
+                        "format": "uuid",
                         "nullable": true
                     }
                 },
@@ -13893,6 +13905,12 @@
                         "type": "object",
                         "additionalProperties": {},
                         "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
+                        "nullable": true
+                    },
+                    "sourceBillingLineId": {
+                        "type": "string",
+                        "description": "Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).",
+                        "format": "uuid",
                         "nullable": true
                     }
                 },

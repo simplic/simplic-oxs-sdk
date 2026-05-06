@@ -63,7 +63,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="state">state.</param>
         /// <param name="addon">Gets or sets a set of additional properties..</param>
         /// <param name="assignedTransactionId">Gets or sets the transaction this billing line has been assigned to (either draft or finalized).     This information is used to easily determine whether the billing line is assigned to a particular draft transaction.  .</param>
-        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityModel quantity = default(BillingLineQuantityModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?))
+        /// <param name="sourceBillingLineId">Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID)..</param>
+        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityModel quantity = default(BillingLineQuantityModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?), Guid? sourceBillingLineId = default(Guid?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -86,6 +87,7 @@ namespace Simplic.OxS.SDK.ERP
             this.State = state;
             this.Addon = addon;
             this.AssignedTransactionId = assignedTransactionId;
+            this.SourceBillingLineId = sourceBillingLineId;
         }
 
         /// <summary>
@@ -222,6 +224,13 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? AssignedTransactionId { get; set; }
 
         /// <summary>
+        /// Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).
+        /// </summary>
+        /// <value>Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).</value>
+        [DataMember(Name = "sourceBillingLineId", EmitDefaultValue = true)]
+        public Guid? SourceBillingLineId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -250,6 +259,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  AssignedTransactionId: ").Append(AssignedTransactionId).Append("\n");
+            sb.Append("  SourceBillingLineId: ").Append(SourceBillingLineId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -389,6 +399,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.AssignedTransactionId == input.AssignedTransactionId ||
                     (this.AssignedTransactionId != null &&
                     this.AssignedTransactionId.Equals(input.AssignedTransactionId))
+                ) && 
+                (
+                    this.SourceBillingLineId == input.SourceBillingLineId ||
+                    (this.SourceBillingLineId != null &&
+                    this.SourceBillingLineId.Equals(input.SourceBillingLineId))
                 );
         }
 
@@ -472,6 +487,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.AssignedTransactionId != null)
                 {
                     hashCode = (hashCode * 59) + this.AssignedTransactionId.GetHashCode();
+                }
+                if (this.SourceBillingLineId != null)
+                {
+                    hashCode = (hashCode * 59) + this.SourceBillingLineId.GetHashCode();
                 }
                 return hashCode;
             }
