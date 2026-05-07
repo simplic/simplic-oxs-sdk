@@ -28,24 +28,24 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// PatchWorkflowRequest
+    /// PatchWorkflowStepRequest
     /// </summary>
-    [DataContract(Name = "PatchWorkflowRequest")]
-    public partial class PatchWorkflowRequest : IEquatable<PatchWorkflowRequest>, IValidatableObject
+    [DataContract(Name = "PatchWorkflowStepRequest")]
+    public partial class PatchWorkflowStepRequest : IEquatable<PatchWorkflowStepRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PatchWorkflowRequest" /> class.
+        /// Initializes a new instance of the <see cref="PatchWorkflowStepRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        /// <param name="value">value.</param>
-        /// <param name="description">description.</param>
-        /// <param name="steps">steps.</param>
-        public PatchWorkflowRequest(string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentModel> steps = default(List<WorkflowStepAssignmentModel>))
+        /// <param name="localizations">localizations.</param>
+        /// <param name="dataFields">dataFields.</param>
+        /// <param name="stepOrder">stepOrder.</param>
+        public PatchWorkflowStepRequest(string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldModel> dataFields = default(List<WorkflowStepDataFieldModel>), int? stepOrder = default(int?))
         {
             this.Name = name;
-            this.Value = value;
-            this.Description = description;
-            this.Steps = steps;
+            this.Localizations = localizations;
+            this.DataFields = dataFields;
+            this.StepOrder = stepOrder;
         }
 
         /// <summary>
@@ -55,22 +55,22 @@ namespace Simplic.OxS.SDK.Telematic
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or Sets Localizations
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = true)]
-        public string Value { get; set; }
+        [DataMember(Name = "localizations", EmitDefaultValue = true)]
+        public List<WorkflowStepLocalizationModel> Localizations { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets DataFields
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        [DataMember(Name = "dataFields", EmitDefaultValue = true)]
+        public List<WorkflowStepDataFieldModel> DataFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets Steps
+        /// Gets or Sets StepOrder
         /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = true)]
-        public List<WorkflowStepAssignmentModel> Steps { get; set; }
+        [DataMember(Name = "stepOrder", EmitDefaultValue = true)]
+        public int? StepOrder { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +79,11 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PatchWorkflowRequest {\n");
+            sb.Append("class PatchWorkflowStepRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Steps: ").Append(Steps).Append("\n");
+            sb.Append("  Localizations: ").Append(Localizations).Append("\n");
+            sb.Append("  DataFields: ").Append(DataFields).Append("\n");
+            sb.Append("  StepOrder: ").Append(StepOrder).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +104,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PatchWorkflowRequest);
+            return this.Equals(input as PatchWorkflowStepRequest);
         }
 
         /// <summary>
-        /// Returns true if PatchWorkflowRequest instances are equal
+        /// Returns true if PatchWorkflowStepRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of PatchWorkflowRequest to be compared</param>
+        /// <param name="input">Instance of PatchWorkflowStepRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PatchWorkflowRequest input)
+        public bool Equals(PatchWorkflowStepRequest input)
         {
             if (input == null)
             {
@@ -125,20 +125,21 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.Localizations == input.Localizations ||
+                    this.Localizations != null &&
+                    input.Localizations != null &&
+                    this.Localizations.SequenceEqual(input.Localizations)
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.DataFields == input.DataFields ||
+                    this.DataFields != null &&
+                    input.DataFields != null &&
+                    this.DataFields.SequenceEqual(input.DataFields)
                 ) && 
                 (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
+                    this.StepOrder == input.StepOrder ||
+                    (this.StepOrder != null &&
+                    this.StepOrder.Equals(input.StepOrder))
                 );
         }
 
@@ -155,17 +156,17 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Value != null)
+                if (this.Localizations != null)
                 {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Localizations.GetHashCode();
                 }
-                if (this.Description != null)
+                if (this.DataFields != null)
                 {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DataFields.GetHashCode();
                 }
-                if (this.Steps != null)
+                if (this.StepOrder != null)
                 {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
+                    hashCode = (hashCode * 59) + this.StepOrder.GetHashCode();
                 }
                 return hashCode;
             }

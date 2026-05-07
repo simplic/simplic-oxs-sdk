@@ -28,31 +28,27 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// PatchWorkflowRequest
+    /// WorkflowStepLocalizationModel
     /// </summary>
-    [DataContract(Name = "PatchWorkflowRequest")]
-    public partial class PatchWorkflowRequest : IEquatable<PatchWorkflowRequest>, IValidatableObject
+    [DataContract(Name = "WorkflowStepLocalizationModel")]
+    public partial class WorkflowStepLocalizationModel : IEquatable<WorkflowStepLocalizationModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PatchWorkflowRequest" /> class.
+        /// Initializes a new instance of the <see cref="WorkflowStepLocalizationModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="languageCode">languageCode.</param>
         /// <param name="value">value.</param>
-        /// <param name="description">description.</param>
-        /// <param name="steps">steps.</param>
-        public PatchWorkflowRequest(string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentModel> steps = default(List<WorkflowStepAssignmentModel>))
+        public WorkflowStepLocalizationModel(string languageCode = default(string), string value = default(string))
         {
-            this.Name = name;
+            this.LanguageCode = languageCode;
             this.Value = value;
-            this.Description = description;
-            this.Steps = steps;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets LanguageCode
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "languageCode", EmitDefaultValue = true)]
+        public string LanguageCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
@@ -61,29 +57,15 @@ namespace Simplic.OxS.SDK.Telematic
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
-        /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Steps
-        /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = true)]
-        public List<WorkflowStepAssignmentModel> Steps { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PatchWorkflowRequest {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class WorkflowStepLocalizationModel {\n");
+            sb.Append("  LanguageCode: ").Append(LanguageCode).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +86,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PatchWorkflowRequest);
+            return this.Equals(input as WorkflowStepLocalizationModel);
         }
 
         /// <summary>
-        /// Returns true if PatchWorkflowRequest instances are equal
+        /// Returns true if WorkflowStepLocalizationModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of PatchWorkflowRequest to be compared</param>
+        /// <param name="input">Instance of WorkflowStepLocalizationModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PatchWorkflowRequest input)
+        public bool Equals(WorkflowStepLocalizationModel input)
         {
             if (input == null)
             {
@@ -120,25 +102,14 @@ namespace Simplic.OxS.SDK.Telematic
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.LanguageCode == input.LanguageCode ||
+                    (this.LanguageCode != null &&
+                    this.LanguageCode.Equals(input.LanguageCode))
                 ) && 
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
                 );
         }
 
@@ -151,21 +122,13 @@ namespace Simplic.OxS.SDK.Telematic
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.LanguageCode != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LanguageCode.GetHashCode();
                 }
                 if (this.Value != null)
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Steps != null)
-                {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
                 }
                 return hashCode;
             }

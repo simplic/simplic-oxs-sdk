@@ -7897,11 +7897,8 @@
                         "format": "uuid",
                         "nullable": true
                     },
-                    "sourceBillingLineId": {
-                        "type": "string",
-                        "description": "Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).",
-                        "format": "uuid",
-                        "nullable": true
+                    "sourceBillingLineReference": {
+                        "$ref": "#/components/schemas/SourceBillingLineReferenceModel"
                     }
                 },
                 "additionalProperties": false,
@@ -8513,11 +8510,8 @@
                         "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
                         "nullable": true
                     },
-                    "sourceBillingLineId": {
-                        "type": "string",
-                        "description": "Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).",
-                        "format": "uuid",
-                        "nullable": true
+                    "sourceBillingLineReference": {
+                        "$ref": "#/components/schemas/SourceBillingLineReferenceRequest"
                     }
                 },
                 "additionalProperties": false,
@@ -11378,6 +11372,41 @@
                 },
                 "additionalProperties": false
             },
+            "SourceBillingLineReferenceModel": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the type of the source billing line reference.",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID of the source billing line reference.",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the response model for Simplic.OxS.ERP.SourceBillingLineReference."
+            },
+            "SourceBillingLineReferenceRequest": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the type of the source billing line reference.",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID of the source billing line reference.",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request model for Simplic.OxS.ERP.SourceBillingLineReference."
+            },
             "SplitConfigurationModel": {
                 "type": "object",
                 "properties": {
@@ -13907,11 +13936,8 @@
                         "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
                         "nullable": true
                     },
-                    "sourceBillingLineId": {
-                        "type": "string",
-                        "description": "Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID).",
-                        "format": "uuid",
-                        "nullable": true
+                    "sourceBillingLineReference": {
+                        "$ref": "#/components/schemas/SourceBillingLineReferenceRequest"
                     }
                 },
                 "additionalProperties": false,

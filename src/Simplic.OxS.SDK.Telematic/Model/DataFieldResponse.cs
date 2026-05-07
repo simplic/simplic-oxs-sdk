@@ -28,26 +28,36 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// WorkflowResponse
+    /// DataFieldResponse
     /// </summary>
-    [DataContract(Name = "WorkflowResponse")]
-    public partial class WorkflowResponse : IEquatable<WorkflowResponse>, IValidatableObject
+    [DataContract(Name = "DataFieldResponse")]
+    public partial class DataFieldResponse : IEquatable<DataFieldResponse>, IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowResponse" /> class.
+        /// Gets or Sets DataType
+        /// </summary>
+        [DataMember(Name = "dataType", EmitDefaultValue = false)]
+        public DataFieldTypeModel? DataType { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataFieldResponse" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
-        /// <param name="value">value.</param>
-        /// <param name="description">description.</param>
-        /// <param name="steps">steps.</param>
-        public WorkflowResponse(Guid id = default(Guid), string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentModel> steps = default(List<WorkflowStepAssignmentModel>))
+        /// <param name="localizations">localizations.</param>
+        /// <param name="dataType">dataType.</param>
+        /// <param name="defaultValue">defaultValue.</param>
+        /// <param name="setDefinition">setDefinition.</param>
+        /// <param name="format">format.</param>
+        public DataFieldResponse(Guid id = default(Guid), string name = default(string), List<DataFieldLocalizationModel> localizations = default(List<DataFieldLocalizationModel>), DataFieldTypeModel? dataType = default(DataFieldTypeModel?), string defaultValue = default(string), List<string> setDefinition = default(List<string>), string format = default(string))
         {
             this.Id = id;
             this.Name = name;
-            this.Value = value;
-            this.Description = description;
-            this.Steps = steps;
+            this.Localizations = localizations;
+            this.DataType = dataType;
+            this.DefaultValue = defaultValue;
+            this.SetDefinition = setDefinition;
+            this.Format = format;
         }
 
         /// <summary>
@@ -63,22 +73,28 @@ namespace Simplic.OxS.SDK.Telematic
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or Sets Localizations
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = true)]
-        public string Value { get; set; }
+        [DataMember(Name = "localizations", EmitDefaultValue = true)]
+        public List<DataFieldLocalizationModel> Localizations { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets DefaultValue
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        [DataMember(Name = "defaultValue", EmitDefaultValue = true)]
+        public string DefaultValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets Steps
+        /// Gets or Sets SetDefinition
         /// </summary>
-        [DataMember(Name = "steps", EmitDefaultValue = true)]
-        public List<WorkflowStepAssignmentModel> Steps { get; set; }
+        [DataMember(Name = "setDefinition", EmitDefaultValue = true)]
+        public List<string> SetDefinition { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Format
+        /// </summary>
+        [DataMember(Name = "format", EmitDefaultValue = true)]
+        public string Format { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,12 +103,14 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkflowResponse {\n");
+            sb.Append("class DataFieldResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Steps: ").Append(Steps).Append("\n");
+            sb.Append("  Localizations: ").Append(Localizations).Append("\n");
+            sb.Append("  DataType: ").Append(DataType).Append("\n");
+            sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
+            sb.Append("  SetDefinition: ").Append(SetDefinition).Append("\n");
+            sb.Append("  Format: ").Append(Format).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,15 +131,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkflowResponse);
+            return this.Equals(input as DataFieldResponse);
         }
 
         /// <summary>
-        /// Returns true if WorkflowResponse instances are equal
+        /// Returns true if DataFieldResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkflowResponse to be compared</param>
+        /// <param name="input">Instance of DataFieldResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkflowResponse input)
+        public bool Equals(DataFieldResponse input)
         {
             if (input == null)
             {
@@ -139,20 +157,30 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.Localizations == input.Localizations ||
+                    this.Localizations != null &&
+                    input.Localizations != null &&
+                    this.Localizations.SequenceEqual(input.Localizations)
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.DataType == input.DataType ||
+                    this.DataType.Equals(input.DataType)
                 ) && 
                 (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
+                    this.DefaultValue == input.DefaultValue ||
+                    (this.DefaultValue != null &&
+                    this.DefaultValue.Equals(input.DefaultValue))
+                ) && 
+                (
+                    this.SetDefinition == input.SetDefinition ||
+                    this.SetDefinition != null &&
+                    input.SetDefinition != null &&
+                    this.SetDefinition.SequenceEqual(input.SetDefinition)
+                ) && 
+                (
+                    this.Format == input.Format ||
+                    (this.Format != null &&
+                    this.Format.Equals(input.Format))
                 );
         }
 
@@ -173,17 +201,22 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Value != null)
+                if (this.Localizations != null)
                 {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Localizations.GetHashCode();
                 }
-                if (this.Description != null)
+                hashCode = (hashCode * 59) + this.DataType.GetHashCode();
+                if (this.DefaultValue != null)
                 {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DefaultValue.GetHashCode();
                 }
-                if (this.Steps != null)
+                if (this.SetDefinition != null)
                 {
-                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SetDefinition.GetHashCode();
+                }
+                if (this.Format != null)
+                {
+                    hashCode = (hashCode * 59) + this.Format.GetHashCode();
                 }
                 return hashCode;
             }

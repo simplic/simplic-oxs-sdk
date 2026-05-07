@@ -39,11 +39,13 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="name">name.</param>
         /// <param name="value">value.</param>
         /// <param name="description">description.</param>
-        public CreateWorkflowRequest(string name = default(string), string value = default(string), string description = default(string))
+        /// <param name="steps">steps.</param>
+        public CreateWorkflowRequest(string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentModel> steps = default(List<WorkflowStepAssignmentModel>))
         {
             this.Name = name;
             this.Value = value;
             this.Description = description;
+            this.Steps = steps;
         }
 
         /// <summary>
@@ -65,6 +67,12 @@ namespace Simplic.OxS.SDK.Telematic
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or Sets Steps
+        /// </summary>
+        [DataMember(Name = "steps", EmitDefaultValue = true)]
+        public List<WorkflowStepAssignmentModel> Steps { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -75,6 +83,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +133,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Steps == input.Steps ||
+                    this.Steps != null &&
+                    input.Steps != null &&
+                    this.Steps.SequenceEqual(input.Steps)
                 );
         }
 
@@ -147,6 +162,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.Steps != null)
+                {
+                    hashCode = (hashCode * 59) + this.Steps.GetHashCode();
                 }
                 return hashCode;
             }

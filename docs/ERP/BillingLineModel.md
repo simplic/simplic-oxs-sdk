@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **State** | **BillingLineState** |  | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** | Gets or sets a set of additional properties. | [optional] 
 **AssignedTransactionId** | **Guid?** | Gets or sets the transaction this billing line has been assigned to (either draft or finalized).     This information is used to easily determine whether the billing line is assigned to a particular draft transaction.   | [optional] 
-**SourceBillingLineId** | **Guid?** | Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID). | [optional] 
+**SourceBillingLineReference** | [**SourceBillingLineReferenceModel**](SourceBillingLineReferenceModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

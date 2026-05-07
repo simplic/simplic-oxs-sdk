@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **References** | [**List&lt;BillingLineReferenceRequest&gt;**](BillingLineReferenceRequest.md) | Gets or sets a set of additional references. | [optional] 
 **IsManualBillingLine** | **bool** | Gets or sets the flag indicating whether the billing line was created manually. | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** | Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line. | [optional] 
-**SourceBillingLineId** | **Guid?** | Gets or sets the external reference ID of the billing line (e.g. the corresponding Logistics BillingLine ID). | [optional] 
+**SourceBillingLineReference** | [**SourceBillingLineReferenceRequest**](SourceBillingLineReferenceRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

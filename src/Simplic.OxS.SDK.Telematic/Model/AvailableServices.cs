@@ -40,13 +40,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="transics">transics.</param>
         /// <param name="webfleet">webfleet.</param>
         /// <param name="sms">sms.</param>
+        /// <param name="generic">generic.</param>
         /// <param name="none">none.</param>
-        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> none = default(List<string>))
+        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> generic = default(List<string>), List<string> none = default(List<string>))
         {
             this.Spedion = spedion;
             this.Transics = transics;
             this.Webfleet = webfleet;
             this.Sms = sms;
+            this.Generic = generic;
             this.None = none;
         }
 
@@ -75,6 +77,12 @@ namespace Simplic.OxS.SDK.Telematic
         public List<string> Sms { get; set; }
 
         /// <summary>
+        /// Gets or Sets Generic
+        /// </summary>
+        [DataMember(Name = "generic", EmitDefaultValue = true)]
+        public List<string> Generic { get; set; }
+
+        /// <summary>
         /// Gets or Sets None
         /// </summary>
         [DataMember(Name = "none", EmitDefaultValue = true)]
@@ -92,6 +100,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Transics: ").Append(Transics).Append("\n");
             sb.Append("  Webfleet: ").Append(Webfleet).Append("\n");
             sb.Append("  Sms: ").Append(Sms).Append("\n");
+            sb.Append("  Generic: ").Append(Generic).Append("\n");
             sb.Append("  None: ").Append(None).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -153,6 +162,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Sms.SequenceEqual(input.Sms)
                 ) && 
                 (
+                    this.Generic == input.Generic ||
+                    this.Generic != null &&
+                    input.Generic != null &&
+                    this.Generic.SequenceEqual(input.Generic)
+                ) && 
+                (
                     this.None == input.None ||
                     this.None != null &&
                     input.None != null &&
@@ -184,6 +199,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Sms != null)
                 {
                     hashCode = (hashCode * 59) + this.Sms.GetHashCode();
+                }
+                if (this.Generic != null)
+                {
+                    hashCode = (hashCode * 59) + this.Generic.GetHashCode();
                 }
                 if (this.None != null)
                 {
