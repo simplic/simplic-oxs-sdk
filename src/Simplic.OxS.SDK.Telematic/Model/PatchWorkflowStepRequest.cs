@@ -40,7 +40,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="localizations">localizations.</param>
         /// <param name="dataFields">dataFields.</param>
         /// <param name="stepOrder">stepOrder.</param>
-        public PatchWorkflowStepRequest(string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldModel> dataFields = default(List<WorkflowStepDataFieldModel>), int? stepOrder = default(int?))
+        public PatchWorkflowStepRequest(string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldSet> dataFields = default(List<WorkflowStepDataFieldSet>), int? stepOrder = default(int?))
         {
             this.Name = name;
             this.Localizations = localizations;
@@ -64,7 +64,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// Gets or Sets DataFields
         /// </summary>
         [DataMember(Name = "dataFields", EmitDefaultValue = true)]
-        public List<WorkflowStepDataFieldModel> DataFields { get; set; }
+        public List<WorkflowStepDataFieldSet> DataFields { get; set; }
 
         /// <summary>
         /// Gets or Sets StepOrder

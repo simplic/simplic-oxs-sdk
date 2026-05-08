@@ -1,13 +1,12 @@
-# Simplic.OxS.SDK.Telematic.CreateWorkflowRequest
+# Simplic.OxS.SDK.Flow.ShipmentTag
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Guid** | **Guid** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Value** | **string** |  | [optional] 
-**Description** | **string** |  | [optional] 
-**Steps** | [**List&lt;WorkflowStepAssignmentSet&gt;**](WorkflowStepAssignmentSet.md) |  | [optional] 
+**GroupName** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

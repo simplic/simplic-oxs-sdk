@@ -40,7 +40,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="value">value.</param>
         /// <param name="description">description.</param>
         /// <param name="steps">steps.</param>
-        public CreateWorkflowRequest(string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentModel> steps = default(List<WorkflowStepAssignmentModel>))
+        public CreateWorkflowRequest(string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentSet> steps = default(List<WorkflowStepAssignmentSet>))
         {
             this.Name = name;
             this.Value = value;
@@ -70,7 +70,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// Gets or Sets Steps
         /// </summary>
         [DataMember(Name = "steps", EmitDefaultValue = true)]
-        public List<WorkflowStepAssignmentModel> Steps { get; set; }
+        public List<WorkflowStepAssignmentSet> Steps { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

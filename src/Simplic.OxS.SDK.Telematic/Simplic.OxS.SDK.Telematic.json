@@ -4687,7 +4687,7 @@
                     "steps": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/WorkflowStepAssignmentModel"
+                            "$ref": "#/components/schemas/WorkflowStepAssignmentSet"
                         },
                         "nullable": true
                     }
@@ -4711,7 +4711,7 @@
                     "dataFields": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/WorkflowStepDataFieldModel"
+                            "$ref": "#/components/schemas/WorkflowStepDataFieldSet"
                         },
                         "nullable": true
                     },
@@ -5733,7 +5733,7 @@
                     "steps": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/WorkflowStepAssignmentModel"
+                            "$ref": "#/components/schemas/WorkflowStepAssignmentSet"
                         },
                         "nullable": true
                     }
@@ -5757,7 +5757,7 @@
                     "dataFields": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/WorkflowStepDataFieldModel"
+                            "$ref": "#/components/schemas/WorkflowStepDataFieldSet"
                         },
                         "nullable": true
                     },
@@ -6124,6 +6124,20 @@
                 },
                 "additionalProperties": false
             },
+            "WorkflowStepAssignmentSet": {
+                "type": "object",
+                "properties": {
+                    "workflowStepId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "order": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
             "WorkflowStepDataFieldModel": {
                 "type": "object",
                 "properties": {
@@ -6136,6 +6150,19 @@
                     },
                     "field": {
                         "$ref": "#/components/schemas/DataFieldResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "WorkflowStepDataFieldSet": {
+                "type": "object",
+                "properties": {
+                    "dataFieldId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isRequired": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false

@@ -1,13 +1,14 @@
-# Simplic.OxS.SDK.Telematic.CreateWorkflowRequest
+# Simplic.OxS.SDK.Flow.QuantityUnit
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Guid** | **Guid** |  | [optional] 
+**Ident** | **int** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Value** | **string** |  | [optional] 
-**Description** | **string** |  | [optional] 
-**Steps** | [**List&lt;WorkflowStepAssignmentSet&gt;**](WorkflowStepAssignmentSet.md) |  | [optional] 
+**ShortName** | **string** |  | [optional] 
+**Digits** | **int?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
