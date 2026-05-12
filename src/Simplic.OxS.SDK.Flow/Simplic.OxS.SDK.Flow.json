@@ -908,23 +908,33 @@
                 "tags": [
                     "Flow"
                 ],
+                "parameters": [
+                    {
+                        "name": "typescript",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EditorTypesResponse"
+                                    "$ref": "#/components/schemas/GetEditorTypesResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EditorTypesResponse"
+                                    "$ref": "#/components/schemas/GetEditorTypesResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EditorTypesResponse"
+                                    "$ref": "#/components/schemas/GetEditorTypesResponse"
                                 }
                             }
                         }
@@ -1789,102 +1799,6 @@
                 },
                 "additionalProperties": false
             },
-            "EditorTypesResponse": {
-                "type": "object",
-                "properties": {
-                    "apiCredentials": {
-                        "$ref": "#/components/schemas/ApiCredentials"
-                    },
-                    "awsCredentials": {
-                        "$ref": "#/components/schemas/AwsCredentials"
-                    },
-                    "debugInfo": {
-                        "$ref": "#/components/schemas/DebugInfo"
-                    },
-                    "encryptionCredentials": {
-                        "$ref": "#/components/schemas/EncryptionCredentials"
-                    },
-                    "errorResult": {
-                        "$ref": "#/components/schemas/ErrorResult"
-                    },
-                    "executionArgs": {
-                        "$ref": "#/components/schemas/ExecutionArgs"
-                    },
-                    "profilingResult": {
-                        "$ref": "#/components/schemas/ProfilingResult"
-                    },
-                    "usernamePasswordCredentials": {
-                        "$ref": "#/components/schemas/UsernamePasswordCredentials"
-                    },
-                    "debugSignal": {
-                        "$ref": "#/components/schemas/DebugSignal"
-                    },
-                    "address": {
-                        "$ref": "#/components/schemas/Address"
-                    },
-                    "billableContact": {
-                        "$ref": "#/components/schemas/BillableContact"
-                    },
-                    "billingLine": {
-                        "$ref": "#/components/schemas/BillingLine"
-                    },
-                    "billingLineStatus": {
-                        "$ref": "#/components/schemas/BillingLineStatus"
-                    },
-                    "billingLineType": {
-                        "$ref": "#/components/schemas/BillingLineType"
-                    },
-                    "loadingAidType": {
-                        "$ref": "#/components/schemas/LoadingAidType"
-                    },
-                    "loadingDateTimeType": {
-                        "$ref": "#/components/schemas/LoadingDateTimeType"
-                    },
-                    "quantity": {
-                        "$ref": "#/components/schemas/Quantity"
-                    },
-                    "quantityUnit": {
-                        "$ref": "#/components/schemas/QuantityUnit"
-                    },
-                    "shipment": {
-                        "$ref": "#/components/schemas/Shipment"
-                    },
-                    "shipmentArticle": {
-                        "$ref": "#/components/schemas/ShipmentArticle"
-                    },
-                    "shipmentDocument": {
-                        "$ref": "#/components/schemas/ShipmentDocument"
-                    },
-                    "shipmentItem": {
-                        "$ref": "#/components/schemas/ShipmentItem"
-                    },
-                    "shipmentItemStatus": {
-                        "$ref": "#/components/schemas/ShipmentItemStatus"
-                    },
-                    "shipmentTag": {
-                        "$ref": "#/components/schemas/ShipmentTag"
-                    },
-                    "shipmentTelematicWorkflow": {
-                        "$ref": "#/components/schemas/ShipmentTelematicWorkflow"
-                    },
-                    "shipmentTransportOrder": {
-                        "$ref": "#/components/schemas/ShipmentTransportOrder"
-                    },
-                    "weightNote": {
-                        "$ref": "#/components/schemas/WeightNote"
-                    },
-                    "weightNoteType": {
-                        "$ref": "#/components/schemas/WeightNoteType"
-                    },
-                    "shipmentStatus": {
-                        "$ref": "#/components/schemas/ShipmentStatus"
-                    },
-                    "transportOrderStatus": {
-                        "$ref": "#/components/schemas/TransportOrderStatus"
-                    }
-                },
-                "additionalProperties": false
-            },
             "EncryptionCredentials": {
                 "required": [
                     "iv",
@@ -1897,6 +1811,23 @@
                     },
                     "iv": {
                         "$ref": "#/components/schemas/ByteReadOnlyMemory"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EnumValueMetadata": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2143,6 +2074,109 @@
                             "$ref": "#/components/schemas/Machine"
                         },
                         "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GetEditorTypesResponse": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/TypeMetadata"
+                        },
+                        "nullable": true
+                    },
+                    "apiCredentials": {
+                        "$ref": "#/components/schemas/ApiCredentials"
+                    },
+                    "awsCredentials": {
+                        "$ref": "#/components/schemas/AwsCredentials"
+                    },
+                    "debugInfo": {
+                        "$ref": "#/components/schemas/DebugInfo"
+                    },
+                    "encryptionCredentials": {
+                        "$ref": "#/components/schemas/EncryptionCredentials"
+                    },
+                    "errorResult": {
+                        "$ref": "#/components/schemas/ErrorResult"
+                    },
+                    "executionArgs": {
+                        "$ref": "#/components/schemas/ExecutionArgs"
+                    },
+                    "profilingResult": {
+                        "$ref": "#/components/schemas/ProfilingResult"
+                    },
+                    "usernamePasswordCredentials": {
+                        "$ref": "#/components/schemas/UsernamePasswordCredentials"
+                    },
+                    "debugSignal": {
+                        "$ref": "#/components/schemas/DebugSignal"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "billableContact": {
+                        "$ref": "#/components/schemas/BillableContact"
+                    },
+                    "billingLine": {
+                        "$ref": "#/components/schemas/BillingLine"
+                    },
+                    "billingLineStatus": {
+                        "$ref": "#/components/schemas/BillingLineStatus"
+                    },
+                    "billingLineType": {
+                        "$ref": "#/components/schemas/BillingLineType"
+                    },
+                    "loadingAidType": {
+                        "$ref": "#/components/schemas/LoadingAidType"
+                    },
+                    "loadingDateTimeType": {
+                        "$ref": "#/components/schemas/LoadingDateTimeType"
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/Quantity"
+                    },
+                    "quantityUnit": {
+                        "$ref": "#/components/schemas/QuantityUnit"
+                    },
+                    "shipment": {
+                        "$ref": "#/components/schemas/Shipment"
+                    },
+                    "shipmentArticle": {
+                        "$ref": "#/components/schemas/ShipmentArticle"
+                    },
+                    "shipmentDocument": {
+                        "$ref": "#/components/schemas/ShipmentDocument"
+                    },
+                    "shipmentItem": {
+                        "$ref": "#/components/schemas/ShipmentItem"
+                    },
+                    "shipmentItemStatus": {
+                        "$ref": "#/components/schemas/ShipmentItemStatus"
+                    },
+                    "shipmentTag": {
+                        "$ref": "#/components/schemas/ShipmentTag"
+                    },
+                    "shipmentTelematicWorkflow": {
+                        "$ref": "#/components/schemas/ShipmentTelematicWorkflow"
+                    },
+                    "shipmentTransportOrder": {
+                        "$ref": "#/components/schemas/ShipmentTransportOrder"
+                    },
+                    "weightNote": {
+                        "$ref": "#/components/schemas/WeightNote"
+                    },
+                    "weightNoteType": {
+                        "$ref": "#/components/schemas/WeightNoteType"
+                    },
+                    "shipmentStatus": {
+                        "$ref": "#/components/schemas/ShipmentStatus"
+                    },
+                    "transportOrderStatus": {
+                        "$ref": "#/components/schemas/TransportOrderStatus"
                     }
                 },
                 "additionalProperties": false
@@ -3000,6 +3034,34 @@
                 },
                 "additionalProperties": false
             },
+            "PropertyMetadata": {
+                "required": [
+                    "name",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isNullable": {
+                        "type": "boolean"
+                    },
+                    "isCollection": {
+                        "type": "boolean"
+                    },
+                    "elementType": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "PutNodeDefinitionRequest": {
                 "required": [
                     "id",
@@ -3711,6 +3773,50 @@
                     },
                     "isDeleted": {
                         "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TypeMetadata": {
+                "required": [
+                    "kind",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "kind": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PropertyMetadata"
+                        },
+                        "nullable": true
+                    },
+                    "values": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EnumValueMetadata"
+                        },
+                        "nullable": true
+                    },
+                    "elementType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "keyType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "valueType": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

@@ -17,7 +17,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="floweditortypesget"></a>
 # **EditorTypes**
-> EditorTypesResponse EditorTypes ()
+> GetEditorTypesResponse EditorTypes (bool? typescript = null)
 
 
 
@@ -46,10 +46,11 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new FlowClient(config);
+            var typescript = false;  // bool? |  (optional)  (default to false)
 
             try
             {
-                EditorTypesResponse result = apiInstance.EditorTypes();
+                GetEditorTypesResponse result = apiInstance.EditorTypes(typescript);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -69,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<EditorTypesResponse> response = apiInstance.EditorTypesWithHttpInfo();
+    ApiResponse<GetEditorTypesResponse> response = apiInstance.EditorTypesWithHttpInfo(typescript);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,10 +84,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **typescript** | **bool?** |  | [optional] [default to false] |
+
 ### Return type
 
-[**EditorTypesResponse**](EditorTypesResponse.md)
+[**GetEditorTypesResponse**](GetEditorTypesResponse.md)
 
 ### Authorization
 

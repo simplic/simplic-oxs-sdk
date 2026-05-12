@@ -28,10 +28,10 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Flow
 {
     /// <summary>
-    /// EditorTypesResponse
+    /// GetEditorTypesResponse
     /// </summary>
-    [DataContract(Name = "EditorTypesResponse")]
-    public partial class EditorTypesResponse : IEquatable<EditorTypesResponse>, IValidatableObject
+    [DataContract(Name = "GetEditorTypesResponse")]
+    public partial class GetEditorTypesResponse : IEquatable<GetEditorTypesResponse>, IValidatableObject
     {
 
         /// <summary>
@@ -58,8 +58,9 @@ namespace Simplic.OxS.SDK.Flow
         [DataMember(Name = "weightNoteType", EmitDefaultValue = false)]
         public WeightNoteType? WeightNoteType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="EditorTypesResponse" /> class.
+        /// Initializes a new instance of the <see cref="GetEditorTypesResponse" /> class.
         /// </summary>
+        /// <param name="metadata">metadata.</param>
         /// <param name="apiCredentials">apiCredentials.</param>
         /// <param name="awsCredentials">awsCredentials.</param>
         /// <param name="debugInfo">debugInfo.</param>
@@ -90,8 +91,9 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="weightNoteType">weightNoteType.</param>
         /// <param name="shipmentStatus">shipmentStatus.</param>
         /// <param name="transportOrderStatus">transportOrderStatus.</param>
-        public EditorTypesResponse(ApiCredentials apiCredentials = default(ApiCredentials), AwsCredentials awsCredentials = default(AwsCredentials), DebugInfo debugInfo = default(DebugInfo), EncryptionCredentials encryptionCredentials = default(EncryptionCredentials), ErrorResult errorResult = default(ErrorResult), ExecutionArgs executionArgs = default(ExecutionArgs), ProfilingResult profilingResult = default(ProfilingResult), UsernamePasswordCredentials usernamePasswordCredentials = default(UsernamePasswordCredentials), DebugSignal? debugSignal = default(DebugSignal?), Address address = default(Address), BillableContact billableContact = default(BillableContact), BillingLine billingLine = default(BillingLine), BillingLineStatus billingLineStatus = default(BillingLineStatus), BillingLineType? billingLineType = default(BillingLineType?), LoadingAidType loadingAidType = default(LoadingAidType), LoadingDateTimeType? loadingDateTimeType = default(LoadingDateTimeType?), Quantity quantity = default(Quantity), QuantityUnit quantityUnit = default(QuantityUnit), Shipment shipment = default(Shipment), ShipmentArticle shipmentArticle = default(ShipmentArticle), ShipmentDocument shipmentDocument = default(ShipmentDocument), ShipmentItem shipmentItem = default(ShipmentItem), ShipmentItemStatus shipmentItemStatus = default(ShipmentItemStatus), ShipmentTag shipmentTag = default(ShipmentTag), ShipmentTelematicWorkflow shipmentTelematicWorkflow = default(ShipmentTelematicWorkflow), ShipmentTransportOrder shipmentTransportOrder = default(ShipmentTransportOrder), WeightNote weightNote = default(WeightNote), WeightNoteType? weightNoteType = default(WeightNoteType?), ShipmentStatus shipmentStatus = default(ShipmentStatus), TransportOrderStatus transportOrderStatus = default(TransportOrderStatus))
+        public GetEditorTypesResponse(Dictionary<string, TypeMetadata> metadata = default(Dictionary<string, TypeMetadata>), ApiCredentials apiCredentials = default(ApiCredentials), AwsCredentials awsCredentials = default(AwsCredentials), DebugInfo debugInfo = default(DebugInfo), EncryptionCredentials encryptionCredentials = default(EncryptionCredentials), ErrorResult errorResult = default(ErrorResult), ExecutionArgs executionArgs = default(ExecutionArgs), ProfilingResult profilingResult = default(ProfilingResult), UsernamePasswordCredentials usernamePasswordCredentials = default(UsernamePasswordCredentials), DebugSignal? debugSignal = default(DebugSignal?), Address address = default(Address), BillableContact billableContact = default(BillableContact), BillingLine billingLine = default(BillingLine), BillingLineStatus billingLineStatus = default(BillingLineStatus), BillingLineType? billingLineType = default(BillingLineType?), LoadingAidType loadingAidType = default(LoadingAidType), LoadingDateTimeType? loadingDateTimeType = default(LoadingDateTimeType?), Quantity quantity = default(Quantity), QuantityUnit quantityUnit = default(QuantityUnit), Shipment shipment = default(Shipment), ShipmentArticle shipmentArticle = default(ShipmentArticle), ShipmentDocument shipmentDocument = default(ShipmentDocument), ShipmentItem shipmentItem = default(ShipmentItem), ShipmentItemStatus shipmentItemStatus = default(ShipmentItemStatus), ShipmentTag shipmentTag = default(ShipmentTag), ShipmentTelematicWorkflow shipmentTelematicWorkflow = default(ShipmentTelematicWorkflow), ShipmentTransportOrder shipmentTransportOrder = default(ShipmentTransportOrder), WeightNote weightNote = default(WeightNote), WeightNoteType? weightNoteType = default(WeightNoteType?), ShipmentStatus shipmentStatus = default(ShipmentStatus), TransportOrderStatus transportOrderStatus = default(TransportOrderStatus))
         {
+            this.Metadata = metadata;
             this.ApiCredentials = apiCredentials;
             this.AwsCredentials = awsCredentials;
             this.DebugInfo = debugInfo;
@@ -123,6 +125,12 @@ namespace Simplic.OxS.SDK.Flow
             this.ShipmentStatus = shipmentStatus;
             this.TransportOrderStatus = transportOrderStatus;
         }
+
+        /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
+        public Dictionary<string, TypeMetadata> Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets ApiCredentials
@@ -287,7 +295,8 @@ namespace Simplic.OxS.SDK.Flow
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class EditorTypesResponse {\n");
+            sb.Append("class GetEditorTypesResponse {\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  ApiCredentials: ").Append(ApiCredentials).Append("\n");
             sb.Append("  AwsCredentials: ").Append(AwsCredentials).Append("\n");
             sb.Append("  DebugInfo: ").Append(DebugInfo).Append("\n");
@@ -338,21 +347,27 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EditorTypesResponse);
+            return this.Equals(input as GetEditorTypesResponse);
         }
 
         /// <summary>
-        /// Returns true if EditorTypesResponse instances are equal
+        /// Returns true if GetEditorTypesResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of EditorTypesResponse to be compared</param>
+        /// <param name="input">Instance of GetEditorTypesResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EditorTypesResponse input)
+        public bool Equals(GetEditorTypesResponse input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
                 (
                     this.ApiCredentials == input.ApiCredentials ||
                     (this.ApiCredentials != null &&
@@ -510,6 +525,10 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
                 if (this.ApiCredentials != null)
                 {
                     hashCode = (hashCode * 59) + this.ApiCredentials.GetHashCode();
