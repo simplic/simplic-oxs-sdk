@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Localizations** | [**List&lt;WorkflowStepLocalizationModel&gt;**](WorkflowStepLocalizationModel.md) |  | [optional] 
 **DataFields** | [**List&lt;WorkflowStepDataFieldModel&gt;**](WorkflowStepDataFieldModel.md) |  | [optional] 
 **StepOrder** | **int** |  | [optional] 
+**Roles** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

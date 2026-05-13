@@ -1,12 +1,14 @@
-# Simplic.OxS.SDK.Flow.DataOutPinDefinition
+# Simplic.OxS.SDK.Telematic.AddressResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | [optional] 
-**Type** | **string** |  | [optional] 
-**TypeBinding** | **string** |  | [optional] 
+**Street** | **string** |  | [optional] 
+**City** | **string** |  | [optional] 
+**ZipCode** | **string** |  | [optional] 
+**Country** | **string** |  | [optional] 
+**CountryCode** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,12 +1,11 @@
-# Simplic.OxS.SDK.Flow.DataOutPinDefinition
+# Simplic.OxS.SDK.Telematic.CompleteWorkflowStepRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | [optional] 
-**Type** | **string** |  | [optional] 
-**TypeBinding** | **string** |  | [optional] 
+**WorkflowStepId** | **Guid** |  | 
+**DataFields** | [**List&lt;DataFieldValueRequest&gt;**](DataFieldValueRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

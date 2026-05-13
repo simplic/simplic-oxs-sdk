@@ -785,6 +785,272 @@
                 }
             }
         },
+        "/generic-telematic-tours": {
+            "get": {
+                "tags": [
+                    "GenericTelematicTours"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TelematicTourResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TelematicTourResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TelematicTourResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generic-telematic-tours/{tourId}/places/{placeId}/complete-step": {
+            "post": {
+                "tags": [
+                    "GenericTelematicTours"
+                ],
+                "parameters": [
+                    {
+                        "name": "tourId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "placeId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteWorkflowStepRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteWorkflowStepRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteWorkflowStepRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generic-telematic-tours/{tourId}": {
+            "get": {
+                "tags": [
+                    "GenericTelematicTours"
+                ],
+                "parameters": [
+                    {
+                        "name": "tourId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/internal/InternalWorkflow/{id}": {
             "get": {
                 "tags": [
@@ -4395,6 +4661,32 @@
                 },
                 "additionalProperties": false
             },
+            "AddressResponse": {
+                "type": "object",
+                "properties": {
+                    "street": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "zipCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "AutomaticVehicleConfigurationCreationSettings": {
                 "type": "object",
                 "properties": {
@@ -4468,6 +4760,26 @@
                     },
                     "providerName": {
                         "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "CompleteWorkflowStepRequest": {
+                "required": [
+                    "workflowStepId"
+                ],
+                "type": "object",
+                "properties": {
+                    "workflowStepId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "dataFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataFieldValueRequest"
+                        },
                         "nullable": true
                     }
                 },
@@ -4718,11 +5030,32 @@
                     "stepOrder": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
             },
             "DataFieldLocalizationModel": {
+                "type": "object",
+                "properties": {
+                    "languageCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DataFieldLocalizationResponse": {
                 "type": "object",
                 "properties": {
                     "languageCode": {
@@ -4786,6 +5119,23 @@
                 ],
                 "type": "integer",
                 "format": "int32"
+            },
+            "DataFieldValueRequest": {
+                "required": [
+                    "dataFieldId"
+                ],
+                "type": "object",
+                "properties": {
+                    "dataFieldId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "DeleteDtcoReadJobRequest": {
                 "type": "object",
@@ -5765,6 +6115,13 @@
                         "type": "integer",
                         "format": "int32",
                         "nullable": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -6020,6 +6377,248 @@
                 },
                 "additionalProperties": false
             },
+            "TelematicDataFieldResponse": {
+                "type": "object",
+                "properties": {
+                    "dataFieldId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isRequired": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "localizations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataFieldLocalizationResponse"
+                        },
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "collectedAtUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TelematicOrderResponse": {
+                "type": "object",
+                "properties": {
+                    "internalId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "orderNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orderType": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TelematicPlaceResponse": {
+                "type": "object",
+                "properties": {
+                    "internalId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/AddressResponse"
+                    },
+                    "startDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "orders": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TelematicOrderResponse"
+                        },
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "workflow": {
+                        "$ref": "#/components/schemas/TelematicWorkflowResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TelematicTourResponse": {
+                "type": "object",
+                "properties": {
+                    "internalId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "tourNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "internalVehicleId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "internalDriverId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "startDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDateTimeUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "places": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TelematicPlaceResponse"
+                        },
+                        "nullable": true
+                    },
+                    "publicKey": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TelematicWorkflowResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "steps": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TelematicWorkflowStepResponse"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TelematicWorkflowStepResponse": {
+                "type": "object",
+                "properties": {
+                    "workflowStepId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "order": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "localizations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/WorkflowStepLocalizationResponse"
+                        },
+                        "nullable": true
+                    },
+                    "dataFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TelematicDataFieldResponse"
+                        },
+                        "nullable": true
+                    },
+                    "isCompleted": {
+                        "type": "boolean"
+                    },
+                    "completedAtUtc": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "UpdateSettingRequest": {
                 "type": "object",
                 "properties": {
@@ -6181,6 +6780,20 @@
                 },
                 "additionalProperties": false
             },
+            "WorkflowStepLocalizationResponse": {
+                "type": "object",
+                "properties": {
+                    "languageCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "WorkflowStepResponse": {
                 "type": "object",
                 "properties": {
@@ -6209,6 +6822,13 @@
                     "stepOrder": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -6241,6 +6861,9 @@
         },
         {
             "name": "EmploymentConfiguration"
+        },
+        {
+            "name": "GenericTelematicTours"
         },
         {
             "name": "InternalWorkflow"

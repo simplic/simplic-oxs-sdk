@@ -28,27 +28,45 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CreateWorkflowStepRequest
+    /// TelematicWorkflowStepResponse
     /// </summary>
-    [DataContract(Name = "CreateWorkflowStepRequest")]
-    public partial class CreateWorkflowStepRequest : IEquatable<CreateWorkflowStepRequest>, IValidatableObject
+    [DataContract(Name = "TelematicWorkflowStepResponse")]
+    public partial class TelematicWorkflowStepResponse : IEquatable<TelematicWorkflowStepResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateWorkflowStepRequest" /> class.
+        /// Initializes a new instance of the <see cref="TelematicWorkflowStepResponse" /> class.
         /// </summary>
+        /// <param name="workflowStepId">workflowStepId.</param>
+        /// <param name="order">order.</param>
         /// <param name="name">name.</param>
         /// <param name="localizations">localizations.</param>
         /// <param name="dataFields">dataFields.</param>
-        /// <param name="stepOrder">stepOrder.</param>
+        /// <param name="isCompleted">isCompleted.</param>
+        /// <param name="completedAtUtc">completedAtUtc.</param>
         /// <param name="roles">roles.</param>
-        public CreateWorkflowStepRequest(string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldSet> dataFields = default(List<WorkflowStepDataFieldSet>), int stepOrder = default(int), List<string> roles = default(List<string>))
+        public TelematicWorkflowStepResponse(Guid workflowStepId = default(Guid), int order = default(int), string name = default(string), List<WorkflowStepLocalizationResponse> localizations = default(List<WorkflowStepLocalizationResponse>), List<TelematicDataFieldResponse> dataFields = default(List<TelematicDataFieldResponse>), bool isCompleted = default(bool), DateTime? completedAtUtc = default(DateTime?), List<string> roles = default(List<string>))
         {
+            this.WorkflowStepId = workflowStepId;
+            this.Order = order;
             this.Name = name;
             this.Localizations = localizations;
             this.DataFields = dataFields;
-            this.StepOrder = stepOrder;
+            this.IsCompleted = isCompleted;
+            this.CompletedAtUtc = completedAtUtc;
             this.Roles = roles;
         }
+
+        /// <summary>
+        /// Gets or Sets WorkflowStepId
+        /// </summary>
+        [DataMember(Name = "workflowStepId", EmitDefaultValue = false)]
+        public Guid WorkflowStepId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Order
+        /// </summary>
+        [DataMember(Name = "order", EmitDefaultValue = false)]
+        public int Order { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -60,19 +78,25 @@ namespace Simplic.OxS.SDK.Telematic
         /// Gets or Sets Localizations
         /// </summary>
         [DataMember(Name = "localizations", EmitDefaultValue = true)]
-        public List<WorkflowStepLocalizationModel> Localizations { get; set; }
+        public List<WorkflowStepLocalizationResponse> Localizations { get; set; }
 
         /// <summary>
         /// Gets or Sets DataFields
         /// </summary>
         [DataMember(Name = "dataFields", EmitDefaultValue = true)]
-        public List<WorkflowStepDataFieldSet> DataFields { get; set; }
+        public List<TelematicDataFieldResponse> DataFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets StepOrder
+        /// Gets or Sets IsCompleted
         /// </summary>
-        [DataMember(Name = "stepOrder", EmitDefaultValue = false)]
-        public int StepOrder { get; set; }
+        [DataMember(Name = "isCompleted", EmitDefaultValue = true)]
+        public bool IsCompleted { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompletedAtUtc
+        /// </summary>
+        [DataMember(Name = "completedAtUtc", EmitDefaultValue = true)]
+        public DateTime? CompletedAtUtc { get; set; }
 
         /// <summary>
         /// Gets or Sets Roles
@@ -87,11 +111,14 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateWorkflowStepRequest {\n");
+            sb.Append("class TelematicWorkflowStepResponse {\n");
+            sb.Append("  WorkflowStepId: ").Append(WorkflowStepId).Append("\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Localizations: ").Append(Localizations).Append("\n");
             sb.Append("  DataFields: ").Append(DataFields).Append("\n");
-            sb.Append("  StepOrder: ").Append(StepOrder).Append("\n");
+            sb.Append("  IsCompleted: ").Append(IsCompleted).Append("\n");
+            sb.Append("  CompletedAtUtc: ").Append(CompletedAtUtc).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -113,21 +140,30 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateWorkflowStepRequest);
+            return this.Equals(input as TelematicWorkflowStepResponse);
         }
 
         /// <summary>
-        /// Returns true if CreateWorkflowStepRequest instances are equal
+        /// Returns true if TelematicWorkflowStepResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateWorkflowStepRequest to be compared</param>
+        /// <param name="input">Instance of TelematicWorkflowStepResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateWorkflowStepRequest input)
+        public bool Equals(TelematicWorkflowStepResponse input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.WorkflowStepId == input.WorkflowStepId ||
+                    (this.WorkflowStepId != null &&
+                    this.WorkflowStepId.Equals(input.WorkflowStepId))
+                ) && 
+                (
+                    this.Order == input.Order ||
+                    this.Order.Equals(input.Order)
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -146,8 +182,13 @@ namespace Simplic.OxS.SDK.Telematic
                     this.DataFields.SequenceEqual(input.DataFields)
                 ) && 
                 (
-                    this.StepOrder == input.StepOrder ||
-                    this.StepOrder.Equals(input.StepOrder)
+                    this.IsCompleted == input.IsCompleted ||
+                    this.IsCompleted.Equals(input.IsCompleted)
+                ) && 
+                (
+                    this.CompletedAtUtc == input.CompletedAtUtc ||
+                    (this.CompletedAtUtc != null &&
+                    this.CompletedAtUtc.Equals(input.CompletedAtUtc))
                 ) && 
                 (
                     this.Roles == input.Roles ||
@@ -166,6 +207,11 @@ namespace Simplic.OxS.SDK.Telematic
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.WorkflowStepId != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowStepId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Order.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -178,7 +224,11 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.DataFields.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.StepOrder.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsCompleted.GetHashCode();
+                if (this.CompletedAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompletedAtUtc.GetHashCode();
+                }
                 if (this.Roles != null)
                 {
                     hashCode = (hashCode * 59) + this.Roles.GetHashCode();

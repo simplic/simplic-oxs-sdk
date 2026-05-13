@@ -41,13 +41,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="localizations">localizations.</param>
         /// <param name="dataFields">dataFields.</param>
         /// <param name="stepOrder">stepOrder.</param>
-        public WorkflowStepResponse(Guid id = default(Guid), string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldModel> dataFields = default(List<WorkflowStepDataFieldModel>), int stepOrder = default(int))
+        /// <param name="roles">roles.</param>
+        public WorkflowStepResponse(Guid id = default(Guid), string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldModel> dataFields = default(List<WorkflowStepDataFieldModel>), int stepOrder = default(int), List<string> roles = default(List<string>))
         {
             this.Id = id;
             this.Name = name;
             this.Localizations = localizations;
             this.DataFields = dataFields;
             this.StepOrder = stepOrder;
+            this.Roles = roles;
         }
 
         /// <summary>
@@ -81,6 +83,12 @@ namespace Simplic.OxS.SDK.Telematic
         public int StepOrder { get; set; }
 
         /// <summary>
+        /// Gets or Sets Roles
+        /// </summary>
+        [DataMember(Name = "roles", EmitDefaultValue = true)]
+        public List<string> Roles { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +101,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Localizations: ").Append(Localizations).Append("\n");
             sb.Append("  DataFields: ").Append(DataFields).Append("\n");
             sb.Append("  StepOrder: ").Append(StepOrder).Append("\n");
+            sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +162,12 @@ namespace Simplic.OxS.SDK.Telematic
                 (
                     this.StepOrder == input.StepOrder ||
                     this.StepOrder.Equals(input.StepOrder)
+                ) && 
+                (
+                    this.Roles == input.Roles ||
+                    this.Roles != null &&
+                    input.Roles != null &&
+                    this.Roles.SequenceEqual(input.Roles)
                 );
         }
 
@@ -182,6 +197,10 @@ namespace Simplic.OxS.SDK.Telematic
                     hashCode = (hashCode * 59) + this.DataFields.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.StepOrder.GetHashCode();
+                if (this.Roles != null)
+                {
+                    hashCode = (hashCode * 59) + this.Roles.GetHashCode();
+                }
                 return hashCode;
             }
         }

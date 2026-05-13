@@ -28,27 +28,43 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CreateWorkflowStepRequest
+    /// TelematicDataFieldResponse
     /// </summary>
-    [DataContract(Name = "CreateWorkflowStepRequest")]
-    public partial class CreateWorkflowStepRequest : IEquatable<CreateWorkflowStepRequest>, IValidatableObject
+    [DataContract(Name = "TelematicDataFieldResponse")]
+    public partial class TelematicDataFieldResponse : IEquatable<TelematicDataFieldResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateWorkflowStepRequest" /> class.
+        /// Initializes a new instance of the <see cref="TelematicDataFieldResponse" /> class.
         /// </summary>
+        /// <param name="dataFieldId">dataFieldId.</param>
+        /// <param name="isRequired">isRequired.</param>
         /// <param name="name">name.</param>
         /// <param name="localizations">localizations.</param>
-        /// <param name="dataFields">dataFields.</param>
-        /// <param name="stepOrder">stepOrder.</param>
-        /// <param name="roles">roles.</param>
-        public CreateWorkflowStepRequest(string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldSet> dataFields = default(List<WorkflowStepDataFieldSet>), int stepOrder = default(int), List<string> roles = default(List<string>))
+        /// <param name="type">type.</param>
+        /// <param name="value">value.</param>
+        /// <param name="collectedAtUtc">collectedAtUtc.</param>
+        public TelematicDataFieldResponse(Guid dataFieldId = default(Guid), bool isRequired = default(bool), string name = default(string), List<DataFieldLocalizationResponse> localizations = default(List<DataFieldLocalizationResponse>), string type = default(string), string value = default(string), DateTime? collectedAtUtc = default(DateTime?))
         {
+            this.DataFieldId = dataFieldId;
+            this.IsRequired = isRequired;
             this.Name = name;
             this.Localizations = localizations;
-            this.DataFields = dataFields;
-            this.StepOrder = stepOrder;
-            this.Roles = roles;
+            this.Type = type;
+            this.Value = value;
+            this.CollectedAtUtc = collectedAtUtc;
         }
+
+        /// <summary>
+        /// Gets or Sets DataFieldId
+        /// </summary>
+        [DataMember(Name = "dataFieldId", EmitDefaultValue = false)]
+        public Guid DataFieldId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsRequired
+        /// </summary>
+        [DataMember(Name = "isRequired", EmitDefaultValue = true)]
+        public bool IsRequired { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -60,25 +76,25 @@ namespace Simplic.OxS.SDK.Telematic
         /// Gets or Sets Localizations
         /// </summary>
         [DataMember(Name = "localizations", EmitDefaultValue = true)]
-        public List<WorkflowStepLocalizationModel> Localizations { get; set; }
+        public List<DataFieldLocalizationResponse> Localizations { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataFields
+        /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "dataFields", EmitDefaultValue = true)]
-        public List<WorkflowStepDataFieldSet> DataFields { get; set; }
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets StepOrder
+        /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "stepOrder", EmitDefaultValue = false)]
-        public int StepOrder { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Roles
+        /// Gets or Sets CollectedAtUtc
         /// </summary>
-        [DataMember(Name = "roles", EmitDefaultValue = true)]
-        public List<string> Roles { get; set; }
+        [DataMember(Name = "collectedAtUtc", EmitDefaultValue = true)]
+        public DateTime? CollectedAtUtc { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,12 +103,14 @@ namespace Simplic.OxS.SDK.Telematic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateWorkflowStepRequest {\n");
+            sb.Append("class TelematicDataFieldResponse {\n");
+            sb.Append("  DataFieldId: ").Append(DataFieldId).Append("\n");
+            sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Localizations: ").Append(Localizations).Append("\n");
-            sb.Append("  DataFields: ").Append(DataFields).Append("\n");
-            sb.Append("  StepOrder: ").Append(StepOrder).Append("\n");
-            sb.Append("  Roles: ").Append(Roles).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  CollectedAtUtc: ").Append(CollectedAtUtc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,21 +131,30 @@ namespace Simplic.OxS.SDK.Telematic
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateWorkflowStepRequest);
+            return this.Equals(input as TelematicDataFieldResponse);
         }
 
         /// <summary>
-        /// Returns true if CreateWorkflowStepRequest instances are equal
+        /// Returns true if TelematicDataFieldResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateWorkflowStepRequest to be compared</param>
+        /// <param name="input">Instance of TelematicDataFieldResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateWorkflowStepRequest input)
+        public bool Equals(TelematicDataFieldResponse input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
+                (
+                    this.DataFieldId == input.DataFieldId ||
+                    (this.DataFieldId != null &&
+                    this.DataFieldId.Equals(input.DataFieldId))
+                ) && 
+                (
+                    this.IsRequired == input.IsRequired ||
+                    this.IsRequired.Equals(input.IsRequired)
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -140,20 +167,19 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Localizations.SequenceEqual(input.Localizations)
                 ) && 
                 (
-                    this.DataFields == input.DataFields ||
-                    this.DataFields != null &&
-                    input.DataFields != null &&
-                    this.DataFields.SequenceEqual(input.DataFields)
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.StepOrder == input.StepOrder ||
-                    this.StepOrder.Equals(input.StepOrder)
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 ) && 
                 (
-                    this.Roles == input.Roles ||
-                    this.Roles != null &&
-                    input.Roles != null &&
-                    this.Roles.SequenceEqual(input.Roles)
+                    this.CollectedAtUtc == input.CollectedAtUtc ||
+                    (this.CollectedAtUtc != null &&
+                    this.CollectedAtUtc.Equals(input.CollectedAtUtc))
                 );
         }
 
@@ -166,6 +192,11 @@ namespace Simplic.OxS.SDK.Telematic
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DataFieldId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DataFieldId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.IsRequired.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -174,14 +205,17 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.Localizations.GetHashCode();
                 }
-                if (this.DataFields != null)
+                if (this.Type != null)
                 {
-                    hashCode = (hashCode * 59) + this.DataFields.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.StepOrder.GetHashCode();
-                if (this.Roles != null)
+                if (this.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Roles.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                }
+                if (this.CollectedAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.CollectedAtUtc.GetHashCode();
                 }
                 return hashCode;
             }

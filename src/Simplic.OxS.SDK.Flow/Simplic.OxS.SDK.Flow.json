@@ -1719,6 +1719,10 @@
                     "type": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "typeBinding": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
