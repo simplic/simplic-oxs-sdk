@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **FederalState** | **string** | Gets or sets the federal state of the address. | [optional] 
 **CountryIso** | **string** | Gets or sets the country iso. | [optional] 
 **Country** | **string** | Gets or sets the country. | [optional] 
+**MatchCode** | **string** | Gets or sets the match code. | [optional] 
 **Latitude** | **double** | Gets or sets the latitude. | [optional] 
 **Longitude** | **double** | Gets or sets the longitude. | [optional] 
 

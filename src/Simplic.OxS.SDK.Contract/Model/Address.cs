@@ -50,9 +50,10 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="federalState">federalState.</param>
         /// <param name="countryIso">countryIso.</param>
         /// <param name="country">country.</param>
+        /// <param name="matchCode">matchCode.</param>
         /// <param name="latitude">latitude.</param>
         /// <param name="longitude">longitude.</param>
-        public Address(Guid contactId = default(Guid), string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), string country = default(string), double latitude = default(double), double longitude = default(double))
+        public Address(Guid contactId = default(Guid), string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), string country = default(string), string matchCode = default(string), double latitude = default(double), double longitude = default(double))
         {
             this.ContactId = contactId;
             this.FirstName = firstName;
@@ -68,6 +69,7 @@ namespace Simplic.OxS.SDK.Contract
             this.FederalState = federalState;
             this.CountryIso = countryIso;
             this.Country = country;
+            this.MatchCode = matchCode;
             this.Latitude = latitude;
             this.Longitude = longitude;
         }
@@ -157,6 +159,12 @@ namespace Simplic.OxS.SDK.Contract
         public string Country { get; set; }
 
         /// <summary>
+        /// Gets or Sets MatchCode
+        /// </summary>
+        [DataMember(Name = "matchCode", EmitDefaultValue = true)]
+        public string MatchCode { get; set; }
+
+        /// <summary>
         /// Gets or Sets Latitude
         /// </summary>
         [DataMember(Name = "latitude", EmitDefaultValue = false)]
@@ -190,6 +198,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  FederalState: ").Append(FederalState).Append("\n");
             sb.Append("  CountryIso: ").Append(CountryIso).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
             sb.Append("  Latitude: ").Append(Latitude).Append("\n");
             sb.Append("  Longitude: ").Append(Longitude).Append("\n");
             sb.Append("}\n");
@@ -298,6 +307,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.Country.Equals(input.Country))
                 ) && 
                 (
+                    this.MatchCode == input.MatchCode ||
+                    (this.MatchCode != null &&
+                    this.MatchCode.Equals(input.MatchCode))
+                ) && 
+                (
                     this.Latitude == input.Latitude ||
                     this.Latitude.Equals(input.Latitude)
                 ) && 
@@ -371,6 +385,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.Country != null)
                 {
                     hashCode = (hashCode * 59) + this.Country.GetHashCode();
+                }
+                if (this.MatchCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.MatchCode.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Latitude.GetHashCode();
                 hashCode = (hashCode * 59) + this.Longitude.GetHashCode();

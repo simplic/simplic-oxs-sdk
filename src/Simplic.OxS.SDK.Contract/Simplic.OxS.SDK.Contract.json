@@ -2622,6 +2622,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "matchCode": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "latitude": {
                         "type": "number",
                         "format": "double"
@@ -2704,6 +2708,11 @@
                     "country": {
                         "type": "string",
                         "description": "Gets or sets the country.",
+                        "nullable": true
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "description": "Gets or sets the match code.",
                         "nullable": true
                     },
                     "latitude": {

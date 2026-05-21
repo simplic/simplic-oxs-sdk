@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **FederalState** | **string** |  | [optional] 
 **CountryIso** | **string** |  | [optional] 
 **Country** | **string** |  | [optional] 
+**MatchCode** | **string** |  | [optional] 
 **Latitude** | **double** |  | [optional] 
 **Longitude** | **double** |  | [optional] 
 
