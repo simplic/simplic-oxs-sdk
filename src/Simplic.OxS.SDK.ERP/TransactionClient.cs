@@ -363,34 +363,38 @@ public interface ITransactionClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <param name="convertDraftTransactionRequest"> (optional)</param>
     /// <returns>TransactionResultModel</returns>
-    TransactionResultModel DraftsConvert(Guid id);
+    TransactionResultModel DraftsConvert(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?));
 
     /// <summary>
     /// Converts a draft transaction to a regular, non-draft transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <param name="convertDraftTransactionRequest"> (optional)</param>
     /// <returns>ApiResponse of TransactionResultModel</returns>
-    ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id);
+    ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?));
         
     /// <summary>
     /// Converts a draft transaction to a regular, non-draft transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <param name="convertDraftTransactionRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of TransactionResultModel</returns>
-    Task<TransactionResultModel> DraftsConvertAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    Task<TransactionResultModel> DraftsConvertAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Converts a draft transaction to a regular, non-draft transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id">The ID of the draft transaction to convert.</param>
+    /// <param name="convertDraftTransactionRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-    Task<ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -1386,12 +1390,13 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <returns>TransactionResultModel</returns>
-        public TransactionResultModel DraftsConvert(Guid id)
+        public TransactionResultModel DraftsConvert(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?))
         {
             try
             {
-                return _internalClient.DraftsConvert(id);
+                return _internalClient.DraftsConvert(id, convertDraftTransactionRequest);
             }
             catch (ApiException e)
             {
@@ -1404,12 +1409,13 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <returns>ApiResponse of TransactionResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id)
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?))
         {
             try
             {
-                return _internalClient.DraftsConvertWithHttpInfo(id);
+                return _internalClient.DraftsConvertWithHttpInfo(id, convertDraftTransactionRequest);
             }
             catch (ApiException e)
             {
@@ -1422,13 +1428,14 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResultModel</returns>
-        public System.Threading.Tasks.Task<TransactionResultModel> DraftsConvertAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<TransactionResultModel> DraftsConvertAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DraftsConvertAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.DraftsConvertAsync(id, convertDraftTransactionRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1441,13 +1448,14 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.DraftsConvertWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.DraftsConvertWithHttpInfoAsync(id, convertDraftTransactionRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -2173,9 +2181,10 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionResultModel</returns>
-        TransactionResultModel DraftsConvert(Guid id, int operationIndex = 0);
+        TransactionResultModel DraftsConvert(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Converts a draft transaction to a regular, non-draft transaction.
@@ -2185,9 +2194,10 @@ public interface ITransactionClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionResultModel</returns>
-        ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id, int operationIndex = 0);
+        ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0);
         /// <summary>
         /// Creates a set of draft transactions resulting from a set of billing lines.
         /// </summary>
@@ -2576,10 +2586,11 @@ public interface ITransactionClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResultModel</returns>
-        System.Threading.Tasks.Task<TransactionResultModel> DraftsConvertAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransactionResultModel> DraftsConvertAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Converts a draft transaction to a regular, non-draft transaction.
@@ -2589,10 +2600,11 @@ public interface ITransactionClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a set of draft transactions resulting from a set of billing lines.
         /// </summary>
@@ -4363,11 +4375,12 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionResultModel</returns>
-        public TransactionResultModel DraftsConvert(Guid id, int operationIndex = 0)
+        public TransactionResultModel DraftsConvert(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = DraftsConvertWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = DraftsConvertWithHttpInfo(id, convertDraftTransactionRequest);
             return localVarResponse.Data;
         }
 
@@ -4376,13 +4389,17 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id, int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> DraftsConvertWithHttpInfo(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -4405,6 +4422,7 @@ public interface ITransactionClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = convertDraftTransactionRequest;
 
             localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdConvertPut";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -4439,12 +4457,13 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResultModel</returns>
-        public async System.Threading.Tasks.Task<TransactionResultModel> DraftsConvertAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransactionResultModel> DraftsConvertAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = await DraftsConvertWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = await DraftsConvertWithHttpInfoAsync(id, convertDraftTransactionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4453,15 +4472,19 @@ public interface ITransactionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the draft transaction to convert.</param>
+        /// <param name="convertDraftTransactionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> DraftsConvertWithHttpInfoAsync(Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = default(ConvertDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -4484,6 +4507,7 @@ public interface ITransactionClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = convertDraftTransactionRequest;
 
             localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdConvertPut";
             localVarRequestOptions.OperationIndex = operationIndex;

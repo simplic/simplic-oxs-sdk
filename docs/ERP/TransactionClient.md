@@ -916,7 +916,7 @@ catch (ApiException e)
 
 <a id="transactiondraftsidconvertput"></a>
 # **DraftsConvert**
-> TransactionResultModel DraftsConvert (Guid id)
+> TransactionResultModel DraftsConvert (Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = null)
 
 Converts a draft transaction to a regular, non-draft transaction.
 
@@ -946,11 +946,12 @@ namespace Example
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | The ID of the draft transaction to convert.
+            var convertDraftTransactionRequest = new ConvertDraftTransactionRequest?(); // ConvertDraftTransactionRequest? |  (optional) 
 
             try
             {
                 // Converts a draft transaction to a regular, non-draft transaction.
-                TransactionResultModel result = apiInstance.DraftsConvert(id);
+                TransactionResultModel result = apiInstance.DraftsConvert(id, convertDraftTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -971,7 +972,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Converts a draft transaction to a regular, non-draft transaction.
-    ApiResponse<TransactionResultModel> response = apiInstance.DraftsConvertWithHttpInfo(id);
+    ApiResponse<TransactionResultModel> response = apiInstance.DraftsConvertWithHttpInfo(id, convertDraftTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -989,6 +990,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | The ID of the draft transaction to convert. |  |
+| **convertDraftTransactionRequest** | [**ConvertDraftTransactionRequest?**](ConvertDraftTransactionRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -1000,7 +1002,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 

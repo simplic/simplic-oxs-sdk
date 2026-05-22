@@ -6533,6 +6533,26 @@
                         }
                     }
                 ],
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConvertDraftTransactionRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConvertDraftTransactionRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConvertDraftTransactionRequest"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -8041,6 +8061,27 @@
                 },
                 "additionalProperties": false,
                 "description": "Rerpesents a billing period request."
+            },
+            "ConvertDraftTransactionRequest": {
+                "required": [
+                    "targetTypeId"
+                ],
+                "type": "object",
+                "properties": {
+                    "targetTypeId": {
+                        "type": "string",
+                        "description": "Gets or sets the type of the result transaction by ID.",
+                        "format": "uuid"
+                    },
+                    "targetSubtypeId": {
+                        "type": "string",
+                        "description": "Gets or sets the subtype of the result transaction by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to convert a draft transaction to a regular transaction."
             },
             "ConvertResultModel": {
                 "type": "object",
