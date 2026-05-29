@@ -44,16 +44,16 @@ public interface IFlowClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="typescript"> (optional, default to false)</param>
-    /// <returns>GetEditorTypesResponse</returns>
-    GetEditorTypesResponse EditorTypes(bool? typescript = default(bool?));
+    /// <returns>Dictionary&lt;string, TypeMetadata&gt;</returns>
+    Dictionary<string, TypeMetadata> EditorTypes(bool? typescript = default(bool?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="typescript"> (optional, default to false)</param>
-    /// <returns>ApiResponse of GetEditorTypesResponse</returns>
-    ApiResponse<GetEditorTypesResponse> EditorTypesWithHttpInfo(bool? typescript = default(bool?));
+    /// <returns>ApiResponse of Dictionary&lt;string, TypeMetadata&gt;</returns>
+    ApiResponse<Dictionary<string, TypeMetadata>> EditorTypesWithHttpInfo(bool? typescript = default(bool?));
         
     /// <summary>
     ///  
@@ -61,8 +61,8 @@ public interface IFlowClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="typescript"> (optional, default to false)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of GetEditorTypesResponse</returns>
-    Task<GetEditorTypesResponse> EditorTypesAsync(bool? typescript = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of Dictionary&lt;string, TypeMetadata&gt;</returns>
+    Task<Dictionary<string, TypeMetadata>> EditorTypesAsync(bool? typescript = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
@@ -70,8 +70,8 @@ public interface IFlowClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="typescript"> (optional, default to false)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (GetEditorTypesResponse)</returns>
-    Task<ApiResponse<GetEditorTypesResponse>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (Dictionary&lt;string, TypeMetadata&gt;)</returns>
+    Task<ApiResponse<Dictionary<string, TypeMetadata>>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -480,8 +480,8 @@ public interface IFlowClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
-        /// <returns>GetEditorTypesResponse</returns>
-        public GetEditorTypesResponse EditorTypes(bool? typescript = default(bool?))
+        /// <returns>Dictionary&lt;string, TypeMetadata&gt;</returns>
+        public Dictionary<string, TypeMetadata> EditorTypes(bool? typescript = default(bool?))
         {
             try
             {
@@ -498,8 +498,8 @@ public interface IFlowClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
-        /// <returns>ApiResponse of GetEditorTypesResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<GetEditorTypesResponse> EditorTypesWithHttpInfo(bool? typescript = default(bool?))
+        /// <returns>ApiResponse of Dictionary&lt;string, TypeMetadata&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<Dictionary<string, TypeMetadata>> EditorTypesWithHttpInfo(bool? typescript = default(bool?))
         {
             try
             {
@@ -517,8 +517,8 @@ public interface IFlowClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetEditorTypesResponse</returns>
-        public System.Threading.Tasks.Task<GetEditorTypesResponse> EditorTypesAsync(bool? typescript = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Dictionary&lt;string, TypeMetadata&gt;</returns>
+        public System.Threading.Tasks.Task<Dictionary<string, TypeMetadata>> EditorTypesAsync(bool? typescript = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -536,8 +536,8 @@ public interface IFlowClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetEditorTypesResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetEditorTypesResponse>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, TypeMetadata&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Dictionary<string, TypeMetadata>>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1236,8 +1236,8 @@ public interface IFlowClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetEditorTypesResponse</returns>
-        GetEditorTypesResponse EditorTypes(bool? typescript = default(bool?), int operationIndex = 0);
+        /// <returns>Dictionary&lt;string, TypeMetadata&gt;</returns>
+        Dictionary<string, TypeMetadata> EditorTypes(bool? typescript = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -1248,8 +1248,8 @@ public interface IFlowClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetEditorTypesResponse</returns>
-        ApiResponse<GetEditorTypesResponse> EditorTypesWithHttpInfo(bool? typescript = default(bool?), int operationIndex = 0);
+        /// <returns>ApiResponse of Dictionary&lt;string, TypeMetadata&gt;</returns>
+        ApiResponse<Dictionary<string, TypeMetadata>> EditorTypesWithHttpInfo(bool? typescript = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1455,8 +1455,8 @@ public interface IFlowClient
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetEditorTypesResponse</returns>
-        System.Threading.Tasks.Task<GetEditorTypesResponse> EditorTypesAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Dictionary&lt;string, TypeMetadata&gt;</returns>
+        System.Threading.Tasks.Task<Dictionary<string, TypeMetadata>> EditorTypesAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1468,8 +1468,8 @@ public interface IFlowClient
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetEditorTypesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetEditorTypesResponse>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, TypeMetadata&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, TypeMetadata>>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1829,10 +1829,10 @@ public interface IFlowClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>GetEditorTypesResponse</returns>
-        public GetEditorTypesResponse EditorTypes(bool? typescript = default(bool?), int operationIndex = 0)
+        /// <returns>Dictionary&lt;string, TypeMetadata&gt;</returns>
+        public Dictionary<string, TypeMetadata> EditorTypes(bool? typescript = default(bool?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<GetEditorTypesResponse> localVarResponse = EditorTypesWithHttpInfo(typescript);
+            Simplic.OxS.SDK.ApiResponse<Dictionary<string, TypeMetadata>> localVarResponse = EditorTypesWithHttpInfo(typescript);
             return localVarResponse.Data;
         }
 
@@ -1842,8 +1842,8 @@ public interface IFlowClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of GetEditorTypesResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<GetEditorTypesResponse> EditorTypesWithHttpInfo(bool? typescript = default(bool?), int operationIndex = 0)
+        /// <returns>ApiResponse of Dictionary&lt;string, TypeMetadata&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<Dictionary<string, TypeMetadata>> EditorTypesWithHttpInfo(bool? typescript = default(bool?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1889,7 +1889,7 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetEditorTypesResponse>("/Flow/editor-types", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Dictionary<string, TypeMetadata>>("/Flow/editor-types", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FlowEditorTypesGet", localVarResponse);
@@ -1909,10 +1909,10 @@ public interface IFlowClient
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetEditorTypesResponse</returns>
-        public async System.Threading.Tasks.Task<GetEditorTypesResponse> EditorTypesAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Dictionary&lt;string, TypeMetadata&gt;</returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, TypeMetadata>> EditorTypesAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<GetEditorTypesResponse> localVarResponse = await EditorTypesWithHttpInfoAsync(typescript, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<Dictionary<string, TypeMetadata>> localVarResponse = await EditorTypesWithHttpInfoAsync(typescript, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1923,8 +1923,8 @@ public interface IFlowClient
         /// <param name="typescript"> (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetEditorTypesResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<GetEditorTypesResponse>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, TypeMetadata&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Dictionary<string, TypeMetadata>>> EditorTypesWithHttpInfoAsync(bool? typescript = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1971,7 +1971,7 @@ public interface IFlowClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetEditorTypesResponse>("/Flow/editor-types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TypeMetadata>>("/Flow/editor-types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

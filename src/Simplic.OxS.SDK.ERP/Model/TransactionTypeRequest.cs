@@ -47,7 +47,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="shortName">Gets or sets the short name..</param>
         /// <param name="functions">Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
         /// <param name="subtypes">Gets or sets the set of subtypes. (required).</param>
-        public TransactionTypeRequest(string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), List<TransactionSubtypeRequest> subtypes = default(List<TransactionSubtypeRequest>))
+        /// <param name="code">Gets or sets an code.  This code is to be used by internal processes..</param>
+        public TransactionTypeRequest(string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), List<TransactionSubtypeRequest> subtypes = default(List<TransactionSubtypeRequest>), string code = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -65,6 +66,7 @@ namespace Simplic.OxS.SDK.ERP
             this.ReportName = reportName;
             this.ShortName = shortName;
             this.Functions = functions;
+            this.Code = code;
         }
 
         /// <summary>
@@ -110,6 +112,13 @@ namespace Simplic.OxS.SDK.ERP
         public List<TransactionSubtypeRequest> Subtypes { get; set; }
 
         /// <summary>
+        /// Gets or sets an code.  This code is to be used by internal processes.
+        /// </summary>
+        /// <value>Gets or sets an code.  This code is to be used by internal processes.</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -123,6 +132,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  Functions: ").Append(Functions).Append("\n");
             sb.Append("  Subtypes: ").Append(Subtypes).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,6 +198,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Subtypes != null &&
                     input.Subtypes != null &&
                     this.Subtypes.SequenceEqual(input.Subtypes)
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 );
         }
 
@@ -220,6 +235,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Subtypes != null)
                 {
                     hashCode = (hashCode * 59) + this.Subtypes.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 return hashCode;
             }

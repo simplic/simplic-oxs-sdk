@@ -12926,6 +12926,11 @@
                         "type": "string",
                         "description": "Gets or sets the article GLA resolver.",
                         "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -13813,6 +13818,11 @@
                             "$ref": "#/components/schemas/TransactionSubtypeRequest"
                         },
                         "description": "Gets or sets the set of subtypes."
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -14359,6 +14369,11 @@
                         "type": "string",
                         "description": "Gets or sets the article GLA resolver.",
                         "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -14607,6 +14622,11 @@
                             "$ref": "#/components/schemas/TransactionSubtypeRequest"
                         },
                         "description": "Gets or sets the set of subtypes.",
+                        "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
                         "nullable": true
                     }
                 },

@@ -48,7 +48,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="detailHtml">Gets or sets the detail HTML..</param>
         /// <param name="dataTemplate">Gets or sets the data template..</param>
         /// <param name="articleGLAResolver">Gets or sets the article GLA resolver..</param>
-        public TransactionItemTypeRequest(string name = default(string), int number = default(int), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string))
+        /// <param name="code">Gets or sets an code.  This code is to be used by internal processes..</param>
+        public TransactionItemTypeRequest(string name = default(string), int number = default(int), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), string code = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -62,6 +63,7 @@ namespace Simplic.OxS.SDK.ERP
             this.DetailHtml = detailHtml;
             this.DataTemplate = dataTemplate;
             this.ArticleGLAResolver = articleGLAResolver;
+            this.Code = code;
         }
 
         /// <summary>
@@ -114,6 +116,13 @@ namespace Simplic.OxS.SDK.ERP
         public string ArticleGLAResolver { get; set; }
 
         /// <summary>
+        /// Gets or sets an code.  This code is to be used by internal processes.
+        /// </summary>
+        /// <value>Gets or sets an code.  This code is to be used by internal processes.</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -128,6 +137,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  DetailHtml: ").Append(DetailHtml).Append("\n");
             sb.Append("  DataTemplate: ").Append(DataTemplate).Append("\n");
             sb.Append("  ArticleGLAResolver: ").Append(ArticleGLAResolver).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,6 +204,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ArticleGLAResolver == input.ArticleGLAResolver ||
                     (this.ArticleGLAResolver != null &&
                     this.ArticleGLAResolver.Equals(input.ArticleGLAResolver))
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 );
         }
 
@@ -224,6 +239,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ArticleGLAResolver != null)
                 {
                     hashCode = (hashCode * 59) + this.ArticleGLAResolver.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 return hashCode;
             }

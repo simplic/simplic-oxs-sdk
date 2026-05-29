@@ -17,7 +17,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 
 <a id="floweditortypesget"></a>
 # **EditorTypes**
-> GetEditorTypesResponse EditorTypes (bool? typescript = null)
+> Dictionary&lt;string, TypeMetadata&gt; EditorTypes (bool? typescript = null)
 
 
 
@@ -50,7 +50,7 @@ namespace Example
 
             try
             {
-                GetEditorTypesResponse result = apiInstance.EditorTypes(typescript);
+                Dictionary<string, TypeMetadata> result = apiInstance.EditorTypes(typescript);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -70,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<GetEditorTypesResponse> response = apiInstance.EditorTypesWithHttpInfo(typescript);
+    ApiResponse<Dictionary<string, TypeMetadata>> response = apiInstance.EditorTypesWithHttpInfo(typescript);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -91,7 +91,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**GetEditorTypesResponse**](GetEditorTypesResponse.md)
+[**Dictionary&lt;string, TypeMetadata&gt;**](TypeMetadata.md)
 
 ### Authorization
 
