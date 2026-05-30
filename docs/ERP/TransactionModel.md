@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **ManualVat** | [**TransactionManualVatModel**](TransactionManualVatModel.md) |  | [optional] 
 **Notes** | **string** | Gets or sets notes. | [optional] 
 **DueDate** | **DateTime?** | Gets or sets the due date. | [optional] 
-**ReferenceNr** | **string** | Gets or sets the reference number. | [optional] 
+**ReferenceNumber** | **string** | Gets or sets the reference number. | [optional] 
 **TaxGroup** | [**TaxGroupModel**](TaxGroupModel.md) |  | [optional] 
 **TotalPrice** | **double** | Gets or sets the total price. | [optional] 
 **TotalPriceGross** | **double** | Gets or sets the gross total price. | [optional] 

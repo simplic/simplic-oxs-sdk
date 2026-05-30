@@ -82,7 +82,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="manualVat">manualVat.</param>
         /// <param name="notes">Gets or sets notes..</param>
         /// <param name="dueDate">Gets or sets the due date..</param>
-        /// <param name="referenceNr">Gets or sets the reference number..</param>
+        /// <param name="referenceNumber">Gets or sets the reference number..</param>
         /// <param name="taxGroup">taxGroup.</param>
         /// <param name="totalPrice">Gets or sets the total price..</param>
         /// <param name="totalPriceGross">Gets or sets the gross total price..</param>
@@ -109,7 +109,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the transaction is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction..</param>
-        public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNr = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationModeModel? operationItemCombinationMode = default(OperationItemCombinationModeModel?), bool isGross = default(bool), bool financialExportDisabled = default(bool), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel), List<CostCenterAssignmentModel> defaultCostCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> defaultCostObjects = default(List<CostCenterAssignmentModel>), MetadataProcessingDataModel metadataProcessingData = default(MetadataProcessingDataModel), DateTime? cashDiscountDate = default(DateTime?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationModeModel? operationItemCombinationMode = default(OperationItemCombinationModeModel?), bool isGross = default(bool), bool financialExportDisabled = default(bool), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel), List<CostCenterAssignmentModel> defaultCostCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> defaultCostObjects = default(List<CostCenterAssignmentModel>), MetadataProcessingDataModel metadataProcessingData = default(MetadataProcessingDataModel), DateTime? cashDiscountDate = default(DateTime?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -145,7 +145,7 @@ namespace Simplic.OxS.SDK.ERP
             this.ManualVat = manualVat;
             this.Notes = notes;
             this.DueDate = dueDate;
-            this.ReferenceNr = referenceNr;
+            this.ReferenceNumber = referenceNumber;
             this.TaxGroup = taxGroup;
             this.TotalPrice = totalPrice;
             this.TotalPriceGross = totalPriceGross;
@@ -391,8 +391,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the reference number.
         /// </summary>
         /// <value>Gets or sets the reference number.</value>
-        [DataMember(Name = "referenceNr", EmitDefaultValue = true)]
-        public string ReferenceNr { get; set; }
+        [DataMember(Name = "referenceNumber", EmitDefaultValue = true)]
+        public string ReferenceNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxGroup
@@ -607,7 +607,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  ManualVat: ").Append(ManualVat).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  DueDate: ").Append(DueDate).Append("\n");
-            sb.Append("  ReferenceNr: ").Append(ReferenceNr).Append("\n");
+            sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
             sb.Append("  TaxGroup: ").Append(TaxGroup).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  TotalPriceGross: ").Append(TotalPriceGross).Append("\n");
@@ -840,9 +840,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.DueDate.Equals(input.DueDate))
                 ) && 
                 (
-                    this.ReferenceNr == input.ReferenceNr ||
-                    (this.ReferenceNr != null &&
-                    this.ReferenceNr.Equals(input.ReferenceNr))
+                    this.ReferenceNumber == input.ReferenceNumber ||
+                    (this.ReferenceNumber != null &&
+                    this.ReferenceNumber.Equals(input.ReferenceNumber))
                 ) && 
                 (
                     this.TaxGroup == input.TaxGroup ||
@@ -1104,9 +1104,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.DueDate.GetHashCode();
                 }
-                if (this.ReferenceNr != null)
+                if (this.ReferenceNumber != null)
                 {
-                    hashCode = (hashCode * 59) + this.ReferenceNr.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ReferenceNumber.GetHashCode();
                 }
                 if (this.TaxGroup != null)
                 {

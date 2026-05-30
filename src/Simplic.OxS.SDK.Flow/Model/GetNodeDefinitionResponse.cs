@@ -87,13 +87,14 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="markdown">markdown (required).</param>
         /// <param name="target">target (required).</param>
         /// <param name="deploymentHook">deploymentHook.</param>
+        /// <param name="isPure">isPure.</param>
         /// <param name="customDataInPinTemplate">customDataInPinTemplate.</param>
         /// <param name="customFlowOutPinTemplate">customFlowOutPinTemplate.</param>
         /// <param name="dataInPins">dataInPins.</param>
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package (required).</param>
-        public GetNodeDefinitionResponse(string id = default(string), TypeEnum type = default(TypeEnum), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), string deploymentHook = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageResponse package = default(NodePackageResponse))
+        public GetNodeDefinitionResponse(string id = default(string), TypeEnum type = default(TypeEnum), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), string deploymentHook = default(string), bool isPure = default(bool), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageResponse package = default(NodePackageResponse))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -120,6 +121,7 @@ namespace Simplic.OxS.SDK.Flow
             this.DisplayKey = displayKey;
             this.Description = description;
             this.DeploymentHook = deploymentHook;
+            this.IsPure = isPure;
             this.CustomDataInPinTemplate = customDataInPinTemplate;
             this.CustomFlowOutPinTemplate = customFlowOutPinTemplate;
             this.DataInPins = dataInPins;
@@ -168,6 +170,12 @@ namespace Simplic.OxS.SDK.Flow
         /// </summary>
         [DataMember(Name = "deploymentHook", EmitDefaultValue = true)]
         public string DeploymentHook { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsPure
+        /// </summary>
+        [DataMember(Name = "isPure", EmitDefaultValue = true)]
+        public bool IsPure { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomDataInPinTemplate
@@ -222,6 +230,7 @@ namespace Simplic.OxS.SDK.Flow
             sb.Append("  Markdown: ").Append(Markdown).Append("\n");
             sb.Append("  Target: ").Append(Target).Append("\n");
             sb.Append("  DeploymentHook: ").Append(DeploymentHook).Append("\n");
+            sb.Append("  IsPure: ").Append(IsPure).Append("\n");
             sb.Append("  CustomDataInPinTemplate: ").Append(CustomDataInPinTemplate).Append("\n");
             sb.Append("  CustomFlowOutPinTemplate: ").Append(CustomFlowOutPinTemplate).Append("\n");
             sb.Append("  DataInPins: ").Append(DataInPins).Append("\n");
@@ -307,6 +316,10 @@ namespace Simplic.OxS.SDK.Flow
                     this.DeploymentHook.Equals(input.DeploymentHook))
                 ) && 
                 (
+                    this.IsPure == input.IsPure ||
+                    this.IsPure.Equals(input.IsPure)
+                ) && 
+                (
                     this.CustomDataInPinTemplate == input.CustomDataInPinTemplate ||
                     (this.CustomDataInPinTemplate != null &&
                     this.CustomDataInPinTemplate.Equals(input.CustomDataInPinTemplate))
@@ -380,6 +393,7 @@ namespace Simplic.OxS.SDK.Flow
                 {
                     hashCode = (hashCode * 59) + this.DeploymentHook.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsPure.GetHashCode();
                 if (this.CustomDataInPinTemplate != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomDataInPinTemplate.GetHashCode();

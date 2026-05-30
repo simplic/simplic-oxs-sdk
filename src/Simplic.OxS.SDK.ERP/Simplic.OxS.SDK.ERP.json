@@ -13125,7 +13125,7 @@
                         "format": "date-time",
                         "nullable": true
                     },
-                    "referenceNr": {
+                    "referenceNumber": {
                         "type": "string",
                         "description": "Gets or sets the reference number.",
                         "nullable": true

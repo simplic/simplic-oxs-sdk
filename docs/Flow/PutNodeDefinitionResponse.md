@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Markdown** | **string** |  | 
 **Target** | **NodeDefinitionTarget** |  | 
 **DeploymentHook** | **string** |  | [optional] 
+**IsPure** | **bool** |  | [optional] 
 **CustomDataInPinTemplate** | [**CustomDataInPinTemplateDefinition**](CustomDataInPinTemplateDefinition.md) |  | [optional] 
 **CustomFlowOutPinTemplate** | [**CustomFlowOutPinTemplateDefinition**](CustomFlowOutPinTemplateDefinition.md) |  | [optional] 
 **DataInPins** | [**List&lt;DataInPinDefinition&gt;**](DataInPinDefinition.md) |  | [optional] 
