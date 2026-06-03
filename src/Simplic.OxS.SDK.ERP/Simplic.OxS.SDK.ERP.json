@@ -11356,6 +11356,40 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "QuantityModel": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the quantity value.",
+                        "format": "double"
+                    },
+                    "unit": {
+                        "$ref": "#/components/schemas/QuantityUnitModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the response model for a quantity value and its unit."
+            },
+            "QuantityRequest": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the quantity value.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "unitId": {
+                        "type": "string",
+                        "description": "Gets or sets the unit the quantity is measured in by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a quantity value and its unit in transaction item requests."
+            },
             "QuantityUnitModel": {
                 "type": "object",
                 "properties": {
@@ -12487,13 +12521,7 @@
                         "$ref": "#/components/schemas/TransactionItemModel"
                     },
                     "quantity": {
-                        "type": "number",
-                        "description": "Gets or sets the quantity.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "unit": {
-                        "$ref": "#/components/schemas/QuantityUnitModel"
+                        "$ref": "#/components/schemas/QuantityModel"
                     },
                     "inputPrice": {
                         "type": "number",
@@ -12687,16 +12715,7 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "type": "number",
-                        "description": "Gets or sets the quantity.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "unitId": {
-                        "type": "string",
-                        "description": "Gets or sets the unit the quantity is measured in by ID.",
-                        "format": "uuid",
-                        "nullable": true
+                        "$ref": "#/components/schemas/QuantityRequest"
                     },
                     "inputPrice": {
                         "type": "number",

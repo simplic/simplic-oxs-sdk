@@ -63,8 +63,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="assignmentMode">assignmentMode.</param>
         /// <param name="amount">Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  .</param>
         /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest..</param>
-        /// <param name="quantity">Gets or sets the quantity..</param>
-        /// <param name="unitId">Gets or sets the unit the quantity is measured in by ID..</param>
+        /// <param name="quantity">quantity.</param>
         /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
         /// <param name="taxKeyId">Gets or sets the tax key given by ID if a specific tax key should be used for this item..</param>
@@ -80,7 +79,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
         /// <param name="remove">Remove flag for the patch helper..</param>
-        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), double? quantity = default(double?), Guid? unitId = default(Guid?), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), Guid? priceUnitId = default(Guid?), Guid? taxRateId = default(Guid?), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool? isManualBillingLine = default(bool?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), bool remove = default(bool))
+        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), QuantityRequest quantity = default(QuantityRequest), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), Guid? priceUnitId = default(Guid?), Guid? taxRateId = default(Guid?), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool? isManualBillingLine = default(bool?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), bool remove = default(bool))
         {
             this.Id = id;
             this.Text = text;
@@ -92,7 +91,6 @@ namespace Simplic.OxS.SDK.ERP
             this.Amount = amount;
             this.BehaviorDefinitions = behaviorDefinitions;
             this.Quantity = quantity;
-            this.UnitId = unitId;
             this.InputPrice = inputPrice;
             this.InputPriceType = inputPriceType;
             this.TaxKeyId = taxKeyId;
@@ -160,18 +158,10 @@ namespace Simplic.OxS.SDK.ERP
         public List<BehaviorDefinitionRequest> BehaviorDefinitions { get; set; }
 
         /// <summary>
-        /// Gets or sets the quantity.
+        /// Gets or Sets Quantity
         /// </summary>
-        /// <value>Gets or sets the quantity.</value>
-        [DataMember(Name = "quantity", EmitDefaultValue = true)]
-        public double? Quantity { get; set; }
-
-        /// <summary>
-        /// Gets or sets the unit the quantity is measured in by ID.
-        /// </summary>
-        /// <value>Gets or sets the unit the quantity is measured in by ID.</value>
-        [DataMember(Name = "unitId", EmitDefaultValue = true)]
-        public Guid? UnitId { get; set; }
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
+        public QuantityRequest Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets the price user input.
@@ -289,7 +279,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  BehaviorDefinitions: ").Append(BehaviorDefinitions).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  UnitId: ").Append(UnitId).Append("\n");
             sb.Append("  InputPrice: ").Append(InputPrice).Append("\n");
             sb.Append("  InputPriceType: ").Append(InputPriceType).Append("\n");
             sb.Append("  TaxKeyId: ").Append(TaxKeyId).Append("\n");
@@ -388,11 +377,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.Quantity == input.Quantity ||
                     (this.Quantity != null &&
                     this.Quantity.Equals(input.Quantity))
-                ) && 
-                (
-                    this.UnitId == input.UnitId ||
-                    (this.UnitId != null &&
-                    this.UnitId.Equals(input.UnitId))
                 ) && 
                 (
                     this.InputPrice == input.InputPrice ||
@@ -515,10 +499,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Quantity != null)
                 {
                     hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
-                }
-                if (this.UnitId != null)
-                {
-                    hashCode = (hashCode * 59) + this.UnitId.GetHashCode();
                 }
                 if (this.InputPrice != null)
                 {
