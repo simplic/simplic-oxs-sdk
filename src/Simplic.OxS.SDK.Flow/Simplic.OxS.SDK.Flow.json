@@ -1856,7 +1856,8 @@
                         "enum": [
                             "action",
                             "onEvent",
-                            "controlFlow"
+                            "controlFlow",
+                            "pure"
                         ],
                         "type": "string"
                     },
@@ -1886,9 +1887,6 @@
                     "deploymentHook": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "isPure": {
-                        "type": "boolean"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2014,7 +2012,8 @@
                         "enum": [
                             "action",
                             "onEvent",
-                            "controlFlow"
+                            "controlFlow",
+                            "pure"
                         ],
                         "type": "string"
                     },
@@ -2044,9 +2043,6 @@
                     "deploymentHook": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "isPure": {
-                        "type": "boolean"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2308,7 +2304,8 @@
                         "enum": [
                             "action",
                             "onEvent",
-                            "controlFlow"
+                            "controlFlow",
+                            "pure"
                         ],
                         "type": "string"
                     },
@@ -2338,9 +2335,6 @@
                     "deploymentHook": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "isPure": {
-                        "type": "boolean"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2393,7 +2387,8 @@
                         "enum": [
                             "action",
                             "onEvent",
-                            "controlFlow"
+                            "controlFlow",
+                            "pure"
                         ],
                         "type": "string"
                     },
@@ -2423,9 +2418,6 @@
                     "deploymentHook": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "isPure": {
-                        "type": "boolean"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2533,7 +2525,8 @@
                         "enum": [
                             "action",
                             "onEvent",
-                            "controlFlow"
+                            "controlFlow",
+                            "pure"
                         ],
                         "type": "string"
                     },
@@ -2563,9 +2556,6 @@
                     "deploymentHook": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "isPure": {
-                        "type": "boolean"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
@@ -2618,7 +2608,8 @@
                         "enum": [
                             "action",
                             "onEvent",
-                            "controlFlow"
+                            "controlFlow",
+                            "pure"
                         ],
                         "type": "string"
                     },
@@ -2648,9 +2639,6 @@
                     "deploymentHook": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "isPure": {
-                        "type": "boolean"
                     },
                     "customDataInPinTemplate": {
                         "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
