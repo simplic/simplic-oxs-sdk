@@ -1877,6 +1877,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "category": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "markdown": {
                         "type": "string",
                         "nullable": true
@@ -2030,6 +2034,10 @@
                         "nullable": true
                     },
                     "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "category": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2325,6 +2333,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "category": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "markdown": {
                         "minLength": 1,
                         "type": "string"
@@ -2405,6 +2417,10 @@
                         "nullable": true
                     },
                     "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "category": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2546,6 +2562,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "category": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "markdown": {
                         "minLength": 1,
                         "type": "string"
@@ -2626,6 +2646,10 @@
                         "nullable": true
                     },
                     "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "category": {
                         "type": "string",
                         "nullable": true
                     },

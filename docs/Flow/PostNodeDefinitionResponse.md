@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | [optional] 
 **DisplayKey** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
+**Category** | **string** |  | [optional] 
 **Markdown** | **string** |  | 
 **Target** | **NodeDefinitionTarget** |  | 
 **DeploymentHook** | **string** |  | [optional] 
