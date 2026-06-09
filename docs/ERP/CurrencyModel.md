@@ -5,9 +5,8 @@ Represents the shared model for Simplic.OxS.ERP.Currency.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**OrganizationId** | **Guid** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
+**Id** | **Guid** | Gets or sets the ID. | [optional] 
+**IsDeleted** | **bool** | Gets or sets the is deleted flag. | [optional] 
 **Number** | **int** | Gets or sets the number. | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
 **ShortName** | **string** | Gets or sets the name. | [optional] 

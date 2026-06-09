@@ -79,7 +79,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
         /// <param name="remove">Remove flag for the patch helper..</param>
-        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), QuantityRequest quantity = default(QuantityRequest), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), Guid? priceUnitId = default(Guid?), Guid? taxRateId = default(Guid?), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool? isManualBillingLine = default(bool?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), bool remove = default(bool))
+        public TransactionItemRequest(Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), double? amount = default(double?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), QuantityRequest quantity = default(QuantityRequest), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), Guid? priceUnitId = default(Guid?), Guid? taxRateId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool? isManualBillingLine = default(bool?), double? deltaValue = default(double?), List<TransactionItemRequest> items = default(List<TransactionItemRequest>), bool remove = default(bool))
         {
             this.Id = id;
             this.Text = text;
@@ -231,7 +231,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets a set of additional references.</value>
         [DataMember(Name = "references", EmitDefaultValue = true)]
-        public List<BillingLineReferenceModel> References { get; set; }
+        public List<BillingLineReferenceRequest> References { get; set; }
 
         /// <summary>
         /// Gets or sets the flag indicating whether the billing line was created manually.

@@ -36,9 +36,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxGroupModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="organizationId">organizationId.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="isDeleted">Gets or sets the is deleted flag..</param>
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="countries">Gets or sets the set of countries..</param>
@@ -48,10 +47,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the tax group is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the tax group..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the tax group..</param>
-        public TaxGroupModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), List<TaxGroupCountryModel> countries = default(List<TaxGroupCountryModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TaxGroupModel(Guid id = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), List<TaxGroupCountryModel> countries = default(List<TaxGroupCountryModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
-            this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
             this.Number = number;
             this.Name = name;
@@ -65,20 +63,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Gets or sets the is deleted flag.
         /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsDeleted
-        /// </summary>
+        /// <value>Gets or sets the is deleted flag.</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
@@ -154,7 +148,6 @@ namespace Simplic.OxS.SDK.ERP
             StringBuilder sb = new StringBuilder();
             sb.Append("class TaxGroupModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -204,11 +197,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
                 ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
@@ -273,10 +261,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.OrganizationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 hashCode = (hashCode * 59) + this.Number.GetHashCode();

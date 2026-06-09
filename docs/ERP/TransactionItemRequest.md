@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **PriceUnitId** | **Guid?** | Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured  in tons.   | [optional] 
 **TaxRateId** | **Guid?** | Gets or sets the tax rate for this billing line by ID. | [optional] 
 **Reference** | **string** | Gets or sets the main reference. | [optional] 
-**References** | [**List&lt;BillingLineReferenceModel&gt;**](BillingLineReferenceModel.md) | Gets or sets a set of additional references. | [optional] 
+**References** | [**List&lt;BillingLineReferenceRequest&gt;**](BillingLineReferenceRequest.md) | Gets or sets a set of additional references. | [optional] 
 **IsManualBillingLine** | **bool?** | Gets or sets the flag indicating whether the billing line was created manually. | [optional] 
 **DeltaValue** | **double?** | Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator. | [optional] 
 **Items** | [**List&lt;TransactionItemRequest&gt;**](TransactionItemRequest.md) | Gets or sets a set of transaction items that are part of the group. | [optional] 

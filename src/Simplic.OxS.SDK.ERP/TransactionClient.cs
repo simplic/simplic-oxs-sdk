@@ -43,35 +43,35 @@ public interface ITransactionClient
     /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="barcode"> (optional)</param>
+    /// <param name="barcode"></param>
     /// <returns>TransactionModel</returns>
-    TransactionModel ByBarcode(string? barcode = default(string?));
+    TransactionModel ByBarcode(string barcode);
 
     /// <summary>
     /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="barcode"> (optional)</param>
+    /// <param name="barcode"></param>
     /// <returns>ApiResponse of TransactionModel</returns>
-    ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string? barcode = default(string?));
+    ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string barcode);
         
     /// <summary>
     /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="barcode"> (optional)</param>
+    /// <param name="barcode"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of TransactionModel</returns>
-    Task<TransactionModel> ByBarcodeAsync(string? barcode = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<TransactionModel> ByBarcodeAsync(string barcode, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Gets a transaction by barcode. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="barcode"> (optional)</param>
+    /// <param name="barcode"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TransactionModel)</returns>
-    Task<ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string? barcode = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string barcode, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -117,35 +117,35 @@ public interface ITransactionClient
     /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="number"> (optional)</param>
+    /// <param name="number"></param>
     /// <returns>List&lt;TransactionModel&gt;</returns>
-    List<TransactionModel> ByNumber(string? number = default(string?));
+    List<TransactionModel> ByNumber(string number);
 
     /// <summary>
     /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="number"> (optional)</param>
+    /// <param name="number"></param>
     /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
-    ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string? number = default(string?));
+    ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string number);
         
     /// <summary>
     /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="number"> (optional)</param>
+    /// <param name="number"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of List&lt;TransactionModel&gt;</returns>
-    Task<List<TransactionModel>> ByNumberAsync(string? number = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<List<TransactionModel>> ByNumberAsync(string number, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Gets a set of transactions by number. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="number"> (optional)</param>
+    /// <param name="number"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
-    Task<ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string? number = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string number, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -728,9 +728,9 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <returns>TransactionModel</returns>
-        public TransactionModel ByBarcode(string? barcode = default(string?))
+        public TransactionModel ByBarcode(string barcode)
         {
             try
             {
@@ -746,9 +746,9 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <returns>ApiResponse of TransactionModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string? barcode = default(string?))
+        public Simplic.OxS.SDK.ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string barcode)
         {
             try
             {
@@ -764,10 +764,10 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionModel</returns>
-        public System.Threading.Tasks.Task<TransactionModel> ByBarcodeAsync(string? barcode = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<TransactionModel> ByBarcodeAsync(string barcode, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -783,10 +783,10 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string? barcode = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string barcode, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -878,9 +878,9 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <returns>List&lt;TransactionModel&gt;</returns>
-        public List<TransactionModel> ByNumber(string? number = default(string?))
+        public List<TransactionModel> ByNumber(string number)
         {
             try
             {
@@ -896,9 +896,9 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string? number = default(string?))
+        public Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string number)
         {
             try
             {
@@ -914,10 +914,10 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TransactionModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<TransactionModel>> ByNumberAsync(string? number = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<TransactionModel>> ByNumberAsync(string number, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -933,10 +933,10 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string? number = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string number, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1998,10 +1998,10 @@ public interface ITransactionClient
         /// Gets a transaction by barcode.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionModel</returns>
-        TransactionModel ByBarcode(string? barcode = default(string?), int operationIndex = 0);
+        TransactionModel ByBarcode(string barcode, int operationIndex = 0);
 
         /// <summary>
         /// Gets a transaction by barcode.
@@ -2010,10 +2010,10 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionModel</returns>
-        ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string? barcode = default(string?), int operationIndex = 0);
+        ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string barcode, int operationIndex = 0);
         /// <summary>
         /// Gets a set of transactions occuring between two points in time.
         /// </summary>
@@ -2040,10 +2040,10 @@ public interface ITransactionClient
         /// Gets a set of transactions by number.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TransactionModel&gt;</returns>
-        List<TransactionModel> ByNumber(string? number = default(string?), int operationIndex = 0);
+        List<TransactionModel> ByNumber(string number, int operationIndex = 0);
 
         /// <summary>
         /// Gets a set of transactions by number.
@@ -2052,10 +2052,10 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
-        ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string? number = default(string?), int operationIndex = 0);
+        ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string number, int operationIndex = 0);
         /// <summary>
         /// Cancels a transaction.
         /// </summary>
@@ -2358,11 +2358,11 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionModel</returns>
-        System.Threading.Tasks.Task<TransactionModel> ByBarcodeAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransactionModel> ByBarcodeAsync(string barcode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets a transaction by barcode.
@@ -2371,11 +2371,11 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string barcode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets a set of transactions occuring between two points in time.
         /// </summary>
@@ -2410,11 +2410,11 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TransactionModel&gt;</returns>
-        System.Threading.Tasks.Task<List<TransactionModel>> ByNumberAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TransactionModel>> ByNumberAsync(string number, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets a set of transactions by number.
@@ -2423,11 +2423,11 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string number, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Cancels a transaction.
         /// </summary>
@@ -2910,10 +2910,10 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionModel</returns>
-        public TransactionModel ByBarcode(string? barcode = default(string?), int operationIndex = 0)
+        public TransactionModel ByBarcode(string barcode, int operationIndex = 0)
         {
             Simplic.OxS.SDK.ApiResponse<TransactionModel> localVarResponse = ByBarcodeWithHttpInfo(barcode);
             return localVarResponse.Data;
@@ -2923,11 +2923,17 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string? barcode = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionModel> ByBarcodeWithHttpInfo(string barcode, int operationIndex = 0)
         {
+            // verify the required parameter 'barcode' is set
+            if (barcode == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'barcode' when calling TransactionClient->TransactionByBarcodeBarcodeGet");
+            }
+
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -2952,12 +2958,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (barcode != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
-            }
+            localVarRequestOptions.PathParameters.Add("barcode", Simplic.OxS.SDK.ClientUtils.ParameterToString(barcode)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionByBarcodeGet";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionByBarcodeBarcodeGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2972,10 +2975,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TransactionModel>("/Transaction/by-barcode", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TransactionModel>("/Transaction/by-barcode/{barcode}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionByBarcodeGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionByBarcodeBarcodeGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2989,11 +2992,11 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionModel</returns>
-        public async System.Threading.Tasks.Task<TransactionModel> ByBarcodeAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransactionModel> ByBarcodeAsync(string barcode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Simplic.OxS.SDK.ApiResponse<TransactionModel> localVarResponse = await ByBarcodeWithHttpInfoAsync(barcode, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3003,12 +3006,18 @@ public interface ITransactionClient
         /// Gets a transaction by barcode. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcode"> (optional)</param>
+        /// <param name="barcode"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string? barcode = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> ByBarcodeWithHttpInfoAsync(string barcode, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'barcode' is set
+            if (barcode == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'barcode' when calling TransactionClient->TransactionByBarcodeBarcodeGet");
+            }
+
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -3034,12 +3043,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (barcode != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "barcode", barcode));
-            }
+            localVarRequestOptions.PathParameters.Add("barcode", Simplic.OxS.SDK.ClientUtils.ParameterToString(barcode)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionByBarcodeGet";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionByBarcodeBarcodeGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3054,11 +3060,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TransactionModel>("/Transaction/by-barcode", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TransactionModel>("/Transaction/by-barcode/{barcode}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionByBarcodeGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionByBarcodeBarcodeGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3246,10 +3252,10 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;TransactionModel&gt;</returns>
-        public List<TransactionModel> ByNumber(string? number = default(string?), int operationIndex = 0)
+        public List<TransactionModel> ByNumber(string number, int operationIndex = 0)
         {
             Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> localVarResponse = ByNumberWithHttpInfo(number);
             return localVarResponse.Data;
@@ -3259,11 +3265,17 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;TransactionModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string? number = default(string?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> ByNumberWithHttpInfo(string number, int operationIndex = 0)
         {
+            // verify the required parameter 'number' is set
+            if (number == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'number' when calling TransactionClient->TransactionByNumberNumberGet");
+            }
+
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3288,12 +3300,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (number != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "number", number));
-            }
+            localVarRequestOptions.PathParameters.Add("number", Simplic.OxS.SDK.ClientUtils.ParameterToString(number)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionByNumberGet";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionByNumberNumberGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3308,10 +3317,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<TransactionModel>>("/Transaction/by-number", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TransactionModel>>("/Transaction/by-number/{number}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionByNumberGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionByNumberNumberGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3325,11 +3334,11 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TransactionModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TransactionModel>> ByNumberAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TransactionModel>> ByNumberAsync(string number, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Simplic.OxS.SDK.ApiResponse<List<TransactionModel>> localVarResponse = await ByNumberWithHttpInfoAsync(number, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3339,12 +3348,18 @@ public interface ITransactionClient
         /// Gets a set of transactions by number. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="number"> (optional)</param>
+        /// <param name="number"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TransactionModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string? number = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TransactionModel>>> ByNumberWithHttpInfoAsync(string number, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'number' is set
+            if (number == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'number' when calling TransactionClient->TransactionByNumberNumberGet");
+            }
+
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -3370,12 +3385,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (number != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "number", number));
-            }
+            localVarRequestOptions.PathParameters.Add("number", Simplic.OxS.SDK.ClientUtils.ParameterToString(number)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionByNumberGet";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionByNumberNumberGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3390,11 +3402,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TransactionModel>>("/Transaction/by-number", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TransactionModel>>("/Transaction/by-number/{number}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionByNumberGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionByNumberNumberGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

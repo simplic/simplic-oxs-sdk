@@ -48,9 +48,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="organizationId">organizationId.</param>
-        /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="isDeleted">Gets or sets the is deleted flag..</param>
         /// <param name="number">Gets or sets the transaction number..</param>
         /// <param name="reference">Gets or sets the reference..</param>
         /// <param name="type">type.</param>
@@ -109,10 +108,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the transaction is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction..</param>
-        public TransactionModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationModeModel? operationItemCombinationMode = default(OperationItemCombinationModeModel?), bool isGross = default(bool), bool financialExportDisabled = default(bool), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel), List<CostCenterAssignmentModel> defaultCostCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> defaultCostObjects = default(List<CostCenterAssignmentModel>), MetadataProcessingDataModel metadataProcessingData = default(MetadataProcessingDataModel), DateTime? cashDiscountDate = default(DateTime?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TransactionModel(Guid id = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationModeModel? operationItemCombinationMode = default(OperationItemCombinationModeModel?), bool isGross = default(bool), bool financialExportDisabled = default(bool), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel), List<CostCenterAssignmentModel> defaultCostCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> defaultCostObjects = default(List<CostCenterAssignmentModel>), MetadataProcessingDataModel metadataProcessingData = default(MetadataProcessingDataModel), DateTime? cashDiscountDate = default(DateTime?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
-            this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
             this.Number = number;
             this.Reference = reference;
@@ -175,20 +173,16 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Gets or sets the is deleted flag.
         /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsDeleted
-        /// </summary>
+        /// <value>Gets or sets the is deleted flag.</value>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
 
@@ -574,7 +568,6 @@ namespace Simplic.OxS.SDK.ERP
             StringBuilder sb = new StringBuilder();
             sb.Append("class TransactionModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
@@ -673,11 +666,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
                 ) && 
                 (
                     this.IsDeleted == input.IsDeleted ||
@@ -977,10 +965,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.OrganizationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
                 if (this.Number != null)

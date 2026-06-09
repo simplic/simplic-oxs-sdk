@@ -5,9 +5,8 @@ Represents the shared model for Simplic.OxS.ERP.Transaction.Transaction.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**OrganizationId** | **Guid** |  | [optional] 
-**IsDeleted** | **bool** |  | [optional] 
+**Id** | **Guid** | Gets or sets the ID. | [optional] 
+**IsDeleted** | **bool** | Gets or sets the is deleted flag. | [optional] 
 **Number** | **string** | Gets or sets the transaction number. | [optional] 
 **Reference** | **string** | Gets or sets the reference. | [optional] 
 **Type** | [**TransactionTransactionTypeModel**](TransactionTransactionTypeModel.md) |  | [optional] 

@@ -4,9 +4,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ByBarcode**](TransactionClient.md#transactionbybarcodeget) | **GET** /Transaction/by-barcode | Gets a transaction by barcode. |
+| [**ByBarcode**](TransactionClient.md#transactionbybarcodebarcodeget) | **GET** /Transaction/by-barcode/{barcode} | Gets a transaction by barcode. |
 | [**ByDate**](TransactionClient.md#transactionbydateget) | **GET** /Transaction/by-date | Gets a set of transactions occuring between two points in time. |
-| [**ByNumber**](TransactionClient.md#transactionbynumberget) | **GET** /Transaction/by-number | Gets a set of transactions by number. |
+| [**ByNumber**](TransactionClient.md#transactionbynumbernumberget) | **GET** /Transaction/by-number/{number} | Gets a set of transactions by number. |
 | [**Cancel**](TransactionClient.md#transactioncancelput) | **PUT** /Transaction/cancel | Cancels a transaction. |
 | [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionspost) | **POST** /Transaction/convert-transactions | Converts a set of transactions. |
 | [**DraftsBillingLinesDistribute**](TransactionClient.md#transactiondraftsbillinglinesdistributepost) | **POST** /Transaction/drafts/billing-lines/distribute | Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. |
@@ -22,9 +22,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction | Creates a new transaction. |
 | [**Preview**](TransactionClient.md#transactionpreviewpost) | **POST** /Transaction/preview | Validates and creates a preview for a transaction. |
 
-<a id="transactionbybarcodeget"></a>
+<a id="transactionbybarcodebarcodeget"></a>
 # **ByBarcode**
-> TransactionModel ByBarcode (string? barcode = null)
+> TransactionModel ByBarcode (string barcode)
 
 Gets a transaction by barcode.
 
@@ -53,7 +53,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransactionClient(config);
-            var barcode = "barcode_example";  // string? |  (optional) 
+            var barcode = "barcode_example";  // string | 
 
             try
             {
@@ -96,7 +96,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **barcode** | **string?** |  | [optional]  |
+| **barcode** | **string** |  |  |
 
 ### Return type
 
@@ -222,9 +222,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactionbynumberget"></a>
+<a id="transactionbynumbernumberget"></a>
 # **ByNumber**
-> List&lt;TransactionModel&gt; ByNumber (string? number = null)
+> List&lt;TransactionModel&gt; ByNumber (string number)
 
 Gets a set of transactions by number.
 
@@ -253,7 +253,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransactionClient(config);
-            var number = "number_example";  // string? |  (optional) 
+            var number = "number_example";  // string | 
 
             try
             {
@@ -296,7 +296,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **number** | **string?** |  | [optional]  |
+| **number** | **string** |  |  |
 
 ### Return type
 

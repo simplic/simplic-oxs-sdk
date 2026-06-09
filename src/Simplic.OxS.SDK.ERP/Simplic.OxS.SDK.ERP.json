@@ -6247,7 +6247,7 @@
                 }
             }
         },
-        "/Transaction/by-barcode": {
+        "/Transaction/by-barcode/{barcode}": {
             "get": {
                 "tags": [
                     "Transaction"
@@ -6256,8 +6256,9 @@
                 "parameters": [
                     {
                         "name": "barcode",
-                        "in": "query",
+                        "in": "path",
                         "description": "",
+                        "required": true,
                         "schema": {
                             "type": "string"
                         }
@@ -6426,7 +6427,7 @@
                 }
             }
         },
-        "/Transaction/by-number": {
+        "/Transaction/by-number/{number}": {
             "get": {
                 "tags": [
                     "Transaction"
@@ -6435,8 +6436,9 @@
                 "parameters": [
                     {
                         "name": "number",
-                        "in": "query",
+                        "in": "path",
                         "description": "",
+                        "required": true,
                         "schema": {
                             "type": "string"
                         }
@@ -9191,14 +9193,12 @@
                 "properties": {
                     "id": {
                         "type": "string",
-                        "format": "uuid"
-                    },
-                    "organizationId": {
-                        "type": "string",
+                        "description": "Gets or sets the ID.",
                         "format": "uuid"
                     },
                     "isDeleted": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets the is deleted flag."
                     },
                     "number": {
                         "type": "integer",
@@ -10504,14 +10504,12 @@
                 "properties": {
                     "id": {
                         "type": "string",
-                        "format": "uuid"
-                    },
-                    "organizationId": {
-                        "type": "string",
+                        "description": "Gets or sets the ID.",
                         "format": "uuid"
                     },
                     "isDeleted": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets the is deleted flag."
                     },
                     "number": {
                         "type": "integer",
@@ -11637,14 +11635,12 @@
                 "properties": {
                     "id": {
                         "type": "string",
-                        "format": "uuid"
-                    },
-                    "organizationId": {
-                        "type": "string",
+                        "description": "Gets or sets the ID.",
                         "format": "uuid"
                     },
                     "isDeleted": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets the is deleted flag."
                     },
                     "number": {
                         "type": "integer",
@@ -12780,7 +12776,7 @@
                     "references": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/BillingLineReferenceModel"
+                            "$ref": "#/components/schemas/BillingLineReferenceRequest"
                         },
                         "description": "Gets or sets a set of additional references.",
                         "nullable": true
@@ -12999,14 +12995,12 @@
                 "properties": {
                     "id": {
                         "type": "string",
-                        "format": "uuid"
-                    },
-                    "organizationId": {
-                        "type": "string",
+                        "description": "Gets or sets the ID.",
                         "format": "uuid"
                     },
                     "isDeleted": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets the is deleted flag."
                     },
                     "number": {
                         "type": "string",
