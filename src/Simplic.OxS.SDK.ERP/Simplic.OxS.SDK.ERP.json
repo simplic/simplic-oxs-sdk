@@ -493,7 +493,7 @@
             }
         },
         "/BillingLine/{id}/lock": {
-            "put": {
+            "patch": {
                 "tags": [
                     "BillingLine"
                 ],
@@ -595,7 +595,7 @@
             }
         },
         "/BillingLine/{id}/unlock": {
-            "put": {
+            "patch": {
                 "tags": [
                     "BillingLine"
                 ],
@@ -5502,7 +5502,7 @@
             }
         },
         "/Transaction/drafts/{id}/billing-lines": {
-            "post": {
+            "patch": {
                 "tags": [
                     "Transaction"
                 ],
@@ -5624,7 +5624,7 @@
             }
         },
         "/Transaction/drafts/billing-lines/remove": {
-            "post": {
+            "patch": {
                 "tags": [
                     "Transaction"
                 ],
@@ -6167,7 +6167,7 @@
             }
         },
         "/Transaction/cancel": {
-            "put": {
+            "patch": {
                 "tags": [
                     "Transaction"
                 ],
@@ -6518,7 +6518,7 @@
             }
         },
         "/Transaction/drafts/{id}/convert": {
-            "put": {
+            "patch": {
                 "tags": [
                     "Transaction"
                 ],
@@ -6640,7 +6640,7 @@
             }
         },
         "/Transaction/{id}/revert-to-draft": {
-            "put": {
+            "patch": {
                 "tags": [
                     "Transaction"
                 ],
@@ -6742,7 +6742,7 @@
             }
         },
         "/Transaction/drafts/billing-lines/distribute": {
-            "post": {
+            "patch": {
                 "tags": [
                     "Transaction"
                 ],

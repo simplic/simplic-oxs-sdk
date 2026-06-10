@@ -8,9 +8,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**GetByStateStateGet**](BillingLineClient.md#billinglinegetbystatestateget) | **GET** /BillingLine/get-by-state/{state} | Gets all billing lines with a given state. |
 | [**Delete**](BillingLineClient.md#billinglineiddelete) | **DELETE** /BillingLine/{id} | Deletes a billing line. |
 | [**Get**](BillingLineClient.md#billinglineidget) | **GET** /BillingLine/{id} | Gets a billing line by ID. |
-| [**Lock**](BillingLineClient.md#billinglineidlockput) | **PUT** /BillingLine/{id}/lock | Locks a billing line. |
+| [**Lock**](BillingLineClient.md#billinglineidlockpatch) | **PATCH** /BillingLine/{id}/lock | Locks a billing line. |
 | [**Patch**](BillingLineClient.md#billinglineidpatch) | **PATCH** /BillingLine/{id} | Patches a billing line. |
-| [**Unlock**](BillingLineClient.md#billinglineidunlockput) | **PUT** /BillingLine/{id}/unlock | Unlocks a billing line. |
+| [**Unlock**](BillingLineClient.md#billinglineidunlockpatch) | **PATCH** /BillingLine/{id}/unlock | Unlocks a billing line. |
 | [**Post**](BillingLineClient.md#billinglinepost) | **POST** /BillingLine | Creates a new billing line. |
 
 <a id="billinglineget"></a>
@@ -398,7 +398,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="billinglineidlockput"></a>
+<a id="billinglineidlockpatch"></a>
 # **Lock**
 > LockBillingLineResultModel Lock (Guid id)
 
@@ -600,7 +600,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="billinglineidunlockput"></a>
+<a id="billinglineidunlockpatch"></a>
 # **Unlock**
 > UnlockBillingLineResultModel Unlock (Guid id)
 

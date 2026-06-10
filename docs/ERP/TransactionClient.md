@@ -7,18 +7,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**ByBarcode**](TransactionClient.md#transactionbybarcodebarcodeget) | **GET** /Transaction/by-barcode/{barcode} | Gets a transaction by barcode. |
 | [**ByDate**](TransactionClient.md#transactionbydateget) | **GET** /Transaction/by-date | Gets a set of transactions occuring between two points in time. |
 | [**ByNumber**](TransactionClient.md#transactionbynumbernumberget) | **GET** /Transaction/by-number/{number} | Gets a set of transactions by number. |
-| [**Cancel**](TransactionClient.md#transactioncancelput) | **PUT** /Transaction/cancel | Cancels a transaction. |
+| [**Cancel**](TransactionClient.md#transactioncancelpatch) | **PATCH** /Transaction/cancel | Cancels a transaction. |
 | [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionspost) | **POST** /Transaction/convert-transactions | Converts a set of transactions. |
-| [**DraftsBillingLinesDistribute**](TransactionClient.md#transactiondraftsbillinglinesdistributepost) | **POST** /Transaction/drafts/billing-lines/distribute | Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. |
-| [**DraftsBillingLinesRemove**](TransactionClient.md#transactiondraftsbillinglinesremovepost) | **POST** /Transaction/drafts/billing-lines/remove | Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. |
+| [**DraftsBillingLinesDistribute**](TransactionClient.md#transactiondraftsbillinglinesdistributepatch) | **PATCH** /Transaction/drafts/billing-lines/distribute | Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. |
+| [**DraftsBillingLinesRemove**](TransactionClient.md#transactiondraftsbillinglinesremovepatch) | **PATCH** /Transaction/drafts/billing-lines/remove | Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. |
 | [**Drafts**](TransactionClient.md#transactiondraftsget) | **GET** /Transaction/drafts | Gets all draft transactions. |
-| [**DraftsBillingLines**](TransactionClient.md#transactiondraftsidbillinglinespost) | **POST** /Transaction/drafts/{id}/billing-lines | Adds a set of billing lines to an existing draft transaction. |
-| [**DraftsConvert**](TransactionClient.md#transactiondraftsidconvertput) | **PUT** /Transaction/drafts/{id}/convert | Converts a draft transaction to a regular, non-draft transaction. |
+| [**DraftsBillingLines**](TransactionClient.md#transactiondraftsidbillinglinespatch) | **PATCH** /Transaction/drafts/{id}/billing-lines | Adds a set of billing lines to an existing draft transaction. |
+| [**DraftsConvert**](TransactionClient.md#transactiondraftsidconvertpatch) | **PATCH** /Transaction/drafts/{id}/convert | Converts a draft transaction to a regular, non-draft transaction. |
 | [**Drafts**](TransactionClient.md#transactiondraftspost) | **POST** /Transaction/drafts | Creates a set of draft transactions resulting from a set of billing lines. |
 | [**Delete**](TransactionClient.md#transactioniddelete) | **DELETE** /Transaction/{id} | Deletes a transaction. |
 | [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} | Gets a transaction by ID. |
 | [**Patch**](TransactionClient.md#transactionidpatch) | **PATCH** /Transaction/{id} | Patches a transaction. |
-| [**RevertToDraft**](TransactionClient.md#transactionidreverttodraftput) | **PUT** /Transaction/{id}/revert-to-draft | Reverts a non-draft transaction back to draft state. |
+| [**RevertToDraft**](TransactionClient.md#transactionidreverttodraftpatch) | **PATCH** /Transaction/{id}/revert-to-draft | Reverts a non-draft transaction back to draft state. |
 | [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction | Creates a new transaction. |
 | [**Preview**](TransactionClient.md#transactionpreviewpost) | **POST** /Transaction/preview | Validates and creates a preview for a transaction. |
 
@@ -321,7 +321,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactioncancelput"></a>
+<a id="transactioncancelpatch"></a>
 # **Cancel**
 > TransactionResultModel Cancel (Guid? id = null)
 
@@ -519,7 +519,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactiondraftsbillinglinesdistributepost"></a>
+<a id="transactiondraftsbillinglinesdistributepatch"></a>
 # **DraftsBillingLinesDistribute**
 > DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute (DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = null)
 
@@ -619,7 +619,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactiondraftsbillinglinesremovepost"></a>
+<a id="transactiondraftsbillinglinesremovepatch"></a>
 # **DraftsBillingLinesRemove**
 > DraftTransactionsResultModel DraftsBillingLinesRemove (RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = null)
 
@@ -812,7 +812,7 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactiondraftsidbillinglinespost"></a>
+<a id="transactiondraftsidbillinglinespatch"></a>
 # **DraftsBillingLines**
 > TransactionResultModel DraftsBillingLines (Guid id, AddBillingLinesToDraftTransactionRequest? addBillingLinesToDraftTransactionRequest = null)
 
@@ -914,7 +914,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactiondraftsidconvertput"></a>
+<a id="transactiondraftsidconvertpatch"></a>
 # **DraftsConvert**
 > TransactionResultModel DraftsConvert (Guid id, ConvertDraftTransactionRequest? convertDraftTransactionRequest = null)
 
@@ -1413,7 +1413,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="transactionidreverttodraftput"></a>
+<a id="transactionidreverttodraftpatch"></a>
 # **RevertToDraft**
 > TransactionResultModel RevertToDraft (Guid id)
 

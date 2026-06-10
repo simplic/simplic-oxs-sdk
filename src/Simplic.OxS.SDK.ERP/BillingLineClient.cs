@@ -2157,7 +2157,7 @@ public interface IBillingLineClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdLockPut";
+            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdLockPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2172,10 +2172,10 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<LockBillingLineResultModel>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<LockBillingLineResultModel>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("BillingLineIdLockPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BillingLineIdLockPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2236,7 +2236,7 @@ public interface IBillingLineClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdLockPut";
+            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdLockPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2251,11 +2251,11 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<LockBillingLineResultModel>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<LockBillingLineResultModel>("/BillingLine/{id}/lock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("BillingLineIdLockPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BillingLineIdLockPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2481,7 +2481,7 @@ public interface IBillingLineClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdUnlockPut";
+            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdUnlockPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2496,10 +2496,10 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<UnlockBillingLineResultModel>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<UnlockBillingLineResultModel>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("BillingLineIdUnlockPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BillingLineIdUnlockPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2560,7 +2560,7 @@ public interface IBillingLineClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdUnlockPut";
+            localVarRequestOptions.Operation = "BillingLineClient.BillingLineIdUnlockPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -2575,11 +2575,11 @@ public interface IBillingLineClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<UnlockBillingLineResultModel>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UnlockBillingLineResultModel>("/BillingLine/{id}/unlock", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("BillingLineIdUnlockPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BillingLineIdUnlockPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

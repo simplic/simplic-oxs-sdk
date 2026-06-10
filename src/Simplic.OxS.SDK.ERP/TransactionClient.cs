@@ -3467,7 +3467,7 @@ public interface ITransactionClient
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelPut";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3482,10 +3482,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TransactionResultModel>("/Transaction/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TransactionResultModel>("/Transaction/cancel", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionCancelPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionCancelPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3549,7 +3549,7 @@ public interface ITransactionClient
                 localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
             }
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelPut";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3564,11 +3564,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionResultModel>("/Transaction/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionResultModel>("/Transaction/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionCancelPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionCancelPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3791,7 +3791,7 @@ public interface ITransactionClient
 
             localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesDistributePost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesDistributePatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3806,10 +3806,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/billing-lines/distribute", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/billing-lines/distribute", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesDistributePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesDistributePatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3873,7 +3873,7 @@ public interface ITransactionClient
 
             localVarRequestOptions.Data = distributeBillingLinesToDraftTransactionsRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesDistributePost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesDistributePatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3888,11 +3888,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/billing-lines/distribute", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<DistributeBillingLinesToDraftTransactionsResultModel>("/Transaction/drafts/billing-lines/distribute", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesDistributePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesDistributePatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3953,7 +3953,7 @@ public interface ITransactionClient
 
             localVarRequestOptions.Data = removeBillingLinesFromDraftTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesRemovePost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesRemovePatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3968,10 +3968,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DraftTransactionsResultModel>("/Transaction/drafts/billing-lines/remove", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<DraftTransactionsResultModel>("/Transaction/drafts/billing-lines/remove", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesRemovePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesRemovePatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4035,7 +4035,7 @@ public interface ITransactionClient
 
             localVarRequestOptions.Data = removeBillingLinesFromDraftTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesRemovePost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsBillingLinesRemovePatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -4050,11 +4050,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DraftTransactionsResultModel>("/Transaction/drafts/billing-lines/remove", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<DraftTransactionsResultModel>("/Transaction/drafts/billing-lines/remove", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesRemovePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsBillingLinesRemovePatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4268,7 +4268,7 @@ public interface ITransactionClient
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = addBillingLinesToDraftTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdBillingLinesPost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdBillingLinesPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -4283,10 +4283,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsIdBillingLinesPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsIdBillingLinesPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4353,7 +4353,7 @@ public interface ITransactionClient
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = addBillingLinesToDraftTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdBillingLinesPost";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdBillingLinesPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -4368,11 +4368,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionResultModel>("/Transaction/drafts/{id}/billing-lines", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsIdBillingLinesPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsIdBillingLinesPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4436,7 +4436,7 @@ public interface ITransactionClient
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = convertDraftTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdConvertPut";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdConvertPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -4451,10 +4451,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TransactionResultModel>("/Transaction/drafts/{id}/convert", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TransactionResultModel>("/Transaction/drafts/{id}/convert", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsIdConvertPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsIdConvertPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -4521,7 +4521,7 @@ public interface ITransactionClient
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = convertDraftTransactionRequest;
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdConvertPut";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionDraftsIdConvertPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -4536,11 +4536,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionResultModel>("/Transaction/drafts/{id}/convert", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionResultModel>("/Transaction/drafts/{id}/convert", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionDraftsIdConvertPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionDraftsIdConvertPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -5250,7 +5250,7 @@ public interface ITransactionClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionIdRevertToDraftPut";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdRevertToDraftPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -5265,10 +5265,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TransactionResultModel>("/Transaction/{id}/revert-to-draft", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TransactionResultModel>("/Transaction/{id}/revert-to-draft", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionIdRevertToDraftPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionIdRevertToDraftPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -5329,7 +5329,7 @@ public interface ITransactionClient
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionIdRevertToDraftPut";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdRevertToDraftPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -5344,11 +5344,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransactionResultModel>("/Transaction/{id}/revert-to-draft", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionResultModel>("/Transaction/{id}/revert-to-draft", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionIdRevertToDraftPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionIdRevertToDraftPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
