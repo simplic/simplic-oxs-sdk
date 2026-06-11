@@ -38,10 +38,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var changePasswordRequest = new ChangePasswordRequest?(); // ChangePasswordRequest? |  (optional) 
@@ -133,10 +131,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var loginRequest = new LoginRequest?(); // LoginRequest? | Login model containing credentials. (optional) 
@@ -201,7 +197,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Login was successful. A jwt-token will only be returned for users with verified mail addresses.              If a mail address is not verified, the response object property ErrorState will be &#x60;mail_not_verified&#x60;. |  -  |
+| **200** | Login was successful. A jwt-token will only be returned for users with verified mail addresses.             If a mail address is not verified, the response object property ErrorState will be &#x60;mail_not_verified&#x60;. |  -  |
 | **401** | Credentials are incorrect. |  -  |
 | **400** | Http body/login model is incorrect. |  -  |
 
@@ -232,10 +228,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var registerRequest = new RegisterRequest?(); // RegisterRequest? |  (optional) 
@@ -328,10 +322,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var resetPasswordRequest = new ResetPasswordRequest?(); // ResetPasswordRequest? |  (optional) 
@@ -424,10 +416,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var selectOrganizationRequest = new SelectOrganizationRequest?(); // SelectOrganizationRequest? |  (optional) 
@@ -521,10 +511,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var sendVerificationCodeRequest = new SendVerificationCodeRequest?(); // SendVerificationCodeRequest? |  (optional) 
@@ -612,10 +600,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var verifyMailRequest = new VerifyMailRequest?(); // VerifyMailRequest? |  (optional) 
@@ -704,10 +690,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AuthClient(config);
             var twoFactorRequest = new TwoFactorRequest?(); // TwoFactorRequest? |  (optional) 

@@ -30,7 +30,7 @@ namespace Simplic.OxS.SDK.Auth
 /// <summary>
 /// Client to interact with the API endpoints of the auth service.
 /// </summary>
-public interface IInternalUserClient
+public interface IServiceDefinitionClient
 {
     /// <summary>
     /// Gets the base path of the API client.
@@ -40,73 +40,96 @@ public interface IInternalUserClient
 
 
     /// <summary>
-    /// Get a user by its e-mail address 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email"> (optional)</param>
-    /// <returns>RequestUserResponse</returns>
-    RequestUserResponse GetByEmail(string? email = default(string?));
+    /// <returns>ServiceObject</returns>
+    ServiceObject Get();
 
     /// <summary>
-    /// Get a user by its e-mail address 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email"> (optional)</param>
-    /// <returns>ApiResponse of RequestUserResponse</returns>
-    ApiResponse<RequestUserResponse> GetByEmailWithHttpInfo(string? email = default(string?));
+    /// <returns>ApiResponse of ServiceObject</returns>
+    ApiResponse<ServiceObject> GetWithHttpInfo();
         
     /// <summary>
-    /// Get a user by its e-mail address 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of RequestUserResponse</returns>
-    Task<RequestUserResponse> GetByEmailAsync(string? email = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ServiceObject</returns>
+    Task<ServiceObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Get a user by its e-mail address 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="email"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-    Task<ApiResponse<RequestUserResponse>> GetByEmailWithHttpInfoAsync(string? email = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (ServiceObject)</returns>
+    Task<ApiResponse<ServiceObject>> GetWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    /// Get a user by its id 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
-    /// <returns>RequestUserResponse</returns>
-    RequestUserResponse GetById(Guid? id = default(Guid?));
+    /// <returns>ServiceObject</returns>
+    ServiceObject GraphqlSdl();
 
     /// <summary>
-    /// Get a user by its id 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
-    /// <returns>ApiResponse of RequestUserResponse</returns>
-    ApiResponse<RequestUserResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?));
+    /// <returns>ApiResponse of ServiceObject</returns>
+    ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo();
         
     /// <summary>
-    /// Get a user by its id 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of RequestUserResponse</returns>
-    Task<RequestUserResponse> GetByIdAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ServiceObject</returns>
+    Task<ServiceObject> GraphqlSdlAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Get a user by its id 
+    ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-    Task<ApiResponse<RequestUserResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (ServiceObject)</returns>
+    Task<ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns></returns>
+    void RegisterService();
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> RegisterServiceWithHttpInfo();
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task RegisterServiceAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -116,16 +139,16 @@ public interface IInternalUserClient
     /// <summary>
     /// Client to interact with the API endpoints of the auth service.
     /// </summary>
-    public class InternalUserClient : IInternalUserClient
+    public class ServiceDefinitionClient : IServiceDefinitionClient
     {
-        private __InternalUserClient _internalClient;
+        private __ServiceDefinitionClient _internalClient;
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
-        public InternalUserClient(string host, string? authorization = null)
+        public ServiceDefinitionClient(string host, string? authorization = null)
         {
             if (authorization != null)
             {
-                _internalClient = new __InternalUserClient(new Configuration
+                _internalClient = new __ServiceDefinitionClient(new Configuration
                 {
                     BasePath = $"{host}/auth-api/v1",
                     DefaultHeaders = { { "Authorization", authorization } }
@@ -133,14 +156,14 @@ public interface IInternalUserClient
             }
             else
             {
-                _internalClient = new __InternalUserClient(new Configuration
+                _internalClient = new __ServiceDefinitionClient(new Configuration
                 {
                     BasePath = $"{host}/auth-api/v1",
                 });
             }
         }
 
-        public InternalUserClient(Environment env, string? authorization = null)
+        public ServiceDefinitionClient(Environment env, string? authorization = null)
             : this(
                 env == Environment.Development
                     ? "https://dev-oxs.simplic.io"
@@ -184,16 +207,15 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
-        /// <returns>RequestUserResponse</returns>
-        public RequestUserResponse GetByEmail(string? email = default(string?))
+        /// <returns>ServiceObject</returns>
+        public ServiceObject Get()
         {
             try
             {
-                return _internalClient.GetByEmail(email);
+                return _internalClient.Get();
             }
             catch (ApiException e)
             {
@@ -202,16 +224,15 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
-        /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByEmailWithHttpInfo(string? email = default(string?))
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GetWithHttpInfo()
         {
             try
             {
-                return _internalClient.GetByEmailWithHttpInfo(email);
+                return _internalClient.GetWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -220,17 +241,16 @@ public interface IInternalUserClient
         } 
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestUserResponse</returns>
-        public System.Threading.Tasks.Task<RequestUserResponse> GetByEmailAsync(string? email = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public System.Threading.Tasks.Task<ServiceObject> GetAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByEmailAsync(email, cancellationToken: cancellationToken);
+                return _internalClient.GetAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -239,17 +259,16 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByEmailWithHttpInfoAsync(string? email = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByEmailWithHttpInfoAsync(email, cancellationToken: cancellationToken);
+                return _internalClient.GetWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -257,16 +276,15 @@ public interface IInternalUserClient
             }
         }    
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
-        /// <returns>RequestUserResponse</returns>
-        public RequestUserResponse GetById(Guid? id = default(Guid?))
+        /// <returns>ServiceObject</returns>
+        public ServiceObject GraphqlSdl()
         {
             try
             {
-                return _internalClient.GetById(id);
+                return _internalClient.GraphqlSdl();
             }
             catch (ApiException e)
             {
@@ -275,16 +293,15 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
-        /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?))
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo()
         {
             try
             {
-                return _internalClient.GetByIdWithHttpInfo(id);
+                return _internalClient.GraphqlSdlWithHttpInfo();
             }
             catch (ApiException e)
             {
@@ -293,17 +310,16 @@ public interface IInternalUserClient
         } 
 
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestUserResponse</returns>
-        public System.Threading.Tasks.Task<RequestUserResponse> GetByIdAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public System.Threading.Tasks.Task<ServiceObject> GraphqlSdlAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByIdAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GraphqlSdlAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -312,17 +328,85 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetByIdWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+                return _internalClient.GraphqlSdlWithHttpInfoAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns></returns>
+        public void RegisterService()
+        {
+            try
+            {
+                _internalClient.RegisterService();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> RegisterServiceWithHttpInfo()
+        {
+            try
+            {
+                return _internalClient.RegisterServiceWithHttpInfo();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task RegisterServiceAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RegisterServiceAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.RegisterServiceWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -339,115 +423,148 @@ public interface IInternalUserClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IInternalUserClientSync : IApiAccessor
+    internal interface __IServiceDefinitionClientSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a user by its e-mail address
+        /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>RequestUserResponse</returns>
-        RequestUserResponse GetByEmail(string? email = default(string?), int operationIndex = 0);
+        /// <returns>ServiceObject</returns>
+        ServiceObject Get(int operationIndex = 0);
 
         /// <summary>
-        /// Get a user by its e-mail address
+        /// 
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of RequestUserResponse</returns>
-        ApiResponse<RequestUserResponse> GetByEmailWithHttpInfo(string? email = default(string?), int operationIndex = 0);
+        /// <returns>ApiResponse of ServiceObject</returns>
+        ApiResponse<ServiceObject> GetWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// Get a user by its id
+        /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>RequestUserResponse</returns>
-        RequestUserResponse GetById(Guid? id = default(Guid?), int operationIndex = 0);
+        /// <returns>ServiceObject</returns>
+        ServiceObject GraphqlSdl(int operationIndex = 0);
 
         /// <summary>
-        /// Get a user by its id
+        /// 
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of RequestUserResponse</returns>
-        ApiResponse<RequestUserResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
+        /// <returns>ApiResponse of ServiceObject</returns>
+        ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo(int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void RegisterService(int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RegisterServiceWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IInternalUserClientAsync : IApiAccessor
+    internal interface __IServiceDefinitionClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a user by its e-mail address
+        /// 
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestUserResponse</returns>
-        System.Threading.Tasks.Task<RequestUserResponse> GetByEmailAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ServiceObject</returns>
+        System.Threading.Tasks.Task<ServiceObject> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get a user by its e-mail address
+        /// 
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RequestUserResponse>> GetByEmailWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ServiceObject>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get a user by its id
+        /// 
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestUserResponse</returns>
-        System.Threading.Tasks.Task<RequestUserResponse> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ServiceObject</returns>
+        System.Threading.Tasks.Task<ServiceObject> GraphqlSdlAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get a user by its id
+        /// 
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RequestUserResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RegisterServiceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal interface __IInternalUserClient : __IInternalUserClientSync, __IInternalUserClientAsync
+    internal interface __IServiceDefinitionClient : __IServiceDefinitionClientSync, __IServiceDefinitionClientAsync
     {
 
     }
@@ -455,24 +572,24 @@ public interface IInternalUserClient
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    internal /*partial*/ class __InternalUserClient : __IInternalUserClient
+    internal /*partial*/ class __ServiceDefinitionClient : __IServiceDefinitionClient
     {
         private Simplic.OxS.SDK.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /*
         /// <summary>
-        /// Initializes a new instance of the <see cref="__InternalUserClient"/> class.
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __InternalUserClient() : this((string)null)
+        public __ServiceDefinitionClient() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__InternalUserClient"/> class.
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class.
         /// </summary>
         /// <returns></returns>
-        public __InternalUserClient(string basePath)
+        public __ServiceDefinitionClient(string basePath)
         {
             this.Configuration = Simplic.OxS.SDK.Configuration.MergeConfigurations(
                 Simplic.OxS.SDK.GlobalConfiguration.Instance,
@@ -485,12 +602,12 @@ public interface IInternalUserClient
         */
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__InternalUserClient"/> class
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public __InternalUserClient(Simplic.OxS.SDK.Configuration configuration)
+        public __ServiceDefinitionClient(Simplic.OxS.SDK.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -504,13 +621,13 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="__InternalUserClient"/> class
+        /// Initializes a new instance of the <see cref="__ServiceDefinitionClient"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public __InternalUserClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
+        public __ServiceDefinitionClient(Simplic.OxS.SDK.ISynchronousClient client, Simplic.OxS.SDK.IAsynchronousClient asyncClient, Simplic.OxS.SDK.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -564,26 +681,24 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>RequestUserResponse</returns>
-        public RequestUserResponse GetByEmail(string? email = default(string?), int operationIndex = 0)
+        /// <returns>ServiceObject</returns>
+        public ServiceObject Get(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByEmailWithHttpInfo(email);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = GetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByEmailWithHttpInfo(string? email = default(string?), int operationIndex = 0)
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GetWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -609,12 +724,8 @@ public interface IInternalUserClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (email != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
-            }
 
-            localVarRequestOptions.Operation = "InternalUserClient.InternalInternalUserGetByEmailGet";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -630,10 +741,10 @@ public interface IInternalUserClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<RequestUserResponse>("/internal/InternalUser/get-by-email", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ServiceObject>("/ServiceDefinition", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("InternalInternalUserGetByEmailGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -644,28 +755,26 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestUserResponse</returns>
-        public async System.Threading.Tasks.Task<RequestUserResponse> GetByEmailAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public async System.Threading.Tasks.Task<ServiceObject> GetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByEmailWithHttpInfoAsync(email, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = await GetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get a user by its e-mail address 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByEmailWithHttpInfoAsync(string? email = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -692,12 +801,8 @@ public interface IInternalUserClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (email != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "email", email));
-            }
 
-            localVarRequestOptions.Operation = "InternalUserClient.InternalInternalUserGetByEmailGet";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -713,11 +818,11 @@ public interface IInternalUserClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<RequestUserResponse>("/internal/InternalUser/get-by-email", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ServiceObject>("/ServiceDefinition", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("InternalInternalUserGetByEmailGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -728,26 +833,24 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>RequestUserResponse</returns>
-        public RequestUserResponse GetById(Guid? id = default(Guid?), int operationIndex = 0)
+        /// <returns>ServiceObject</returns>
+        public ServiceObject GraphqlSdl(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = GetByIdWithHttpInfo(id);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = GraphqlSdlWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of RequestUserResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<RequestUserResponse> GetByIdWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        /// <returns>ApiResponse of ServiceObject</returns>
+        public Simplic.OxS.SDK.ApiResponse<ServiceObject> GraphqlSdlWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -773,12 +876,8 @@ public interface IInternalUserClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (id != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
-            }
 
-            localVarRequestOptions.Operation = "InternalUserClient.InternalInternalUserGetByIdGet";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGraphqlSdlGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -794,10 +893,10 @@ public interface IInternalUserClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<RequestUserResponse>("/internal/InternalUser/get-by-id", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ServiceObject>("/ServiceDefinition/graphql/sdl", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("InternalInternalUserGetByIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGraphqlSdlGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -808,28 +907,26 @@ public interface IInternalUserClient
         }
 
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RequestUserResponse</returns>
-        public async System.Threading.Tasks.Task<RequestUserResponse> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ServiceObject</returns>
+        public async System.Threading.Tasks.Task<ServiceObject> GraphqlSdlAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<RequestUserResponse> localVarResponse = await GetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<ServiceObject> localVarResponse = await GraphqlSdlWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get a user by its id 
+        ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RequestUserResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<RequestUserResponse>> GetByIdWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ServiceObject)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ServiceObject>> GraphqlSdlWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -856,12 +953,8 @@ public interface IInternalUserClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (id != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
-            }
 
-            localVarRequestOptions.Operation = "InternalUserClient.InternalInternalUserGetByIdGet";
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionGraphqlSdlGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -877,11 +970,161 @@ public interface IInternalUserClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<RequestUserResponse>("/internal/InternalUser/get-by-id", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ServiceObject>("/ServiceDefinition/graphql/sdl", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("InternalInternalUserGetByIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionGraphqlSdlGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void RegisterService(int operationIndex = 0)
+        {
+            RegisterServiceWithHttpInfo();
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> RegisterServiceWithHttpInfo(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionRegisterServicePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/ServiceDefinition/register-service", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionRegisterServicePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RegisterServiceAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RegisterServiceWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> RegisterServiceWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "ServiceDefinitionClient.ServiceDefinitionRegisterServicePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/ServiceDefinition/register-service", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ServiceDefinitionRegisterServicePost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

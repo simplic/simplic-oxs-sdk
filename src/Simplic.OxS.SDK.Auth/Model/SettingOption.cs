@@ -28,36 +28,41 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Auth
 {
     /// <summary>
-    /// Model for requesting a password change. When requesting a password change, a verification code is required
+    /// SettingOption
     /// </summary>
-    [DataContract(Name = "ChangePasswordRequest")]
-    public partial class ChangePasswordRequest : IEquatable<ChangePasswordRequest>, IValidatableObject
+    [DataContract(Name = "SettingOption")]
+    public partial class SettingOption : IEquatable<SettingOption>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChangePasswordRequest" /> class.
+        /// Initializes a new instance of the <see cref="SettingOption" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ChangePasswordRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChangePasswordRequest" /> class.
-        /// </summary>
-        /// <param name="newPassword">Gets or sets the new password (required).</param>
-        public ChangePasswordRequest(string newPassword = default(string))
+        /// <param name="value">value.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="displayKey">displayKey.</param>
+        public SettingOption(Object value = default(Object), string displayName = default(string), string displayKey = default(string))
         {
-            // to ensure "newPassword" is required (not null)
-            if (newPassword == null)
-            {
-                throw new ArgumentNullException("newPassword is a required property for ChangePasswordRequest and cannot be null");
-            }
-            this.NewPassword = newPassword;
+            this.Value = value;
+            this.DisplayName = displayName;
+            this.DisplayKey = displayKey;
         }
 
         /// <summary>
-        /// Gets or sets the new password
+        /// Gets or Sets Value
         /// </summary>
-        /// <value>Gets or sets the new password</value>
-        [DataMember(Name = "newPassword", IsRequired = true, EmitDefaultValue = true)]
-        public string NewPassword { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public Object Value { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplayName
+        /// </summary>
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplayKey
+        /// </summary>
+        [DataMember(Name = "displayKey", EmitDefaultValue = true)]
+        public string DisplayKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,8 +71,10 @@ namespace Simplic.OxS.SDK.Auth
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ChangePasswordRequest {\n");
-            sb.Append("  NewPassword: ").Append(NewPassword).Append("\n");
+            sb.Append("class SettingOption {\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  DisplayKey: ").Append(DisplayKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +95,15 @@ namespace Simplic.OxS.SDK.Auth
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ChangePasswordRequest);
+            return this.Equals(input as SettingOption);
         }
 
         /// <summary>
-        /// Returns true if ChangePasswordRequest instances are equal
+        /// Returns true if SettingOption instances are equal
         /// </summary>
-        /// <param name="input">Instance of ChangePasswordRequest to be compared</param>
+        /// <param name="input">Instance of SettingOption to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ChangePasswordRequest input)
+        public bool Equals(SettingOption input)
         {
             if (input == null)
             {
@@ -104,9 +111,19 @@ namespace Simplic.OxS.SDK.Auth
             }
             return 
                 (
-                    this.NewPassword == input.NewPassword ||
-                    (this.NewPassword != null &&
-                    this.NewPassword.Equals(input.NewPassword))
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
+                    this.DisplayKey == input.DisplayKey ||
+                    (this.DisplayKey != null &&
+                    this.DisplayKey.Equals(input.DisplayKey))
                 );
         }
 
@@ -119,9 +136,17 @@ namespace Simplic.OxS.SDK.Auth
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NewPassword != null)
+                if (this.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NewPassword.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                }
+                if (this.DisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
+                }
+                if (this.DisplayKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayKey.GetHashCode();
                 }
                 return hashCode;
             }
@@ -134,18 +159,6 @@ namespace Simplic.OxS.SDK.Auth
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // NewPassword (string) maxLength
-            if (this.NewPassword != null && this.NewPassword.Length > 100)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewPassword, length must be less than 100.", new [] { "NewPassword" });
-            }
-
-            // NewPassword (string) minLength
-            if (this.NewPassword != null && this.NewPassword.Length < 8)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewPassword, length must be greater than 8.", new [] { "NewPassword" });
-            }
-
             yield break;
         }
     }

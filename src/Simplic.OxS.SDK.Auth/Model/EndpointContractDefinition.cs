@@ -28,36 +28,33 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Auth
 {
     /// <summary>
-    /// Model for requesting a password change. When requesting a password change, a verification code is required
+    /// EndpointContractDefinition
     /// </summary>
-    [DataContract(Name = "ChangePasswordRequest")]
-    public partial class ChangePasswordRequest : IEquatable<ChangePasswordRequest>, IValidatableObject
+    [DataContract(Name = "EndpointContractDefinition")]
+    public partial class EndpointContractDefinition : IEquatable<EndpointContractDefinition>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChangePasswordRequest" /> class.
+        /// Initializes a new instance of the <see cref="EndpointContractDefinition" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ChangePasswordRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChangePasswordRequest" /> class.
-        /// </summary>
-        /// <param name="newPassword">Gets or sets the new password (required).</param>
-        public ChangePasswordRequest(string newPassword = default(string))
+        /// <param name="name">name.</param>
+        /// <param name="endpoint">endpoint.</param>
+        public EndpointContractDefinition(string name = default(string), string endpoint = default(string))
         {
-            // to ensure "newPassword" is required (not null)
-            if (newPassword == null)
-            {
-                throw new ArgumentNullException("newPassword is a required property for ChangePasswordRequest and cannot be null");
-            }
-            this.NewPassword = newPassword;
+            this.Name = name;
+            this.Endpoint = endpoint;
         }
 
         /// <summary>
-        /// Gets or sets the new password
+        /// Gets or Sets Name
         /// </summary>
-        /// <value>Gets or sets the new password</value>
-        [DataMember(Name = "newPassword", IsRequired = true, EmitDefaultValue = true)]
-        public string NewPassword { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Endpoint
+        /// </summary>
+        [DataMember(Name = "endpoint", EmitDefaultValue = true)]
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,8 +63,9 @@ namespace Simplic.OxS.SDK.Auth
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ChangePasswordRequest {\n");
-            sb.Append("  NewPassword: ").Append(NewPassword).Append("\n");
+            sb.Append("class EndpointContractDefinition {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Endpoint: ").Append(Endpoint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +86,15 @@ namespace Simplic.OxS.SDK.Auth
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ChangePasswordRequest);
+            return this.Equals(input as EndpointContractDefinition);
         }
 
         /// <summary>
-        /// Returns true if ChangePasswordRequest instances are equal
+        /// Returns true if EndpointContractDefinition instances are equal
         /// </summary>
-        /// <param name="input">Instance of ChangePasswordRequest to be compared</param>
+        /// <param name="input">Instance of EndpointContractDefinition to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ChangePasswordRequest input)
+        public bool Equals(EndpointContractDefinition input)
         {
             if (input == null)
             {
@@ -104,9 +102,14 @@ namespace Simplic.OxS.SDK.Auth
             }
             return 
                 (
-                    this.NewPassword == input.NewPassword ||
-                    (this.NewPassword != null &&
-                    this.NewPassword.Equals(input.NewPassword))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Endpoint == input.Endpoint ||
+                    (this.Endpoint != null &&
+                    this.Endpoint.Equals(input.Endpoint))
                 );
         }
 
@@ -119,9 +122,13 @@ namespace Simplic.OxS.SDK.Auth
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NewPassword != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.NewPassword.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Endpoint != null)
+                {
+                    hashCode = (hashCode * 59) + this.Endpoint.GetHashCode();
                 }
                 return hashCode;
             }
@@ -134,18 +141,6 @@ namespace Simplic.OxS.SDK.Auth
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // NewPassword (string) maxLength
-            if (this.NewPassword != null && this.NewPassword.Length > 100)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewPassword, length must be less than 100.", new [] { "NewPassword" });
-            }
-
-            // NewPassword (string) minLength
-            if (this.NewPassword != null && this.NewPassword.Length < 8)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewPassword, length must be greater than 8.", new [] { "NewPassword" });
-            }
-
             yield break;
         }
     }

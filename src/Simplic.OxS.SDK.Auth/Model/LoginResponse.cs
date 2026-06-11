@@ -37,8 +37,8 @@ namespace Simplic.OxS.SDK.Auth
         /// Initializes a new instance of the <see cref="LoginResponse" /> class.
         /// </summary>
         /// <param name="token">Gets or sets the produced token (e.g. jwt token or two-factor token).</param>
-        /// <param name="errorState">Gets or sets the actual error state. Will be set to &#x60;mail_not_verified&#x60; if the login  was successful, but the mail address is not verified..</param>
-        /// <param name="tokenType">Gets or sets the produced token.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;  &#x60;jwt&#x60;: Login completed, no two-factor required  &#x60;two-factor&#x60;: A second two-factor auth is required  Empty when mail address is not verified.  &lt;/list&gt;.</param>
+        /// <param name="errorState">Gets or sets the actual error state. Will be set to &#x60;mail_not_verified&#x60; if the login was successful, but the mail address is not verified..</param>
+        /// <param name="tokenType">Gets or sets the produced token. &lt;list type&#x3D;\&quot;bullet\&quot;&gt; &#x60;jwt&#x60;: Login completed, no two-factor required &#x60;two-factor&#x60;: A second two-factor auth is required Empty when mail address is not verified. &lt;/list&gt;.</param>
         /// <param name="userId">Gets or sets the user-id..</param>
         public LoginResponse(string token = default(string), string errorState = default(string), string tokenType = default(string), Guid userId = default(Guid))
         {
@@ -56,16 +56,16 @@ namespace Simplic.OxS.SDK.Auth
         public string Token { get; set; }
 
         /// <summary>
-        /// Gets or sets the actual error state. Will be set to &#x60;mail_not_verified&#x60; if the login  was successful, but the mail address is not verified.
+        /// Gets or sets the actual error state. Will be set to &#x60;mail_not_verified&#x60; if the login was successful, but the mail address is not verified.
         /// </summary>
-        /// <value>Gets or sets the actual error state. Will be set to &#x60;mail_not_verified&#x60; if the login  was successful, but the mail address is not verified.</value>
+        /// <value>Gets or sets the actual error state. Will be set to &#x60;mail_not_verified&#x60; if the login was successful, but the mail address is not verified.</value>
         [DataMember(Name = "errorState", EmitDefaultValue = true)]
         public string ErrorState { get; set; }
 
         /// <summary>
-        /// Gets or sets the produced token.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;  &#x60;jwt&#x60;: Login completed, no two-factor required  &#x60;two-factor&#x60;: A second two-factor auth is required  Empty when mail address is not verified.  &lt;/list&gt;
+        /// Gets or sets the produced token. &lt;list type&#x3D;\&quot;bullet\&quot;&gt; &#x60;jwt&#x60;: Login completed, no two-factor required &#x60;two-factor&#x60;: A second two-factor auth is required Empty when mail address is not verified. &lt;/list&gt;
         /// </summary>
-        /// <value>Gets or sets the produced token.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;  &#x60;jwt&#x60;: Login completed, no two-factor required  &#x60;two-factor&#x60;: A second two-factor auth is required  Empty when mail address is not verified.  &lt;/list&gt;</value>
+        /// <value>Gets or sets the produced token. &lt;list type&#x3D;\&quot;bullet\&quot;&gt; &#x60;jwt&#x60;: Login completed, no two-factor required &#x60;two-factor&#x60;: A second two-factor auth is required Empty when mail address is not verified. &lt;/list&gt;</value>
         [DataMember(Name = "tokenType", EmitDefaultValue = true)]
         public string TokenType { get; set; }
 
