@@ -8,6 +8,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 | [**Approvals**](AgentSessionClient.md#agentsessionsessionidapprovalsget) | **GET** /AgentSession/{sessionId}/approvals | Gets pending approvals for a session. |
 | [**Approve**](AgentSessionClient.md#agentsessionsessionidapprovepost) | **POST** /AgentSession/{sessionId}/approve | Approves or rejects a pending action in a session. |
 | [**Get**](AgentSessionClient.md#agentsessionsessionidget) | **GET** /AgentSession/{sessionId} | Gets a session by identifier. |
+| [**Messages**](AgentSessionClient.md#agentsessionsessionidmessagesget) | **GET** /AgentSession/{sessionId}/messages | Gets all messages for a session. |
 
 <a id="agentsessionsessionidanswerpost"></a>
 # **Answer**
@@ -374,6 +375,103 @@ catch (ApiException e)
 ### Return type
 
 [**AgentSessionResponse**](AgentSessionResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="agentsessionsessionidmessagesget"></a>
+# **Messages**
+> List&lt;AgentMessageResponse&gt; Messages (Guid sessionId)
+
+Gets all messages for a session.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Ai;
+
+namespace Example
+{
+    public class MessagesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/ai-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new AgentSessionClient(config);
+            var sessionId = "sessionId_example";  // Guid | 
+
+            try
+            {
+                // Gets all messages for a session.
+                List<AgentMessageResponse> result = apiInstance.Messages(sessionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AgentSessionClient.Messages: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the MessagesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets all messages for a session.
+    ApiResponse<List<AgentMessageResponse>> response = apiInstance.MessagesWithHttpInfo(sessionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AgentSessionClient.MessagesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sessionId** | **Guid** |  |  |
+
+### Return type
+
+[**List&lt;AgentMessageResponse&gt;**](AgentMessageResponse.md)
 
 ### Authorization
 

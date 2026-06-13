@@ -186,6 +186,41 @@ public interface IAgentSessionClient
     /// <returns>Task of ApiResponse (AgentSessionResponse)</returns>
     Task<ApiResponse<AgentSessionResponse>> GetWithHttpInfoAsync(Guid sessionId, CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    /// Gets all messages for a session. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <returns>List&lt;AgentMessageResponse&gt;</returns>
+    List<AgentMessageResponse> Messages(Guid sessionId);
+
+    /// <summary>
+    /// Gets all messages for a session. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <returns>ApiResponse of List&lt;AgentMessageResponse&gt;</returns>
+    ApiResponse<List<AgentMessageResponse>> MessagesWithHttpInfo(Guid sessionId);
+        
+    /// <summary>
+    /// Gets all messages for a session. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;AgentMessageResponse&gt;</returns>
+    Task<List<AgentMessageResponse>> MessagesAsync(Guid sessionId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Gets all messages for a session. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;AgentMessageResponse&gt;)</returns>
+    Task<ApiResponse<List<AgentMessageResponse>>> MessagesWithHttpInfoAsync(Guid sessionId, CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -561,6 +596,79 @@ public interface IAgentSessionClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <returns>List&lt;AgentMessageResponse&gt;</returns>
+        public List<AgentMessageResponse> Messages(Guid sessionId)
+        {
+            try
+            {
+                return _internalClient.Messages(sessionId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <returns>ApiResponse of List&lt;AgentMessageResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<AgentMessageResponse>> MessagesWithHttpInfo(Guid sessionId)
+        {
+            try
+            {
+                return _internalClient.MessagesWithHttpInfo(sessionId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;AgentMessageResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<AgentMessageResponse>> MessagesAsync(Guid sessionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.MessagesAsync(sessionId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;AgentMessageResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<AgentMessageResponse>>> MessagesWithHttpInfoAsync(Guid sessionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.MessagesWithHttpInfoAsync(sessionId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -658,6 +766,26 @@ public interface IAgentSessionClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AgentSessionResponse</returns>
         ApiResponse<AgentSessionResponse> GetWithHttpInfo(Guid sessionId, int operationIndex = 0);
+        /// <summary>
+        /// Gets all messages for a session.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;AgentMessageResponse&gt;</returns>
+        List<AgentMessageResponse> Messages(Guid sessionId, int operationIndex = 0);
+
+        /// <summary>
+        /// Gets all messages for a session.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;AgentMessageResponse&gt;</returns>
+        ApiResponse<List<AgentMessageResponse>> MessagesWithHttpInfo(Guid sessionId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -771,6 +899,31 @@ public interface IAgentSessionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentSessionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<AgentSessionResponse>> GetWithHttpInfoAsync(Guid sessionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Gets all messages for a session.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;AgentMessageResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<AgentMessageResponse>> MessagesAsync(Guid sessionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Gets all messages for a session.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;AgentMessageResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AgentMessageResponse>>> MessagesWithHttpInfoAsync(Guid sessionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1536,6 +1689,164 @@ public interface IAgentSessionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AgentSessionSessionIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;AgentMessageResponse&gt;</returns>
+        public List<AgentMessageResponse> Messages(Guid sessionId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<AgentMessageResponse>> localVarResponse = MessagesWithHttpInfo(sessionId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;AgentMessageResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<AgentMessageResponse>> MessagesWithHttpInfo(Guid sessionId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdMessagesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<AgentMessageResponse>>("/AgentSession/{sessionId}/messages", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdMessagesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;AgentMessageResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AgentMessageResponse>> MessagesAsync(Guid sessionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<AgentMessageResponse>> localVarResponse = await MessagesWithHttpInfoAsync(sessionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets all messages for a session. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;AgentMessageResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<AgentMessageResponse>>> MessagesWithHttpInfoAsync(Guid sessionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdMessagesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AgentMessageResponse>>("/AgentSession/{sessionId}/messages", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdMessagesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

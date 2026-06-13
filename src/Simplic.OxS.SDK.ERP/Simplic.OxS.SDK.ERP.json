@@ -11726,6 +11726,30 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TaxGroup."
             },
+            "TaxGroupSubsetModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the tax group ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "description": "Gets or sets the tax group number.",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the tax group name.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.TaxGroupSubset."
+            },
             "TaxKeyModel": {
                 "type": "object",
                 "properties": {
@@ -11740,10 +11764,10 @@
                         "nullable": true
                     },
                     "taxGroup": {
-                        "$ref": "#/components/schemas/TaxGroupModel"
+                        "$ref": "#/components/schemas/TaxGroupSubsetModel"
                     },
                     "taxRate": {
-                        "$ref": "#/components/schemas/TaxRateModel"
+                        "$ref": "#/components/schemas/TaxRateSubsetModel"
                     },
                     "value": {
                         "type": "number",
@@ -11935,6 +11959,30 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TaxRate."
+            },
+            "TaxRateSubsetModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "description": "Gets or sets the tax rate number.",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate name.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.TaxRateSubset."
             },
             "TaxRegistration": {
                 "type": "object",

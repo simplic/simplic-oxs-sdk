@@ -50,7 +50,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the tax key is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the tax key..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the tax key..</param>
-        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), TaxRateModel taxRate = default(TaxRateModel), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?), int? buNumber = default(int?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxGroupSubsetModel taxGroup = default(TaxGroupSubsetModel), TaxRateSubsetModel taxRate = default(TaxRateSubsetModel), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?), int? buNumber = default(int?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -86,13 +86,13 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets TaxGroup
         /// </summary>
         [DataMember(Name = "taxGroup", EmitDefaultValue = false)]
-        public TaxGroupModel TaxGroup { get; set; }
+        public TaxGroupSubsetModel TaxGroup { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxRate
         /// </summary>
         [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TaxRateModel TaxRate { get; set; }
+        public TaxRateSubsetModel TaxRate { get; set; }
 
         /// <summary>
         /// Gets or sets the tax rate value given in percent.

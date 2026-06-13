@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Gets or sets the ID. | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
-**TaxGroup** | [**TaxGroupModel**](TaxGroupModel.md) |  | [optional] 
-**TaxRate** | [**TaxRateModel**](TaxRateModel.md) |  | [optional] 
+**TaxGroup** | [**TaxGroupSubsetModel**](TaxGroupSubsetModel.md) |  | [optional] 
+**TaxRate** | [**TaxRateSubsetModel**](TaxRateSubsetModel.md) |  | [optional] 
 **Value** | **double** | Gets or sets the tax rate value given in percent. | [optional] 
 **ValidFrom** | **DateTime** | Gets or sets the point in time this tax key is valid from. | [optional] 
 **ValidTo** | **DateTime?** | Gets or sets the point in time this tax rate is valid to. | [optional] 
