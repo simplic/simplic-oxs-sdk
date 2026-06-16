@@ -43,6 +43,45 @@ public interface IGenericTelematicToursClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="blobId"></param>
+    /// <returns>byte[]</returns>
+    byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="blobId"></param>
+    /// <returns>ApiResponse of byte[]</returns>
+    ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="blobId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of byte[]</returns>
+    Task<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetAsync(Guid tourId, Guid blobId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="blobId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (byte[])</returns>
+    Task<ApiResponse<byte[]>> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(Guid tourId, Guid blobId, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>List&lt;TelematicTourResponse&gt;</returns>
     List<TelematicTourResponse> TelematicToursGet();
 
@@ -110,6 +149,49 @@ public interface IGenericTelematicToursClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="tourId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <returns>TelematicTourResponse</returns>
+    TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <returns>ApiResponse of TelematicTourResponse</returns>
+    ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of TelematicTourResponse</returns>
+    Task<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
+    Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
     /// <param name="placeId"></param>
     /// <param name="completeWorkflowStepRequest"> (optional)</param>
     /// <returns>TelematicTourResponse</returns>
@@ -146,6 +228,53 @@ public interface IGenericTelematicToursClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
     Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="placeId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="file"> (optional)</param>
+    /// <returns>UploadBlobResponse</returns>
+    UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="placeId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="file"> (optional)</param>
+    /// <returns>ApiResponse of UploadBlobResponse</returns>
+    ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="placeId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="file"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of UploadBlobResponse</returns>
+    Task<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="tourId"></param>
+    /// <param name="placeId"></param>
+    /// <param name="orderId"></param>
+    /// <param name="file"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
+    Task<ApiResponse<UploadBlobResponse>> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -222,6 +351,83 @@ public interface IGenericTelematicToursClient
             set { _exceptionFactory = value; }
         }
 
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <returns>byte[]</returns>
+        public byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId)
+        {
+            try
+            {
+                return _internalClient.TelematicToursDownloadBlobTourIdBlobIdGet(tourId, blobId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public Simplic.OxS.SDK.ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId)
+        {
+            try
+            {
+                return _internalClient.TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(tourId, blobId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of byte[]</returns>
+        public System.Threading.Tasks.Task<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetAsync(Guid tourId, Guid blobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TelematicToursDownloadBlobTourIdBlobIdGetAsync(tourId, blobId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<byte[]>> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(Guid tourId, Guid blobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(tourId, blobId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
         /// <summary>
         ///  
         /// </summary>
@@ -369,6 +575,87 @@ public interface IGenericTelematicToursClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <returns>TelematicTourResponse</returns>
+        public TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?))
+        {
+            try
+            {
+                return _internalClient.TelematicToursTourIdOrdersOrderIdCompleteStepPost(tourId, orderId, completeWorkflowStepRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <returns>ApiResponse of TelematicTourResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?))
+        {
+            try
+            {
+                return _internalClient.TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(tourId, orderId, completeWorkflowStepRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TelematicTourResponse</returns>
+        public System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(tourId, orderId, completeWorkflowStepRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicTourResponse>> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(tourId, orderId, completeWorkflowStepRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
         /// <param name="placeId"></param>
         /// <param name="completeWorkflowStepRequest"> (optional)</param>
         /// <returns>TelematicTourResponse</returns>
@@ -445,6 +732,91 @@ public interface IGenericTelematicToursClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <returns>UploadBlobResponse</returns>
+        public UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?))
+        {
+            try
+            {
+                return _internalClient.TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(tourId, placeId, orderId, file);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <returns>ApiResponse of UploadBlobResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?))
+        {
+            try
+            {
+                return _internalClient.TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(tourId, placeId, orderId, file);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UploadBlobResponse</returns>
+        public System.Threading.Tasks.Task<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(tourId, placeId, orderId, file, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadBlobResponse>> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(tourId, placeId, orderId, file, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -458,6 +830,28 @@ public interface IGenericTelematicToursClient
     internal interface __IGenericTelematicToursClientSync : IApiAccessor
     {
         #region Synchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>byte[]</returns>
+        byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -501,6 +895,30 @@ public interface IGenericTelematicToursClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TelematicTourResponse</returns>
+        TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TelematicTourResponse</returns>
+        ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
         /// <param name="placeId"></param>
         /// <param name="completeWorkflowStepRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -520,6 +938,32 @@ public interface IGenericTelematicToursClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         ApiResponse<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfo(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>UploadBlobResponse</returns>
+        UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of UploadBlobResponse</returns>
+        ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -529,6 +973,33 @@ public interface IGenericTelematicToursClient
     internal interface __IGenericTelematicToursClientAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetAsync(Guid tourId, Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(Guid tourId, Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -585,6 +1056,35 @@ public interface IGenericTelematicToursClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TelematicTourResponse</returns>
+        System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
         /// <param name="placeId"></param>
         /// <param name="completeWorkflowStepRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -606,6 +1106,37 @@ public interface IGenericTelematicToursClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UploadBlobResponse</returns>
+        System.Threading.Tasks.Task<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UploadBlobResponse>> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -726,6 +1257,170 @@ public interface IGenericTelematicToursClient
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>byte[]</returns>
+        public byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<byte[]> localVarResponse = TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(tourId, blobId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public Simplic.OxS.SDK.ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("tourId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tourId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
+
+            localVarRequestOptions.Operation = "GenericTelematicToursClient.TelematicToursDownloadBlobTourIdBlobIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<byte[]>("/generic-telematic-tours/download-blob/{tourId}/{blobId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicToursDownloadBlobTourIdBlobIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetAsync(Guid tourId, Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<byte[]> localVarResponse = await TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(tourId, blobId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="blobId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<byte[]>> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(Guid tourId, Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("tourId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tourId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("blobId", Simplic.OxS.SDK.ClientUtils.ParameterToString(blobId)); // path parameter
+
+            localVarRequestOptions.Operation = "GenericTelematicToursClient.TelematicToursDownloadBlobTourIdBlobIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<byte[]>("/generic-telematic-tours/download-blob/{tourId}/{blobId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicToursDownloadBlobTourIdBlobIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1043,6 +1738,182 @@ public interface IGenericTelematicToursClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TelematicTourResponse</returns>
+        public TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> localVarResponse = TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(tourId, orderId, completeWorkflowStepRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TelematicTourResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("tourId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tourId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = completeWorkflowStepRequest;
+
+            localVarRequestOptions.Operation = "GenericTelematicToursClient.TelematicToursTourIdOrdersOrderIdCompleteStepPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<TelematicTourResponse>("/generic-telematic-tours/{tourId}/orders/{orderId}/complete-step", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicToursTourIdOrdersOrderIdCompleteStepPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TelematicTourResponse</returns>
+        public async System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> localVarResponse = await TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(tourId, orderId, completeWorkflowStepRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicTourResponse>> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("tourId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tourId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = completeWorkflowStepRequest;
+
+            localVarRequestOptions.Operation = "GenericTelematicToursClient.TelematicToursTourIdOrdersOrderIdCompleteStepPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TelematicTourResponse>("/generic-telematic-tours/{tourId}/orders/{orderId}/complete-step", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicToursTourIdOrdersOrderIdCompleteStepPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
         /// <param name="placeId"></param>
         /// <param name="completeWorkflowStepRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1205,6 +2076,190 @@ public interface IGenericTelematicToursClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TelematicToursTourIdPlacesPlaceIdCompleteStepPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>UploadBlobResponse</returns>
+        public UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<UploadBlobResponse> localVarResponse = TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(tourId, placeId, orderId, file);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of UploadBlobResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("tourId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tourId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("placeId", Simplic.OxS.SDK.ClientUtils.ParameterToString(placeId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            localVarRequestOptions.Operation = "GenericTelematicToursClient.TelematicToursUploadBlobTourIdPlaceIdOrderIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<UploadBlobResponse>("/generic-telematic-tours/upload-blob/{tourId}/{placeId}/{orderId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicToursUploadBlobTourIdPlaceIdOrderIdPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UploadBlobResponse</returns>
+        public async System.Threading.Tasks.Task<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<UploadBlobResponse> localVarResponse = await TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(tourId, placeId, orderId, file, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tourId"></param>
+        /// <param name="placeId"></param>
+        /// <param name="orderId"></param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadBlobResponse>> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("tourId", Simplic.OxS.SDK.ClientUtils.ParameterToString(tourId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("placeId", Simplic.OxS.SDK.ClientUtils.ParameterToString(placeId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("orderId", Simplic.OxS.SDK.ClientUtils.ParameterToString(orderId)); // path parameter
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            localVarRequestOptions.Operation = "GenericTelematicToursClient.TelematicToursUploadBlobTourIdPlaceIdOrderIdPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UploadBlobResponse>("/generic-telematic-tours/upload-blob/{tourId}/{placeId}/{orderId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicToursUploadBlobTourIdPlaceIdOrderIdPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

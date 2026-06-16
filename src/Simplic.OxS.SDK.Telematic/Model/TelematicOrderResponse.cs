@@ -38,14 +38,38 @@ namespace Simplic.OxS.SDK.Telematic
         /// </summary>
         /// <param name="internalId">internalId.</param>
         /// <param name="orderNumber">orderNumber.</param>
-        /// <param name="reference">reference.</param>
+        /// <param name="articleName">articleName.</param>
         /// <param name="orderType">orderType.</param>
-        public TelematicOrderResponse(Guid? internalId = default(Guid?), string orderNumber = default(string), string reference = default(string), string orderType = default(string))
+        /// <param name="quantity">quantity.</param>
+        /// <param name="quantityUnit">quantityUnit.</param>
+        /// <param name="weight">weight.</param>
+        /// <param name="loadingMeter">loadingMeter.</param>
+        /// <param name="reference">reference.</param>
+        /// <param name="deliveryNumber">deliveryNumber.</param>
+        /// <param name="loadNumber">loadNumber.</param>
+        /// <param name="attachedResources">attachedResources.</param>
+        /// <param name="externalNotes">externalNotes.</param>
+        /// <param name="openingHours">openingHours.</param>
+        /// <param name="attachments">attachments.</param>
+        /// <param name="workflow">workflow.</param>
+        public TelematicOrderResponse(Guid? internalId = default(Guid?), string orderNumber = default(string), string articleName = default(string), string orderType = default(string), double? quantity = default(double?), string quantityUnit = default(string), double? weight = default(double?), double? loadingMeter = default(double?), string reference = default(string), string deliveryNumber = default(string), string loadNumber = default(string), List<TelematicResourceResponse> attachedResources = default(List<TelematicResourceResponse>), string externalNotes = default(string), List<OpeningHoursResponse> openingHours = default(List<OpeningHoursResponse>), List<OutgoingAttachmentResponse> attachments = default(List<OutgoingAttachmentResponse>), TelematicWorkflowResponse workflow = default(TelematicWorkflowResponse))
         {
             this.InternalId = internalId;
             this.OrderNumber = orderNumber;
-            this.Reference = reference;
+            this.ArticleName = articleName;
             this.OrderType = orderType;
+            this.Quantity = quantity;
+            this.QuantityUnit = quantityUnit;
+            this.Weight = weight;
+            this.LoadingMeter = loadingMeter;
+            this.Reference = reference;
+            this.DeliveryNumber = deliveryNumber;
+            this.LoadNumber = loadNumber;
+            this.AttachedResources = attachedResources;
+            this.ExternalNotes = externalNotes;
+            this.OpeningHours = openingHours;
+            this.Attachments = attachments;
+            this.Workflow = workflow;
         }
 
         /// <summary>
@@ -61,16 +85,88 @@ namespace Simplic.OxS.SDK.Telematic
         public string OrderNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or Sets ArticleName
         /// </summary>
-        [DataMember(Name = "reference", EmitDefaultValue = true)]
-        public string Reference { get; set; }
+        [DataMember(Name = "articleName", EmitDefaultValue = true)]
+        public string ArticleName { get; set; }
 
         /// <summary>
         /// Gets or Sets OrderType
         /// </summary>
         [DataMember(Name = "orderType", EmitDefaultValue = true)]
         public string OrderType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Quantity
+        /// </summary>
+        [DataMember(Name = "quantity", EmitDefaultValue = true)]
+        public double? Quantity { get; set; }
+
+        /// <summary>
+        /// Gets or Sets QuantityUnit
+        /// </summary>
+        [DataMember(Name = "quantityUnit", EmitDefaultValue = true)]
+        public string QuantityUnit { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Weight
+        /// </summary>
+        [DataMember(Name = "weight", EmitDefaultValue = true)]
+        public double? Weight { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoadingMeter
+        /// </summary>
+        [DataMember(Name = "loadingMeter", EmitDefaultValue = true)]
+        public double? LoadingMeter { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Reference
+        /// </summary>
+        [DataMember(Name = "reference", EmitDefaultValue = true)]
+        public string Reference { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeliveryNumber
+        /// </summary>
+        [DataMember(Name = "deliveryNumber", EmitDefaultValue = true)]
+        public string DeliveryNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoadNumber
+        /// </summary>
+        [DataMember(Name = "loadNumber", EmitDefaultValue = true)]
+        public string LoadNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AttachedResources
+        /// </summary>
+        [DataMember(Name = "attachedResources", EmitDefaultValue = true)]
+        public List<TelematicResourceResponse> AttachedResources { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalNotes
+        /// </summary>
+        [DataMember(Name = "externalNotes", EmitDefaultValue = true)]
+        public string ExternalNotes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OpeningHours
+        /// </summary>
+        [DataMember(Name = "openingHours", EmitDefaultValue = true)]
+        public List<OpeningHoursResponse> OpeningHours { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<OutgoingAttachmentResponse> Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Workflow
+        /// </summary>
+        [DataMember(Name = "workflow", EmitDefaultValue = false)]
+        public TelematicWorkflowResponse Workflow { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -82,8 +178,20 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("class TelematicOrderResponse {\n");
             sb.Append("  InternalId: ").Append(InternalId).Append("\n");
             sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
-            sb.Append("  Reference: ").Append(Reference).Append("\n");
+            sb.Append("  ArticleName: ").Append(ArticleName).Append("\n");
             sb.Append("  OrderType: ").Append(OrderType).Append("\n");
+            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
+            sb.Append("  Weight: ").Append(Weight).Append("\n");
+            sb.Append("  LoadingMeter: ").Append(LoadingMeter).Append("\n");
+            sb.Append("  Reference: ").Append(Reference).Append("\n");
+            sb.Append("  DeliveryNumber: ").Append(DeliveryNumber).Append("\n");
+            sb.Append("  LoadNumber: ").Append(LoadNumber).Append("\n");
+            sb.Append("  AttachedResources: ").Append(AttachedResources).Append("\n");
+            sb.Append("  ExternalNotes: ").Append(ExternalNotes).Append("\n");
+            sb.Append("  OpeningHours: ").Append(OpeningHours).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
+            sb.Append("  Workflow: ").Append(Workflow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -130,14 +238,77 @@ namespace Simplic.OxS.SDK.Telematic
                     this.OrderNumber.Equals(input.OrderNumber))
                 ) && 
                 (
-                    this.Reference == input.Reference ||
-                    (this.Reference != null &&
-                    this.Reference.Equals(input.Reference))
+                    this.ArticleName == input.ArticleName ||
+                    (this.ArticleName != null &&
+                    this.ArticleName.Equals(input.ArticleName))
                 ) && 
                 (
                     this.OrderType == input.OrderType ||
                     (this.OrderType != null &&
                     this.OrderType.Equals(input.OrderType))
+                ) && 
+                (
+                    this.Quantity == input.Quantity ||
+                    (this.Quantity != null &&
+                    this.Quantity.Equals(input.Quantity))
+                ) && 
+                (
+                    this.QuantityUnit == input.QuantityUnit ||
+                    (this.QuantityUnit != null &&
+                    this.QuantityUnit.Equals(input.QuantityUnit))
+                ) && 
+                (
+                    this.Weight == input.Weight ||
+                    (this.Weight != null &&
+                    this.Weight.Equals(input.Weight))
+                ) && 
+                (
+                    this.LoadingMeter == input.LoadingMeter ||
+                    (this.LoadingMeter != null &&
+                    this.LoadingMeter.Equals(input.LoadingMeter))
+                ) && 
+                (
+                    this.Reference == input.Reference ||
+                    (this.Reference != null &&
+                    this.Reference.Equals(input.Reference))
+                ) && 
+                (
+                    this.DeliveryNumber == input.DeliveryNumber ||
+                    (this.DeliveryNumber != null &&
+                    this.DeliveryNumber.Equals(input.DeliveryNumber))
+                ) && 
+                (
+                    this.LoadNumber == input.LoadNumber ||
+                    (this.LoadNumber != null &&
+                    this.LoadNumber.Equals(input.LoadNumber))
+                ) && 
+                (
+                    this.AttachedResources == input.AttachedResources ||
+                    this.AttachedResources != null &&
+                    input.AttachedResources != null &&
+                    this.AttachedResources.SequenceEqual(input.AttachedResources)
+                ) && 
+                (
+                    this.ExternalNotes == input.ExternalNotes ||
+                    (this.ExternalNotes != null &&
+                    this.ExternalNotes.Equals(input.ExternalNotes))
+                ) && 
+                (
+                    this.OpeningHours == input.OpeningHours ||
+                    this.OpeningHours != null &&
+                    input.OpeningHours != null &&
+                    this.OpeningHours.SequenceEqual(input.OpeningHours)
+                ) && 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
+                (
+                    this.Workflow == input.Workflow ||
+                    (this.Workflow != null &&
+                    this.Workflow.Equals(input.Workflow))
                 );
         }
 
@@ -158,13 +329,61 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.OrderNumber.GetHashCode();
                 }
-                if (this.Reference != null)
+                if (this.ArticleName != null)
                 {
-                    hashCode = (hashCode * 59) + this.Reference.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArticleName.GetHashCode();
                 }
                 if (this.OrderType != null)
                 {
                     hashCode = (hashCode * 59) + this.OrderType.GetHashCode();
+                }
+                if (this.Quantity != null)
+                {
+                    hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                }
+                if (this.QuantityUnit != null)
+                {
+                    hashCode = (hashCode * 59) + this.QuantityUnit.GetHashCode();
+                }
+                if (this.Weight != null)
+                {
+                    hashCode = (hashCode * 59) + this.Weight.GetHashCode();
+                }
+                if (this.LoadingMeter != null)
+                {
+                    hashCode = (hashCode * 59) + this.LoadingMeter.GetHashCode();
+                }
+                if (this.Reference != null)
+                {
+                    hashCode = (hashCode * 59) + this.Reference.GetHashCode();
+                }
+                if (this.DeliveryNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryNumber.GetHashCode();
+                }
+                if (this.LoadNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.LoadNumber.GetHashCode();
+                }
+                if (this.AttachedResources != null)
+                {
+                    hashCode = (hashCode * 59) + this.AttachedResources.GetHashCode();
+                }
+                if (this.ExternalNotes != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalNotes.GetHashCode();
+                }
+                if (this.OpeningHours != null)
+                {
+                    hashCode = (hashCode * 59) + this.OpeningHours.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
+                }
+                if (this.Workflow != null)
+                {
+                    hashCode = (hashCode * 59) + this.Workflow.GetHashCode();
                 }
                 return hashCode;
             }

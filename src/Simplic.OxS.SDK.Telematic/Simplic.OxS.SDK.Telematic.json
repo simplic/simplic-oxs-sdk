@@ -843,6 +843,216 @@
                 }
             }
         },
+        "/generic-telematic-tours/download-blob/{tourId}/{blobId}": {
+            "get": {
+                "tags": [
+                    "GenericTelematicTours"
+                ],
+                "parameters": [
+                    {
+                        "name": "tourId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "blobId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "byte"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "byte"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "byte"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generic-telematic-tours/upload-blob/{tourId}/{placeId}/{orderId}": {
+            "post": {
+                "tags": [
+                    "GenericTelematicTours"
+                ],
+                "parameters": [
+                    {
+                        "name": "tourId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "placeId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            },
+                            "encoding": {
+                                "file": {
+                                    "style": "form"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploadBlobResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploadBlobResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploadBlobResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/generic-telematic-tours/{tourId}/places/{placeId}/complete-step": {
             "post": {
                 "tags": [
@@ -860,6 +1070,134 @@
                     },
                     {
                         "name": "placeId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteWorkflowStepRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteWorkflowStepRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteWorkflowStepRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TelematicTourResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generic-telematic-tours/{tourId}/orders/{orderId}/complete-step": {
+            "post": {
+                "tags": [
+                    "GenericTelematicTours"
+                ],
+                "parameters": [
+                    {
+                        "name": "tourId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
+                        "name": "orderId",
                         "in": "path",
                         "required": true,
                         "schema": {
@@ -5477,7 +5815,8 @@
                     299,
                     300,
                     399,
-                    400
+                    400,
+                    999
                 ],
                 "type": "integer",
                 "format": "int32"
@@ -5614,6 +5953,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "providerMessageType": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "internalVehicleIdentifier": {
                         "type": "string",
                         "format": "uuid",
@@ -5745,6 +6088,20 @@
                 },
                 "additionalProperties": false
             },
+            "OpeningHoursResponse": {
+                "type": "object",
+                "properties": {
+                    "from": {
+                        "type": "string",
+                        "format": "date-span"
+                    },
+                    "to": {
+                        "type": "string",
+                        "format": "date-span"
+                    }
+                },
+                "additionalProperties": false
+            },
             "OrderType": {
                 "enum": [
                     0,
@@ -5865,6 +6222,20 @@
                     },
                     "success": {
                         "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OutgoingAttachmentResponse": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "blobId": {
+                        "type": "string",
+                        "format": "uuid"
                     }
                 },
                 "additionalProperties": false
@@ -6426,13 +6797,72 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "reference": {
+                    "articleName": {
                         "type": "string",
                         "nullable": true
                     },
                     "orderType": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "quantityUnit": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "weight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "loadingMeter": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "deliveryNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loadNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "attachedResources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TelematicResourceResponse"
+                        },
+                        "nullable": true
+                    },
+                    "externalNotes": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "openingHours": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OpeningHoursResponse"
+                        },
+                        "nullable": true
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OutgoingAttachmentResponse"
+                        },
+                        "nullable": true
+                    },
+                    "workflow": {
+                        "$ref": "#/components/schemas/TelematicWorkflowResponse"
                     }
                 },
                 "additionalProperties": false
@@ -6489,6 +6919,24 @@
                     },
                     "workflow": {
                         "$ref": "#/components/schemas/TelematicWorkflowResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TelematicResourceResponse": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -6623,6 +7071,24 @@
                 "type": "object",
                 "properties": {
                     "value": {
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UploadBlobResponse": {
+                "type": "object",
+                "properties": {
+                    "blobId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "contentType": {
+                        "type": "string",
                         "nullable": true
                     }
                 },

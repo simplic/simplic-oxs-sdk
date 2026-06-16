@@ -41,6 +41,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="providerIdentifier">providerIdentifier.</param>
         /// <param name="providerVehicleIdentifier">providerVehicleIdentifier.</param>
+        /// <param name="providerMessageType">providerMessageType.</param>
         /// <param name="internalVehicleIdentifier">internalVehicleIdentifier.</param>
         /// <param name="text">text.</param>
         /// <param name="reference">reference.</param>
@@ -55,13 +56,14 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="messageTimeUtc">messageTimeUtc.</param>
         /// <param name="messageType">messageType.</param>
         /// <param name="queueId">queueId.</param>
-        public IncomingTelematicMessage(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string providerIdentifier = default(string), string providerVehicleIdentifier = default(string), Guid? internalVehicleIdentifier = default(Guid?), string text = default(string), string reference = default(string), double latitude = default(double), double longitude = default(double), IncomingTour tour = default(IncomingTour), IncomingPlace place = default(IncomingPlace), IncomingOrder order = default(IncomingOrder), FmsData fmsData = default(FmsData), Address locationInformation = default(Address), Driver driver = default(Driver), DateTime? messageTimeUtc = default(DateTime?), List<IncomingMessageType> messageType = default(List<IncomingMessageType>), Guid? queueId = default(Guid?))
+        public IncomingTelematicMessage(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string providerIdentifier = default(string), string providerVehicleIdentifier = default(string), string providerMessageType = default(string), Guid? internalVehicleIdentifier = default(Guid?), string text = default(string), string reference = default(string), double latitude = default(double), double longitude = default(double), IncomingTour tour = default(IncomingTour), IncomingPlace place = default(IncomingPlace), IncomingOrder order = default(IncomingOrder), FmsData fmsData = default(FmsData), Address locationInformation = default(Address), Driver driver = default(Driver), DateTime? messageTimeUtc = default(DateTime?), List<IncomingMessageType> messageType = default(List<IncomingMessageType>), Guid? queueId = default(Guid?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
             this.ProviderIdentifier = providerIdentifier;
             this.ProviderVehicleIdentifier = providerVehicleIdentifier;
+            this.ProviderMessageType = providerMessageType;
             this.InternalVehicleIdentifier = internalVehicleIdentifier;
             this.Text = text;
             this.Reference = reference;
@@ -107,6 +109,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// </summary>
         [DataMember(Name = "providerVehicleIdentifier", EmitDefaultValue = true)]
         public string ProviderVehicleIdentifier { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProviderMessageType
+        /// </summary>
+        [DataMember(Name = "providerMessageType", EmitDefaultValue = true)]
+        public string ProviderMessageType { get; set; }
 
         /// <summary>
         /// Gets or Sets InternalVehicleIdentifier
@@ -205,6 +213,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  ProviderIdentifier: ").Append(ProviderIdentifier).Append("\n");
             sb.Append("  ProviderVehicleIdentifier: ").Append(ProviderVehicleIdentifier).Append("\n");
+            sb.Append("  ProviderMessageType: ").Append(ProviderMessageType).Append("\n");
             sb.Append("  InternalVehicleIdentifier: ").Append(InternalVehicleIdentifier).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
@@ -277,6 +286,11 @@ namespace Simplic.OxS.SDK.Telematic
                     this.ProviderVehicleIdentifier == input.ProviderVehicleIdentifier ||
                     (this.ProviderVehicleIdentifier != null &&
                     this.ProviderVehicleIdentifier.Equals(input.ProviderVehicleIdentifier))
+                ) && 
+                (
+                    this.ProviderMessageType == input.ProviderMessageType ||
+                    (this.ProviderMessageType != null &&
+                    this.ProviderMessageType.Equals(input.ProviderMessageType))
                 ) && 
                 (
                     this.InternalVehicleIdentifier == input.InternalVehicleIdentifier ||
@@ -374,6 +388,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.ProviderVehicleIdentifier != null)
                 {
                     hashCode = (hashCode * 59) + this.ProviderVehicleIdentifier.GetHashCode();
+                }
+                if (this.ProviderMessageType != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProviderMessageType.GetHashCode();
                 }
                 if (this.InternalVehicleIdentifier != null)
                 {

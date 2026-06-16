@@ -70,7 +70,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Enum NUMBER_400 for value: 400
         /// </summary>
-        NUMBER_400 = 400
+        NUMBER_400 = 400,
+
+        /// <summary>
+        /// Enum NUMBER_999 for value: 999
+        /// </summary>
+        NUMBER_999 = 999
     }
 
 }

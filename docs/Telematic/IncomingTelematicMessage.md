@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IsDeleted** | **bool** |  | [optional] 
 **ProviderIdentifier** | **string** |  | [optional] 
 **ProviderVehicleIdentifier** | **string** |  | [optional] 
+**ProviderMessageType** | **string** |  | [optional] 
 **InternalVehicleIdentifier** | **Guid?** |  | [optional] 
 **Text** | **string** |  | [optional] 
 **Reference** | **string** |  | [optional] 
