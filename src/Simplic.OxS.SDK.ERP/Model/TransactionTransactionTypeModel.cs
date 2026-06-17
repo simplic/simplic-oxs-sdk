@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="shortName">Gets or sets the short name..</param>
         /// <param name="functions">Gets or sets a set of functions the transaction type has.     Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order  .</param>
         /// <param name="subtype">subtype.</param>
-        public TransactionTransactionTypeModel(Guid id = default(Guid), string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), TransactionSubtypeModel subtype = default(TransactionSubtypeModel))
+        public TransactionTransactionTypeModel(Guid id = default(Guid), string name = default(string), int number = default(int), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), TransactionTransactionSubtypeModel subtype = default(TransactionTransactionSubtypeModel))
         {
             this.Id = id;
             this.Name = name;
@@ -100,7 +100,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or Sets Subtype
         /// </summary>
         [DataMember(Name = "subtype", EmitDefaultValue = false)]
-        public TransactionSubtypeModel Subtype { get; set; }
+        public TransactionTransactionSubtypeModel Subtype { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

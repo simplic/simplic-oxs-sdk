@@ -61,8 +61,9 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="TransactionSubtypeModel" /> class.
         /// </summary>
         /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="code">Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time  and never changes afterwards.  .</param>
         /// <param name="report">report.</param>
-        /// <param name="sequence">sequence.</param>
+        /// <param name="sequenceNumberRange">sequenceNumberRange.</param>
         /// <param name="outputConfiguration">outputConfiguration.</param>
         /// <param name="number">Gets or sets a unique id..</param>
         /// <param name="name">Gets or sets the subtype name..</param>
@@ -79,11 +80,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="transactionNumberDateSource">transactionNumberDateSource.</param>
         /// <param name="exportCostQuantity">exportCostQuantity.</param>
         /// <param name="isDeleted">Gets or sets the IsDeleted flag..</param>
-        public TransactionSubtypeModel(Guid id = default(Guid), TransactionSubtypeReportModel report = default(TransactionSubtypeReportModel), TransactionSubtypeSequenceModel sequence = default(TransactionSubtypeSequenceModel), TransactionSubtypeOutputConfigurationModel outputConfiguration = default(TransactionSubtypeOutputConfigurationModel), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?), bool isDeleted = default(bool))
+        public TransactionSubtypeModel(Guid id = default(Guid), string code = default(string), TransactionSubtypeReportModel report = default(TransactionSubtypeReportModel), TransactionSequenceNumberRangeModel sequenceNumberRange = default(TransactionSequenceNumberRangeModel), TransactionSubtypeOutputConfigurationModel outputConfiguration = default(TransactionSubtypeOutputConfigurationModel), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?), bool isDeleted = default(bool))
         {
             this.Id = id;
+            this.Code = code;
             this.Report = report;
-            this.Sequence = sequence;
+            this.SequenceNumberRange = sequenceNumberRange;
             this.OutputConfiguration = outputConfiguration;
             this.Number = number;
             this.Name = name;
@@ -110,16 +112,23 @@ namespace Simplic.OxS.SDK.ERP
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time  and never changes afterwards.  
+        /// </summary>
+        /// <value>Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time  and never changes afterwards.  </value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// Gets or Sets Report
         /// </summary>
         [DataMember(Name = "report", EmitDefaultValue = false)]
         public TransactionSubtypeReportModel Report { get; set; }
 
         /// <summary>
-        /// Gets or Sets Sequence
+        /// Gets or Sets SequenceNumberRange
         /// </summary>
-        [DataMember(Name = "sequence", EmitDefaultValue = false)]
-        public TransactionSubtypeSequenceModel Sequence { get; set; }
+        [DataMember(Name = "sequenceNumberRange", EmitDefaultValue = false)]
+        public TransactionSequenceNumberRangeModel SequenceNumberRange { get; set; }
 
         /// <summary>
         /// Gets or Sets OutputConfiguration
@@ -213,8 +222,9 @@ namespace Simplic.OxS.SDK.ERP
             StringBuilder sb = new StringBuilder();
             sb.Append("class TransactionSubtypeModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Report: ").Append(Report).Append("\n");
-            sb.Append("  Sequence: ").Append(Sequence).Append("\n");
+            sb.Append("  SequenceNumberRange: ").Append(SequenceNumberRange).Append("\n");
             sb.Append("  OutputConfiguration: ").Append(OutputConfiguration).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -272,14 +282,19 @@ namespace Simplic.OxS.SDK.ERP
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.Report == input.Report ||
                     (this.Report != null &&
                     this.Report.Equals(input.Report))
                 ) && 
                 (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
+                    this.SequenceNumberRange == input.SequenceNumberRange ||
+                    (this.SequenceNumberRange != null &&
+                    this.SequenceNumberRange.Equals(input.SequenceNumberRange))
                 ) && 
                 (
                     this.OutputConfiguration == input.OutputConfiguration ||
@@ -368,13 +383,17 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                }
                 if (this.Report != null)
                 {
                     hashCode = (hashCode * 59) + this.Report.GetHashCode();
                 }
-                if (this.Sequence != null)
+                if (this.SequenceNumberRange != null)
                 {
-                    hashCode = (hashCode * 59) + this.Sequence.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SequenceNumberRange.GetHashCode();
                 }
                 if (this.OutputConfiguration != null)
                 {

@@ -6,8 +6,9 @@ Represents the shared model for a transaction subtype.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Gets or sets the ID. | [optional] 
+**Code** | **string** | Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time  and never changes afterwards.   | [optional] 
 **Report** | [**TransactionSubtypeReportModel**](TransactionSubtypeReportModel.md) |  | [optional] 
-**Sequence** | [**TransactionSubtypeSequenceModel**](TransactionSubtypeSequenceModel.md) |  | [optional] 
+**SequenceNumberRange** | [**TransactionSequenceNumberRangeModel**](TransactionSequenceNumberRangeModel.md) |  | [optional] 
 **OutputConfiguration** | [**TransactionSubtypeOutputConfigurationModel**](TransactionSubtypeOutputConfigurationModel.md) |  | [optional] 
 **Number** | **int** | Gets or sets a unique id. | [optional] 
 **Name** | **string** | Gets or sets the subtype name. | [optional] 

@@ -28,33 +28,31 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the shared model for a transaction subtype sequence.
+    /// TransactionSubtypeReport
     /// </summary>
-    [DataContract(Name = "TransactionSubtypeSequenceModel")]
-    public partial class TransactionSubtypeSequenceModel : IEquatable<TransactionSubtypeSequenceModel>, IValidatableObject
+    [DataContract(Name = "TransactionSubtypeReport")]
+    public partial class TransactionSubtypeReport : IEquatable<TransactionSubtypeReport>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionSubtypeSequenceModel" /> class.
+        /// Initializes a new instance of the <see cref="TransactionSubtypeReport" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the ID..</param>
-        /// <param name="name">Gets or sets the name..</param>
-        public TransactionSubtypeSequenceModel(Guid id = default(Guid), string name = default(string))
+        /// <param name="id">id.</param>
+        /// <param name="name">name.</param>
+        public TransactionSubtypeReport(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or sets the ID.
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or Sets Name
         /// </summary>
-        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -65,7 +63,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionSubtypeSequenceModel {\n");
+            sb.Append("class TransactionSubtypeReport {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
@@ -88,15 +86,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionSubtypeSequenceModel);
+            return this.Equals(input as TransactionSubtypeReport);
         }
 
         /// <summary>
-        /// Returns true if TransactionSubtypeSequenceModel instances are equal
+        /// Returns true if TransactionSubtypeReport instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionSubtypeSequenceModel to be compared</param>
+        /// <param name="input">Instance of TransactionSubtypeReport to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionSubtypeSequenceModel input)
+        public bool Equals(TransactionSubtypeReport input)
         {
             if (input == null)
             {

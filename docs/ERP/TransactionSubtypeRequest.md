@@ -6,11 +6,12 @@ Represents a request to create or update a Simplic.OxS.ERP.Transaction.Transacti
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Gets or sets the ID. | [optional] 
-**ReportId** | **Guid** | Gets or sets an optional report for this subtype given by ID. | 
-**SequenceId** | **Guid?** | Gets or sets an optional sequence for this subtype given by ID. | [optional] 
-**OutputConfigurationId** | **Guid?** | Gets or sets the output configuration given by ID. | [optional] 
-**Number** | **int** | Gets or sets a unique id | 
-**Name** | **string** | Gets or sets the subtype name | 
+**Code** | **string** | Stable code for subtype deployment/references. | [optional] 
+**Report** | [**TransactionSubtypeReport**](TransactionSubtypeReport.md) |  | [optional] 
+**SequenceNumberRange** | [**TransactionSequenceNumberRange**](TransactionSequenceNumberRange.md) |  | [optional] 
+**OutputConfiguration** | [**TransactionSubtypeOutputConfiguration**](TransactionSubtypeOutputConfiguration.md) |  | [optional] 
+**Number** | **int** | Gets or sets a unique number. | 
+**Name** | **string** | Gets or sets the subtype name. | 
 **DocumentTitleTemplate** | **string** | Gets or sets the document title template. | [optional] 
 **ArchiveMode** | **TransactionSubtypeArchiveMode** |  | [optional] 
 **BarcodeTemplate** | **string** | Gets or sets the barcode template | [optional] 

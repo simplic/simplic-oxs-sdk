@@ -245,10 +245,22 @@ namespace Simplic.OxS.SDK.ERP
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 2.", new [] { "Name" });
             }
 
+            // CashDiscountDays (int) maximum
+            if (this.CashDiscountDays > (int)2147483647)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CashDiscountDays, must be a value less than or equal to 2147483647.", new [] { "CashDiscountDays" });
+            }
+
             // CashDiscountDays (int) minimum
             if (this.CashDiscountDays < (int)0)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CashDiscountDays, must be a value greater than or equal to 0.", new [] { "CashDiscountDays" });
+            }
+
+            // PaymentDeadlineDays (int) maximum
+            if (this.PaymentDeadlineDays > (int)2147483647)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PaymentDeadlineDays, must be a value less than or equal to 2147483647.", new [] { "PaymentDeadlineDays" });
             }
 
             // PaymentDeadlineDays (int) minimum
