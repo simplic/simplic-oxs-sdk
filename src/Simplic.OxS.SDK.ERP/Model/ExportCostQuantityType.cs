@@ -28,9 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the export cost quantity type.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;  No &#x3D; 0  &lt;/item&gt;&lt;item&gt;  ExactValue &#x3D; 1  &lt;/item&gt;&lt;item&gt;  AbsoluteValue &#x3D; 2  &lt;/item&gt;&lt;/list&gt;
+    /// Represents the export cost quantity type. &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt; No &#x3D; 0 &lt;/item&gt;&lt;item&gt; ExactValue &#x3D; 1 &lt;/item&gt;&lt;item&gt; AbsoluteValue &#x3D; 2 &lt;/item&gt;&lt;/list&gt;
     /// </summary>
-    /// <value>Represents the export cost quantity type.  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;  No &#x3D; 0  &lt;/item&gt;&lt;item&gt;  ExactValue &#x3D; 1  &lt;/item&gt;&lt;item&gt;  AbsoluteValue &#x3D; 2  &lt;/item&gt;&lt;/list&gt;</value>
+    /// <value>Represents the export cost quantity type. &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt; No &#x3D; 0 &lt;/item&gt;&lt;item&gt; ExactValue &#x3D; 1 &lt;/item&gt;&lt;item&gt; AbsoluteValue &#x3D; 2 &lt;/item&gt;&lt;/list&gt;</value>
     public enum ExportCostQuantityType
     {
         /// <summary>

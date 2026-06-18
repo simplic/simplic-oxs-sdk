@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **CashDiscount** | **double** | Gets or sets the cash discount quantity. | [optional] 
 **CashDiscountDays** | **int** | Gets or sets the number of days the cash discount applies for. | [optional] 
 **PaymentDeadlineDays** | **int** | Gets or sets the number of days to payment deadline. | [optional] 
-**States** | **List&lt;string&gt;** | Gets or sets a set of states that apply to the terms of payment.     Examples for states are: outgoing, incoming   | [optional] 
+**States** | **List&lt;string&gt;** | Gets or sets a set of states that apply to the terms of payment.  Examples for states are: outgoing, incoming | [optional] 
 **FormattedText** | **string** | Gets or sets a descriptive formatted text containing the terms of payment parameters. | [optional] 
 **CreateDateTime** | **DateTime** | Gets or sets the date and time the terms of payment is created. | [optional] 
 **CreateUserId** | **Guid?** | Gets or sets the id of the user that created the terms of payment. | [optional] 

@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="detailHtml">Gets or sets the detail HTML..</param>
         /// <param name="dataTemplate">Gets or sets the data template..</param>
         /// <param name="articleGLAResolver">Gets or sets the article GLA resolver..</param>
-        /// <param name="code">Gets or sets an code.  This code is to be used by internal processes..</param>
+        /// <param name="code">Gets or sets an code. This code is to be used by internal processes..</param>
         public UpdateTransactionItemTypeRequest(string name = default(string), int? number = default(int?), bool? hasPositionNumber = default(bool?), bool? isSelectable = default(bool?), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), string code = default(string))
         {
             this.Name = name;
@@ -106,9 +106,9 @@ namespace Simplic.OxS.SDK.ERP
         public string ArticleGLAResolver { get; set; }
 
         /// <summary>
-        /// Gets or sets an code.  This code is to be used by internal processes.
+        /// Gets or sets an code. This code is to be used by internal processes.
         /// </summary>
-        /// <value>Gets or sets an code.  This code is to be used by internal processes.</value>
+        /// <value>Gets or sets an code. This code is to be used by internal processes.</value>
         [DataMember(Name = "code", EmitDefaultValue = true)]
         public string Code { get; set; }
 

@@ -37,21 +37,21 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="UpdateBillingLineRequest" /> class.
         /// </summary>
         /// <param name="financialPartner">financialPartner.</param>
-        /// <param name="date">Gets or sets the date associated with this billing line.     A billing line stores all necessary information to create a transaction based on itself or a   set of billing lines.  .</param>
+        /// <param name="date">Gets or sets the date associated with this billing line.  A billing line stores all necessary information to create a transaction based on itself or a  set of billing lines..</param>
         /// <param name="deliveryDate">Gets or sets the delivery date associated with this billing line..</param>
         /// <param name="text">Gets or sets the text describing this billing line..</param>
         /// <param name="quantity">quantity.</param>
-        /// <param name="singlePrice">Gets or sets the price for a single unit of the item or service described   by this billing line..</param>
+        /// <param name="singlePrice">Gets or sets the price for a single unit of the item or service described  by this billing line..</param>
         /// <param name="totalPrice">Gets or sets the total price of the item or service described by this billing line..</param>
         /// <param name="isGross">Gets or sets a value indicating whether the billing line price is gross or net..</param>
         /// <param name="taxRateId">Gets or sets the tax rate by ID..</param>
         /// <param name="costCenters">Gets or sets the cost center assignments associated with this billing line..</param>
         /// <param name="costObjects">Gets or sets the cost object assignments associated with this billing line..</param>
-        /// <param name="generalLedgerAccountGroupId">Gets or sets the general ledger account group for this billing line by ID.     The general ledger account group is used in the financial accounting process to   determine the general ledger account.  .</param>
+        /// <param name="generalLedgerAccountGroupId">Gets or sets the general ledger account group for this billing line by ID.  The general ledger account group is used in the financial accounting process to  determine the general ledger account..</param>
         /// <param name="reference">Gets or sets the main reference..</param>
         /// <param name="references">Gets or sets a set of additional references..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
-        /// <param name="addon">Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line..</param>
+        /// <param name="addon">Gets or sets a set of additional properties that can be used to store any  additional information related to this billing line..</param>
         /// <param name="sourceBillingLineReference">sourceBillingLineReference.</param>
         public UpdateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityRequest quantity = default(BillingLineQuantityRequest), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), Guid? taxRateId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), SourceBillingLineReferenceRequest sourceBillingLineReference = default(SourceBillingLineReferenceRequest))
         {
@@ -81,9 +81,9 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionContactRequest FinancialPartner { get; set; }
 
         /// <summary>
-        /// Gets or sets the date associated with this billing line.     A billing line stores all necessary information to create a transaction based on itself or a   set of billing lines.  
+        /// Gets or sets the date associated with this billing line.  A billing line stores all necessary information to create a transaction based on itself or a  set of billing lines.
         /// </summary>
-        /// <value>Gets or sets the date associated with this billing line.     A billing line stores all necessary information to create a transaction based on itself or a   set of billing lines.  </value>
+        /// <value>Gets or sets the date associated with this billing line.  A billing line stores all necessary information to create a transaction based on itself or a  set of billing lines.</value>
         [DataMember(Name = "date", EmitDefaultValue = true)]
         public DateTime? Date { get; set; }
 
@@ -108,9 +108,9 @@ namespace Simplic.OxS.SDK.ERP
         public BillingLineQuantityRequest Quantity { get; set; }
 
         /// <summary>
-        /// Gets or sets the price for a single unit of the item or service described   by this billing line.
+        /// Gets or sets the price for a single unit of the item or service described  by this billing line.
         /// </summary>
-        /// <value>Gets or sets the price for a single unit of the item or service described   by this billing line.</value>
+        /// <value>Gets or sets the price for a single unit of the item or service described  by this billing line.</value>
         [DataMember(Name = "singlePrice", EmitDefaultValue = true)]
         public double? SinglePrice { get; set; }
 
@@ -150,9 +150,9 @@ namespace Simplic.OxS.SDK.ERP
         public List<CostCenterAssignmentRequest> CostObjects { get; set; }
 
         /// <summary>
-        /// Gets or sets the general ledger account group for this billing line by ID.     The general ledger account group is used in the financial accounting process to   determine the general ledger account.  
+        /// Gets or sets the general ledger account group for this billing line by ID.  The general ledger account group is used in the financial accounting process to  determine the general ledger account.
         /// </summary>
-        /// <value>Gets or sets the general ledger account group for this billing line by ID.     The general ledger account group is used in the financial accounting process to   determine the general ledger account.  </value>
+        /// <value>Gets or sets the general ledger account group for this billing line by ID.  The general ledger account group is used in the financial accounting process to  determine the general ledger account.</value>
         [DataMember(Name = "generalLedgerAccountGroupId", EmitDefaultValue = true)]
         public Guid? GeneralLedgerAccountGroupId { get; set; }
 
@@ -178,9 +178,9 @@ namespace Simplic.OxS.SDK.ERP
         public bool? IsManualBillingLine { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line.
+        /// Gets or sets a set of additional properties that can be used to store any  additional information related to this billing line.
         /// </summary>
-        /// <value>Gets or sets a set of additional properties that can be used to store any   additional information related to this billing line.</value>
+        /// <value>Gets or sets a set of additional properties that can be used to store any  additional information related to this billing line.</value>
         [DataMember(Name = "addon", EmitDefaultValue = true)]
         public Dictionary<string, Object> Addon { get; set; }
 

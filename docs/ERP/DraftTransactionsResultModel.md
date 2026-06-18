@@ -1,5 +1,5 @@
 # Simplic.OxS.SDK.ERP.DraftTransactionsResultModel
-Represents the shared model of the result of an operation resulting in a set of draft   transactions.
+Represents the shared model of the result of an operation resulting in a set of draft  transactions.
 
 ## Properties
 

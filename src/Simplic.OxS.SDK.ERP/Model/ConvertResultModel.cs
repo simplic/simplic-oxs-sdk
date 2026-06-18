@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="transaction">transaction.</param>
         /// <param name="errors">Gets or sets a set of Simplic.OxS.ERP.Server.LocalizableErrorModel objects..</param>
-        /// <param name="convertStates">Gets or sets a set of convert states.  For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID.  &lt;para&gt;&lt;/para&gt;.</param>
+        /// <param name="convertStates">Gets or sets a set of convert states. For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID. &lt;para&gt;&lt;/para&gt;.</param>
         public ConvertResultModel(TransactionModel transaction = default(TransactionModel), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>), Dictionary<string, TransactionConvertState> convertStates = default(Dictionary<string, TransactionConvertState>))
         {
             this.Transaction = transaction;
@@ -60,9 +60,9 @@ namespace Simplic.OxS.SDK.ERP
         public List<LocalizableErrorModel> Errors { get; set; }
 
         /// <summary>
-        /// Gets or sets a set of convert states.  For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID.  &lt;para&gt;&lt;/para&gt;
+        /// Gets or sets a set of convert states. For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID. &lt;para&gt;&lt;/para&gt;
         /// </summary>
-        /// <value>Gets or sets a set of convert states.  For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID.  &lt;para&gt;&lt;/para&gt;</value>
+        /// <value>Gets or sets a set of convert states. For each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction&#39;s ID. &lt;para&gt;&lt;/para&gt;</value>
         [DataMember(Name = "convertStates", EmitDefaultValue = true)]
         public Dictionary<string, TransactionConvertState> ConvertStates { get; set; }
 

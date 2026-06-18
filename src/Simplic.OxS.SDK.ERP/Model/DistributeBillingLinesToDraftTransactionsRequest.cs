@@ -37,8 +37,8 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="DistributeBillingLinesToDraftTransactionsRequest" /> class.
         /// </summary>
         /// <param name="billingLineIds">Gets or sets the set of billing line IDs to distribute..</param>
-        /// <param name="pinnedTransactionIds">Gets or sets an optional map of billing line ID to a pinned draft transaction ID.  When a billing line ID is present in this map its target transaction is used directly,  bypassing the split configuration matching..</param>
-        /// <param name="splitConfigurationId">Gets or sets the ID of the split configuration used to match unassigned billing lines  to existing draft transactions..</param>
+        /// <param name="pinnedTransactionIds">Gets or sets an optional map of billing line ID to a pinned draft transaction ID. When a billing line ID is present in this map its target transaction is used directly, bypassing the split configuration matching..</param>
+        /// <param name="splitConfigurationId">Gets or sets the ID of the split configuration used to match unassigned billing lines to existing draft transactions..</param>
         public DistributeBillingLinesToDraftTransactionsRequest(List<Guid> billingLineIds = default(List<Guid>), Dictionary<string, Guid> pinnedTransactionIds = default(Dictionary<string, Guid>), Guid splitConfigurationId = default(Guid))
         {
             this.BillingLineIds = billingLineIds;
@@ -54,16 +54,16 @@ namespace Simplic.OxS.SDK.ERP
         public List<Guid> BillingLineIds { get; set; }
 
         /// <summary>
-        /// Gets or sets an optional map of billing line ID to a pinned draft transaction ID.  When a billing line ID is present in this map its target transaction is used directly,  bypassing the split configuration matching.
+        /// Gets or sets an optional map of billing line ID to a pinned draft transaction ID. When a billing line ID is present in this map its target transaction is used directly, bypassing the split configuration matching.
         /// </summary>
-        /// <value>Gets or sets an optional map of billing line ID to a pinned draft transaction ID.  When a billing line ID is present in this map its target transaction is used directly,  bypassing the split configuration matching.</value>
+        /// <value>Gets or sets an optional map of billing line ID to a pinned draft transaction ID. When a billing line ID is present in this map its target transaction is used directly, bypassing the split configuration matching.</value>
         [DataMember(Name = "pinnedTransactionIds", EmitDefaultValue = true)]
         public Dictionary<string, Guid> PinnedTransactionIds { get; set; }
 
         /// <summary>
-        /// Gets or sets the ID of the split configuration used to match unassigned billing lines  to existing draft transactions.
+        /// Gets or sets the ID of the split configuration used to match unassigned billing lines to existing draft transactions.
         /// </summary>
-        /// <value>Gets or sets the ID of the split configuration used to match unassigned billing lines  to existing draft transactions.</value>
+        /// <value>Gets or sets the ID of the split configuration used to match unassigned billing lines to existing draft transactions.</value>
         [DataMember(Name = "splitConfigurationId", EmitDefaultValue = false)]
         public Guid SplitConfigurationId { get; set; }
 

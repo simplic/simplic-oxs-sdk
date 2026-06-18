@@ -36,7 +36,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="LockBillingLineResultModel" /> class.
         /// </summary>
-        /// <param name="locked">Gets or sets whether the billing line is locked after the operation.   &#x60;true&#x60; if the operation succeeded or the billing line was already locked;  &#x60;false&#x60; if the billing line was in an illegal state for locking.  .</param>
+        /// <param name="locked">Gets or sets whether the billing line is locked after the operation.  &#x60;true&#x60; if the operation succeeded or the billing line was already locked; &#x60;false&#x60; if the billing line was in an illegal state for locking..</param>
         /// <param name="errors">Gets or sets the set of errors that occurred during the operation..</param>
         public LockBillingLineResultModel(bool locked = default(bool), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
         {
@@ -45,9 +45,9 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or sets whether the billing line is locked after the operation.   &#x60;true&#x60; if the operation succeeded or the billing line was already locked;  &#x60;false&#x60; if the billing line was in an illegal state for locking.  
+        /// Gets or sets whether the billing line is locked after the operation.  &#x60;true&#x60; if the operation succeeded or the billing line was already locked; &#x60;false&#x60; if the billing line was in an illegal state for locking.
         /// </summary>
-        /// <value>Gets or sets whether the billing line is locked after the operation.   &#x60;true&#x60; if the operation succeeded or the billing line was already locked;  &#x60;false&#x60; if the billing line was in an illegal state for locking.  </value>
+        /// <value>Gets or sets whether the billing line is locked after the operation.  &#x60;true&#x60; if the operation succeeded or the billing line was already locked; &#x60;false&#x60; if the billing line was in an illegal state for locking.</value>
         [DataMember(Name = "locked", EmitDefaultValue = true)]
         public bool Locked { get; set; }
 

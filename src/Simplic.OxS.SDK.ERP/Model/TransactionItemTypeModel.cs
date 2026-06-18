@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="number">Gets or sets the number..</param>
-        /// <param name="code">Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  .</param>
+        /// <param name="code">Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time and never changes afterwards..</param>
         /// <param name="hasPositionNumber">Gets or sets the has position number flag..</param>
         /// <param name="isSelectable">Gets or sets the is selectable flag..</param>
         /// <param name="detailHtml">Gets or sets the detail HTML..</param>
@@ -107,9 +107,9 @@ namespace Simplic.OxS.SDK.ERP
         public int Number { get; set; }
 
         /// <summary>
-        /// Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  
+        /// Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time and never changes afterwards.
         /// </summary>
-        /// <value>Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.  </value>
+        /// <value>Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time and never changes afterwards.</value>
         [DataMember(Name = "code", EmitDefaultValue = true)]
         public string Code { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the model for the result of adding a set of billing lines to a single draft  transaction, together with the IDs of all billing lines that were added.
+    /// Represents the model for the result of adding a set of billing lines to a single draft transaction, together with the IDs of all billing lines that were added.
     /// </summary>
     [DataContract(Name = "AddBillingLinesToDraftTransactionResultModel")]
     public partial class AddBillingLinesToDraftTransactionResultModel : IEquatable<AddBillingLinesToDraftTransactionResultModel>, IValidatableObject
@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="AddBillingLinesToDraftTransactionResultModel" /> class.
         /// </summary>
         /// <param name="draftTransactionResult">draftTransactionResult.</param>
-        /// <param name="billingLineIds">Gets or sets the IDs of all billing lines that were added to the draft transaction  as part of this operation..</param>
+        /// <param name="billingLineIds">Gets or sets the IDs of all billing lines that were added to the draft transaction as part of this operation..</param>
         public AddBillingLinesToDraftTransactionResultModel(TransactionResultModel draftTransactionResult = default(TransactionResultModel), List<Guid> billingLineIds = default(List<Guid>))
         {
             this.DraftTransactionResult = draftTransactionResult;
@@ -51,9 +51,9 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionResultModel DraftTransactionResult { get; set; }
 
         /// <summary>
-        /// Gets or sets the IDs of all billing lines that were added to the draft transaction  as part of this operation.
+        /// Gets or sets the IDs of all billing lines that were added to the draft transaction as part of this operation.
         /// </summary>
-        /// <value>Gets or sets the IDs of all billing lines that were added to the draft transaction  as part of this operation.</value>
+        /// <value>Gets or sets the IDs of all billing lines that were added to the draft transaction as part of this operation.</value>
         [DataMember(Name = "billingLineIds", EmitDefaultValue = true)]
         public List<Guid> BillingLineIds { get; set; }
 

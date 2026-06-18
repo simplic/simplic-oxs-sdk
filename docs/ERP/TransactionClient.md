@@ -9,8 +9,8 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**ByNumber**](TransactionClient.md#transactionbynumbernumberget) | **GET** /Transaction/by-number/{number} | Gets a set of transactions by number. |
 | [**Cancel**](TransactionClient.md#transactioncancelpatch) | **PATCH** /Transaction/cancel | Cancels a transaction. |
 | [**ConvertTransactions**](TransactionClient.md#transactionconverttransactionspost) | **POST** /Transaction/convert-transactions | Converts a set of transactions. |
-| [**DraftsBillingLinesDistribute**](TransactionClient.md#transactiondraftsbillinglinesdistributepatch) | **PATCH** /Transaction/drafts/billing-lines/distribute | Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. |
-| [**DraftsBillingLinesRemove**](TransactionClient.md#transactiondraftsbillinglinesremovepatch) | **PATCH** /Transaction/drafts/billing-lines/remove | Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. |
+| [**DraftsBillingLinesDistribute**](TransactionClient.md#transactiondraftsbillinglinesdistributepatch) | **PATCH** /Transaction/drafts/billing-lines/distribute | Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. |
+| [**DraftsBillingLinesRemove**](TransactionClient.md#transactiondraftsbillinglinesremovepatch) | **PATCH** /Transaction/drafts/billing-lines/remove | Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. |
 | [**Drafts**](TransactionClient.md#transactiondraftsget) | **GET** /Transaction/drafts | Gets all draft transactions. |
 | [**DraftsBillingLines**](TransactionClient.md#transactiondraftsidbillinglinespatch) | **PATCH** /Transaction/drafts/{id}/billing-lines | Adds a set of billing lines to an existing draft transaction. |
 | [**DraftsConvert**](TransactionClient.md#transactiondraftsidconvertpatch) | **PATCH** /Transaction/drafts/{id}/convert | Converts a draft transaction to a regular, non-draft transaction. |
@@ -47,10 +47,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var barcode = "barcode_example";  // string | 
@@ -146,10 +144,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | The first point in time (optional) 
@@ -247,10 +243,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var number = "number_example";  // string | 
@@ -346,10 +340,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid? |  (optional) 
@@ -445,10 +437,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var convertTransactionsRequest = new ConvertTransactionsRequest?(); // ConvertTransactionsRequest? |  (optional) 
@@ -523,7 +513,7 @@ catch (ApiException e)
 # **DraftsBillingLinesDistribute**
 > DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute (DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = null)
 
-Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
 
 ### Example
 ```csharp
@@ -544,17 +534,15 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var distributeBillingLinesToDraftTransactionsRequest = new DistributeBillingLinesToDraftTransactionsRequest?(); // DistributeBillingLinesToDraftTransactionsRequest? |  (optional) 
 
             try
             {
-                // Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+                // Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
                 DistributeBillingLinesToDraftTransactionsResultModel result = apiInstance.DraftsBillingLinesDistribute(distributeBillingLinesToDraftTransactionsRequest);
                 Debug.WriteLine(result);
             }
@@ -575,7 +563,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+    // Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
     ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> response = apiInstance.DraftsBillingLinesDistributeWithHttpInfo(distributeBillingLinesToDraftTransactionsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -623,7 +611,7 @@ catch (ApiException e)
 # **DraftsBillingLinesRemove**
 > DraftTransactionsResultModel DraftsBillingLinesRemove (RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = null)
 
-Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently.
 
 ### Example
 ```csharp
@@ -644,17 +632,15 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var removeBillingLinesFromDraftTransactionRequest = new RemoveBillingLinesFromDraftTransactionRequest?(); // RemoveBillingLinesFromDraftTransactionRequest? |  (optional) 
 
             try
             {
-                // Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+                // Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently.
                 DraftTransactionsResultModel result = apiInstance.DraftsBillingLinesRemove(removeBillingLinesFromDraftTransactionRequest);
                 Debug.WriteLine(result);
             }
@@ -675,7 +661,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+    // Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently.
     ApiResponse<DraftTransactionsResultModel> response = apiInstance.DraftsBillingLinesRemoveWithHttpInfo(removeBillingLinesFromDraftTransactionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -744,10 +730,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
 
@@ -837,10 +821,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | The ID of the draft transaction.
@@ -939,10 +921,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | The ID of the draft transaction to convert.
@@ -1041,10 +1021,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var createDraftTransactionsRequest = new CreateDraftTransactionsRequest?(); // CreateDraftTransactionsRequest? |  (optional) 
@@ -1141,10 +1119,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | 
@@ -1236,10 +1212,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | 
@@ -1337,10 +1311,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | 
@@ -1438,10 +1410,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var id = "id_example";  // Guid | The ID of the transaction to revert to draft.
@@ -1538,10 +1508,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var createTransactionRequest = new CreateTransactionRequest?(); // CreateTransactionRequest? |  (optional) 
@@ -1637,10 +1605,8 @@ namespace Example
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: Bearer
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new TransactionClient(config);
             var previewTransactionRequest = new PreviewTransactionRequest?(); // PreviewTransactionRequest? |  (optional) 

@@ -46,7 +46,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="targetSubtypeId">Gets or sets the subtype of the result transaction by ID..</param>
         /// <param name="checkCompatibleProperties">Gets or sets the set of properties to check for each input transaction to ensure compatibility..</param>
         /// <param name="commit">Gets or sets the commit flag. If raised, the convert operation will be committed (required).</param>
-        public ConvertTransactionsRequest(Dictionary<string, Dictionary<string, double>> transactionSubsets = default(Dictionary<string, Dictionary<string, double>>), Guid targetTypeId = default(Guid), Guid? targetSubtypeId = default(Guid?), List<string> checkCompatibleProperties = default(List<string>), bool commit = default(bool))
+        public ConvertTransactionsRequest(Dictionary<string, Dictionary<string, double?>> transactionSubsets = default(Dictionary<string, Dictionary<string, double?>>), Guid targetTypeId = default(Guid), Guid? targetSubtypeId = default(Guid?), List<string> checkCompatibleProperties = default(List<string>), bool commit = default(bool))
         {
             // to ensure "transactionSubsets" is required (not null)
             if (transactionSubsets == null)
@@ -65,7 +65,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <value>Gets or sets the set of transactions mapped to their booked transaction item IDs and quantities.</value>
         [DataMember(Name = "transactionSubsets", IsRequired = true, EmitDefaultValue = true)]
-        public Dictionary<string, Dictionary<string, double>> TransactionSubsets { get; set; }
+        public Dictionary<string, Dictionary<string, double?>> TransactionSubsets { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the result transaction by ID.

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SubtypeId** | **Guid** | Gets or sets the subtype by ID. | 
 **Date** | **DateTime?** | Gets or sets the time of the underlying transaction. | [optional] 
 **DeliveryDate** | **DateTime?** | Gets or sets the time of delivery. | [optional] 
-**TermsOfPaymentId** | **Guid?** | Gets or sets the terms of payment by ID.     The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.   | [optional] 
+**TermsOfPaymentId** | **Guid?** | Gets or sets the terms of payment by ID.  The terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies. | [optional] 
 **PaymentMethodId** | **Guid?** | Gets or sets the payment method for this transaction given by ID. | [optional] 
 **CurrencyId** | **Guid?** | Gets or sets the currency used to quantify this transaction by ID. | [optional] 
 **Description** | **string** | Gets or sets the description. | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **TaxGroupId** | **Guid?** | Gets or sets the tax group by ID. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationModeModel** |  | [optional] 
 **IsGross** | **bool** | Gets or sets a value indicating whether the transaction is gross or net. | 
-**FinancialExportDisabled** | **bool** | Gets or sets the financial export disabled flag.     This is a flag intended for manually disabling financial export of the transaction.   | [optional] 
+**FinancialExportDisabled** | **bool** | Gets or sets the financial export disabled flag.  This is a flag intended for manually disabling financial export of the transaction. | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost centers given by ID with their respective percentages. | [optional] 
 **DefaultCostObjects** | [**List&lt;CostCenterAssignmentRequest&gt;**](CostCenterAssignmentRequest.md) | Gets or sets the default assigned cost objects given by ID with their respective percentages. | [optional] 
 **MetadataProcessingData** | [**MetadataProcessingDataRequest**](MetadataProcessingDataRequest.md) |  | [optional] 

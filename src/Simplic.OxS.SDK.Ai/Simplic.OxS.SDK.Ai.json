@@ -5181,6 +5181,11 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "approvalId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "toolResults": {
                         "type": "array",
                         "items": {

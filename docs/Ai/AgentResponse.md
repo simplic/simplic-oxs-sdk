@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Plan** | [**AgentPlan**](AgentPlan.md) |  | [optional] 
 **ApprovalOptions** | **List&lt;string&gt;** |  | [optional] 
 **PlanId** | **Guid?** |  | [optional] 
+**ApprovalId** | **Guid?** |  | [optional] 
 **ToolResults** | [**List&lt;ToolExecutionResult&gt;**](ToolExecutionResult.md) |  | [optional] 
 **CorrelationId** | **Guid?** |  | [optional] 
 **Error** | [**AgentError**](AgentError.md) |  | [optional] 

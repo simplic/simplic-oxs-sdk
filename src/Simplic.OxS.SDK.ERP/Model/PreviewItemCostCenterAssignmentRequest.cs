@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="PreviewItemCostCenterAssignmentRequest" /> class.
         /// </summary>
         /// <param name="id">Gets or sets the ID..</param>
-        /// <param name="temporaryItemId">Gets or sets the temporary ID of the transaction item.     This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.  .</param>
+        /// <param name="temporaryItemId">Gets or sets the temporary ID of the transaction item.  This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request..</param>
         /// <param name="costCenterId">Gets or sets the cost center to assign by ID..</param>
         /// <param name="percentage">Gets or sets the percentage to assign..</param>
         public PreviewItemCostCenterAssignmentRequest(Guid id = default(Guid), Guid? temporaryItemId = default(Guid?), Guid costCenterId = default(Guid), double percentage = default(double))
@@ -56,9 +56,9 @@ namespace Simplic.OxS.SDK.ERP
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the temporary ID of the transaction item.     This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.  
+        /// Gets or sets the temporary ID of the transaction item.  This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.
         /// </summary>
-        /// <value>Gets or sets the temporary ID of the transaction item.     This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.  </value>
+        /// <value>Gets or sets the temporary ID of the transaction item.  This is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.</value>
         [DataMember(Name = "temporaryItemId", EmitDefaultValue = true)]
         public Guid? TemporaryItemId { get; set; }
 

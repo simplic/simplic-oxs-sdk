@@ -48,10 +48,11 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="plan">plan.</param>
         /// <param name="approvalOptions">approvalOptions.</param>
         /// <param name="planId">planId.</param>
+        /// <param name="approvalId">approvalId.</param>
         /// <param name="toolResults">toolResults.</param>
         /// <param name="correlationId">correlationId.</param>
         /// <param name="error">error.</param>
-        public AgentResponse(AgentResponseType? type = default(AgentResponseType?), string message = default(string), Guid? sessionId = default(Guid?), AgentPlan plan = default(AgentPlan), List<string> approvalOptions = default(List<string>), Guid? planId = default(Guid?), List<ToolExecutionResult> toolResults = default(List<ToolExecutionResult>), Guid? correlationId = default(Guid?), AgentError error = default(AgentError))
+        public AgentResponse(AgentResponseType? type = default(AgentResponseType?), string message = default(string), Guid? sessionId = default(Guid?), AgentPlan plan = default(AgentPlan), List<string> approvalOptions = default(List<string>), Guid? planId = default(Guid?), Guid? approvalId = default(Guid?), List<ToolExecutionResult> toolResults = default(List<ToolExecutionResult>), Guid? correlationId = default(Guid?), AgentError error = default(AgentError))
         {
             this.Type = type;
             this.Message = message;
@@ -59,6 +60,7 @@ namespace Simplic.OxS.SDK.Ai
             this.Plan = plan;
             this.ApprovalOptions = approvalOptions;
             this.PlanId = planId;
+            this.ApprovalId = approvalId;
             this.ToolResults = toolResults;
             this.CorrelationId = correlationId;
             this.Error = error;
@@ -95,6 +97,12 @@ namespace Simplic.OxS.SDK.Ai
         public Guid? PlanId { get; set; }
 
         /// <summary>
+        /// Gets or Sets ApprovalId
+        /// </summary>
+        [DataMember(Name = "approvalId", EmitDefaultValue = true)]
+        public Guid? ApprovalId { get; set; }
+
+        /// <summary>
         /// Gets or Sets ToolResults
         /// </summary>
         [DataMember(Name = "toolResults", EmitDefaultValue = true)]
@@ -126,6 +134,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Plan: ").Append(Plan).Append("\n");
             sb.Append("  ApprovalOptions: ").Append(ApprovalOptions).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
+            sb.Append("  ApprovalId: ").Append(ApprovalId).Append("\n");
             sb.Append("  ToolResults: ").Append(ToolResults).Append("\n");
             sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
@@ -195,6 +204,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.PlanId.Equals(input.PlanId))
                 ) && 
                 (
+                    this.ApprovalId == input.ApprovalId ||
+                    (this.ApprovalId != null &&
+                    this.ApprovalId.Equals(input.ApprovalId))
+                ) && 
+                (
                     this.ToolResults == input.ToolResults ||
                     this.ToolResults != null &&
                     input.ToolResults != null &&
@@ -241,6 +255,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.PlanId != null)
                 {
                     hashCode = (hashCode * 59) + this.PlanId.GetHashCode();
+                }
+                if (this.ApprovalId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ApprovalId.GetHashCode();
                 }
                 if (this.ToolResults != null)
                 {

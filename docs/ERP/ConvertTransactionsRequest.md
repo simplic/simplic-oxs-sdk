@@ -5,7 +5,7 @@ Represents a request to convert a set of transactions.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TransactionSubsets** | **Dictionary&lt;string, Dictionary&lt;string, double&gt;&gt;** | Gets or sets the set of transactions mapped to their booked transaction item IDs and quantities. | 
+**TransactionSubsets** | **Dictionary&lt;string, Dictionary&lt;string, double?&gt;&gt;** | Gets or sets the set of transactions mapped to their booked transaction item IDs and quantities. | 
 **TargetTypeId** | **Guid** | Gets or sets the type of the result transaction by ID. | 
 **TargetSubtypeId** | **Guid?** | Gets or sets the subtype of the result transaction by ID. | [optional] 
 **CheckCompatibleProperties** | **List&lt;string&gt;** | Gets or sets the set of properties to check for each input transaction to ensure compatibility. | [optional] 

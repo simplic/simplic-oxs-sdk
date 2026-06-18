@@ -1,5 +1,5 @@
 {
-    "openapi": "3.0.1",
+    "openapi": "3.0.4",
     "info": {
         "title": "Simplic.OxS.ERP",
         "version": "v1"
@@ -3592,6 +3592,424 @@
                 }
             }
         },
+        "/ServiceContract/endpoint-contracts": {
+            "get": {
+                "tags": [
+                    "ServiceContract"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EndpointContract"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EndpointContract"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EndpointContract"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceContract/{contractName}/endpoint-contract": {
+            "get": {
+                "tags": [
+                    "ServiceContract"
+                ],
+                "parameters": [
+                    {
+                        "name": "contractName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EndpointContract"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EndpointContract"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EndpointContract"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceContract/endpoint-contract": {
+            "post": {
+                "tags": [
+                    "ServiceContract"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SetEndpointContractRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SetEndpointContractRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SetEndpointContractRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceDefinition": {
+            "get": {
+                "tags": [
+                    "ServiceDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceDefinition/graphql/sdl": {
+            "get": {
+                "tags": [
+                    "ServiceDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceObject"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ServiceDefinition/register-service": {
+            "post": {
+                "tags": [
+                    "ServiceDefinition"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/SplitConfiguration": {
             "post": {
                 "tags": [
@@ -5628,7 +6046,7 @@
                 "tags": [
                     "Transaction"
                 ],
-                "summary": "Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.\r\nBilling lines may belong to different draft transactions; each is updated independently.",
+                "summary": "Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.\nBilling lines may belong to different draft transactions; each is updated independently.",
                 "requestBody": {
                     "description": "",
                     "content": {
@@ -6746,7 +7164,7 @@
                 "tags": [
                     "Transaction"
                 ],
-                "summary": "Distributes a set of billing lines onto existing draft transactions according to a split configuration.\r\nBilling lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.\r\nWhen multiple draft transactions are eligible for a billing line it is reported as ambiguous.",
+                "summary": "Distributes a set of billing lines onto existing draft transactions according to a split configuration.\nBilling lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.\nWhen multiple draft transactions are eligible for a billing line it is reported as ambiguous.",
                 "requestBody": {
                     "description": "",
                     "content": {
@@ -7517,12 +7935,12 @@
                             "type": "string",
                             "format": "uuid"
                         },
-                        "description": "Gets or sets the IDs of all billing lines that were added to the draft transaction\r\nas part of this operation.",
+                        "description": "Gets or sets the IDs of all billing lines that were added to the draft transaction\nas part of this operation.",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the model for the result of adding a set of billing lines to a single draft\r\ntransaction, together with the IDs of all billing lines that were added."
+                "description": "Represents the model for the result of adding a set of billing lines to a single draft\ntransaction, together with the IDs of all billing lines that were added."
             },
             "AddBillingLinesToTransactionRequest": {
                 "type": "object",
@@ -7555,7 +7973,7 @@
                     },
                     "fileName": {
                         "type": "string",
-                        "description": "Gets or sets the document file name.\r\n\n\r\nShould include the extension in order to be able to read the file reliably after extraction.\r\n",
+                        "description": "Gets or sets the document file name.\n\nShould include the extension in order to be able to read the file reliably after extraction.",
                         "nullable": true
                     }
                 },
@@ -7671,7 +8089,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the model for a group of billing lines whose split-configuration-based assignment\r\nis ambiguous because they all matched the same set of multiple eligible draft transactions."
+                "description": "Represents the model for a group of billing lines whose split-configuration-based assignment\nis ambiguous because they all matched the same set of multiple eligible draft transactions."
             },
             "AssignmentMode": {
                 "enum": [
@@ -7689,7 +8107,7 @@
                     2
                 ],
                 "type": "integer",
-                "description": "Represents a mode of assigning transaction items to operation transaction items.\r\n\n\r\nThis type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \"Failed to load API definition\" error.\r\n",
+                "description": "Represents a mode of assigning transaction items to operation transaction items.\n\nThis type name had to be changed from AssignmentMode to ModelAssignmentMode to avoid a \"Failed to load API definition\" error.",
                 "format": "int32"
             },
             "Bank": {
@@ -7789,7 +8207,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model for a behavior definition. A behavior definition is a pair of an expression and a target that is modified by the expression result.\r\n\n\r\nUsing behavior definitions the operation performed by applying an operation item can depend on the set of items assigned to it. For example if a discount only applies if the price of all assigned items is above a minimum threshold.\r\nA target can be a property whose value is set as the expression result.\r\nThe set of items the operation item applies to can be filtered. If the assigned items are targeted, the expression is interpreted as a condition to filter the items by.\r\n"
+                "description": "Represents the shared model for a behavior definition. A behavior definition is a pair of an expression and a target that is modified by the expression result.\n\nUsing behavior definitions the operation performed by applying an operation item can depend on the set of items assigned to it. For example if a discount only applies if the price of all assigned items is above a minimum threshold.\nA target can be a property whose value is set as the expression result.\nThe set of items the operation item applies to can be filtered. If the assigned items are targeted, the expression is interpreted as a condition to filter the items by."
             },
             "BehaviorDefinitionRequest": {
                 "type": "object",
@@ -7915,7 +8333,7 @@
                     },
                     "assignedTransactionId": {
                         "type": "string",
-                        "description": "Gets or sets the transaction this billing line has been assigned to (either draft or finalized).\r\n\n\r\nThis information is used to easily determine whether the billing line is assigned to a particular draft transaction.\r\n",
+                        "description": "Gets or sets the transaction this billing line has been assigned to (either draft or finalized).\n\nThis information is used to easily determine whether the billing line is assigned to a particular draft transaction.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -7961,7 +8379,7 @@
                     },
                     "priceUnitId": {
                         "type": "string",
-                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured\r\nin tons.\r\n",
+                        "description": "Gets or sets the unit of measurement the price is based on by ID.\n\nExample: Price could be measured per kg while the total quantity is measured\nin tons.",
                         "format": "uuid",
                         "nullable": true
                     }
@@ -8104,7 +8522,7 @@
                         "additionalProperties": {
                             "$ref": "#/components/schemas/TransactionConvertState"
                         },
-                        "description": "Gets or sets a set of convert states.\r\nFor each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction's ID.\r\n<para></para>",
+                        "description": "Gets or sets a set of convert states.\nFor each converted transaction the convert state is given as the value of a dictionary entry, the key being the transaction's ID.\n<para></para>",
                         "nullable": true
                     }
                 },
@@ -8125,7 +8543,8 @@
                             "type": "object",
                             "additionalProperties": {
                                 "type": "number",
-                                "format": "double"
+                                "format": "double",
+                                "nullable": true
                             }
                         },
                         "description": "Gets or sets the set of transactions mapped to their booked transaction item IDs and quantities."
@@ -8470,7 +8889,7 @@
                     },
                     "date": {
                         "type": "string",
-                        "description": "Gets or sets the date associated with this billing line.\r\n\n\r\nA billing line stores all necessary information to create a transaction based on itself or a \r\nset of billing lines.\r\n",
+                        "description": "Gets or sets the date associated with this billing line.\n\nA billing line stores all necessary information to create a transaction based on itself or a \nset of billing lines.",
                         "format": "date-time"
                     },
                     "deliveryDate": {
@@ -8489,7 +8908,7 @@
                     },
                     "singlePrice": {
                         "type": "number",
-                        "description": "Gets or sets the price for a single unit of the item or service described \r\nby this billing line.",
+                        "description": "Gets or sets the price for a single unit of the item or service described \nby this billing line.",
                         "format": "double",
                         "nullable": true
                     },
@@ -8526,7 +8945,7 @@
                     },
                     "generalLedgerAccountGroupId": {
                         "type": "string",
-                        "description": "Gets or sets the general ledger account group for this billing line by ID.\r\n\n\r\nThe general ledger account group is used in the financial accounting process to \r\ndetermine the general ledger account.\r\n",
+                        "description": "Gets or sets the general ledger account group for this billing line by ID.\n\nThe general ledger account group is used in the financial accounting process to \ndetermine the general ledger account.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -8550,7 +8969,7 @@
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
-                        "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
+                        "description": "Gets or sets a set of additional properties that can be used to store any \nadditional information related to this billing line.",
                         "nullable": true
                     },
                     "sourceBillingLineReference": {
@@ -8558,7 +8977,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents a create request for a Simplic.OxS.ERP.BillingLine.\r\n\n\r\nA billing line stores all necessary information to create a transaction based on itself or a \r\nset of billing lines.\r\n"
+                "description": "Represents a create request for a Simplic.OxS.ERP.BillingLine.\n\nA billing line stores all necessary information to create a transaction based on itself or a \nset of billing lines."
             },
             "CreateDraftTransactionsRequest": {
                 "type": "object",
@@ -8590,7 +9009,7 @@
                 "properties": {
                     "pdf": {
                         "type": "string",
-                        "description": "Gets or sets the input PDF invoice file.\r\n\n\r\nThis is only required if ElectronicInvoiceType is set to ZUGFeRD.\r\n",
+                        "description": "Gets or sets the input PDF invoice file.\n\nThis is only required if ElectronicInvoiceType is set to ZUGFeRD.",
                         "format": "byte",
                         "nullable": true
                     },
@@ -8612,7 +9031,7 @@
                     },
                     "leitwegIdRequired": {
                         "type": "boolean",
-                        "description": "Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.\r\n\n\r\nIf true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n",
+                        "description": "Gets or sets a flag indicating if the Leitweg ID (for invoices addressed to German public institution) is required.\n\nIf true the buyer reference field is validated. Currently it is only checked if the buyer reference contains a value at all. \nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference",
                         "default": false
                     },
                     "invoiceData": {
@@ -8751,7 +9170,7 @@
                     },
                     "termsOfPaymentId": {
                         "type": "string",
-                        "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
+                        "description": "Gets or sets the terms of payment by ID.\n\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -8881,7 +9300,7 @@
                     },
                     "financialExportDisabled": {
                         "type": "boolean",
-                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n"
+                        "description": "Gets or sets the financial export disabled flag.\n\nThis is a flag intended for manually disabling financial export of the transaction."
                     },
                     "defaultCostCenters": {
                         "type": "array",
@@ -9356,12 +9775,12 @@
                             "type": "string",
                             "format": "uuid"
                         },
-                        "description": "Gets or sets an optional map of billing line ID to a pinned draft transaction ID.\r\nWhen a billing line ID is present in this map its target transaction is used directly,\r\nbypassing the split configuration matching.",
+                        "description": "Gets or sets an optional map of billing line ID to a pinned draft transaction ID.\nWhen a billing line ID is present in this map its target transaction is used directly,\nbypassing the split configuration matching.",
                         "nullable": true
                     },
                     "splitConfigurationId": {
                         "type": "string",
-                        "description": "Gets or sets the ID of the split configuration used to match unassigned billing lines\r\nto existing draft transactions.",
+                        "description": "Gets or sets the ID of the split configuration used to match unassigned billing lines\nto existing draft transactions.",
                         "format": "uuid"
                     }
                 },
@@ -9376,7 +9795,7 @@
                         "items": {
                             "$ref": "#/components/schemas/AddBillingLinesToDraftTransactionResultModel"
                         },
-                        "description": "Gets or sets one entry per draft transaction that received at least one billing line,\r\neach carrying the !:DraftTransactionResultModel and the IDs of the billing lines added.",
+                        "description": "Gets or sets one entry per draft transaction that received at least one billing line,\neach carrying the !:DraftTransactionResultModel and the IDs of the billing lines added.",
                         "nullable": true
                     },
                     "ambiguousAssignments": {
@@ -9384,7 +9803,7 @@
                         "items": {
                             "$ref": "#/components/schemas/AmbiguousBillingLineAssignmentModel"
                         },
-                        "description": "Gets or sets the set of billing lines whose assignment was ambiguous,\r\ntogether with the eligible draft transactions per billing line.",
+                        "description": "Gets or sets the set of billing lines whose assignment was ambiguous,\ntogether with the eligible draft transactions per billing line.",
                         "nullable": true
                     },
                     "errors": {
@@ -9412,7 +9831,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model of the result of an operation resulting in a set of draft \r\ntransactions."
+                "description": "Represents the shared model of the result of an operation resulting in a set of draft \ntransactions."
             },
             "DueDateMode": {
                 "enum": [
@@ -9568,6 +9987,49 @@
                 "additionalProperties": false,
                 "description": "Represents a terms of payment request."
             },
+            "EndpointContract": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDeleted": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "endpoint": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "EndpointContractDefinition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "endpoint": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "ExportCostQuantityType": {
                 "enum": [
                     0,
@@ -9575,7 +10037,7 @@
                     2
                 ],
                 "type": "integer",
-                "description": "Represents the export cost quantity type.\r\n<list type=\"bullet\"><item>\r\nNo = 0\r\n</item><item>\r\nExactValue = 1\r\n</item><item>\r\nAbsoluteValue = 2\r\n</item></list>",
+                "description": "Represents the export cost quantity type.\n<list type=\"bullet\"><item>\nNo = 0\n</item><item>\nExactValue = 1\n</item><item>\nAbsoluteValue = 2\n</item></list>",
                 "format": "int32"
             },
             "FiscalYearModel": {
@@ -9697,6 +10159,25 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.FiscalYear."
+            },
+            "GrpcDefinitions": {
+                "type": "object",
+                "properties": {
+                    "package": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "service": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "protoFile": {
+                        "type": "string",
+                        "format": "byte",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "ImportElectronicInvoiceRequest": {
                 "type": "object",
@@ -10117,7 +10598,7 @@
                     },
                     "buyerReference": {
                         "type": "string",
-                        "description": "Gets or sets the buyer reference.\r\n\n\r\nThis is where the Leitweg-ID for German public institution invoices needs to be passed. \r\nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference\r\n",
+                        "description": "Gets or sets the buyer reference.\n\nThis is where the Leitweg-ID for German public institution invoices needs to be passed. \nSee https://en.e-rechnung-bund.de/e-invoicing-faq/buyer-reference",
                         "nullable": true
                     },
                     "buyer": {
@@ -10216,7 +10697,7 @@
                     },
                     "totalPriceNetBase": {
                         "type": "number",
-                        "description": "Gets or sets the total price excluding discounts and surcharges.\r\n\n\r\nTotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.\r\n",
+                        "description": "Gets or sets the total price excluding discounts and surcharges.\n\nTotalPriceBase corresponds to the ZUGFeRD property GrossPriceProductTradePrice.",
                         "format": "double",
                         "nullable": true
                     },
@@ -10310,7 +10791,7 @@
                 "properties": {
                     "locked": {
                         "type": "boolean",
-                        "description": "Gets or sets whether the billing line is locked after the operation.\r\n\n`true` if the operation succeeded or the billing line was already locked;\r\n`false` if the billing line was in an illegal state for locking.\r\n"
+                        "description": "Gets or sets whether the billing line is locked after the operation.\n\n`true` if the operation succeeded or the billing line was already locked;\n`false` if the billing line was in an illegal state for locking."
                     },
                     "errors": {
                         "type": "array",
@@ -10848,7 +11329,7 @@
                         "items": {
                             "$ref": "#/components/schemas/PersonalAccountAddressModel"
                         },
-                        "description": "Gets or sets the addresses.\r\n\n\r\nA personal account can contain multiple addresses.\r\n",
+                        "description": "Gets or sets the addresses.\n\nA personal account can contain multiple addresses.",
                         "nullable": true
                     },
                     "createDateTime": {
@@ -10897,7 +11378,7 @@
                     },
                     "temporaryItemId": {
                         "type": "string",
-                        "description": "Gets or sets the temporary ID of the transaction item.\r\n\n\r\nThis is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.\r\n",
+                        "description": "Gets or sets the temporary ID of the transaction item.\n\nThis is just a workaround and is overwritten internally anyway. Leave out this property when sending the request.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -10958,7 +11439,7 @@
                     },
                     "amount": {
                         "type": "number",
-                        "description": "Gets the amount the operation item results in.\r\n\n\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
+                        "description": "Gets the amount the operation item results in.\n\nThe amount can be positive or negative representing a surcharge or a discount.",
                         "format": "double",
                         "nullable": true
                     },
@@ -10971,6 +11452,7 @@
                         "nullable": true
                     },
                     "quantity": {
+                        "maximum": 1.7976931348623157e+308,
                         "minimum": 0,
                         "type": "number",
                         "description": "Gets or sets the quantity.",
@@ -11099,7 +11581,7 @@
                     },
                     "termsOfPaymentId": {
                         "type": "string",
-                        "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
+                        "description": "Gets or sets the terms of payment by ID.\n\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -11226,7 +11708,7 @@
                     },
                     "financialExportDisabled": {
                         "type": "boolean",
-                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n",
+                        "description": "Gets or sets the financial export disabled flag.\n\nThis is a flag intended for manually disabling financial export of the transaction.",
                         "nullable": true
                     },
                     "defaultCostCenters": {
@@ -11373,6 +11855,8 @@
                 "type": "object",
                 "properties": {
                     "value": {
+                        "maximum": 1.7976931348623157e+308,
+                        "minimum": 1e-12,
                         "type": "number",
                         "description": "Gets or sets the quantity value.",
                         "format": "double",
@@ -11421,12 +11905,119 @@
                 "additionalProperties": false,
                 "description": "Represents a request to remove billing line transaction items from their assigned draft transactions."
             },
+            "RequiredEndpointContractDefinition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "allowMultiple": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
             "RoundingMode": {
                 "enum": [
                     0
                 ],
                 "type": "integer",
                 "format": "int32"
+            },
+            "ServiceContract": {
+                "type": "object",
+                "properties": {
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "endpointContracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EndpointContractDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "requiredEndpointContracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RequiredEndpointContractDefinition"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ServiceObject": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "version": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "baseUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "swaggerJsonUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "modelDefinitionUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "grpcDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GrpcDefinitions"
+                        },
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "contracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ServiceContract"
+                        },
+                        "nullable": true
+                    },
+                    "graphQLSchema": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SetEndpointContractRequest": {
+                "required": [
+                    "contractName",
+                    "endpoint"
+                ],
+                "type": "object",
+                "properties": {
+                    "contractName": {
+                        "minLength": 5,
+                        "type": "string"
+                    },
+                    "endpoint": {
+                        "minLength": 5,
+                        "type": "string"
+                    },
+                    "providerName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "SettingOption": {
                 "type": "object",
@@ -11787,7 +12378,7 @@
                     },
                     "buNumber": {
                         "type": "integer",
-                        "description": "Gets or sets the BU number.\r\nThis number is important for tax keys in germany.",
+                        "description": "Gets or sets the BU number.\nThis number is important for tax keys in germany.",
                         "format": "int32",
                         "nullable": true
                     },
@@ -11870,7 +12461,7 @@
                     },
                     "buNumber": {
                         "type": "integer",
-                        "description": "Gets or sets the BU number.\r\nThis number is important for tax keys in germany.",
+                        "description": "Gets or sets the BU number.\nThis number is important for tax keys in germany.",
                         "format": "int32",
                         "nullable": true
                     }
@@ -12161,7 +12752,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n\n\r\nExamples for states are: outgoing, incoming\r\n",
+                        "description": "Gets or sets a set of states that apply to the terms of payment.\n\nExamples for states are: outgoing, incoming",
                         "nullable": true
                     },
                     "formattedText": {
@@ -12248,7 +12839,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n\n\r\nExamples for states are: outgoing, incoming\r\n",
+                        "description": "Gets or sets a set of states that apply to the terms of payment.\n\nExamples for states are: outgoing, incoming",
                         "nullable": true
                     },
                     "formattedText": {
@@ -12551,7 +13142,7 @@
                     },
                     "amount": {
                         "type": "number",
-                        "description": "Gets the amount the operation item results in.\r\n\n\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
+                        "description": "Gets the amount the operation item results in.\n\nThe amount can be positive or negative representing a surcharge or a discount.",
                         "format": "double",
                         "nullable": true
                     },
@@ -12650,7 +13241,7 @@
                         "items": {
                             "$ref": "#/components/schemas/StringTransactionPriceObjectModelKeyValuePair"
                         },
-                        "description": "Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.\r\n\n\r\nEach tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.\r\n",
+                        "description": "Gets or sets a set of Simplic.OxS.ERP.Server.TransactionPriceObjectModel representing the price development history.\n\nEach tuple represents the transaction item pricing data resulting from a specific operation. The list contains the tuples in the order these operation are applied in.",
                         "nullable": true
                     },
                     "articleId": {
@@ -12748,7 +13339,7 @@
                     },
                     "amount": {
                         "type": "number",
-                        "description": "Gets the amount the operation item results in.\r\n\n\r\nThe amount can be positive or negative representing a surcharge or a discount.\r\n",
+                        "description": "Gets the amount the operation item results in.\n\nThe amount can be positive or negative representing a surcharge or a discount.",
                         "format": "double",
                         "nullable": true
                     },
@@ -12808,7 +13399,7 @@
                     },
                     "priceUnitId": {
                         "type": "string",
-                        "description": "Gets or sets the unit of measurement the price is based on by ID.\r\n\n\r\nExample: Price could be measured per kg while the total quantity is measured\r\nin tons.\r\n",
+                        "description": "Gets or sets the unit of measurement the price is based on by ID.\n\nExample: Price could be measured per kg while the total quantity is measured\nin tons.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -12884,7 +13475,7 @@
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\r\nand never changes afterwards.\r\n",
+                        "description": "Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.\n\nStable, human-readable identifier added specifically for referencing deployed documents from code.\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\nand never changes afterwards.",
                         "nullable": true
                     },
                     "hasPositionNumber": {
@@ -12994,7 +13585,7 @@
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
+                        "description": "Gets or sets an code.\nThis code is to be used by internal processes.",
                         "nullable": true
                     }
                 },
@@ -13171,7 +13762,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states the transaction is in.\r\n\n\r\nExamples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting\r\n",
+                        "description": "Gets or sets a set of states the transaction is in.\n\nExamples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting",
                         "nullable": true
                     },
                     "manualVat": {
@@ -13246,7 +13837,7 @@
                     },
                     "sign": {
                         "type": "integer",
-                        "description": "Gets or sets the total price value sign.\r\n\n\r\nThe sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.\r\n",
+                        "description": "Gets or sets the total price value sign.\n\nThe sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.",
                         "format": "int32"
                     },
                     "operationItemCombinationMode": {
@@ -13258,7 +13849,7 @@
                     },
                     "financialExportDisabled": {
                         "type": "boolean",
-                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n"
+                        "description": "Gets or sets the financial export disabled flag.\n\nThis is a flag intended for manually disabling financial export of the transaction."
                     },
                     "validationResult": {
                         "$ref": "#/components/schemas/TransactionValidationResultModel"
@@ -13330,7 +13921,7 @@
                     1
                 ],
                 "type": "integer",
-                "description": "Represents the transaction number data source type.\r\n<list type=\"bullet\"><item>\r\nTransactionDate = 0\r\n</item><item>\r\nDeliveryDate = 1\r\n</item></list>",
+                "description": "Represents the transaction number data source type.\n<list type=\"bullet\"><item>\nTransactionDate = 0\n</item><item>\nDeliveryDate = 1\n</item></list>",
                 "format": "int32"
             },
             "TransactionPeriodModel": {
@@ -13476,7 +14067,7 @@
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time\r\nand never changes afterwards.\r\n",
+                        "description": "Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.\n\nStable, human-readable identifier added specifically for referencing deployed documents from code.\nUnlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time\nand never changes afterwards.",
                         "nullable": true
                     },
                     "report": {
@@ -13812,7 +14403,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\n\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order",
                         "nullable": true
                     },
                     "subtype": {
@@ -13861,12 +14452,12 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\n\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order",
                         "nullable": true
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets the code used to identify default transaction type documents when generating transactions from code.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\r\nand never changes afterwards.\r\n",
+                        "description": "Gets or sets the code used to identify default transaction type documents when generating transactions from code.\n\nStable, human-readable identifier added specifically for referencing deployed documents from code.\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\nand never changes afterwards.",
                         "nullable": true
                     },
                     "subtypes": {
@@ -13951,7 +14542,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\n\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order",
                         "nullable": true
                     },
                     "subtypes": {
@@ -13963,7 +14554,7 @@
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
+                        "description": "Gets or sets an code.\nThis code is to be used by internal processes.",
                         "nullable": true
                     }
                 },
@@ -13996,7 +14587,7 @@
                             "type": "boolean",
                             "nullable": true
                         },
-                        "description": "Gets or sets the validation results for individual input fields.\r\n\n\r\ntrue = valid, false = invalid, null = not validated\r\n",
+                        "description": "Gets or sets the validation results for individual input fields.\n\ntrue = valid, false = invalid, null = not validated",
                         "nullable": true
                     },
                     "errors": {
@@ -14020,7 +14611,7 @@
                 "properties": {
                     "unlocked": {
                         "type": "boolean",
-                        "description": "Gets or sets whether the billing line is unlocked after the operation.\r\n\n`true` if the billing line was unlocked or was already in a non-locked state;\r\n`false` if the required resource lock or state check failed.\r\n"
+                        "description": "Gets or sets whether the billing line is unlocked after the operation.\n\n`true` if the billing line was unlocked or was already in a non-locked state;\n`false` if the required resource lock or state check failed."
                     },
                     "errors": {
                         "type": "array",
@@ -14042,7 +14633,7 @@
                     },
                     "date": {
                         "type": "string",
-                        "description": "Gets or sets the date associated with this billing line.\r\n\n\r\nA billing line stores all necessary information to create a transaction based on itself or a \r\nset of billing lines.\r\n",
+                        "description": "Gets or sets the date associated with this billing line.\n\nA billing line stores all necessary information to create a transaction based on itself or a \nset of billing lines.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -14062,7 +14653,7 @@
                     },
                     "singlePrice": {
                         "type": "number",
-                        "description": "Gets or sets the price for a single unit of the item or service described \r\nby this billing line.",
+                        "description": "Gets or sets the price for a single unit of the item or service described \nby this billing line.",
                         "format": "double",
                         "nullable": true
                     },
@@ -14101,7 +14692,7 @@
                     },
                     "generalLedgerAccountGroupId": {
                         "type": "string",
-                        "description": "Gets or sets the general ledger account group for this billing line by ID.\r\n\n\r\nThe general ledger account group is used in the financial accounting process to \r\ndetermine the general ledger account.\r\n",
+                        "description": "Gets or sets the general ledger account group for this billing line by ID.\n\nThe general ledger account group is used in the financial accounting process to \ndetermine the general ledger account.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -14126,7 +14717,7 @@
                     "addon": {
                         "type": "object",
                         "additionalProperties": {},
-                        "description": "Gets or sets a set of additional properties that can be used to store any \r\nadditional information related to this billing line.",
+                        "description": "Gets or sets a set of additional properties that can be used to store any \nadditional information related to this billing line.",
                         "nullable": true
                     },
                     "sourceBillingLineReference": {
@@ -14398,7 +14989,7 @@
                     },
                     "buNumber": {
                         "type": "integer",
-                        "description": "Gets or sets the BU number.\r\nThis number is important for tax keys in germany.",
+                        "description": "Gets or sets the BU number.\nThis number is important for tax keys in germany.",
                         "format": "int32",
                         "nullable": true
                     }
@@ -14461,7 +15052,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states that apply to the terms of payment.\r\n\n\r\nExamples for states are: outgoing, incoming\r\n",
+                        "description": "Gets or sets a set of states that apply to the terms of payment.\n\nExamples for states are: outgoing, incoming",
                         "nullable": true
                     },
                     "formattedText": {
@@ -14514,7 +15105,7 @@
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
+                        "description": "Gets or sets an code.\nThis code is to be used by internal processes.",
                         "nullable": true
                     }
                 },
@@ -14560,7 +15151,7 @@
                     },
                     "termsOfPaymentId": {
                         "type": "string",
-                        "description": "Gets or sets the terms of payment by ID.\r\n\n\r\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.\r\n",
+                        "description": "Gets or sets the terms of payment by ID.\n\nThe terms of payment include the payment deadline, a potential cash discount and the number of days the discount applies.",
                         "format": "uuid",
                         "nullable": true
                     },
@@ -14658,7 +15249,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of states the transaction is in.\r\n\n\r\nExamples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting\r\n",
+                        "description": "Gets or sets a set of states the transaction is in.\n\nExamples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting",
                         "nullable": true
                     },
                     "manualVAT": {
@@ -14700,7 +15291,7 @@
                     },
                     "financialExportDisabled": {
                         "type": "boolean",
-                        "description": "Gets or sets the financial export disabled flag.\r\n\n\r\nThis is a flag intended for manually disabling financial export of the transaction.\r\n",
+                        "description": "Gets or sets the financial export disabled flag.\n\nThis is a flag intended for manually disabling financial export of the transaction.",
                         "nullable": true
                     },
                     "defaultCostCenters": {
@@ -14755,7 +15346,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets a set of functions the transaction type has.\r\n\n\r\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order\r\n",
+                        "description": "Gets or sets a set of functions the transaction type has.\n\nExamples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order",
                         "nullable": true
                     },
                     "subtypes": {
@@ -14768,7 +15359,7 @@
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets an code.\r\nThis code is to be used by internal processes.",
+                        "description": "Gets or sets an code.\nThis code is to be used by internal processes.",
                         "nullable": true
                     }
                 },
@@ -14789,7 +15380,7 @@
                     1
                 ],
                 "type": "integer",
-                "description": "Represents a mode of applying operation transaction items to their assigned transaction items.\r\n\n\r\nThis type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.\r\n",
+                "description": "Represents a mode of applying operation transaction items to their assigned transaction items.\n\nThis type name had to be changed from ValueOperator to ModelValueOperator to avoid a \"Failed to load API definition\" error.",
                 "format": "int32"
             },
             "ZUGFeRDVersion": {
@@ -14804,10 +15395,10 @@
         },
         "securitySchemes": {
             "Bearer": {
-                "type": "apiKey",
+                "type": "http",
                 "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
-                "name": "Authorization",
-                "in": "header"
+                "scheme": "Bearer",
+                "bearerFormat": "JWT"
             },
             "ApiKey": {
                 "type": "apiKey",
@@ -14821,6 +15412,74 @@
         {
             "Bearer": [],
             "ApiKey": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "BillingLine"
+        },
+        {
+            "name": "Currency"
+        },
+        {
+            "name": "ElectronicInvoicing"
+        },
+        {
+            "name": "FiscalYear"
+        },
+        {
+            "name": "InternalCurrency"
+        },
+        {
+            "name": "InternalPersonalAccount"
+        },
+        {
+            "name": "InternalTaxRate"
+        },
+        {
+            "name": "InternalTransaction"
+        },
+        {
+            "name": "OrganizationSettings"
+        },
+        {
+            "name": "PaymentMethod"
+        },
+        {
+            "name": "PersonalAccount"
+        },
+        {
+            "name": "PersonalAccountGroup"
+        },
+        {
+            "name": "ServiceContract"
+        },
+        {
+            "name": "ServiceDefinition"
+        },
+        {
+            "name": "SplitConfiguration"
+        },
+        {
+            "name": "TaxGroup"
+        },
+        {
+            "name": "TaxKey"
+        },
+        {
+            "name": "TaxRate"
+        },
+        {
+            "name": "TermsOfPayment"
+        },
+        {
+            "name": "Transaction"
+        },
+        {
+            "name": "TransactionItemType"
+        },
+        {
+            "name": "TransactionType"
         }
     ]
 }

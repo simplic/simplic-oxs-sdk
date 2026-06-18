@@ -43,7 +43,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="value">Gets or sets the tax rate value given in percent..</param>
         /// <param name="validFrom">Gets or sets the point in time this tax key is valid from..</param>
         /// <param name="validTo">Gets or sets the point in time this tax rate is valid to..</param>
-        /// <param name="buNumber">Gets or sets the BU number.  This number is important for tax keys in germany..</param>
+        /// <param name="buNumber">Gets or sets the BU number. This number is important for tax keys in germany..</param>
         /// <param name="createDateTime">Gets or sets the date and time the tax key is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the tax key..</param>
         /// <param name="createUserName">Gets or sets the name of the user that created the tax key..</param>
@@ -116,9 +116,9 @@ namespace Simplic.OxS.SDK.ERP
         public DateTime? ValidTo { get; set; }
 
         /// <summary>
-        /// Gets or sets the BU number.  This number is important for tax keys in germany.
+        /// Gets or sets the BU number. This number is important for tax keys in germany.
         /// </summary>
-        /// <value>Gets or sets the BU number.  This number is important for tax keys in germany.</value>
+        /// <value>Gets or sets the BU number. This number is important for tax keys in germany.</value>
         [DataMember(Name = "buNumber", EmitDefaultValue = true)]
         public int? BuNumber { get; set; }
 

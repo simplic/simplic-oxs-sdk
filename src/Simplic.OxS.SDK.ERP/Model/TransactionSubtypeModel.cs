@@ -61,7 +61,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="TransactionSubtypeModel" /> class.
         /// </summary>
         /// <param name="id">Gets or sets the ID..</param>
-        /// <param name="code">Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time  and never changes afterwards.  .</param>
+        /// <param name="code">Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time and never changes afterwards..</param>
         /// <param name="report">report.</param>
         /// <param name="sequenceNumberRange">sequenceNumberRange.</param>
         /// <param name="outputConfiguration">outputConfiguration.</param>
@@ -112,9 +112,9 @@ namespace Simplic.OxS.SDK.ERP
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time  and never changes afterwards.  
+        /// Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time and never changes afterwards.
         /// </summary>
-        /// <value>Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time  and never changes afterwards.  </value>
+        /// <value>Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time and never changes afterwards.</value>
         [DataMember(Name = "code", EmitDefaultValue = true)]
         public string Code { get; set; }
 

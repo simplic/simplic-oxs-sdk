@@ -38,7 +38,7 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="value">Gets or sets the quantity value of the item or service..</param>
         /// <param name="quantityUnitId">Gets or sets the unit of measurement for the total quantity by ID..</param>
-        /// <param name="priceUnitId">Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured  in tons.  .</param>
+        /// <param name="priceUnitId">Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons..</param>
         public BillingLineQuantityRequest(double? value = default(double?), Guid? quantityUnitId = default(Guid?), Guid? priceUnitId = default(Guid?))
         {
             this.Value = value;
@@ -61,9 +61,9 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? QuantityUnitId { get; set; }
 
         /// <summary>
-        /// Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured  in tons.  
+        /// Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons.
         /// </summary>
-        /// <value>Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured  in tons.  </value>
+        /// <value>Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons.</value>
         [DataMember(Name = "priceUnitId", EmitDefaultValue = true)]
         public Guid? PriceUnitId { get; set; }
 

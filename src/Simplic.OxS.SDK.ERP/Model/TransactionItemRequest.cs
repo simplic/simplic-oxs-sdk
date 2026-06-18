@@ -61,7 +61,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="deserializationType">Gets or sets an identifier for the type of the item for correct deserialization..</param>
         /// <param name="valueOperator">valueOperator.</param>
         /// <param name="assignmentMode">assignmentMode.</param>
-        /// <param name="amount">Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  .</param>
+        /// <param name="amount">Gets the amount the operation item results in.  The amount can be positive or negative representing a surcharge or a discount..</param>
         /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest..</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="inputPrice">Gets or sets the price user input..</param>
@@ -71,7 +71,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="costObjects">Gets or sets the assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="articleId">Gets or sets the article by ID..</param>
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
-        /// <param name="priceUnitId">Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured  in tons.  .</param>
+        /// <param name="priceUnitId">Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons..</param>
         /// <param name="taxRateId">Gets or sets the tax rate for this billing line by ID..</param>
         /// <param name="reference">Gets or sets the main reference..</param>
         /// <param name="references">Gets or sets a set of additional references..</param>
@@ -144,9 +144,9 @@ namespace Simplic.OxS.SDK.ERP
         public string DeserializationType { get; set; }
 
         /// <summary>
-        /// Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  
+        /// Gets the amount the operation item results in.  The amount can be positive or negative representing a surcharge or a discount.
         /// </summary>
-        /// <value>Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  </value>
+        /// <value>Gets the amount the operation item results in.  The amount can be positive or negative representing a surcharge or a discount.</value>
         [DataMember(Name = "amount", EmitDefaultValue = true)]
         public double? Amount { get; set; }
 
@@ -206,9 +206,9 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? GeneralLedgerAccountId { get; set; }
 
         /// <summary>
-        /// Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured  in tons.  
+        /// Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons.
         /// </summary>
-        /// <value>Gets or sets the unit of measurement the price is based on by ID.     Example: Price could be measured per kg while the total quantity is measured  in tons.  </value>
+        /// <value>Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons.</value>
         [DataMember(Name = "priceUnitId", EmitDefaultValue = true)]
         public Guid? PriceUnitId { get; set; }
 

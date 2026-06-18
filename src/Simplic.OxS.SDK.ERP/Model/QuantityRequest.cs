@@ -143,6 +143,18 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Value (double?) maximum
+            if (this.Value > (double?)1.7976931348623157E+308)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, must be a value less than or equal to 1.7976931348623157E+308.", new [] { "Value" });
+            }
+
+            // Value (double?) minimum
+            if (this.Value < (double?)1.0E-12)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Value, must be a value greater than or equal to 1.0E-12.", new [] { "Value" });
+            }
+
             yield break;
         }
     }

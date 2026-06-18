@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the shared model of the result of an operation resulting in a set of draft   transactions.
+    /// Represents the shared model of the result of an operation resulting in a set of draft  transactions.
     /// </summary>
     [DataContract(Name = "DraftTransactionsResultModel")]
     public partial class DraftTransactionsResultModel : IEquatable<DraftTransactionsResultModel>, IValidatableObject

@@ -62,7 +62,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="deserializationType">Gets or sets an identifier for the type of the item for correct deserialization..</param>
         /// <param name="valueOperator">valueOperator.</param>
         /// <param name="assignmentMode">assignmentMode.</param>
-        /// <param name="amount">Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  .</param>
+        /// <param name="amount">Gets the amount the operation item results in.  The amount can be positive or negative representing a surcharge or a discount..</param>
         /// <param name="behaviorDefinitions">Gets or sets a set of Simplic.OxS.ERP.Server.BehaviorDefinitionRequest..</param>
         /// <param name="quantity">Gets or sets the quantity..</param>
         /// <param name="unitId">Gets or sets the unit the quantity is measured in by ID..</param>
@@ -143,9 +143,9 @@ namespace Simplic.OxS.SDK.ERP
         public string DeserializationType { get; set; }
 
         /// <summary>
-        /// Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  
+        /// Gets the amount the operation item results in.  The amount can be positive or negative representing a surcharge or a discount.
         /// </summary>
-        /// <value>Gets the amount the operation item results in.     The amount can be positive or negative representing a surcharge or a discount.  </value>
+        /// <value>Gets the amount the operation item results in.  The amount can be positive or negative representing a surcharge or a discount.</value>
         [DataMember(Name = "amount", EmitDefaultValue = true)]
         public double? Amount { get; set; }
 
@@ -493,6 +493,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Quantity (double?) maximum
+            if (this.Quantity > (double?)1.7976931348623157E+308)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Quantity, must be a value less than or equal to 1.7976931348623157E+308.", new [] { "Quantity" });
+            }
+
             // Quantity (double?) minimum
             if (this.Quantity < (double?)0)
             {

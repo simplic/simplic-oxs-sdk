@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Initializes a new instance of the <see cref="AdditionalReferencedDocumentContentRequest" /> class.
         /// </summary>
         /// <param name="blob">Gets or sets the document content as a byte array..</param>
-        /// <param name="fileName">Gets or sets the document file name.     Should include the extension in order to be able to read the file reliably after extraction.  .</param>
+        /// <param name="fileName">Gets or sets the document file name.  Should include the extension in order to be able to read the file reliably after extraction..</param>
         public AdditionalReferencedDocumentContentRequest(byte[] blob = default(byte[]), string fileName = default(string))
         {
             this.Blob = blob;
@@ -52,9 +52,9 @@ namespace Simplic.OxS.SDK.ERP
         public byte[] Blob { get; set; }
 
         /// <summary>
-        /// Gets or sets the document file name.     Should include the extension in order to be able to read the file reliably after extraction.  
+        /// Gets or sets the document file name.  Should include the extension in order to be able to read the file reliably after extraction.
         /// </summary>
-        /// <value>Gets or sets the document file name.     Should include the extension in order to be able to read the file reliably after extraction.  </value>
+        /// <value>Gets or sets the document file name.  Should include the extension in order to be able to read the file reliably after extraction.</value>
         [DataMember(Name = "fileName", EmitDefaultValue = true)]
         public string FileName { get; set; }
 

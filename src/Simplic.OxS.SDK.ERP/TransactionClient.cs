@@ -219,7 +219,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -227,7 +227,7 @@ public interface ITransactionClient
     DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
 
     /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -235,7 +235,7 @@ public interface ITransactionClient
     ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?));
         
     /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -244,7 +244,7 @@ public interface ITransactionClient
     Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+    /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -254,7 +254,7 @@ public interface ITransactionClient
 
 
     /// <summary>
-    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -262,7 +262,7 @@ public interface ITransactionClient
     DraftTransactionsResultModel DraftsBillingLinesRemove(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?));
 
     /// <summary>
-    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -270,7 +270,7 @@ public interface ITransactionClient
     ApiResponse<DraftTransactionsResultModel> DraftsBillingLinesRemoveWithHttpInfo(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?));
         
     /// <summary>
-    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -279,7 +279,7 @@ public interface ITransactionClient
     Task<DraftTransactionsResultModel> DraftsBillingLinesRemoveAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+    /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -1094,7 +1094,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -1112,7 +1112,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -1130,7 +1130,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -1149,7 +1149,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -1167,7 +1167,7 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -1185,7 +1185,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -1203,7 +1203,7 @@ public interface ITransactionClient
         } 
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -1222,7 +1222,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -2097,7 +2097,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of ConvertResultModel</returns>
         ApiResponse<ConvertResultModel> ConvertTransactionsWithHttpInfo(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0);
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -2106,7 +2106,7 @@ public interface ITransactionClient
         DistributeBillingLinesToDraftTransactionsResultModel DraftsBillingLinesDistribute(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
         /// </summary>
         /// <remarks>
         /// 
@@ -2117,7 +2117,7 @@ public interface ITransactionClient
         /// <returns>ApiResponse of DistributeBillingLinesToDraftTransactionsResultModel</returns>
         ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeWithHttpInfo(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0);
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -2126,7 +2126,7 @@ public interface ITransactionClient
         DraftTransactionsResultModel DraftsBillingLinesRemove(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently.
         /// </summary>
         /// <remarks>
         /// 
@@ -2479,7 +2479,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (ConvertResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConvertResultModel>> ConvertTransactionsWithHttpInfoAsync(ConvertTransactionsRequest? convertTransactionsRequest = default(ConvertTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
         /// </summary>
         /// <remarks>
         /// 
@@ -2492,7 +2492,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<DistributeBillingLinesToDraftTransactionsResultModel> DraftsBillingLinesDistributeAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous.
         /// </summary>
         /// <remarks>
         /// 
@@ -2504,7 +2504,7 @@ public interface ITransactionClient
         /// <returns>Task of ApiResponse (DistributeBillingLinesToDraftTransactionsResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<DistributeBillingLinesToDraftTransactionsResultModel>> DraftsBillingLinesDistributeWithHttpInfoAsync(DistributeBillingLinesToDraftTransactionsRequest? distributeBillingLinesToDraftTransactionsRequest = default(DistributeBillingLinesToDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently.
         /// </summary>
         /// <remarks>
         /// 
@@ -2517,7 +2517,7 @@ public interface ITransactionClient
         System.Threading.Tasks.Task<DraftTransactionsResultModel> DraftsBillingLinesRemoveAsync(RemoveBillingLinesFromDraftTransactionRequest? removeBillingLinesFromDraftTransactionRequest = default(RemoveBillingLinesFromDraftTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently.
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently.
         /// </summary>
         /// <remarks>
         /// 
@@ -2969,9 +2969,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3054,9 +3055,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3140,9 +3142,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3228,9 +3231,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3311,9 +3315,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3396,9 +3401,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3476,9 +3482,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3558,9 +3565,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3638,9 +3646,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3720,9 +3729,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3741,7 +3751,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -3754,7 +3764,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -3800,9 +3810,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3820,7 +3831,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -3834,7 +3845,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration.  Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration.  When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
+        /// Distributes a set of billing lines onto existing draft transactions according to a split configuration. Billing lines with a pinned transaction ID are assigned directly; all others are matched via the split configuration. When multiple draft transactions are eligible for a billing line it is reported as ambiguous. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="distributeBillingLinesToDraftTransactionsRequest"> (optional)</param>
@@ -3882,9 +3893,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3903,7 +3915,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -3916,7 +3928,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -3962,9 +3974,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3982,7 +3995,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -3996,7 +4009,7 @@ public interface ITransactionClient
         }
 
         /// <summary>
-        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs.  Billing lines may belong to different draft transactions; each is updated independently. 
+        /// Removes a set of billing line transaction items from their respective assigned draft transaction by billing line IDs. Billing lines may belong to different draft transactions; each is updated independently. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="removeBillingLinesFromDraftTransactionRequest"> (optional)</param>
@@ -4044,9 +4057,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4118,9 +4132,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4194,9 +4209,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4277,9 +4293,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4362,9 +4379,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4445,9 +4463,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4530,9 +4549,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4610,9 +4630,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4692,9 +4713,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4768,9 +4790,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4846,9 +4869,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4929,9 +4953,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5014,9 +5039,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5097,9 +5123,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5182,9 +5209,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5259,9 +5287,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5338,9 +5367,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5418,9 +5448,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5500,9 +5531,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5580,9 +5612,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5662,9 +5695,10 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
             }
             // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request

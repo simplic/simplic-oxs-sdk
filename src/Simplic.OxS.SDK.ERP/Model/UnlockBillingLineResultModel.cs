@@ -36,7 +36,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="UnlockBillingLineResultModel" /> class.
         /// </summary>
-        /// <param name="unlocked">Gets or sets whether the billing line is unlocked after the operation.   &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state;  &#x60;false&#x60; if the required resource lock or state check failed.  .</param>
+        /// <param name="unlocked">Gets or sets whether the billing line is unlocked after the operation.  &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state; &#x60;false&#x60; if the required resource lock or state check failed..</param>
         /// <param name="errors">Gets or sets the set of errors that occurred during the operation..</param>
         public UnlockBillingLineResultModel(bool unlocked = default(bool), List<LocalizableErrorModel> errors = default(List<LocalizableErrorModel>))
         {
@@ -45,9 +45,9 @@ namespace Simplic.OxS.SDK.ERP
         }
 
         /// <summary>
-        /// Gets or sets whether the billing line is unlocked after the operation.   &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state;  &#x60;false&#x60; if the required resource lock or state check failed.  
+        /// Gets or sets whether the billing line is unlocked after the operation.  &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state; &#x60;false&#x60; if the required resource lock or state check failed.
         /// </summary>
-        /// <value>Gets or sets whether the billing line is unlocked after the operation.   &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state;  &#x60;false&#x60; if the required resource lock or state check failed.  </value>
+        /// <value>Gets or sets whether the billing line is unlocked after the operation.  &#x60;true&#x60; if the billing line was unlocked or was already in a non-locked state; &#x60;false&#x60; if the required resource lock or state check failed.</value>
         [DataMember(Name = "unlocked", EmitDefaultValue = true)]
         public bool Unlocked { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// Represents the model for a group of billing lines whose split-configuration-based assignment  is ambiguous because they all matched the same set of multiple eligible draft transactions.
+    /// Represents the model for a group of billing lines whose split-configuration-based assignment is ambiguous because they all matched the same set of multiple eligible draft transactions.
     /// </summary>
     [DataContract(Name = "AmbiguousBillingLineAssignmentModel")]
     public partial class AmbiguousBillingLineAssignmentModel : IEquatable<AmbiguousBillingLineAssignmentModel>, IValidatableObject
