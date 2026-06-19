@@ -45,6 +45,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="functions">functions.</param>
         /// <param name="openingHours">openingHours.</param>
         /// <param name="closedDays">closedDays.</param>
+        /// <param name="addon">addon.</param>
         /// <param name="id">id.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="createDateTime">createDateTime.</param>
@@ -54,7 +55,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="organizationId">organizationId.</param>
-        public ContactModel(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
+        public ContactModel(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -65,6 +66,7 @@ namespace Simplic.OxS.SDK.Contact
             this.Functions = functions;
             this.OpeningHours = openingHours;
             this.ClosedDays = closedDays;
+            this.Addon = addon;
             this.Id = id;
             this.IsDeleted = isDeleted;
             this.CreateDateTime = createDateTime;
@@ -129,6 +131,12 @@ namespace Simplic.OxS.SDK.Contact
         /// </summary>
         [DataMember(Name = "closedDays", EmitDefaultValue = true)]
         public List<ClosedDayModel> ClosedDays { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Addon
+        /// </summary>
+        [DataMember(Name = "addon", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -201,6 +209,7 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  Functions: ").Append(Functions).Append("\n");
             sb.Append("  OpeningHours: ").Append(OpeningHours).Append("\n");
             sb.Append("  ClosedDays: ").Append(ClosedDays).Append("\n");
+            sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
@@ -296,6 +305,12 @@ namespace Simplic.OxS.SDK.Contact
                     this.ClosedDays.SequenceEqual(input.ClosedDays)
                 ) && 
                 (
+                    this.Addon == input.Addon ||
+                    this.Addon != null &&
+                    input.Addon != null &&
+                    this.Addon.SequenceEqual(input.Addon)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -385,6 +400,10 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.ClosedDays != null)
                 {
                     hashCode = (hashCode * 59) + this.ClosedDays.GetHashCode();
+                }
+                if (this.Addon != null)
+                {
+                    hashCode = (hashCode * 59) + this.Addon.GetHashCode();
                 }
                 if (this.Id != null)
                 {

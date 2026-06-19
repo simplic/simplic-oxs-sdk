@@ -11452,18 +11452,7 @@
                         "nullable": true
                     },
                     "quantity": {
-                        "maximum": 1.7976931348623157e+308,
-                        "minimum": 0,
-                        "type": "number",
-                        "description": "Gets or sets the quantity.",
-                        "format": "double",
-                        "nullable": true
-                    },
-                    "unitId": {
-                        "type": "string",
-                        "description": "Gets or sets the unit the quantity is measured in by ID.",
-                        "format": "uuid",
-                        "nullable": true
+                        "$ref": "#/components/schemas/QuantityRequest"
                     },
                     "inputPrice": {
                         "type": "number",

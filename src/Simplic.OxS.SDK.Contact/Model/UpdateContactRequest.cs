@@ -45,7 +45,8 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="functions">functions.</param>
         /// <param name="openingHours">openingHours.</param>
         /// <param name="closedDays">closedDays.</param>
-        public UpdateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>))
+        /// <param name="addon">addon.</param>
+        public UpdateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -56,6 +57,7 @@ namespace Simplic.OxS.SDK.Contact
             this.Functions = functions;
             this.OpeningHours = openingHours;
             this.ClosedDays = closedDays;
+            this.Addon = addon;
         }
 
         /// <summary>
@@ -113,6 +115,12 @@ namespace Simplic.OxS.SDK.Contact
         public List<ClosedDayModel> ClosedDays { get; set; }
 
         /// <summary>
+        /// Gets or Sets Addon
+        /// </summary>
+        [DataMember(Name = "addon", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Addon { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -129,6 +137,7 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  Functions: ").Append(Functions).Append("\n");
             sb.Append("  OpeningHours: ").Append(OpeningHours).Append("\n");
             sb.Append("  ClosedDays: ").Append(ClosedDays).Append("\n");
+            sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,6 +222,12 @@ namespace Simplic.OxS.SDK.Contact
                     this.ClosedDays != null &&
                     input.ClosedDays != null &&
                     this.ClosedDays.SequenceEqual(input.ClosedDays)
+                ) && 
+                (
+                    this.Addon == input.Addon ||
+                    this.Addon != null &&
+                    input.Addon != null &&
+                    this.Addon.SequenceEqual(input.Addon)
                 );
         }
 
@@ -260,6 +275,10 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.ClosedDays != null)
                 {
                     hashCode = (hashCode * 59) + this.ClosedDays.GetHashCode();
+                }
+                if (this.Addon != null)
+                {
+                    hashCode = (hashCode * 59) + this.Addon.GetHashCode();
                 }
                 return hashCode;
             }

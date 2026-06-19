@@ -5358,6 +5358,24 @@
                 },
                 "additionalProperties": false
             },
+            "CreateLoadingAidBookingReferenceRequest": {
+                "required": [
+                    "id",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
             "CreateLoadingAidBookingRequest": {
                 "required": [
                     "destinationAccountId",
@@ -5423,6 +5441,13 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/CreateLoadingAidBookingResourceRequest"
+                        },
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateLoadingAidBookingReferenceRequest"
                         },
                         "nullable": true
                     },
@@ -5880,6 +5905,20 @@
                 },
                 "additionalProperties": false
             },
+            "LoadingAidBookingReferenceResponse": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "additionalProperties": false
+            },
             "LoadingAidBookingResourceResponse": {
                 "type": "object",
                 "properties": {
@@ -5968,6 +6007,13 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/LoadingAidBookingResourceResponse"
+                        },
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LoadingAidBookingReferenceResponse"
                         },
                         "nullable": true
                     }
@@ -6501,6 +6547,13 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/CreateLoadingAidBookingResourceRequest"
+                        },
+                        "nullable": true
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateLoadingAidBookingReferenceRequest"
                         },
                         "nullable": true
                     }

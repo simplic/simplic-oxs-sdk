@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Functions** | **List&lt;string&gt;** |  | [optional] 
 **OpeningHours** | [**List&lt;OpeningHoursModel&gt;**](OpeningHoursModel.md) |  | [optional] 
 **ClosedDays** | [**List&lt;ClosedDayModel&gt;**](ClosedDayModel.md) |  | [optional] 
+**Addon** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

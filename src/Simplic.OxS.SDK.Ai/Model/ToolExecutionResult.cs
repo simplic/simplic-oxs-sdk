@@ -50,7 +50,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="duration">duration.</param>
         /// <param name="rollbackMetadata">rollbackMetadata.</param>
         /// <param name="riskLevel">riskLevel.</param>
-        public ToolExecutionResult(bool success = default(bool), string toolName = default(string), Object output = default(Object), string outputSummary = default(string), string error = default(string), string duration = default(string), Object rollbackMetadata = default(Object), ToolRiskLevel? riskLevel = default(ToolRiskLevel?))
+        /// <param name="workspaceEntry">workspaceEntry.</param>
+        public ToolExecutionResult(bool success = default(bool), string toolName = default(string), Object output = default(Object), string outputSummary = default(string), string error = default(string), string duration = default(string), Object rollbackMetadata = default(Object), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), AgentWorkspaceEntry workspaceEntry = default(AgentWorkspaceEntry))
         {
             this.Success = success;
             this.ToolName = toolName;
@@ -60,6 +61,7 @@ namespace Simplic.OxS.SDK.Ai
             this.Duration = duration;
             this.RollbackMetadata = rollbackMetadata;
             this.RiskLevel = riskLevel;
+            this.WorkspaceEntry = workspaceEntry;
         }
 
         /// <summary>
@@ -105,6 +107,12 @@ namespace Simplic.OxS.SDK.Ai
         public Object RollbackMetadata { get; set; }
 
         /// <summary>
+        /// Gets or Sets WorkspaceEntry
+        /// </summary>
+        [DataMember(Name = "workspaceEntry", EmitDefaultValue = false)]
+        public AgentWorkspaceEntry WorkspaceEntry { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,6 +128,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  RollbackMetadata: ").Append(RollbackMetadata).Append("\n");
             sb.Append("  RiskLevel: ").Append(RiskLevel).Append("\n");
+            sb.Append("  WorkspaceEntry: ").Append(WorkspaceEntry).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -192,6 +201,11 @@ namespace Simplic.OxS.SDK.Ai
                 (
                     this.RiskLevel == input.RiskLevel ||
                     this.RiskLevel.Equals(input.RiskLevel)
+                ) && 
+                (
+                    this.WorkspaceEntry == input.WorkspaceEntry ||
+                    (this.WorkspaceEntry != null &&
+                    this.WorkspaceEntry.Equals(input.WorkspaceEntry))
                 );
         }
 
@@ -230,6 +244,10 @@ namespace Simplic.OxS.SDK.Ai
                     hashCode = (hashCode * 59) + this.RollbackMetadata.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.RiskLevel.GetHashCode();
+                if (this.WorkspaceEntry != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkspaceEntry.GetHashCode();
+                }
                 return hashCode;
             }
         }

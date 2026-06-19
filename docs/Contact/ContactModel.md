@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Functions** | **List&lt;string&gt;** |  | [optional] 
 **OpeningHours** | [**List&lt;OpeningHoursModel&gt;**](OpeningHoursModel.md) |  | [optional] 
 **ClosedDays** | [**List&lt;ClosedDayModel&gt;**](ClosedDayModel.md) |  | [optional] 
+**Addon** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **IsDeleted** | **bool** |  | [optional] 
 **CreateDateTime** | **DateTime** |  | [optional] 

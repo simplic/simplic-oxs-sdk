@@ -54,8 +54,9 @@ namespace Simplic.OxS.SDK.Storage.Management
         /// <param name="qualityTypeId">qualityTypeId.</param>
         /// <param name="voucher">voucher.</param>
         /// <param name="resources">resources.</param>
+        /// <param name="references">references.</param>
         /// <param name="approvalRequired">approvalRequired.</param>
-        public CreateLoadingAidBookingRequest(string number = default(string), Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), DateTime? dateTime = default(DateTime?), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>), bool approvalRequired = default(bool))
+        public CreateLoadingAidBookingRequest(string number = default(string), Guid sourceAccountId = default(Guid), Guid destinationAccountId = default(Guid), double quantity = default(double), Guid loadingAidTypeId = default(Guid), string note = default(string), Guid? globalBookingId = default(Guid?), Guid? referenceId = default(Guid?), string referenceType = default(string), DateTime? dateTime = default(DateTime?), Guid? qualityTypeId = default(Guid?), CreateLoadingAidVoucherRequest voucher = default(CreateLoadingAidVoucherRequest), List<CreateLoadingAidBookingResourceRequest> resources = default(List<CreateLoadingAidBookingResourceRequest>), List<CreateLoadingAidBookingReferenceRequest> references = default(List<CreateLoadingAidBookingReferenceRequest>), bool approvalRequired = default(bool))
         {
             this.SourceAccountId = sourceAccountId;
             this.DestinationAccountId = destinationAccountId;
@@ -70,6 +71,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             this.QualityTypeId = qualityTypeId;
             this.Voucher = voucher;
             this.Resources = resources;
+            this.References = references;
             this.ApprovalRequired = approvalRequired;
         }
 
@@ -152,6 +154,12 @@ namespace Simplic.OxS.SDK.Storage.Management
         public List<CreateLoadingAidBookingResourceRequest> Resources { get; set; }
 
         /// <summary>
+        /// Gets or Sets References
+        /// </summary>
+        [DataMember(Name = "references", EmitDefaultValue = true)]
+        public List<CreateLoadingAidBookingReferenceRequest> References { get; set; }
+
+        /// <summary>
         /// Gets or Sets ApprovalRequired
         /// </summary>
         [DataMember(Name = "approvalRequired", EmitDefaultValue = true)]
@@ -178,6 +186,7 @@ namespace Simplic.OxS.SDK.Storage.Management
             sb.Append("  QualityTypeId: ").Append(QualityTypeId).Append("\n");
             sb.Append("  Voucher: ").Append(Voucher).Append("\n");
             sb.Append("  Resources: ").Append(Resources).Append("\n");
+            sb.Append("  References: ").Append(References).Append("\n");
             sb.Append("  ApprovalRequired: ").Append(ApprovalRequired).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -280,6 +289,12 @@ namespace Simplic.OxS.SDK.Storage.Management
                     this.Resources.SequenceEqual(input.Resources)
                 ) && 
                 (
+                    this.References == input.References ||
+                    this.References != null &&
+                    input.References != null &&
+                    this.References.SequenceEqual(input.References)
+                ) && 
+                (
                     this.ApprovalRequired == input.ApprovalRequired ||
                     this.ApprovalRequired.Equals(input.ApprovalRequired)
                 );
@@ -342,6 +357,10 @@ namespace Simplic.OxS.SDK.Storage.Management
                 if (this.Resources != null)
                 {
                     hashCode = (hashCode * 59) + this.Resources.GetHashCode();
+                }
+                if (this.References != null)
+                {
+                    hashCode = (hashCode * 59) + this.References.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ApprovalRequired.GetHashCode();
                 return hashCode;

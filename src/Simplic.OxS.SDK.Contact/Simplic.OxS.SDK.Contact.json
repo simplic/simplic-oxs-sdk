@@ -1506,6 +1506,13 @@
                         },
                         "nullable": true
                     },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "nullable": true
+                        },
+                        "nullable": true
+                    },
                     "id": {
                         "type": "string",
                         "format": "uuid"
@@ -1594,6 +1601,13 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/ClosedDayModel"
+                        },
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "nullable": true
                         },
                         "nullable": true
                     }
@@ -1819,6 +1833,13 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/ClosedDayModel"
+                        },
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "nullable": true
                         },
                         "nullable": true
                     }
