@@ -44,6 +44,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="saleTermsOfPayment">saleTermsOfPayment.</param>
         /// <param name="purchaseTermsOfPayment">purchaseTermsOfPayment.</param>
         /// <param name="taxGroup">taxGroup.</param>
+        /// <param name="personalAccountGroup">personalAccountGroup.</param>
         /// <param name="addresses">Gets or sets the addresses.  A personal account can contain multiple addresses..</param>
         /// <param name="createDateTime">Gets or sets the create date time..</param>
         /// <param name="createUserId">Gets or sets the create user id..</param>
@@ -51,7 +52,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the update date time..</param>
         /// <param name="updateUserId">Gets or sets the update user id..</param>
         /// <param name="updateUserName">Gets or sets the udate user name..</param>
-        public PersonalAccountModel(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), TermsOfPaymentModel saleTermsOfPayment = default(TermsOfPaymentModel), TermsOfPaymentModel purchaseTermsOfPayment = default(TermsOfPaymentModel), TaxGroupModel taxGroup = default(TaxGroupModel), List<PersonalAccountAddressModel> addresses = default(List<PersonalAccountAddressModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public PersonalAccountModel(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), TermsOfPaymentModel saleTermsOfPayment = default(TermsOfPaymentModel), TermsOfPaymentModel purchaseTermsOfPayment = default(TermsOfPaymentModel), TaxGroupModel taxGroup = default(TaxGroupModel), PersonalAccountGroupSubsetModel personalAccountGroup = default(PersonalAccountGroupSubsetModel), List<PersonalAccountAddressModel> addresses = default(List<PersonalAccountAddressModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Number = number;
@@ -61,6 +62,7 @@ namespace Simplic.OxS.SDK.ERP
             this.SaleTermsOfPayment = saleTermsOfPayment;
             this.PurchaseTermsOfPayment = purchaseTermsOfPayment;
             this.TaxGroup = taxGroup;
+            this.PersonalAccountGroup = personalAccountGroup;
             this.Addresses = addresses;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
@@ -121,6 +123,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "taxGroup", EmitDefaultValue = false)]
         public TaxGroupModel TaxGroup { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PersonalAccountGroup
+        /// </summary>
+        [DataMember(Name = "personalAccountGroup", EmitDefaultValue = false)]
+        public PersonalAccountGroupSubsetModel PersonalAccountGroup { get; set; }
 
         /// <summary>
         /// Gets or sets the addresses.  A personal account can contain multiple addresses.
@@ -187,6 +195,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SaleTermsOfPayment: ").Append(SaleTermsOfPayment).Append("\n");
             sb.Append("  PurchaseTermsOfPayment: ").Append(PurchaseTermsOfPayment).Append("\n");
             sb.Append("  TaxGroup: ").Append(TaxGroup).Append("\n");
+            sb.Append("  PersonalAccountGroup: ").Append(PersonalAccountGroup).Append("\n");
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
@@ -270,6 +279,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.TaxGroup.Equals(input.TaxGroup))
                 ) && 
                 (
+                    this.PersonalAccountGroup == input.PersonalAccountGroup ||
+                    (this.PersonalAccountGroup != null &&
+                    this.PersonalAccountGroup.Equals(input.PersonalAccountGroup))
+                ) && 
+                (
                     this.Addresses == input.Addresses ||
                     this.Addresses != null &&
                     input.Addresses != null &&
@@ -347,6 +361,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.TaxGroup != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxGroup.GetHashCode();
+                }
+                if (this.PersonalAccountGroup != null)
+                {
+                    hashCode = (hashCode * 59) + this.PersonalAccountGroup.GetHashCode();
                 }
                 if (this.Addresses != null)
                 {

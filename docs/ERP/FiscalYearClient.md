@@ -200,7 +200,7 @@ catch (ApiException e)
 
 <a id="fiscalyearidpatch"></a>
 # **Patch**
-> FiscalYearModel Patch (Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = null)
+> FiscalYearResultModel Patch (Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = null)
 
 Patches a fiscal year.
 
@@ -233,7 +233,7 @@ namespace Example
             try
             {
                 // Patches a fiscal year.
-                FiscalYearModel result = apiInstance.Patch(id, updateFiscalYearRequest);
+                FiscalYearResultModel result = apiInstance.Patch(id, updateFiscalYearRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -254,7 +254,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Patches a fiscal year.
-    ApiResponse<FiscalYearModel> response = apiInstance.PatchWithHttpInfo(id, updateFiscalYearRequest);
+    ApiResponse<FiscalYearResultModel> response = apiInstance.PatchWithHttpInfo(id, updateFiscalYearRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -276,7 +276,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FiscalYearModel**](FiscalYearModel.md)
+[**FiscalYearResultModel**](FiscalYearResultModel.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ catch (ApiException e)
 
 <a id="fiscalyearpost"></a>
 # **Post**
-> FiscalYearModel Post (FiscalYearRequest? fiscalYearRequest = null)
+> FiscalYearResultModel Post (FiscalYearRequest? fiscalYearRequest = null)
 
 Creates a new fiscal year.
 
@@ -331,7 +331,7 @@ namespace Example
             try
             {
                 // Creates a new fiscal year.
-                FiscalYearModel result = apiInstance.Post(fiscalYearRequest);
+                FiscalYearResultModel result = apiInstance.Post(fiscalYearRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -352,7 +352,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Creates a new fiscal year.
-    ApiResponse<FiscalYearModel> response = apiInstance.PostWithHttpInfo(fiscalYearRequest);
+    ApiResponse<FiscalYearResultModel> response = apiInstance.PostWithHttpInfo(fiscalYearRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -373,7 +373,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FiscalYearModel**](FiscalYearModel.md)
+[**FiscalYearResultModel**](FiscalYearResultModel.md)
 
 ### Authorization
 

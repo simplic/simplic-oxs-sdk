@@ -1223,17 +1223,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/FiscalYearModel"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/FiscalYearModel"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/FiscalYearModel"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             }
                         }
@@ -1243,17 +1243,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             }
                         }
@@ -1325,17 +1325,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/FiscalYearModel"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/FiscalYearModel"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/FiscalYearModel"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             }
                         }
@@ -1345,17 +1345,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
+                                    "$ref": "#/components/schemas/FiscalYearResultModel"
                                 }
                             }
                         }
@@ -10160,6 +10160,24 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.FiscalYear."
             },
+            "FiscalYearResultModel": {
+                "type": "object",
+                "properties": {
+                    "fiscalYear": {
+                        "$ref": "#/components/schemas/FiscalYearModel"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
+                        },
+                        "description": "Gets or sets the set of errors that occurred during the operation.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for the result of a create or update operation on a Simplic.OxS.ERP.Server.FiscalYearResultModel.FiscalYear."
+            },
             "GrpcDefinitions": {
                 "type": "object",
                 "properties": {
@@ -11289,6 +11307,29 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.PersonalAccountGroup."
             },
+            "PersonalAccountGroupSubsetModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the personal account group id.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the group number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the group name.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for Simplic.OxS.ERP.PersonalAccountGroupSubset."
+            },
             "PersonalAccountModel": {
                 "type": "object",
                 "properties": {
@@ -11323,6 +11364,9 @@
                     },
                     "taxGroup": {
                         "$ref": "#/components/schemas/TaxGroupModel"
+                    },
+                    "personalAccountGroup": {
+                        "$ref": "#/components/schemas/PersonalAccountGroupSubsetModel"
                     },
                     "addresses": {
                         "type": "array",

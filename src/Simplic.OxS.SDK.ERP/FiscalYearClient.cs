@@ -115,8 +115,8 @@ public interface IFiscalYearClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="updateFiscalYearRequest"> (optional)</param>
-    /// <returns>FiscalYearModel</returns>
-    FiscalYearModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?));
+    /// <returns>FiscalYearResultModel</returns>
+    FiscalYearResultModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?));
 
     /// <summary>
     /// Patches a fiscal year. 
@@ -124,8 +124,8 @@ public interface IFiscalYearClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="updateFiscalYearRequest"> (optional)</param>
-    /// <returns>ApiResponse of FiscalYearModel</returns>
-    ApiResponse<FiscalYearModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?));
+    /// <returns>ApiResponse of FiscalYearResultModel</returns>
+    ApiResponse<FiscalYearResultModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?));
         
     /// <summary>
     /// Patches a fiscal year. 
@@ -134,8 +134,8 @@ public interface IFiscalYearClient
     /// <param name="id"></param>
     /// <param name="updateFiscalYearRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of FiscalYearModel</returns>
-    Task<FiscalYearModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of FiscalYearResultModel</returns>
+    Task<FiscalYearResultModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Patches a fiscal year. 
@@ -144,8 +144,8 @@ public interface IFiscalYearClient
     /// <param name="id"></param>
     /// <param name="updateFiscalYearRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-    Task<ApiResponse<FiscalYearModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+    Task<ApiResponse<FiscalYearResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -153,16 +153,16 @@ public interface IFiscalYearClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="fiscalYearRequest"> (optional)</param>
-    /// <returns>FiscalYearModel</returns>
-    FiscalYearModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?));
+    /// <returns>FiscalYearResultModel</returns>
+    FiscalYearResultModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?));
 
     /// <summary>
     /// Creates a new fiscal year. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="fiscalYearRequest"> (optional)</param>
-    /// <returns>ApiResponse of FiscalYearModel</returns>
-    ApiResponse<FiscalYearModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?));
+    /// <returns>ApiResponse of FiscalYearResultModel</returns>
+    ApiResponse<FiscalYearResultModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?));
         
     /// <summary>
     /// Creates a new fiscal year. 
@@ -170,8 +170,8 @@ public interface IFiscalYearClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="fiscalYearRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of FiscalYearModel</returns>
-    Task<FiscalYearModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of FiscalYearResultModel</returns>
+    Task<FiscalYearResultModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Creates a new fiscal year. 
@@ -179,8 +179,8 @@ public interface IFiscalYearClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="fiscalYearRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-    Task<ApiResponse<FiscalYearModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+    Task<ApiResponse<FiscalYearResultModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -409,8 +409,8 @@ public interface IFiscalYearClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
-        /// <returns>FiscalYearModel</returns>
-        public FiscalYearModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?))
+        /// <returns>FiscalYearResultModel</returns>
+        public FiscalYearResultModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?))
         {
             try
             {
@@ -428,8 +428,8 @@ public interface IFiscalYearClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
-        /// <returns>ApiResponse of FiscalYearModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?))
+        /// <returns>ApiResponse of FiscalYearResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?))
         {
             try
             {
@@ -448,8 +448,8 @@ public interface IFiscalYearClient
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FiscalYearModel</returns>
-        public System.Threading.Tasks.Task<FiscalYearModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FiscalYearResultModel</returns>
+        public System.Threading.Tasks.Task<FiscalYearResultModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -468,8 +468,8 @@ public interface IFiscalYearClient
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -485,8 +485,8 @@ public interface IFiscalYearClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
-        /// <returns>FiscalYearModel</returns>
-        public FiscalYearModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?))
+        /// <returns>FiscalYearResultModel</returns>
+        public FiscalYearResultModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?))
         {
             try
             {
@@ -503,8 +503,8 @@ public interface IFiscalYearClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
-        /// <returns>ApiResponse of FiscalYearModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?))
+        /// <returns>ApiResponse of FiscalYearResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?))
         {
             try
             {
@@ -522,8 +522,8 @@ public interface IFiscalYearClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FiscalYearModel</returns>
-        public System.Threading.Tasks.Task<FiscalYearModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FiscalYearResultModel</returns>
+        public System.Threading.Tasks.Task<FiscalYearResultModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -541,8 +541,8 @@ public interface IFiscalYearClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -613,8 +613,8 @@ public interface IFiscalYearClient
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>FiscalYearModel</returns>
-        FiscalYearModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0);
+        /// <returns>FiscalYearResultModel</returns>
+        FiscalYearResultModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Patches a fiscal year.
@@ -626,16 +626,16 @@ public interface IFiscalYearClient
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of FiscalYearModel</returns>
-        ApiResponse<FiscalYearModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of FiscalYearResultModel</returns>
+        ApiResponse<FiscalYearResultModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0);
         /// <summary>
         /// Creates a new fiscal year.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>FiscalYearModel</returns>
-        FiscalYearModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0);
+        /// <returns>FiscalYearResultModel</returns>
+        FiscalYearResultModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new fiscal year.
@@ -646,8 +646,8 @@ public interface IFiscalYearClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of FiscalYearModel</returns>
-        ApiResponse<FiscalYearModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of FiscalYearResultModel</returns>
+        ApiResponse<FiscalYearResultModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -718,8 +718,8 @@ public interface IFiscalYearClient
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FiscalYearModel</returns>
-        System.Threading.Tasks.Task<FiscalYearModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FiscalYearResultModel</returns>
+        System.Threading.Tasks.Task<FiscalYearResultModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Patches a fiscal year.
@@ -732,8 +732,8 @@ public interface IFiscalYearClient
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FiscalYearModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FiscalYearResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new fiscal year.
         /// </summary>
@@ -744,8 +744,8 @@ public interface IFiscalYearClient
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FiscalYearModel</returns>
-        System.Threading.Tasks.Task<FiscalYearModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FiscalYearResultModel</returns>
+        System.Threading.Tasks.Task<FiscalYearResultModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new fiscal year.
@@ -757,8 +757,8 @@ public interface IFiscalYearClient
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FiscalYearModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FiscalYearResultModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1202,10 +1202,10 @@ public interface IFiscalYearClient
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>FiscalYearModel</returns>
-        public FiscalYearModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0)
+        /// <returns>FiscalYearResultModel</returns>
+        public FiscalYearResultModel Patch(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<FiscalYearModel> localVarResponse = PatchWithHttpInfo(id, updateFiscalYearRequest);
+            Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> localVarResponse = PatchWithHttpInfo(id, updateFiscalYearRequest);
             return localVarResponse.Data;
         }
 
@@ -1216,8 +1216,8 @@ public interface IFiscalYearClient
         /// <param name="id"></param>
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of FiscalYearModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of FiscalYearResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> PatchWithHttpInfo(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1265,7 +1265,7 @@ public interface IFiscalYearClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<FiscalYearModel>("/FiscalYear/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<FiscalYearResultModel>("/FiscalYear/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FiscalYearIdPatch", localVarResponse);
@@ -1286,10 +1286,10 @@ public interface IFiscalYearClient
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FiscalYearModel</returns>
-        public async System.Threading.Tasks.Task<FiscalYearModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FiscalYearResultModel</returns>
+        public async System.Threading.Tasks.Task<FiscalYearResultModel> PatchAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<FiscalYearModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateFiscalYearRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateFiscalYearRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1301,8 +1301,8 @@ public interface IFiscalYearClient
         /// <param name="updateFiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel>> PatchWithHttpInfoAsync(Guid id, UpdateFiscalYearRequest? updateFiscalYearRequest = default(UpdateFiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1351,7 +1351,7 @@ public interface IFiscalYearClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<FiscalYearModel>("/FiscalYear/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<FiscalYearResultModel>("/FiscalYear/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1371,10 +1371,10 @@ public interface IFiscalYearClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>FiscalYearModel</returns>
-        public FiscalYearModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0)
+        /// <returns>FiscalYearResultModel</returns>
+        public FiscalYearResultModel Post(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<FiscalYearModel> localVarResponse = PostWithHttpInfo(fiscalYearRequest);
+            Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> localVarResponse = PostWithHttpInfo(fiscalYearRequest);
             return localVarResponse.Data;
         }
 
@@ -1384,8 +1384,8 @@ public interface IFiscalYearClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of FiscalYearModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<FiscalYearModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of FiscalYearResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> PostWithHttpInfo(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1432,7 +1432,7 @@ public interface IFiscalYearClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FiscalYearModel>("/FiscalYear", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FiscalYearResultModel>("/FiscalYear", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FiscalYearPost", localVarResponse);
@@ -1452,10 +1452,10 @@ public interface IFiscalYearClient
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of FiscalYearModel</returns>
-        public async System.Threading.Tasks.Task<FiscalYearModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FiscalYearResultModel</returns>
+        public async System.Threading.Tasks.Task<FiscalYearResultModel> PostAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<FiscalYearModel> localVarResponse = await PostWithHttpInfoAsync(fiscalYearRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel> localVarResponse = await PostWithHttpInfoAsync(fiscalYearRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1466,8 +1466,8 @@ public interface IFiscalYearClient
         /// <param name="fiscalYearRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (FiscalYearModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FiscalYearResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<FiscalYearResultModel>> PostWithHttpInfoAsync(FiscalYearRequest? fiscalYearRequest = default(FiscalYearRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1515,7 +1515,7 @@ public interface IFiscalYearClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FiscalYearModel>("/FiscalYear", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FiscalYearResultModel>("/FiscalYear", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
