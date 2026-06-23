@@ -57,7 +57,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="endpointUrl">endpointUrl.</param>
         /// <param name="isHealthy">isHealthy.</param>
         /// <param name="metadata">metadata.</param>
-        public ToolDescriptor(string name = default(string), string description = default(string), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), Object inputSchema = default(Object), Object outputSchema = default(Object), List<string> requiredPermissions = default(List<string>), string owningService = default(string), int timeoutSeconds = default(int), int retryCount = default(int), bool requiresApproval = default(bool), bool supportsStreaming = default(bool), string varVersion = default(string), string endpointUrl = default(string), bool isHealthy = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>))
+        /// <param name="tags">tags.</param>
+        public ToolDescriptor(string name = default(string), string description = default(string), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), Object inputSchema = default(Object), Object outputSchema = default(Object), List<string> requiredPermissions = default(List<string>), string owningService = default(string), int timeoutSeconds = default(int), int retryCount = default(int), bool requiresApproval = default(bool), bool supportsStreaming = default(bool), string varVersion = default(string), string endpointUrl = default(string), bool isHealthy = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<string> tags = default(List<string>))
         {
             this.Name = name;
             this.Description = description;
@@ -74,6 +75,7 @@ namespace Simplic.OxS.SDK.Ai
             this.EndpointUrl = endpointUrl;
             this.IsHealthy = isHealthy;
             this.Metadata = metadata;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -161,6 +163,12 @@ namespace Simplic.OxS.SDK.Ai
         public Dictionary<string, string> Metadata { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -183,6 +191,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  EndpointUrl: ").Append(EndpointUrl).Append("\n");
             sb.Append("  IsHealthy: ").Append(IsHealthy).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -288,6 +297,12 @@ namespace Simplic.OxS.SDK.Ai
                     this.Metadata != null &&
                     input.Metadata != null &&
                     this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
                 );
         }
 
@@ -341,6 +356,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Metadata != null)
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
+                if (this.Tags != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
                 return hashCode;
             }
