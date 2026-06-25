@@ -60,7 +60,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="stream">stream.</param>
         /// <param name="correlationId">correlationId.</param>
         /// <param name="documents">documents.</param>
-        public AgentRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), List<string> allowedToolNames = default(List<string>), List<string> blockedToolNames = default(List<string>), bool stream = default(bool), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>))
+        /// <param name="debug">debug.</param>
+        public AgentRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), List<string> allowedToolNames = default(List<string>), List<string> blockedToolNames = default(List<string>), bool stream = default(bool), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
         {
             this.Prompt = prompt;
             this.Mode = mode;
@@ -74,6 +75,7 @@ namespace Simplic.OxS.SDK.Ai
             this.Stream = stream;
             this.CorrelationId = correlationId;
             this.Documents = documents;
+            this.Debug = debug;
         }
 
         /// <summary>
@@ -137,6 +139,12 @@ namespace Simplic.OxS.SDK.Ai
         public List<AgentDocument> Documents { get; set; }
 
         /// <summary>
+        /// Gets or Sets Debug
+        /// </summary>
+        [DataMember(Name = "debug", EmitDefaultValue = true)]
+        public bool Debug { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,6 +164,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Stream: ").Append(Stream).Append("\n");
             sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
+            sb.Append("  Debug: ").Append(Debug).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -251,6 +260,10 @@ namespace Simplic.OxS.SDK.Ai
                     this.Documents != null &&
                     input.Documents != null &&
                     this.Documents.SequenceEqual(input.Documents)
+                ) && 
+                (
+                    this.Debug == input.Debug ||
+                    this.Debug.Equals(input.Debug)
                 );
         }
 
@@ -302,6 +315,7 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.Documents.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Debug.GetHashCode();
                 return hashCode;
             }
         }

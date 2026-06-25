@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Stream** | **bool** |  | [optional] 
 **CorrelationId** | **Guid?** |  | [optional] 
 **Documents** | [**List&lt;AgentDocument&gt;**](AgentDocument.md) |  | [optional] 
+**Debug** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

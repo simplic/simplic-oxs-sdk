@@ -5147,6 +5147,9 @@
                             "$ref": "#/components/schemas/AgentDocument"
                         },
                         "nullable": true
+                    },
+                    "debug": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
