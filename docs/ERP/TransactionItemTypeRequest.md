@@ -5,6 +5,7 @@ Represents a request to create a transaction item type.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DeserializationType** | **string** | Gets or sets the deserialization type of a transaction item of this transaction item type. | 
 **Name** | **string** | Gets or sets the name. | 
 **Number** | **int** | Gets or sets the number. | 
 **HasPositionNumber** | **bool** | Gets or sets the has position number flag. | 
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 **DetailHtml** | **string** | Gets or sets the detail HTML. | [optional] 
 **DataTemplate** | **string** | Gets or sets the data template. | [optional] 
 **ArticleGLAResolver** | **string** | Gets or sets the article GLA resolver. | [optional] 
-**Code** | **string** | Gets or sets an code. This code is to be used by internal processes. | [optional] 
+**Code** | **string** | Gets or sets the code. This code is to be used by internal processes. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

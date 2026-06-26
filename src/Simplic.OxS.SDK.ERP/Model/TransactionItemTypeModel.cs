@@ -39,6 +39,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="isDeleted">isDeleted.</param>
+        /// <param name="deserializationType">Gets or sets the deserialization type of a transaction item of this transaction item type..</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="code">Gets or sets the code used to identify default transaction item type documents when generating transaction items from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time and never changes afterwards..</param>
@@ -53,11 +54,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the transaction item type is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction item type..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction item type..</param>
-        public TransactionItemTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string name = default(string), int number = default(int), string code = default(string), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TransactionItemTypeModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string deserializationType = default(string), string name = default(string), int number = default(int), string code = default(string), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
+            this.DeserializationType = deserializationType;
             this.Name = name;
             this.Number = number;
             this.Code = code;
@@ -91,6 +93,13 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Gets or sets the deserialization type of a transaction item of this transaction item type.
+        /// </summary>
+        /// <value>Gets or sets the deserialization type of a transaction item of this transaction item type.</value>
+        [DataMember(Name = "deserializationType", EmitDefaultValue = true)]
+        public string DeserializationType { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -201,6 +210,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  DeserializationType: ").Append(DeserializationType).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
@@ -263,6 +273,11 @@ namespace Simplic.OxS.SDK.ERP
                 (
                     this.IsDeleted == input.IsDeleted ||
                     this.IsDeleted.Equals(input.IsDeleted)
+                ) && 
+                (
+                    this.DeserializationType == input.DeserializationType ||
+                    (this.DeserializationType != null &&
+                    this.DeserializationType.Equals(input.DeserializationType))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -351,6 +366,10 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsDeleted.GetHashCode();
+                if (this.DeserializationType != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeserializationType.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();

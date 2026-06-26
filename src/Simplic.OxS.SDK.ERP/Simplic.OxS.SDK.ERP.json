@@ -11481,12 +11481,6 @@
                     "assignmentMode": {
                         "$ref": "#/components/schemas/AssignmentMode"
                     },
-                    "amount": {
-                        "type": "number",
-                        "description": "Gets the amount the operation item results in.\n\nThe amount can be positive or negative representing a surcharge or a discount.",
-                        "format": "double",
-                        "nullable": true
-                    },
                     "behaviorDefinitions": {
                         "type": "array",
                         "items": {
@@ -13370,12 +13364,6 @@
                     "assignmentMode": {
                         "$ref": "#/components/schemas/AssignmentMode"
                     },
-                    "amount": {
-                        "type": "number",
-                        "description": "Gets the amount the operation item results in.\n\nThe amount can be positive or negative representing a surcharge or a discount.",
-                        "format": "double",
-                        "nullable": true
-                    },
                     "behaviorDefinitions": {
                         "type": "array",
                         "items": {
@@ -13496,6 +13484,11 @@
                     "isDeleted": {
                         "type": "boolean"
                     },
+                    "deserializationType": {
+                        "type": "string",
+                        "description": "Gets or sets the deserialization type of a transaction item of this transaction item type.",
+                        "nullable": true
+                    },
                     "name": {
                         "type": "string",
                         "description": "Gets or sets the name.",
@@ -13572,6 +13565,7 @@
             },
             "TransactionItemTypeRequest": {
                 "required": [
+                    "deserializationType",
                     "hasPositionNumber",
                     "isSelectable",
                     "name",
@@ -13579,6 +13573,11 @@
                 ],
                 "type": "object",
                 "properties": {
+                    "deserializationType": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the deserialization type of a transaction item of this transaction item type."
+                    },
                     "name": {
                         "maxLength": 100,
                         "minLength": 2,
@@ -13618,7 +13617,7 @@
                     },
                     "code": {
                         "type": "string",
-                        "description": "Gets or sets an code.\nThis code is to be used by internal processes.",
+                        "description": "Gets or sets the code.\nThis code is to be used by internal processes.",
                         "nullable": true
                     }
                 },
@@ -15100,6 +15099,11 @@
             "UpdateTransactionItemTypeRequest": {
                 "type": "object",
                 "properties": {
+                    "deserializationType": {
+                        "type": "string",
+                        "description": "Gets or sets the deserialization type of a transaction item of this transaction item type.",
+                        "nullable": true
+                    },
                     "name": {
                         "type": "string",
                         "description": "Gets or sets the name.",

@@ -36,6 +36,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTransactionItemTypeRequest" /> class.
         /// </summary>
+        /// <param name="deserializationType">Gets or sets the deserialization type of a transaction item of this transaction item type..</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="hasPositionNumber">Gets or sets the has position number flag..</param>
@@ -44,8 +45,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="dataTemplate">Gets or sets the data template..</param>
         /// <param name="articleGLAResolver">Gets or sets the article GLA resolver..</param>
         /// <param name="code">Gets or sets an code. This code is to be used by internal processes..</param>
-        public UpdateTransactionItemTypeRequest(string name = default(string), int? number = default(int?), bool? hasPositionNumber = default(bool?), bool? isSelectable = default(bool?), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), string code = default(string))
+        public UpdateTransactionItemTypeRequest(string deserializationType = default(string), string name = default(string), int? number = default(int?), bool? hasPositionNumber = default(bool?), bool? isSelectable = default(bool?), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), string code = default(string))
         {
+            this.DeserializationType = deserializationType;
             this.Name = name;
             this.Number = number;
             this.HasPositionNumber = hasPositionNumber;
@@ -55,6 +57,13 @@ namespace Simplic.OxS.SDK.ERP
             this.ArticleGLAResolver = articleGLAResolver;
             this.Code = code;
         }
+
+        /// <summary>
+        /// Gets or sets the deserialization type of a transaction item of this transaction item type.
+        /// </summary>
+        /// <value>Gets or sets the deserialization type of a transaction item of this transaction item type.</value>
+        [DataMember(Name = "deserializationType", EmitDefaultValue = true)]
+        public string DeserializationType { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -120,6 +129,7 @@ namespace Simplic.OxS.SDK.ERP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class UpdateTransactionItemTypeRequest {\n");
+            sb.Append("  DeserializationType: ").Append(DeserializationType).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  HasPositionNumber: ").Append(HasPositionNumber).Append("\n");
@@ -163,6 +173,11 @@ namespace Simplic.OxS.SDK.ERP
                 return false;
             }
             return 
+                (
+                    this.DeserializationType == input.DeserializationType ||
+                    (this.DeserializationType != null &&
+                    this.DeserializationType.Equals(input.DeserializationType))
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -214,6 +229,10 @@ namespace Simplic.OxS.SDK.ERP
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.DeserializationType != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeserializationType.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();

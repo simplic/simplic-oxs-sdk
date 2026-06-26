@@ -5,6 +5,7 @@ Represents a request to create a transaction item type.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DeserializationType** | **string** | Gets or sets the deserialization type of a transaction item of this transaction item type. | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
 **Number** | **int?** | Gets or sets the number. | [optional] 
 **HasPositionNumber** | **bool?** | Gets or sets the has position number flag. | [optional] 
