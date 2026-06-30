@@ -40,12 +40,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="label">label.</param>
         /// <param name="data">data.</param>
         /// <param name="navigationUrl">navigationUrl.</param>
-        public AgentWorkspaceEntry(string type = default(string), string label = default(string), Object data = default(Object), string navigationUrl = default(string))
+        /// <param name="fileContent">fileContent.</param>
+        /// <param name="fileLanguage">fileLanguage.</param>
+        public AgentWorkspaceEntry(string type = default(string), string label = default(string), Object data = default(Object), string navigationUrl = default(string), string fileContent = default(string), string fileLanguage = default(string))
         {
             this.Type = type;
             this.Label = label;
             this.Data = data;
             this.NavigationUrl = navigationUrl;
+            this.FileContent = fileContent;
+            this.FileLanguage = fileLanguage;
         }
 
         /// <summary>
@@ -73,6 +77,18 @@ namespace Simplic.OxS.SDK.Ai
         public string NavigationUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets FileContent
+        /// </summary>
+        [DataMember(Name = "fileContent", EmitDefaultValue = true)]
+        public string FileContent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FileLanguage
+        /// </summary>
+        [DataMember(Name = "fileLanguage", EmitDefaultValue = true)]
+        public string FileLanguage { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +100,8 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  NavigationUrl: ").Append(NavigationUrl).Append("\n");
+            sb.Append("  FileContent: ").Append(FileContent).Append("\n");
+            sb.Append("  FileLanguage: ").Append(FileLanguage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +156,16 @@ namespace Simplic.OxS.SDK.Ai
                     this.NavigationUrl == input.NavigationUrl ||
                     (this.NavigationUrl != null &&
                     this.NavigationUrl.Equals(input.NavigationUrl))
+                ) && 
+                (
+                    this.FileContent == input.FileContent ||
+                    (this.FileContent != null &&
+                    this.FileContent.Equals(input.FileContent))
+                ) && 
+                (
+                    this.FileLanguage == input.FileLanguage ||
+                    (this.FileLanguage != null &&
+                    this.FileLanguage.Equals(input.FileLanguage))
                 );
         }
 
@@ -165,6 +193,14 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.NavigationUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.NavigationUrl.GetHashCode();
+                }
+                if (this.FileContent != null)
+                {
+                    hashCode = (hashCode * 59) + this.FileContent.GetHashCode();
+                }
+                if (this.FileLanguage != null)
+                {
+                    hashCode = (hashCode * 59) + this.FileLanguage.GetHashCode();
                 }
                 return hashCode;
             }

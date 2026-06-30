@@ -5284,6 +5284,14 @@
                     "navigationUrl": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "fileContent": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fileLanguage": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
