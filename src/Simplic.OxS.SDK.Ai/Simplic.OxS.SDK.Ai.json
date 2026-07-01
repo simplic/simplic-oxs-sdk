@@ -756,6 +756,96 @@
                 }
             }
         },
+        "/AgentSession/{sessionId}/workspace": {
+            "get": {
+                "tags": [
+                    "AgentSession"
+                ],
+                "summary": "Gets the workspace entries accumulated during tool executions in a session.",
+                "parameters": [
+                    {
+                        "name": "sessionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AgentWorkspaceEntryDto"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AgentWorkspaceEntryDto"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AgentWorkspaceEntryDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Conversation/start": {
             "post": {
                 "tags": [
@@ -5295,6 +5385,43 @@
                     }
                 },
                 "additionalProperties": false
+            },
+            "AgentWorkspaceEntryDto": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "type": "string",
+                        "description": "Gets or sets the human-readable label shown in the workspace file tree.",
+                        "nullable": true
+                    },
+                    "fileContent": {
+                        "type": "string",
+                        "description": "Gets or sets the raw file content (e.g. pretty-printed JSON response body).",
+                        "nullable": true
+                    },
+                    "fileLanguage": {
+                        "type": "string",
+                        "description": "Gets or sets the Monaco language identifier, e.g. \"json\".",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the registry key for a dynamic component entry, e.g. \"flow-editor\".",
+                        "nullable": true
+                    },
+                    "dataJson": {
+                        "type": "string",
+                        "description": "Gets or sets the JSON-serialized data payload for dynamic component entries.",
+                        "nullable": true
+                    },
+                    "navigationUrl": {
+                        "type": "string",
+                        "description": "Gets or sets an optional navigation URL shown as a \"Go to \u2026\" button.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "DTO representing a workspace entry returned by the session workspace endpoint."
             },
             "AnswerRequest": {
                 "type": "object",
