@@ -2546,6 +2546,11 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "nullable": true
+                    },
                     "id": {
                         "type": "string",
                         "format": "uuid"
@@ -2628,6 +2633,11 @@
                     },
                     "ean": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
                         "nullable": true
                     },
                     "articleGroupId": {
@@ -3047,6 +3057,11 @@
                     },
                     "ean": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
                         "nullable": true
                     },
                     "articleGroupId": {

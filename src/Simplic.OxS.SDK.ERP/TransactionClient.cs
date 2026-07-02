@@ -152,35 +152,35 @@ public interface ITransactionClient
     /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
+    /// <param name="id"></param>
     /// <returns>TransactionResultModel</returns>
-    TransactionResultModel Cancel(Guid? id = default(Guid?));
+    TransactionResultModel Cancel(Guid id);
 
     /// <summary>
     /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
+    /// <param name="id"></param>
     /// <returns>ApiResponse of TransactionResultModel</returns>
-    ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid? id = default(Guid?));
+    ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid id);
         
     /// <summary>
     /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
+    /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of TransactionResultModel</returns>
-    Task<TransactionResultModel> CancelAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<TransactionResultModel> CancelAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Cancels a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"> (optional)</param>
+    /// <param name="id"></param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-    Task<ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -649,6 +649,41 @@ public interface ITransactionClient
     /// <returns>Task of ApiResponse (PreviewTransactionModel)</returns>
     Task<ApiResponse<PreviewTransactionModel>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The unique identifier of the transaction to print.</param>
+    /// <returns>TransactionResultModel</returns>
+    TransactionResultModel Print(Guid id);
+
+    /// <summary>
+    /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The unique identifier of the transaction to print.</param>
+    /// <returns>ApiResponse of TransactionResultModel</returns>
+    ApiResponse<TransactionResultModel> PrintWithHttpInfo(Guid id);
+        
+    /// <summary>
+    /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The unique identifier of the transaction to print.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of TransactionResultModel</returns>
+    Task<TransactionResultModel> PrintAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The unique identifier of the transaction to print.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+    Task<ApiResponse<TransactionResultModel>> PrintWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -951,9 +986,9 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <returns>TransactionResultModel</returns>
-        public TransactionResultModel Cancel(Guid? id = default(Guid?))
+        public TransactionResultModel Cancel(Guid id)
         {
             try
             {
@@ -969,9 +1004,9 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <returns>ApiResponse of TransactionResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid? id = default(Guid?))
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid id)
         {
             try
             {
@@ -987,10 +1022,10 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResultModel</returns>
-        public System.Threading.Tasks.Task<TransactionResultModel> CancelAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<TransactionResultModel> CancelAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1006,10 +1041,10 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1981,6 +2016,79 @@ public interface ITransactionClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel Print(Guid id)
+        {
+            try
+            {
+                return _internalClient.Print(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> PrintWithHttpInfo(Guid id)
+        {
+            try
+            {
+                return _internalClient.PrintWithHttpInfo(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        public System.Threading.Tasks.Task<TransactionResultModel> PrintAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PrintAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> PrintWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PrintWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -2060,10 +2168,10 @@ public interface ITransactionClient
         /// Cancels a transaction.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionResultModel</returns>
-        TransactionResultModel Cancel(Guid? id = default(Guid?), int operationIndex = 0);
+        TransactionResultModel Cancel(Guid id, int operationIndex = 0);
 
         /// <summary>
         /// Cancels a transaction.
@@ -2072,10 +2180,10 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionResultModel</returns>
-        ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
+        ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
         /// Converts a set of transactions.
         /// </summary>
@@ -2342,6 +2450,26 @@ public interface ITransactionClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PreviewTransactionModel</returns>
         ApiResponse<PreviewTransactionModel> PreviewWithHttpInfo(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionResultModel</returns>
+        TransactionResultModel Print(Guid id, int operationIndex = 0);
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        ApiResponse<TransactionResultModel> PrintWithHttpInfo(Guid id, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -2435,11 +2563,11 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResultModel</returns>
-        System.Threading.Tasks.Task<TransactionResultModel> CancelAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransactionResultModel> CancelAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Cancels a transaction.
@@ -2448,11 +2576,11 @@ public interface ITransactionClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Converts a set of transactions.
         /// </summary>
@@ -2784,6 +2912,31 @@ public interface ITransactionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PreviewTransactionModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PreviewTransactionModel>> PreviewWithHttpInfoAsync(PreviewTransactionRequest? previewTransactionRequest = default(PreviewTransactionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        System.Threading.Tasks.Task<TransactionResultModel> PrintAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransactionResultModel>> PrintWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -3426,10 +3579,10 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TransactionResultModel</returns>
-        public TransactionResultModel Cancel(Guid? id = default(Guid?), int operationIndex = 0)
+        public TransactionResultModel Cancel(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = CancelWithHttpInfo(id);
             return localVarResponse.Data;
@@ -3439,10 +3592,10 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TransactionResultModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> CancelWithHttpInfo(Guid id, int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -3468,12 +3621,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (id != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
-            }
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelPatch";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3489,10 +3639,10 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<TransactionResultModel>("/Transaction/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<TransactionResultModel>("/Transaction/cancel/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionCancelPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionCancelIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3506,11 +3656,11 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransactionResultModel</returns>
-        public async System.Threading.Tasks.Task<TransactionResultModel> CancelAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransactionResultModel> CancelAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = await CancelWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3520,11 +3670,11 @@ public interface ITransactionClient
         /// Cancels a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> CancelWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -3551,12 +3701,9 @@ public interface ITransactionClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (id != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "id", id));
-            }
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelPatch";
+            localVarRequestOptions.Operation = "TransactionClient.TransactionCancelIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -3572,11 +3719,11 @@ public interface ITransactionClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionResultModel>("/Transaction/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionResultModel>("/Transaction/cancel/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("TransactionCancelPatch", localVarResponse);
+                Exception _exception = this.ExceptionFactory("TransactionCancelIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -5707,6 +5854,164 @@ public interface ITransactionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionPreviewPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionResultModel</returns>
+        public TransactionResultModel Print(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = PrintWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionResultModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionResultModel> PrintWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionPrintIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<TransactionResultModel>("/Transaction/print/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionPrintIdPatch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionResultModel</returns>
+        public async System.Threading.Tasks.Task<TransactionResultModel> PrintAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionResultModel> localVarResponse = await PrintWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The unique identifier of the transaction to print.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionResultModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionResultModel>> PrintWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionPrintIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<TransactionResultModel>("/Transaction/print/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionPrintIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

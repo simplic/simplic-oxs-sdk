@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Number** | **string** |  | [optional] 
 **TaxRateId** | **Guid?** |  | [optional] 
 **Ean** | **string** |  | [optional] 
+**Addon** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **ArticleGroupId** | **Guid?** |  | [optional] 
 **QuantityUnitId** | **Guid?** |  | [optional] 
 

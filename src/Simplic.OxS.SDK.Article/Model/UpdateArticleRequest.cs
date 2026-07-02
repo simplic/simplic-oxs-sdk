@@ -41,15 +41,17 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="number">number.</param>
         /// <param name="taxRateId">taxRateId.</param>
         /// <param name="ean">ean.</param>
+        /// <param name="addon">addon.</param>
         /// <param name="articleGroupId">articleGroupId.</param>
         /// <param name="quantityUnitId">quantityUnitId.</param>
-        public UpdateArticleRequest(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Guid? articleGroupId = default(Guid?), Guid? quantityUnitId = default(Guid?))
+        public UpdateArticleRequest(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? articleGroupId = default(Guid?), Guid? quantityUnitId = default(Guid?))
         {
             this.ShortName = shortName;
             this.FullName = fullName;
             this.Number = number;
             this.TaxRateId = taxRateId;
             this.Ean = ean;
+            this.Addon = addon;
             this.ArticleGroupId = articleGroupId;
             this.QuantityUnitId = quantityUnitId;
         }
@@ -85,6 +87,12 @@ namespace Simplic.OxS.SDK.Article
         public string Ean { get; set; }
 
         /// <summary>
+        /// Gets or Sets Addon
+        /// </summary>
+        [DataMember(Name = "addon", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Addon { get; set; }
+
+        /// <summary>
         /// Gets or Sets ArticleGroupId
         /// </summary>
         [DataMember(Name = "articleGroupId", EmitDefaultValue = true)]
@@ -109,6 +117,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
             sb.Append("  Ean: ").Append(Ean).Append("\n");
+            sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  ArticleGroupId: ").Append(ArticleGroupId).Append("\n");
             sb.Append("  QuantityUnitId: ").Append(QuantityUnitId).Append("\n");
             sb.Append("}\n");
@@ -172,6 +181,12 @@ namespace Simplic.OxS.SDK.Article
                     this.Ean.Equals(input.Ean))
                 ) && 
                 (
+                    this.Addon == input.Addon ||
+                    this.Addon != null &&
+                    input.Addon != null &&
+                    this.Addon.SequenceEqual(input.Addon)
+                ) && 
+                (
                     this.ArticleGroupId == input.ArticleGroupId ||
                     (this.ArticleGroupId != null &&
                     this.ArticleGroupId.Equals(input.ArticleGroupId))
@@ -211,6 +226,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.Ean != null)
                 {
                     hashCode = (hashCode * 59) + this.Ean.GetHashCode();
+                }
+                if (this.Addon != null)
+                {
+                    hashCode = (hashCode * 59) + this.Addon.GetHashCode();
                 }
                 if (this.ArticleGroupId != null)
                 {

@@ -41,6 +41,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="number">number.</param>
         /// <param name="taxRateId">taxRateId.</param>
         /// <param name="ean">ean.</param>
+        /// <param name="addon">addon.</param>
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="articleGroup">articleGroup.</param>
@@ -52,13 +53,14 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public ArticleModel(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Guid id = default(Guid), Guid organizationId = default(Guid), ArticleGroupModel articleGroup = default(ArticleGroupModel), QuantityUnitReferenceModel quantityUnit = default(QuantityUnitReferenceModel), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
+        public ArticleModel(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), Guid organizationId = default(Guid), ArticleGroupModel articleGroup = default(ArticleGroupModel), QuantityUnitReferenceModel quantityUnit = default(QuantityUnitReferenceModel), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
         {
             this.ShortName = shortName;
             this.FullName = fullName;
             this.Number = number;
             this.TaxRateId = taxRateId;
             this.Ean = ean;
+            this.Addon = addon;
             this.Id = id;
             this.OrganizationId = organizationId;
             this.ArticleGroup = articleGroup;
@@ -101,6 +103,12 @@ namespace Simplic.OxS.SDK.Article
         /// </summary>
         [DataMember(Name = "ean", EmitDefaultValue = true)]
         public string Ean { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Addon
+        /// </summary>
+        [DataMember(Name = "addon", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -181,6 +189,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
             sb.Append("  Ean: ").Append(Ean).Append("\n");
+            sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  ArticleGroup: ").Append(ArticleGroup).Append("\n");
@@ -251,6 +260,12 @@ namespace Simplic.OxS.SDK.Article
                     this.Ean == input.Ean ||
                     (this.Ean != null &&
                     this.Ean.Equals(input.Ean))
+                ) && 
+                (
+                    this.Addon == input.Addon ||
+                    this.Addon != null &&
+                    input.Addon != null &&
+                    this.Addon.SequenceEqual(input.Addon)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -336,6 +351,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.Ean != null)
                 {
                     hashCode = (hashCode * 59) + this.Ean.GetHashCode();
+                }
+                if (this.Addon != null)
+                {
+                    hashCode = (hashCode * 59) + this.Addon.GetHashCode();
                 }
                 if (this.Id != null)
                 {
