@@ -78,6 +78,41 @@ public interface ITelematicClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <returns></returns>
+    void CreateDriverActivitiesReadJob(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> CreateDriverActivitiesReadJobWithHttpInfo(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task CreateDriverActivitiesReadJobAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> CreateDriverActivitiesReadJobWithHttpInfoAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createDtcoReadJobRequest"> (optional)</param>
     /// <returns></returns>
     void CreateDtcoReadJob(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?));
@@ -142,6 +177,41 @@ public interface ITelematicClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
     Task<ApiResponse<Object>> CreateReadJobWithHttpInfoAsync(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <returns></returns>
+    void DeleteDriverActivitiesReadJob(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> DeleteDriverActivitiesReadJobWithHttpInfo(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task DeleteDriverActivitiesReadJobAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> DeleteDriverActivitiesReadJobWithHttpInfoAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -466,6 +536,79 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <returns></returns>
+        public void CreateDriverActivitiesReadJob(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?))
+        {
+            try
+            {
+                _internalClient.CreateDriverActivitiesReadJob(createDriverActivitiesReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> CreateDriverActivitiesReadJobWithHttpInfo(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?))
+        {
+            try
+            {
+                return _internalClient.CreateDriverActivitiesReadJobWithHttpInfo(createDriverActivitiesReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task CreateDriverActivitiesReadJobAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateDriverActivitiesReadJobAsync(createDriverActivitiesReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> CreateDriverActivitiesReadJobWithHttpInfoAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.CreateDriverActivitiesReadJobWithHttpInfoAsync(createDriverActivitiesReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDtcoReadJobRequest"> (optional)</param>
         /// <returns></returns>
         public void CreateDtcoReadJob(CreateDtcoReadJobRequest? createDtcoReadJobRequest = default(CreateDtcoReadJobRequest?))
@@ -602,6 +745,79 @@ public interface ITelematicClient
             try
             {
                 return _internalClient.CreateReadJobWithHttpInfoAsync(createReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <returns></returns>
+        public void DeleteDriverActivitiesReadJob(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?))
+        {
+            try
+            {
+                _internalClient.DeleteDriverActivitiesReadJob(deleteDriverActivitiesReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteDriverActivitiesReadJobWithHttpInfo(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?))
+        {
+            try
+            {
+                return _internalClient.DeleteDriverActivitiesReadJobWithHttpInfo(deleteDriverActivitiesReadJobRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task DeleteDriverActivitiesReadJobAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteDriverActivitiesReadJobAsync(deleteDriverActivitiesReadJobRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteDriverActivitiesReadJobWithHttpInfoAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.DeleteDriverActivitiesReadJobWithHttpInfoAsync(deleteDriverActivitiesReadJobRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1006,6 +1222,26 @@ public interface ITelematicClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void CreateDriverActivitiesReadJob(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> CreateDriverActivitiesReadJobWithHttpInfo(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDtcoReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1042,6 +1278,26 @@ public interface ITelematicClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateReadJobWithHttpInfo(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void DeleteDriverActivitiesReadJob(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteDriverActivitiesReadJobWithHttpInfo(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1181,6 +1437,31 @@ public interface ITelematicClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task CreateDriverActivitiesReadJobAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateDriverActivitiesReadJobWithHttpInfoAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDtcoReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1224,6 +1505,31 @@ public interface ITelematicClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateReadJobWithHttpInfoAsync(CreateReadJobRequest? createReadJobRequest = default(CreateReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteDriverActivitiesReadJobAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDriverActivitiesReadJobWithHttpInfoAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1637,6 +1943,168 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void CreateDriverActivitiesReadJob(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0)
+        {
+            CreateDriverActivitiesReadJobWithHttpInfo(createDriverActivitiesReadJobRequest);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> CreateDriverActivitiesReadJobWithHttpInfo(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createDriverActivitiesReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicCreateDriverActivitiesReadJobPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/Telematic/create-driver-activities-read-job", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicCreateDriverActivitiesReadJobPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task CreateDriverActivitiesReadJobAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await CreateDriverActivitiesReadJobWithHttpInfoAsync(createDriverActivitiesReadJobRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> CreateDriverActivitiesReadJobWithHttpInfoAsync(CreateDriverActivitiesReadJobRequest? createDriverActivitiesReadJobRequest = default(CreateDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createDriverActivitiesReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicCreateDriverActivitiesReadJobPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Telematic/create-driver-activities-read-job", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicCreateDriverActivitiesReadJobPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDtcoReadJobRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1948,6 +2416,168 @@ public interface ITelematicClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TelematicCreateReadJobPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void DeleteDriverActivitiesReadJob(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0)
+        {
+            DeleteDriverActivitiesReadJobWithHttpInfo(deleteDriverActivitiesReadJobRequest);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> DeleteDriverActivitiesReadJobWithHttpInfo(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = deleteDriverActivitiesReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicDeleteDriverActivitiesReadJobDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/Telematic/delete-driver-activities-read-job", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicDeleteDriverActivitiesReadJobDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteDriverActivitiesReadJobAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await DeleteDriverActivitiesReadJobWithHttpInfoAsync(deleteDriverActivitiesReadJobRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deleteDriverActivitiesReadJobRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteDriverActivitiesReadJobWithHttpInfoAsync(DeleteDriverActivitiesReadJobRequest? deleteDriverActivitiesReadJobRequest = default(DeleteDriverActivitiesReadJobRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = deleteDriverActivitiesReadJobRequest;
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicDeleteDriverActivitiesReadJobDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/Telematic/delete-driver-activities-read-job", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicDeleteDriverActivitiesReadJobDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

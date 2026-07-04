@@ -5,6 +5,7 @@ DTO representing a workspace entry returned by the session workspace endpoint.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**TurnId** | **Guid?** | Gets or sets the turn identifier linking this entry to the assistant message that produced it. | [optional] 
 **Label** | **string** | Gets or sets the human-readable label shown in the workspace file tree. | [optional] 
 **FileContent** | **string** | Gets or sets the raw file content (e.g. pretty-printed JSON response body). | [optional] 
 **FileLanguage** | **string** | Gets or sets the Monaco language identifier, e.g. \&quot;json\&quot;. | [optional] 

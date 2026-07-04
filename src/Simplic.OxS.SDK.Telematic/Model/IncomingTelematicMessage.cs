@@ -56,7 +56,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="messageTimeUtc">messageTimeUtc.</param>
         /// <param name="messageType">messageType.</param>
         /// <param name="queueId">queueId.</param>
-        public IncomingTelematicMessage(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string providerIdentifier = default(string), string providerVehicleIdentifier = default(string), string providerMessageType = default(string), Guid? internalVehicleIdentifier = default(Guid?), string text = default(string), string reference = default(string), double latitude = default(double), double longitude = default(double), IncomingTour tour = default(IncomingTour), IncomingPlace place = default(IncomingPlace), IncomingOrder order = default(IncomingOrder), FmsData fmsData = default(FmsData), Address locationInformation = default(Address), Driver driver = default(Driver), DateTime? messageTimeUtc = default(DateTime?), List<IncomingMessageType> messageType = default(List<IncomingMessageType>), Guid? queueId = default(Guid?))
+        /// <param name="attachments">attachments.</param>
+        public IncomingTelematicMessage(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string providerIdentifier = default(string), string providerVehicleIdentifier = default(string), string providerMessageType = default(string), Guid? internalVehicleIdentifier = default(Guid?), string text = default(string), string reference = default(string), double latitude = default(double), double longitude = default(double), IncomingTour tour = default(IncomingTour), IncomingPlace place = default(IncomingPlace), IncomingOrder order = default(IncomingOrder), FmsData fmsData = default(FmsData), Address locationInformation = default(Address), Driver driver = default(Driver), DateTime? messageTimeUtc = default(DateTime?), List<IncomingMessageType> messageType = default(List<IncomingMessageType>), Guid? queueId = default(Guid?), List<IncomingAttachment> attachments = default(List<IncomingAttachment>))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -78,6 +79,7 @@ namespace Simplic.OxS.SDK.Telematic
             this.MessageTimeUtc = messageTimeUtc;
             this.MessageType = messageType;
             this.QueueId = queueId;
+            this.Attachments = attachments;
         }
 
         /// <summary>
@@ -201,6 +203,12 @@ namespace Simplic.OxS.SDK.Telematic
         public Guid? QueueId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<IncomingAttachment> Attachments { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -228,6 +236,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  MessageTimeUtc: ").Append(MessageTimeUtc).Append("\n");
             sb.Append("  MessageType: ").Append(MessageType).Append("\n");
             sb.Append("  QueueId: ").Append(QueueId).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -360,6 +369,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.QueueId == input.QueueId ||
                     (this.QueueId != null &&
                     this.QueueId.Equals(input.QueueId))
+                ) && 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
                 );
         }
 
@@ -442,6 +457,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.QueueId != null)
                 {
                     hashCode = (hashCode * 59) + this.QueueId.GetHashCode();
+                }
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
                 }
                 return hashCode;
             }

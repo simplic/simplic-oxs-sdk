@@ -36,17 +36,35 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentMessageResponse" /> class.
         /// </summary>
+        /// <param name="id">Gets or sets the stable identifier for this message..</param>
+        /// <param name="turnId">Gets or sets the turn identifier shared by the assistant message and all workspace entries produced during the same request turn..</param>
         /// <param name="role">Gets or sets the message role (user, assistant, system, tool)..</param>
         /// <param name="content">Gets or sets the message content..</param>
         /// <param name="timestamp">Gets or sets the timestamp of the message..</param>
         /// <param name="toolName">Gets or sets the tool name, if this is a tool message..</param>
-        public AgentMessageResponse(string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string))
+        public AgentMessageResponse(Guid id = default(Guid), Guid? turnId = default(Guid?), string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string))
         {
+            this.Id = id;
+            this.TurnId = turnId;
             this.Role = role;
             this.Content = content;
             this.Timestamp = timestamp;
             this.ToolName = toolName;
         }
+
+        /// <summary>
+        /// Gets or sets the stable identifier for this message.
+        /// </summary>
+        /// <value>Gets or sets the stable identifier for this message.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the turn identifier shared by the assistant message and all workspace entries produced during the same request turn.
+        /// </summary>
+        /// <value>Gets or sets the turn identifier shared by the assistant message and all workspace entries produced during the same request turn.</value>
+        [DataMember(Name = "turnId", EmitDefaultValue = true)]
+        public Guid? TurnId { get; set; }
 
         /// <summary>
         /// Gets or sets the message role (user, assistant, system, tool).
@@ -84,6 +102,8 @@ namespace Simplic.OxS.SDK.Ai
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AgentMessageResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  TurnId: ").Append(TurnId).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
@@ -124,6 +144,16 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.TurnId == input.TurnId ||
+                    (this.TurnId != null &&
+                    this.TurnId.Equals(input.TurnId))
+                ) && 
+                (
                     this.Role == input.Role ||
                     (this.Role != null &&
                     this.Role.Equals(input.Role))
@@ -154,6 +184,14 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.TurnId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TurnId.GetHashCode();
+                }
                 if (this.Role != null)
                 {
                     hashCode = (hashCode * 59) + this.Role.GetHashCode();

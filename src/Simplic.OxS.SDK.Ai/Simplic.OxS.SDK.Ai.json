@@ -5025,6 +5025,17 @@
             "AgentMessageResponse": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the stable identifier for this message.",
+                        "format": "uuid"
+                    },
+                    "turnId": {
+                        "type": "string",
+                        "description": "Gets or sets the turn identifier shared by the assistant message and all workspace\nentries produced during the same request turn.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "role": {
                         "type": "string",
                         "description": "Gets or sets the message role (user, assistant, system, tool).",
@@ -5389,6 +5400,12 @@
             "AgentWorkspaceEntryDto": {
                 "type": "object",
                 "properties": {
+                    "turnId": {
+                        "type": "string",
+                        "description": "Gets or sets the turn identifier linking this entry to the assistant message that produced it.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "label": {
                         "type": "string",
                         "description": "Gets or sets the human-readable label shown in the workspace file tree.",

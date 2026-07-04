@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **MessageTimeUtc** | **DateTime?** |  | [optional] 
 **MessageType** | [**List&lt;IncomingMessageType&gt;**](IncomingMessageType.md) |  | [optional] 
 **QueueId** | **Guid?** |  | [optional] 
+**Attachments** | [**List&lt;IncomingAttachment&gt;**](IncomingAttachment.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

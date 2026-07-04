@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **ApiKey** | **string** |  | [optional] 
 **SystemNr** | **int** |  | [optional] 
 **Integrator** | **string** |  | [optional] 
+**Company** | **string** |  | [optional] 
+**ImportKey** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

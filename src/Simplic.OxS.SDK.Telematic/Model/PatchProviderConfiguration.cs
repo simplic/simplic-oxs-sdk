@@ -42,7 +42,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="apiKey">apiKey.</param>
         /// <param name="systemNr">systemNr.</param>
         /// <param name="integrator">integrator.</param>
-        public PatchProviderConfiguration(string username = default(string), string password = default(string), string accountName = default(string), string apiKey = default(string), int? systemNr = default(int?), string integrator = default(string))
+        /// <param name="company">company.</param>
+        /// <param name="importKey">importKey.</param>
+        public PatchProviderConfiguration(string username = default(string), string password = default(string), string accountName = default(string), string apiKey = default(string), int? systemNr = default(int?), string integrator = default(string), string company = default(string), string importKey = default(string))
         {
             this.Username = username;
             this.Password = password;
@@ -50,6 +52,8 @@ namespace Simplic.OxS.SDK.Telematic
             this.ApiKey = apiKey;
             this.SystemNr = systemNr;
             this.Integrator = integrator;
+            this.Company = company;
+            this.ImportKey = importKey;
         }
 
         /// <summary>
@@ -89,6 +93,18 @@ namespace Simplic.OxS.SDK.Telematic
         public string Integrator { get; set; }
 
         /// <summary>
+        /// Gets or Sets Company
+        /// </summary>
+        [DataMember(Name = "company", EmitDefaultValue = true)]
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ImportKey
+        /// </summary>
+        [DataMember(Name = "importKey", EmitDefaultValue = true)]
+        public string ImportKey { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +118,8 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  ApiKey: ").Append(ApiKey).Append("\n");
             sb.Append("  SystemNr: ").Append(SystemNr).Append("\n");
             sb.Append("  Integrator: ").Append(Integrator).Append("\n");
+            sb.Append("  Company: ").Append(Company).Append("\n");
+            sb.Append("  ImportKey: ").Append(ImportKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +184,16 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Integrator == input.Integrator ||
                     (this.Integrator != null &&
                     this.Integrator.Equals(input.Integrator))
+                ) && 
+                (
+                    this.Company == input.Company ||
+                    (this.Company != null &&
+                    this.Company.Equals(input.Company))
+                ) && 
+                (
+                    this.ImportKey == input.ImportKey ||
+                    (this.ImportKey != null &&
+                    this.ImportKey.Equals(input.ImportKey))
                 );
         }
 
@@ -201,6 +229,14 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Integrator != null)
                 {
                     hashCode = (hashCode * 59) + this.Integrator.GetHashCode();
+                }
+                if (this.Company != null)
+                {
+                    hashCode = (hashCode * 59) + this.Company.GetHashCode();
+                }
+                if (this.ImportKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.ImportKey.GetHashCode();
                 }
                 return hashCode;
             }

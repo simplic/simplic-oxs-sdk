@@ -36,14 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentWorkspaceEntryDto" /> class.
         /// </summary>
+        /// <param name="turnId">Gets or sets the turn identifier linking this entry to the assistant message that produced it..</param>
         /// <param name="label">Gets or sets the human-readable label shown in the workspace file tree..</param>
         /// <param name="fileContent">Gets or sets the raw file content (e.g. pretty-printed JSON response body)..</param>
         /// <param name="fileLanguage">Gets or sets the Monaco language identifier, e.g. \&quot;json\&quot;..</param>
         /// <param name="type">Gets or sets the registry key for a dynamic component entry, e.g. \&quot;flow-editor\&quot;..</param>
         /// <param name="dataJson">Gets or sets the JSON-serialized data payload for dynamic component entries..</param>
         /// <param name="navigationUrl">Gets or sets an optional navigation URL shown as a \&quot;Go to …\&quot; button..</param>
-        public AgentWorkspaceEntryDto(string label = default(string), string fileContent = default(string), string fileLanguage = default(string), string type = default(string), string dataJson = default(string), string navigationUrl = default(string))
+        public AgentWorkspaceEntryDto(Guid? turnId = default(Guid?), string label = default(string), string fileContent = default(string), string fileLanguage = default(string), string type = default(string), string dataJson = default(string), string navigationUrl = default(string))
         {
+            this.TurnId = turnId;
             this.Label = label;
             this.FileContent = fileContent;
             this.FileLanguage = fileLanguage;
@@ -51,6 +53,13 @@ namespace Simplic.OxS.SDK.Ai
             this.DataJson = dataJson;
             this.NavigationUrl = navigationUrl;
         }
+
+        /// <summary>
+        /// Gets or sets the turn identifier linking this entry to the assistant message that produced it.
+        /// </summary>
+        /// <value>Gets or sets the turn identifier linking this entry to the assistant message that produced it.</value>
+        [DataMember(Name = "turnId", EmitDefaultValue = true)]
+        public Guid? TurnId { get; set; }
 
         /// <summary>
         /// Gets or sets the human-readable label shown in the workspace file tree.
@@ -102,6 +111,7 @@ namespace Simplic.OxS.SDK.Ai
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AgentWorkspaceEntryDto {\n");
+            sb.Append("  TurnId: ").Append(TurnId).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  FileContent: ").Append(FileContent).Append("\n");
             sb.Append("  FileLanguage: ").Append(FileLanguage).Append("\n");
@@ -144,6 +154,11 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
+                    this.TurnId == input.TurnId ||
+                    (this.TurnId != null &&
+                    this.TurnId.Equals(input.TurnId))
+                ) && 
+                (
                     this.Label == input.Label ||
                     (this.Label != null &&
                     this.Label.Equals(input.Label))
@@ -184,6 +199,10 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TurnId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TurnId.GetHashCode();
+                }
                 if (this.Label != null)
                 {
                     hashCode = (hashCode * 59) + this.Label.GetHashCode();

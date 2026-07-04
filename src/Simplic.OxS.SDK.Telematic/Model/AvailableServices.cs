@@ -42,7 +42,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="sms">sms.</param>
         /// <param name="generic">generic.</param>
         /// <param name="none">none.</param>
-        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> generic = default(List<string>), List<string> none = default(List<string>))
+        /// <param name="yellowfox">yellowfox.</param>
+        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> generic = default(List<string>), List<string> none = default(List<string>), List<string> yellowfox = default(List<string>))
         {
             this.Spedion = spedion;
             this.Transics = transics;
@@ -50,6 +51,7 @@ namespace Simplic.OxS.SDK.Telematic
             this.Sms = sms;
             this.Generic = generic;
             this.None = none;
+            this.Yellowfox = yellowfox;
         }
 
         /// <summary>
@@ -89,6 +91,12 @@ namespace Simplic.OxS.SDK.Telematic
         public List<string> None { get; set; }
 
         /// <summary>
+        /// Gets or Sets Yellowfox
+        /// </summary>
+        [DataMember(Name = "yellowfox", EmitDefaultValue = true)]
+        public List<string> Yellowfox { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +110,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Sms: ").Append(Sms).Append("\n");
             sb.Append("  Generic: ").Append(Generic).Append("\n");
             sb.Append("  None: ").Append(None).Append("\n");
+            sb.Append("  Yellowfox: ").Append(Yellowfox).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -172,6 +181,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.None != null &&
                     input.None != null &&
                     this.None.SequenceEqual(input.None)
+                ) && 
+                (
+                    this.Yellowfox == input.Yellowfox ||
+                    this.Yellowfox != null &&
+                    input.Yellowfox != null &&
+                    this.Yellowfox.SequenceEqual(input.Yellowfox)
                 );
         }
 
@@ -207,6 +222,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.None != null)
                 {
                     hashCode = (hashCode * 59) + this.None.GetHashCode();
+                }
+                if (this.Yellowfox != null)
+                {
+                    hashCode = (hashCode * 59) + this.Yellowfox.GetHashCode();
                 }
                 return hashCode;
             }
