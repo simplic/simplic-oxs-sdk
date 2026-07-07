@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Report** | [**TransactionSubtypeReportModel**](TransactionSubtypeReportModel.md) |  | [optional] 
 **SequenceNumberRange** | [**TransactionSequenceNumberRangeModel**](TransactionSequenceNumberRangeModel.md) |  | [optional] 
 **OutputConfiguration** | [**TransactionSubtypeOutputConfigurationModel**](TransactionSubtypeOutputConfigurationModel.md) |  | [optional] 
+**CancellationTransactionType** | [**TransactionSubtypeCancellationTransactionType**](TransactionSubtypeCancellationTransactionType.md) |  | [optional] 
 **Number** | **int** | Gets or sets a unique id. | [optional] 
 **Name** | **string** | Gets or sets the subtype name. | [optional] 
 **DocumentTitleTemplate** | **string** | Gets or sets the document title template. | [optional] 

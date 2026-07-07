@@ -65,6 +65,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="report">report.</param>
         /// <param name="sequenceNumberRange">sequenceNumberRange.</param>
         /// <param name="outputConfiguration">outputConfiguration.</param>
+        /// <param name="cancellationTransactionType">cancellationTransactionType.</param>
         /// <param name="number">Gets or sets a unique id..</param>
         /// <param name="name">Gets or sets the subtype name..</param>
         /// <param name="documentTitleTemplate">Gets or sets the document title template..</param>
@@ -80,13 +81,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="transactionNumberDateSource">transactionNumberDateSource.</param>
         /// <param name="exportCostQuantity">exportCostQuantity.</param>
         /// <param name="isDeleted">Gets or sets the IsDeleted flag..</param>
-        public TransactionSubtypeModel(Guid id = default(Guid), string code = default(string), TransactionSubtypeReportModel report = default(TransactionSubtypeReportModel), TransactionSequenceNumberRangeModel sequenceNumberRange = default(TransactionSequenceNumberRangeModel), TransactionSubtypeOutputConfigurationModel outputConfiguration = default(TransactionSubtypeOutputConfigurationModel), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?), bool isDeleted = default(bool))
+        public TransactionSubtypeModel(Guid id = default(Guid), string code = default(string), TransactionSubtypeReportModel report = default(TransactionSubtypeReportModel), TransactionSequenceNumberRangeModel sequenceNumberRange = default(TransactionSequenceNumberRangeModel), TransactionSubtypeOutputConfigurationModel outputConfiguration = default(TransactionSubtypeOutputConfigurationModel), TransactionSubtypeCancellationTransactionType cancellationTransactionType = default(TransactionSubtypeCancellationTransactionType), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?), bool isDeleted = default(bool))
         {
             this.Id = id;
             this.Code = code;
             this.Report = report;
             this.SequenceNumberRange = sequenceNumberRange;
             this.OutputConfiguration = outputConfiguration;
+            this.CancellationTransactionType = cancellationTransactionType;
             this.Number = number;
             this.Name = name;
             this.DocumentTitleTemplate = documentTitleTemplate;
@@ -135,6 +137,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "outputConfiguration", EmitDefaultValue = false)]
         public TransactionSubtypeOutputConfigurationModel OutputConfiguration { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CancellationTransactionType
+        /// </summary>
+        [DataMember(Name = "cancellationTransactionType", EmitDefaultValue = false)]
+        public TransactionSubtypeCancellationTransactionType CancellationTransactionType { get; set; }
 
         /// <summary>
         /// Gets or sets a unique id.
@@ -226,6 +234,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Report: ").Append(Report).Append("\n");
             sb.Append("  SequenceNumberRange: ").Append(SequenceNumberRange).Append("\n");
             sb.Append("  OutputConfiguration: ").Append(OutputConfiguration).Append("\n");
+            sb.Append("  CancellationTransactionType: ").Append(CancellationTransactionType).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  DocumentTitleTemplate: ").Append(DocumentTitleTemplate).Append("\n");
@@ -300,6 +309,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.OutputConfiguration == input.OutputConfiguration ||
                     (this.OutputConfiguration != null &&
                     this.OutputConfiguration.Equals(input.OutputConfiguration))
+                ) && 
+                (
+                    this.CancellationTransactionType == input.CancellationTransactionType ||
+                    (this.CancellationTransactionType != null &&
+                    this.CancellationTransactionType.Equals(input.CancellationTransactionType))
                 ) && 
                 (
                     this.Number == input.Number ||
@@ -398,6 +412,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.OutputConfiguration != null)
                 {
                     hashCode = (hashCode * 59) + this.OutputConfiguration.GetHashCode();
+                }
+                if (this.CancellationTransactionType != null)
+                {
+                    hashCode = (hashCode * 59) + this.CancellationTransactionType.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 if (this.Name != null)

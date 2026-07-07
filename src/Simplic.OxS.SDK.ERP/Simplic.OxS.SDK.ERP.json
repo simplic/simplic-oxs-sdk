@@ -10,6 +10,498 @@
         }
     ],
     "paths": {
+        "/AddonField": {
+            "get": {
+                "tags": [
+                    "AddonField"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AddonFieldResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AddonFieldResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AddonFieldResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "AddonField"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateAddonFieldRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateAddonFieldRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateAddonFieldRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/AddonField/{objectName}": {
+            "get": {
+                "tags": [
+                    "AddonField"
+                ],
+                "parameters": [
+                    {
+                        "name": "objectName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AddonFieldResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AddonFieldResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AddonFieldResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/AddonField/by-id/{id}": {
+            "get": {
+                "tags": [
+                    "AddonField"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/AddonField/{id}": {
+            "put": {
+                "tags": [
+                    "AddonField"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAddonFieldRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAddonFieldRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAddonFieldRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddonFieldResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "AddonField"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/BillingLine": {
             "post": {
                 "tags": [
@@ -2128,6 +2620,144 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/OxQL/query": {
+            "post": {
+                "tags": [
+                    "OxQL"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/QueryRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/QueryRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/QueryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLQueryResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLQueryResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLQueryResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLErrorResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLErrorResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLErrorResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLErrorResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OxQLErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/OxQL/types": {
+            "get": {
+                "tags": [
+                    "OxQL"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OxQLTypeDescriptor"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OxQLTypeDescriptor"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OxQLTypeDescriptor"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/OxQL/health": {
+            "get": {
+                "tags": [
+                    "OxQL"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
                     }
                 }
             }
@@ -8150,6 +8780,48 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "AddonFieldResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "objectName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "propertyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "propertyType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "AggregationExpression": {
+                "type": "object",
+                "properties": {
+                    "function": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "argument": {
+                        "$ref": "#/components/schemas/QueryExpression"
+                    },
+                    "isCount": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
             "AmbiguousBillingLineAssignmentModel": {
                 "type": "object",
                 "properties": {
@@ -8963,6 +9635,28 @@
                 ],
                 "type": "integer",
                 "format": "int32"
+            },
+            "CreateAddonFieldRequest": {
+                "type": "object",
+                "properties": {
+                    "objectName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "propertyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "propertyType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "CreateBillingLineRequest": {
                 "type": "object",
@@ -9794,6 +10488,24 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.Currency."
             },
+            "DateTruncExpression": {
+                "required": [
+                    "path",
+                    "unit"
+                ],
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "unit": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "DiscountSurchargeMode": {
                 "enum": [
                     0,
@@ -10123,6 +10835,40 @@
                 "description": "Represents the export cost quantity type.\n<list type=\"bullet\"><item>\nNo = 0\n</item><item>\nExactValue = 1\n</item><item>\nAbsoluteValue = 2\n</item></list>",
                 "format": "int32"
             },
+            "FilterCondition": {
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "op": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "nullable": true
+                    },
+                    "and": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FilterCondition"
+                        },
+                        "nullable": true
+                    },
+                    "or": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FilterCondition"
+                        },
+                        "nullable": true
+                    },
+                    "not": {
+                        "$ref": "#/components/schemas/FilterCondition"
+                    }
+                },
+                "additionalProperties": false
+            },
             "FiscalYearModel": {
                 "type": "object",
                 "properties": {
@@ -10260,6 +11006,50 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for the result of a create or update operation on a Simplic.OxS.ERP.Server.FiscalYearResultModel.FiscalYear."
+            },
+            "GroupByField": {
+                "required": [
+                    "as"
+                ],
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dateTrunc": {
+                        "$ref": "#/components/schemas/DateTruncExpression"
+                    },
+                    "as": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GroupStage": {
+                "required": [
+                    "by",
+                    "fields"
+                ],
+                "type": "object",
+                "properties": {
+                    "by": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GroupByField"
+                        },
+                        "nullable": true
+                    },
+                    "fields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/AggregationExpression"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "GrpcDefinitions": {
                 "type": "object",
@@ -10906,6 +11696,60 @@
                 "additionalProperties": false,
                 "description": "Represents the result model of a lock operation on a Simplic.OxS.ERP.BillingLine."
             },
+            "LookupStage": {
+                "required": [
+                    "as",
+                    "foreignPath",
+                    "from",
+                    "localPath"
+                ],
+                "type": "object",
+                "properties": {
+                    "from": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "localPath": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "foreignPath": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "as": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "MatchStage": {
+                "type": "object",
+                "properties": {
+                    "and": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FilterCondition"
+                        },
+                        "nullable": true
+                    },
+                    "or": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FilterCondition"
+                        },
+                        "nullable": true
+                    },
+                    "not": {
+                        "$ref": "#/components/schemas/FilterCondition"
+                    },
+                    "condition": {
+                        "$ref": "#/components/schemas/FilterCondition"
+                    }
+                },
+                "additionalProperties": false
+            },
             "MetadataProcessingDataModel": {
                 "type": "object",
                 "properties": {
@@ -10987,6 +11831,182 @@
                     "groupDisplayName": {
                         "type": "string",
                         "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OxQLErrorResponse": {
+                "required": [
+                    "status",
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OxQLFieldError"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OxQLFieldError": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "path": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OxQLPropertyDescriptor": {
+                "required": [
+                    "kind",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "kind": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "nullable": {
+                        "type": "boolean"
+                    },
+                    "items": {
+                        "$ref": "#/components/schemas/OxQLPropertyDescriptor"
+                    },
+                    "keyKind": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OxQLPropertyDescriptor"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OxQLQueryResult": {
+                "required": [
+                    "items",
+                    "pageInfo"
+                ],
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {},
+                        "nullable": true
+                    },
+                    "pageInfo": {
+                        "$ref": "#/components/schemas/PageInfo"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OxQLTypeDescriptor": {
+                "required": [
+                    "collectionName",
+                    "typeName"
+                ],
+                "type": "object",
+                "properties": {
+                    "typeName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "collectionName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "databaseName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "clrType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OxQLPropertyDescriptor"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PageInfo": {
+                "required": [
+                    "hasNextPage"
+                ],
+                "type": "object",
+                "properties": {
+                    "hasNextPage": {
+                        "type": "boolean"
+                    },
+                    "nextCursor": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int64",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PageStage": {
+                "type": "object",
+                "properties": {
+                    "limit": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "includeTotalCount": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -11495,6 +12515,40 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for Simplic.OxS.ERP.PersonalAccount."
             },
+            "PipelineStage": {
+                "type": "object",
+                "properties": {
+                    "match": {
+                        "$ref": "#/components/schemas/MatchStage"
+                    },
+                    "lookup": {
+                        "$ref": "#/components/schemas/LookupStage"
+                    },
+                    "resolve": {
+                        "$ref": "#/components/schemas/ResolveStage"
+                    },
+                    "unwind": {
+                        "$ref": "#/components/schemas/UnwindStage"
+                    },
+                    "group": {
+                        "$ref": "#/components/schemas/GroupStage"
+                    },
+                    "project": {
+                        "$ref": "#/components/schemas/ProjectStage"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SortField"
+                        },
+                        "nullable": true
+                    },
+                    "page": {
+                        "$ref": "#/components/schemas/PageStage"
+                    }
+                },
+                "additionalProperties": false
+            },
             "PreviewItemCostCenterAssignmentRequest": {
                 "type": "object",
                 "properties": {
@@ -11890,6 +12944,23 @@
                 "type": "integer",
                 "format": "int32"
             },
+            "ProjectStage": {
+                "required": [
+                    "fields"
+                ],
+                "type": "object",
+                "properties": {
+                    "fields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "QuantityCode": {
                 "enum": [
                     0,
@@ -11999,6 +13070,62 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for Simplic.OxS.ERP.QuantityUnit."
             },
+            "QueryExpression": {
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "literal": {
+                        "nullable": true
+                    },
+                    "var": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "operator": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "operands": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/QueryExpression"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "QueryRequest": {
+                "required": [
+                    "entityType",
+                    "pipeline"
+                ],
+                "type": "object",
+                "properties": {
+                    "entityType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "variables": {
+                        "$ref": "#/components/schemas/QueryVariables"
+                    },
+                    "pipeline": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PipelineStage"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "QueryVariables": {
+                "type": "object",
+                "additionalProperties": {}
+            },
             "RemoveBillingLinesFromDraftTransactionRequest": {
                 "type": "object",
                 "properties": {
@@ -12024,6 +13151,29 @@
                     },
                     "allowMultiple": {
                         "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ResolveStage": {
+                "required": [
+                    "as",
+                    "localPath",
+                    "source"
+                ],
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "localPath": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "as": {
+                        "type": "string",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -12140,6 +13290,24 @@
                         "nullable": true
                     },
                     "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SortField": {
+                "required": [
+                    "direction",
+                    "path"
+                ],
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "direction": {
                         "type": "string",
                         "nullable": true
                     }
@@ -14172,6 +15340,28 @@
                 "description": "Mode for archiving transaction documents",
                 "format": "int32"
             },
+            "TransactionSubtypeCancellationTransactionType": {
+                "type": "object",
+                "properties": {
+                    "typeId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "subtypeId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "typeName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "subtypeName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "TransactionSubtypeModel": {
                 "type": "object",
                 "properties": {
@@ -14193,6 +15383,9 @@
                     },
                     "outputConfiguration": {
                         "$ref": "#/components/schemas/TransactionSubtypeOutputConfigurationModel"
+                    },
+                    "cancellationTransactionType": {
+                        "$ref": "#/components/schemas/TransactionSubtypeCancellationTransactionType"
                     },
                     "number": {
                         "type": "integer",
@@ -14325,10 +15518,6 @@
                 "description": "Represents the shared model for a transaction subtype report."
             },
             "TransactionSubtypeRequest": {
-                "required": [
-                    "name",
-                    "number"
-                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -14350,16 +15539,21 @@
                     "outputConfiguration": {
                         "$ref": "#/components/schemas/TransactionSubtypeOutputConfiguration"
                     },
+                    "cancellationTransactionType": {
+                        "$ref": "#/components/schemas/TransactionSubtypeCancellationTransactionType"
+                    },
                     "number": {
                         "type": "integer",
                         "description": "Gets or sets a unique number.",
-                        "format": "int32"
+                        "format": "int32",
+                        "nullable": true
                     },
                     "name": {
                         "maxLength": 100,
                         "minLength": 2,
                         "type": "string",
-                        "description": "Gets or sets the subtype name."
+                        "description": "Gets or sets the subtype name.",
+                        "nullable": true
                     },
                     "documentTitleTemplate": {
                         "type": "string",
@@ -14739,6 +15933,48 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the result model of an unlock operation on a Simplic.OxS.ERP.BillingLine."
+            },
+            "UnwindStage": {
+                "required": [
+                    "path"
+                ],
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "as": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "preserveNull": {
+                        "type": "boolean"
+                    },
+                    "includeIndex": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "UpdateAddonFieldRequest": {
+                "type": "object",
+                "properties": {
+                    "propertyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "propertyType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "UpdateBillingLineRequest": {
                 "type": "object",
@@ -15536,6 +16772,9 @@
     ],
     "tags": [
         {
+            "name": "AddonField"
+        },
+        {
             "name": "BillingLine"
         },
         {
@@ -15561,6 +16800,9 @@
         },
         {
             "name": "OrganizationSettings"
+        },
+        {
+            "name": "OxQL"
         },
         {
             "name": "PaymentMethod"

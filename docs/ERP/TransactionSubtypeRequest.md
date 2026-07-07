@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 **Report** | [**TransactionSubtypeReport**](TransactionSubtypeReport.md) |  | [optional] 
 **SequenceNumberRange** | [**TransactionSequenceNumberRange**](TransactionSequenceNumberRange.md) |  | [optional] 
 **OutputConfiguration** | [**TransactionSubtypeOutputConfiguration**](TransactionSubtypeOutputConfiguration.md) |  | [optional] 
-**Number** | **int** | Gets or sets a unique number. | 
-**Name** | **string** | Gets or sets the subtype name. | 
+**CancellationTransactionType** | [**TransactionSubtypeCancellationTransactionType**](TransactionSubtypeCancellationTransactionType.md) |  | [optional] 
+**Number** | **int?** | Gets or sets a unique number. | [optional] 
+**Name** | **string** | Gets or sets the subtype name. | [optional] 
 **DocumentTitleTemplate** | **string** | Gets or sets the document title template. | [optional] 
 **ArchiveMode** | **TransactionSubtypeArchiveMode** |  | [optional] 
 **BarcodeTemplate** | **string** | Gets or sets the barcode template | [optional] 
