@@ -39,14 +39,16 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="path">path.</param>
         /// <param name="op">op.</param>
         /// <param name="value">value.</param>
+        /// <param name="options">options.</param>
         /// <param name="and">and.</param>
         /// <param name="or">or.</param>
         /// <param name="not">not.</param>
-        public FilterCondition(string path = default(string), string op = default(string), Object value = default(Object), List<FilterCondition> and = default(List<FilterCondition>), List<FilterCondition> or = default(List<FilterCondition>), FilterCondition not = default(FilterCondition))
+        public FilterCondition(string path = default(string), string op = default(string), Object value = default(Object), FilterConditionOptions options = default(FilterConditionOptions), List<FilterCondition> and = default(List<FilterCondition>), List<FilterCondition> or = default(List<FilterCondition>), FilterCondition not = default(FilterCondition))
         {
             this.Path = path;
             this.Op = op;
             this.Value = value;
+            this.Options = options;
             this.And = and;
             this.Or = or;
             this.Not = not;
@@ -69,6 +71,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public Object Value { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Options
+        /// </summary>
+        [DataMember(Name = "options", EmitDefaultValue = false)]
+        public FilterConditionOptions Options { get; set; }
 
         /// <summary>
         /// Gets or Sets And
@@ -99,6 +107,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("  Op: ").Append(Op).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  And: ").Append(And).Append("\n");
             sb.Append("  Or: ").Append(Or).Append("\n");
             sb.Append("  Not: ").Append(Not).Append("\n");
@@ -153,6 +162,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Value.Equals(input.Value))
                 ) && 
                 (
+                    this.Options == input.Options ||
+                    (this.Options != null &&
+                    this.Options.Equals(input.Options))
+                ) && 
+                (
                     this.And == input.And ||
                     this.And != null &&
                     input.And != null &&
@@ -191,6 +205,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Value != null)
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                }
+                if (this.Options != null)
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
                 }
                 if (this.And != null)
                 {

@@ -10849,6 +10849,9 @@
                     "value": {
                         "nullable": true
                     },
+                    "options": {
+                        "$ref": "#/components/schemas/FilterConditionOptions"
+                    },
                     "and": {
                         "type": "array",
                         "items": {
@@ -10865,6 +10868,15 @@
                     },
                     "not": {
                         "$ref": "#/components/schemas/FilterCondition"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "FilterConditionOptions": {
+                "type": "object",
+                "properties": {
+                    "ignoreCase": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false

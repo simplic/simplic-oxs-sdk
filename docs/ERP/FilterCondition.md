@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Path** | **string** |  | [optional] 
 **Op** | **string** |  | [optional] 
 **Value** | **Object** |  | [optional] 
+**Options** | [**FilterConditionOptions**](FilterConditionOptions.md) |  | [optional] 
 **And** | [**List&lt;FilterCondition&gt;**](FilterCondition.md) |  | [optional] 
 **Or** | [**List&lt;FilterCondition&gt;**](FilterCondition.md) |  | [optional] 
 **Not** | [**FilterCondition**](FilterCondition.md) |  | [optional] 
