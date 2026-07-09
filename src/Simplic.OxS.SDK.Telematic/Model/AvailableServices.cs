@@ -42,8 +42,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="sms">sms.</param>
         /// <param name="generic">generic.</param>
         /// <param name="none">none.</param>
+        /// <param name="fleethand">fleethand.</param>
         /// <param name="yellowfox">yellowfox.</param>
-        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> generic = default(List<string>), List<string> none = default(List<string>), List<string> yellowfox = default(List<string>))
+        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> generic = default(List<string>), List<string> none = default(List<string>), List<string> fleethand = default(List<string>), List<string> yellowfox = default(List<string>))
         {
             this.Spedion = spedion;
             this.Transics = transics;
@@ -51,6 +52,7 @@ namespace Simplic.OxS.SDK.Telematic
             this.Sms = sms;
             this.Generic = generic;
             this.None = none;
+            this.Fleethand = fleethand;
             this.Yellowfox = yellowfox;
         }
 
@@ -91,6 +93,12 @@ namespace Simplic.OxS.SDK.Telematic
         public List<string> None { get; set; }
 
         /// <summary>
+        /// Gets or Sets Fleethand
+        /// </summary>
+        [DataMember(Name = "fleethand", EmitDefaultValue = true)]
+        public List<string> Fleethand { get; set; }
+
+        /// <summary>
         /// Gets or Sets Yellowfox
         /// </summary>
         [DataMember(Name = "yellowfox", EmitDefaultValue = true)]
@@ -110,6 +118,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Sms: ").Append(Sms).Append("\n");
             sb.Append("  Generic: ").Append(Generic).Append("\n");
             sb.Append("  None: ").Append(None).Append("\n");
+            sb.Append("  Fleethand: ").Append(Fleethand).Append("\n");
             sb.Append("  Yellowfox: ").Append(Yellowfox).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -183,6 +192,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.None.SequenceEqual(input.None)
                 ) && 
                 (
+                    this.Fleethand == input.Fleethand ||
+                    this.Fleethand != null &&
+                    input.Fleethand != null &&
+                    this.Fleethand.SequenceEqual(input.Fleethand)
+                ) && 
+                (
                     this.Yellowfox == input.Yellowfox ||
                     this.Yellowfox != null &&
                     input.Yellowfox != null &&
@@ -222,6 +237,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.None != null)
                 {
                     hashCode = (hashCode * 59) + this.None.GetHashCode();
+                }
+                if (this.Fleethand != null)
+                {
+                    hashCode = (hashCode * 59) + this.Fleethand.GetHashCode();
                 }
                 if (this.Yellowfox != null)
                 {

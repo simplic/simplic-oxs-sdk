@@ -67,13 +67,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
         /// <param name="taxKeyId">Gets or sets the tax key given by ID if a specific tax key should be used for this item..</param>
+        /// <param name="taxRateId">Gets or sets the tax rate given by ID..</param>
         /// <param name="costCenters">Gets or sets the assigned cost centers given by ID with their respective percentages..</param>
         /// <param name="costObjects">Gets or sets the assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="articleId">Gets or sets the article by ID..</param>
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public PreviewTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), QuantityRequest quantity = default(QuantityRequest), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), List<PreviewItemCostCenterAssignmentRequest> costCenters = default(List<PreviewItemCostCenterAssignmentRequest>), List<PreviewItemCostCenterAssignmentRequest> costObjects = default(List<PreviewItemCostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<PreviewTransactionItemRequest> items = default(List<PreviewTransactionItemRequest>))
+        public PreviewTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), QuantityRequest quantity = default(QuantityRequest), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), Guid? taxRateId = default(Guid?), List<PreviewItemCostCenterAssignmentRequest> costCenters = default(List<PreviewItemCostCenterAssignmentRequest>), List<PreviewItemCostCenterAssignmentRequest> costObjects = default(List<PreviewItemCostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<PreviewTransactionItemRequest> items = default(List<PreviewTransactionItemRequest>))
         {
             this.TemporaryId = temporaryId;
             this.Id = id;
@@ -88,6 +89,7 @@ namespace Simplic.OxS.SDK.ERP
             this.InputPrice = inputPrice;
             this.InputPriceType = inputPriceType;
             this.TaxKeyId = taxKeyId;
+            this.TaxRateId = taxRateId;
             this.CostCenters = costCenters;
             this.CostObjects = costObjects;
             this.ArticleId = articleId;
@@ -166,6 +168,13 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? TaxKeyId { get; set; }
 
         /// <summary>
+        /// Gets or sets the tax rate given by ID.
+        /// </summary>
+        /// <value>Gets or sets the tax rate given by ID.</value>
+        [DataMember(Name = "taxRateId", EmitDefaultValue = true)]
+        public Guid? TaxRateId { get; set; }
+
+        /// <summary>
         /// Gets or sets the assigned cost centers given by ID with their respective percentages.
         /// </summary>
         /// <value>Gets or sets the assigned cost centers given by ID with their respective percentages.</value>
@@ -228,6 +237,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  InputPrice: ").Append(InputPrice).Append("\n");
             sb.Append("  InputPriceType: ").Append(InputPriceType).Append("\n");
             sb.Append("  TaxKeyId: ").Append(TaxKeyId).Append("\n");
+            sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
             sb.Append("  CostCenters: ").Append(CostCenters).Append("\n");
             sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
             sb.Append("  ArticleId: ").Append(ArticleId).Append("\n");
@@ -333,6 +343,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.TaxKeyId.Equals(input.TaxKeyId))
                 ) && 
                 (
+                    this.TaxRateId == input.TaxRateId ||
+                    (this.TaxRateId != null &&
+                    this.TaxRateId.Equals(input.TaxRateId))
+                ) && 
+                (
                     this.CostCenters == input.CostCenters ||
                     this.CostCenters != null &&
                     input.CostCenters != null &&
@@ -418,6 +433,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.TaxKeyId != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxKeyId.GetHashCode();
+                }
+                if (this.TaxRateId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRateId.GetHashCode();
                 }
                 if (this.CostCenters != null)
                 {

@@ -5229,6 +5229,13 @@
                         },
                         "nullable": true
                     },
+                    "fleethand": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
                     "yellowfox": {
                         "type": "array",
                         "items": {
@@ -6728,6 +6735,10 @@
                         "nullable": true
                     },
                     "apiKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "externalId": {
                         "type": "string",
                         "nullable": true
                     },

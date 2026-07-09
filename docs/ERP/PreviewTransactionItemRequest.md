@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **InputPrice** | **double?** | Gets or sets the price user input. | [optional] 
 **InputPriceType** | **InputPriceType** |  | [optional] 
 **TaxKeyId** | **Guid?** | Gets or sets the tax key given by ID if a specific tax key should be used for this item. | [optional] 
+**TaxRateId** | **Guid?** | Gets or sets the tax rate given by ID. | [optional] 
 **CostCenters** | [**List&lt;PreviewItemCostCenterAssignmentRequest&gt;**](PreviewItemCostCenterAssignmentRequest.md) | Gets or sets the assigned cost centers given by ID with their respective percentages. | [optional] 
 **CostObjects** | [**List&lt;PreviewItemCostCenterAssignmentRequest&gt;**](PreviewItemCostCenterAssignmentRequest.md) | Gets or sets the assigned cost objects given by ID with their respective percentages. | [optional] 
 **ArticleId** | **Guid?** | Gets or sets the article by ID. | [optional] 

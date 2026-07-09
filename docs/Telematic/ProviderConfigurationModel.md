@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Password** | **string** |  | [optional] 
 **AccountName** | **string** |  | [optional] 
 **ApiKey** | **string** |  | [optional] 
+**ExternalId** | **string** |  | [optional] 
 **SystemNr** | **int** |  | [optional] 
 **Integrator** | **string** |  | [optional] 
 **Company** | **string** |  | [optional] 

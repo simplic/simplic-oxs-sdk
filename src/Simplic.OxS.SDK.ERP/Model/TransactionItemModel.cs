@@ -71,6 +71,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="inputPrice">Gets or sets the price user input..</param>
         /// <param name="inputPriceType">inputPriceType.</param>
         /// <param name="taxKey">taxKey.</param>
+        /// <param name="taxRate">taxRate.</param>
         /// <param name="costCenters">Gets or sets the assigned cost centers with their respective percentages..</param>
         /// <param name="costObjects">Gets or sets the assigned cost objects with their respective percentages..</param>
         /// <param name="singlePrice">Gets or sets the resulting single price..</param>
@@ -86,13 +87,12 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="generalLedgerAccount">generalLedgerAccount.</param>
         /// <param name="billingLineId">Gets or sets the billing line by ID..</param>
         /// <param name="priceUnit">priceUnit.</param>
-        /// <param name="taxRate">taxRate.</param>
         /// <param name="reference">Gets or sets the main reference..</param>
         /// <param name="references">Gets or sets a set of additional references..</param>
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public TransactionItemModel(Guid id = default(Guid), string text = default(string), TransactionItemTypeModel type = default(TransactionItemTypeModel), Guid? bookedFromTransactionId = default(Guid?), Guid? transactionItemCollectionId = default(Guid?), int sortNumber = default(int), string deserializationType = default(string), List<TransactionItemModel> assignedTransactionItems = default(List<TransactionItemModel>), ValueOperatorModel? valueOperator = default(ValueOperatorModel?), AssignmentModeModel? assignmentMode = default(AssignmentModeModel?), double? amount = default(double?), List<BehaviorDefinitionModel> behaviorDefinitions = default(List<BehaviorDefinitionModel>), TransactionItemModel originalOperationItem = default(TransactionItemModel), QuantityModel quantity = default(QuantityModel), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), TaxKeyModel taxKey = default(TaxKeyModel), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), double? singlePrice = default(double?), double? totalPrice = default(double?), double? singlePriceNet = default(double?), double? totalPriceNet = default(double?), double? singlePriceGross = default(double?), double? totalPriceGross = default(double?), double? singlePriceVat = default(double?), double? totalPriceVat = default(double?), List<StringTransactionPriceObjectModelKeyValuePair> pricing = default(List<StringTransactionPriceObjectModelKeyValuePair>), Guid? articleId = default(Guid?), TransactionGeneralLedgerAccountModel generalLedgerAccount = default(TransactionGeneralLedgerAccountModel), Guid? billingLineId = default(Guid?), QuantityUnitModel priceUnit = default(QuantityUnitModel), TransactionTaxRateModel taxRate = default(TransactionTaxRateModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool? isManualBillingLine = default(bool?), double? deltaValue = default(double?), List<TransactionItemModel> items = default(List<TransactionItemModel>))
+        public TransactionItemModel(Guid id = default(Guid), string text = default(string), TransactionItemTypeModel type = default(TransactionItemTypeModel), Guid? bookedFromTransactionId = default(Guid?), Guid? transactionItemCollectionId = default(Guid?), int sortNumber = default(int), string deserializationType = default(string), List<TransactionItemModel> assignedTransactionItems = default(List<TransactionItemModel>), ValueOperatorModel? valueOperator = default(ValueOperatorModel?), AssignmentModeModel? assignmentMode = default(AssignmentModeModel?), double? amount = default(double?), List<BehaviorDefinitionModel> behaviorDefinitions = default(List<BehaviorDefinitionModel>), TransactionItemModel originalOperationItem = default(TransactionItemModel), QuantityModel quantity = default(QuantityModel), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), TaxKeyModel taxKey = default(TaxKeyModel), TransactionTaxRateModel taxRate = default(TransactionTaxRateModel), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), double? singlePrice = default(double?), double? totalPrice = default(double?), double? singlePriceNet = default(double?), double? totalPriceNet = default(double?), double? singlePriceGross = default(double?), double? totalPriceGross = default(double?), double? singlePriceVat = default(double?), double? totalPriceVat = default(double?), List<StringTransactionPriceObjectModelKeyValuePair> pricing = default(List<StringTransactionPriceObjectModelKeyValuePair>), Guid? articleId = default(Guid?), TransactionGeneralLedgerAccountModel generalLedgerAccount = default(TransactionGeneralLedgerAccountModel), Guid? billingLineId = default(Guid?), QuantityUnitModel priceUnit = default(QuantityUnitModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool? isManualBillingLine = default(bool?), double? deltaValue = default(double?), List<TransactionItemModel> items = default(List<TransactionItemModel>))
         {
             this.Id = id;
             this.Text = text;
@@ -111,6 +111,7 @@ namespace Simplic.OxS.SDK.ERP
             this.InputPrice = inputPrice;
             this.InputPriceType = inputPriceType;
             this.TaxKey = taxKey;
+            this.TaxRate = taxRate;
             this.CostCenters = costCenters;
             this.CostObjects = costObjects;
             this.SinglePrice = singlePrice;
@@ -126,7 +127,6 @@ namespace Simplic.OxS.SDK.ERP
             this.GeneralLedgerAccount = generalLedgerAccount;
             this.BillingLineId = billingLineId;
             this.PriceUnit = priceUnit;
-            this.TaxRate = taxRate;
             this.Reference = reference;
             this.References = references;
             this.IsManualBillingLine = isManualBillingLine;
@@ -226,6 +226,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "taxKey", EmitDefaultValue = false)]
         public TaxKeyModel TaxKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxRate
+        /// </summary>
+        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+        public TransactionTaxRateModel TaxRate { get; set; }
 
         /// <summary>
         /// Gets or sets the assigned cost centers with their respective percentages.
@@ -331,12 +337,6 @@ namespace Simplic.OxS.SDK.ERP
         public QuantityUnitModel PriceUnit { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxRate
-        /// </summary>
-        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
-        public TransactionTaxRateModel TaxRate { get; set; }
-
-        /// <summary>
         /// Gets or sets the main reference.
         /// </summary>
         /// <value>Gets or sets the main reference.</value>
@@ -396,6 +396,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  InputPrice: ").Append(InputPrice).Append("\n");
             sb.Append("  InputPriceType: ").Append(InputPriceType).Append("\n");
             sb.Append("  TaxKey: ").Append(TaxKey).Append("\n");
+            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("  CostCenters: ").Append(CostCenters).Append("\n");
             sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
@@ -411,7 +412,6 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  GeneralLedgerAccount: ").Append(GeneralLedgerAccount).Append("\n");
             sb.Append("  BillingLineId: ").Append(BillingLineId).Append("\n");
             sb.Append("  PriceUnit: ").Append(PriceUnit).Append("\n");
-            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  References: ").Append(References).Append("\n");
             sb.Append("  IsManualBillingLine: ").Append(IsManualBillingLine).Append("\n");
@@ -536,6 +536,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.TaxKey.Equals(input.TaxKey))
                 ) && 
                 (
+                    this.TaxRate == input.TaxRate ||
+                    (this.TaxRate != null &&
+                    this.TaxRate.Equals(input.TaxRate))
+                ) && 
+                (
                     this.CostCenters == input.CostCenters ||
                     this.CostCenters != null &&
                     input.CostCenters != null &&
@@ -612,11 +617,6 @@ namespace Simplic.OxS.SDK.ERP
                     this.PriceUnit == input.PriceUnit ||
                     (this.PriceUnit != null &&
                     this.PriceUnit.Equals(input.PriceUnit))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
                 ) && 
                 (
                     this.Reference == input.Reference ||
@@ -712,6 +712,10 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.TaxKey.GetHashCode();
                 }
+                if (this.TaxRate != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
+                }
                 if (this.CostCenters != null)
                 {
                     hashCode = (hashCode * 59) + this.CostCenters.GetHashCode();
@@ -771,10 +775,6 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.PriceUnit != null)
                 {
                     hashCode = (hashCode * 59) + this.PriceUnit.GetHashCode();
-                }
-                if (this.TaxRate != null)
-                {
-                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
                 }
                 if (this.Reference != null)
                 {

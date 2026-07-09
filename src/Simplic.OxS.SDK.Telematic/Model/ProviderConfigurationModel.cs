@@ -40,16 +40,18 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="password">password.</param>
         /// <param name="accountName">accountName.</param>
         /// <param name="apiKey">apiKey.</param>
+        /// <param name="externalId">externalId.</param>
         /// <param name="systemNr">systemNr.</param>
         /// <param name="integrator">integrator.</param>
         /// <param name="company">company.</param>
         /// <param name="importKey">importKey.</param>
-        public ProviderConfigurationModel(string username = default(string), string password = default(string), string accountName = default(string), string apiKey = default(string), int systemNr = default(int), string integrator = default(string), string company = default(string), string importKey = default(string))
+        public ProviderConfigurationModel(string username = default(string), string password = default(string), string accountName = default(string), string apiKey = default(string), string externalId = default(string), int systemNr = default(int), string integrator = default(string), string company = default(string), string importKey = default(string))
         {
             this.Username = username;
             this.Password = password;
             this.AccountName = accountName;
             this.ApiKey = apiKey;
+            this.ExternalId = externalId;
             this.SystemNr = systemNr;
             this.Integrator = integrator;
             this.Company = company;
@@ -79,6 +81,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// </summary>
         [DataMember(Name = "apiKey", EmitDefaultValue = true)]
         public string ApiKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalId
+        /// </summary>
+        [DataMember(Name = "externalId", EmitDefaultValue = true)]
+        public string ExternalId { get; set; }
 
         /// <summary>
         /// Gets or Sets SystemNr
@@ -116,6 +124,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("  AccountName: ").Append(AccountName).Append("\n");
             sb.Append("  ApiKey: ").Append(ApiKey).Append("\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  SystemNr: ").Append(SystemNr).Append("\n");
             sb.Append("  Integrator: ").Append(Integrator).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
@@ -176,6 +185,11 @@ namespace Simplic.OxS.SDK.Telematic
                     this.ApiKey.Equals(input.ApiKey))
                 ) && 
                 (
+                    this.ExternalId == input.ExternalId ||
+                    (this.ExternalId != null &&
+                    this.ExternalId.Equals(input.ExternalId))
+                ) && 
+                (
                     this.SystemNr == input.SystemNr ||
                     this.SystemNr.Equals(input.SystemNr)
                 ) && 
@@ -220,6 +234,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.ApiKey != null)
                 {
                     hashCode = (hashCode * 59) + this.ApiKey.GetHashCode();
+                }
+                if (this.ExternalId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.SystemNr.GetHashCode();
                 if (this.Integrator != null)
