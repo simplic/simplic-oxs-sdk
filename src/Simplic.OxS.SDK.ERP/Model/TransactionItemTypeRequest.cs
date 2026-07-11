@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionItemTypeRequest" /> class.
         /// </summary>
-        /// <param name="deserializationType">Gets or sets the deserialization type of a transaction item of this transaction item type. (required).</param>
+        /// <param name="deserializationType">Gets or sets the deserialization type of a transaction item of this transaction item type..</param>
         /// <param name="name">Gets or sets the name. (required).</param>
         /// <param name="number">Gets or sets the number. (required).</param>
         /// <param name="hasPositionNumber">Gets or sets the has position number flag. (required).</param>
@@ -52,12 +52,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="code">Gets or sets the code. This code is to be used by internal processes..</param>
         public TransactionItemTypeRequest(string deserializationType = default(string), string name = default(string), int number = default(int), bool hasPositionNumber = default(bool), bool isSelectable = default(bool), string detailHtml = default(string), string dataTemplate = default(string), string articleGLAResolver = default(string), string code = default(string))
         {
-            // to ensure "deserializationType" is required (not null)
-            if (deserializationType == null)
-            {
-                throw new ArgumentNullException("deserializationType is a required property for TransactionItemTypeRequest and cannot be null");
-            }
-            this.DeserializationType = deserializationType;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -67,6 +61,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Number = number;
             this.HasPositionNumber = hasPositionNumber;
             this.IsSelectable = isSelectable;
+            this.DeserializationType = deserializationType;
             this.DetailHtml = detailHtml;
             this.DataTemplate = dataTemplate;
             this.ArticleGLAResolver = articleGLAResolver;
@@ -77,7 +72,7 @@ namespace Simplic.OxS.SDK.ERP
         /// Gets or sets the deserialization type of a transaction item of this transaction item type.
         /// </summary>
         /// <value>Gets or sets the deserialization type of a transaction item of this transaction item type.</value>
-        [DataMember(Name = "deserializationType", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "deserializationType", EmitDefaultValue = true)]
         public string DeserializationType { get; set; }
 
         /// <summary>
@@ -279,12 +274,6 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // DeserializationType (string) minLength
-            if (this.DeserializationType != null && this.DeserializationType.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DeserializationType, length must be greater than 1.", new [] { "DeserializationType" });
-            }
-
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 100)
             {

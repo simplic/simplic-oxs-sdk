@@ -14834,7 +14834,6 @@
             },
             "TransactionItemTypeRequest": {
                 "required": [
-                    "deserializationType",
                     "hasPositionNumber",
                     "isSelectable",
                     "name",
@@ -14843,9 +14842,9 @@
                 "type": "object",
                 "properties": {
                     "deserializationType": {
-                        "minLength": 1,
                         "type": "string",
-                        "description": "Gets or sets the deserialization type of a transaction item of this transaction item type."
+                        "description": "Gets or sets the deserialization type of a transaction item of this transaction item type.",
+                        "nullable": true
                     },
                     "name": {
                         "maxLength": 100,
