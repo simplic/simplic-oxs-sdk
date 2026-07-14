@@ -49,6 +49,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="date">Gets or sets the date associated with this billing line..</param>
         /// <param name="deliveryDate">Gets or sets the delivery date associated with this billing line..</param>
         /// <param name="text">Gets or sets the text describing this billing line..</param>
+        /// <param name="sourceText">Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created..</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="singlePrice">Gets or sets the price for a single unit..</param>
         /// <param name="totalPrice">Gets or sets the total price..</param>
@@ -64,7 +65,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="addon">Gets or sets a set of additional properties..</param>
         /// <param name="assignedTransactionId">Gets or sets the transaction this billing line has been assigned to (either draft or finalized).  This information is used to easily determine whether the billing line is assigned to a particular draft transaction..</param>
         /// <param name="sourceBillingLineReference">sourceBillingLineReference.</param>
-        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityModel quantity = default(BillingLineQuantityModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?), SourceBillingLineReferenceModel sourceBillingLineReference = default(SourceBillingLineReferenceModel))
+        public BillingLineModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), TransactionContactModel financialPartner = default(TransactionContactModel), DateTime date = default(DateTime), DateTime? deliveryDate = default(DateTime?), string text = default(string), string sourceText = default(string), BillingLineQuantityModel quantity = default(BillingLineQuantityModel), double? singlePrice = default(double?), double? totalPrice = default(double?), bool isGross = default(bool), List<CostCenterAssignmentModel> costCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> costObjects = default(List<CostCenterAssignmentModel>), TaxRateModel taxRate = default(TaxRateModel), TransactionGeneralLedgerAccountGroupModel generalLedgerAccountGroup = default(TransactionGeneralLedgerAccountGroupModel), string reference = default(string), List<BillingLineReferenceModel> references = default(List<BillingLineReferenceModel>), bool isManualBillingLine = default(bool), BillingLineState? state = default(BillingLineState?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid? assignedTransactionId = default(Guid?), SourceBillingLineReferenceModel sourceBillingLineReference = default(SourceBillingLineReferenceModel))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -73,6 +74,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Date = date;
             this.DeliveryDate = deliveryDate;
             this.Text = text;
+            this.SourceText = sourceText;
             this.Quantity = quantity;
             this.SinglePrice = singlePrice;
             this.TotalPrice = totalPrice;
@@ -134,6 +136,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the text describing this billing line.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
+
+        /// <summary>
+        /// Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created.
+        /// </summary>
+        /// <value>Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created.</value>
+        [DataMember(Name = "sourceText", EmitDefaultValue = true)]
+        public string SourceText { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
@@ -244,6 +253,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  SourceText: ").Append(SourceText).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
@@ -327,6 +337,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
+                ) && 
+                (
+                    this.SourceText == input.SourceText ||
+                    (this.SourceText != null &&
+                    this.SourceText.Equals(input.SourceText))
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
@@ -439,6 +454,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Text != null)
                 {
                     hashCode = (hashCode * 59) + this.Text.GetHashCode();
+                }
+                if (this.SourceText != null)
+                {
+                    hashCode = (hashCode * 59) + this.SourceText.GetHashCode();
                 }
                 if (this.Quantity != null)
                 {

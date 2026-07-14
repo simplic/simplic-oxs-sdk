@@ -9019,6 +9019,11 @@
                         "description": "Gets or sets the text describing this billing line.",
                         "nullable": true
                     },
+                    "sourceText": {
+                        "type": "string",
+                        "description": "Gets or sets the text describing this billing line in case it was \nexplicitly provided when the original billing line was created.",
+                        "nullable": true
+                    },
                     "quantity": {
                         "$ref": "#/components/schemas/BillingLineQuantityModel"
                     },
@@ -13765,6 +13770,23 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TaxKey."
             },
+            "TaxKeyTotalPriceTaxModel": {
+                "type": "object",
+                "properties": {
+                    "taxKeyValue": {
+                        "type": "number",
+                        "description": "Gets or sets the distinct tax key value for which the total price tax is summed up.",
+                        "format": "double"
+                    },
+                    "totalPriceTax": {
+                        "type": "number",
+                        "description": "Gets or sets the total price tax sum over all tax keys with a value of Simplic.OxS.ERP.Server.TaxKeyTotalPriceTaxModel.TaxKeyValue.",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for a tax key total price tax in a transaction."
+            },
             "TaxRateModel": {
                 "type": "object",
                 "properties": {
@@ -14304,6 +14326,25 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for a document in a transaction."
+            },
+            "TransactionEditableResultModel": {
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LocalizableErrorModel"
+                        },
+                        "description": "Gets or sets the list of validation errors.",
+                        "nullable": true
+                    },
+                    "isEditable": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the transaction is editable."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the shared model for the result of validating a transaction for editability."
             },
             "TransactionGeneralLedgerAccountGroupModel": {
                 "type": "object",
@@ -15135,6 +15176,14 @@
                         "description": "Gets or sets the signed total price tax.",
                         "format": "double"
                     },
+                    "taxKeyTotalPrices": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxKeyTotalPriceTaxModel"
+                        },
+                        "description": "Gets or sets the total price tax per distinct tax key value.",
+                        "nullable": true
+                    },
                     "sign": {
                         "type": "integer",
                         "description": "Gets or sets the total price value sign.\n\nThe sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.",
@@ -15153,6 +15202,9 @@
                     },
                     "validationResult": {
                         "$ref": "#/components/schemas/TransactionValidationResultModel"
+                    },
+                    "editableResult": {
+                        "$ref": "#/components/schemas/TransactionEditableResultModel"
                     },
                     "defaultCostCenters": {
                         "type": "array",

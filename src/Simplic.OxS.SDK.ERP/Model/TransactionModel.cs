@@ -93,11 +93,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="signedTotalPriceGross">Gets or sets the gross signed total price..</param>
         /// <param name="signedTotalPrice">Gets or sets the signed total price..</param>
         /// <param name="signedTotalPriceTax">Gets or sets the signed total price tax..</param>
+        /// <param name="taxKeyTotalPrices">Gets or sets the total price tax per distinct tax key value..</param>
         /// <param name="sign">Gets or sets the total price value sign.  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1..</param>
         /// <param name="operationItemCombinationMode">operationItemCombinationMode.</param>
         /// <param name="isGross">Gets or sets a value indicating whether the transaction is gross or net..</param>
         /// <param name="financialExportDisabled">Gets or sets the financial export disabled flag.  This is a flag intended for manually disabling financial export of the transaction..</param>
         /// <param name="validationResult">validationResult.</param>
+        /// <param name="editableResult">editableResult.</param>
         /// <param name="defaultCostCenters">Gets or sets the default assigned cost centers with their respective percentages..</param>
         /// <param name="defaultCostObjects">Gets or sets the default assigned cost objects with their respective percentages..</param>
         /// <param name="metadataProcessingData">metadataProcessingData.</param>
@@ -108,7 +110,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the date and time the transaction is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the transaction..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the transaction..</param>
-        public TransactionModel(Guid id = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), int sign = default(int), OperationItemCombinationModeModel? operationItemCombinationMode = default(OperationItemCombinationModeModel?), bool isGross = default(bool), bool financialExportDisabled = default(bool), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel), List<CostCenterAssignmentModel> defaultCostCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> defaultCostObjects = default(List<CostCenterAssignmentModel>), MetadataProcessingDataModel metadataProcessingData = default(MetadataProcessingDataModel), DateTime? cashDiscountDate = default(DateTime?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TransactionModel(Guid id = default(Guid), bool isDeleted = default(bool), string number = default(string), string reference = default(string), TransactionTransactionTypeModel type = default(TransactionTransactionTypeModel), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), TermsOfPaymentModel termsOfPayment = default(TermsOfPaymentModel), PaymentMethodModel paymentMethod = default(PaymentMethodModel), CurrencyModel currency = default(CurrencyModel), string description = default(string), TransactionContactModel financialPartner = default(TransactionContactModel), TransactionContactModel deliveryAddress = default(TransactionContactModel), TransactionContactModel invoiceRecipient = default(TransactionContactModel), TransactionContactModel payer = default(TransactionContactModel), TransactionContactModel creator = default(TransactionContactModel), TransactionContactModel responsible = default(TransactionContactModel), TransactionContactModel representative = default(TransactionContactModel), List<TransactionItemModel> items = default(List<TransactionItemModel>), TransactionConvertState? convertState = default(TransactionConvertState?), DateTime? alternativePaymentDeadline = default(DateTime?), double? balance = default(double?), string barcode = default(string), string billToText = default(string), double? cashDiscountPercentValue = default(double?), double? cashDiscountTotal = default(double?), TransactionDocumentModel document = default(TransactionDocumentModel), TransactionPeriodModel financialAccountingPeriod = default(TransactionPeriodModel), TransactionPeriodModel period = default(TransactionPeriodModel), List<string> states = default(List<string>), TransactionManualVatModel manualVat = default(TransactionManualVatModel), string notes = default(string), DateTime? dueDate = default(DateTime?), string referenceNumber = default(string), TaxGroupModel taxGroup = default(TaxGroupModel), double totalPrice = default(double), double totalPriceGross = default(double), double totalPriceNet = default(double), double totalPriceTax = default(double), int transactionYear = default(int), TransactionUserModel updateUser = default(TransactionUserModel), double signedTotalPriceNet = default(double), double signedTotalPriceGross = default(double), double signedTotalPrice = default(double), double signedTotalPriceTax = default(double), List<TaxKeyTotalPriceTaxModel> taxKeyTotalPrices = default(List<TaxKeyTotalPriceTaxModel>), int sign = default(int), OperationItemCombinationModeModel? operationItemCombinationMode = default(OperationItemCombinationModeModel?), bool isGross = default(bool), bool financialExportDisabled = default(bool), TransactionValidationResultModel validationResult = default(TransactionValidationResultModel), TransactionEditableResultModel editableResult = default(TransactionEditableResultModel), List<CostCenterAssignmentModel> defaultCostCenters = default(List<CostCenterAssignmentModel>), List<CostCenterAssignmentModel> defaultCostObjects = default(List<CostCenterAssignmentModel>), MetadataProcessingDataModel metadataProcessingData = default(MetadataProcessingDataModel), DateTime? cashDiscountDate = default(DateTime?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -155,11 +157,13 @@ namespace Simplic.OxS.SDK.ERP
             this.SignedTotalPriceGross = signedTotalPriceGross;
             this.SignedTotalPrice = signedTotalPrice;
             this.SignedTotalPriceTax = signedTotalPriceTax;
+            this.TaxKeyTotalPrices = taxKeyTotalPrices;
             this.Sign = sign;
             this.OperationItemCombinationMode = operationItemCombinationMode;
             this.IsGross = isGross;
             this.FinancialExportDisabled = financialExportDisabled;
             this.ValidationResult = validationResult;
+            this.EditableResult = editableResult;
             this.DefaultCostCenters = defaultCostCenters;
             this.DefaultCostObjects = defaultCostObjects;
             this.MetadataProcessingData = metadataProcessingData;
@@ -464,6 +468,13 @@ namespace Simplic.OxS.SDK.ERP
         public double SignedTotalPriceTax { get; set; }
 
         /// <summary>
+        /// Gets or sets the total price tax per distinct tax key value.
+        /// </summary>
+        /// <value>Gets or sets the total price tax per distinct tax key value.</value>
+        [DataMember(Name = "taxKeyTotalPrices", EmitDefaultValue = true)]
+        public List<TaxKeyTotalPriceTaxModel> TaxKeyTotalPrices { get; set; }
+
+        /// <summary>
         /// Gets or sets the total price value sign.  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.
         /// </summary>
         /// <value>Gets or sets the total price value sign.  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1.</value>
@@ -489,6 +500,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "validationResult", EmitDefaultValue = false)]
         public TransactionValidationResultModel ValidationResult { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EditableResult
+        /// </summary>
+        [DataMember(Name = "editableResult", EmitDefaultValue = false)]
+        public TransactionEditableResultModel EditableResult { get; set; }
 
         /// <summary>
         /// Gets or sets the default assigned cost centers with their respective percentages.
@@ -612,11 +629,13 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SignedTotalPriceGross: ").Append(SignedTotalPriceGross).Append("\n");
             sb.Append("  SignedTotalPrice: ").Append(SignedTotalPrice).Append("\n");
             sb.Append("  SignedTotalPriceTax: ").Append(SignedTotalPriceTax).Append("\n");
+            sb.Append("  TaxKeyTotalPrices: ").Append(TaxKeyTotalPrices).Append("\n");
             sb.Append("  Sign: ").Append(Sign).Append("\n");
             sb.Append("  OperationItemCombinationMode: ").Append(OperationItemCombinationMode).Append("\n");
             sb.Append("  IsGross: ").Append(IsGross).Append("\n");
             sb.Append("  FinancialExportDisabled: ").Append(FinancialExportDisabled).Append("\n");
             sb.Append("  ValidationResult: ").Append(ValidationResult).Append("\n");
+            sb.Append("  EditableResult: ").Append(EditableResult).Append("\n");
             sb.Append("  DefaultCostCenters: ").Append(DefaultCostCenters).Append("\n");
             sb.Append("  DefaultCostObjects: ").Append(DefaultCostObjects).Append("\n");
             sb.Append("  MetadataProcessingData: ").Append(MetadataProcessingData).Append("\n");
@@ -879,6 +898,12 @@ namespace Simplic.OxS.SDK.ERP
                     this.SignedTotalPriceTax.Equals(input.SignedTotalPriceTax)
                 ) && 
                 (
+                    this.TaxKeyTotalPrices == input.TaxKeyTotalPrices ||
+                    this.TaxKeyTotalPrices != null &&
+                    input.TaxKeyTotalPrices != null &&
+                    this.TaxKeyTotalPrices.SequenceEqual(input.TaxKeyTotalPrices)
+                ) && 
+                (
                     this.Sign == input.Sign ||
                     this.Sign.Equals(input.Sign)
                 ) && 
@@ -898,6 +923,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ValidationResult == input.ValidationResult ||
                     (this.ValidationResult != null &&
                     this.ValidationResult.Equals(input.ValidationResult))
+                ) && 
+                (
+                    this.EditableResult == input.EditableResult ||
+                    (this.EditableResult != null &&
+                    this.EditableResult.Equals(input.EditableResult))
                 ) && 
                 (
                     this.DefaultCostCenters == input.DefaultCostCenters ||
@@ -1109,6 +1139,10 @@ namespace Simplic.OxS.SDK.ERP
                 hashCode = (hashCode * 59) + this.SignedTotalPriceGross.GetHashCode();
                 hashCode = (hashCode * 59) + this.SignedTotalPrice.GetHashCode();
                 hashCode = (hashCode * 59) + this.SignedTotalPriceTax.GetHashCode();
+                if (this.TaxKeyTotalPrices != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxKeyTotalPrices.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Sign.GetHashCode();
                 hashCode = (hashCode * 59) + this.OperationItemCombinationMode.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
@@ -1116,6 +1150,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ValidationResult != null)
                 {
                     hashCode = (hashCode * 59) + this.ValidationResult.GetHashCode();
+                }
+                if (this.EditableResult != null)
+                {
+                    hashCode = (hashCode * 59) + this.EditableResult.GetHashCode();
                 }
                 if (this.DefaultCostCenters != null)
                 {

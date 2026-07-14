@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Date** | **DateTime** | Gets or sets the date associated with this billing line. | [optional] 
 **DeliveryDate** | **DateTime?** | Gets or sets the delivery date associated with this billing line. | [optional] 
 **Text** | **string** | Gets or sets the text describing this billing line. | [optional] 
+**SourceText** | **string** | Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created. | [optional] 
 **Quantity** | [**BillingLineQuantityModel**](BillingLineQuantityModel.md) |  | [optional] 
 **SinglePrice** | **double?** | Gets or sets the price for a single unit. | [optional] 
 **TotalPrice** | **double?** | Gets or sets the total price. | [optional] 
