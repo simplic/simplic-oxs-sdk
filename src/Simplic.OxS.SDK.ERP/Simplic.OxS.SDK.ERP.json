@@ -13770,22 +13770,32 @@
                 "additionalProperties": false,
                 "description": "Represents a request to create a Simplic.OxS.ERP.TaxKey."
             },
-            "TaxKeyTotalPriceTaxModel": {
+            "TaxKeyTotalPriceValuesModel": {
                 "type": "object",
                 "properties": {
                     "taxKeyValue": {
                         "type": "number",
-                        "description": "Gets or sets the distinct tax key value for which the total price tax is summed up.",
+                        "description": "Gets or sets the distinct tax key value for which the total price values are summed up.",
+                        "format": "double"
+                    },
+                    "totalPriceNet": {
+                        "type": "number",
+                        "description": "Gets or sets the total price net sum over all tax keys with a value of Simplic.OxS.ERP.Server.TaxKeyTotalPriceValuesModel.TaxKeyValue.",
+                        "format": "double"
+                    },
+                    "totalPriceGross": {
+                        "type": "number",
+                        "description": "Gets or sets the total price gross sum over all tax keys with a value of Simplic.OxS.ERP.Server.TaxKeyTotalPriceValuesModel.TaxKeyValue.",
                         "format": "double"
                     },
                     "totalPriceTax": {
                         "type": "number",
-                        "description": "Gets or sets the total price tax sum over all tax keys with a value of Simplic.OxS.ERP.Server.TaxKeyTotalPriceTaxModel.TaxKeyValue.",
+                        "description": "Gets or sets the total price tax sum over all tax keys with a value of Simplic.OxS.ERP.Server.TaxKeyTotalPriceValuesModel.TaxKeyValue.",
                         "format": "double"
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model for a tax key total price tax in a transaction."
+                "description": "Represents the shared model for total price values for a specific tax key value in a transaction."
             },
             "TaxRateModel": {
                 "type": "object",
@@ -15179,9 +15189,9 @@
                     "taxKeyTotalPrices": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/TaxKeyTotalPriceTaxModel"
+                            "$ref": "#/components/schemas/TaxKeyTotalPriceValuesModel"
                         },
-                        "description": "Gets or sets the total price tax per distinct tax key value.",
+                        "description": "Gets or sets the total price values per distinct tax key value.",
                         "nullable": true
                     },
                     "sign": {

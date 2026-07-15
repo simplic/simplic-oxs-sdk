@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 **SignedTotalPriceGross** | **double** | Gets or sets the gross signed total price. | [optional] 
 **SignedTotalPrice** | **double** | Gets or sets the signed total price. | [optional] 
 **SignedTotalPriceTax** | **double** | Gets or sets the signed total price tax. | [optional] 
-**TaxKeyTotalPrices** | [**List&lt;TaxKeyTotalPriceTaxModel&gt;**](TaxKeyTotalPriceTaxModel.md) | Gets or sets the total price tax per distinct tax key value. | [optional] 
+**TaxKeyTotalPrices** | [**List&lt;TaxKeyTotalPriceValuesModel&gt;**](TaxKeyTotalPriceValuesModel.md) | Gets or sets the total price values per distinct tax key value. | [optional] 
 **Sign** | **int** | Gets or sets the total price value sign.  The sign is the factor used for summations of transaction total values mainly in grids and is either 1 or -1. | [optional] 
 **OperationItemCombinationMode** | **OperationItemCombinationModeModel** |  | [optional] 
 **IsGross** | **bool** | Gets or sets a value indicating whether the transaction is gross or net. | [optional] 
