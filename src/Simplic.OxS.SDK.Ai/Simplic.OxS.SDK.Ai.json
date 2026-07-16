@@ -851,6 +851,7 @@
                 "tags": [
                     "Conversation"
                 ],
+                "summary": "Starts a new conversation with the specified model.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1011,6 +1012,7 @@
                 "tags": [
                     "Conversation"
                 ],
+                "summary": "Replies to an existing conversation.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1171,6 +1173,7 @@
                 "tags": [
                     "Conversation"
                 ],
+                "summary": "Gets a conversation by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -1249,6 +1252,7 @@
                 "tags": [
                     "Conversation"
                 ],
+                "summary": "Deletes a conversation by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -1312,6 +1316,7 @@
                 "tags": [
                     "Conversation"
                 ],
+                "summary": "Gets all available context types.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1390,6 +1395,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Creates a new data set.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1478,6 +1484,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Uploads a CSV file to a data set.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1503,17 +1510,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DataSetModel"
+                                    "$ref": "#/components/schemas/CsvUploadResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DataSetModel"
+                                    "$ref": "#/components/schemas/CsvUploadResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/DataSetModel"
+                                    "$ref": "#/components/schemas/CsvUploadResponse"
                                 }
                             }
                         }
@@ -1566,6 +1573,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Deletes all tuples from the specified data set.",
                 "parameters": [
                     {
                         "name": "dataSetId",
@@ -1646,6 +1654,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Updates an existing data set.",
                 "parameters": [
                     {
                         "name": "id",
@@ -1743,6 +1752,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Deletes a data set by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -1823,6 +1833,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Adds a tuple item to the specified data set.",
                 "parameters": [
                     {
                         "name": "dataSetId",
@@ -1865,6 +1876,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Searches a data set by hash similarity.",
                 "parameters": [
                     {
                         "name": "dataSetId",
@@ -1973,6 +1985,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Removes a tuple from the specified data set by key.",
                 "parameters": [
                     {
                         "name": "dataSetId",
@@ -2003,6 +2016,7 @@
                 "tags": [
                     "DataSet"
                 ],
+                "summary": "Gets the list of available hash algorithms.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2081,6 +2095,7 @@
                 "tags": [
                     "Document"
                 ],
+                "summary": "Processes a document by sending a notification.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -2152,6 +2167,7 @@
                 "tags": [
                     "Embedding"
                 ],
+                "summary": "Creates a new embedded document.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -2240,6 +2256,7 @@
                 "tags": [
                     "Embedding"
                 ],
+                "summary": "Updates an embedded document by replacing it.",
                 "parameters": [
                     {
                         "name": "id",
@@ -2339,6 +2356,7 @@
                 "tags": [
                     "Embedding"
                 ],
+                "summary": "Removes embedded documents by data type.",
                 "parameters": [
                     {
                         "name": "dataType",
@@ -2401,6 +2419,7 @@
                 "tags": [
                     "Embedding"
                 ],
+                "summary": "Removes an embedded document by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -2464,6 +2483,7 @@
                 "tags": [
                     "Embedding"
                 ],
+                "summary": "Searches embedded documents by query.",
                 "parameters": [
                     {
                         "name": "query",
@@ -2567,6 +2587,7 @@
                 "tags": [
                     "IInternalConversation"
                 ],
+                "summary": "Starts a new internal conversation.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -2655,6 +2676,7 @@
                 "tags": [
                     "LLM"
                 ],
+                "summary": "Gets all available LLM providers.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -3691,6 +3713,7 @@
                 "tags": [
                     "TextClassification"
                 ],
+                "summary": "Initiates asynchronous text classification.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -3779,6 +3802,7 @@
                 "tags": [
                     "TextClassification"
                 ],
+                "summary": "Gets the state of an asynchronous text classification job.",
                 "parameters": [
                     {
                         "name": "id",
@@ -3868,6 +3892,7 @@
                 "tags": [
                     "TextClassification"
                 ],
+                "summary": "Tests the remote service invocation.",
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -3920,6 +3945,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Gets a text classification model by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -3997,6 +4023,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Creates a new text classification model.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -4085,6 +4112,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Updates a text classification model.",
                 "parameters": [
                     {
                         "name": "id",
@@ -4182,6 +4210,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Deletes a text classification model by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -4245,6 +4274,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Starts training a text classification model.",
                 "parameters": [
                     {
                         "name": "modelId",
@@ -4345,6 +4375,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Cancels training of a text classification model.",
                 "parameters": [
                     {
                         "name": "modelId",
@@ -4425,6 +4456,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Checks the training status of a text classification model.",
                 "parameters": [
                     {
                         "name": "modelId",
@@ -4505,6 +4537,7 @@
                 "tags": [
                     "TextClassificationModel"
                 ],
+                "summary": "Gets the available text classification model types.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -4972,13 +5005,16 @@
                 "properties": {
                     "provider": {
                         "type": "string",
+                        "description": "Gets or sets the LLM provider name.",
                         "nullable": true
                     },
                     "addToDataSet": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether to add results to the data set."
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "AI-related settings for search operations."
             },
             "AgentDocument": {
                 "type": "object",
@@ -5272,6 +5308,9 @@
                     },
                     "plan": {
                         "$ref": "#/components/schemas/AgentPlan"
+                    },
+                    "orchestrationPlan": {
+                        "$ref": "#/components/schemas/OrchestrationPlan"
                     },
                     "approvalOptions": {
                         "type": "array",
@@ -5587,7 +5626,8 @@
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Model representing a comparison result."
             },
             "ContextModel": {
                 "type": "object",
@@ -5700,6 +5740,24 @@
                 "additionalProperties": false,
                 "description": "Represents an request to create a new model to text classification."
             },
+            "CsvUploadResponse": {
+                "type": "object",
+                "properties": {
+                    "invalidItems": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataSetItemModel"
+                        },
+                        "description": "Gets or sets items that could not be imported (duplicate key or validation failure).",
+                        "nullable": true
+                    },
+                    "dataSet": {
+                        "$ref": "#/components/schemas/DataSetModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Response model for the CSV upload / add-tuples endpoint."
+            },
             "DataSetCsvUploadRequest": {
                 "required": [
                     "data",
@@ -5710,33 +5768,41 @@
                 "properties": {
                     "dataSetId": {
                         "type": "string",
+                        "description": "Gets or sets the target data set identifier.",
                         "format": "uuid"
                     },
                     "delimiter": {
                         "maxLength": 1,
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the CSV delimiter character."
                     },
                     "hasHeaderRow": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the CSV has a header row."
                     },
                     "append": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether to append data to the existing data set."
                     },
                     "keyColumnIndex": {
                         "type": "integer",
+                        "description": "Gets or sets the zero-based index of the key column.",
                         "format": "int32"
                     },
                     "labelColumnIndex": {
                         "type": "integer",
+                        "description": "Gets or sets the zero-based index of the label column.",
                         "format": "int32"
                     },
                     "data": {
                         "type": "string",
+                        "description": "Gets or sets the CSV file data as a byte array.",
                         "format": "byte"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for uploading CSV data to a data set."
             },
             "DataSetItem": {
                 "type": "object",
@@ -5752,19 +5818,39 @@
                 },
                 "additionalProperties": false
             },
+            "DataSetItemModel": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "description": "Gets or sets the item key.",
+                        "nullable": true
+                    },
+                    "label": {
+                        "type": "string",
+                        "description": "Gets or sets the item label.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Response model representing a single item in a data set."
+            },
             "DataSetModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the data set identifier.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the data set name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Response model representing a data set."
             },
             "DataSetRequest": {
                 "required": [
@@ -5774,10 +5860,12 @@
                 "properties": {
                     "name": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the data set name."
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for creating or updating a data set."
             },
             "EmbeddedDocument": {
                 "type": "object",
@@ -5926,20 +6014,24 @@
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the algorithm name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Model representing a hash algorithm."
             },
             "LLMTypeModel": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the LLM provider type name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Model representing an LLM provider type."
             },
             "McpAuthConfig": {
                 "type": "object",
@@ -6080,6 +6172,52 @@
                 "description": "Represents a message type",
                 "format": "int32"
             },
+            "OrchestrationPlan": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "originalPrompt": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tasks": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OrchestrationTask"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OrchestrationTask": {
+                "type": "object",
+                "properties": {
+                    "taskId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "prompt": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "subAgentName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dependsOn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "OrganizationSettingResult": {
                 "type": "object",
                 "properties": {
@@ -6176,10 +6314,12 @@
                 "properties": {
                     "blobId": {
                         "type": "string",
+                        "description": "Gets or sets the blob identifier for the document to process.",
                         "format": "uuid"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for document processing."
             },
             "ReplyToConversationRequest": {
                 "required": [
@@ -6231,25 +6371,30 @@
                 "properties": {
                     "minSimilarity": {
                         "type": "number",
+                        "description": "Gets or sets the minimum similarity threshold.",
                         "format": "double"
                     },
                     "maxResults": {
                         "type": "integer",
+                        "description": "Gets or sets the maximum number of results.",
                         "format": "int32"
                     },
                     "input": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the input text to search for."
                     },
                     "hashAlgorithm": {
                         "type": "string",
+                        "description": "Gets or sets the hash algorithm name.",
                         "nullable": true
                     },
                     "aiSettings": {
                         "$ref": "#/components/schemas/AISettings"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for hash-based search operations."
             },
             "ServiceContract": {
                 "type": "object",
@@ -6414,10 +6559,12 @@
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the model definition name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Model definition for a text classification model type."
             },
             "TextClassificationModelResponse": {
                 "type": "object",
@@ -6473,7 +6620,8 @@
                         "format": "int32"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Response model representing a text classification model."
             },
             "TextClassificationResultResponse": {
                 "type": "object",

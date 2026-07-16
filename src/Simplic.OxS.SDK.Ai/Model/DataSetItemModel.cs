@@ -28,44 +28,35 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// Model representing a comparison result.
+    /// Response model representing a single item in a data set.
     /// </summary>
-    [DataContract(Name = "CompareResultModel")]
-    public partial class CompareResultModel : IEquatable<CompareResultModel>, IValidatableObject
+    [DataContract(Name = "DataSetItemModel")]
+    public partial class DataSetItemModel : IEquatable<DataSetItemModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompareResultModel" /> class.
+        /// Initializes a new instance of the <see cref="DataSetItemModel" /> class.
         /// </summary>
-        /// <param name="key">Gets or sets the key..</param>
-        /// <param name="similarity">Gets or sets the similarity..</param>
-        /// <param name="predictedLabel">Gets or sets the predicted label..</param>
-        public CompareResultModel(string key = default(string), double similarity = default(double), string predictedLabel = default(string))
+        /// <param name="key">Gets or sets the item key..</param>
+        /// <param name="label">Gets or sets the item label..</param>
+        public DataSetItemModel(string key = default(string), string label = default(string))
         {
             this.Key = key;
-            this.Similarity = similarity;
-            this.PredictedLabel = predictedLabel;
+            this.Label = label;
         }
 
         /// <summary>
-        /// Gets or sets the key.
+        /// Gets or sets the item key.
         /// </summary>
-        /// <value>Gets or sets the key.</value>
+        /// <value>Gets or sets the item key.</value>
         [DataMember(Name = "key", EmitDefaultValue = true)]
         public string Key { get; set; }
 
         /// <summary>
-        /// Gets or sets the similarity.
+        /// Gets or sets the item label.
         /// </summary>
-        /// <value>Gets or sets the similarity.</value>
-        [DataMember(Name = "similarity", EmitDefaultValue = false)]
-        public double Similarity { get; set; }
-
-        /// <summary>
-        /// Gets or sets the predicted label.
-        /// </summary>
-        /// <value>Gets or sets the predicted label.</value>
-        [DataMember(Name = "predictedLabel", EmitDefaultValue = true)]
-        public string PredictedLabel { get; set; }
+        /// <value>Gets or sets the item label.</value>
+        [DataMember(Name = "label", EmitDefaultValue = true)]
+        public string Label { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,10 +65,9 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CompareResultModel {\n");
+            sb.Append("class DataSetItemModel {\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
-            sb.Append("  Similarity: ").Append(Similarity).Append("\n");
-            sb.Append("  PredictedLabel: ").Append(PredictedLabel).Append("\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +88,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CompareResultModel);
+            return this.Equals(input as DataSetItemModel);
         }
 
         /// <summary>
-        /// Returns true if CompareResultModel instances are equal
+        /// Returns true if DataSetItemModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of CompareResultModel to be compared</param>
+        /// <param name="input">Instance of DataSetItemModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CompareResultModel input)
+        public bool Equals(DataSetItemModel input)
         {
             if (input == null)
             {
@@ -119,13 +109,9 @@ namespace Simplic.OxS.SDK.Ai
                     this.Key.Equals(input.Key))
                 ) && 
                 (
-                    this.Similarity == input.Similarity ||
-                    this.Similarity.Equals(input.Similarity)
-                ) && 
-                (
-                    this.PredictedLabel == input.PredictedLabel ||
-                    (this.PredictedLabel != null &&
-                    this.PredictedLabel.Equals(input.PredictedLabel))
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
                 );
         }
 
@@ -142,10 +128,9 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.Key.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Similarity.GetHashCode();
-                if (this.PredictedLabel != null)
+                if (this.Label != null)
                 {
-                    hashCode = (hashCode * 59) + this.PredictedLabel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Label.GetHashCode();
                 }
                 return hashCode;
             }

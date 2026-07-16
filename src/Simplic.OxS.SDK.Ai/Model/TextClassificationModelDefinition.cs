@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// TextClassificationModelDefinition
+    /// Model definition for a text classification model type.
     /// </summary>
     [DataContract(Name = "TextClassificationModelDefinition")]
     public partial class TextClassificationModelDefinition : IEquatable<TextClassificationModelDefinition>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="TextClassificationModelDefinition" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="name">Gets or sets the model definition name..</param>
         public TextClassificationModelDefinition(string name = default(string))
         {
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the model definition name.
         /// </summary>
+        /// <value>Gets or sets the model definition name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

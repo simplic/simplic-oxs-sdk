@@ -28,44 +28,41 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// Model representing a comparison result.
+    /// OrchestrationPlan
     /// </summary>
-    [DataContract(Name = "CompareResultModel")]
-    public partial class CompareResultModel : IEquatable<CompareResultModel>, IValidatableObject
+    [DataContract(Name = "OrchestrationPlan")]
+    public partial class OrchestrationPlan : IEquatable<OrchestrationPlan>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompareResultModel" /> class.
+        /// Initializes a new instance of the <see cref="OrchestrationPlan" /> class.
         /// </summary>
-        /// <param name="key">Gets or sets the key..</param>
-        /// <param name="similarity">Gets or sets the similarity..</param>
-        /// <param name="predictedLabel">Gets or sets the predicted label..</param>
-        public CompareResultModel(string key = default(string), double similarity = default(double), string predictedLabel = default(string))
+        /// <param name="id">id.</param>
+        /// <param name="originalPrompt">originalPrompt.</param>
+        /// <param name="tasks">tasks.</param>
+        public OrchestrationPlan(Guid id = default(Guid), string originalPrompt = default(string), List<OrchestrationTask> tasks = default(List<OrchestrationTask>))
         {
-            this.Key = key;
-            this.Similarity = similarity;
-            this.PredictedLabel = predictedLabel;
+            this.Id = id;
+            this.OriginalPrompt = originalPrompt;
+            this.Tasks = tasks;
         }
 
         /// <summary>
-        /// Gets or sets the key.
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>Gets or sets the key.</value>
-        [DataMember(Name = "key", EmitDefaultValue = true)]
-        public string Key { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the similarity.
+        /// Gets or Sets OriginalPrompt
         /// </summary>
-        /// <value>Gets or sets the similarity.</value>
-        [DataMember(Name = "similarity", EmitDefaultValue = false)]
-        public double Similarity { get; set; }
+        [DataMember(Name = "originalPrompt", EmitDefaultValue = true)]
+        public string OriginalPrompt { get; set; }
 
         /// <summary>
-        /// Gets or sets the predicted label.
+        /// Gets or Sets Tasks
         /// </summary>
-        /// <value>Gets or sets the predicted label.</value>
-        [DataMember(Name = "predictedLabel", EmitDefaultValue = true)]
-        public string PredictedLabel { get; set; }
+        [DataMember(Name = "tasks", EmitDefaultValue = true)]
+        public List<OrchestrationTask> Tasks { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,10 +71,10 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CompareResultModel {\n");
-            sb.Append("  Key: ").Append(Key).Append("\n");
-            sb.Append("  Similarity: ").Append(Similarity).Append("\n");
-            sb.Append("  PredictedLabel: ").Append(PredictedLabel).Append("\n");
+            sb.Append("class OrchestrationPlan {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  OriginalPrompt: ").Append(OriginalPrompt).Append("\n");
+            sb.Append("  Tasks: ").Append(Tasks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +95,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CompareResultModel);
+            return this.Equals(input as OrchestrationPlan);
         }
 
         /// <summary>
-        /// Returns true if CompareResultModel instances are equal
+        /// Returns true if OrchestrationPlan instances are equal
         /// </summary>
-        /// <param name="input">Instance of CompareResultModel to be compared</param>
+        /// <param name="input">Instance of OrchestrationPlan to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CompareResultModel input)
+        public bool Equals(OrchestrationPlan input)
         {
             if (input == null)
             {
@@ -114,18 +111,20 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Similarity == input.Similarity ||
-                    this.Similarity.Equals(input.Similarity)
+                    this.OriginalPrompt == input.OriginalPrompt ||
+                    (this.OriginalPrompt != null &&
+                    this.OriginalPrompt.Equals(input.OriginalPrompt))
                 ) && 
                 (
-                    this.PredictedLabel == input.PredictedLabel ||
-                    (this.PredictedLabel != null &&
-                    this.PredictedLabel.Equals(input.PredictedLabel))
+                    this.Tasks == input.Tasks ||
+                    this.Tasks != null &&
+                    input.Tasks != null &&
+                    this.Tasks.SequenceEqual(input.Tasks)
                 );
         }
 
@@ -138,14 +137,17 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Key != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Similarity.GetHashCode();
-                if (this.PredictedLabel != null)
+                if (this.OriginalPrompt != null)
                 {
-                    hashCode = (hashCode * 59) + this.PredictedLabel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OriginalPrompt.GetHashCode();
+                }
+                if (this.Tasks != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tasks.GetHashCode();
                 }
                 return hashCode;
             }

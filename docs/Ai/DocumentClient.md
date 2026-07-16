@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Process**](DocumentClient.md#documentprocesspost) | **POST** /Document/process |  |
+| [**Process**](DocumentClient.md#documentprocesspost) | **POST** /Document/process | Processes a document by sending a notification. |
 
 <a id="documentprocesspost"></a>
 # **Process**
 > void Process (ProcessDocumentRequest? processDocumentRequest = null)
 
-
+Processes a document by sending a notification.
 
 ### Example
 ```csharp
@@ -39,6 +39,7 @@ namespace Example
 
             try
             {
+                // Processes a document by sending a notification.
                 apiInstance.Process(processDocumentRequest);
             }
             catch (ApiException  e)
@@ -58,6 +59,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Processes a document by sending a notification.
     apiInstance.ProcessWithHttpInfo(processDocumentRequest);
 }
 catch (ApiException e)

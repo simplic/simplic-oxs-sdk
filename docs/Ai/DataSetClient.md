@@ -4,21 +4,21 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AddTuple**](DataSetClient.md#datasetaddtupledatasetidpost) | **POST** /DataSet/add-tuple/{dataSetId} |  |
-| [**DeleteTuples**](DataSetClient.md#datasetdeletetuplesdatasetidpost) | **POST** /DataSet/delete-tuples/{dataSetId} |  |
-| [**GetHashAlgorithms**](DataSetClient.md#datasetgethashalgorithmsget) | **GET** /DataSet/get-hash-algorithms |  |
-| [**Delete**](DataSetClient.md#datasetiddelete) | **DELETE** /DataSet/{id} |  |
-| [**Patch**](DataSetClient.md#datasetidpatch) | **PATCH** /DataSet/{id} |  |
-| [**Post**](DataSetClient.md#datasetpost) | **POST** /DataSet |  |
-| [**RemoveTuple**](DataSetClient.md#datasetremovetupledatasetidpost) | **POST** /DataSet/remove-tuple/{dataSetId} |  |
-| [**Search**](DataSetClient.md#datasetsearchdatasetidpost) | **POST** /DataSet/search/{dataSetId} |  |
-| [**UploadCsv**](DataSetClient.md#datasetuploadcsvpost) | **POST** /DataSet/upload-csv |  |
+| [**AddTuple**](DataSetClient.md#datasetaddtupledatasetidpost) | **POST** /DataSet/add-tuple/{dataSetId} | Adds a tuple item to the specified data set. |
+| [**DeleteTuples**](DataSetClient.md#datasetdeletetuplesdatasetidpost) | **POST** /DataSet/delete-tuples/{dataSetId} | Deletes all tuples from the specified data set. |
+| [**GetHashAlgorithms**](DataSetClient.md#datasetgethashalgorithmsget) | **GET** /DataSet/get-hash-algorithms | Gets the list of available hash algorithms. |
+| [**Delete**](DataSetClient.md#datasetiddelete) | **DELETE** /DataSet/{id} | Deletes a data set by ID. |
+| [**Patch**](DataSetClient.md#datasetidpatch) | **PATCH** /DataSet/{id} | Updates an existing data set. |
+| [**Post**](DataSetClient.md#datasetpost) | **POST** /DataSet | Creates a new data set. |
+| [**RemoveTuple**](DataSetClient.md#datasetremovetupledatasetidpost) | **POST** /DataSet/remove-tuple/{dataSetId} | Removes a tuple from the specified data set by key. |
+| [**Search**](DataSetClient.md#datasetsearchdatasetidpost) | **POST** /DataSet/search/{dataSetId} | Searches a data set by hash similarity. |
+| [**UploadCsv**](DataSetClient.md#datasetuploadcsvpost) | **POST** /DataSet/upload-csv | Uploads a CSV file to a data set. |
 
 <a id="datasetaddtupledatasetidpost"></a>
 # **AddTuple**
 > void AddTuple (Guid dataSetId, DataSetItem? dataSetItem = null)
 
-
+Adds a tuple item to the specified data set.
 
 ### Example
 ```csharp
@@ -48,6 +48,7 @@ namespace Example
 
             try
             {
+                // Adds a tuple item to the specified data set.
                 apiInstance.AddTuple(dataSetId, dataSetItem);
             }
             catch (ApiException  e)
@@ -67,6 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Adds a tuple item to the specified data set.
     apiInstance.AddTupleWithHttpInfo(dataSetId, dataSetItem);
 }
 catch (ApiException e)
@@ -109,7 +111,7 @@ void (empty response body)
 # **DeleteTuples**
 > DataSetModel DeleteTuples (Guid dataSetId)
 
-
+Deletes all tuples from the specified data set.
 
 ### Example
 ```csharp
@@ -138,6 +140,7 @@ namespace Example
 
             try
             {
+                // Deletes all tuples from the specified data set.
                 DataSetModel result = apiInstance.DeleteTuples(dataSetId);
                 Debug.WriteLine(result);
             }
@@ -158,6 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes all tuples from the specified data set.
     ApiResponse<DataSetModel> response = apiInstance.DeleteTuplesWithHttpInfo(dataSetId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -204,7 +208,7 @@ catch (ApiException e)
 # **GetHashAlgorithms**
 > List&lt;HashAlgorithmModel&gt; GetHashAlgorithms ()
 
-
+Gets the list of available hash algorithms.
 
 ### Example
 ```csharp
@@ -232,6 +236,7 @@ namespace Example
 
             try
             {
+                // Gets the list of available hash algorithms.
                 List<HashAlgorithmModel> result = apiInstance.GetHashAlgorithms();
                 Debug.WriteLine(result);
             }
@@ -252,6 +257,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets the list of available hash algorithms.
     ApiResponse<List<HashAlgorithmModel>> response = apiInstance.GetHashAlgorithmsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -294,7 +300,7 @@ This endpoint does not need any parameter.
 # **Delete**
 > DataSetModel Delete (Guid id)
 
-
+Deletes a data set by ID.
 
 ### Example
 ```csharp
@@ -323,6 +329,7 @@ namespace Example
 
             try
             {
+                // Deletes a data set by ID.
                 DataSetModel result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
@@ -343,6 +350,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a data set by ID.
     ApiResponse<DataSetModel> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -389,7 +397,7 @@ catch (ApiException e)
 # **Patch**
 > DataSetModel Patch (Guid id, DataSetRequest? dataSetRequest = null)
 
-
+Updates an existing data set.
 
 ### Example
 ```csharp
@@ -419,6 +427,7 @@ namespace Example
 
             try
             {
+                // Updates an existing data set.
                 DataSetModel result = apiInstance.Patch(id, dataSetRequest);
                 Debug.WriteLine(result);
             }
@@ -439,6 +448,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Updates an existing data set.
     ApiResponse<DataSetModel> response = apiInstance.PatchWithHttpInfo(id, dataSetRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -486,7 +496,7 @@ catch (ApiException e)
 # **Post**
 > DataSetModel Post (DataSetRequest? dataSetRequest = null)
 
-
+Creates a new data set.
 
 ### Example
 ```csharp
@@ -515,6 +525,7 @@ namespace Example
 
             try
             {
+                // Creates a new data set.
                 DataSetModel result = apiInstance.Post(dataSetRequest);
                 Debug.WriteLine(result);
             }
@@ -535,6 +546,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new data set.
     ApiResponse<DataSetModel> response = apiInstance.PostWithHttpInfo(dataSetRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -581,7 +593,7 @@ catch (ApiException e)
 # **RemoveTuple**
 > void RemoveTuple (Guid dataSetId, string? dataSetItemKey = null)
 
-
+Removes a tuple from the specified data set by key.
 
 ### Example
 ```csharp
@@ -611,6 +623,7 @@ namespace Example
 
             try
             {
+                // Removes a tuple from the specified data set by key.
                 apiInstance.RemoveTuple(dataSetId, dataSetItemKey);
             }
             catch (ApiException  e)
@@ -630,6 +643,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Removes a tuple from the specified data set by key.
     apiInstance.RemoveTupleWithHttpInfo(dataSetId, dataSetItemKey);
 }
 catch (ApiException e)
@@ -672,7 +686,7 @@ void (empty response body)
 # **Search**
 > List&lt;CompareResultModel&gt; Search (Guid dataSetId, SearchRequest? searchRequest = null)
 
-
+Searches a data set by hash similarity.
 
 ### Example
 ```csharp
@@ -702,6 +716,7 @@ namespace Example
 
             try
             {
+                // Searches a data set by hash similarity.
                 List<CompareResultModel> result = apiInstance.Search(dataSetId, searchRequest);
                 Debug.WriteLine(result);
             }
@@ -722,6 +737,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Searches a data set by hash similarity.
     ApiResponse<List<CompareResultModel>> response = apiInstance.SearchWithHttpInfo(dataSetId, searchRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -767,9 +783,9 @@ catch (ApiException e)
 
 <a id="datasetuploadcsvpost"></a>
 # **UploadCsv**
-> DataSetModel UploadCsv (DataSetCsvUploadRequest? dataSetCsvUploadRequest = null)
+> CsvUploadResponse UploadCsv (DataSetCsvUploadRequest? dataSetCsvUploadRequest = null)
 
-
+Uploads a CSV file to a data set.
 
 ### Example
 ```csharp
@@ -798,7 +814,8 @@ namespace Example
 
             try
             {
-                DataSetModel result = apiInstance.UploadCsv(dataSetCsvUploadRequest);
+                // Uploads a CSV file to a data set.
+                CsvUploadResponse result = apiInstance.UploadCsv(dataSetCsvUploadRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -818,7 +835,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<DataSetModel> response = apiInstance.UploadCsvWithHttpInfo(dataSetCsvUploadRequest);
+    // Uploads a CSV file to a data set.
+    ApiResponse<CsvUploadResponse> response = apiInstance.UploadCsvWithHttpInfo(dataSetCsvUploadRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -839,7 +857,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**DataSetModel**](DataSetModel.md)
+[**CsvUploadResponse**](CsvUploadResponse.md)
 
 ### Authorization
 

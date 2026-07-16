@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// ProcessDocumentRequest
+    /// Request model for document processing.
     /// </summary>
     [DataContract(Name = "ProcessDocumentRequest")]
     public partial class ProcessDocumentRequest : IEquatable<ProcessDocumentRequest>, IValidatableObject
@@ -41,15 +41,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessDocumentRequest" /> class.
         /// </summary>
-        /// <param name="blobId">blobId (required).</param>
+        /// <param name="blobId">Gets or sets the blob identifier for the document to process. (required).</param>
         public ProcessDocumentRequest(Guid blobId = default(Guid))
         {
             this.BlobId = blobId;
         }
 
         /// <summary>
-        /// Gets or Sets BlobId
+        /// Gets or sets the blob identifier for the document to process.
         /// </summary>
+        /// <value>Gets or sets the blob identifier for the document to process.</value>
         [DataMember(Name = "blobId", IsRequired = true, EmitDefaultValue = true)]
         public Guid BlobId { get; set; }
 

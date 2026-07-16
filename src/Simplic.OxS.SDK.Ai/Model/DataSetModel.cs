@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// DataSetModel
+    /// Response model representing a data set.
     /// </summary>
     [DataContract(Name = "DataSetModel")]
     public partial class DataSetModel : IEquatable<DataSetModel>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSetModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
+        /// <param name="id">Gets or sets the data set identifier..</param>
+        /// <param name="name">Gets or sets the data set name..</param>
         public DataSetModel(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the data set identifier.
         /// </summary>
+        /// <value>Gets or sets the data set identifier.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the data set name.
         /// </summary>
+        /// <value>Gets or sets the data set name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

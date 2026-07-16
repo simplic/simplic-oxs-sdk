@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Date** | **DateTime** | Gets or sets the date associated with this billing line.  A billing line stores all necessary information to create a transaction based on itself or a  set of billing lines. | [optional] 
 **DeliveryDate** | **DateTime?** | Gets or sets the delivery date associated with this billing line. | [optional] 
 **Text** | **string** | Gets or sets the text describing this billing line. | [optional] 
+**SourceText** | **string** | Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created. | [optional] 
 **Quantity** | [**BillingLineQuantityRequest**](BillingLineQuantityRequest.md) |  | [optional] 
 **SinglePrice** | **double?** | Gets or sets the price for a single unit of the item or service described  by this billing line. | [optional] 
 **TotalPrice** | **double?** | Gets or sets the total price of the item or service described by this billing line. | [optional] 

@@ -40,7 +40,7 @@ public interface IEmbeddingClient
 
 
     /// <summary>
-    ///  
+    /// Updates an embedded document by replacing it. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -49,7 +49,7 @@ public interface IEmbeddingClient
     EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
 
     /// <summary>
-    ///  
+    /// Updates an embedded document by replacing it. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -58,7 +58,7 @@ public interface IEmbeddingClient
     ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
         
     /// <summary>
-    ///  
+    /// Updates an embedded document by replacing it. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -68,7 +68,7 @@ public interface IEmbeddingClient
     Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Updates an embedded document by replacing it. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -79,7 +79,7 @@ public interface IEmbeddingClient
 
 
     /// <summary>
-    ///  
+    /// Creates a new embedded document. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -87,7 +87,7 @@ public interface IEmbeddingClient
     EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
 
     /// <summary>
-    ///  
+    /// Creates a new embedded document. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -95,7 +95,7 @@ public interface IEmbeddingClient
     ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
         
     /// <summary>
-    ///  
+    /// Creates a new embedded document. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -104,7 +104,7 @@ public interface IEmbeddingClient
     Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new embedded document. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -114,7 +114,7 @@ public interface IEmbeddingClient
 
 
     /// <summary>
-    ///  
+    /// Removes an embedded document by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -122,7 +122,7 @@ public interface IEmbeddingClient
     void RemoveById(Guid id);
 
     /// <summary>
-    ///  
+    /// Removes an embedded document by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -130,7 +130,7 @@ public interface IEmbeddingClient
     ApiResponse<Object> RemoveByIdWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Removes an embedded document by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -139,7 +139,7 @@ public interface IEmbeddingClient
     Task RemoveByIdAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Removes an embedded document by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -149,7 +149,7 @@ public interface IEmbeddingClient
 
 
     /// <summary>
-    ///  
+    /// Removes embedded documents by data type. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataType"></param>
@@ -157,7 +157,7 @@ public interface IEmbeddingClient
     void RemoveByType(string dataType);
 
     /// <summary>
-    ///  
+    /// Removes embedded documents by data type. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataType"></param>
@@ -165,7 +165,7 @@ public interface IEmbeddingClient
     ApiResponse<Object> RemoveByTypeWithHttpInfo(string dataType);
         
     /// <summary>
-    ///  
+    /// Removes embedded documents by data type. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataType"></param>
@@ -174,7 +174,7 @@ public interface IEmbeddingClient
     Task RemoveByTypeAsync(string dataType, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Removes embedded documents by data type. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataType"></param>
@@ -184,7 +184,7 @@ public interface IEmbeddingClient
 
 
     /// <summary>
-    ///  
+    /// Searches embedded documents by query. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="query"> (optional)</param>
@@ -194,7 +194,7 @@ public interface IEmbeddingClient
     List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
 
     /// <summary>
-    ///  
+    /// Searches embedded documents by query. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="query"> (optional)</param>
@@ -204,7 +204,7 @@ public interface IEmbeddingClient
     ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
         
     /// <summary>
-    ///  
+    /// Searches embedded documents by query. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="query"> (optional)</param>
@@ -215,7 +215,7 @@ public interface IEmbeddingClient
     Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Searches embedded documents by query. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="query"> (optional)</param>
@@ -301,7 +301,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -320,7 +320,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -339,7 +339,7 @@ public interface IEmbeddingClient
         } 
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -359,7 +359,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -378,7 +378,7 @@ public interface IEmbeddingClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -396,7 +396,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -414,7 +414,7 @@ public interface IEmbeddingClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -433,7 +433,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -451,7 +451,7 @@ public interface IEmbeddingClient
             }
         }    
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -469,7 +469,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -487,7 +487,7 @@ public interface IEmbeddingClient
         } 
 
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -506,7 +506,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -524,7 +524,7 @@ public interface IEmbeddingClient
             }
         }    
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -542,7 +542,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -560,7 +560,7 @@ public interface IEmbeddingClient
         } 
 
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -579,7 +579,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -597,7 +597,7 @@ public interface IEmbeddingClient
             }
         }    
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -617,7 +617,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -637,7 +637,7 @@ public interface IEmbeddingClient
         } 
 
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -658,7 +658,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -691,7 +691,7 @@ public interface IEmbeddingClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Updates an embedded document by replacing it.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -701,7 +701,7 @@ public interface IEmbeddingClient
         EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Updates an embedded document by replacing it.
         /// </summary>
         /// <remarks>
         /// 
@@ -713,7 +713,7 @@ public interface IEmbeddingClient
         /// <returns>ApiResponse of EmbeddedDocument</returns>
         ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new embedded document.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -722,7 +722,7 @@ public interface IEmbeddingClient
         EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new embedded document.
         /// </summary>
         /// <remarks>
         /// 
@@ -733,7 +733,7 @@ public interface IEmbeddingClient
         /// <returns>ApiResponse of EmbeddedDocument</returns>
         ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Removes an embedded document by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -742,7 +742,7 @@ public interface IEmbeddingClient
         void RemoveById(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Removes an embedded document by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -753,7 +753,7 @@ public interface IEmbeddingClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveByIdWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Removes embedded documents by data type.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -762,7 +762,7 @@ public interface IEmbeddingClient
         void RemoveByType(string dataType, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Removes embedded documents by data type.
         /// </summary>
         /// <remarks>
         /// 
@@ -773,7 +773,7 @@ public interface IEmbeddingClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveByTypeWithHttpInfo(string dataType, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Searches embedded documents by query.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -784,7 +784,7 @@ public interface IEmbeddingClient
         List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Searches embedded documents by query.
         /// </summary>
         /// <remarks>
         /// 
@@ -806,7 +806,7 @@ public interface IEmbeddingClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Updates an embedded document by replacing it.
         /// </summary>
         /// <remarks>
         /// 
@@ -820,7 +820,7 @@ public interface IEmbeddingClient
         System.Threading.Tasks.Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Updates an embedded document by replacing it.
         /// </summary>
         /// <remarks>
         /// 
@@ -833,7 +833,7 @@ public interface IEmbeddingClient
         /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
         System.Threading.Tasks.Task<ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new embedded document.
         /// </summary>
         /// <remarks>
         /// 
@@ -846,7 +846,7 @@ public interface IEmbeddingClient
         System.Threading.Tasks.Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new embedded document.
         /// </summary>
         /// <remarks>
         /// 
@@ -858,7 +858,7 @@ public interface IEmbeddingClient
         /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
         System.Threading.Tasks.Task<ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Removes an embedded document by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -871,7 +871,7 @@ public interface IEmbeddingClient
         System.Threading.Tasks.Task RemoveByIdAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Removes an embedded document by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -883,7 +883,7 @@ public interface IEmbeddingClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveByIdWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Removes embedded documents by data type.
         /// </summary>
         /// <remarks>
         /// 
@@ -896,7 +896,7 @@ public interface IEmbeddingClient
         System.Threading.Tasks.Task RemoveByTypeAsync(string dataType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Removes embedded documents by data type.
         /// </summary>
         /// <remarks>
         /// 
@@ -908,7 +908,7 @@ public interface IEmbeddingClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveByTypeWithHttpInfoAsync(string dataType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Searches embedded documents by query.
         /// </summary>
         /// <remarks>
         /// 
@@ -923,7 +923,7 @@ public interface IEmbeddingClient
         System.Threading.Tasks.Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Searches embedded documents by query.
         /// </summary>
         /// <remarks>
         /// 
@@ -1059,7 +1059,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1073,7 +1073,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1142,7 +1142,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1157,7 +1157,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an embedded document by replacing it. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1229,7 +1229,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -1242,7 +1242,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -1309,7 +1309,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -1323,7 +1323,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new embedded document. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
@@ -1393,7 +1393,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1405,7 +1405,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1469,7 +1469,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1482,7 +1482,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes an embedded document by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1549,7 +1549,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -1561,7 +1561,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -1631,7 +1631,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -1644,7 +1644,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Removes embedded documents by data type. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataType"></param>
@@ -1717,7 +1717,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -1732,7 +1732,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -1809,7 +1809,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>
@@ -1825,7 +1825,7 @@ public interface IEmbeddingClient
         }
 
         /// <summary>
-        ///  
+        /// Searches embedded documents by query. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"> (optional)</param>

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Message** | **string** |  | [optional] 
 **SessionId** | **Guid?** |  | [optional] 
 **Plan** | [**AgentPlan**](AgentPlan.md) |  | [optional] 
+**OrchestrationPlan** | [**OrchestrationPlan**](OrchestrationPlan.md) |  | [optional] 
 **ApprovalOptions** | **List&lt;string&gt;** |  | [optional] 
 **PlanId** | **Guid?** |  | [optional] 
 **ApprovalId** | **Guid?** |  | [optional] 

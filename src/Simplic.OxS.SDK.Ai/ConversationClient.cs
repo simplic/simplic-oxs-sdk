@@ -40,21 +40,21 @@ public interface IConversationClient
 
 
     /// <summary>
-    ///  
+    /// Gets all available context types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>List&lt;ContextModel&gt;</returns>
     List<ContextModel> GetContexts();
 
     /// <summary>
-    ///  
+    /// Gets all available context types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of List&lt;ContextModel&gt;</returns>
     ApiResponse<List<ContextModel>> GetContextsWithHttpInfo();
         
     /// <summary>
-    ///  
+    /// Gets all available context types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -62,7 +62,7 @@ public interface IConversationClient
     Task<List<ContextModel>> GetContextsAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets all available context types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -71,7 +71,7 @@ public interface IConversationClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -79,7 +79,7 @@ public interface IConversationClient
     void Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -87,7 +87,7 @@ public interface IConversationClient
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -96,7 +96,7 @@ public interface IConversationClient
     Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -106,7 +106,7 @@ public interface IConversationClient
 
 
     /// <summary>
-    ///  
+    /// Gets a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -114,7 +114,7 @@ public interface IConversationClient
     ConversationModel Get(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -122,7 +122,7 @@ public interface IConversationClient
     ApiResponse<ConversationModel> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -131,7 +131,7 @@ public interface IConversationClient
     Task<ConversationModel> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a conversation by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -141,7 +141,7 @@ public interface IConversationClient
 
 
     /// <summary>
-    ///  
+    /// Replies to an existing conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="replyToConversationRequest"> (optional)</param>
@@ -149,7 +149,7 @@ public interface IConversationClient
     MessageModel Reply(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?));
 
     /// <summary>
-    ///  
+    /// Replies to an existing conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="replyToConversationRequest"> (optional)</param>
@@ -157,7 +157,7 @@ public interface IConversationClient
     ApiResponse<MessageModel> ReplyWithHttpInfo(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?));
         
     /// <summary>
-    ///  
+    /// Replies to an existing conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="replyToConversationRequest"> (optional)</param>
@@ -166,7 +166,7 @@ public interface IConversationClient
     Task<MessageModel> ReplyAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Replies to an existing conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="replyToConversationRequest"> (optional)</param>
@@ -211,7 +211,7 @@ public interface IConversationClient
 
 
     /// <summary>
-    ///  
+    /// Starts a new conversation with the specified model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -219,7 +219,7 @@ public interface IConversationClient
     ConversationModel Start(StartConversationRequest? startConversationRequest = default(StartConversationRequest?));
 
     /// <summary>
-    ///  
+    /// Starts a new conversation with the specified model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -227,7 +227,7 @@ public interface IConversationClient
     ApiResponse<ConversationModel> StartWithHttpInfo(StartConversationRequest? startConversationRequest = default(StartConversationRequest?));
         
     /// <summary>
-    ///  
+    /// Starts a new conversation with the specified model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -236,7 +236,7 @@ public interface IConversationClient
     Task<ConversationModel> StartAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Starts a new conversation with the specified model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -355,7 +355,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;ContextModel&gt;</returns>
@@ -372,7 +372,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;ContextModel&gt;</returns>
@@ -389,7 +389,7 @@ public interface IConversationClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -407,7 +407,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -424,7 +424,7 @@ public interface IConversationClient
             }
         }    
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -442,7 +442,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -460,7 +460,7 @@ public interface IConversationClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -479,7 +479,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -497,7 +497,7 @@ public interface IConversationClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -515,7 +515,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -533,7 +533,7 @@ public interface IConversationClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -552,7 +552,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -570,7 +570,7 @@ public interface IConversationClient
             }
         }    
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -588,7 +588,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -606,7 +606,7 @@ public interface IConversationClient
         } 
 
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -625,7 +625,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -716,7 +716,7 @@ public interface IConversationClient
             }
         }    
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -734,7 +734,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -752,7 +752,7 @@ public interface IConversationClient
         } 
 
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -771,7 +771,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -875,7 +875,7 @@ public interface IConversationClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Gets all available context types.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -883,7 +883,7 @@ public interface IConversationClient
         List<ContextModel> GetContexts(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets all available context types.
         /// </summary>
         /// <remarks>
         /// 
@@ -893,7 +893,7 @@ public interface IConversationClient
         /// <returns>ApiResponse of List&lt;ContextModel&gt;</returns>
         ApiResponse<List<ContextModel>> GetContextsWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Deletes a conversation by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -902,7 +902,7 @@ public interface IConversationClient
         void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a conversation by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -913,7 +913,7 @@ public interface IConversationClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a conversation by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -922,7 +922,7 @@ public interface IConversationClient
         ConversationModel Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a conversation by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -933,7 +933,7 @@ public interface IConversationClient
         /// <returns>ApiResponse of ConversationModel</returns>
         ApiResponse<ConversationModel> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Replies to an existing conversation.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -942,7 +942,7 @@ public interface IConversationClient
         MessageModel Reply(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Replies to an existing conversation.
         /// </summary>
         /// <remarks>
         /// 
@@ -973,7 +973,7 @@ public interface IConversationClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ReplyStreamWithHttpInfo(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Starts a new conversation with the specified model.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -982,7 +982,7 @@ public interface IConversationClient
         ConversationModel Start(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Starts a new conversation with the specified model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1022,7 +1022,7 @@ public interface IConversationClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Gets all available context types.
         /// </summary>
         /// <remarks>
         /// 
@@ -1034,7 +1034,7 @@ public interface IConversationClient
         System.Threading.Tasks.Task<List<ContextModel>> GetContextsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets all available context types.
         /// </summary>
         /// <remarks>
         /// 
@@ -1045,7 +1045,7 @@ public interface IConversationClient
         /// <returns>Task of ApiResponse (List&lt;ContextModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ContextModel>>> GetContextsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Deletes a conversation by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1058,7 +1058,7 @@ public interface IConversationClient
         System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a conversation by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1070,7 +1070,7 @@ public interface IConversationClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a conversation by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1083,7 +1083,7 @@ public interface IConversationClient
         System.Threading.Tasks.Task<ConversationModel> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a conversation by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1095,7 +1095,7 @@ public interface IConversationClient
         /// <returns>Task of ApiResponse (ConversationModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConversationModel>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Replies to an existing conversation.
         /// </summary>
         /// <remarks>
         /// 
@@ -1108,7 +1108,7 @@ public interface IConversationClient
         System.Threading.Tasks.Task<MessageModel> ReplyAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Replies to an existing conversation.
         /// </summary>
         /// <remarks>
         /// 
@@ -1145,7 +1145,7 @@ public interface IConversationClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ReplyStreamWithHttpInfoAsync(ReplyToConversationRequest? replyToConversationRequest = default(ReplyToConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Starts a new conversation with the specified model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1158,7 +1158,7 @@ public interface IConversationClient
         System.Threading.Tasks.Task<ConversationModel> StartAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Starts a new conversation with the specified model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1317,7 +1317,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1329,7 +1329,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1391,7 +1391,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1404,7 +1404,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available context types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1469,7 +1469,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1481,7 +1481,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1545,7 +1545,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1558,7 +1558,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1625,7 +1625,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1638,7 +1638,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1702,7 +1702,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1716,7 +1716,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a conversation by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1783,7 +1783,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -1796,7 +1796,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -1863,7 +1863,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -1877,7 +1877,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Replies to an existing conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="replyToConversationRequest"> (optional)</param>
@@ -2109,7 +2109,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -2122,7 +2122,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -2189,7 +2189,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -2203,7 +2203,7 @@ public interface IConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new conversation with the specified model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>

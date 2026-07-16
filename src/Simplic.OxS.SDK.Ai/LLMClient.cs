@@ -40,21 +40,21 @@ public interface ILLMClient
 
 
     /// <summary>
-    ///  
+    /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>List&lt;LLMTypeModel&gt;</returns>
     List<LLMTypeModel> GetAll();
 
     /// <summary>
-    ///  
+    /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
     ApiResponse<List<LLMTypeModel>> GetAllWithHttpInfo();
         
     /// <summary>
-    ///  
+    /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -62,7 +62,7 @@ public interface ILLMClient
     Task<List<LLMTypeModel>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -145,7 +145,7 @@ public interface ILLMClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;LLMTypeModel&gt;</returns>
@@ -162,7 +162,7 @@ public interface ILLMClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
@@ -179,7 +179,7 @@ public interface ILLMClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -197,7 +197,7 @@ public interface ILLMClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -227,7 +227,7 @@ public interface ILLMClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Gets all available LLM providers.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -235,7 +235,7 @@ public interface ILLMClient
         List<LLMTypeModel> GetAll(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets all available LLM providers.
         /// </summary>
         /// <remarks>
         /// 
@@ -254,7 +254,7 @@ public interface ILLMClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Gets all available LLM providers.
         /// </summary>
         /// <remarks>
         /// 
@@ -266,7 +266,7 @@ public interface ILLMClient
         System.Threading.Tasks.Task<List<LLMTypeModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets all available LLM providers.
         /// </summary>
         /// <remarks>
         /// 
@@ -399,7 +399,7 @@ public interface ILLMClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -411,7 +411,7 @@ public interface ILLMClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -473,7 +473,7 @@ public interface ILLMClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -486,7 +486,7 @@ public interface ILLMClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>

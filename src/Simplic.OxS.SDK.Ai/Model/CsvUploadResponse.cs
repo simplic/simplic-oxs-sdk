@@ -28,44 +28,34 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// Model representing a comparison result.
+    /// Response model for the CSV upload / add-tuples endpoint.
     /// </summary>
-    [DataContract(Name = "CompareResultModel")]
-    public partial class CompareResultModel : IEquatable<CompareResultModel>, IValidatableObject
+    [DataContract(Name = "CsvUploadResponse")]
+    public partial class CsvUploadResponse : IEquatable<CsvUploadResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompareResultModel" /> class.
+        /// Initializes a new instance of the <see cref="CsvUploadResponse" /> class.
         /// </summary>
-        /// <param name="key">Gets or sets the key..</param>
-        /// <param name="similarity">Gets or sets the similarity..</param>
-        /// <param name="predictedLabel">Gets or sets the predicted label..</param>
-        public CompareResultModel(string key = default(string), double similarity = default(double), string predictedLabel = default(string))
+        /// <param name="invalidItems">Gets or sets items that could not be imported (duplicate key or validation failure)..</param>
+        /// <param name="dataSet">dataSet.</param>
+        public CsvUploadResponse(List<DataSetItemModel> invalidItems = default(List<DataSetItemModel>), DataSetModel dataSet = default(DataSetModel))
         {
-            this.Key = key;
-            this.Similarity = similarity;
-            this.PredictedLabel = predictedLabel;
+            this.InvalidItems = invalidItems;
+            this.DataSet = dataSet;
         }
 
         /// <summary>
-        /// Gets or sets the key.
+        /// Gets or sets items that could not be imported (duplicate key or validation failure).
         /// </summary>
-        /// <value>Gets or sets the key.</value>
-        [DataMember(Name = "key", EmitDefaultValue = true)]
-        public string Key { get; set; }
+        /// <value>Gets or sets items that could not be imported (duplicate key or validation failure).</value>
+        [DataMember(Name = "invalidItems", EmitDefaultValue = true)]
+        public List<DataSetItemModel> InvalidItems { get; set; }
 
         /// <summary>
-        /// Gets or sets the similarity.
+        /// Gets or Sets DataSet
         /// </summary>
-        /// <value>Gets or sets the similarity.</value>
-        [DataMember(Name = "similarity", EmitDefaultValue = false)]
-        public double Similarity { get; set; }
-
-        /// <summary>
-        /// Gets or sets the predicted label.
-        /// </summary>
-        /// <value>Gets or sets the predicted label.</value>
-        [DataMember(Name = "predictedLabel", EmitDefaultValue = true)]
-        public string PredictedLabel { get; set; }
+        [DataMember(Name = "dataSet", EmitDefaultValue = false)]
+        public DataSetModel DataSet { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,10 +64,9 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CompareResultModel {\n");
-            sb.Append("  Key: ").Append(Key).Append("\n");
-            sb.Append("  Similarity: ").Append(Similarity).Append("\n");
-            sb.Append("  PredictedLabel: ").Append(PredictedLabel).Append("\n");
+            sb.Append("class CsvUploadResponse {\n");
+            sb.Append("  InvalidItems: ").Append(InvalidItems).Append("\n");
+            sb.Append("  DataSet: ").Append(DataSet).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +87,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CompareResultModel);
+            return this.Equals(input as CsvUploadResponse);
         }
 
         /// <summary>
-        /// Returns true if CompareResultModel instances are equal
+        /// Returns true if CsvUploadResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CompareResultModel to be compared</param>
+        /// <param name="input">Instance of CsvUploadResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CompareResultModel input)
+        public bool Equals(CsvUploadResponse input)
         {
             if (input == null)
             {
@@ -114,18 +103,15 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
+                    this.InvalidItems == input.InvalidItems ||
+                    this.InvalidItems != null &&
+                    input.InvalidItems != null &&
+                    this.InvalidItems.SequenceEqual(input.InvalidItems)
                 ) && 
                 (
-                    this.Similarity == input.Similarity ||
-                    this.Similarity.Equals(input.Similarity)
-                ) && 
-                (
-                    this.PredictedLabel == input.PredictedLabel ||
-                    (this.PredictedLabel != null &&
-                    this.PredictedLabel.Equals(input.PredictedLabel))
+                    this.DataSet == input.DataSet ||
+                    (this.DataSet != null &&
+                    this.DataSet.Equals(input.DataSet))
                 );
         }
 
@@ -138,14 +124,13 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Key != null)
+                if (this.InvalidItems != null)
                 {
-                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                    hashCode = (hashCode * 59) + this.InvalidItems.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Similarity.GetHashCode();
-                if (this.PredictedLabel != null)
+                if (this.DataSet != null)
                 {
-                    hashCode = (hashCode * 59) + this.PredictedLabel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DataSet.GetHashCode();
                 }
                 return hashCode;
             }

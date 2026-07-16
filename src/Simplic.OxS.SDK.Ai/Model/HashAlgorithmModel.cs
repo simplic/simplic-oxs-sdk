@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// HashAlgorithmModel
+    /// Model representing a hash algorithm.
     /// </summary>
     [DataContract(Name = "HashAlgorithmModel")]
     public partial class HashAlgorithmModel : IEquatable<HashAlgorithmModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="HashAlgorithmModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="name">Gets or sets the algorithm name..</param>
         public HashAlgorithmModel(string name = default(string))
         {
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the algorithm name.
         /// </summary>
+        /// <value>Gets or sets the algorithm name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

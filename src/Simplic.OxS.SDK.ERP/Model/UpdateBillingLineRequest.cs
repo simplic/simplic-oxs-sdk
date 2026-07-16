@@ -40,6 +40,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="date">Gets or sets the date associated with this billing line.  A billing line stores all necessary information to create a transaction based on itself or a  set of billing lines..</param>
         /// <param name="deliveryDate">Gets or sets the delivery date associated with this billing line..</param>
         /// <param name="text">Gets or sets the text describing this billing line..</param>
+        /// <param name="sourceText">Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created..</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="singlePrice">Gets or sets the price for a single unit of the item or service described  by this billing line..</param>
         /// <param name="totalPrice">Gets or sets the total price of the item or service described by this billing line..</param>
@@ -53,12 +54,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="addon">Gets or sets a set of additional properties that can be used to store any  additional information related to this billing line..</param>
         /// <param name="sourceBillingLineReference">sourceBillingLineReference.</param>
-        public UpdateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), string text = default(string), BillingLineQuantityRequest quantity = default(BillingLineQuantityRequest), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), Guid? taxRateId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), SourceBillingLineReferenceRequest sourceBillingLineReference = default(SourceBillingLineReferenceRequest))
+        public UpdateBillingLineRequest(TransactionContactRequest financialPartner = default(TransactionContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), string text = default(string), string sourceText = default(string), BillingLineQuantityRequest quantity = default(BillingLineQuantityRequest), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), Guid? taxRateId = default(Guid?), List<CostCenterAssignmentRequest> costCenters = default(List<CostCenterAssignmentRequest>), List<CostCenterAssignmentRequest> costObjects = default(List<CostCenterAssignmentRequest>), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), SourceBillingLineReferenceRequest sourceBillingLineReference = default(SourceBillingLineReferenceRequest))
         {
             this.FinancialPartner = financialPartner;
             this.Date = date;
             this.DeliveryDate = deliveryDate;
             this.Text = text;
+            this.SourceText = sourceText;
             this.Quantity = quantity;
             this.SinglePrice = singlePrice;
             this.TotalPrice = totalPrice;
@@ -100,6 +102,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the text describing this billing line.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
+
+        /// <summary>
+        /// Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created.
+        /// </summary>
+        /// <value>Gets or sets the text describing this billing line in case it was  explicitly provided when the original billing line was created.</value>
+        [DataMember(Name = "sourceText", EmitDefaultValue = true)]
+        public string SourceText { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
@@ -202,6 +211,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  SourceText: ").Append(SourceText).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
@@ -269,6 +279,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
+                ) && 
+                (
+                    this.SourceText == input.SourceText ||
+                    (this.SourceText != null &&
+                    this.SourceText.Equals(input.SourceText))
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
@@ -365,6 +380,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Text != null)
                 {
                     hashCode = (hashCode * 59) + this.Text.GetHashCode();
+                }
+                if (this.SourceText != null)
+                {
+                    hashCode = (hashCode * 59) + this.SourceText.GetHashCode();
                 }
                 if (this.Quantity != null)
                 {

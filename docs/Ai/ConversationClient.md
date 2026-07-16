@@ -4,19 +4,19 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetContexts**](ConversationClient.md#conversationgetcontextsget) | **GET** /Conversation/get-contexts |  |
-| [**Delete**](ConversationClient.md#conversationiddelete) | **DELETE** /Conversation/{id} |  |
-| [**Get**](ConversationClient.md#conversationidget) | **GET** /Conversation/{id} |  |
-| [**Reply**](ConversationClient.md#conversationreplypost) | **POST** /Conversation/reply |  |
+| [**GetContexts**](ConversationClient.md#conversationgetcontextsget) | **GET** /Conversation/get-contexts | Gets all available context types. |
+| [**Delete**](ConversationClient.md#conversationiddelete) | **DELETE** /Conversation/{id} | Deletes a conversation by ID. |
+| [**Get**](ConversationClient.md#conversationidget) | **GET** /Conversation/{id} | Gets a conversation by ID. |
+| [**Reply**](ConversationClient.md#conversationreplypost) | **POST** /Conversation/reply | Replies to an existing conversation. |
 | [**ReplyStream**](ConversationClient.md#conversationreplystreampost) | **POST** /Conversation/reply-stream | Reply to a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete message as JSON data. |
-| [**Start**](ConversationClient.md#conversationstartpost) | **POST** /Conversation/start |  |
+| [**Start**](ConversationClient.md#conversationstartpost) | **POST** /Conversation/start | Starts a new conversation with the specified model. |
 | [**StartStream**](ConversationClient.md#conversationstartstreampost) | **POST** /Conversation/start-stream | Start a conversation with Server-Sent Events streaming. Streams reasoning and content tokens as they arrive from the LLM. Event types: \&quot;reasoning\&quot; (thinking tokens) and \&quot;content\&quot; (response tokens). Final event is \&quot;done\&quot; with the complete conversation as JSON data. |
 
 <a id="conversationgetcontextsget"></a>
 # **GetContexts**
 > List&lt;ContextModel&gt; GetContexts ()
 
-
+Gets all available context types.
 
 ### Example
 ```csharp
@@ -44,6 +44,7 @@ namespace Example
 
             try
             {
+                // Gets all available context types.
                 List<ContextModel> result = apiInstance.GetContexts();
                 Debug.WriteLine(result);
             }
@@ -64,6 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets all available context types.
     ApiResponse<List<ContextModel>> response = apiInstance.GetContextsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -106,7 +108,7 @@ This endpoint does not need any parameter.
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a conversation by ID.
 
 ### Example
 ```csharp
@@ -135,6 +137,7 @@ namespace Example
 
             try
             {
+                // Deletes a conversation by ID.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -154,6 +157,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a conversation by ID.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -197,7 +201,7 @@ void (empty response body)
 # **Get**
 > ConversationModel Get (Guid id)
 
-
+Gets a conversation by ID.
 
 ### Example
 ```csharp
@@ -226,6 +230,7 @@ namespace Example
 
             try
             {
+                // Gets a conversation by ID.
                 ConversationModel result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -246,6 +251,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a conversation by ID.
     ApiResponse<ConversationModel> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -292,7 +298,7 @@ catch (ApiException e)
 # **Reply**
 > MessageModel Reply (ReplyToConversationRequest? replyToConversationRequest = null)
 
-
+Replies to an existing conversation.
 
 ### Example
 ```csharp
@@ -321,6 +327,7 @@ namespace Example
 
             try
             {
+                // Replies to an existing conversation.
                 MessageModel result = apiInstance.Reply(replyToConversationRequest);
                 Debug.WriteLine(result);
             }
@@ -341,6 +348,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Replies to an existing conversation.
     ApiResponse<MessageModel> response = apiInstance.ReplyWithHttpInfo(replyToConversationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -480,7 +488,7 @@ void (empty response body)
 # **Start**
 > ConversationModel Start (StartConversationRequest? startConversationRequest = null)
 
-
+Starts a new conversation with the specified model.
 
 ### Example
 ```csharp
@@ -509,6 +517,7 @@ namespace Example
 
             try
             {
+                // Starts a new conversation with the specified model.
                 ConversationModel result = apiInstance.Start(startConversationRequest);
                 Debug.WriteLine(result);
             }
@@ -529,6 +538,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Starts a new conversation with the specified model.
     ApiResponse<ConversationModel> response = apiInstance.StartWithHttpInfo(startConversationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -40,7 +40,7 @@ public interface IDocumentClient
 
 
     /// <summary>
-    ///  
+    /// Processes a document by sending a notification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="processDocumentRequest"> (optional)</param>
@@ -48,7 +48,7 @@ public interface IDocumentClient
     void Process(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?));
 
     /// <summary>
-    ///  
+    /// Processes a document by sending a notification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="processDocumentRequest"> (optional)</param>
@@ -56,7 +56,7 @@ public interface IDocumentClient
     ApiResponse<Object> ProcessWithHttpInfo(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?));
         
     /// <summary>
-    ///  
+    /// Processes a document by sending a notification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="processDocumentRequest"> (optional)</param>
@@ -65,7 +65,7 @@ public interface IDocumentClient
     Task ProcessAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Processes a document by sending a notification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="processDocumentRequest"> (optional)</param>
@@ -149,7 +149,7 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -167,7 +167,7 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -185,7 +185,7 @@ public interface IDocumentClient
         } 
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -204,7 +204,7 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -235,7 +235,7 @@ public interface IDocumentClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Processes a document by sending a notification.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -244,7 +244,7 @@ public interface IDocumentClient
         void Process(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Processes a document by sending a notification.
         /// </summary>
         /// <remarks>
         /// 
@@ -264,7 +264,7 @@ public interface IDocumentClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Processes a document by sending a notification.
         /// </summary>
         /// <remarks>
         /// 
@@ -277,7 +277,7 @@ public interface IDocumentClient
         System.Threading.Tasks.Task ProcessAsync(ProcessDocumentRequest? processDocumentRequest = default(ProcessDocumentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Processes a document by sending a notification.
         /// </summary>
         /// <remarks>
         /// 
@@ -411,7 +411,7 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -423,7 +423,7 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -490,7 +490,7 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>
@@ -503,7 +503,7 @@ public interface IDocumentClient
         }
 
         /// <summary>
-        ///  
+        /// Processes a document by sending a notification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocumentRequest"> (optional)</param>

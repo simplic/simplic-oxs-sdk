@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.Ai.TextClassificationModelResponse
+Response model representing a text classification model.
 
 ## Properties
 

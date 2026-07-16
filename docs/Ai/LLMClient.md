@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetAll**](LLMClient.md#llmgetallget) | **GET** /LLM/get-all |  |
+| [**GetAll**](LLMClient.md#llmgetallget) | **GET** /LLM/get-all | Gets all available LLM providers. |
 
 <a id="llmgetallget"></a>
 # **GetAll**
 > List&lt;LLMTypeModel&gt; GetAll ()
 
-
+Gets all available LLM providers.
 
 ### Example
 ```csharp
@@ -38,6 +38,7 @@ namespace Example
 
             try
             {
+                // Gets all available LLM providers.
                 List<LLMTypeModel> result = apiInstance.GetAll();
                 Debug.WriteLine(result);
             }
@@ -58,6 +59,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets all available LLM providers.
     ApiResponse<List<LLMTypeModel>> response = apiInstance.GetAllWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

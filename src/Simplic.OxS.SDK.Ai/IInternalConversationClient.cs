@@ -40,7 +40,7 @@ public interface IIInternalConversationClient
 
 
     /// <summary>
-    ///  
+    /// Starts a new internal conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -48,7 +48,7 @@ public interface IIInternalConversationClient
     ConversationModel Start(StartConversationRequest? startConversationRequest = default(StartConversationRequest?));
 
     /// <summary>
-    ///  
+    /// Starts a new internal conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -56,7 +56,7 @@ public interface IIInternalConversationClient
     ApiResponse<ConversationModel> StartWithHttpInfo(StartConversationRequest? startConversationRequest = default(StartConversationRequest?));
         
     /// <summary>
-    ///  
+    /// Starts a new internal conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -65,7 +65,7 @@ public interface IIInternalConversationClient
     Task<ConversationModel> StartAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Starts a new internal conversation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="startConversationRequest"> (optional)</param>
@@ -149,7 +149,7 @@ public interface IIInternalConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -167,7 +167,7 @@ public interface IIInternalConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -185,7 +185,7 @@ public interface IIInternalConversationClient
         } 
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -204,7 +204,7 @@ public interface IIInternalConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -235,7 +235,7 @@ public interface IIInternalConversationClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Starts a new internal conversation.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -244,7 +244,7 @@ public interface IIInternalConversationClient
         ConversationModel Start(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Starts a new internal conversation.
         /// </summary>
         /// <remarks>
         /// 
@@ -264,7 +264,7 @@ public interface IIInternalConversationClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Starts a new internal conversation.
         /// </summary>
         /// <remarks>
         /// 
@@ -277,7 +277,7 @@ public interface IIInternalConversationClient
         System.Threading.Tasks.Task<ConversationModel> StartAsync(StartConversationRequest? startConversationRequest = default(StartConversationRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Starts a new internal conversation.
         /// </summary>
         /// <remarks>
         /// 
@@ -411,7 +411,7 @@ public interface IIInternalConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -424,7 +424,7 @@ public interface IIInternalConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -491,7 +491,7 @@ public interface IIInternalConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>
@@ -505,7 +505,7 @@ public interface IIInternalConversationClient
         }
 
         /// <summary>
-        ///  
+        /// Starts a new internal conversation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startConversationRequest"> (optional)</param>

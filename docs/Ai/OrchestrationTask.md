@@ -1,12 +1,13 @@
-# Simplic.OxS.SDK.Ai.DataSetModel
-Response model representing a data set.
+# Simplic.OxS.SDK.Ai.OrchestrationTask
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** | Gets or sets the data set identifier. | [optional] 
-**Name** | **string** | Gets or sets the data set name. | [optional] 
+**TaskId** | **string** |  | [optional] 
+**Prompt** | **string** |  | [optional] 
+**SubAgentName** | **string** |  | [optional] 
+**DependsOn** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

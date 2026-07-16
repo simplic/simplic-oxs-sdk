@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.Ai.CompareResultModel
+Model representing a comparison result.
 
 ## Properties
 

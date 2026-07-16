@@ -4,15 +4,15 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ClassifyTextAsync**](TextClassificationClient.md#textclassificationclassifytextasyncpost) | **POST** /TextClassification/classify-text-async |  |
-| [**GetClassifyTextAsyncState**](TextClassificationClient.md#textclassificationgetclassifytextasyncstateidget) | **GET** /TextClassification/get-classify-text-async-state/{id} |  |
-| [**Post**](TextClassificationClient.md#textclassificationpost) | **POST** /TextClassification |  |
+| [**ClassifyTextAsync**](TextClassificationClient.md#textclassificationclassifytextasyncpost) | **POST** /TextClassification/classify-text-async | Initiates asynchronous text classification. |
+| [**GetClassifyTextAsyncState**](TextClassificationClient.md#textclassificationgetclassifytextasyncstateidget) | **GET** /TextClassification/get-classify-text-async-state/{id} | Gets the state of an asynchronous text classification job. |
+| [**Post**](TextClassificationClient.md#textclassificationpost) | **POST** /TextClassification | Tests the remote service invocation. |
 
 <a id="textclassificationclassifytextasyncpost"></a>
 # **ClassifyTextAsync**
 > ClassifyTextAsyncResponse ClassifyTextAsync (ClassifyTextAsyncRequest? classifyTextAsyncRequest = null)
 
-
+Initiates asynchronous text classification.
 
 ### Example
 ```csharp
@@ -41,6 +41,7 @@ namespace Example
 
             try
             {
+                // Initiates asynchronous text classification.
                 ClassifyTextAsyncResponse result = apiInstance.ClassifyTextAsync(classifyTextAsyncRequest);
                 Debug.WriteLine(result);
             }
@@ -61,6 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Initiates asynchronous text classification.
     ApiResponse<ClassifyTextAsyncResponse> response = apiInstance.ClassifyTextAsyncWithHttpInfo(classifyTextAsyncRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -107,7 +109,7 @@ catch (ApiException e)
 # **GetClassifyTextAsyncState**
 > List&lt;TextClassificationResultResponse&gt; GetClassifyTextAsyncState (Guid id)
 
-
+Gets the state of an asynchronous text classification job.
 
 ### Example
 ```csharp
@@ -136,6 +138,7 @@ namespace Example
 
             try
             {
+                // Gets the state of an asynchronous text classification job.
                 List<TextClassificationResultResponse> result = apiInstance.GetClassifyTextAsyncState(id);
                 Debug.WriteLine(result);
             }
@@ -156,6 +159,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets the state of an asynchronous text classification job.
     ApiResponse<List<TextClassificationResultResponse>> response = apiInstance.GetClassifyTextAsyncStateWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -202,7 +206,7 @@ catch (ApiException e)
 # **Post**
 > void Post ()
 
-
+Tests the remote service invocation.
 
 ### Example
 ```csharp
@@ -230,6 +234,7 @@ namespace Example
 
             try
             {
+                // Tests the remote service invocation.
                 apiInstance.Post();
             }
             catch (ApiException  e)
@@ -249,6 +254,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Tests the remote service invocation.
     apiInstance.PostWithHttpInfo();
 }
 catch (ApiException e)

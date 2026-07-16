@@ -40,7 +40,7 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Cancels training of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -48,7 +48,7 @@ public interface ITextClassificationModelClient
     StateResponse CancelTraining(Guid modelId);
 
     /// <summary>
-    ///  
+    /// Cancels training of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -56,7 +56,7 @@ public interface ITextClassificationModelClient
     ApiResponse<StateResponse> CancelTrainingWithHttpInfo(Guid modelId);
         
     /// <summary>
-    ///  
+    /// Cancels training of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -65,7 +65,7 @@ public interface ITextClassificationModelClient
     Task<StateResponse> CancelTrainingAsync(Guid modelId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Cancels training of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -75,7 +75,7 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Checks the training status of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -83,7 +83,7 @@ public interface ITextClassificationModelClient
     StateResponse CheckTrainingStatus(Guid modelId);
 
     /// <summary>
-    ///  
+    /// Checks the training status of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -91,7 +91,7 @@ public interface ITextClassificationModelClient
     ApiResponse<StateResponse> CheckTrainingStatusWithHttpInfo(Guid modelId);
         
     /// <summary>
-    ///  
+    /// Checks the training status of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -100,7 +100,7 @@ public interface ITextClassificationModelClient
     Task<StateResponse> CheckTrainingStatusAsync(Guid modelId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Checks the training status of a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -110,7 +110,7 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Gets a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -118,7 +118,7 @@ public interface ITextClassificationModelClient
     TextClassificationModelResponse Get(Guid? id = default(Guid?));
 
     /// <summary>
-    ///  
+    /// Gets a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -126,7 +126,7 @@ public interface ITextClassificationModelClient
     ApiResponse<TextClassificationModelResponse> GetWithHttpInfo(Guid? id = default(Guid?));
         
     /// <summary>
-    ///  
+    /// Gets a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -135,7 +135,7 @@ public interface ITextClassificationModelClient
     Task<TextClassificationModelResponse> GetAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -145,21 +145,21 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Gets the available text classification model types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>List&lt;TextClassificationModelDefinition&gt;</returns>
     List<TextClassificationModelDefinition> GetTypes();
 
     /// <summary>
-    ///  
+    /// Gets the available text classification model types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of List&lt;TextClassificationModelDefinition&gt;</returns>
     ApiResponse<List<TextClassificationModelDefinition>> GetTypesWithHttpInfo();
         
     /// <summary>
-    ///  
+    /// Gets the available text classification model types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -167,7 +167,7 @@ public interface ITextClassificationModelClient
     Task<List<TextClassificationModelDefinition>> GetTypesAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets the available text classification model types. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -176,7 +176,7 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -184,7 +184,7 @@ public interface ITextClassificationModelClient
     void Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -192,7 +192,7 @@ public interface ITextClassificationModelClient
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -201,7 +201,7 @@ public interface ITextClassificationModelClient
     Task DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a text classification model by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -211,7 +211,7 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Updates a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -220,7 +220,7 @@ public interface ITextClassificationModelClient
     TextClassificationModelResponse Patch(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?));
 
     /// <summary>
-    ///  
+    /// Updates a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -229,7 +229,7 @@ public interface ITextClassificationModelClient
     ApiResponse<TextClassificationModelResponse> PatchWithHttpInfo(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?));
         
     /// <summary>
-    ///  
+    /// Updates a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -239,7 +239,7 @@ public interface ITextClassificationModelClient
     Task<TextClassificationModelResponse> PatchAsync(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Updates a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -250,7 +250,7 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Creates a new text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -258,7 +258,7 @@ public interface ITextClassificationModelClient
     TextClassificationModelResponse Post(CreateTextClassificationModelRequest? createTextClassificationModelRequest = default(CreateTextClassificationModelRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -266,7 +266,7 @@ public interface ITextClassificationModelClient
     ApiResponse<TextClassificationModelResponse> PostWithHttpInfo(CreateTextClassificationModelRequest? createTextClassificationModelRequest = default(CreateTextClassificationModelRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -275,7 +275,7 @@ public interface ITextClassificationModelClient
     Task<TextClassificationModelResponse> PostAsync(CreateTextClassificationModelRequest? createTextClassificationModelRequest = default(CreateTextClassificationModelRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -285,7 +285,7 @@ public interface ITextClassificationModelClient
 
 
     /// <summary>
-    ///  
+    /// Starts training a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -294,7 +294,7 @@ public interface ITextClassificationModelClient
     StateResponse StartTraining(Guid modelId, System.IO.Stream? formFile = default(System.IO.Stream?));
 
     /// <summary>
-    ///  
+    /// Starts training a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -303,7 +303,7 @@ public interface ITextClassificationModelClient
     ApiResponse<StateResponse> StartTrainingWithHttpInfo(Guid modelId, System.IO.Stream? formFile = default(System.IO.Stream?));
         
     /// <summary>
-    ///  
+    /// Starts training a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -313,7 +313,7 @@ public interface ITextClassificationModelClient
     Task<StateResponse> StartTrainingAsync(Guid modelId, System.IO.Stream? formFile = default(System.IO.Stream?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Starts training a text classification model. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="modelId"></param>
@@ -398,7 +398,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -416,7 +416,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -434,7 +434,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -453,7 +453,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -471,7 +471,7 @@ public interface ITextClassificationModelClient
             }
         }    
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -489,7 +489,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -507,7 +507,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -526,7 +526,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -544,7 +544,7 @@ public interface ITextClassificationModelClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -562,7 +562,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -580,7 +580,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -599,7 +599,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -617,7 +617,7 @@ public interface ITextClassificationModelClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;TextClassificationModelDefinition&gt;</returns>
@@ -634,7 +634,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;TextClassificationModelDefinition&gt;</returns>
@@ -651,7 +651,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -669,7 +669,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -686,7 +686,7 @@ public interface ITextClassificationModelClient
             }
         }    
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -704,7 +704,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -722,7 +722,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -741,7 +741,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -759,7 +759,7 @@ public interface ITextClassificationModelClient
             }
         }    
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -778,7 +778,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -797,7 +797,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -817,7 +817,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -836,7 +836,7 @@ public interface ITextClassificationModelClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -854,7 +854,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -872,7 +872,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -891,7 +891,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -909,7 +909,7 @@ public interface ITextClassificationModelClient
             }
         }    
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -928,7 +928,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -947,7 +947,7 @@ public interface ITextClassificationModelClient
         } 
 
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -967,7 +967,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -999,7 +999,7 @@ public interface ITextClassificationModelClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Cancels training of a text classification model.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1008,7 +1008,7 @@ public interface ITextClassificationModelClient
         StateResponse CancelTraining(Guid modelId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Cancels training of a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1019,7 +1019,7 @@ public interface ITextClassificationModelClient
         /// <returns>ApiResponse of StateResponse</returns>
         ApiResponse<StateResponse> CancelTrainingWithHttpInfo(Guid modelId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Checks the training status of a text classification model.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1028,7 +1028,7 @@ public interface ITextClassificationModelClient
         StateResponse CheckTrainingStatus(Guid modelId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Checks the training status of a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1039,7 +1039,7 @@ public interface ITextClassificationModelClient
         /// <returns>ApiResponse of StateResponse</returns>
         ApiResponse<StateResponse> CheckTrainingStatusWithHttpInfo(Guid modelId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a text classification model by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1048,7 +1048,7 @@ public interface ITextClassificationModelClient
         TextClassificationModelResponse Get(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a text classification model by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1059,7 +1059,7 @@ public interface ITextClassificationModelClient
         /// <returns>ApiResponse of TextClassificationModelResponse</returns>
         ApiResponse<TextClassificationModelResponse> GetWithHttpInfo(Guid? id = default(Guid?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets the available text classification model types.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1067,7 +1067,7 @@ public interface ITextClassificationModelClient
         List<TextClassificationModelDefinition> GetTypes(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets the available text classification model types.
         /// </summary>
         /// <remarks>
         /// 
@@ -1077,7 +1077,7 @@ public interface ITextClassificationModelClient
         /// <returns>ApiResponse of List&lt;TextClassificationModelDefinition&gt;</returns>
         ApiResponse<List<TextClassificationModelDefinition>> GetTypesWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Deletes a text classification model by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1086,7 +1086,7 @@ public interface ITextClassificationModelClient
         void Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a text classification model by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1097,7 +1097,7 @@ public interface ITextClassificationModelClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Updates a text classification model.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1107,7 +1107,7 @@ public interface ITextClassificationModelClient
         TextClassificationModelResponse Patch(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Updates a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1119,7 +1119,7 @@ public interface ITextClassificationModelClient
         /// <returns>ApiResponse of TextClassificationModelResponse</returns>
         ApiResponse<TextClassificationModelResponse> PatchWithHttpInfo(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new text classification model.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -1128,7 +1128,7 @@ public interface ITextClassificationModelClient
         TextClassificationModelResponse Post(CreateTextClassificationModelRequest? createTextClassificationModelRequest = default(CreateTextClassificationModelRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1139,7 +1139,7 @@ public interface ITextClassificationModelClient
         /// <returns>ApiResponse of TextClassificationModelResponse</returns>
         ApiResponse<TextClassificationModelResponse> PostWithHttpInfo(CreateTextClassificationModelRequest? createTextClassificationModelRequest = default(CreateTextClassificationModelRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Starts training a text classification model.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1149,7 +1149,7 @@ public interface ITextClassificationModelClient
         StateResponse StartTraining(Guid modelId, System.IO.Stream? formFile = default(System.IO.Stream?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Starts training a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1170,7 +1170,7 @@ public interface ITextClassificationModelClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Cancels training of a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1183,7 +1183,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task<StateResponse> CancelTrainingAsync(Guid modelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Cancels training of a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1195,7 +1195,7 @@ public interface ITextClassificationModelClient
         /// <returns>Task of ApiResponse (StateResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<StateResponse>> CancelTrainingWithHttpInfoAsync(Guid modelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Checks the training status of a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1208,7 +1208,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task<StateResponse> CheckTrainingStatusAsync(Guid modelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Checks the training status of a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1220,7 +1220,7 @@ public interface ITextClassificationModelClient
         /// <returns>Task of ApiResponse (StateResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<StateResponse>> CheckTrainingStatusWithHttpInfoAsync(Guid modelId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a text classification model by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1233,7 +1233,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task<TextClassificationModelResponse> GetAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a text classification model by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1245,7 +1245,7 @@ public interface ITextClassificationModelClient
         /// <returns>Task of ApiResponse (TextClassificationModelResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TextClassificationModelResponse>> GetWithHttpInfoAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets the available text classification model types.
         /// </summary>
         /// <remarks>
         /// 
@@ -1257,7 +1257,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task<List<TextClassificationModelDefinition>> GetTypesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets the available text classification model types.
         /// </summary>
         /// <remarks>
         /// 
@@ -1268,7 +1268,7 @@ public interface ITextClassificationModelClient
         /// <returns>Task of ApiResponse (List&lt;TextClassificationModelDefinition&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TextClassificationModelDefinition>>> GetTypesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Deletes a text classification model by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1281,7 +1281,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a text classification model by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1293,7 +1293,7 @@ public interface ITextClassificationModelClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Updates a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1307,7 +1307,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task<TextClassificationModelResponse> PatchAsync(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Updates a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1320,7 +1320,7 @@ public interface ITextClassificationModelClient
         /// <returns>Task of ApiResponse (TextClassificationModelResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TextClassificationModelResponse>> PatchWithHttpInfoAsync(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1333,7 +1333,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task<TextClassificationModelResponse> PostAsync(CreateTextClassificationModelRequest? createTextClassificationModelRequest = default(CreateTextClassificationModelRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1345,7 +1345,7 @@ public interface ITextClassificationModelClient
         /// <returns>Task of ApiResponse (TextClassificationModelResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TextClassificationModelResponse>> PostWithHttpInfoAsync(CreateTextClassificationModelRequest? createTextClassificationModelRequest = default(CreateTextClassificationModelRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Starts training a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1359,7 +1359,7 @@ public interface ITextClassificationModelClient
         System.Threading.Tasks.Task<StateResponse> StartTrainingAsync(Guid modelId, System.IO.Stream? formFile = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Starts training a text classification model.
         /// </summary>
         /// <remarks>
         /// 
@@ -1494,7 +1494,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1507,7 +1507,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1571,7 +1571,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1585,7 +1585,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Cancels training of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1652,7 +1652,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1665,7 +1665,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1729,7 +1729,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1743,7 +1743,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Checks the training status of a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -1810,7 +1810,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1823,7 +1823,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1890,7 +1890,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1904,7 +1904,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1974,7 +1974,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1986,7 +1986,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -2048,7 +2048,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -2061,7 +2061,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the available text classification model types. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -2126,7 +2126,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2138,7 +2138,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2202,7 +2202,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2215,7 +2215,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a text classification model by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2282,7 +2282,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2296,7 +2296,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2365,7 +2365,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2380,7 +2380,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Updates a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2452,7 +2452,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -2465,7 +2465,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -2532,7 +2532,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -2546,7 +2546,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTextClassificationModelRequest"> (optional)</param>
@@ -2616,7 +2616,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -2630,7 +2630,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -2700,7 +2700,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>
@@ -2715,7 +2715,7 @@ public interface ITextClassificationModelClient
         }
 
         /// <summary>
-        ///  
+        /// Starts training a text classification model. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="modelId"></param>

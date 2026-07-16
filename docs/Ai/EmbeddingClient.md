@@ -4,17 +4,17 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Put**](EmbeddingClient.md#embeddingidput) | **PUT** /Embedding/{id} |  |
-| [**Post**](EmbeddingClient.md#embeddingpost) | **POST** /Embedding |  |
-| [**RemoveById**](EmbeddingClient.md#embeddingremovebyididdelete) | **DELETE** /Embedding/remove-by-id/{id} |  |
-| [**RemoveByType**](EmbeddingClient.md#embeddingremovebytypedatatypedelete) | **DELETE** /Embedding/remove-by-type/{dataType} |  |
-| [**Search**](EmbeddingClient.md#embeddingsearchget) | **GET** /Embedding/search |  |
+| [**Put**](EmbeddingClient.md#embeddingidput) | **PUT** /Embedding/{id} | Updates an embedded document by replacing it. |
+| [**Post**](EmbeddingClient.md#embeddingpost) | **POST** /Embedding | Creates a new embedded document. |
+| [**RemoveById**](EmbeddingClient.md#embeddingremovebyididdelete) | **DELETE** /Embedding/remove-by-id/{id} | Removes an embedded document by ID. |
+| [**RemoveByType**](EmbeddingClient.md#embeddingremovebytypedatatypedelete) | **DELETE** /Embedding/remove-by-type/{dataType} | Removes embedded documents by data type. |
+| [**Search**](EmbeddingClient.md#embeddingsearchget) | **GET** /Embedding/search | Searches embedded documents by query. |
 
 <a id="embeddingidput"></a>
 # **Put**
 > EmbeddedDocument Put (Guid id, EmbeddedDocumentModel? embeddedDocumentModel = null)
 
-
+Updates an embedded document by replacing it.
 
 ### Example
 ```csharp
@@ -44,6 +44,7 @@ namespace Example
 
             try
             {
+                // Updates an embedded document by replacing it.
                 EmbeddedDocument result = apiInstance.Put(id, embeddedDocumentModel);
                 Debug.WriteLine(result);
             }
@@ -64,6 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Updates an embedded document by replacing it.
     ApiResponse<EmbeddedDocument> response = apiInstance.PutWithHttpInfo(id, embeddedDocumentModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -111,7 +113,7 @@ catch (ApiException e)
 # **Post**
 > EmbeddedDocument Post (EmbeddedDocumentModel? embeddedDocumentModel = null)
 
-
+Creates a new embedded document.
 
 ### Example
 ```csharp
@@ -140,6 +142,7 @@ namespace Example
 
             try
             {
+                // Creates a new embedded document.
                 EmbeddedDocument result = apiInstance.Post(embeddedDocumentModel);
                 Debug.WriteLine(result);
             }
@@ -160,6 +163,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new embedded document.
     ApiResponse<EmbeddedDocument> response = apiInstance.PostWithHttpInfo(embeddedDocumentModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -206,7 +210,7 @@ catch (ApiException e)
 # **RemoveById**
 > void RemoveById (Guid id)
 
-
+Removes an embedded document by ID.
 
 ### Example
 ```csharp
@@ -235,6 +239,7 @@ namespace Example
 
             try
             {
+                // Removes an embedded document by ID.
                 apiInstance.RemoveById(id);
             }
             catch (ApiException  e)
@@ -254,6 +259,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Removes an embedded document by ID.
     apiInstance.RemoveByIdWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -297,7 +303,7 @@ void (empty response body)
 # **RemoveByType**
 > void RemoveByType (string dataType)
 
-
+Removes embedded documents by data type.
 
 ### Example
 ```csharp
@@ -326,6 +332,7 @@ namespace Example
 
             try
             {
+                // Removes embedded documents by data type.
                 apiInstance.RemoveByType(dataType);
             }
             catch (ApiException  e)
@@ -345,6 +352,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Removes embedded documents by data type.
     apiInstance.RemoveByTypeWithHttpInfo(dataType);
 }
 catch (ApiException e)
@@ -388,7 +396,7 @@ void (empty response body)
 # **Search**
 > List&lt;EmbeddedDocument&gt; Search (string? query = null, string? dataType = null, int? size = null)
 
-
+Searches embedded documents by query.
 
 ### Example
 ```csharp
@@ -419,6 +427,7 @@ namespace Example
 
             try
             {
+                // Searches embedded documents by query.
                 List<EmbeddedDocument> result = apiInstance.Search(query, dataType, size);
                 Debug.WriteLine(result);
             }
@@ -439,6 +448,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Searches embedded documents by query.
     ApiResponse<List<EmbeddedDocument>> response = apiInstance.SearchWithHttpInfo(query, dataType, size);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

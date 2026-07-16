@@ -4,20 +4,20 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CancelTraining**](TextClassificationModelClient.md#textclassificationmodelcanceltrainingmodelidput) | **PUT** /TextClassificationModel/cancel-training/{modelId} |  |
-| [**CheckTrainingStatus**](TextClassificationModelClient.md#textclassificationmodelchecktrainingstatusmodelidget) | **GET** /TextClassificationModel/check-training-status/{modelId} |  |
-| [**Get**](TextClassificationModelClient.md#textclassificationmodelget) | **GET** /TextClassificationModel |  |
-| [**GetTypesGet**](TextClassificationModelClient.md#textclassificationmodelgettypesget) | **GET** /TextClassificationModel/get-types |  |
-| [**Delete**](TextClassificationModelClient.md#textclassificationmodeliddelete) | **DELETE** /TextClassificationModel/{id} |  |
-| [**Patch**](TextClassificationModelClient.md#textclassificationmodelidpatch) | **PATCH** /TextClassificationModel/{id} |  |
-| [**Post**](TextClassificationModelClient.md#textclassificationmodelpost) | **POST** /TextClassificationModel |  |
-| [**StartTraining**](TextClassificationModelClient.md#textclassificationmodelstarttrainingmodelidput) | **PUT** /TextClassificationModel/start-training/{modelId} |  |
+| [**CancelTraining**](TextClassificationModelClient.md#textclassificationmodelcanceltrainingmodelidput) | **PUT** /TextClassificationModel/cancel-training/{modelId} | Cancels training of a text classification model. |
+| [**CheckTrainingStatus**](TextClassificationModelClient.md#textclassificationmodelchecktrainingstatusmodelidget) | **GET** /TextClassificationModel/check-training-status/{modelId} | Checks the training status of a text classification model. |
+| [**Get**](TextClassificationModelClient.md#textclassificationmodelget) | **GET** /TextClassificationModel | Gets a text classification model by ID. |
+| [**GetTypesGet**](TextClassificationModelClient.md#textclassificationmodelgettypesget) | **GET** /TextClassificationModel/get-types | Gets the available text classification model types. |
+| [**Delete**](TextClassificationModelClient.md#textclassificationmodeliddelete) | **DELETE** /TextClassificationModel/{id} | Deletes a text classification model by ID. |
+| [**Patch**](TextClassificationModelClient.md#textclassificationmodelidpatch) | **PATCH** /TextClassificationModel/{id} | Updates a text classification model. |
+| [**Post**](TextClassificationModelClient.md#textclassificationmodelpost) | **POST** /TextClassificationModel | Creates a new text classification model. |
+| [**StartTraining**](TextClassificationModelClient.md#textclassificationmodelstarttrainingmodelidput) | **PUT** /TextClassificationModel/start-training/{modelId} | Starts training a text classification model. |
 
 <a id="textclassificationmodelcanceltrainingmodelidput"></a>
 # **CancelTraining**
 > StateResponse CancelTraining (Guid modelId)
 
-
+Cancels training of a text classification model.
 
 ### Example
 ```csharp
@@ -46,6 +46,7 @@ namespace Example
 
             try
             {
+                // Cancels training of a text classification model.
                 StateResponse result = apiInstance.CancelTraining(modelId);
                 Debug.WriteLine(result);
             }
@@ -66,6 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Cancels training of a text classification model.
     ApiResponse<StateResponse> response = apiInstance.CancelTrainingWithHttpInfo(modelId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -112,7 +114,7 @@ catch (ApiException e)
 # **CheckTrainingStatus**
 > StateResponse CheckTrainingStatus (Guid modelId)
 
-
+Checks the training status of a text classification model.
 
 ### Example
 ```csharp
@@ -141,6 +143,7 @@ namespace Example
 
             try
             {
+                // Checks the training status of a text classification model.
                 StateResponse result = apiInstance.CheckTrainingStatus(modelId);
                 Debug.WriteLine(result);
             }
@@ -161,6 +164,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Checks the training status of a text classification model.
     ApiResponse<StateResponse> response = apiInstance.CheckTrainingStatusWithHttpInfo(modelId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -207,7 +211,7 @@ catch (ApiException e)
 # **Get**
 > TextClassificationModelResponse Get (Guid? id = null)
 
-
+Gets a text classification model by ID.
 
 ### Example
 ```csharp
@@ -236,6 +240,7 @@ namespace Example
 
             try
             {
+                // Gets a text classification model by ID.
                 TextClassificationModelResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -256,6 +261,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a text classification model by ID.
     ApiResponse<TextClassificationModelResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -302,7 +308,7 @@ catch (ApiException e)
 # **GetTypesGet**
 > List&lt;TextClassificationModelDefinition&gt; GetTypesGet ()
 
-
+Gets the available text classification model types.
 
 ### Example
 ```csharp
@@ -330,6 +336,7 @@ namespace Example
 
             try
             {
+                // Gets the available text classification model types.
                 List<TextClassificationModelDefinition> result = apiInstance.GetTypesGet();
                 Debug.WriteLine(result);
             }
@@ -350,6 +357,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets the available text classification model types.
     ApiResponse<List<TextClassificationModelDefinition>> response = apiInstance.GetTypesGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -392,7 +400,7 @@ This endpoint does not need any parameter.
 # **Delete**
 > void Delete (Guid id)
 
-
+Deletes a text classification model by ID.
 
 ### Example
 ```csharp
@@ -421,6 +429,7 @@ namespace Example
 
             try
             {
+                // Deletes a text classification model by ID.
                 apiInstance.Delete(id);
             }
             catch (ApiException  e)
@@ -440,6 +449,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a text classification model by ID.
     apiInstance.DeleteWithHttpInfo(id);
 }
 catch (ApiException e)
@@ -483,7 +493,7 @@ void (empty response body)
 # **Patch**
 > TextClassificationModelResponse Patch (Guid id, DataSetRequest? dataSetRequest = null)
 
-
+Updates a text classification model.
 
 ### Example
 ```csharp
@@ -513,6 +523,7 @@ namespace Example
 
             try
             {
+                // Updates a text classification model.
                 TextClassificationModelResponse result = apiInstance.Patch(id, dataSetRequest);
                 Debug.WriteLine(result);
             }
@@ -533,6 +544,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Updates a text classification model.
     ApiResponse<TextClassificationModelResponse> response = apiInstance.PatchWithHttpInfo(id, dataSetRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -580,7 +592,7 @@ catch (ApiException e)
 # **Post**
 > TextClassificationModelResponse Post (CreateTextClassificationModelRequest? createTextClassificationModelRequest = null)
 
-
+Creates a new text classification model.
 
 ### Example
 ```csharp
@@ -609,6 +621,7 @@ namespace Example
 
             try
             {
+                // Creates a new text classification model.
                 TextClassificationModelResponse result = apiInstance.Post(createTextClassificationModelRequest);
                 Debug.WriteLine(result);
             }
@@ -629,6 +642,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new text classification model.
     ApiResponse<TextClassificationModelResponse> response = apiInstance.PostWithHttpInfo(createTextClassificationModelRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -675,7 +689,7 @@ catch (ApiException e)
 # **StartTraining**
 > StateResponse StartTraining (Guid modelId, System.IO.Stream? formFile = null)
 
-
+Starts training a text classification model.
 
 ### Example
 ```csharp
@@ -705,6 +719,7 @@ namespace Example
 
             try
             {
+                // Starts training a text classification model.
                 StateResponse result = apiInstance.StartTraining(modelId, formFile);
                 Debug.WriteLine(result);
             }
@@ -725,6 +740,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Starts training a text classification model.
     ApiResponse<StateResponse> response = apiInstance.StartTrainingWithHttpInfo(modelId, formFile);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

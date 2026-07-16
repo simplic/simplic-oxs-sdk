@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// TextClassificationModelResponse
+    /// Response model representing a text classification model.
     /// </summary>
     [DataContract(Name = "TextClassificationModelResponse")]
     public partial class TextClassificationModelResponse : IEquatable<TextClassificationModelResponse>, IValidatableObject

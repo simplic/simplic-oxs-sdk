@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// DataSetCsvUploadRequest
+    /// Request model for uploading CSV data to a data set.
     /// </summary>
     [DataContract(Name = "DataSetCsvUploadRequest")]
     public partial class DataSetCsvUploadRequest : IEquatable<DataSetCsvUploadRequest>, IValidatableObject
@@ -41,13 +41,13 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSetCsvUploadRequest" /> class.
         /// </summary>
-        /// <param name="dataSetId">dataSetId (required).</param>
-        /// <param name="delimiter">delimiter (required).</param>
-        /// <param name="hasHeaderRow">hasHeaderRow.</param>
-        /// <param name="append">append.</param>
-        /// <param name="keyColumnIndex">keyColumnIndex.</param>
-        /// <param name="labelColumnIndex">labelColumnIndex.</param>
-        /// <param name="data">data (required).</param>
+        /// <param name="dataSetId">Gets or sets the target data set identifier. (required).</param>
+        /// <param name="delimiter">Gets or sets the CSV delimiter character. (required).</param>
+        /// <param name="hasHeaderRow">Gets or sets whether the CSV has a header row..</param>
+        /// <param name="append">Gets or sets whether to append data to the existing data set..</param>
+        /// <param name="keyColumnIndex">Gets or sets the zero-based index of the key column..</param>
+        /// <param name="labelColumnIndex">Gets or sets the zero-based index of the label column..</param>
+        /// <param name="data">Gets or sets the CSV file data as a byte array. (required).</param>
         public DataSetCsvUploadRequest(Guid dataSetId = default(Guid), string delimiter = default(string), bool hasHeaderRow = default(bool), bool append = default(bool), int keyColumnIndex = default(int), int labelColumnIndex = default(int), byte[] data = default(byte[]))
         {
             this.DataSetId = dataSetId;
@@ -70,44 +70,51 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets DataSetId
+        /// Gets or sets the target data set identifier.
         /// </summary>
+        /// <value>Gets or sets the target data set identifier.</value>
         [DataMember(Name = "dataSetId", IsRequired = true, EmitDefaultValue = true)]
         public Guid DataSetId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Delimiter
+        /// Gets or sets the CSV delimiter character.
         /// </summary>
+        /// <value>Gets or sets the CSV delimiter character.</value>
         [DataMember(Name = "delimiter", IsRequired = true, EmitDefaultValue = true)]
         public string Delimiter { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasHeaderRow
+        /// Gets or sets whether the CSV has a header row.
         /// </summary>
+        /// <value>Gets or sets whether the CSV has a header row.</value>
         [DataMember(Name = "hasHeaderRow", EmitDefaultValue = true)]
         public bool HasHeaderRow { get; set; }
 
         /// <summary>
-        /// Gets or Sets Append
+        /// Gets or sets whether to append data to the existing data set.
         /// </summary>
+        /// <value>Gets or sets whether to append data to the existing data set.</value>
         [DataMember(Name = "append", EmitDefaultValue = true)]
         public bool Append { get; set; }
 
         /// <summary>
-        /// Gets or Sets KeyColumnIndex
+        /// Gets or sets the zero-based index of the key column.
         /// </summary>
+        /// <value>Gets or sets the zero-based index of the key column.</value>
         [DataMember(Name = "keyColumnIndex", EmitDefaultValue = false)]
         public int KeyColumnIndex { get; set; }
 
         /// <summary>
-        /// Gets or Sets LabelColumnIndex
+        /// Gets or sets the zero-based index of the label column.
         /// </summary>
+        /// <value>Gets or sets the zero-based index of the label column.</value>
         [DataMember(Name = "labelColumnIndex", EmitDefaultValue = false)]
         public int LabelColumnIndex { get; set; }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or sets the CSV file data as a byte array.
         /// </summary>
+        /// <value>Gets or sets the CSV file data as a byte array.</value>
         [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = true)]
         public byte[] Data { get; set; }
 

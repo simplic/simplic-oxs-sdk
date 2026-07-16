@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// LLMTypeModel
+    /// Model representing an LLM provider type.
     /// </summary>
     [DataContract(Name = "LLMTypeModel")]
     public partial class LLMTypeModel : IEquatable<LLMTypeModel>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="LLMTypeModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="name">Gets or sets the LLM provider type name..</param>
         public LLMTypeModel(string name = default(string))
         {
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the LLM provider type name.
         /// </summary>
+        /// <value>Gets or sets the LLM provider type name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 

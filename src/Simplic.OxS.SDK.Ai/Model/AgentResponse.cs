@@ -46,18 +46,20 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="message">message.</param>
         /// <param name="sessionId">sessionId.</param>
         /// <param name="plan">plan.</param>
+        /// <param name="orchestrationPlan">orchestrationPlan.</param>
         /// <param name="approvalOptions">approvalOptions.</param>
         /// <param name="planId">planId.</param>
         /// <param name="approvalId">approvalId.</param>
         /// <param name="toolResults">toolResults.</param>
         /// <param name="correlationId">correlationId.</param>
         /// <param name="error">error.</param>
-        public AgentResponse(AgentResponseType? type = default(AgentResponseType?), string message = default(string), Guid? sessionId = default(Guid?), AgentPlan plan = default(AgentPlan), List<string> approvalOptions = default(List<string>), Guid? planId = default(Guid?), Guid? approvalId = default(Guid?), List<ToolExecutionResult> toolResults = default(List<ToolExecutionResult>), Guid? correlationId = default(Guid?), AgentError error = default(AgentError))
+        public AgentResponse(AgentResponseType? type = default(AgentResponseType?), string message = default(string), Guid? sessionId = default(Guid?), AgentPlan plan = default(AgentPlan), OrchestrationPlan orchestrationPlan = default(OrchestrationPlan), List<string> approvalOptions = default(List<string>), Guid? planId = default(Guid?), Guid? approvalId = default(Guid?), List<ToolExecutionResult> toolResults = default(List<ToolExecutionResult>), Guid? correlationId = default(Guid?), AgentError error = default(AgentError))
         {
             this.Type = type;
             this.Message = message;
             this.SessionId = sessionId;
             this.Plan = plan;
+            this.OrchestrationPlan = orchestrationPlan;
             this.ApprovalOptions = approvalOptions;
             this.PlanId = planId;
             this.ApprovalId = approvalId;
@@ -83,6 +85,12 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         [DataMember(Name = "plan", EmitDefaultValue = false)]
         public AgentPlan Plan { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrchestrationPlan
+        /// </summary>
+        [DataMember(Name = "orchestrationPlan", EmitDefaultValue = false)]
+        public OrchestrationPlan OrchestrationPlan { get; set; }
 
         /// <summary>
         /// Gets or Sets ApprovalOptions
@@ -132,6 +140,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  SessionId: ").Append(SessionId).Append("\n");
             sb.Append("  Plan: ").Append(Plan).Append("\n");
+            sb.Append("  OrchestrationPlan: ").Append(OrchestrationPlan).Append("\n");
             sb.Append("  ApprovalOptions: ").Append(ApprovalOptions).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("  ApprovalId: ").Append(ApprovalId).Append("\n");
@@ -193,6 +202,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Plan.Equals(input.Plan))
                 ) && 
                 (
+                    this.OrchestrationPlan == input.OrchestrationPlan ||
+                    (this.OrchestrationPlan != null &&
+                    this.OrchestrationPlan.Equals(input.OrchestrationPlan))
+                ) && 
+                (
                     this.ApprovalOptions == input.ApprovalOptions ||
                     this.ApprovalOptions != null &&
                     input.ApprovalOptions != null &&
@@ -247,6 +261,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Plan != null)
                 {
                     hashCode = (hashCode * 59) + this.Plan.GetHashCode();
+                }
+                if (this.OrchestrationPlan != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrchestrationPlan.GetHashCode();
                 }
                 if (this.ApprovalOptions != null)
                 {

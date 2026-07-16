@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// DataSetRequest
+    /// Request model for creating or updating a data set.
     /// </summary>
     [DataContract(Name = "DataSetRequest")]
     public partial class DataSetRequest : IEquatable<DataSetRequest>, IValidatableObject
@@ -41,7 +41,7 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSetRequest" /> class.
         /// </summary>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">Gets or sets the data set name. (required).</param>
         public DataSetRequest(string name = default(string))
         {
             // to ensure "name" is required (not null)
@@ -53,8 +53,9 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the data set name.
         /// </summary>
+        /// <value>Gets or sets the data set name.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

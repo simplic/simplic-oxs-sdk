@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// SearchRequest
+    /// Request model for hash-based search operations.
     /// </summary>
     [DataContract(Name = "SearchRequest")]
     public partial class SearchRequest : IEquatable<SearchRequest>, IValidatableObject
@@ -41,10 +41,10 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchRequest" /> class.
         /// </summary>
-        /// <param name="minSimilarity">minSimilarity.</param>
-        /// <param name="maxResults">maxResults.</param>
-        /// <param name="input">input (required).</param>
-        /// <param name="hashAlgorithm">hashAlgorithm.</param>
+        /// <param name="minSimilarity">Gets or sets the minimum similarity threshold..</param>
+        /// <param name="maxResults">Gets or sets the maximum number of results..</param>
+        /// <param name="input">Gets or sets the input text to search for. (required).</param>
+        /// <param name="hashAlgorithm">Gets or sets the hash algorithm name..</param>
         /// <param name="aiSettings">aiSettings.</param>
         public SearchRequest(double minSimilarity = default(double), int maxResults = default(int), string input = default(string), string hashAlgorithm = default(string), AISettings aiSettings = default(AISettings))
         {
@@ -61,26 +61,30 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets MinSimilarity
+        /// Gets or sets the minimum similarity threshold.
         /// </summary>
+        /// <value>Gets or sets the minimum similarity threshold.</value>
         [DataMember(Name = "minSimilarity", EmitDefaultValue = false)]
         public double MinSimilarity { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaxResults
+        /// Gets or sets the maximum number of results.
         /// </summary>
+        /// <value>Gets or sets the maximum number of results.</value>
         [DataMember(Name = "maxResults", EmitDefaultValue = false)]
         public int MaxResults { get; set; }
 
         /// <summary>
-        /// Gets or Sets Input
+        /// Gets or sets the input text to search for.
         /// </summary>
+        /// <value>Gets or sets the input text to search for.</value>
         [DataMember(Name = "input", IsRequired = true, EmitDefaultValue = true)]
         public string Input { get; set; }
 
         /// <summary>
-        /// Gets or Sets HashAlgorithm
+        /// Gets or sets the hash algorithm name.
         /// </summary>
+        /// <value>Gets or sets the hash algorithm name.</value>
         [DataMember(Name = "hashAlgorithm", EmitDefaultValue = true)]
         public string HashAlgorithm { get; set; }
 

@@ -9685,6 +9685,11 @@
                         "description": "Gets or sets the text describing this billing line.",
                         "nullable": true
                     },
+                    "sourceText": {
+                        "type": "string",
+                        "description": "Gets or sets the text describing this billing line in case it was \nexplicitly provided when the original billing line was created.",
+                        "nullable": true
+                    },
                     "quantity": {
                         "$ref": "#/components/schemas/BillingLineQuantityRequest"
                     },
@@ -13088,6 +13093,11 @@
                         "type": "string",
                         "description": "Gets or sets the name.",
                         "nullable": true
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "description": "Gets or sets the short name.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -16076,6 +16086,11 @@
                     "text": {
                         "type": "string",
                         "description": "Gets or sets the text describing this billing line.",
+                        "nullable": true
+                    },
+                    "sourceText": {
+                        "type": "string",
+                        "description": "Gets or sets the text describing this billing line in case it was \nexplicitly provided when the original billing line was created.",
                         "nullable": true
                     },
                     "quantity": {

@@ -40,7 +40,7 @@ public interface ITextClassificationClient
 
 
     /// <summary>
-    ///  
+    /// Initiates asynchronous text classification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -48,7 +48,7 @@ public interface ITextClassificationClient
     ClassifyTextAsyncResponse ClassifyTextAsync(ClassifyTextAsyncRequest? classifyTextAsyncRequest = default(ClassifyTextAsyncRequest?));
 
     /// <summary>
-    ///  
+    /// Initiates asynchronous text classification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -56,7 +56,7 @@ public interface ITextClassificationClient
     ApiResponse<ClassifyTextAsyncResponse> ClassifyTextAsyncWithHttpInfo(ClassifyTextAsyncRequest? classifyTextAsyncRequest = default(ClassifyTextAsyncRequest?));
         
     /// <summary>
-    ///  
+    /// Initiates asynchronous text classification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -65,7 +65,7 @@ public interface ITextClassificationClient
     Task<ClassifyTextAsyncResponse> ClassifyTextAsyncAsync(ClassifyTextAsyncRequest? classifyTextAsyncRequest = default(ClassifyTextAsyncRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Initiates asynchronous text classification. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -75,7 +75,7 @@ public interface ITextClassificationClient
 
 
     /// <summary>
-    ///  
+    /// Gets the state of an asynchronous text classification job. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -83,7 +83,7 @@ public interface ITextClassificationClient
     List<TextClassificationResultResponse> GetClassifyTextAsyncState(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets the state of an asynchronous text classification job. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -91,7 +91,7 @@ public interface ITextClassificationClient
     ApiResponse<List<TextClassificationResultResponse>> GetClassifyTextAsyncStateWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets the state of an asynchronous text classification job. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -100,7 +100,7 @@ public interface ITextClassificationClient
     Task<List<TextClassificationResultResponse>> GetClassifyTextAsyncStateAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets the state of an asynchronous text classification job. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -110,21 +110,21 @@ public interface ITextClassificationClient
 
 
     /// <summary>
-    ///  
+    /// Tests the remote service invocation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns></returns>
     void Post();
 
     /// <summary>
-    ///  
+    /// Tests the remote service invocation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of Object(void)</returns>
     ApiResponse<Object> PostWithHttpInfo();
         
     /// <summary>
-    ///  
+    /// Tests the remote service invocation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -132,7 +132,7 @@ public interface ITextClassificationClient
     Task PostAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Tests the remote service invocation. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -215,7 +215,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -233,7 +233,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -251,7 +251,7 @@ public interface ITextClassificationClient
         } 
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -270,7 +270,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -288,7 +288,7 @@ public interface ITextClassificationClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -306,7 +306,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -324,7 +324,7 @@ public interface ITextClassificationClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -343,7 +343,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -361,7 +361,7 @@ public interface ITextClassificationClient
             }
         }    
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -378,7 +378,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -395,7 +395,7 @@ public interface ITextClassificationClient
         } 
 
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -413,7 +413,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -443,7 +443,7 @@ public interface ITextClassificationClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Initiates asynchronous text classification.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -452,7 +452,7 @@ public interface ITextClassificationClient
         ClassifyTextAsyncResponse ClassifyTextAsync(ClassifyTextAsyncRequest? classifyTextAsyncRequest = default(ClassifyTextAsyncRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Initiates asynchronous text classification.
         /// </summary>
         /// <remarks>
         /// 
@@ -463,7 +463,7 @@ public interface ITextClassificationClient
         /// <returns>ApiResponse of ClassifyTextAsyncResponse</returns>
         ApiResponse<ClassifyTextAsyncResponse> ClassifyTextAsyncWithHttpInfo(ClassifyTextAsyncRequest? classifyTextAsyncRequest = default(ClassifyTextAsyncRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets the state of an asynchronous text classification job.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -472,7 +472,7 @@ public interface ITextClassificationClient
         List<TextClassificationResultResponse> GetClassifyTextAsyncState(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets the state of an asynchronous text classification job.
         /// </summary>
         /// <remarks>
         /// 
@@ -483,7 +483,7 @@ public interface ITextClassificationClient
         /// <returns>ApiResponse of List&lt;TextClassificationResultResponse&gt;</returns>
         ApiResponse<List<TextClassificationResultResponse>> GetClassifyTextAsyncStateWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Tests the remote service invocation.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -491,7 +491,7 @@ public interface ITextClassificationClient
         void Post(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Tests the remote service invocation.
         /// </summary>
         /// <remarks>
         /// 
@@ -510,7 +510,7 @@ public interface ITextClassificationClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Initiates asynchronous text classification.
         /// </summary>
         /// <remarks>
         /// 
@@ -523,7 +523,7 @@ public interface ITextClassificationClient
         System.Threading.Tasks.Task<ClassifyTextAsyncResponse> ClassifyTextAsyncAsync(ClassifyTextAsyncRequest? classifyTextAsyncRequest = default(ClassifyTextAsyncRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Initiates asynchronous text classification.
         /// </summary>
         /// <remarks>
         /// 
@@ -535,7 +535,7 @@ public interface ITextClassificationClient
         /// <returns>Task of ApiResponse (ClassifyTextAsyncResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ClassifyTextAsyncResponse>> ClassifyTextAsyncWithHttpInfoAsync(ClassifyTextAsyncRequest? classifyTextAsyncRequest = default(ClassifyTextAsyncRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets the state of an asynchronous text classification job.
         /// </summary>
         /// <remarks>
         /// 
@@ -548,7 +548,7 @@ public interface ITextClassificationClient
         System.Threading.Tasks.Task<List<TextClassificationResultResponse>> GetClassifyTextAsyncStateAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets the state of an asynchronous text classification job.
         /// </summary>
         /// <remarks>
         /// 
@@ -560,7 +560,7 @@ public interface ITextClassificationClient
         /// <returns>Task of ApiResponse (List&lt;TextClassificationResultResponse&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TextClassificationResultResponse>>> GetClassifyTextAsyncStateWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Tests the remote service invocation.
         /// </summary>
         /// <remarks>
         /// 
@@ -572,7 +572,7 @@ public interface ITextClassificationClient
         System.Threading.Tasks.Task PostAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Tests the remote service invocation.
         /// </summary>
         /// <remarks>
         /// 
@@ -705,7 +705,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -718,7 +718,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -785,7 +785,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -799,7 +799,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Initiates asynchronous text classification. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="classifyTextAsyncRequest"> (optional)</param>
@@ -869,7 +869,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -882,7 +882,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -946,7 +946,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -960,7 +960,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the state of an asynchronous text classification job. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1027,7 +1027,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1038,7 +1038,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1100,7 +1100,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1112,7 +1112,7 @@ public interface ITextClassificationClient
         }
 
         /// <summary>
-        ///  
+        /// Tests the remote service invocation. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>

@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Start**](IInternalConversationClient.md#iinternalconversationstartpost) | **POST** /IInternalConversation/start |  |
+| [**Start**](IInternalConversationClient.md#iinternalconversationstartpost) | **POST** /IInternalConversation/start | Starts a new internal conversation. |
 
 <a id="iinternalconversationstartpost"></a>
 # **Start**
 > ConversationModel Start (StartConversationRequest? startConversationRequest = null)
 
-
+Starts a new internal conversation.
 
 ### Example
 ```csharp
@@ -39,6 +39,7 @@ namespace Example
 
             try
             {
+                // Starts a new internal conversation.
                 ConversationModel result = apiInstance.Start(startConversationRequest);
                 Debug.WriteLine(result);
             }
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Starts a new internal conversation.
     ApiResponse<ConversationModel> response = apiInstance.StartWithHttpInfo(startConversationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

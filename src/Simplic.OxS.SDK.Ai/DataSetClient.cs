@@ -40,7 +40,7 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Adds a tuple item to the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -49,7 +49,7 @@ public interface IDataSetClient
     void AddTuple(Guid dataSetId, DataSetItem? dataSetItem = default(DataSetItem?));
 
     /// <summary>
-    ///  
+    /// Adds a tuple item to the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -58,7 +58,7 @@ public interface IDataSetClient
     ApiResponse<Object> AddTupleWithHttpInfo(Guid dataSetId, DataSetItem? dataSetItem = default(DataSetItem?));
         
     /// <summary>
-    ///  
+    /// Adds a tuple item to the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -68,7 +68,7 @@ public interface IDataSetClient
     Task AddTupleAsync(Guid dataSetId, DataSetItem? dataSetItem = default(DataSetItem?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Adds a tuple item to the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -79,7 +79,7 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Deletes all tuples from the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -87,7 +87,7 @@ public interface IDataSetClient
     DataSetModel DeleteTuples(Guid dataSetId);
 
     /// <summary>
-    ///  
+    /// Deletes all tuples from the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -95,7 +95,7 @@ public interface IDataSetClient
     ApiResponse<DataSetModel> DeleteTuplesWithHttpInfo(Guid dataSetId);
         
     /// <summary>
-    ///  
+    /// Deletes all tuples from the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -104,7 +104,7 @@ public interface IDataSetClient
     Task<DataSetModel> DeleteTuplesAsync(Guid dataSetId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes all tuples from the specified data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -114,21 +114,21 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Gets the list of available hash algorithms. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>List&lt;HashAlgorithmModel&gt;</returns>
     List<HashAlgorithmModel> GetHashAlgorithms();
 
     /// <summary>
-    ///  
+    /// Gets the list of available hash algorithms. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of List&lt;HashAlgorithmModel&gt;</returns>
     ApiResponse<List<HashAlgorithmModel>> GetHashAlgorithmsWithHttpInfo();
         
     /// <summary>
-    ///  
+    /// Gets the list of available hash algorithms. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -136,7 +136,7 @@ public interface IDataSetClient
     Task<List<HashAlgorithmModel>> GetHashAlgorithmsAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets the list of available hash algorithms. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -145,7 +145,7 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a data set by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -153,7 +153,7 @@ public interface IDataSetClient
     DataSetModel Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a data set by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -161,7 +161,7 @@ public interface IDataSetClient
     ApiResponse<DataSetModel> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a data set by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -170,7 +170,7 @@ public interface IDataSetClient
     Task<DataSetModel> DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a data set by ID. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -180,7 +180,7 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Updates an existing data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -189,7 +189,7 @@ public interface IDataSetClient
     DataSetModel Patch(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?));
 
     /// <summary>
-    ///  
+    /// Updates an existing data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -198,7 +198,7 @@ public interface IDataSetClient
     ApiResponse<DataSetModel> PatchWithHttpInfo(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?));
         
     /// <summary>
-    ///  
+    /// Updates an existing data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -208,7 +208,7 @@ public interface IDataSetClient
     Task<DataSetModel> PatchAsync(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Updates an existing data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -219,7 +219,7 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Creates a new data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetRequest"> (optional)</param>
@@ -227,7 +227,7 @@ public interface IDataSetClient
     DataSetModel Post(DataSetRequest? dataSetRequest = default(DataSetRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetRequest"> (optional)</param>
@@ -235,7 +235,7 @@ public interface IDataSetClient
     ApiResponse<DataSetModel> PostWithHttpInfo(DataSetRequest? dataSetRequest = default(DataSetRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetRequest"> (optional)</param>
@@ -244,7 +244,7 @@ public interface IDataSetClient
     Task<DataSetModel> PostAsync(DataSetRequest? dataSetRequest = default(DataSetRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetRequest"> (optional)</param>
@@ -254,7 +254,7 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Removes a tuple from the specified data set by key. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -263,7 +263,7 @@ public interface IDataSetClient
     void RemoveTuple(Guid dataSetId, string? dataSetItemKey = default(string?));
 
     /// <summary>
-    ///  
+    /// Removes a tuple from the specified data set by key. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -272,7 +272,7 @@ public interface IDataSetClient
     ApiResponse<Object> RemoveTupleWithHttpInfo(Guid dataSetId, string? dataSetItemKey = default(string?));
         
     /// <summary>
-    ///  
+    /// Removes a tuple from the specified data set by key. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -282,7 +282,7 @@ public interface IDataSetClient
     Task RemoveTupleAsync(Guid dataSetId, string? dataSetItemKey = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Removes a tuple from the specified data set by key. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -293,7 +293,7 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Searches a data set by hash similarity. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -302,7 +302,7 @@ public interface IDataSetClient
     List<CompareResultModel> Search(Guid dataSetId, SearchRequest? searchRequest = default(SearchRequest?));
 
     /// <summary>
-    ///  
+    /// Searches a data set by hash similarity. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -311,7 +311,7 @@ public interface IDataSetClient
     ApiResponse<List<CompareResultModel>> SearchWithHttpInfo(Guid dataSetId, SearchRequest? searchRequest = default(SearchRequest?));
         
     /// <summary>
-    ///  
+    /// Searches a data set by hash similarity. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -321,7 +321,7 @@ public interface IDataSetClient
     Task<List<CompareResultModel>> SearchAsync(Guid dataSetId, SearchRequest? searchRequest = default(SearchRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Searches a data set by hash similarity. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetId"></param>
@@ -332,38 +332,38 @@ public interface IDataSetClient
 
 
     /// <summary>
-    ///  
+    /// Uploads a CSV file to a data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetCsvUploadRequest"> (optional)</param>
-    /// <returns>DataSetModel</returns>
-    DataSetModel UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?));
+    /// <returns>CsvUploadResponse</returns>
+    CsvUploadResponse UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?));
 
     /// <summary>
-    ///  
+    /// Uploads a CSV file to a data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetCsvUploadRequest"> (optional)</param>
-    /// <returns>ApiResponse of DataSetModel</returns>
-    ApiResponse<DataSetModel> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?));
+    /// <returns>ApiResponse of CsvUploadResponse</returns>
+    ApiResponse<CsvUploadResponse> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?));
         
     /// <summary>
-    ///  
+    /// Uploads a CSV file to a data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetCsvUploadRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of DataSetModel</returns>
-    Task<DataSetModel> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of CsvUploadResponse</returns>
+    Task<CsvUploadResponse> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Uploads a CSV file to a data set. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="dataSetCsvUploadRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (DataSetModel)</returns>
-    Task<ApiResponse<DataSetModel>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (CsvUploadResponse)</returns>
+    Task<ApiResponse<CsvUploadResponse>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -441,7 +441,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -460,7 +460,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -479,7 +479,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -499,7 +499,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -518,7 +518,7 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -536,7 +536,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -554,7 +554,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -573,7 +573,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -591,7 +591,7 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;HashAlgorithmModel&gt;</returns>
@@ -608,7 +608,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;HashAlgorithmModel&gt;</returns>
@@ -625,7 +625,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -643,7 +643,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -660,7 +660,7 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -678,7 +678,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -696,7 +696,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -715,7 +715,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -733,7 +733,7 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -752,7 +752,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -771,7 +771,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -791,7 +791,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -810,7 +810,7 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -828,7 +828,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -846,7 +846,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -865,7 +865,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -883,7 +883,7 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -902,7 +902,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -921,7 +921,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -941,7 +941,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -960,7 +960,7 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -979,7 +979,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -998,7 +998,7 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1018,7 +1018,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1037,12 +1037,12 @@ public interface IDataSetClient
             }
         }    
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
-        /// <returns>DataSetModel</returns>
-        public DataSetModel UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?))
+        /// <returns>CsvUploadResponse</returns>
+        public CsvUploadResponse UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?))
         {
             try
             {
@@ -1055,12 +1055,12 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
-        /// <returns>ApiResponse of DataSetModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<DataSetModel> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?))
+        /// <returns>ApiResponse of CsvUploadResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<CsvUploadResponse> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?))
         {
             try
             {
@@ -1073,13 +1073,13 @@ public interface IDataSetClient
         } 
 
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataSetModel</returns>
-        public System.Threading.Tasks.Task<DataSetModel> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CsvUploadResponse</returns>
+        public System.Threading.Tasks.Task<CsvUploadResponse> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1092,13 +1092,13 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataSetModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DataSetModel>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CsvUploadResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CsvUploadResponse>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -1123,7 +1123,7 @@ public interface IDataSetClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Adds a tuple item to the specified data set.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1133,7 +1133,7 @@ public interface IDataSetClient
         void AddTuple(Guid dataSetId, DataSetItem? dataSetItem = default(DataSetItem?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Adds a tuple item to the specified data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1145,7 +1145,7 @@ public interface IDataSetClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AddTupleWithHttpInfo(Guid dataSetId, DataSetItem? dataSetItem = default(DataSetItem?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Deletes all tuples from the specified data set.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1154,7 +1154,7 @@ public interface IDataSetClient
         DataSetModel DeleteTuples(Guid dataSetId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes all tuples from the specified data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1165,7 +1165,7 @@ public interface IDataSetClient
         /// <returns>ApiResponse of DataSetModel</returns>
         ApiResponse<DataSetModel> DeleteTuplesWithHttpInfo(Guid dataSetId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets the list of available hash algorithms.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1173,7 +1173,7 @@ public interface IDataSetClient
         List<HashAlgorithmModel> GetHashAlgorithms(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets the list of available hash algorithms.
         /// </summary>
         /// <remarks>
         /// 
@@ -1183,7 +1183,7 @@ public interface IDataSetClient
         /// <returns>ApiResponse of List&lt;HashAlgorithmModel&gt;</returns>
         ApiResponse<List<HashAlgorithmModel>> GetHashAlgorithmsWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Deletes a data set by ID.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1192,7 +1192,7 @@ public interface IDataSetClient
         DataSetModel Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a data set by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1203,7 +1203,7 @@ public interface IDataSetClient
         /// <returns>ApiResponse of DataSetModel</returns>
         ApiResponse<DataSetModel> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Updates an existing data set.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1213,7 +1213,7 @@ public interface IDataSetClient
         DataSetModel Patch(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Updates an existing data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1225,7 +1225,7 @@ public interface IDataSetClient
         /// <returns>ApiResponse of DataSetModel</returns>
         ApiResponse<DataSetModel> PatchWithHttpInfo(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new data set.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -1234,7 +1234,7 @@ public interface IDataSetClient
         DataSetModel Post(DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1245,7 +1245,7 @@ public interface IDataSetClient
         /// <returns>ApiResponse of DataSetModel</returns>
         ApiResponse<DataSetModel> PostWithHttpInfo(DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Removes a tuple from the specified data set by key.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1255,7 +1255,7 @@ public interface IDataSetClient
         void RemoveTuple(Guid dataSetId, string? dataSetItemKey = default(string?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Removes a tuple from the specified data set by key.
         /// </summary>
         /// <remarks>
         /// 
@@ -1267,7 +1267,7 @@ public interface IDataSetClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveTupleWithHttpInfo(Guid dataSetId, string? dataSetItemKey = default(string?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Searches a data set by hash similarity.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1277,7 +1277,7 @@ public interface IDataSetClient
         List<CompareResultModel> Search(Guid dataSetId, SearchRequest? searchRequest = default(SearchRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Searches a data set by hash similarity.
         /// </summary>
         /// <remarks>
         /// 
@@ -1289,16 +1289,16 @@ public interface IDataSetClient
         /// <returns>ApiResponse of List&lt;CompareResultModel&gt;</returns>
         ApiResponse<List<CompareResultModel>> SearchWithHttpInfo(Guid dataSetId, SearchRequest? searchRequest = default(SearchRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Uploads a CSV file to a data set.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DataSetModel</returns>
-        DataSetModel UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0);
+        /// <returns>CsvUploadResponse</returns>
+        CsvUploadResponse UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Uploads a CSV file to a data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1306,8 +1306,8 @@ public interface IDataSetClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DataSetModel</returns>
-        ApiResponse<DataSetModel> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of CsvUploadResponse</returns>
+        ApiResponse<CsvUploadResponse> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1318,7 +1318,7 @@ public interface IDataSetClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Adds a tuple item to the specified data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1332,7 +1332,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task AddTupleAsync(Guid dataSetId, DataSetItem? dataSetItem = default(DataSetItem?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Adds a tuple item to the specified data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1345,7 +1345,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AddTupleWithHttpInfoAsync(Guid dataSetId, DataSetItem? dataSetItem = default(DataSetItem?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Deletes all tuples from the specified data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1358,7 +1358,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task<DataSetModel> DeleteTuplesAsync(Guid dataSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes all tuples from the specified data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1370,7 +1370,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse (DataSetModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataSetModel>> DeleteTuplesWithHttpInfoAsync(Guid dataSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets the list of available hash algorithms.
         /// </summary>
         /// <remarks>
         /// 
@@ -1382,7 +1382,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task<List<HashAlgorithmModel>> GetHashAlgorithmsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets the list of available hash algorithms.
         /// </summary>
         /// <remarks>
         /// 
@@ -1393,7 +1393,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse (List&lt;HashAlgorithmModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<HashAlgorithmModel>>> GetHashAlgorithmsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Deletes a data set by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1406,7 +1406,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task<DataSetModel> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a data set by ID.
         /// </summary>
         /// <remarks>
         /// 
@@ -1418,7 +1418,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse (DataSetModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataSetModel>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Updates an existing data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1432,7 +1432,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task<DataSetModel> PatchAsync(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Updates an existing data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1445,7 +1445,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse (DataSetModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataSetModel>> PatchWithHttpInfoAsync(Guid id, DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1458,7 +1458,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task<DataSetModel> PostAsync(DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1470,7 +1470,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse (DataSetModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataSetModel>> PostWithHttpInfoAsync(DataSetRequest? dataSetRequest = default(DataSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Removes a tuple from the specified data set by key.
         /// </summary>
         /// <remarks>
         /// 
@@ -1484,7 +1484,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task RemoveTupleAsync(Guid dataSetId, string? dataSetItemKey = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Removes a tuple from the specified data set by key.
         /// </summary>
         /// <remarks>
         /// 
@@ -1497,7 +1497,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveTupleWithHttpInfoAsync(Guid dataSetId, string? dataSetItemKey = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Searches a data set by hash similarity.
         /// </summary>
         /// <remarks>
         /// 
@@ -1511,7 +1511,7 @@ public interface IDataSetClient
         System.Threading.Tasks.Task<List<CompareResultModel>> SearchAsync(Guid dataSetId, SearchRequest? searchRequest = default(SearchRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Searches a data set by hash similarity.
         /// </summary>
         /// <remarks>
         /// 
@@ -1524,7 +1524,7 @@ public interface IDataSetClient
         /// <returns>Task of ApiResponse (List&lt;CompareResultModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<CompareResultModel>>> SearchWithHttpInfoAsync(Guid dataSetId, SearchRequest? searchRequest = default(SearchRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Uploads a CSV file to a data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1533,11 +1533,11 @@ public interface IDataSetClient
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataSetModel</returns>
-        System.Threading.Tasks.Task<DataSetModel> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of CsvUploadResponse</returns>
+        System.Threading.Tasks.Task<CsvUploadResponse> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Uploads a CSV file to a data set.
         /// </summary>
         /// <remarks>
         /// 
@@ -1546,8 +1546,8 @@ public interface IDataSetClient
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataSetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataSetModel>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CsvUploadResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CsvUploadResponse>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1671,7 +1671,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1684,7 +1684,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1750,7 +1750,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1764,7 +1764,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Adds a tuple item to the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1833,7 +1833,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1846,7 +1846,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1910,7 +1910,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1924,7 +1924,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes all tuples from the specified data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -1991,7 +1991,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -2003,7 +2003,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -2065,7 +2065,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -2078,7 +2078,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the list of available hash algorithms. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -2143,7 +2143,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2156,7 +2156,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2220,7 +2220,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2234,7 +2234,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data set by ID. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2301,7 +2301,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2315,7 +2315,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2384,7 +2384,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2399,7 +2399,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Updates an existing data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2471,7 +2471,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -2484,7 +2484,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -2551,7 +2551,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -2565,7 +2565,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetRequest"> (optional)</param>
@@ -2635,7 +2635,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2648,7 +2648,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2714,7 +2714,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2728,7 +2728,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Removes a tuple from the specified data set by key. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2797,7 +2797,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2811,7 +2811,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2880,7 +2880,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2895,7 +2895,7 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Searches a data set by hash similarity. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetId"></param>
@@ -2967,26 +2967,26 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DataSetModel</returns>
-        public DataSetModel UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0)
+        /// <returns>CsvUploadResponse</returns>
+        public CsvUploadResponse UploadCsv(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<DataSetModel> localVarResponse = UploadCsvWithHttpInfo(dataSetCsvUploadRequest);
+            Simplic.OxS.SDK.ApiResponse<CsvUploadResponse> localVarResponse = UploadCsvWithHttpInfo(dataSetCsvUploadRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DataSetModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<DataSetModel> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of CsvUploadResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<CsvUploadResponse> UploadCsvWithHttpInfo(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -3033,7 +3033,7 @@ public interface IDataSetClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DataSetModel>("/DataSet/upload-csv", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CsvUploadResponse>("/DataSet/upload-csv", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DataSetUploadCsvPost", localVarResponse);
@@ -3047,28 +3047,28 @@ public interface IDataSetClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataSetModel</returns>
-        public async System.Threading.Tasks.Task<DataSetModel> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CsvUploadResponse</returns>
+        public async System.Threading.Tasks.Task<CsvUploadResponse> UploadCsvAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<DataSetModel> localVarResponse = await UploadCsvWithHttpInfoAsync(dataSetCsvUploadRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<CsvUploadResponse> localVarResponse = await UploadCsvWithHttpInfoAsync(dataSetCsvUploadRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Uploads a CSV file to a data set. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataSetCsvUploadRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataSetModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DataSetModel>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CsvUploadResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<CsvUploadResponse>> UploadCsvWithHttpInfoAsync(DataSetCsvUploadRequest? dataSetCsvUploadRequest = default(DataSetCsvUploadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -3116,7 +3116,7 @@ public interface IDataSetClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DataSetModel>("/DataSet/upload-csv", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CsvUploadResponse>("/DataSet/upload-csv", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

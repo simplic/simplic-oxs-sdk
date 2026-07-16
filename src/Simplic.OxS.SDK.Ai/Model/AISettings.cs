@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// AISettings
+    /// AI-related settings for search operations.
     /// </summary>
     [DataContract(Name = "AISettings")]
     public partial class AISettings : IEquatable<AISettings>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="AISettings" /> class.
         /// </summary>
-        /// <param name="provider">provider.</param>
-        /// <param name="addToDataSet">addToDataSet.</param>
+        /// <param name="provider">Gets or sets the LLM provider name..</param>
+        /// <param name="addToDataSet">Gets or sets whether to add results to the data set..</param>
         public AISettings(string provider = default(string), bool addToDataSet = default(bool))
         {
             this.Provider = provider;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Ai
         }
 
         /// <summary>
-        /// Gets or Sets Provider
+        /// Gets or sets the LLM provider name.
         /// </summary>
+        /// <value>Gets or sets the LLM provider name.</value>
         [DataMember(Name = "provider", EmitDefaultValue = true)]
         public string Provider { get; set; }
 
         /// <summary>
-        /// Gets or Sets AddToDataSet
+        /// Gets or sets whether to add results to the data set.
         /// </summary>
+        /// <value>Gets or sets whether to add results to the data set.</value>
         [DataMember(Name = "addToDataSet", EmitDefaultValue = true)]
         public bool AddToDataSet { get; set; }
 

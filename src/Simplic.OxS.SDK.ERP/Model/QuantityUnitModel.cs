@@ -38,10 +38,12 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="name">Gets or sets the name..</param>
-        public QuantityUnitModel(Guid id = default(Guid), string name = default(string))
+        /// <param name="shortName">Gets or sets the short name..</param>
+        public QuantityUnitModel(Guid id = default(Guid), string name = default(string), string shortName = default(string))
         {
             this.Id = id;
             this.Name = name;
+            this.ShortName = shortName;
         }
 
         /// <summary>
@@ -59,6 +61,13 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the short name.
+        /// </summary>
+        /// <value>Gets or sets the short name.</value>
+        [DataMember(Name = "shortName", EmitDefaultValue = true)]
+        public string ShortName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -68,6 +77,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("class QuantityUnitModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,6 +122,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.ShortName == input.ShortName ||
+                    (this.ShortName != null &&
+                    this.ShortName.Equals(input.ShortName))
                 );
         }
 
@@ -131,6 +146,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.ShortName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ShortName.GetHashCode();
                 }
                 return hashCode;
             }
