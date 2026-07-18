@@ -23,8 +23,13 @@ Name | Type | Description | Notes
 **CostObjects** | [**List&lt;PreviewItemCostCenterAssignmentRequest&gt;**](PreviewItemCostCenterAssignmentRequest.md) | Gets or sets the assigned cost objects given by ID with their respective percentages. | [optional] 
 **ArticleId** | **Guid?** | Gets or sets the article by ID. | [optional] 
 **GeneralLedgerAccountId** | **Guid?** | Gets or sets the general ledger account by ID. | [optional] 
+**PriceUnitId** | **Guid?** | Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons. | [optional] 
+**Reference** | **string** | Gets or sets the main reference. | [optional] 
+**References** | [**List&lt;BillingLineReferenceRequest&gt;**](BillingLineReferenceRequest.md) | Gets or sets a set of additional references. | [optional] 
+**IsManualBillingLine** | **bool?** | Gets or sets the flag indicating whether the billing line was created manually. | [optional] 
 **DeltaValue** | **double?** | Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator. | [optional] 
 **Items** | [**List&lt;PreviewTransactionItemRequest&gt;**](PreviewTransactionItemRequest.md) | Gets or sets a set of transaction items that are part of the group. | [optional] 
+**Remove** | **bool** | Remove flag for the patch helper. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

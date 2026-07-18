@@ -72,9 +72,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="costObjects">Gets or sets the assigned cost objects given by ID with their respective percentages..</param>
         /// <param name="articleId">Gets or sets the article by ID..</param>
         /// <param name="generalLedgerAccountId">Gets or sets the general ledger account by ID..</param>
+        /// <param name="priceUnitId">Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons..</param>
+        /// <param name="reference">Gets or sets the main reference..</param>
+        /// <param name="references">Gets or sets a set of additional references..</param>
+        /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
         /// <param name="deltaValue">Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator..</param>
         /// <param name="items">Gets or sets a set of transaction items that are part of the group..</param>
-        public PreviewTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), QuantityRequest quantity = default(QuantityRequest), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), Guid? taxRateId = default(Guid?), List<PreviewItemCostCenterAssignmentRequest> costCenters = default(List<PreviewItemCostCenterAssignmentRequest>), List<PreviewItemCostCenterAssignmentRequest> costObjects = default(List<PreviewItemCostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), double? deltaValue = default(double?), List<PreviewTransactionItemRequest> items = default(List<PreviewTransactionItemRequest>))
+        /// <param name="remove">Remove flag for the patch helper..</param>
+        public PreviewTransactionItemRequest(Guid temporaryId = default(Guid), Guid id = default(Guid), string text = default(string), Guid? typeId = default(Guid?), int? sortNumber = default(int?), string deserializationType = default(string), ValueOperator? valueOperator = default(ValueOperator?), AssignmentMode? assignmentMode = default(AssignmentMode?), List<BehaviorDefinitionRequest> behaviorDefinitions = default(List<BehaviorDefinitionRequest>), QuantityRequest quantity = default(QuantityRequest), double? inputPrice = default(double?), InputPriceType? inputPriceType = default(InputPriceType?), Guid? taxKeyId = default(Guid?), Guid? taxRateId = default(Guid?), List<PreviewItemCostCenterAssignmentRequest> costCenters = default(List<PreviewItemCostCenterAssignmentRequest>), List<PreviewItemCostCenterAssignmentRequest> costObjects = default(List<PreviewItemCostCenterAssignmentRequest>), Guid? articleId = default(Guid?), Guid? generalLedgerAccountId = default(Guid?), Guid? priceUnitId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), bool? isManualBillingLine = default(bool?), double? deltaValue = default(double?), List<PreviewTransactionItemRequest> items = default(List<PreviewTransactionItemRequest>), bool remove = default(bool))
         {
             this.TemporaryId = temporaryId;
             this.Id = id;
@@ -94,8 +99,13 @@ namespace Simplic.OxS.SDK.ERP
             this.CostObjects = costObjects;
             this.ArticleId = articleId;
             this.GeneralLedgerAccountId = generalLedgerAccountId;
+            this.PriceUnitId = priceUnitId;
+            this.Reference = reference;
+            this.References = references;
+            this.IsManualBillingLine = isManualBillingLine;
             this.DeltaValue = deltaValue;
             this.Items = items;
+            this.Remove = remove;
         }
 
         /// <summary>
@@ -203,6 +213,34 @@ namespace Simplic.OxS.SDK.ERP
         public Guid? GeneralLedgerAccountId { get; set; }
 
         /// <summary>
+        /// Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons.
+        /// </summary>
+        /// <value>Gets or sets the unit of measurement the price is based on by ID.  Example: Price could be measured per kg while the total quantity is measured in tons.</value>
+        [DataMember(Name = "priceUnitId", EmitDefaultValue = true)]
+        public Guid? PriceUnitId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the main reference.
+        /// </summary>
+        /// <value>Gets or sets the main reference.</value>
+        [DataMember(Name = "reference", EmitDefaultValue = true)]
+        public string Reference { get; set; }
+
+        /// <summary>
+        /// Gets or sets a set of additional references.
+        /// </summary>
+        /// <value>Gets or sets a set of additional references.</value>
+        [DataMember(Name = "references", EmitDefaultValue = true)]
+        public List<BillingLineReferenceRequest> References { get; set; }
+
+        /// <summary>
+        /// Gets or sets the flag indicating whether the billing line was created manually.
+        /// </summary>
+        /// <value>Gets or sets the flag indicating whether the billing line was created manually.</value>
+        [DataMember(Name = "isManualBillingLine", EmitDefaultValue = true)]
+        public bool? IsManualBillingLine { get; set; }
+
+        /// <summary>
         /// Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.
         /// </summary>
         /// <value>Gets or sets the discount/surcharge value as an absolute price value or a percentage value depending on the value operator.</value>
@@ -215,6 +253,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets a set of transaction items that are part of the group.</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<PreviewTransactionItemRequest> Items { get; set; }
+
+        /// <summary>
+        /// Remove flag for the patch helper.
+        /// </summary>
+        /// <value>Remove flag for the patch helper.</value>
+        [DataMember(Name = "_remove", EmitDefaultValue = true)]
+        public bool Remove { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -242,8 +287,13 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
             sb.Append("  ArticleId: ").Append(ArticleId).Append("\n");
             sb.Append("  GeneralLedgerAccountId: ").Append(GeneralLedgerAccountId).Append("\n");
+            sb.Append("  PriceUnitId: ").Append(PriceUnitId).Append("\n");
+            sb.Append("  Reference: ").Append(Reference).Append("\n");
+            sb.Append("  References: ").Append(References).Append("\n");
+            sb.Append("  IsManualBillingLine: ").Append(IsManualBillingLine).Append("\n");
             sb.Append("  DeltaValue: ").Append(DeltaValue).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
+            sb.Append("  Remove: ").Append(Remove).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -370,6 +420,27 @@ namespace Simplic.OxS.SDK.ERP
                     this.GeneralLedgerAccountId.Equals(input.GeneralLedgerAccountId))
                 ) && 
                 (
+                    this.PriceUnitId == input.PriceUnitId ||
+                    (this.PriceUnitId != null &&
+                    this.PriceUnitId.Equals(input.PriceUnitId))
+                ) && 
+                (
+                    this.Reference == input.Reference ||
+                    (this.Reference != null &&
+                    this.Reference.Equals(input.Reference))
+                ) && 
+                (
+                    this.References == input.References ||
+                    this.References != null &&
+                    input.References != null &&
+                    this.References.SequenceEqual(input.References)
+                ) && 
+                (
+                    this.IsManualBillingLine == input.IsManualBillingLine ||
+                    (this.IsManualBillingLine != null &&
+                    this.IsManualBillingLine.Equals(input.IsManualBillingLine))
+                ) && 
+                (
                     this.DeltaValue == input.DeltaValue ||
                     (this.DeltaValue != null &&
                     this.DeltaValue.Equals(input.DeltaValue))
@@ -379,6 +450,10 @@ namespace Simplic.OxS.SDK.ERP
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
+                ) && 
+                (
+                    this.Remove == input.Remove ||
+                    this.Remove.Equals(input.Remove)
                 );
         }
 
@@ -454,6 +529,22 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.GeneralLedgerAccountId.GetHashCode();
                 }
+                if (this.PriceUnitId != null)
+                {
+                    hashCode = (hashCode * 59) + this.PriceUnitId.GetHashCode();
+                }
+                if (this.Reference != null)
+                {
+                    hashCode = (hashCode * 59) + this.Reference.GetHashCode();
+                }
+                if (this.References != null)
+                {
+                    hashCode = (hashCode * 59) + this.References.GetHashCode();
+                }
+                if (this.IsManualBillingLine != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsManualBillingLine.GetHashCode();
+                }
                 if (this.DeltaValue != null)
                 {
                     hashCode = (hashCode * 59) + this.DeltaValue.GetHashCode();
@@ -462,6 +553,7 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.Items.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Remove.GetHashCode();
                 return hashCode;
             }
         }
