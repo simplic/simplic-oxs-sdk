@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **Variables** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **AllowedToolNames** | **List&lt;string&gt;** |  | [optional] 
 **BlockedToolNames** | **List&lt;string&gt;** |  | [optional] 
+**UserName** | **string** |  | [optional] 
+**OrganizationName** | **string** |  | [optional] 
 **Stream** | **bool** |  | [optional] 
 **CorrelationId** | **Guid?** |  | [optional] 
 **Documents** | [**List&lt;AgentDocument&gt;**](AgentDocument.md) |  | [optional] 

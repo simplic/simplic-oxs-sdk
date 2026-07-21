@@ -57,11 +57,13 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="variables">variables.</param>
         /// <param name="allowedToolNames">allowedToolNames.</param>
         /// <param name="blockedToolNames">blockedToolNames.</param>
+        /// <param name="userName">userName.</param>
+        /// <param name="organizationName">organizationName.</param>
         /// <param name="stream">stream.</param>
         /// <param name="correlationId">correlationId.</param>
         /// <param name="documents">documents.</param>
         /// <param name="debug">debug.</param>
-        public AgentRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), List<string> allowedToolNames = default(List<string>), List<string> blockedToolNames = default(List<string>), bool stream = default(bool), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
+        public AgentRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), List<string> allowedToolNames = default(List<string>), List<string> blockedToolNames = default(List<string>), string userName = default(string), string organizationName = default(string), bool stream = default(bool), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
         {
             this.Prompt = prompt;
             this.Mode = mode;
@@ -72,6 +74,8 @@ namespace Simplic.OxS.SDK.Ai
             this.Variables = variables;
             this.AllowedToolNames = allowedToolNames;
             this.BlockedToolNames = blockedToolNames;
+            this.UserName = userName;
+            this.OrganizationName = organizationName;
             this.Stream = stream;
             this.CorrelationId = correlationId;
             this.Documents = documents;
@@ -121,6 +125,18 @@ namespace Simplic.OxS.SDK.Ai
         public List<string> BlockedToolNames { get; set; }
 
         /// <summary>
+        /// Gets or Sets UserName
+        /// </summary>
+        [DataMember(Name = "userName", EmitDefaultValue = true)]
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrganizationName
+        /// </summary>
+        [DataMember(Name = "organizationName", EmitDefaultValue = true)]
+        public string OrganizationName { get; set; }
+
+        /// <summary>
         /// Gets or Sets Stream
         /// </summary>
         [DataMember(Name = "stream", EmitDefaultValue = true)]
@@ -161,6 +177,8 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Variables: ").Append(Variables).Append("\n");
             sb.Append("  AllowedToolNames: ").Append(AllowedToolNames).Append("\n");
             sb.Append("  BlockedToolNames: ").Append(BlockedToolNames).Append("\n");
+            sb.Append("  UserName: ").Append(UserName).Append("\n");
+            sb.Append("  OrganizationName: ").Append(OrganizationName).Append("\n");
             sb.Append("  Stream: ").Append(Stream).Append("\n");
             sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
@@ -247,6 +265,16 @@ namespace Simplic.OxS.SDK.Ai
                     this.BlockedToolNames.SequenceEqual(input.BlockedToolNames)
                 ) && 
                 (
+                    this.UserName == input.UserName ||
+                    (this.UserName != null &&
+                    this.UserName.Equals(input.UserName))
+                ) && 
+                (
+                    this.OrganizationName == input.OrganizationName ||
+                    (this.OrganizationName != null &&
+                    this.OrganizationName.Equals(input.OrganizationName))
+                ) && 
+                (
                     this.Stream == input.Stream ||
                     this.Stream.Equals(input.Stream)
                 ) && 
@@ -305,6 +333,14 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.BlockedToolNames != null)
                 {
                     hashCode = (hashCode * 59) + this.BlockedToolNames.GetHashCode();
+                }
+                if (this.UserName != null)
+                {
+                    hashCode = (hashCode * 59) + this.UserName.GetHashCode();
+                }
+                if (this.OrganizationName != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationName.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Stream.GetHashCode();
                 if (this.CorrelationId != null)

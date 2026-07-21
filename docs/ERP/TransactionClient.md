@@ -22,6 +22,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**Post**](TransactionClient.md#transactionpost) | **POST** /Transaction | Creates a new transaction. |
 | [**Preview**](TransactionClient.md#transactionpreviewpost) | **POST** /Transaction/preview | Validates and creates a preview for a transaction. |
 | [**Print**](TransactionClient.md#transactionprintidpatch) | **PATCH** /Transaction/print/{id} | Prints a transaction by rendering its report, uploading it to the CDN and creating a linked document entry. |
+| [**RevertPrint**](TransactionClient.md#transactionrevertprintidpatch) | **PATCH** /Transaction/revert-print/{id} | Reverts the printed state of a transaction. |
 
 <a id="transactionbybarcodebarcodeget"></a>
 # **ByBarcode**
@@ -1751,6 +1752,103 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** | The unique identifier of the transaction to print. |  |
+
+### Return type
+
+[**TransactionResultModel**](TransactionResultModel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="transactionrevertprintidpatch"></a>
+# **RevertPrint**
+> TransactionResultModel RevertPrint (Guid id)
+
+Reverts the printed state of a transaction.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.ERP;
+
+namespace Example
+{
+    public class RevertPrintExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new TransactionClient(config);
+            var id = "id_example";  // Guid | The unique identifier of the transaction.
+
+            try
+            {
+                // Reverts the printed state of a transaction.
+                TransactionResultModel result = apiInstance.RevertPrint(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TransactionClient.RevertPrint: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RevertPrintWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reverts the printed state of a transaction.
+    ApiResponse<TransactionResultModel> response = apiInstance.RevertPrintWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TransactionClient.RevertPrintWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | The unique identifier of the transaction. |  |
 
 ### Return type
 

@@ -12,7 +12,9 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 | [**DeleteDtcoReadJob**](TelematicClient.md#telematicdeletedtcoreadjobdelete) | **DELETE** /Telematic/delete-dtco-read-job |  |
 | [**DeleteReadJob**](TelematicClient.md#telematicdeletereadjobdelete) | **DELETE** /Telematic/delete-read-job |  |
 | [**GetAvailableServices**](TelematicClient.md#telematicgetavailableservicesget) | **GET** /Telematic/get-available-services |  |
+| [**GetDtcoReadJob**](TelematicClient.md#telematicgetdtcoreadjobprovidernameget) | **GET** /Telematic/get-dtco-read-job/{providerName} |  |
 | [**GetImportVehicle**](TelematicClient.md#telematicgetimportvehiclepost) | **POST** /Telematic/get-import-vehicle |  |
+| [**GetReadJob**](TelematicClient.md#telematicgetreadjobprovidernameget) | **GET** /Telematic/get-read-job/{providerName} |  |
 | [**SendTextMessage**](TelematicClient.md#telematicsendtextmessagepost) | **POST** /Telematic/send-text-message |  |
 
 <a id="telematiccheckcredentialspost"></a>
@@ -745,6 +747,101 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="telematicgetdtcoreadjobprovidernameget"></a>
+# **GetDtcoReadJob**
+> ReadJobResponse GetDtcoReadJob (string providerName)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Telematic;
+
+namespace Example
+{
+    public class GetDtcoReadJobExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/telematic-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new TelematicClient(config);
+            var providerName = "providerName_example";  // string | 
+
+            try
+            {
+                ReadJobResponse result = apiInstance.GetDtcoReadJob(providerName);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TelematicClient.GetDtcoReadJob: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetDtcoReadJobWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<ReadJobResponse> response = apiInstance.GetDtcoReadJobWithHttpInfo(providerName);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TelematicClient.GetDtcoReadJobWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **providerName** | **string** |  |  |
+
+### Return type
+
+[**ReadJobResponse**](ReadJobResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="telematicgetimportvehiclepost"></a>
 # **GetImportVehicle**
 > List&lt;ImportVehicleResponse&gt; GetImportVehicle (ImportVehiclesRequest? importVehiclesRequest = null)
@@ -836,6 +933,101 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="telematicgetreadjobprovidernameget"></a>
+# **GetReadJob**
+> ReadJobResponse GetReadJob (string providerName)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Telematic;
+
+namespace Example
+{
+    public class GetReadJobExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/telematic-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new TelematicClient(config);
+            var providerName = "providerName_example";  // string | 
+
+            try
+            {
+                ReadJobResponse result = apiInstance.GetReadJob(providerName);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TelematicClient.GetReadJob: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetReadJobWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<ReadJobResponse> response = apiInstance.GetReadJobWithHttpInfo(providerName);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TelematicClient.GetReadJobWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **providerName** | **string** |  |  |
+
+### Return type
+
+[**ReadJobResponse**](ReadJobResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

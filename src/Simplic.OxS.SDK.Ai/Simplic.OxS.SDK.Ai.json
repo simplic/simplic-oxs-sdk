@@ -5270,6 +5270,14 @@
                         },
                         "nullable": true
                     },
+                    "userName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "organizationName": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "stream": {
                         "type": "boolean"
                     },

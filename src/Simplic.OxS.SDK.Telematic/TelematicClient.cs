@@ -319,6 +319,41 @@ public interface ITelematicClient
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <returns>ReadJobResponse</returns>
+    ReadJobResponse GetDtcoReadJob(string providerName);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <returns>ApiResponse of ReadJobResponse</returns>
+    ApiResponse<ReadJobResponse> GetDtcoReadJobWithHttpInfo(string providerName);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ReadJobResponse</returns>
+    Task<ReadJobResponse> GetDtcoReadJobAsync(string providerName, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+    Task<ApiResponse<ReadJobResponse>> GetDtcoReadJobWithHttpInfoAsync(string providerName, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="importVehiclesRequest"> (optional)</param>
     /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
     List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?));
@@ -348,6 +383,41 @@ public interface ITelematicClient
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (List&lt;ImportVehicleResponse&gt;)</returns>
     Task<ApiResponse<List<ImportVehicleResponse>>> GetImportVehicleWithHttpInfoAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <returns>ReadJobResponse</returns>
+    ReadJobResponse GetReadJob(string providerName);
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <returns>ApiResponse of ReadJobResponse</returns>
+    ApiResponse<ReadJobResponse> GetReadJobWithHttpInfo(string providerName);
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ReadJobResponse</returns>
+    Task<ReadJobResponse> GetReadJobAsync(string providerName, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="providerName"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+    Task<ApiResponse<ReadJobResponse>> GetReadJobWithHttpInfoAsync(string providerName, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -1043,6 +1113,79 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <returns>ReadJobResponse</returns>
+        public ReadJobResponse GetDtcoReadJob(string providerName)
+        {
+            try
+            {
+                return _internalClient.GetDtcoReadJob(providerName);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <returns>ApiResponse of ReadJobResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<ReadJobResponse> GetDtcoReadJobWithHttpInfo(string providerName)
+        {
+            try
+            {
+                return _internalClient.GetDtcoReadJobWithHttpInfo(providerName);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReadJobResponse</returns>
+        public System.Threading.Tasks.Task<ReadJobResponse> GetDtcoReadJobAsync(string providerName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetDtcoReadJobAsync(providerName, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ReadJobResponse>> GetDtcoReadJobWithHttpInfoAsync(string providerName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetDtcoReadJobWithHttpInfoAsync(providerName, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
         /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
         public List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?))
@@ -1106,6 +1249,79 @@ public interface ITelematicClient
             try
             {
                 return _internalClient.GetImportVehicleWithHttpInfoAsync(importVehiclesRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <returns>ReadJobResponse</returns>
+        public ReadJobResponse GetReadJob(string providerName)
+        {
+            try
+            {
+                return _internalClient.GetReadJob(providerName);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <returns>ApiResponse of ReadJobResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<ReadJobResponse> GetReadJobWithHttpInfo(string providerName)
+        {
+            try
+            {
+                return _internalClient.GetReadJobWithHttpInfo(providerName);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReadJobResponse</returns>
+        public System.Threading.Tasks.Task<ReadJobResponse> GetReadJobAsync(string providerName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetReadJobAsync(providerName, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ReadJobResponse>> GetReadJobWithHttpInfoAsync(string providerName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetReadJobWithHttpInfoAsync(providerName, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -1360,6 +1576,26 @@ public interface ITelematicClient
         /// 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ReadJobResponse</returns>
+        ReadJobResponse GetDtcoReadJob(string providerName, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ReadJobResponse</returns>
+        ApiResponse<ReadJobResponse> GetDtcoReadJobWithHttpInfo(string providerName, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
@@ -1376,6 +1612,26 @@ public interface ITelematicClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ImportVehicleResponse&gt;</returns>
         ApiResponse<List<ImportVehicleResponse>> GetImportVehicleWithHttpInfo(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ReadJobResponse</returns>
+        ReadJobResponse GetReadJob(string providerName, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ReadJobResponse</returns>
+        ApiResponse<ReadJobResponse> GetReadJobWithHttpInfo(string providerName, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1610,6 +1866,31 @@ public interface ITelematicClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReadJobResponse</returns>
+        System.Threading.Tasks.Task<ReadJobResponse> GetDtcoReadJobAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReadJobResponse>> GetDtcoReadJobWithHttpInfoAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1628,6 +1909,31 @@ public interface ITelematicClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ImportVehicleResponse&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ImportVehicleResponse>>> GetImportVehicleWithHttpInfoAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReadJobResponse</returns>
+        System.Threading.Tasks.Task<ReadJobResponse> GetReadJobAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReadJobResponse>> GetReadJobWithHttpInfoAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -3067,6 +3373,176 @@ public interface ITelematicClient
         ///  
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ReadJobResponse</returns>
+        public ReadJobResponse GetDtcoReadJob(string providerName, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<ReadJobResponse> localVarResponse = GetDtcoReadJobWithHttpInfo(providerName);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ReadJobResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<ReadJobResponse> GetDtcoReadJobWithHttpInfo(string providerName, int operationIndex = 0)
+        {
+            // verify the required parameter 'providerName' is set
+            if (providerName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'providerName' when calling TelematicClient->TelematicGetDtcoReadJobProviderNameGet");
+            }
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("providerName", Simplic.OxS.SDK.ClientUtils.ParameterToString(providerName)); // path parameter
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicGetDtcoReadJobProviderNameGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ReadJobResponse>("/Telematic/get-dtco-read-job/{providerName}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicGetDtcoReadJobProviderNameGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReadJobResponse</returns>
+        public async System.Threading.Tasks.Task<ReadJobResponse> GetDtcoReadJobAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<ReadJobResponse> localVarResponse = await GetDtcoReadJobWithHttpInfoAsync(providerName, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ReadJobResponse>> GetDtcoReadJobWithHttpInfoAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'providerName' is set
+            if (providerName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'providerName' when calling TelematicClient->TelematicGetDtcoReadJobProviderNameGet");
+            }
+
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("providerName", Simplic.OxS.SDK.ClientUtils.ParameterToString(providerName)); // path parameter
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicGetDtcoReadJobProviderNameGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ReadJobResponse>("/Telematic/get-dtco-read-job/{providerName}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicGetDtcoReadJobProviderNameGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ImportVehicleResponse&gt;</returns>
@@ -3218,6 +3694,176 @@ public interface ITelematicClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TelematicGetImportVehiclePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ReadJobResponse</returns>
+        public ReadJobResponse GetReadJob(string providerName, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<ReadJobResponse> localVarResponse = GetReadJobWithHttpInfo(providerName);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ReadJobResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<ReadJobResponse> GetReadJobWithHttpInfo(string providerName, int operationIndex = 0)
+        {
+            // verify the required parameter 'providerName' is set
+            if (providerName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'providerName' when calling TelematicClient->TelematicGetReadJobProviderNameGet");
+            }
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("providerName", Simplic.OxS.SDK.ClientUtils.ParameterToString(providerName)); // path parameter
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicGetReadJobProviderNameGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ReadJobResponse>("/Telematic/get-read-job/{providerName}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicGetReadJobProviderNameGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReadJobResponse</returns>
+        public async System.Threading.Tasks.Task<ReadJobResponse> GetReadJobAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<ReadJobResponse> localVarResponse = await GetReadJobWithHttpInfoAsync(providerName, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerName"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<ReadJobResponse>> GetReadJobWithHttpInfoAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'providerName' is set
+            if (providerName == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'providerName' when calling TelematicClient->TelematicGetReadJobProviderNameGet");
+            }
+
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("providerName", Simplic.OxS.SDK.ClientUtils.ParameterToString(providerName)); // path parameter
+
+            localVarRequestOptions.Operation = "TelematicClient.TelematicGetReadJobProviderNameGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ReadJobResponse>("/Telematic/get-read-job/{providerName}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TelematicGetReadJobProviderNameGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
