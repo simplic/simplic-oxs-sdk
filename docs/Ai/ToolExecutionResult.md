@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **RollbackMetadata** | **Object** |  | [optional] 
 **RiskLevel** | **ToolRiskLevel** |  | [optional] 
 **WorkspaceEntry** | [**AgentWorkspaceEntry**](AgentWorkspaceEntry.md) |  | [optional] 
+**FileArtifacts** | [**List&lt;AgentFileArtifact&gt;**](AgentFileArtifact.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,31 +28,33 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.ERP
 {
     /// <summary>
-    /// TransactionSubtypeOutputConfiguration
+    /// Represents the shared model for a transaction subtype output queue.
     /// </summary>
-    [DataContract(Name = "TransactionSubtypeOutputConfiguration")]
-    public partial class TransactionSubtypeOutputConfiguration : IEquatable<TransactionSubtypeOutputConfiguration>, IValidatableObject
+    [DataContract(Name = "TransactionSubtypeOutputQueueModel")]
+    public partial class TransactionSubtypeOutputQueueModel : IEquatable<TransactionSubtypeOutputQueueModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionSubtypeOutputConfiguration" /> class.
+        /// Initializes a new instance of the <see cref="TransactionSubtypeOutputQueueModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        public TransactionSubtypeOutputConfiguration(Guid id = default(Guid), string name = default(string))
+        /// <param name="id">Gets or sets the ID..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        public TransactionSubtypeOutputQueueModel(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the ID.
         /// </summary>
+        /// <value>Gets or sets the ID.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -63,7 +65,7 @@ namespace Simplic.OxS.SDK.ERP
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TransactionSubtypeOutputConfiguration {\n");
+            sb.Append("class TransactionSubtypeOutputQueueModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
@@ -86,15 +88,15 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionSubtypeOutputConfiguration);
+            return this.Equals(input as TransactionSubtypeOutputQueueModel);
         }
 
         /// <summary>
-        /// Returns true if TransactionSubtypeOutputConfiguration instances are equal
+        /// Returns true if TransactionSubtypeOutputQueueModel instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionSubtypeOutputConfiguration to be compared</param>
+        /// <param name="input">Instance of TransactionSubtypeOutputQueueModel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionSubtypeOutputConfiguration input)
+        public bool Equals(TransactionSubtypeOutputQueueModel input)
         {
             if (input == null)
             {

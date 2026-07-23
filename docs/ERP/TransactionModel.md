@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **CashDiscountPercentValue** | **double?** | Gets or sets the relative cash discount. | [optional] 
 **CashDiscountTotal** | **double?** | Gets or sets the total cash discount. | [optional] 
 **Document** | [**TransactionDocumentModel**](TransactionDocumentModel.md) |  | [optional] 
+**AttachedDocuments** | [**List&lt;TransactionDocumentModel&gt;**](TransactionDocumentModel.md) | Gets or sets the set of attached documents. | [optional] 
 **FinancialAccountingPeriod** | [**TransactionPeriodModel**](TransactionPeriodModel.md) |  | [optional] 
 **Period** | [**TransactionPeriodModel**](TransactionPeriodModel.md) |  | [optional] 
 **States** | **List&lt;string&gt;** | Gets or sets a set of states the transaction is in.  Examples for states are: cancelled, exported, gross, paid, printed, transferredToAccounting | [optional] 

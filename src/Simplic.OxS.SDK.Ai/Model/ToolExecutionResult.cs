@@ -51,7 +51,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="rollbackMetadata">rollbackMetadata.</param>
         /// <param name="riskLevel">riskLevel.</param>
         /// <param name="workspaceEntry">workspaceEntry.</param>
-        public ToolExecutionResult(bool success = default(bool), string toolName = default(string), Object output = default(Object), string outputSummary = default(string), string error = default(string), string duration = default(string), Object rollbackMetadata = default(Object), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), AgentWorkspaceEntry workspaceEntry = default(AgentWorkspaceEntry))
+        /// <param name="fileArtifacts">fileArtifacts.</param>
+        public ToolExecutionResult(bool success = default(bool), string toolName = default(string), Object output = default(Object), string outputSummary = default(string), string error = default(string), string duration = default(string), Object rollbackMetadata = default(Object), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), AgentWorkspaceEntry workspaceEntry = default(AgentWorkspaceEntry), List<AgentFileArtifact> fileArtifacts = default(List<AgentFileArtifact>))
         {
             this.Success = success;
             this.ToolName = toolName;
@@ -62,6 +63,7 @@ namespace Simplic.OxS.SDK.Ai
             this.RollbackMetadata = rollbackMetadata;
             this.RiskLevel = riskLevel;
             this.WorkspaceEntry = workspaceEntry;
+            this.FileArtifacts = fileArtifacts;
         }
 
         /// <summary>
@@ -113,6 +115,12 @@ namespace Simplic.OxS.SDK.Ai
         public AgentWorkspaceEntry WorkspaceEntry { get; set; }
 
         /// <summary>
+        /// Gets or Sets FileArtifacts
+        /// </summary>
+        [DataMember(Name = "fileArtifacts", EmitDefaultValue = true)]
+        public List<AgentFileArtifact> FileArtifacts { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -129,6 +137,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  RollbackMetadata: ").Append(RollbackMetadata).Append("\n");
             sb.Append("  RiskLevel: ").Append(RiskLevel).Append("\n");
             sb.Append("  WorkspaceEntry: ").Append(WorkspaceEntry).Append("\n");
+            sb.Append("  FileArtifacts: ").Append(FileArtifacts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -206,6 +215,12 @@ namespace Simplic.OxS.SDK.Ai
                     this.WorkspaceEntry == input.WorkspaceEntry ||
                     (this.WorkspaceEntry != null &&
                     this.WorkspaceEntry.Equals(input.WorkspaceEntry))
+                ) && 
+                (
+                    this.FileArtifacts == input.FileArtifacts ||
+                    this.FileArtifacts != null &&
+                    input.FileArtifacts != null &&
+                    this.FileArtifacts.SequenceEqual(input.FileArtifacts)
                 );
         }
 
@@ -247,6 +262,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.WorkspaceEntry != null)
                 {
                     hashCode = (hashCode * 59) + this.WorkspaceEntry.GetHashCode();
+                }
+                if (this.FileArtifacts != null)
+                {
+                    hashCode = (hashCode * 59) + this.FileArtifacts.GetHashCode();
                 }
                 return hashCode;
             }

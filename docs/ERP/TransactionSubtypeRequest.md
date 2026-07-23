@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Code** | **string** | Stable code for subtype deployment/references. | [optional] 
 **Report** | [**TransactionSubtypeReport**](TransactionSubtypeReport.md) |  | [optional] 
 **SequenceNumberRange** | [**TransactionSequenceNumberRange**](TransactionSequenceNumberRange.md) |  | [optional] 
-**OutputConfiguration** | [**TransactionSubtypeOutputConfiguration**](TransactionSubtypeOutputConfiguration.md) |  | [optional] 
+**OutputQueue** | [**TransactionSubtypeOutputQueue**](TransactionSubtypeOutputQueue.md) |  | [optional] 
 **CancellationTransactionType** | [**TransactionSubtypeCancellationTransactionType**](TransactionSubtypeCancellationTransactionType.md) |  | [optional] 
 **Number** | **int?** | Gets or sets a unique number. | [optional] 
 **Name** | **string** | Gets or sets the subtype name. | [optional] 

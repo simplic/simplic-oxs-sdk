@@ -5058,6 +5058,32 @@
                 },
                 "additionalProperties": false
             },
+            "AgentFileArtifact": {
+                "type": "object",
+                "properties": {
+                    "fileName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "downloadUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mimeType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "sizeBytes": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "blobId": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "AgentMessageResponse": {
                 "type": "object",
                 "properties": {
@@ -6754,6 +6780,13 @@
                     },
                     "workspaceEntry": {
                         "$ref": "#/components/schemas/AgentWorkspaceEntry"
+                    },
+                    "fileArtifacts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AgentFileArtifact"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

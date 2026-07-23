@@ -15222,6 +15222,14 @@
                     "document": {
                         "$ref": "#/components/schemas/TransactionDocumentModel"
                     },
+                    "attachedDocuments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TransactionDocumentModel"
+                        },
+                        "description": "Gets or sets the set of attached documents.",
+                        "nullable": true
+                    },
                     "financialAccountingPeriod": {
                         "$ref": "#/components/schemas/TransactionPeriodModel"
                     },
@@ -15580,8 +15588,8 @@
                     "sequenceNumberRange": {
                         "$ref": "#/components/schemas/TransactionSequenceNumberRangeModel"
                     },
-                    "outputConfiguration": {
-                        "$ref": "#/components/schemas/TransactionSubtypeOutputConfigurationModel"
+                    "outputQueue": {
+                        "$ref": "#/components/schemas/TransactionSubtypeOutputQueueModel"
                     },
                     "cancellationTransactionType": {
                         "$ref": "#/components/schemas/TransactionSubtypeCancellationTransactionType"
@@ -15654,7 +15662,7 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for a transaction subtype."
             },
-            "TransactionSubtypeOutputConfiguration": {
+            "TransactionSubtypeOutputQueue": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -15668,7 +15676,7 @@
                 },
                 "additionalProperties": false
             },
-            "TransactionSubtypeOutputConfigurationModel": {
+            "TransactionSubtypeOutputQueueModel": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -15683,7 +15691,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Represents the shared model for a transaction subtype output configuration."
+                "description": "Represents the shared model for a transaction subtype output queue."
             },
             "TransactionSubtypeReport": {
                 "type": "object",
@@ -15735,8 +15743,8 @@
                     "sequenceNumberRange": {
                         "$ref": "#/components/schemas/TransactionSequenceNumberRange"
                     },
-                    "outputConfiguration": {
-                        "$ref": "#/components/schemas/TransactionSubtypeOutputConfiguration"
+                    "outputQueue": {
+                        "$ref": "#/components/schemas/TransactionSubtypeOutputQueue"
                     },
                     "cancellationTransactionType": {
                         "$ref": "#/components/schemas/TransactionSubtypeCancellationTransactionType"
@@ -15861,8 +15869,8 @@
                     "sequenceNumberRange": {
                         "$ref": "#/components/schemas/TransactionSequenceNumberRangeModel"
                     },
-                    "outputConfiguration": {
-                        "$ref": "#/components/schemas/TransactionSubtypeOutputConfigurationModel"
+                    "outputQueue": {
+                        "$ref": "#/components/schemas/TransactionSubtypeOutputQueueModel"
                     },
                     "number": {
                         "type": "integer",

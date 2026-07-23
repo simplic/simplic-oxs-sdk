@@ -64,7 +64,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="code">Gets or sets the code used to identify default transaction subtype documents when generating transactions from code.  Stable, human-readable identifier added specifically for referencing deployed documents from code. Unlike the runtime-generated Guid Id and dynamic int Number, this value is known at deployment time and never changes afterwards..</param>
         /// <param name="report">report.</param>
         /// <param name="sequenceNumberRange">sequenceNumberRange.</param>
-        /// <param name="outputConfiguration">outputConfiguration.</param>
+        /// <param name="outputQueue">outputQueue.</param>
         /// <param name="cancellationTransactionType">cancellationTransactionType.</param>
         /// <param name="number">Gets or sets a unique id..</param>
         /// <param name="name">Gets or sets the subtype name..</param>
@@ -81,13 +81,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="transactionNumberDateSource">transactionNumberDateSource.</param>
         /// <param name="exportCostQuantity">exportCostQuantity.</param>
         /// <param name="isDeleted">Gets or sets the IsDeleted flag..</param>
-        public TransactionSubtypeModel(Guid id = default(Guid), string code = default(string), TransactionSubtypeReportModel report = default(TransactionSubtypeReportModel), TransactionSequenceNumberRangeModel sequenceNumberRange = default(TransactionSequenceNumberRangeModel), TransactionSubtypeOutputConfigurationModel outputConfiguration = default(TransactionSubtypeOutputConfigurationModel), TransactionSubtypeCancellationTransactionType cancellationTransactionType = default(TransactionSubtypeCancellationTransactionType), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?), bool isDeleted = default(bool))
+        public TransactionSubtypeModel(Guid id = default(Guid), string code = default(string), TransactionSubtypeReportModel report = default(TransactionSubtypeReportModel), TransactionSequenceNumberRangeModel sequenceNumberRange = default(TransactionSequenceNumberRangeModel), TransactionSubtypeOutputQueueModel outputQueue = default(TransactionSubtypeOutputQueueModel), TransactionSubtypeCancellationTransactionType cancellationTransactionType = default(TransactionSubtypeCancellationTransactionType), int number = default(int), string name = default(string), string documentTitleTemplate = default(string), TransactionSubtypeArchiveMode? archiveMode = default(TransactionSubtypeArchiveMode?), string barcodeTemplate = default(string), bool useNumberReservation = default(bool), string customField2Template = default(string), string customField1Template = default(string), string bookingTextTemplate = default(string), bool summarizeBookings = default(bool), string accountingExportGroup = default(string), DueDateMode? dueDateMode = default(DueDateMode?), TransactionNumberDateSourceType? transactionNumberDateSource = default(TransactionNumberDateSourceType?), ExportCostQuantityType? exportCostQuantity = default(ExportCostQuantityType?), bool isDeleted = default(bool))
         {
             this.Id = id;
             this.Code = code;
             this.Report = report;
             this.SequenceNumberRange = sequenceNumberRange;
-            this.OutputConfiguration = outputConfiguration;
+            this.OutputQueue = outputQueue;
             this.CancellationTransactionType = cancellationTransactionType;
             this.Number = number;
             this.Name = name;
@@ -133,10 +133,10 @@ namespace Simplic.OxS.SDK.ERP
         public TransactionSequenceNumberRangeModel SequenceNumberRange { get; set; }
 
         /// <summary>
-        /// Gets or Sets OutputConfiguration
+        /// Gets or Sets OutputQueue
         /// </summary>
-        [DataMember(Name = "outputConfiguration", EmitDefaultValue = false)]
-        public TransactionSubtypeOutputConfigurationModel OutputConfiguration { get; set; }
+        [DataMember(Name = "outputQueue", EmitDefaultValue = false)]
+        public TransactionSubtypeOutputQueueModel OutputQueue { get; set; }
 
         /// <summary>
         /// Gets or Sets CancellationTransactionType
@@ -233,7 +233,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Report: ").Append(Report).Append("\n");
             sb.Append("  SequenceNumberRange: ").Append(SequenceNumberRange).Append("\n");
-            sb.Append("  OutputConfiguration: ").Append(OutputConfiguration).Append("\n");
+            sb.Append("  OutputQueue: ").Append(OutputQueue).Append("\n");
             sb.Append("  CancellationTransactionType: ").Append(CancellationTransactionType).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -306,9 +306,9 @@ namespace Simplic.OxS.SDK.ERP
                     this.SequenceNumberRange.Equals(input.SequenceNumberRange))
                 ) && 
                 (
-                    this.OutputConfiguration == input.OutputConfiguration ||
-                    (this.OutputConfiguration != null &&
-                    this.OutputConfiguration.Equals(input.OutputConfiguration))
+                    this.OutputQueue == input.OutputQueue ||
+                    (this.OutputQueue != null &&
+                    this.OutputQueue.Equals(input.OutputQueue))
                 ) && 
                 (
                     this.CancellationTransactionType == input.CancellationTransactionType ||
@@ -409,9 +409,9 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.SequenceNumberRange.GetHashCode();
                 }
-                if (this.OutputConfiguration != null)
+                if (this.OutputQueue != null)
                 {
-                    hashCode = (hashCode * 59) + this.OutputConfiguration.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OutputQueue.GetHashCode();
                 }
                 if (this.CancellationTransactionType != null)
                 {
