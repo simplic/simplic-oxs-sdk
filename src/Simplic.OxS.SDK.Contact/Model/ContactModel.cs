@@ -45,6 +45,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="functions">functions.</param>
         /// <param name="openingHours">openingHours.</param>
         /// <param name="closedDays">closedDays.</param>
+        /// <param name="externalReference">externalReference.</param>
         /// <param name="addon">addon.</param>
         /// <param name="id">id.</param>
         /// <param name="isDeleted">isDeleted.</param>
@@ -55,7 +56,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="organizationId">organizationId.</param>
-        public ContactModel(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
+        public ContactModel(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), string externalReference = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -66,6 +67,7 @@ namespace Simplic.OxS.SDK.Contact
             this.Functions = functions;
             this.OpeningHours = openingHours;
             this.ClosedDays = closedDays;
+            this.ExternalReference = externalReference;
             this.Addon = addon;
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -131,6 +133,12 @@ namespace Simplic.OxS.SDK.Contact
         /// </summary>
         [DataMember(Name = "closedDays", EmitDefaultValue = true)]
         public List<ClosedDayModel> ClosedDays { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalReference
+        /// </summary>
+        [DataMember(Name = "externalReference", EmitDefaultValue = true)]
+        public string ExternalReference { get; set; }
 
         /// <summary>
         /// Gets or Sets Addon
@@ -209,6 +217,7 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  Functions: ").Append(Functions).Append("\n");
             sb.Append("  OpeningHours: ").Append(OpeningHours).Append("\n");
             sb.Append("  ClosedDays: ").Append(ClosedDays).Append("\n");
+            sb.Append("  ExternalReference: ").Append(ExternalReference).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
@@ -303,6 +312,11 @@ namespace Simplic.OxS.SDK.Contact
                     this.ClosedDays != null &&
                     input.ClosedDays != null &&
                     this.ClosedDays.SequenceEqual(input.ClosedDays)
+                ) && 
+                (
+                    this.ExternalReference == input.ExternalReference ||
+                    (this.ExternalReference != null &&
+                    this.ExternalReference.Equals(input.ExternalReference))
                 ) && 
                 (
                     this.Addon == input.Addon ||
@@ -400,6 +414,10 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.ClosedDays != null)
                 {
                     hashCode = (hashCode * 59) + this.ClosedDays.GetHashCode();
+                }
+                if (this.ExternalReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalReference.GetHashCode();
                 }
                 if (this.Addon != null)
                 {
