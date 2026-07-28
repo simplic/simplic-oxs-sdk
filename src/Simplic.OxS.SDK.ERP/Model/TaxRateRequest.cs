@@ -43,7 +43,8 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="number">Gets or sets the number. (required).</param>
         /// <param name="name">Gets or sets the name. (required).</param>
-        public TaxRateRequest(int number = default(int), string name = default(string))
+        /// <param name="code">Gets or sets a code. This code is to be used by internal processes..</param>
+        public TaxRateRequest(int number = default(int), string name = default(string), string code = default(string))
         {
             this.Number = number;
             // to ensure "name" is required (not null)
@@ -52,6 +53,7 @@ namespace Simplic.OxS.SDK.ERP
                 throw new ArgumentNullException("name is a required property for TaxRateRequest and cannot be null");
             }
             this.Name = name;
+            this.Code = code;
         }
 
         /// <summary>
@@ -69,6 +71,13 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets a code. This code is to be used by internal processes.
+        /// </summary>
+        /// <value>Gets or sets a code. This code is to be used by internal processes.</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -78,6 +87,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("class TaxRateRequest {\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +131,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 );
         }
 
@@ -137,6 +152,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 return hashCode;
             }

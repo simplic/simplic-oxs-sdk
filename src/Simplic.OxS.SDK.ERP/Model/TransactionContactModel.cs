@@ -41,14 +41,18 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="companyName">Gets or sets the company name..</param>
         /// <param name="firstName">Gets or sets the first name..</param>
         /// <param name="lastName">Gets or sets the last name..</param>
+        /// <param name="taxGroupId">Gets or sets the tax group ID..</param>
+        /// <param name="vatId">Gets or sets the VAT ID..</param>
         /// <param name="address">address.</param>
-        public TransactionContactModel(Guid id = default(Guid), string accountNumber = default(string), string companyName = default(string), string firstName = default(string), string lastName = default(string), TransactionAddressModel address = default(TransactionAddressModel))
+        public TransactionContactModel(Guid id = default(Guid), string accountNumber = default(string), string companyName = default(string), string firstName = default(string), string lastName = default(string), Guid? taxGroupId = default(Guid?), string vatId = default(string), TransactionAddressModel address = default(TransactionAddressModel))
         {
             this.Id = id;
             this.AccountNumber = accountNumber;
             this.CompanyName = companyName;
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.TaxGroupId = taxGroupId;
+            this.VatId = vatId;
             this.Address = address;
         }
 
@@ -88,6 +92,20 @@ namespace Simplic.OxS.SDK.ERP
         public string LastName { get; set; }
 
         /// <summary>
+        /// Gets or sets the tax group ID.
+        /// </summary>
+        /// <value>Gets or sets the tax group ID.</value>
+        [DataMember(Name = "taxGroupId", EmitDefaultValue = true)]
+        public Guid? TaxGroupId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the VAT ID.
+        /// </summary>
+        /// <value>Gets or sets the VAT ID.</value>
+        [DataMember(Name = "vatId", EmitDefaultValue = true)]
+        public string VatId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
@@ -106,6 +124,8 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  TaxGroupId: ").Append(TaxGroupId).Append("\n");
+            sb.Append("  VatId: ").Append(VatId).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -168,6 +188,16 @@ namespace Simplic.OxS.SDK.ERP
                     this.LastName.Equals(input.LastName))
                 ) && 
                 (
+                    this.TaxGroupId == input.TaxGroupId ||
+                    (this.TaxGroupId != null &&
+                    this.TaxGroupId.Equals(input.TaxGroupId))
+                ) && 
+                (
+                    this.VatId == input.VatId ||
+                    (this.VatId != null &&
+                    this.VatId.Equals(input.VatId))
+                ) && 
+                (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
@@ -202,6 +232,14 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.LastName != null)
                 {
                     hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                }
+                if (this.TaxGroupId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxGroupId.GetHashCode();
+                }
+                if (this.VatId != null)
+                {
+                    hashCode = (hashCode * 59) + this.VatId.GetHashCode();
                 }
                 if (this.Address != null)
                 {

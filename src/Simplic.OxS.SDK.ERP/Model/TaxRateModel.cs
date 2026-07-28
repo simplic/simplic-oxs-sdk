@@ -41,19 +41,21 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="name">Gets or sets the name..</param>
+        /// <param name="code">Gets or sets a code. This code is to be used by internal processes..</param>
         /// <param name="createDateTime">Gets or sets the date and time the tax rate is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the tax rate..</param>
         /// <param name="createUserName">Gets or sets the name of the user that created the tax rate..</param>
         /// <param name="updateDateTime">Gets or sets the date and time the tax rate is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the tax rate..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the tax rate..</param>
-        public TaxRateModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TaxRateModel(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), string code = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
             this.Number = number;
             this.Name = name;
+            this.Code = code;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -93,6 +95,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets a code. This code is to be used by internal processes.
+        /// </summary>
+        /// <value>Gets or sets a code. This code is to be used by internal processes.</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time the tax rate is created.
@@ -149,6 +158,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -214,6 +224,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
@@ -267,6 +282,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 if (this.CreateDateTime != null)
                 {

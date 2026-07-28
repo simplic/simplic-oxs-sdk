@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **CompanyName** | **string** | Gets or sets the company name. | [optional] 
 **FirstName** | **string** | Gets or sets the first name. | [optional] 
 **LastName** | **string** | Gets or sets the last name. | [optional] 
+**TaxGroupId** | **Guid?** | Gets or sets the tax group ID. | [optional] 
+**VatId** | **string** | Gets or sets the VAT ID. | [optional] 
 **Address** | [**TransactionAddressModel**](TransactionAddressModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

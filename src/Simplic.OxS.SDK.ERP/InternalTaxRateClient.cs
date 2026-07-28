@@ -40,7 +40,42 @@ public interface IInternalTaxRateClient
 
 
     /// <summary>
-    ///  
+    /// Gets a tax rate by its code. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="code">The code to search for. (optional)</param>
+    /// <returns>TaxRateModel</returns>
+    TaxRateModel GetByCode(string? code = default(string?));
+
+    /// <summary>
+    /// Gets a tax rate by its code. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="code">The code to search for. (optional)</param>
+    /// <returns>ApiResponse of TaxRateModel</returns>
+    ApiResponse<TaxRateModel> GetByCodeWithHttpInfo(string? code = default(string?));
+        
+    /// <summary>
+    /// Gets a tax rate by its code. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="code">The code to search for. (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of TaxRateModel</returns>
+    Task<TaxRateModel> GetByCodeAsync(string? code = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Gets a tax rate by its code. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="code">The code to search for. (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+    Task<ApiResponse<TaxRateModel>> GetByCodeWithHttpInfoAsync(string? code = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Gets a tax rate by id. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -48,7 +83,7 @@ public interface IInternalTaxRateClient
     TaxRateModel GetById(Guid? id = default(Guid?));
 
     /// <summary>
-    ///  
+    /// Gets a tax rate by id. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -56,7 +91,7 @@ public interface IInternalTaxRateClient
     ApiResponse<TaxRateModel> GetByIdWithHttpInfo(Guid? id = default(Guid?));
         
     /// <summary>
-    ///  
+    /// Gets a tax rate by id. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -65,7 +100,7 @@ public interface IInternalTaxRateClient
     Task<TaxRateModel> GetByIdAsync(Guid? id = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a tax rate by id. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"> (optional)</param>
@@ -149,7 +184,80 @@ public interface IInternalTaxRateClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel GetByCode(string? code = default(string?))
+        {
+            try
+            {
+                return _internalClient.GetByCode(code);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> GetByCodeWithHttpInfo(string? code = default(string?))
+        {
+            try
+            {
+                return _internalClient.GetByCodeWithHttpInfo(code);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TaxRateModel</returns>
+        public System.Threading.Tasks.Task<TaxRateModel> GetByCodeAsync(string? code = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByCodeAsync(code, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> GetByCodeWithHttpInfoAsync(string? code = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetByCodeWithHttpInfoAsync(code, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -167,7 +275,7 @@ public interface IInternalTaxRateClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -185,7 +293,7 @@ public interface IInternalTaxRateClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -204,7 +312,7 @@ public interface IInternalTaxRateClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -235,7 +343,27 @@ public interface IInternalTaxRateClient
     {
         #region Synchronous Operations
         /// <summary>
+        /// Gets a tax rate by its code.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TaxRateModel</returns>
+        TaxRateModel GetByCode(string? code = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// Gets a tax rate by its code.
+        /// </summary>
+        /// <remarks>
         /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        ApiResponse<TaxRateModel> GetByCodeWithHttpInfo(string? code = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// Gets a tax rate by id.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -244,7 +372,7 @@ public interface IInternalTaxRateClient
         TaxRateModel GetById(Guid? id = default(Guid?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a tax rate by id.
         /// </summary>
         /// <remarks>
         /// 
@@ -264,7 +392,32 @@ public interface IInternalTaxRateClient
     {
         #region Asynchronous Operations
         /// <summary>
+        /// Gets a tax rate by its code.
+        /// </summary>
+        /// <remarks>
         /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TaxRateModel</returns>
+        System.Threading.Tasks.Task<TaxRateModel> GetByCodeAsync(string? code = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Gets a tax rate by its code.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TaxRateModel>> GetByCodeWithHttpInfoAsync(string? code = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Gets a tax rate by id.
         /// </summary>
         /// <remarks>
         /// 
@@ -277,7 +430,7 @@ public interface IInternalTaxRateClient
         System.Threading.Tasks.Task<TaxRateModel> GetByIdAsync(Guid? id = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a tax rate by id.
         /// </summary>
         /// <remarks>
         /// 
@@ -411,7 +564,171 @@ public interface IInternalTaxRateClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TaxRateModel</returns>
+        public TaxRateModel GetByCode(string? code = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = GetByCodeWithHttpInfo(code);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TaxRateModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TaxRateModel> GetByCodeWithHttpInfo(string? code = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (code != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "code", code));
+            }
+
+            localVarRequestOptions.Operation = "InternalTaxRateClient.InternalInternalTaxRateGetByCodeGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<TaxRateModel>("/internal/InternalTaxRate/get-by-code", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("InternalInternalTaxRateGetByCodeGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TaxRateModel</returns>
+        public async System.Threading.Tasks.Task<TaxRateModel> GetByCodeAsync(string? code = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<TaxRateModel> localVarResponse = await GetByCodeWithHttpInfoAsync(code, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a tax rate by its code. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="code">The code to search for. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TaxRateModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TaxRateModel>> GetByCodeWithHttpInfoAsync(string? code = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (code != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "code", code));
+            }
+
+            localVarRequestOptions.Operation = "InternalTaxRateClient.InternalInternalTaxRateGetByCodeGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TaxRateModel>("/internal/InternalTaxRate/get-by-code", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("InternalInternalTaxRateGetByCodeGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -424,7 +741,7 @@ public interface IInternalTaxRateClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -491,7 +808,7 @@ public interface IInternalTaxRateClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -505,7 +822,7 @@ public interface IInternalTaxRateClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a tax rate by id. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>

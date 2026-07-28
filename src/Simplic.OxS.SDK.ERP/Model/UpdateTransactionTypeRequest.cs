@@ -42,7 +42,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="shortName">Gets or sets the short name..</param>
         /// <param name="functions">Gets or sets a set of functions the transaction type has.  Examples for functions are: credit, debit, cancellation, incoming, outgoing, accounting_exportable, standing_order, workshop_order.</param>
         /// <param name="subtypes">Gets or sets the set of subtypes..</param>
-        /// <param name="code">Gets or sets an code. This code is to be used by internal processes..</param>
+        /// <param name="code">Gets or sets a code. This code is to be used by internal processes..</param>
         public UpdateTransactionTypeRequest(string name = default(string), int? number = default(int?), string reportName = default(string), string shortName = default(string), List<string> functions = default(List<string>), List<TransactionSubtypeRequest> subtypes = default(List<TransactionSubtypeRequest>), string code = default(string))
         {
             this.Name = name;
@@ -97,9 +97,9 @@ namespace Simplic.OxS.SDK.ERP
         public List<TransactionSubtypeRequest> Subtypes { get; set; }
 
         /// <summary>
-        /// Gets or sets an code. This code is to be used by internal processes.
+        /// Gets or sets a code. This code is to be used by internal processes.
         /// </summary>
-        /// <value>Gets or sets an code. This code is to be used by internal processes.</value>
+        /// <value>Gets or sets a code. This code is to be used by internal processes.</value>
         [DataMember(Name = "code", EmitDefaultValue = true)]
         public string Code { get; set; }
 

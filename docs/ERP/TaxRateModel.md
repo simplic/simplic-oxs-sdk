@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IsDeleted** | **bool** |  | [optional] 
 **Number** | **int** | Gets or sets the number. | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
+**Code** | **string** | Gets or sets a code. This code is to be used by internal processes. | [optional] 
 **CreateDateTime** | **DateTime** | Gets or sets the date and time the tax rate is created. | [optional] 
 **CreateUserId** | **Guid?** | Gets or sets the id of the user that created the tax rate. | [optional] 
 **CreateUserName** | **string** | Gets or sets the name of the user that created the tax rate. | [optional] 
