@@ -39,12 +39,19 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         [DataMember(Name = "riskLevel", EmitDefaultValue = false)]
         public ToolRiskLevel? RiskLevel { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MinRiskLevel
+        /// </summary>
+        [DataMember(Name = "minRiskLevel", EmitDefaultValue = false)]
+        public ToolRiskLevel? MinRiskLevel { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolDescriptor" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="riskLevel">riskLevel.</param>
+        /// <param name="minRiskLevel">minRiskLevel.</param>
         /// <param name="inputSchema">inputSchema.</param>
         /// <param name="outputSchema">outputSchema.</param>
         /// <param name="requiredPermissions">requiredPermissions.</param>
@@ -58,11 +65,12 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="isHealthy">isHealthy.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="tags">tags.</param>
-        public ToolDescriptor(string name = default(string), string description = default(string), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), Object inputSchema = default(Object), Object outputSchema = default(Object), List<string> requiredPermissions = default(List<string>), string owningService = default(string), int timeoutSeconds = default(int), int retryCount = default(int), bool requiresApproval = default(bool), bool supportsStreaming = default(bool), string varVersion = default(string), string endpointUrl = default(string), bool isHealthy = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<string> tags = default(List<string>))
+        public ToolDescriptor(string name = default(string), string description = default(string), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), ToolRiskLevel? minRiskLevel = default(ToolRiskLevel?), Object inputSchema = default(Object), Object outputSchema = default(Object), List<string> requiredPermissions = default(List<string>), string owningService = default(string), int timeoutSeconds = default(int), int retryCount = default(int), bool requiresApproval = default(bool), bool supportsStreaming = default(bool), string varVersion = default(string), string endpointUrl = default(string), bool isHealthy = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<string> tags = default(List<string>))
         {
             this.Name = name;
             this.Description = description;
             this.RiskLevel = riskLevel;
+            this.MinRiskLevel = minRiskLevel;
             this.InputSchema = inputSchema;
             this.OutputSchema = outputSchema;
             this.RequiredPermissions = requiredPermissions;
@@ -179,6 +187,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  RiskLevel: ").Append(RiskLevel).Append("\n");
+            sb.Append("  MinRiskLevel: ").Append(MinRiskLevel).Append("\n");
             sb.Append("  InputSchema: ").Append(InputSchema).Append("\n");
             sb.Append("  OutputSchema: ").Append(OutputSchema).Append("\n");
             sb.Append("  RequiredPermissions: ").Append(RequiredPermissions).Append("\n");
@@ -240,6 +249,10 @@ namespace Simplic.OxS.SDK.Ai
                 (
                     this.RiskLevel == input.RiskLevel ||
                     this.RiskLevel.Equals(input.RiskLevel)
+                ) && 
+                (
+                    this.MinRiskLevel == input.MinRiskLevel ||
+                    this.MinRiskLevel.Equals(input.MinRiskLevel)
                 ) && 
                 (
                     this.InputSchema == input.InputSchema ||
@@ -324,6 +337,7 @@ namespace Simplic.OxS.SDK.Ai
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.RiskLevel.GetHashCode();
+                hashCode = (hashCode * 59) + this.MinRiskLevel.GetHashCode();
                 if (this.InputSchema != null)
                 {
                     hashCode = (hashCode * 59) + this.InputSchema.GetHashCode();

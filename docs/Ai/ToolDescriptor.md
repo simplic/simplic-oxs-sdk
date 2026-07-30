@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **RiskLevel** | **ToolRiskLevel** |  | [optional] 
+**MinRiskLevel** | **ToolRiskLevel** |  | [optional] 
 **InputSchema** | **Object** |  | [optional] 
 **OutputSchema** | **Object** |  | [optional] 
 **RequiredPermissions** | **List&lt;string&gt;** |  | [optional] 

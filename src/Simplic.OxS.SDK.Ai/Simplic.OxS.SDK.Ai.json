@@ -6688,6 +6688,9 @@
                     "riskLevel": {
                         "$ref": "#/components/schemas/ToolRiskLevel"
                     },
+                    "minRiskLevel": {
+                        "$ref": "#/components/schemas/ToolRiskLevel"
+                    },
                     "inputSchema": {
                         "nullable": true
                     },
