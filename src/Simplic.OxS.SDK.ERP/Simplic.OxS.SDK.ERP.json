@@ -15446,6 +15446,9 @@
                     "editableResult": {
                         "$ref": "#/components/schemas/TransactionEditableResultModel"
                     },
+                    "reportingInformation": {
+                        "$ref": "#/components/schemas/TransactionReportingInformationModel"
+                    },
                     "defaultCostCenters": {
                         "type": "array",
                         "items": {
@@ -15589,6 +15592,37 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the shared model for the set of all price values for a transaction item at a specific point in time."
+            },
+            "TransactionReportingInformationModel": {
+                "type": "object",
+                "properties": {
+                    "hasDeliveryAddress": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether a contact is set for Simplic.OxS.ERP.Server.TransactionModel.DeliveryAddress."
+                    },
+                    "hasInvoiceRecipient": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether a contact is set for Simplic.OxS.ERP.Server.TransactionModel.InvoiceRecipient."
+                    },
+                    "hasPayer": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether a contact is set for Simplic.OxS.ERP.Server.TransactionModel.Payer."
+                    },
+                    "hasCreator": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether a contact is set for Simplic.OxS.ERP.Server.TransactionModel.Creator."
+                    },
+                    "hasResponsible": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether a contact is set for Simplic.OxS.ERP.Server.TransactionModel.Responsible."
+                    },
+                    "hasRepresentative": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether a contact is set for Simplic.OxS.ERP.Server.TransactionModel.Representative."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Contains reporting flags that indicate which Simplic.OxS.ERP.Server.TransactionContactModel properties are set on a Simplic.OxS.ERP.Server.TransactionModel."
             },
             "TransactionResultModel": {
                 "type": "object",

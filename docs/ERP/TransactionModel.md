@@ -58,6 +58,7 @@ Name | Type | Description | Notes
 **FinancialExportDisabled** | **bool** | Gets or sets the financial export disabled flag.  This is a flag intended for manually disabling financial export of the transaction. | [optional] 
 **ValidationResult** | [**TransactionValidationResultModel**](TransactionValidationResultModel.md) |  | [optional] 
 **EditableResult** | [**TransactionEditableResultModel**](TransactionEditableResultModel.md) |  | [optional] 
+**ReportingInformation** | [**TransactionReportingInformationModel**](TransactionReportingInformationModel.md) |  | [optional] 
 **DefaultCostCenters** | [**List&lt;CostCenterAssignmentModel&gt;**](CostCenterAssignmentModel.md) | Gets or sets the default assigned cost centers with their respective percentages. | [optional] 
 **DefaultCostObjects** | [**List&lt;CostCenterAssignmentModel&gt;**](CostCenterAssignmentModel.md) | Gets or sets the default assigned cost objects with their respective percentages. | [optional] 
 **MetadataProcessingData** | [**MetadataProcessingDataModel**](MetadataProcessingDataModel.md) |  | [optional] 
