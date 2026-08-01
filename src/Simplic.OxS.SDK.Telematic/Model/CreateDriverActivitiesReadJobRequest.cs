@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CreateDriverActivitiesReadJobRequest
+    /// Request to start a driver activity read job.
     /// </summary>
     [DataContract(Name = "CreateDriverActivitiesReadJobRequest")]
     public partial class CreateDriverActivitiesReadJobRequest : IEquatable<CreateDriverActivitiesReadJobRequest>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDriverActivitiesReadJobRequest" /> class.
         /// </summary>
-        /// <param name="providerName">providerName.</param>
-        /// <param name="cron">cron.</param>
+        /// <param name="providerName">The provider name. E.g: &#39;yellowfox&#39;..</param>
+        /// <param name="cron">The cron string for how often the driver activity read will be executed..</param>
         public CreateDriverActivitiesReadJobRequest(string providerName = default(string), string cron = default(string))
         {
             this.ProviderName = providerName;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// The provider name. E.g: &#39;yellowfox&#39;.
         /// </summary>
+        /// <value>The provider name. E.g: &#39;yellowfox&#39;.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Cron
+        /// The cron string for how often the driver activity read will be executed.
         /// </summary>
+        /// <value>The cron string for how often the driver activity read will be executed.</value>
         [DataMember(Name = "cron", EmitDefaultValue = true)]
         public string Cron { get; set; }
 

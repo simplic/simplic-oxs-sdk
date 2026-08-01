@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](WorkflowStepClient.md#workflowstepiddelete) | **DELETE** /WorkflowStep/{id} |  |
-| [**Get**](WorkflowStepClient.md#workflowstepidget) | **GET** /WorkflowStep/{id} |  |
-| [**Patch**](WorkflowStepClient.md#workflowstepidpatch) | **PATCH** /WorkflowStep/{id} |  |
-| [**Post**](WorkflowStepClient.md#workflowsteppost) | **POST** /WorkflowStep |  |
+| [**Delete**](WorkflowStepClient.md#workflowstepiddelete) | **DELETE** /WorkflowStep/{id} | Deletes a workflow step. |
+| [**Get**](WorkflowStepClient.md#workflowstepidget) | **GET** /WorkflowStep/{id} | Gets a workflow step. |
+| [**Patch**](WorkflowStepClient.md#workflowstepidpatch) | **PATCH** /WorkflowStep/{id} | Patches a workflow step. |
+| [**Post**](WorkflowStepClient.md#workflowsteppost) | **POST** /WorkflowStep | Creates a new workflow step. |
 
 <a id="workflowstepiddelete"></a>
 # **Delete**
 > Object Delete (Guid id)
 
-
+Deletes a workflow step.
 
 ### Example
 ```csharp
@@ -38,10 +38,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WorkflowStepClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | A workflow step id.
 
             try
             {
+                // Deletes a workflow step.
                 Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
@@ -62,6 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a workflow step.
     ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -79,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | A workflow step id. |  |
 
 ### Return type
 
@@ -108,7 +110,7 @@ catch (ApiException e)
 # **Get**
 > WorkflowStepResponse Get (Guid id)
 
-
+Gets a workflow step.
 
 ### Example
 ```csharp
@@ -133,10 +135,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WorkflowStepClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | The workflow step id.
 
             try
             {
+                // Gets a workflow step.
                 WorkflowStepResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -157,6 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a workflow step.
     ApiResponse<WorkflowStepResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -174,7 +178,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | The workflow step id. |  |
 
 ### Return type
 
@@ -203,7 +207,7 @@ catch (ApiException e)
 # **Patch**
 > WorkflowStepResponse Patch (Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = null)
 
-
+Patches a workflow step.
 
 ### Example
 ```csharp
@@ -228,11 +232,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WorkflowStepClient(config);
-            var id = "id_example";  // Guid | 
-            var patchWorkflowStepRequest = new PatchWorkflowStepRequest?(); // PatchWorkflowStepRequest? |  (optional) 
+            var id = "id_example";  // Guid | The workflow step id.
+            var patchWorkflowStepRequest = new PatchWorkflowStepRequest?(); // PatchWorkflowStepRequest? | The patch request. (optional) 
 
             try
             {
+                // Patches a workflow step.
                 WorkflowStepResponse result = apiInstance.Patch(id, patchWorkflowStepRequest);
                 Debug.WriteLine(result);
             }
@@ -253,6 +258,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a workflow step.
     ApiResponse<WorkflowStepResponse> response = apiInstance.PatchWithHttpInfo(id, patchWorkflowStepRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -270,8 +276,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **patchWorkflowStepRequest** | [**PatchWorkflowStepRequest?**](PatchWorkflowStepRequest?.md) |  | [optional]  |
+| **id** | **Guid** | The workflow step id. |  |
+| **patchWorkflowStepRequest** | [**PatchWorkflowStepRequest?**](PatchWorkflowStepRequest?.md) | The patch request. | [optional]  |
 
 ### Return type
 
@@ -300,7 +306,7 @@ catch (ApiException e)
 # **Post**
 > WorkflowStepResponse Post (CreateWorkflowStepRequest? createWorkflowStepRequest = null)
 
-
+Creates a new workflow step.
 
 ### Example
 ```csharp
@@ -325,10 +331,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WorkflowStepClient(config);
-            var createWorkflowStepRequest = new CreateWorkflowStepRequest?(); // CreateWorkflowStepRequest? |  (optional) 
+            var createWorkflowStepRequest = new CreateWorkflowStepRequest?(); // CreateWorkflowStepRequest? | A create workflow step request. (optional) 
 
             try
             {
+                // Creates a new workflow step.
                 WorkflowStepResponse result = apiInstance.Post(createWorkflowStepRequest);
                 Debug.WriteLine(result);
             }
@@ -349,6 +356,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new workflow step.
     ApiResponse<WorkflowStepResponse> response = apiInstance.PostWithHttpInfo(createWorkflowStepRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -366,7 +374,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createWorkflowStepRequest** | [**CreateWorkflowStepRequest?**](CreateWorkflowStepRequest?.md) |  | [optional]  |
+| **createWorkflowStepRequest** | [**CreateWorkflowStepRequest?**](CreateWorkflowStepRequest?.md) | A create workflow step request. | [optional]  |
 
 ### Return type
 

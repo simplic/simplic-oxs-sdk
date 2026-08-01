@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CheckCredentialsRequest
+    /// Request to check credentials.
     /// </summary>
     [DataContract(Name = "CheckCredentialsRequest")]
     public partial class CheckCredentialsRequest : IEquatable<CheckCredentialsRequest>, IValidatableObject
@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// Initializes a new instance of the <see cref="CheckCredentialsRequest" /> class.
         /// </summary>
         /// <param name="credentials">credentials.</param>
-        /// <param name="providerName">providerName.</param>
+        /// <param name="providerName">Gets or sets the provider name..</param>
         public CheckCredentialsRequest(ProviderConfigurationModel credentials = default(ProviderConfigurationModel), string providerName = default(string))
         {
             this.Credentials = credentials;
@@ -51,8 +51,9 @@ namespace Simplic.OxS.SDK.Telematic
         public ProviderConfigurationModel Credentials { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// Gets or sets the provider name.
         /// </summary>
+        /// <value>Gets or sets the provider name.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 

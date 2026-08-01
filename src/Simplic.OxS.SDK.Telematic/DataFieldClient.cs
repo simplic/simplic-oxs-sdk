@@ -40,144 +40,144 @@ public interface IDataFieldClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A data field id.</param>
     /// <returns>Object</returns>
     Object Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A data field id.</param>
     /// <returns>ApiResponse of Object</returns>
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A data field id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of Object</returns>
     Task<Object> DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A data field id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (Object)</returns>
     Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Gets a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The data field id.</param>
     /// <returns>DataFieldResponse</returns>
     DataFieldResponse Get(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The data field id.</param>
     /// <returns>ApiResponse of DataFieldResponse</returns>
     ApiResponse<DataFieldResponse> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The data field id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of DataFieldResponse</returns>
     Task<DataFieldResponse> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The data field id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
     Task<ApiResponse<DataFieldResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Patches a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchDataFieldRequest"> (optional)</param>
+    /// <param name="id">The data field id.</param>
+    /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
     /// <returns>DataFieldResponse</returns>
     DataFieldResponse Patch(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?));
 
     /// <summary>
-    ///  
+    /// Patches a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchDataFieldRequest"> (optional)</param>
+    /// <param name="id">The data field id.</param>
+    /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
     /// <returns>ApiResponse of DataFieldResponse</returns>
     ApiResponse<DataFieldResponse> PatchWithHttpInfo(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?));
         
     /// <summary>
-    ///  
+    /// Patches a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchDataFieldRequest"> (optional)</param>
+    /// <param name="id">The data field id.</param>
+    /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of DataFieldResponse</returns>
     Task<DataFieldResponse> PatchAsync(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Patches a data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchDataFieldRequest"> (optional)</param>
+    /// <param name="id">The data field id.</param>
+    /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
     Task<ApiResponse<DataFieldResponse>> PatchWithHttpInfoAsync(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Creates a new data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createDataFieldRequest"> (optional)</param>
+    /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
     /// <returns>DataFieldResponse</returns>
     DataFieldResponse Post(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createDataFieldRequest"> (optional)</param>
+    /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
     /// <returns>ApiResponse of DataFieldResponse</returns>
     ApiResponse<DataFieldResponse> PostWithHttpInfo(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createDataFieldRequest"> (optional)</param>
+    /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of DataFieldResponse</returns>
     Task<DataFieldResponse> PostAsync(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createDataFieldRequest"> (optional)</param>
+    /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
     Task<ApiResponse<DataFieldResponse>> PostWithHttpInfoAsync(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), CancellationToken cancellationToken = default(CancellationToken));
@@ -258,10 +258,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <returns>Object</returns>
         public Object Delete(Guid id)
         {
@@ -276,10 +276,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <returns>ApiResponse of Object</returns>
         public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
         {
@@ -294,10 +294,10 @@ public interface IDataFieldClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         public System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -313,10 +313,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -331,10 +331,10 @@ public interface IDataFieldClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <returns>DataFieldResponse</returns>
         public DataFieldResponse Get(Guid id)
         {
@@ -349,10 +349,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<DataFieldResponse> GetWithHttpInfo(Guid id)
         {
@@ -367,10 +367,10 @@ public interface IDataFieldClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
         public System.Threading.Tasks.Task<DataFieldResponse> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -386,10 +386,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DataFieldResponse>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -404,11 +404,11 @@ public interface IDataFieldClient
             }
         }    
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <returns>DataFieldResponse</returns>
         public DataFieldResponse Patch(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?))
         {
@@ -423,11 +423,11 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<DataFieldResponse> PatchWithHttpInfo(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?))
         {
@@ -442,11 +442,11 @@ public interface IDataFieldClient
         } 
 
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
         public System.Threading.Tasks.Task<DataFieldResponse> PatchAsync(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -462,11 +462,11 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DataFieldResponse>> PatchWithHttpInfoAsync(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -481,10 +481,10 @@ public interface IDataFieldClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <returns>DataFieldResponse</returns>
         public DataFieldResponse Post(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?))
         {
@@ -499,10 +499,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<DataFieldResponse> PostWithHttpInfo(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?))
         {
@@ -517,10 +517,10 @@ public interface IDataFieldClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
         public System.Threading.Tasks.Task<DataFieldResponse> PostAsync(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -536,10 +536,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<DataFieldResponse>> PostWithHttpInfoAsync(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -567,84 +567,84 @@ public interface IDataFieldClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a data field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         Object Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a data field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataFieldResponse</returns>
         DataFieldResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         ApiResponse<DataFieldResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Patches a data field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataFieldResponse</returns>
         DataFieldResponse Patch(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Patches a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         ApiResponse<DataFieldResponse> PatchWithHttpInfo(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new data field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataFieldResponse</returns>
         DataFieldResponse Post(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         ApiResponse<DataFieldResponse> PostWithHttpInfo(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), int operationIndex = 0);
@@ -658,103 +658,103 @@ public interface IDataFieldClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
         System.Threading.Tasks.Task<DataFieldResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataFieldResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Patches a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
         System.Threading.Tasks.Task<DataFieldResponse> PatchAsync(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Patches a data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataFieldResponse>> PatchWithHttpInfoAsync(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
         System.Threading.Tasks.Task<DataFieldResponse> PostAsync(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
@@ -882,10 +882,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         public Object Delete(Guid id, int operationIndex = 0)
@@ -895,10 +895,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
@@ -959,10 +959,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -973,10 +973,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -1040,10 +1040,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataFieldResponse</returns>
         public DataFieldResponse Get(Guid id, int operationIndex = 0)
@@ -1053,10 +1053,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<DataFieldResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
@@ -1117,10 +1117,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
@@ -1131,10 +1131,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The data field id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
@@ -1198,11 +1198,11 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataFieldResponse</returns>
         public DataFieldResponse Patch(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), int operationIndex = 0)
@@ -1212,11 +1212,11 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<DataFieldResponse> PatchWithHttpInfo(Guid id, PatchDataFieldRequest? patchDataFieldRequest = default(PatchDataFieldRequest?), int operationIndex = 0)
@@ -1281,11 +1281,11 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
@@ -1296,11 +1296,11 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchDataFieldRequest"> (optional)</param>
+        /// <param name="id">The data field id.</param>
+        /// <param name="patchDataFieldRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>
@@ -1368,10 +1368,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataFieldResponse</returns>
         public DataFieldResponse Post(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), int operationIndex = 0)
@@ -1381,10 +1381,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataFieldResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<DataFieldResponse> PostWithHttpInfo(CreateDataFieldRequest? createDataFieldRequest = default(CreateDataFieldRequest?), int operationIndex = 0)
@@ -1448,10 +1448,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataFieldResponse</returns>
@@ -1462,10 +1462,10 @@ public interface IDataFieldClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createDataFieldRequest"> (optional)</param>
+        /// <param name="createDataFieldRequest">A create data field request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataFieldResponse)</returns>

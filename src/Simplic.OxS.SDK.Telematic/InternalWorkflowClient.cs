@@ -40,35 +40,35 @@ public interface IInternalWorkflowClient
 
 
     /// <summary>
-    ///  
+    /// Gets a telematic workflow. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow id.</param>
     /// <returns>WorkflowResponse</returns>
     WorkflowResponse Get(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets a telematic workflow. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow id.</param>
     /// <returns>ApiResponse of WorkflowResponse</returns>
     ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets a telematic workflow. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of WorkflowResponse</returns>
     Task<WorkflowResponse> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a telematic workflow. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
     Task<ApiResponse<WorkflowResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
@@ -149,10 +149,10 @@ public interface IInternalWorkflowClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <returns>WorkflowResponse</returns>
         public WorkflowResponse Get(Guid id)
         {
@@ -167,10 +167,10 @@ public interface IInternalWorkflowClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <returns>ApiResponse of WorkflowResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id)
         {
@@ -185,10 +185,10 @@ public interface IInternalWorkflowClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowResponse</returns>
         public System.Threading.Tasks.Task<WorkflowResponse> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -204,10 +204,10 @@ public interface IInternalWorkflowClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowResponse>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -235,22 +235,22 @@ public interface IInternalWorkflowClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Gets a telematic workflow.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowResponse</returns>
         WorkflowResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a telematic workflow.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowResponse</returns>
         ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
@@ -264,26 +264,26 @@ public interface IInternalWorkflowClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Gets a telematic workflow.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowResponse</returns>
         System.Threading.Tasks.Task<WorkflowResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a telematic workflow.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowResponse)</returns>
@@ -411,10 +411,10 @@ public interface IInternalWorkflowClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowResponse</returns>
         public WorkflowResponse Get(Guid id, int operationIndex = 0)
@@ -424,10 +424,10 @@ public interface IInternalWorkflowClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
@@ -488,10 +488,10 @@ public interface IInternalWorkflowClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowResponse</returns>
@@ -502,10 +502,10 @@ public interface IInternalWorkflowClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a telematic workflow. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowResponse)</returns>

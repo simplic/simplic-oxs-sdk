@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicTourResponse
+    /// Represents a telematic tour response with complete workflow information.
     /// </summary>
     [DataContract(Name = "TelematicTourResponse")]
     public partial class TelematicTourResponse : IEquatable<TelematicTourResponse>, IValidatableObject
@@ -36,15 +36,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicTourResponse" /> class.
         /// </summary>
-        /// <param name="internalId">internalId.</param>
-        /// <param name="tourNumber">tourNumber.</param>
-        /// <param name="reference">reference.</param>
-        /// <param name="internalVehicleId">internalVehicleId.</param>
-        /// <param name="internalDriverId">internalDriverId.</param>
-        /// <param name="startDateTimeUtc">startDateTimeUtc.</param>
-        /// <param name="endDateTimeUtc">endDateTimeUtc.</param>
-        /// <param name="places">places.</param>
-        /// <param name="publicKey">publicKey.</param>
+        /// <param name="internalId">Gets or sets an internal reference to the source object..</param>
+        /// <param name="tourNumber">Gets or sets a human readable identifier for the tour..</param>
+        /// <param name="reference">Gets or sets any other reference for the customer..</param>
+        /// <param name="internalVehicleId">Gets or sets the simplic id of the vehicle..</param>
+        /// <param name="internalDriverId">Gets or sets the simplic id of the driver (employment)..</param>
+        /// <param name="startDateTimeUtc">Gets or sets the start date and time of the tour..</param>
+        /// <param name="endDateTimeUtc">Gets or sets the end date and time of the tour..</param>
+        /// <param name="places">Gets or sets a list of places with their embedded workflows and execution state..</param>
+        /// <param name="publicKey">Gets or sets the public key used to identify or authenticate the tour..</param>
         public TelematicTourResponse(Guid? internalId = default(Guid?), string tourNumber = default(string), string reference = default(string), Guid? internalVehicleId = default(Guid?), Guid? internalDriverId = default(Guid?), DateTime? startDateTimeUtc = default(DateTime?), DateTime? endDateTimeUtc = default(DateTime?), List<TelematicPlaceResponse> places = default(List<TelematicPlaceResponse>), string publicKey = default(string))
         {
             this.InternalId = internalId;
@@ -59,56 +59,65 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets InternalId
+        /// Gets or sets an internal reference to the source object.
         /// </summary>
+        /// <value>Gets or sets an internal reference to the source object.</value>
         [DataMember(Name = "internalId", EmitDefaultValue = true)]
         public Guid? InternalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TourNumber
+        /// Gets or sets a human readable identifier for the tour.
         /// </summary>
+        /// <value>Gets or sets a human readable identifier for the tour.</value>
         [DataMember(Name = "tourNumber", EmitDefaultValue = true)]
         public string TourNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets any other reference for the customer.
         /// </summary>
+        /// <value>Gets or sets any other reference for the customer.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or Sets InternalVehicleId
+        /// Gets or sets the simplic id of the vehicle.
         /// </summary>
+        /// <value>Gets or sets the simplic id of the vehicle.</value>
         [DataMember(Name = "internalVehicleId", EmitDefaultValue = true)]
         public Guid? InternalVehicleId { get; set; }
 
         /// <summary>
-        /// Gets or Sets InternalDriverId
+        /// Gets or sets the simplic id of the driver (employment).
         /// </summary>
+        /// <value>Gets or sets the simplic id of the driver (employment).</value>
         [DataMember(Name = "internalDriverId", EmitDefaultValue = true)]
         public Guid? InternalDriverId { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartDateTimeUtc
+        /// Gets or sets the start date and time of the tour.
         /// </summary>
+        /// <value>Gets or sets the start date and time of the tour.</value>
         [DataMember(Name = "startDateTimeUtc", EmitDefaultValue = true)]
         public DateTime? StartDateTimeUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDateTimeUtc
+        /// Gets or sets the end date and time of the tour.
         /// </summary>
+        /// <value>Gets or sets the end date and time of the tour.</value>
         [DataMember(Name = "endDateTimeUtc", EmitDefaultValue = true)]
         public DateTime? EndDateTimeUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Places
+        /// Gets or sets a list of places with their embedded workflows and execution state.
         /// </summary>
+        /// <value>Gets or sets a list of places with their embedded workflows and execution state.</value>
         [DataMember(Name = "places", EmitDefaultValue = true)]
         public List<TelematicPlaceResponse> Places { get; set; }
 
         /// <summary>
-        /// Gets or Sets PublicKey
+        /// Gets or sets the public key used to identify or authenticate the tour.
         /// </summary>
+        /// <value>Gets or sets the public key used to identify or authenticate the tour.</value>
         [DataMember(Name = "publicKey", EmitDefaultValue = true)]
         public string PublicKey { get; set; }
 

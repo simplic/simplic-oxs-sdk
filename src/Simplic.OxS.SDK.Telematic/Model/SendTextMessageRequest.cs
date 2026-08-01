@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// SendTextMessageRequest
+    /// Reqeust to ssend a text message.
     /// </summary>
     [DataContract(Name = "SendTextMessageRequest")]
     public partial class SendTextMessageRequest : IEquatable<SendTextMessageRequest>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="SendTextMessageRequest" /> class.
         /// </summary>
-        /// <param name="vehicleId">vehicleId.</param>
-        /// <param name="driverId">driverId.</param>
-        /// <param name="message">message.</param>
+        /// <param name="vehicleId">Gets or sets the destinatin vehicle id. Used is the oxs id..</param>
+        /// <param name="driverId">Gets or sets the destination driver id. Used is the oxs id..</param>
+        /// <param name="message">Gets or sets the text massage..</param>
         public SendTextMessageRequest(Guid? vehicleId = default(Guid?), Guid? driverId = default(Guid?), string message = default(string))
         {
             this.VehicleId = vehicleId;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets VehicleId
+        /// Gets or sets the destinatin vehicle id. Used is the oxs id.
         /// </summary>
+        /// <value>Gets or sets the destinatin vehicle id. Used is the oxs id.</value>
         [DataMember(Name = "vehicleId", EmitDefaultValue = true)]
         public Guid? VehicleId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DriverId
+        /// Gets or sets the destination driver id. Used is the oxs id.
         /// </summary>
+        /// <value>Gets or sets the destination driver id. Used is the oxs id.</value>
         [DataMember(Name = "driverId", EmitDefaultValue = true)]
         public Guid? DriverId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or sets the text massage.
         /// </summary>
+        /// <value>Gets or sets the text massage.</value>
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// ImportVehiclesRequest
+    /// Request to import vehicles.
     /// </summary>
     [DataContract(Name = "ImportVehiclesRequest")]
     public partial class ImportVehiclesRequest : IEquatable<ImportVehiclesRequest>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportVehiclesRequest" /> class.
         /// </summary>
-        /// <param name="providerName">providerName.</param>
+        /// <param name="providerName">Gets or sets the provider name..</param>
         public ImportVehiclesRequest(string providerName = default(string))
         {
             this.ProviderName = providerName;
         }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// Gets or sets the provider name.
         /// </summary>
+        /// <value>Gets or sets the provider name.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 

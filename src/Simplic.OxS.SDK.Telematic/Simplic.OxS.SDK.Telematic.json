@@ -507,10 +507,12 @@
                 "tags": [
                     "DataField"
                 ],
+                "summary": "Gets a data field.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "The data field id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -585,10 +587,12 @@
                 "tags": [
                     "DataField"
                 ],
+                "summary": "Patches a data field.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "The data field id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -597,6 +601,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "The patch request.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -682,10 +687,12 @@
                 "tags": [
                     "DataField"
                 ],
+                "summary": "Deletes a data field.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "A data field id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -762,7 +769,9 @@
                 "tags": [
                     "DataField"
                 ],
+                "summary": "Creates a new data field.",
                 "requestBody": {
+                    "description": "A create data field request.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1282,6 +1291,7 @@
                 "tags": [
                     "GenericTelematicTours"
                 ],
+                "summary": "Gets all tours for the TractorUnit specified in the x-bearer token.\nReturns tours with complete workflow steps and execution state.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1340,10 +1350,12 @@
                 "tags": [
                     "GenericTelematicTours"
                 ],
+                "summary": "Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.",
                 "parameters": [
                     {
                         "name": "tourId",
                         "in": "path",
+                        "description": "Tour id",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1353,6 +1365,7 @@
                     {
                         "name": "blobId",
                         "in": "path",
+                        "description": "Blob id",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1412,10 +1425,12 @@
                 "tags": [
                     "GenericTelematicTours"
                 ],
+                "summary": "Uploads a blob file and attaches it to a place or order within a tour.\nIf orderId is provided and the order exists, the blob is attached to the order's ePOD attachments.\nOtherwise the blob is attached to the place's attachments.",
                 "parameters": [
                     {
                         "name": "tourId",
                         "in": "path",
+                        "description": "The internal tour identifier.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1425,6 +1440,7 @@
                     {
                         "name": "placeId",
                         "in": "path",
+                        "description": "The internal place identifier.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1434,6 +1450,7 @@
                     {
                         "name": "orderId",
                         "in": "path",
+                        "description": "The optional internal order identifier. When supplied the blob is added to the order.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1449,6 +1466,7 @@
                                 "properties": {
                                     "file": {
                                         "type": "string",
+                                        "description": "The file to upload.",
                                         "format": "binary"
                                     }
                                 }
@@ -1550,10 +1568,12 @@
                 "tags": [
                     "GenericTelematicTours"
                 ],
+                "summary": "Completes a workflow step for a specific place in a tour.\nAllows passing collected data field values and marks the step as completed.\nEvents are fired based on the step's role:\n- \"order_started\": OrderStarted; on first in tour also TourStarted + PlaceStarted.\n- \"order_completed\": OrderEnded; PlaceReached when all orders in the place are done;\n  TourEnded when all orders in the tour are done.",
                 "parameters": [
                     {
                         "name": "tourId",
                         "in": "path",
+                        "description": "The internal tour identifier.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1563,6 +1583,7 @@
                     {
                         "name": "placeId",
                         "in": "path",
+                        "description": "The internal place identifier.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1571,6 +1592,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "The complete workflow step request containing step id and data field values.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1678,10 +1700,12 @@
                 "tags": [
                     "GenericTelematicTours"
                 ],
+                "summary": "Completes a workflow step for a specific order in a tour.\nResolves the place that contains the given order and delegates to the place-level logic.",
                 "parameters": [
                     {
                         "name": "tourId",
                         "in": "path",
+                        "description": "The internal tour identifier.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1691,6 +1715,7 @@
                     {
                         "name": "orderId",
                         "in": "path",
+                        "description": "The internal order identifier.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1699,6 +1724,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "The complete workflow step request containing step id and data field values.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1806,10 +1832,12 @@
                 "tags": [
                     "GenericTelematicTours"
                 ],
+                "summary": "Gets the current state of a specific tour for the authenticated vehicle.",
                 "parameters": [
                     {
                         "name": "tourId",
                         "in": "path",
+                        "description": "The internal tour identifier.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1886,10 +1914,12 @@
                 "tags": [
                     "InternalWorkflow"
                 ],
+                "summary": "Gets a telematic workflow.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "The workflow id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1966,10 +1996,12 @@
                 "tags": [
                     "MessageQueue"
                 ],
+                "summary": "Gets a message queue.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "The MessageQueue id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -2044,10 +2076,12 @@
                 "tags": [
                     "MessageQueue"
                 ],
+                "summary": "Patches a message queue.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -2056,6 +2090,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2141,10 +2176,12 @@
                 "tags": [
                     "MessageQueue"
                 ],
+                "summary": "Deletes a message queue",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "A MessageQueue id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -2221,7 +2258,9 @@
                 "tags": [
                     "MessageQueue"
                 ],
+                "summary": "Creates a new message queue.",
                 "requestBody": {
+                    "description": "A create MessageQueue request.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2309,6 +2348,7 @@
                 "tags": [
                     "MessageQueue"
                 ],
+                "summary": "Gets a message queue.",
                 "parameters": [
                     {
                         "name": "queueId",
@@ -2398,6 +2438,7 @@
                 "tags": [
                     "MessageQueue"
                 ],
+                "summary": "Commit message inside a queue",
                 "parameters": [
                     {
                         "name": "messageId",
@@ -4191,7 +4232,9 @@
                 "tags": [
                     "Telematic"
                 ],
+                "summary": "Gets a preview of vehicles from the telematic provider.",
                 "requestBody": {
+                    "description": "",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -5219,10 +5262,12 @@
                 "tags": [
                     "Workflow"
                 ],
+                "summary": "Gets a telematic workflow.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "The workflow id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -5297,10 +5342,12 @@
                 "tags": [
                     "Workflow"
                 ],
+                "summary": "Patches a telematic workflow.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -5309,6 +5356,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -5394,10 +5442,12 @@
                 "tags": [
                     "Workflow"
                 ],
+                "summary": "Deletes a telematic workflow",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "A workflow id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -5474,7 +5524,9 @@
                 "tags": [
                     "Workflow"
                 ],
+                "summary": "Creates a new telematic workflow.",
                 "requestBody": {
+                    "description": "A create workflow request.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -5562,10 +5614,12 @@
                 "tags": [
                     "WorkflowStep"
                 ],
+                "summary": "Gets a workflow step.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "The workflow step id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -5640,10 +5694,12 @@
                 "tags": [
                     "WorkflowStep"
                 ],
+                "summary": "Patches a workflow step.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "The workflow step id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -5652,6 +5708,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "The patch request.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -5737,10 +5794,12 @@
                 "tags": [
                     "WorkflowStep"
                 ],
+                "summary": "Deletes a workflow step.",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "A workflow step id.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -5817,7 +5876,9 @@
                 "tags": [
                     "WorkflowStep"
                 ],
+                "summary": "Creates a new workflow step.",
                 "requestBody": {
+                    "description": "A create workflow step request.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -5960,26 +6021,32 @@
                 "properties": {
                     "street": {
                         "type": "string",
+                        "description": "Gets or sets the street.",
                         "nullable": true
                     },
                     "city": {
                         "type": "string",
+                        "description": "Gets or sets the city.",
                         "nullable": true
                     },
                     "zipCode": {
                         "type": "string",
+                        "description": "Gets or sets the zip code.",
                         "nullable": true
                     },
                     "country": {
                         "type": "string",
+                        "description": "Gets or sets the country.",
                         "nullable": true
                     },
                     "countryCode": {
                         "type": "string",
+                        "description": "Gets or sets the country code (ISO 3166-1 alpha-2).",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an address in a telematic place."
             },
             "AggregationExpression": {
                 "type": "object",
@@ -6084,10 +6151,12 @@
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the provider name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to check credentials."
             },
             "CompleteWorkflowStepRequest": {
                 "required": [
@@ -6097,6 +6166,7 @@
                 "properties": {
                     "workflowStepId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow step id to complete.",
                         "format": "uuid"
                     },
                     "dataFields": {
@@ -6104,10 +6174,12 @@
                         "items": {
                             "$ref": "#/components/schemas/DataFieldValueRequest"
                         },
+                        "description": "Gets or sets the collected data field values for this step.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for completing a workflow step within a tour place."
             },
             "CreateAddonFieldRequest": {
                 "type": "object",
@@ -6136,6 +6208,7 @@
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "localizations": {
@@ -6143,6 +6216,7 @@
                         "items": {
                             "$ref": "#/components/schemas/DataFieldLocalizationModel"
                         },
+                        "description": "Gets or sets the localizations.",
                         "nullable": true
                     },
                     "dataType": {
@@ -6150,6 +6224,7 @@
                     },
                     "defaultValue": {
                         "type": "string",
+                        "description": "Gets or sets the default value.",
                         "nullable": true
                     },
                     "setDefinition": {
@@ -6157,68 +6232,83 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the set definition.",
                         "nullable": true
                     },
                     "format": {
                         "type": "string",
+                        "description": "Gets or sets the format string for display (e.g., N2 for numbers, C2 for currency, dd/MM/yyyy for dates).",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to create a data field."
             },
             "CreateDriverActivitiesReadJobRequest": {
                 "type": "object",
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "The provider name. E.g: 'yellowfox'.",
                         "nullable": true
                     },
                     "cron": {
                         "type": "string",
+                        "description": "The cron string for how often the driver activity read will be executed.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to start a driver activity read job."
             },
             "CreateDtcoReadJobRequest": {
                 "type": "object",
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "The provider name. E.g: 'webfleet'.",
                         "nullable": true
                     },
                     "cron": {
                         "type": "string",
+                        "description": "The cron string for how often the DTCO read will be executed.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to start a DTCO read job."
             },
             "CreateEmploymentConfigurationRequest": {
                 "type": "object",
                 "properties": {
                     "employmentId": {
                         "type": "string",
+                        "description": "Gets or sets the employment identifer referencing OxS.Hr employment ids.",
                         "format": "uuid"
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the matchcode.",
                         "nullable": true
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the telematic provider by its name. E.g. 'spedion'.",
                         "nullable": true
                     },
                     "externalDriverIdentifier": {
                         "type": "string",
+                        "description": "Gets or sets the identifier from the telematic provider for the employment.",
                         "nullable": true
                     },
                     "validFrom": {
                         "type": "string",
+                        "description": "Gets or sets from when the configuration is valid.",
                         "format": "date-time"
                     },
                     "validTo": {
                         "type": "string",
+                        "description": "Gets or sets until when the configuration is valid.",
                         "format": "date-time"
                     },
                     "activeServices": {
@@ -6226,16 +6316,19 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of active services.\n\nThe full list of available services should be taken from the get available services endpoint.\nA * will mean all services are active for the configuration.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to create a employment configuration."
             },
             "CreateMessageQueueRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "flows": {
@@ -6243,6 +6336,7 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of flows to execute",
                         "nullable": true
                     },
                     "typeFilter": {
@@ -6250,24 +6344,29 @@
                         "items": {
                             "$ref": "#/components/schemas/IncomingMessageType"
                         },
+                        "description": "Gets or sets a list of activated filters for this queue.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to create a message queue."
             },
             "CreateReadJobRequest": {
                 "type": "object",
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "The provider name. E.g: 'spedion'.",
                         "nullable": true
                     },
                     "cron": {
                         "type": "string",
+                        "description": "The cron string for how often the read will be executed.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Reqeust to start a read job."
             },
             "CreateTelematicConfigurationRequest": {
                 "required": [
@@ -6277,7 +6376,8 @@
                 "properties": {
                     "providerName": {
                         "minLength": 1,
-                        "type": "string"
+                        "type": "string",
+                        "description": "Gets or sets the provider name."
                     },
                     "providerConfiguration": {
                         "$ref": "#/components/schemas/ProviderConfigurationModel"
@@ -6287,37 +6387,45 @@
                         "items": {
                             "$ref": "#/components/schemas/AutomaticVehicleConfigurationCreationSettings"
                         },
+                        "description": "Gets or sets the settings for automatically creating vehicle configurations",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Reqeust to create a telematic configuration."
             },
             "CreateVehicleConfigurationRequest": {
                 "type": "object",
                 "properties": {
                     "vehicleId": {
                         "type": "string",
+                        "description": "Gets or sets the vehicle identifer referencing OxS.Vehicle vehicle ids.",
                         "format": "uuid"
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the matchcode.",
                         "nullable": true
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the telematic provider by its name. E.g. 'spedion'.",
                         "nullable": true
                     },
                     "externalVehicleIdentifier": {
                         "type": "string",
+                        "description": "Gets or sets the identifier from the telematic provider for the vehicle.",
                         "nullable": true
                     },
                     "validFrom": {
                         "type": "string",
+                        "description": "Gets or sets from when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "validTo": {
                         "type": "string",
+                        "description": "Gets or sets until when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -6326,34 +6434,41 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of active services.\n\nThe full list of available services should be taken from the get available services endpoint.\nA * will mean all services are active for the configuration.",
                         "nullable": true
                     },
                     "loadWorkflowId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow which should be used for loading processes.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "deliveryWorkflowId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow which should be used for delivery processes.",
                         "format": "uuid",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to create a vehicle configuration."
             },
             "CreateWorkflowRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the value.",
                         "nullable": true
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "steps": {
@@ -6361,16 +6476,19 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepAssignmentSet"
                         },
+                        "description": "Gets or sets the list of workflow steps.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to create a telematic workflow."
             },
             "CreateWorkflowStepRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "localizations": {
@@ -6378,6 +6496,7 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepLocalizationModel"
                         },
+                        "description": "Gets or sets the localizations.",
                         "nullable": true
                     },
                     "dataFields": {
@@ -6385,10 +6504,12 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepDataFieldSet"
                         },
+                        "description": "Gets or sets the list of attached data fields.",
                         "nullable": true
                     },
                     "stepOrder": {
                         "type": "integer",
+                        "description": "Gets or sets the step order.",
                         "format": "int32"
                     },
                     "roles": {
@@ -6396,48 +6517,58 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the roles this step fulfills within the order lifecycle.\nAllowed values: \"order_started\", \"order_completed\".",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to create a workflow step."
             },
             "DataFieldLocalizationModel": {
                 "type": "object",
                 "properties": {
                     "languageCode": {
                         "type": "string",
+                        "description": "Gets or sets the language code.",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the localized value.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a localization model for a data field."
             },
             "DataFieldLocalizationResponse": {
                 "type": "object",
                 "properties": {
                     "languageCode": {
                         "type": "string",
+                        "description": "Gets or sets the language code (e.g., de-DE, en-EN).",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the localized value.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a localization entry for a data field."
             },
             "DataFieldResponse": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "localizations": {
@@ -6445,6 +6576,7 @@
                         "items": {
                             "$ref": "#/components/schemas/DataFieldLocalizationModel"
                         },
+                        "description": "Gets or sets the localizations.",
                         "nullable": true
                     },
                     "dataType": {
@@ -6452,6 +6584,7 @@
                     },
                     "defaultValue": {
                         "type": "string",
+                        "description": "Gets or sets the default value.",
                         "nullable": true
                     },
                     "setDefinition": {
@@ -6459,14 +6592,17 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the set definition.",
                         "nullable": true
                     },
                     "format": {
                         "type": "string",
+                        "description": "Gets or sets the format string for display (e.g., N2 for numbers, C2 for currency, dd/MM/yyyy for dates).",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the response of a data field request."
             },
             "DataFieldTypeModel": {
                 "enum": [
@@ -6478,6 +6614,7 @@
                     5
                 ],
                 "type": "integer",
+                "description": "Represents the data type of a field.",
                 "format": "int32"
             },
             "DataFieldValueRequest": {
@@ -6488,14 +6625,17 @@
                 "properties": {
                     "dataFieldId": {
                         "type": "string",
+                        "description": "Gets or sets the data field id.",
                         "format": "uuid"
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the collected value as string representation.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request model for setting a data field value."
             },
             "DateTruncExpression": {
                 "required": [
@@ -6520,30 +6660,36 @@
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "The provider name. E.g: 'yellowfox'.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to delete a driver activity read job."
             },
             "DeleteDtcoReadJobRequest": {
                 "type": "object",
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "The provider name. E.g: 'webfleet'.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to delete a DTCO read job."
             },
             "DeleteReadJobRequest": {
                 "type": "object",
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "The provider name. E.g: 'spedion'.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Reqeust to start a read job."
             },
             "Driver": {
                 "type": "object",
@@ -6636,31 +6782,38 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "employmentId": {
                         "type": "string",
+                        "description": "Gets or sets the driver identifer referencing a simplic hr employment.",
                         "format": "uuid"
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the matchcode.",
                         "nullable": true
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the telematic provider by its name. E.g. 'spedion'.",
                         "nullable": true
                     },
                     "externalDriverIdentifier": {
                         "type": "string",
+                        "description": "Gets or sets the identifier from the telematic provider for the driver.",
                         "nullable": true
                     },
                     "validFrom": {
                         "type": "string",
+                        "description": "Gets or sets from when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "validTo": {
                         "type": "string",
+                        "description": "Gets or sets until when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -6669,10 +6822,12 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of active services.\n\nThe full list of available services should be taken from the get available services endpoint.\nA * will mean all services are active for the configuration.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Representsthe model to a employment configuration."
             },
             "EndpointContract": {
                 "type": "object",
@@ -6869,14 +7024,17 @@
                 "properties": {
                     "registrationPlate": {
                         "type": "string",
+                        "description": "Gets or sets the registration plate.",
                         "nullable": true
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the match code.",
                         "nullable": true
                     },
                     "externalIdentifier": {
                         "type": "string",
+                        "description": "Gets or sets the external identifier.",
                         "nullable": true
                     },
                     "type": {
@@ -6884,48 +7042,58 @@
                     },
                     "vin": {
                         "type": "string",
+                        "description": "Gets or sets the VIN (Vehicle Identification Number).",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Response of a vehicle import request."
             },
             "ImportVehicleTypeResponse": {
                 "type": "object",
                 "properties": {
                     "vehicleTypeId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the vehicle type.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "vehicleSubTypeId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the vehicle sub type.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "vehicleTypeName": {
                         "type": "string",
+                        "description": "Gets or sets the name of the vehicle type.",
                         "nullable": true
                     },
                     "vehicleSubTypeName": {
                         "type": "string",
+                        "description": "Gets or sets the name of the vehicle sub type.",
                         "nullable": true
                     },
                     "externalTypeName": {
                         "type": "string",
+                        "description": "Gets or sets the name of the external type.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the vehicle type of an imported vehicle."
             },
             "ImportVehiclesRequest": {
                 "type": "object",
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the provider name.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to import vehicles."
             },
             "IncomingAttachment": {
                 "type": "object",
@@ -7102,6 +7270,21 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "tractorUnitId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "trailerId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "driverId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
                     "text": {
                         "type": "string",
                         "nullable": true
@@ -7266,10 +7449,12 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "flows": {
@@ -7277,6 +7462,7 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of flows to execute",
                         "nullable": true
                     },
                     "typeFilter": {
@@ -7284,24 +7470,29 @@
                         "items": {
                             "$ref": "#/components/schemas/IncomingMessageType"
                         },
+                        "description": "Gets or sets a list of activated filters for this queue.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the response of a message queue request."
             },
             "OpeningHoursResponse": {
                 "type": "object",
                 "properties": {
                     "from": {
                         "type": "string",
+                        "description": "Gets or sets the opening time.",
                         "format": "date-span"
                     },
                     "to": {
                         "type": "string",
+                        "description": "Gets or sets the closing time.",
                         "format": "date-span"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an opening hour tuple."
             },
             "OrderType": {
                 "enum": [
@@ -7376,70 +7567,86 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "messageType": {
                         "type": "string",
+                        "description": "Gets or sets which message type is send. E.g. SendTour or SendTextMessage.",
                         "nullable": true
                     },
                     "provider": {
                         "type": "string",
+                        "description": "Gets or set the provider name.",
                         "nullable": true
                     },
                     "sourceMessageJson": {
                         "type": "string",
+                        "description": "Gets or sets the message before conversion as json.",
                         "nullable": true
                     },
                     "destinationMessageJson": {
                         "type": "string",
+                        "description": "Gets or sets the message after conversion as json.\n\nThis should be the direct message send to the provider system.",
                         "nullable": true
                     },
                     "responseJson": {
                         "type": "string",
+                        "description": "Gets or sets the resonse of the provider system as json.",
                         "nullable": true
                     },
                     "internalVehicleId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the vehicle the message is send to.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "internalDriverId": {
                         "type": "string",
+                        "description": "Gets or sets the id of the driver the message is send to.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "internalTourId": {
                         "type": "string",
+                        "description": "Gets or sets a potential internal tour id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "startDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the start date time.",
                         "format": "date-time"
                     },
                     "endDateTime": {
                         "type": "string",
+                        "description": "Gets or sets the end date time.",
                         "format": "date-time"
                     },
                     "success": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the send was successfull."
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the entry of a send message log."
             },
             "OutgoingAttachmentResponse": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the attachment name.",
                         "nullable": true
                     },
                     "blobId": {
                         "type": "string",
+                        "description": "Gets or sets the unique identifier for the blob.",
                         "format": "uuid"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an attachment associated with an order."
             },
             "OxQLErrorResponse": {
                 "required": [
@@ -7622,6 +7829,7 @@
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "localizations": {
@@ -7629,6 +7837,7 @@
                         "items": {
                             "$ref": "#/components/schemas/DataFieldLocalizationModel"
                         },
+                        "description": "Gets or sets the localizations.",
                         "nullable": true
                     },
                     "dataType": {
@@ -7636,6 +7845,7 @@
                     },
                     "defaultValue": {
                         "type": "string",
+                        "description": "Gets or sets the default value.",
                         "nullable": true
                     },
                     "setDefinition": {
@@ -7643,42 +7853,51 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the set definition.",
                         "nullable": true
                     },
                     "format": {
                         "type": "string",
+                        "description": "Gets or sets the format string for display (e.g., N2 for numbers, C2 for currency, dd/MM/yyyy for dates).",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to patch a data field."
             },
             "PatchEmploymentConfigurationRequest": {
                 "type": "object",
                 "properties": {
                     "employmentId": {
                         "type": "string",
+                        "description": "Gets or sets the employment identifer referencing OxS.Hr employment ids.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the matchcode.",
                         "nullable": true
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the telematic provider by its name. E.g. 'spedion'.",
                         "nullable": true
                     },
                     "externalDriverIdentifier": {
                         "type": "string",
+                        "description": "Gets or sets the identifier from the telematic provider for the employment.",
                         "nullable": true
                     },
                     "validFrom": {
                         "type": "string",
+                        "description": "Gets or sets from when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "validTo": {
                         "type": "string",
+                        "description": "Gets or sets until when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -7687,16 +7906,19 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of active services.\n\nThe full list of available services should be taken from the get available services endpoint.\nA * will mean all services are active for the configuration.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to patch an employment configuration."
             },
             "PatchMessageQueueRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "flows": {
@@ -7704,6 +7926,7 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of flows to execute",
                         "nullable": true
                     },
                     "typeFilter": {
@@ -7711,45 +7934,55 @@
                         "items": {
                             "$ref": "#/components/schemas/IncomingMessageType"
                         },
+                        "description": "Gets or sets a list of activated filters for this queue.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to patch a message queue."
             },
             "PatchProviderConfiguration": {
                 "type": "object",
                 "properties": {
                     "username": {
                         "type": "string",
+                        "description": "Gets or sets the username.\n\nAlso used for the Dispatcher for Transics.",
                         "nullable": true
                     },
                     "password": {
                         "type": "string",
+                        "description": "Gets or sets the password.",
                         "nullable": true
                     },
                     "accountName": {
                         "type": "string",
+                        "description": "Gest or sets the account name.",
                         "nullable": true
                     },
                     "apiKey": {
                         "type": "string",
+                        "description": "Gets or sets the api key.",
                         "nullable": true
                     },
                     "systemNr": {
                         "type": "integer",
+                        "description": "Gets or sets the system number.",
                         "format": "int32",
                         "nullable": true
                     },
                     "integrator": {
                         "type": "string",
+                        "description": "Gets or sets the integrator.",
                         "nullable": true
                     },
                     "company": {
                         "type": "string",
+                        "description": "Gets or sets the Yellowfox RTI company key.",
                         "nullable": true
                     },
                     "importKey": {
                         "type": "string",
+                        "description": "Gets or sets the Yellowfox RTI import key.",
                         "nullable": true
                     }
                 },
@@ -7766,38 +7999,46 @@
                         "items": {
                             "$ref": "#/components/schemas/AutomaticVehicleConfigurationCreationSettings"
                         },
+                        "description": "Gets or sets the settings for automatically creating vehicle configurations",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a requestContext to patch a telematic configuration."
             },
             "PatchVehicleConfigurationRequest": {
                 "type": "object",
                 "properties": {
                     "vehicleId": {
                         "type": "string",
+                        "description": "Gets or sets the vehicle identifer referencing OxS.Vehicle vehicle ids.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the matchcode.",
                         "nullable": true
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the telematic provider by its name. E.g. 'spedion'.",
                         "nullable": true
                     },
                     "externalVehicleIdentifier": {
                         "type": "string",
+                        "description": "Gets or sets the identifier from the telematic provider for the vehicle.",
                         "nullable": true
                     },
                     "validFrom": {
                         "type": "string",
+                        "description": "Gets or sets from when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "validTo": {
                         "type": "string",
+                        "description": "Gets or sets until when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -7806,34 +8047,41 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of active services.\n\nThe full list of available services should be taken from the get available services endpoint.\nA * will mean all services are active for the configuration.",
                         "nullable": true
                     },
                     "loadWorkflowId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow which should be used for loading processes.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "deliveryWorkflowId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow which should be used for delivery processes.",
                         "format": "uuid",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Request to patch a vehicle configuration."
             },
             "PatchWorkflowRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the value.",
                         "nullable": true
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "steps": {
@@ -7841,16 +8089,19 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepAssignmentSet"
                         },
+                        "description": "Gets or sets the list of workflow steps.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to patch a telematic workflow."
             },
             "PatchWorkflowStepRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "localizations": {
@@ -7858,6 +8109,7 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepLocalizationModel"
                         },
+                        "description": "Gets or sets the localizations.",
                         "nullable": true
                     },
                     "dataFields": {
@@ -7865,10 +8117,12 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepDataFieldSet"
                         },
+                        "description": "Gets or sets the list of attached data fields.",
                         "nullable": true
                     },
                     "stepOrder": {
                         "type": "integer",
+                        "description": "Gets or sets the step order.",
                         "format": "int32",
                         "nullable": true
                     },
@@ -7877,10 +8131,12 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the roles this step fulfills within the order lifecycle.\nAllowed values: \"order_started\", \"order_completed\".",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a request to patch a workflow step."
             },
             "PipelineStage": {
                 "type": "object",
@@ -7965,42 +8221,52 @@
                 "properties": {
                     "username": {
                         "type": "string",
+                        "description": "Gets or sets the username.\n\nAlso used for the Dispatcher for Transics.",
                         "nullable": true
                     },
                     "password": {
                         "type": "string",
+                        "description": "Gets or sets the password.",
                         "nullable": true
                     },
                     "accountName": {
                         "type": "string",
+                        "description": "Gets or sets the account name.",
                         "nullable": true
                     },
                     "apiKey": {
                         "type": "string",
+                        "description": "Gets or sest the api key.",
                         "nullable": true
                     },
                     "externalId": {
                         "type": "string",
+                        "description": "Gets or sets the external id.\n\nUsed for the Fleethand provider.",
                         "nullable": true
                     },
                     "systemNr": {
                         "type": "integer",
+                        "description": "Gets or sets the system number.",
                         "format": "int32"
                     },
                     "integrator": {
                         "type": "string",
+                        "description": "Gets or sets the integrator.",
                         "nullable": true
                     },
                     "company": {
                         "type": "string",
+                        "description": "Gets or sets the Yellowfox RTI company key.",
                         "nullable": true
                     },
                     "importKey": {
                         "type": "string",
+                        "description": "Gets or sets the Yellowfox RTI import key.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the credentials."
             },
             "QueryExpression": {
                 "type": "object",
@@ -8063,24 +8329,29 @@
                 "properties": {
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the provider name.",
                         "nullable": true
                     },
                     "cron": {
                         "type": "string",
+                        "description": "Gets or sets the cron expression of the recurring job.",
                         "nullable": true
                     },
                     "nextExecution": {
                         "type": "string",
+                        "description": "Gets or sets the next execution time of the recurring job.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "lastExecution": {
                         "type": "string",
+                        "description": "Gets or sets the last execution time of the recurring job.",
                         "format": "date-time",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the response containing the current read job configuration."
             },
             "RequiredEndpointContractDefinition": {
                 "type": "object",
@@ -8123,20 +8394,24 @@
                 "properties": {
                     "vehicleId": {
                         "type": "string",
+                        "description": "Gets or sets the destinatin vehicle id.\nUsed is the oxs id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "driverId": {
                         "type": "string",
+                        "description": "Gets or sets the destination driver id.\nUsed is the oxs id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "message": {
                         "type": "string",
+                        "description": "Gets or sets the text massage.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Reqeust to ssend a text message."
             },
             "ServiceContract": {
                 "type": "object",
@@ -8272,10 +8547,12 @@
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the name of the provider.",
                         "nullable": true
                     },
                     "providerConfiguration": {
@@ -8286,6 +8563,7 @@
                         "items": {
                             "$ref": "#/components/schemas/AutomaticVehicleConfigurationCreationSettings"
                         },
+                        "description": "Gets or sets the settings for automatically creating vehicle configurations",
                         "nullable": true
                     },
                     "createDateTime": {
@@ -8315,20 +8593,24 @@
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Response for a telematic configuration get requestContext."
             },
             "TelematicDataFieldResponse": {
                 "type": "object",
                 "properties": {
                     "dataFieldId": {
                         "type": "string",
+                        "description": "Gets or sets the data field id.",
                         "format": "uuid"
                     },
                     "isRequired": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the field is required."
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the field.",
                         "nullable": true
                     },
                     "localizations": {
@@ -8336,73 +8618,89 @@
                         "items": {
                             "$ref": "#/components/schemas/DataFieldLocalizationResponse"
                         },
+                        "description": "Gets or sets the localizations for the field.",
                         "nullable": true
                     },
                     "type": {
                         "type": "string",
+                        "description": "Gets or sets the type of the data field.",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the collected value for this field.",
                         "nullable": true
                     },
                     "collectedAtUtc": {
                         "type": "string",
+                        "description": "Gets or sets the timestamp when the value was collected (UTC).",
                         "format": "date-time",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a data field within a telematic workflow step with collected value."
             },
             "TelematicOrderResponse": {
                 "type": "object",
                 "properties": {
                     "internalId": {
                         "type": "string",
+                        "description": "Gets or sets the internal id.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "orderNumber": {
                         "type": "string",
+                        "description": "Gets or sets the order number.",
                         "nullable": true
                     },
                     "articleName": {
                         "type": "string",
+                        "description": "Gets or sets the name of the article in the order.",
                         "nullable": true
                     },
                     "orderType": {
                         "type": "string",
+                        "description": "Gets or sets the order type.",
                         "nullable": true
                     },
                     "quantity": {
                         "type": "number",
+                        "description": "Gets or sets the quantity of the order.",
                         "format": "double",
                         "nullable": true
                     },
                     "quantityUnit": {
                         "type": "string",
+                        "description": "Gets or sets the quantity unit of the order.",
                         "nullable": true
                     },
                     "weight": {
                         "type": "number",
+                        "description": "Gets or sets the weight of the order.",
                         "format": "double",
                         "nullable": true
                     },
                     "loadingMeter": {
                         "type": "number",
+                        "description": "Gets or sets the loading meters of the order.",
                         "format": "double",
                         "nullable": true
                     },
                     "reference": {
                         "type": "string",
+                        "description": "Gets or sets the reference.",
                         "nullable": true
                     },
                     "deliveryNumber": {
                         "type": "string",
+                        "description": "Gets or sets the delivery number.",
                         "nullable": true
                     },
                     "loadNumber": {
                         "type": "string",
+                        "description": "Gets or sets the load number.",
                         "nullable": true
                     },
                     "attachedResources": {
@@ -8410,10 +8708,12 @@
                         "items": {
                             "$ref": "#/components/schemas/TelematicResourceResponse"
                         },
+                        "description": "Gets or sets the attached resources.",
                         "nullable": true
                     },
                     "externalNotes": {
                         "type": "string",
+                        "description": "Gets or sets the external notes associated with the order.",
                         "nullable": true
                     },
                     "openingHours": {
@@ -8421,6 +8721,7 @@
                         "items": {
                             "$ref": "#/components/schemas/OpeningHoursResponse"
                         },
+                        "description": "Gets or sets the opening hours.",
                         "nullable": true
                     },
                     "attachments": {
@@ -8428,24 +8729,28 @@
                         "items": {
                             "$ref": "#/components/schemas/OutgoingAttachmentResponse"
                         },
+                        "description": "Gets or sets the attachments.",
                         "nullable": true
                     },
                     "workflow": {
                         "$ref": "#/components/schemas/TelematicWorkflowResponse"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents an order in a telematic place."
             },
             "TelematicPlaceResponse": {
                 "type": "object",
                 "properties": {
                     "internalId": {
                         "type": "string",
+                        "description": "Gets or sets the internal id of the place.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the place name",
                         "nullable": true
                     },
                     "address": {
@@ -8453,26 +8758,31 @@
                     },
                     "startDateTimeUtc": {
                         "type": "string",
+                        "description": "Gets or sets the start date time as utc.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "endDateTimeUtc": {
                         "type": "string",
+                        "description": "Gets or sets the end date time as utc.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "latitude": {
                         "type": "number",
+                        "description": "Gets or sets the latitude of the place.",
                         "format": "double",
                         "nullable": true
                     },
                     "longitude": {
                         "type": "number",
+                        "description": "Gets or sets the longitude of the place.",
                         "format": "double",
                         "nullable": true
                     },
                     "reference": {
                         "type": "string",
+                        "description": "Gets or sets a reference.",
                         "nullable": true
                     },
                     "orders": {
@@ -8480,69 +8790,83 @@
                         "items": {
                             "$ref": "#/components/schemas/TelematicOrderResponse"
                         },
+                        "description": "Gets or sets the orders.",
                         "nullable": true
                     },
                     "notes": {
                         "type": "string",
+                        "description": "Gets or sets the job notes",
                         "nullable": true
                     },
                     "workflow": {
                         "$ref": "#/components/schemas/TelematicWorkflowResponse"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a place in a telematic tour with embedded workflow and step execution state."
             },
             "TelematicResourceResponse": {
                 "type": "object",
                 "properties": {
                     "type": {
                         "type": "string",
+                        "description": "Gets or sets the resource type.",
                         "nullable": true
                     },
                     "displayName": {
                         "type": "string",
+                        "description": "Gets or sets the display name.",
                         "nullable": true
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the match code.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a telematic resource attached to an order."
             },
             "TelematicTourResponse": {
                 "type": "object",
                 "properties": {
                     "internalId": {
                         "type": "string",
+                        "description": "Gets or sets an internal reference to the source object.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "tourNumber": {
                         "type": "string",
+                        "description": "Gets or sets a human readable identifier for the tour.",
                         "nullable": true
                     },
                     "reference": {
                         "type": "string",
+                        "description": "Gets or sets any other reference for the customer.",
                         "nullable": true
                     },
                     "internalVehicleId": {
                         "type": "string",
+                        "description": "Gets or sets the simplic id of the vehicle.",
                         "format": "uuid",
                         "nullable": true
                     },
                     "internalDriverId": {
                         "type": "string",
+                        "description": "Gets or sets the simplic id of the driver (employment).",
                         "format": "uuid",
                         "nullable": true
                     },
                     "startDateTimeUtc": {
                         "type": "string",
+                        "description": "Gets or sets the start date and time of the tour.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "endDateTimeUtc": {
                         "type": "string",
+                        "description": "Gets or sets the end date and time of the tour.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -8551,32 +8875,39 @@
                         "items": {
                             "$ref": "#/components/schemas/TelematicPlaceResponse"
                         },
+                        "description": "Gets or sets a list of places with their embedded workflows and execution state.",
                         "nullable": true
                     },
                     "publicKey": {
                         "type": "string",
+                        "description": "Gets or sets the public key used to identify or authenticate the tour.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a telematic tour response with complete workflow information."
             },
             "TelematicWorkflowResponse": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the workflow id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the workflow.",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the value that will be send towards the telematic system.",
                         "nullable": true
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "steps": {
@@ -8584,24 +8915,29 @@
                         "items": {
                             "$ref": "#/components/schemas/TelematicWorkflowStepResponse"
                         },
+                        "description": "Gets or sets the list of workflow steps with their embedded definitions.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a workflow snapshot embedded in a telematic message."
             },
             "TelematicWorkflowStepResponse": {
                 "type": "object",
                 "properties": {
                     "workflowStepId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow step id.",
                         "format": "uuid"
                     },
                     "order": {
                         "type": "integer",
+                        "description": "Gets or sets the order of this step in the workflow.",
                         "format": "int32"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name of the step.",
                         "nullable": true
                     },
                     "localizations": {
@@ -8609,6 +8945,7 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepLocalizationResponse"
                         },
+                        "description": "Gets or sets the localizations for the step.",
                         "nullable": true
                     },
                     "dataFields": {
@@ -8616,13 +8953,16 @@
                         "items": {
                             "$ref": "#/components/schemas/TelematicDataFieldResponse"
                         },
+                        "description": "Gets or sets the list of data fields for this step with their definitions.",
                         "nullable": true
                     },
                     "isCompleted": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether this step has been completed."
                     },
                     "completedAtUtc": {
                         "type": "string",
+                        "description": "Gets or sets the timestamp when the step was completed (UTC).",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -8631,10 +8971,12 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the roles this step fulfills within the order lifecycle.\nAllowed values: \"order_started\", \"order_completed\".",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a workflow step within a telematic workflow with execution state."
             },
             "UnwindStage": {
                 "required": [
@@ -8692,49 +9034,60 @@
                 "properties": {
                     "blobId": {
                         "type": "string",
+                        "description": "Gets or sets the CDN blob identifier assigned to the uploaded file.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the stored file name of the uploaded blob.",
                         "nullable": true
                     },
                     "contentType": {
                         "type": "string",
+                        "description": "Gets or sets the content type of the uploaded file (e.g. image/png, application/pdf).",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the response returned after successfully uploading a blob."
             },
             "VehicleConfigurationModel": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "vehicleId": {
                         "type": "string",
+                        "description": "Gets or sets the vehicle identifer referencing OxS.Vehicle vehicle ids.",
                         "format": "uuid"
                     },
                     "matchCode": {
                         "type": "string",
+                        "description": "Gets or sets the matchcode.",
                         "nullable": true
                     },
                     "providerName": {
                         "type": "string",
+                        "description": "Gets or sets the telematic provider by its name. E.g. 'spedion'.",
                         "nullable": true
                     },
                     "externalVehicleIdentifier": {
                         "type": "string",
+                        "description": "Gets or sets the identifier from the telematic provider for the vehicle.",
                         "nullable": true
                     },
                     "validFrom": {
                         "type": "string",
+                        "description": "Gets or sets from when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
                     "validTo": {
                         "type": "string",
+                        "description": "Gets or sets until when the configuration is valid.",
                         "format": "date-time",
                         "nullable": true
                     },
@@ -8743,6 +9096,7 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets a list of active services.\n\nThe full list of available services should be taken from the get available services endpoint.\nA * will mean all services are active for the configuration.",
                         "nullable": true
                     },
                     "loadWorkflow": {
@@ -8752,25 +9106,30 @@
                         "$ref": "#/components/schemas/WorkflowResponse"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Representsthe model to a vehicle configuration."
             },
             "WorkflowResponse": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the value.",
                         "nullable": true
                     },
                     "description": {
                         "type": "string",
+                        "description": "Gets or sets the description.",
                         "nullable": true
                     },
                     "steps": {
@@ -8778,108 +9137,130 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepAssignmentModel"
                         },
+                        "description": "Gets or sets the list of workflow steps.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the response of a workflow request."
             },
             "WorkflowStepAssignmentModel": {
                 "type": "object",
                 "properties": {
                     "workflowStepId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow step id.",
                         "format": "uuid"
                     },
                     "order": {
                         "type": "integer",
+                        "description": "Gets or sets the order of this step in the workflow.",
                         "format": "int32"
                     },
                     "step": {
                         "$ref": "#/components/schemas/WorkflowStepResponse"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a workflow step assignment model."
             },
             "WorkflowStepAssignmentSet": {
                 "type": "object",
                 "properties": {
                     "workflowStepId": {
                         "type": "string",
+                        "description": "Gets or sets the workflow step id.",
                         "format": "uuid"
                     },
                     "order": {
                         "type": "integer",
+                        "description": "Gets or sets the order of this step in the workflow.",
                         "format": "int32"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a workflow step assignment set for creating/updating a workflow."
             },
             "WorkflowStepDataFieldModel": {
                 "type": "object",
                 "properties": {
                     "dataFieldId": {
                         "type": "string",
+                        "description": "Gets or sets the data field id.",
                         "format": "uuid"
                     },
                     "isRequired": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the field is required."
                     },
                     "field": {
                         "$ref": "#/components/schemas/DataFieldResponse"
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a data field model attached to a workflow step."
             },
             "WorkflowStepDataFieldSet": {
                 "type": "object",
                 "properties": {
                     "dataFieldId": {
                         "type": "string",
+                        "description": "Gets or sets the data field id.",
                         "format": "uuid"
                     },
                     "isRequired": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Gets or sets whether the field is required."
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a data field set for creating/updating a workflow step."
             },
             "WorkflowStepLocalizationModel": {
                 "type": "object",
                 "properties": {
                     "languageCode": {
                         "type": "string",
+                        "description": "Gets or sets the language code.",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the localized value.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a localization model for a workflow step."
             },
             "WorkflowStepLocalizationResponse": {
                 "type": "object",
                 "properties": {
                     "languageCode": {
                         "type": "string",
+                        "description": "Gets or sets the language code (e.g., de-DE, en-EN).",
                         "nullable": true
                     },
                     "value": {
                         "type": "string",
+                        "description": "Gets or sets the localized value.",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents a localization entry for a workflow step."
             },
             "WorkflowStepResponse": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
+                        "description": "Gets or sets the id.",
                         "format": "uuid"
                     },
                     "name": {
                         "type": "string",
+                        "description": "Gets or sets the name.",
                         "nullable": true
                     },
                     "localizations": {
@@ -8887,6 +9268,7 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepLocalizationModel"
                         },
+                        "description": "Gets or sets the localizations.",
                         "nullable": true
                     },
                     "dataFields": {
@@ -8894,10 +9276,12 @@
                         "items": {
                             "$ref": "#/components/schemas/WorkflowStepDataFieldModel"
                         },
+                        "description": "Gets or sets the list of attached data fields.",
                         "nullable": true
                     },
                     "stepOrder": {
                         "type": "integer",
+                        "description": "Gets or sets the step order.",
                         "format": "int32"
                     },
                     "roles": {
@@ -8905,10 +9289,12 @@
                         "items": {
                             "type": "string"
                         },
+                        "description": "Gets or sets the roles this step fulfills within the order lifecycle.\nAllowed values: \"order_started\", \"order_completed\".",
                         "nullable": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "description": "Represents the response of a workflow step request."
             }
         },
         "securitySchemes": {

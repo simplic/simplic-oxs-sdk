@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicResourceResponse
+    /// Represents a telematic resource attached to an order.
     /// </summary>
     [DataContract(Name = "TelematicResourceResponse")]
     public partial class TelematicResourceResponse : IEquatable<TelematicResourceResponse>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicResourceResponse" /> class.
         /// </summary>
-        /// <param name="type">type.</param>
-        /// <param name="displayName">displayName.</param>
-        /// <param name="matchCode">matchCode.</param>
+        /// <param name="type">Gets or sets the resource type..</param>
+        /// <param name="displayName">Gets or sets the display name..</param>
+        /// <param name="matchCode">Gets or sets the match code..</param>
         public TelematicResourceResponse(string type = default(string), string displayName = default(string), string matchCode = default(string))
         {
             this.Type = type;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the resource type.
         /// </summary>
+        /// <value>Gets or sets the resource type.</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisplayName
+        /// Gets or sets the display name.
         /// </summary>
+        /// <value>Gets or sets the display name.</value>
         [DataMember(Name = "displayName", EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatchCode
+        /// Gets or sets the match code.
         /// </summary>
+        /// <value>Gets or sets the match code.</value>
         [DataMember(Name = "matchCode", EmitDefaultValue = true)]
         public string MatchCode { get; set; }
 

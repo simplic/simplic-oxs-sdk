@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// MessageQueueResponse
+    /// Represents the response of a message queue request.
     /// </summary>
     [DataContract(Name = "MessageQueueResponse")]
     public partial class MessageQueueResponse : IEquatable<MessageQueueResponse>, IValidatableObject
@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageQueueResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="flows">flows.</param>
-        /// <param name="typeFilter">typeFilter.</param>
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="flows">Gets or sets a list of flows to execute.</param>
+        /// <param name="typeFilter">Gets or sets a list of activated filters for this queue..</param>
         public MessageQueueResponse(Guid id = default(Guid), string name = default(string), List<string> flows = default(List<string>), List<IncomingMessageType> typeFilter = default(List<IncomingMessageType>))
         {
             this.Id = id;
@@ -49,26 +49,30 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Flows
+        /// Gets or sets a list of flows to execute
         /// </summary>
+        /// <value>Gets or sets a list of flows to execute</value>
         [DataMember(Name = "flows", EmitDefaultValue = true)]
         public List<string> Flows { get; set; }
 
         /// <summary>
-        /// Gets or Sets TypeFilter
+        /// Gets or sets a list of activated filters for this queue.
         /// </summary>
+        /// <value>Gets or sets a list of activated filters for this queue.</value>
         [DataMember(Name = "typeFilter", EmitDefaultValue = true)]
         public List<IncomingMessageType> TypeFilter { get; set; }
 

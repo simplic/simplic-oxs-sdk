@@ -13,7 +13,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 | [**DeleteReadJob**](TelematicClient.md#telematicdeletereadjobdelete) | **DELETE** /Telematic/delete-read-job |  |
 | [**GetAvailableServices**](TelematicClient.md#telematicgetavailableservicesget) | **GET** /Telematic/get-available-services |  |
 | [**GetDtcoReadJob**](TelematicClient.md#telematicgetdtcoreadjobprovidernameget) | **GET** /Telematic/get-dtco-read-job/{providerName} |  |
-| [**GetImportVehicle**](TelematicClient.md#telematicgetimportvehiclepost) | **POST** /Telematic/get-import-vehicle |  |
+| [**GetImportVehicle**](TelematicClient.md#telematicgetimportvehiclepost) | **POST** /Telematic/get-import-vehicle | Gets a preview of vehicles from the telematic provider. |
 | [**GetReadJob**](TelematicClient.md#telematicgetreadjobprovidernameget) | **GET** /Telematic/get-read-job/{providerName} |  |
 | [**SendTextMessage**](TelematicClient.md#telematicsendtextmessagepost) | **POST** /Telematic/send-text-message |  |
 
@@ -846,7 +846,7 @@ catch (ApiException e)
 # **GetImportVehicle**
 > List&lt;ImportVehicleResponse&gt; GetImportVehicle (ImportVehiclesRequest? importVehiclesRequest = null)
 
-
+Gets a preview of vehicles from the telematic provider.
 
 ### Example
 ```csharp
@@ -875,6 +875,7 @@ namespace Example
 
             try
             {
+                // Gets a preview of vehicles from the telematic provider.
                 List<ImportVehicleResponse> result = apiInstance.GetImportVehicle(importVehiclesRequest);
                 Debug.WriteLine(result);
             }
@@ -895,6 +896,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a preview of vehicles from the telematic provider.
     ApiResponse<List<ImportVehicleResponse>> response = apiInstance.GetImportVehicleWithHttpInfo(importVehiclesRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

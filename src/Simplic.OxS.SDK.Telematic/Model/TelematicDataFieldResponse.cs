@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicDataFieldResponse
+    /// Represents a data field within a telematic workflow step with collected value.
     /// </summary>
     [DataContract(Name = "TelematicDataFieldResponse")]
     public partial class TelematicDataFieldResponse : IEquatable<TelematicDataFieldResponse>, IValidatableObject
@@ -36,13 +36,13 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicDataFieldResponse" /> class.
         /// </summary>
-        /// <param name="dataFieldId">dataFieldId.</param>
-        /// <param name="isRequired">isRequired.</param>
-        /// <param name="name">name.</param>
-        /// <param name="localizations">localizations.</param>
-        /// <param name="type">type.</param>
-        /// <param name="value">value.</param>
-        /// <param name="collectedAtUtc">collectedAtUtc.</param>
+        /// <param name="dataFieldId">Gets or sets the data field id..</param>
+        /// <param name="isRequired">Gets or sets whether the field is required..</param>
+        /// <param name="name">Gets or sets the name of the field..</param>
+        /// <param name="localizations">Gets or sets the localizations for the field..</param>
+        /// <param name="type">Gets or sets the type of the data field..</param>
+        /// <param name="value">Gets or sets the collected value for this field..</param>
+        /// <param name="collectedAtUtc">Gets or sets the timestamp when the value was collected (UTC)..</param>
         public TelematicDataFieldResponse(Guid dataFieldId = default(Guid), bool isRequired = default(bool), string name = default(string), List<DataFieldLocalizationResponse> localizations = default(List<DataFieldLocalizationResponse>), string type = default(string), string value = default(string), DateTime? collectedAtUtc = default(DateTime?))
         {
             this.DataFieldId = dataFieldId;
@@ -55,44 +55,51 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets DataFieldId
+        /// Gets or sets the data field id.
         /// </summary>
+        /// <value>Gets or sets the data field id.</value>
         [DataMember(Name = "dataFieldId", EmitDefaultValue = false)]
         public Guid DataFieldId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsRequired
+        /// Gets or sets whether the field is required.
         /// </summary>
+        /// <value>Gets or sets whether the field is required.</value>
         [DataMember(Name = "isRequired", EmitDefaultValue = true)]
         public bool IsRequired { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the field.
         /// </summary>
+        /// <value>Gets or sets the name of the field.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Localizations
+        /// Gets or sets the localizations for the field.
         /// </summary>
+        /// <value>Gets or sets the localizations for the field.</value>
         [DataMember(Name = "localizations", EmitDefaultValue = true)]
         public List<DataFieldLocalizationResponse> Localizations { get; set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or sets the type of the data field.
         /// </summary>
+        /// <value>Gets or sets the type of the data field.</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the collected value for this field.
         /// </summary>
+        /// <value>Gets or sets the collected value for this field.</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets CollectedAtUtc
+        /// Gets or sets the timestamp when the value was collected (UTC).
         /// </summary>
+        /// <value>Gets or sets the timestamp when the value was collected (UTC).</value>
         [DataMember(Name = "collectedAtUtc", EmitDefaultValue = true)]
         public DateTime? CollectedAtUtc { get; set; }
 

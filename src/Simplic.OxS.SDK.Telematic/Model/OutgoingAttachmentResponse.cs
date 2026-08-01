@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// OutgoingAttachmentResponse
+    /// Represents an attachment associated with an order.
     /// </summary>
     [DataContract(Name = "OutgoingAttachmentResponse")]
     public partial class OutgoingAttachmentResponse : IEquatable<OutgoingAttachmentResponse>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="OutgoingAttachmentResponse" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="blobId">blobId.</param>
+        /// <param name="name">Gets or sets the attachment name..</param>
+        /// <param name="blobId">Gets or sets the unique identifier for the blob..</param>
         public OutgoingAttachmentResponse(string name = default(string), Guid blobId = default(Guid))
         {
             this.Name = name;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the attachment name.
         /// </summary>
+        /// <value>Gets or sets the attachment name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets BlobId
+        /// Gets or sets the unique identifier for the blob.
         /// </summary>
+        /// <value>Gets or sets the unique identifier for the blob.</value>
         [DataMember(Name = "blobId", EmitDefaultValue = false)]
         public Guid BlobId { get; set; }
 

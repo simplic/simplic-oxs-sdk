@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicPlaceResponse
+    /// Represents a place in a telematic tour with embedded workflow and step execution state.
     /// </summary>
     [DataContract(Name = "TelematicPlaceResponse")]
     public partial class TelematicPlaceResponse : IEquatable<TelematicPlaceResponse>, IValidatableObject
@@ -36,16 +36,16 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicPlaceResponse" /> class.
         /// </summary>
-        /// <param name="internalId">internalId.</param>
-        /// <param name="name">name.</param>
+        /// <param name="internalId">Gets or sets the internal id of the place..</param>
+        /// <param name="name">Gets or sets the place name.</param>
         /// <param name="address">address.</param>
-        /// <param name="startDateTimeUtc">startDateTimeUtc.</param>
-        /// <param name="endDateTimeUtc">endDateTimeUtc.</param>
-        /// <param name="latitude">latitude.</param>
-        /// <param name="longitude">longitude.</param>
-        /// <param name="reference">reference.</param>
-        /// <param name="orders">orders.</param>
-        /// <param name="notes">notes.</param>
+        /// <param name="startDateTimeUtc">Gets or sets the start date time as utc..</param>
+        /// <param name="endDateTimeUtc">Gets or sets the end date time as utc..</param>
+        /// <param name="latitude">Gets or sets the latitude of the place..</param>
+        /// <param name="longitude">Gets or sets the longitude of the place..</param>
+        /// <param name="reference">Gets or sets a reference..</param>
+        /// <param name="orders">Gets or sets the orders..</param>
+        /// <param name="notes">Gets or sets the job notes.</param>
         /// <param name="workflow">workflow.</param>
         public TelematicPlaceResponse(Guid? internalId = default(Guid?), string name = default(string), AddressResponse address = default(AddressResponse), DateTime? startDateTimeUtc = default(DateTime?), DateTime? endDateTimeUtc = default(DateTime?), double? latitude = default(double?), double? longitude = default(double?), string reference = default(string), List<TelematicOrderResponse> orders = default(List<TelematicOrderResponse>), string notes = default(string), TelematicWorkflowResponse workflow = default(TelematicWorkflowResponse))
         {
@@ -63,14 +63,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets InternalId
+        /// Gets or sets the internal id of the place.
         /// </summary>
+        /// <value>Gets or sets the internal id of the place.</value>
         [DataMember(Name = "internalId", EmitDefaultValue = true)]
         public Guid? InternalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the place name
         /// </summary>
+        /// <value>Gets or sets the place name</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
@@ -81,44 +83,51 @@ namespace Simplic.OxS.SDK.Telematic
         public AddressResponse Address { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartDateTimeUtc
+        /// Gets or sets the start date time as utc.
         /// </summary>
+        /// <value>Gets or sets the start date time as utc.</value>
         [DataMember(Name = "startDateTimeUtc", EmitDefaultValue = true)]
         public DateTime? StartDateTimeUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDateTimeUtc
+        /// Gets or sets the end date time as utc.
         /// </summary>
+        /// <value>Gets or sets the end date time as utc.</value>
         [DataMember(Name = "endDateTimeUtc", EmitDefaultValue = true)]
         public DateTime? EndDateTimeUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Latitude
+        /// Gets or sets the latitude of the place.
         /// </summary>
+        /// <value>Gets or sets the latitude of the place.</value>
         [DataMember(Name = "latitude", EmitDefaultValue = true)]
         public double? Latitude { get; set; }
 
         /// <summary>
-        /// Gets or Sets Longitude
+        /// Gets or sets the longitude of the place.
         /// </summary>
+        /// <value>Gets or sets the longitude of the place.</value>
         [DataMember(Name = "longitude", EmitDefaultValue = true)]
         public double? Longitude { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets a reference.
         /// </summary>
+        /// <value>Gets or sets a reference.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or Sets Orders
+        /// Gets or sets the orders.
         /// </summary>
+        /// <value>Gets or sets the orders.</value>
         [DataMember(Name = "orders", EmitDefaultValue = true)]
         public List<TelematicOrderResponse> Orders { get; set; }
 
         /// <summary>
-        /// Gets or Sets Notes
+        /// Gets or sets the job notes
         /// </summary>
+        /// <value>Gets or sets the job notes</value>
         [DataMember(Name = "notes", EmitDefaultValue = true)]
         public string Notes { get; set; }
 

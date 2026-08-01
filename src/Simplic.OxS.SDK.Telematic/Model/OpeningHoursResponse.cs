@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// OpeningHoursResponse
+    /// Represents an opening hour tuple.
     /// </summary>
     [DataContract(Name = "OpeningHoursResponse")]
     public partial class OpeningHoursResponse : IEquatable<OpeningHoursResponse>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="OpeningHoursResponse" /> class.
         /// </summary>
-        /// <param name="from">from.</param>
-        /// <param name="to">to.</param>
+        /// <param name="from">Gets or sets the opening time..</param>
+        /// <param name="to">Gets or sets the closing time..</param>
         public OpeningHoursResponse(string from = default(string), string to = default(string))
         {
             this.From = from;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets From
+        /// Gets or sets the opening time.
         /// </summary>
+        /// <value>Gets or sets the opening time.</value>
         [DataMember(Name = "from", EmitDefaultValue = false)]
         public string From { get; set; }
 
         /// <summary>
-        /// Gets or Sets To
+        /// Gets or sets the closing time.
         /// </summary>
+        /// <value>Gets or sets the closing time.</value>
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public string To { get; set; }
 

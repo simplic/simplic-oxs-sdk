@@ -40,144 +40,144 @@ public interface IWorkflowStepClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A workflow step id.</param>
     /// <returns>Object</returns>
     Object Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A workflow step id.</param>
     /// <returns>ApiResponse of Object</returns>
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A workflow step id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of Object</returns>
     Task<Object> DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A workflow step id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (Object)</returns>
     Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Gets a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow step id.</param>
     /// <returns>WorkflowStepResponse</returns>
     WorkflowStepResponse Get(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow step id.</param>
     /// <returns>ApiResponse of WorkflowStepResponse</returns>
     ApiResponse<WorkflowStepResponse> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow step id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of WorkflowStepResponse</returns>
     Task<WorkflowStepResponse> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The workflow step id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
     Task<ApiResponse<WorkflowStepResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Patches a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowStepRequest"> (optional)</param>
+    /// <param name="id">The workflow step id.</param>
+    /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
     /// <returns>WorkflowStepResponse</returns>
     WorkflowStepResponse Patch(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?));
 
     /// <summary>
-    ///  
+    /// Patches a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowStepRequest"> (optional)</param>
+    /// <param name="id">The workflow step id.</param>
+    /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
     /// <returns>ApiResponse of WorkflowStepResponse</returns>
     ApiResponse<WorkflowStepResponse> PatchWithHttpInfo(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?));
         
     /// <summary>
-    ///  
+    /// Patches a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowStepRequest"> (optional)</param>
+    /// <param name="id">The workflow step id.</param>
+    /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of WorkflowStepResponse</returns>
     Task<WorkflowStepResponse> PatchAsync(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Patches a workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
-    /// <param name="patchWorkflowStepRequest"> (optional)</param>
+    /// <param name="id">The workflow step id.</param>
+    /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
     Task<ApiResponse<WorkflowStepResponse>> PatchWithHttpInfoAsync(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Creates a new workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowStepRequest"> (optional)</param>
+    /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
     /// <returns>WorkflowStepResponse</returns>
     WorkflowStepResponse Post(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowStepRequest"> (optional)</param>
+    /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
     /// <returns>ApiResponse of WorkflowStepResponse</returns>
     ApiResponse<WorkflowStepResponse> PostWithHttpInfo(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowStepRequest"> (optional)</param>
+    /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of WorkflowStepResponse</returns>
     Task<WorkflowStepResponse> PostAsync(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new workflow step. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createWorkflowStepRequest"> (optional)</param>
+    /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
     Task<ApiResponse<WorkflowStepResponse>> PostWithHttpInfoAsync(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
@@ -258,10 +258,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <returns>Object</returns>
         public Object Delete(Guid id)
         {
@@ -276,10 +276,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <returns>ApiResponse of Object</returns>
         public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
         {
@@ -294,10 +294,10 @@ public interface IWorkflowStepClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         public System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -313,10 +313,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -331,10 +331,10 @@ public interface IWorkflowStepClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <returns>WorkflowStepResponse</returns>
         public WorkflowStepResponse Get(Guid id)
         {
@@ -349,10 +349,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse> GetWithHttpInfo(Guid id)
         {
@@ -367,10 +367,10 @@ public interface IWorkflowStepClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
         public System.Threading.Tasks.Task<WorkflowStepResponse> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -386,10 +386,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -404,11 +404,11 @@ public interface IWorkflowStepClient
             }
         }    
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <returns>WorkflowStepResponse</returns>
         public WorkflowStepResponse Patch(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?))
         {
@@ -423,11 +423,11 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse> PatchWithHttpInfo(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?))
         {
@@ -442,11 +442,11 @@ public interface IWorkflowStepClient
         } 
 
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
         public System.Threading.Tasks.Task<WorkflowStepResponse> PatchAsync(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -462,11 +462,11 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse>> PatchWithHttpInfoAsync(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -481,10 +481,10 @@ public interface IWorkflowStepClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <returns>WorkflowStepResponse</returns>
         public WorkflowStepResponse Post(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?))
         {
@@ -499,10 +499,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse> PostWithHttpInfo(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?))
         {
@@ -517,10 +517,10 @@ public interface IWorkflowStepClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
         public System.Threading.Tasks.Task<WorkflowStepResponse> PostAsync(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -536,10 +536,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse>> PostWithHttpInfoAsync(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -567,84 +567,84 @@ public interface IWorkflowStepClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a workflow step.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         Object Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a workflow step.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowStepResponse</returns>
         WorkflowStepResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         ApiResponse<WorkflowStepResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Patches a workflow step.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowStepResponse</returns>
         WorkflowStepResponse Patch(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Patches a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         ApiResponse<WorkflowStepResponse> PatchWithHttpInfo(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new workflow step.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowStepResponse</returns>
         WorkflowStepResponse Post(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         ApiResponse<WorkflowStepResponse> PostWithHttpInfo(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), int operationIndex = 0);
@@ -658,103 +658,103 @@ public interface IWorkflowStepClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
         System.Threading.Tasks.Task<WorkflowStepResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkflowStepResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Patches a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
         System.Threading.Tasks.Task<WorkflowStepResponse> PatchAsync(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Patches a workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkflowStepResponse>> PatchWithHttpInfoAsync(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
         System.Threading.Tasks.Task<WorkflowStepResponse> PostAsync(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new workflow step.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
@@ -882,10 +882,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         public Object Delete(Guid id, int operationIndex = 0)
@@ -895,10 +895,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
@@ -959,10 +959,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -973,10 +973,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -1040,10 +1040,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowStepResponse</returns>
         public WorkflowStepResponse Get(Guid id, int operationIndex = 0)
@@ -1053,10 +1053,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
@@ -1117,10 +1117,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
@@ -1131,10 +1131,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The workflow step id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
@@ -1198,11 +1198,11 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowStepResponse</returns>
         public WorkflowStepResponse Patch(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), int operationIndex = 0)
@@ -1212,11 +1212,11 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse> PatchWithHttpInfo(Guid id, PatchWorkflowStepRequest? patchWorkflowStepRequest = default(PatchWorkflowStepRequest?), int operationIndex = 0)
@@ -1281,11 +1281,11 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
@@ -1296,11 +1296,11 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="patchWorkflowStepRequest"> (optional)</param>
+        /// <param name="id">The workflow step id.</param>
+        /// <param name="patchWorkflowStepRequest">The patch request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>
@@ -1368,10 +1368,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WorkflowStepResponse</returns>
         public WorkflowStepResponse Post(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), int operationIndex = 0)
@@ -1381,10 +1381,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WorkflowStepResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<WorkflowStepResponse> PostWithHttpInfo(CreateWorkflowStepRequest? createWorkflowStepRequest = default(CreateWorkflowStepRequest?), int operationIndex = 0)
@@ -1448,10 +1448,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkflowStepResponse</returns>
@@ -1462,10 +1462,10 @@ public interface IWorkflowStepClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new workflow step. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createWorkflowStepRequest"> (optional)</param>
+        /// <param name="createWorkflowStepRequest">A create workflow step request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowStepResponse)</returns>

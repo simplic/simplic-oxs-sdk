@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// WorkflowStepLocalizationModel
+    /// Represents a localization model for a workflow step.
     /// </summary>
     [DataContract(Name = "WorkflowStepLocalizationModel")]
     public partial class WorkflowStepLocalizationModel : IEquatable<WorkflowStepLocalizationModel>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowStepLocalizationModel" /> class.
         /// </summary>
-        /// <param name="languageCode">languageCode.</param>
-        /// <param name="value">value.</param>
+        /// <param name="languageCode">Gets or sets the language code..</param>
+        /// <param name="value">Gets or sets the localized value..</param>
         public WorkflowStepLocalizationModel(string languageCode = default(string), string value = default(string))
         {
             this.LanguageCode = languageCode;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets LanguageCode
+        /// Gets or sets the language code.
         /// </summary>
+        /// <value>Gets or sets the language code.</value>
         [DataMember(Name = "languageCode", EmitDefaultValue = true)]
         public string LanguageCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the localized value.
         /// </summary>
+        /// <value>Gets or sets the localized value.</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 

@@ -1,4 +1,5 @@
 # Simplic.OxS.SDK.Telematic.DataFieldTypeModel
+Represents the data type of a field.
 
 ## Properties
 

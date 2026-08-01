@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// VehicleConfigurationModel
+    /// Representsthe model to a vehicle configuration.
     /// </summary>
     [DataContract(Name = "VehicleConfigurationModel")]
     public partial class VehicleConfigurationModel : IEquatable<VehicleConfigurationModel>, IValidatableObject
@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="VehicleConfigurationModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="vehicleId">vehicleId.</param>
-        /// <param name="matchCode">matchCode.</param>
-        /// <param name="providerName">providerName.</param>
-        /// <param name="externalVehicleIdentifier">externalVehicleIdentifier.</param>
-        /// <param name="validFrom">validFrom.</param>
-        /// <param name="validTo">validTo.</param>
-        /// <param name="activeServices">activeServices.</param>
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="vehicleId">Gets or sets the vehicle identifer referencing OxS.Vehicle vehicle ids..</param>
+        /// <param name="matchCode">Gets or sets the matchcode..</param>
+        /// <param name="providerName">Gets or sets the telematic provider by its name. E.g. &#39;spedion&#39;..</param>
+        /// <param name="externalVehicleIdentifier">Gets or sets the identifier from the telematic provider for the vehicle..</param>
+        /// <param name="validFrom">Gets or sets from when the configuration is valid..</param>
+        /// <param name="validTo">Gets or sets until when the configuration is valid..</param>
+        /// <param name="activeServices">Gets or sets a list of active services.  The full list of available services should be taken from the get available services endpoint. A * will mean all services are active for the configuration..</param>
         /// <param name="loadWorkflow">loadWorkflow.</param>
         /// <param name="deliveryWorkflow">deliveryWorkflow.</param>
         public VehicleConfigurationModel(Guid id = default(Guid), Guid vehicleId = default(Guid), string matchCode = default(string), string providerName = default(string), string externalVehicleIdentifier = default(string), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?), List<string> activeServices = default(List<string>), WorkflowResponse loadWorkflow = default(WorkflowResponse), WorkflowResponse deliveryWorkflow = default(WorkflowResponse))
@@ -61,50 +61,58 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets VehicleId
+        /// Gets or sets the vehicle identifer referencing OxS.Vehicle vehicle ids.
         /// </summary>
+        /// <value>Gets or sets the vehicle identifer referencing OxS.Vehicle vehicle ids.</value>
         [DataMember(Name = "vehicleId", EmitDefaultValue = false)]
         public Guid VehicleId { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatchCode
+        /// Gets or sets the matchcode.
         /// </summary>
+        /// <value>Gets or sets the matchcode.</value>
         [DataMember(Name = "matchCode", EmitDefaultValue = true)]
         public string MatchCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// Gets or sets the telematic provider by its name. E.g. &#39;spedion&#39;.
         /// </summary>
+        /// <value>Gets or sets the telematic provider by its name. E.g. &#39;spedion&#39;.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExternalVehicleIdentifier
+        /// Gets or sets the identifier from the telematic provider for the vehicle.
         /// </summary>
+        /// <value>Gets or sets the identifier from the telematic provider for the vehicle.</value>
         [DataMember(Name = "externalVehicleIdentifier", EmitDefaultValue = true)]
         public string ExternalVehicleIdentifier { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidFrom
+        /// Gets or sets from when the configuration is valid.
         /// </summary>
+        /// <value>Gets or sets from when the configuration is valid.</value>
         [DataMember(Name = "validFrom", EmitDefaultValue = true)]
         public DateTime? ValidFrom { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidTo
+        /// Gets or sets until when the configuration is valid.
         /// </summary>
+        /// <value>Gets or sets until when the configuration is valid.</value>
         [DataMember(Name = "validTo", EmitDefaultValue = true)]
         public DateTime? ValidTo { get; set; }
 
         /// <summary>
-        /// Gets or Sets ActiveServices
+        /// Gets or sets a list of active services.  The full list of available services should be taken from the get available services endpoint. A * will mean all services are active for the configuration.
         /// </summary>
+        /// <value>Gets or sets a list of active services.  The full list of available services should be taken from the get available services endpoint. A * will mean all services are active for the configuration.</value>
         [DataMember(Name = "activeServices", EmitDefaultValue = true)]
         public List<string> ActiveServices { get; set; }
 

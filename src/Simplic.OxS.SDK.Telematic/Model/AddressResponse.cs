@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// AddressResponse
+    /// Represents an address in a telematic place.
     /// </summary>
     [DataContract(Name = "AddressResponse")]
     public partial class AddressResponse : IEquatable<AddressResponse>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressResponse" /> class.
         /// </summary>
-        /// <param name="street">street.</param>
-        /// <param name="city">city.</param>
-        /// <param name="zipCode">zipCode.</param>
-        /// <param name="country">country.</param>
-        /// <param name="countryCode">countryCode.</param>
+        /// <param name="street">Gets or sets the street..</param>
+        /// <param name="city">Gets or sets the city..</param>
+        /// <param name="zipCode">Gets or sets the zip code..</param>
+        /// <param name="country">Gets or sets the country..</param>
+        /// <param name="countryCode">Gets or sets the country code (ISO 3166-1 alpha-2)..</param>
         public AddressResponse(string street = default(string), string city = default(string), string zipCode = default(string), string country = default(string), string countryCode = default(string))
         {
             this.Street = street;
@@ -51,32 +51,37 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Street
+        /// Gets or sets the street.
         /// </summary>
+        /// <value>Gets or sets the street.</value>
         [DataMember(Name = "street", EmitDefaultValue = true)]
         public string Street { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
+        /// Gets or sets the city.
         /// </summary>
+        /// <value>Gets or sets the city.</value>
         [DataMember(Name = "city", EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
-        /// Gets or Sets ZipCode
+        /// Gets or sets the zip code.
         /// </summary>
+        /// <value>Gets or sets the zip code.</value>
         [DataMember(Name = "zipCode", EmitDefaultValue = true)]
         public string ZipCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Country
+        /// Gets or sets the country.
         /// </summary>
+        /// <value>Gets or sets the country.</value>
         [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryCode
+        /// Gets or sets the country code (ISO 3166-1 alpha-2).
         /// </summary>
+        /// <value>Gets or sets the country code (ISO 3166-1 alpha-2).</value>
         [DataMember(Name = "countryCode", EmitDefaultValue = true)]
         public string CountryCode { get; set; }
 

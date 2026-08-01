@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CreateTelematicConfigurationRequest
+    /// Reqeust to create a telematic configuration.
     /// </summary>
     [DataContract(Name = "CreateTelematicConfigurationRequest")]
     public partial class CreateTelematicConfigurationRequest : IEquatable<CreateTelematicConfigurationRequest>, IValidatableObject
@@ -41,9 +41,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTelematicConfigurationRequest" /> class.
         /// </summary>
-        /// <param name="providerName">providerName (required).</param>
+        /// <param name="providerName">Gets or sets the provider name. (required).</param>
         /// <param name="providerConfiguration">providerConfiguration.</param>
-        /// <param name="autoCreationSettings">autoCreationSettings.</param>
+        /// <param name="autoCreationSettings">Gets or sets the settings for automatically creating vehicle configurations.</param>
         public CreateTelematicConfigurationRequest(string providerName = default(string), ProviderConfigurationModel providerConfiguration = default(ProviderConfigurationModel), List<AutomaticVehicleConfigurationCreationSettings> autoCreationSettings = default(List<AutomaticVehicleConfigurationCreationSettings>))
         {
             // to ensure "providerName" is required (not null)
@@ -57,8 +57,9 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// Gets or sets the provider name.
         /// </summary>
+        /// <value>Gets or sets the provider name.</value>
         [DataMember(Name = "providerName", IsRequired = true, EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 
@@ -69,8 +70,9 @@ namespace Simplic.OxS.SDK.Telematic
         public ProviderConfigurationModel ProviderConfiguration { get; set; }
 
         /// <summary>
-        /// Gets or Sets AutoCreationSettings
+        /// Gets or sets the settings for automatically creating vehicle configurations
         /// </summary>
+        /// <value>Gets or sets the settings for automatically creating vehicle configurations</value>
         [DataMember(Name = "autoCreationSettings", EmitDefaultValue = true)]
         public List<AutomaticVehicleConfigurationCreationSettings> AutoCreationSettings { get; set; }
 

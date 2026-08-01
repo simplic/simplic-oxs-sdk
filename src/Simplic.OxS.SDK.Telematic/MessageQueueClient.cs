@@ -40,77 +40,77 @@ public interface IMessageQueueClient
 
 
     /// <summary>
-    ///  
+    /// Deletes a message queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A MessageQueue id.</param>
     /// <returns>Object</returns>
     Object Delete(Guid id);
 
     /// <summary>
-    ///  
+    /// Deletes a message queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A MessageQueue id.</param>
     /// <returns>ApiResponse of Object</returns>
     ApiResponse<Object> DeleteWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Deletes a message queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A MessageQueue id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of Object</returns>
     Task<Object> DeleteAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Deletes a message queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">A MessageQueue id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (Object)</returns>
     Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The MessageQueue id.</param>
     /// <returns>MessageQueueResponse</returns>
     MessageQueueResponse Get(Guid id);
 
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The MessageQueue id.</param>
     /// <returns>ApiResponse of MessageQueueResponse</returns>
     ApiResponse<MessageQueueResponse> GetWithHttpInfo(Guid id);
         
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The MessageQueue id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of MessageQueueResponse</returns>
     Task<MessageQueueResponse> GetAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id"></param>
+    /// <param name="id">The MessageQueue id.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
     Task<ApiResponse<MessageQueueResponse>> GetWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Patches a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -119,7 +119,7 @@ public interface IMessageQueueClient
     MessageQueueResponse Patch(Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = default(PatchMessageQueueRequest?));
 
     /// <summary>
-    ///  
+    /// Patches a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -128,7 +128,7 @@ public interface IMessageQueueClient
     ApiResponse<MessageQueueResponse> PatchWithHttpInfo(Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = default(PatchMessageQueueRequest?));
         
     /// <summary>
-    ///  
+    /// Patches a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -138,7 +138,7 @@ public interface IMessageQueueClient
     Task<MessageQueueResponse> PatchAsync(Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = default(PatchMessageQueueRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Patches a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
@@ -149,7 +149,7 @@ public interface IMessageQueueClient
 
 
     /// <summary>
-    ///  
+    /// Commit message inside a queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="messageId"></param>
@@ -157,7 +157,7 @@ public interface IMessageQueueClient
     List<IncomingTelematicMessage> CommitMessage(Guid messageId);
 
     /// <summary>
-    ///  
+    /// Commit message inside a queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="messageId"></param>
@@ -165,7 +165,7 @@ public interface IMessageQueueClient
     ApiResponse<List<IncomingTelematicMessage>> CommitMessageWithHttpInfo(Guid messageId);
         
     /// <summary>
-    ///  
+    /// Commit message inside a queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="messageId"></param>
@@ -174,7 +174,7 @@ public interface IMessageQueueClient
     Task<List<IncomingTelematicMessage>> CommitMessageAsync(Guid messageId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Commit message inside a queue 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="messageId"></param>
@@ -184,42 +184,42 @@ public interface IMessageQueueClient
 
 
     /// <summary>
-    ///  
+    /// Creates a new message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createMessageQueueRequest"> (optional)</param>
+    /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
     /// <returns>MessageQueueResponse</returns>
     MessageQueueResponse Post(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?));
 
     /// <summary>
-    ///  
+    /// Creates a new message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createMessageQueueRequest"> (optional)</param>
+    /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
     /// <returns>ApiResponse of MessageQueueResponse</returns>
     ApiResponse<MessageQueueResponse> PostWithHttpInfo(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?));
         
     /// <summary>
-    ///  
+    /// Creates a new message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createMessageQueueRequest"> (optional)</param>
+    /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of MessageQueueResponse</returns>
     Task<MessageQueueResponse> PostAsync(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Creates a new message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="createMessageQueueRequest"> (optional)</param>
+    /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
     Task<ApiResponse<MessageQueueResponse>> PostWithHttpInfoAsync(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="queueId"></param>
@@ -227,7 +227,7 @@ public interface IMessageQueueClient
     List<IncomingTelematicMessage> ReadMessages(Guid queueId);
 
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="queueId"></param>
@@ -235,7 +235,7 @@ public interface IMessageQueueClient
     ApiResponse<List<IncomingTelematicMessage>> ReadMessagesWithHttpInfo(Guid queueId);
         
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="queueId"></param>
@@ -244,7 +244,7 @@ public interface IMessageQueueClient
     Task<List<IncomingTelematicMessage>> ReadMessagesAsync(Guid queueId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a message queue. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="queueId"></param>
@@ -328,10 +328,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <returns>Object</returns>
         public Object Delete(Guid id)
         {
@@ -346,10 +346,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <returns>ApiResponse of Object</returns>
         public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id)
         {
@@ -364,10 +364,10 @@ public interface IMessageQueueClient
         } 
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         public System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -383,10 +383,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -401,10 +401,10 @@ public interface IMessageQueueClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <returns>MessageQueueResponse</returns>
         public MessageQueueResponse Get(Guid id)
         {
@@ -419,10 +419,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <returns>ApiResponse of MessageQueueResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<MessageQueueResponse> GetWithHttpInfo(Guid id)
         {
@@ -437,10 +437,10 @@ public interface IMessageQueueClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageQueueResponse</returns>
         public System.Threading.Tasks.Task<MessageQueueResponse> GetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -456,10 +456,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<MessageQueueResponse>> GetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -474,7 +474,7 @@ public interface IMessageQueueClient
             }
         }    
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -493,7 +493,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -512,7 +512,7 @@ public interface IMessageQueueClient
         } 
 
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -532,7 +532,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -551,7 +551,7 @@ public interface IMessageQueueClient
             }
         }    
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -569,7 +569,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -587,7 +587,7 @@ public interface IMessageQueueClient
         } 
 
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -606,7 +606,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -624,10 +624,10 @@ public interface IMessageQueueClient
             }
         }    
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <returns>MessageQueueResponse</returns>
         public MessageQueueResponse Post(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?))
         {
@@ -642,10 +642,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <returns>ApiResponse of MessageQueueResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<MessageQueueResponse> PostWithHttpInfo(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?))
         {
@@ -660,10 +660,10 @@ public interface IMessageQueueClient
         } 
 
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageQueueResponse</returns>
         public System.Threading.Tasks.Task<MessageQueueResponse> PostAsync(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -679,10 +679,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<MessageQueueResponse>> PostWithHttpInfoAsync(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -697,7 +697,7 @@ public interface IMessageQueueClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -715,7 +715,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -733,7 +733,7 @@ public interface IMessageQueueClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -752,7 +752,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -783,47 +783,47 @@ public interface IMessageQueueClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a message queue
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         Object Delete(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Deletes a message queue
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>MessageQueueResponse</returns>
         MessageQueueResponse Get(Guid id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of MessageQueueResponse</returns>
         ApiResponse<MessageQueueResponse> GetWithHttpInfo(Guid id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Patches a message queue.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -833,7 +833,7 @@ public interface IMessageQueueClient
         MessageQueueResponse Patch(Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = default(PatchMessageQueueRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Patches a message queue.
         /// </summary>
         /// <remarks>
         /// 
@@ -845,7 +845,7 @@ public interface IMessageQueueClient
         /// <returns>ApiResponse of MessageQueueResponse</returns>
         ApiResponse<MessageQueueResponse> PatchWithHttpInfo(Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = default(PatchMessageQueueRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Commit message inside a queue
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -854,7 +854,7 @@ public interface IMessageQueueClient
         List<IncomingTelematicMessage> CommitMessage(Guid messageId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Commit message inside a queue
         /// </summary>
         /// <remarks>
         /// 
@@ -865,27 +865,27 @@ public interface IMessageQueueClient
         /// <returns>ApiResponse of List&lt;IncomingTelematicMessage&gt;</returns>
         ApiResponse<List<IncomingTelematicMessage>> CommitMessageWithHttpInfo(Guid messageId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Creates a new message queue.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>MessageQueueResponse</returns>
         MessageQueueResponse Post(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Creates a new message queue.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of MessageQueueResponse</returns>
         ApiResponse<MessageQueueResponse> PostWithHttpInfo(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -894,7 +894,7 @@ public interface IMessageQueueClient
         List<IncomingTelematicMessage> ReadMessages(Guid queueId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <remarks>
         /// 
@@ -914,57 +914,57 @@ public interface IMessageQueueClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Deletes a message queue
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> DeleteAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Deletes a message queue
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageQueueResponse</returns>
         System.Threading.Tasks.Task<MessageQueueResponse> GetAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageQueueResponse>> GetWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Patches a message queue.
         /// </summary>
         /// <remarks>
         /// 
@@ -978,7 +978,7 @@ public interface IMessageQueueClient
         System.Threading.Tasks.Task<MessageQueueResponse> PatchAsync(Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = default(PatchMessageQueueRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Patches a message queue.
         /// </summary>
         /// <remarks>
         /// 
@@ -991,7 +991,7 @@ public interface IMessageQueueClient
         /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageQueueResponse>> PatchWithHttpInfoAsync(Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = default(PatchMessageQueueRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Commit message inside a queue
         /// </summary>
         /// <remarks>
         /// 
@@ -1004,7 +1004,7 @@ public interface IMessageQueueClient
         System.Threading.Tasks.Task<List<IncomingTelematicMessage>> CommitMessageAsync(Guid messageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Commit message inside a queue
         /// </summary>
         /// <remarks>
         /// 
@@ -1016,32 +1016,32 @@ public interface IMessageQueueClient
         /// <returns>Task of ApiResponse (List&lt;IncomingTelematicMessage&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<IncomingTelematicMessage>>> CommitMessageWithHttpInfoAsync(Guid messageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Creates a new message queue.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageQueueResponse</returns>
         System.Threading.Tasks.Task<MessageQueueResponse> PostAsync(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Creates a new message queue.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageQueueResponse>> PostWithHttpInfoAsync(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <remarks>
         /// 
@@ -1054,7 +1054,7 @@ public interface IMessageQueueClient
         System.Threading.Tasks.Task<List<IncomingTelematicMessage>> ReadMessagesAsync(Guid queueId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a message queue.
         /// </summary>
         /// <remarks>
         /// 
@@ -1188,10 +1188,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
         public Object Delete(Guid id, int operationIndex = 0)
@@ -1201,10 +1201,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
         public Simplic.OxS.SDK.ApiResponse<Object> DeleteWithHttpInfo(Guid id, int operationIndex = 0)
@@ -1265,10 +1265,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
@@ -1279,10 +1279,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Deletes a message queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">A MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -1346,10 +1346,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>MessageQueueResponse</returns>
         public MessageQueueResponse Get(Guid id, int operationIndex = 0)
@@ -1359,10 +1359,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of MessageQueueResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<MessageQueueResponse> GetWithHttpInfo(Guid id, int operationIndex = 0)
@@ -1423,10 +1423,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageQueueResponse</returns>
@@ -1437,10 +1437,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The MessageQueue id.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
@@ -1504,7 +1504,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1518,7 +1518,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1587,7 +1587,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1602,7 +1602,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Patches a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1674,7 +1674,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -1687,7 +1687,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -1751,7 +1751,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -1765,7 +1765,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Commit message inside a queue 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId"></param>
@@ -1832,10 +1832,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>MessageQueueResponse</returns>
         public MessageQueueResponse Post(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), int operationIndex = 0)
@@ -1845,10 +1845,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of MessageQueueResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<MessageQueueResponse> PostWithHttpInfo(CreateMessageQueueRequest? createMessageQueueRequest = default(CreateMessageQueueRequest?), int operationIndex = 0)
@@ -1912,10 +1912,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageQueueResponse</returns>
@@ -1926,10 +1926,10 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Creates a new message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createMessageQueueRequest"> (optional)</param>
+        /// <param name="createMessageQueueRequest">A create MessageQueue request. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageQueueResponse)</returns>
@@ -1996,7 +1996,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -2009,7 +2009,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -2073,7 +2073,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>
@@ -2087,7 +2087,7 @@ public interface IMessageQueueClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a message queue. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId"></param>

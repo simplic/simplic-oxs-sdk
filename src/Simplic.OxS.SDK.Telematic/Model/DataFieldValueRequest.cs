@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// DataFieldValueRequest
+    /// Request model for setting a data field value.
     /// </summary>
     [DataContract(Name = "DataFieldValueRequest")]
     public partial class DataFieldValueRequest : IEquatable<DataFieldValueRequest>, IValidatableObject
@@ -41,8 +41,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="DataFieldValueRequest" /> class.
         /// </summary>
-        /// <param name="dataFieldId">dataFieldId (required).</param>
-        /// <param name="value">value.</param>
+        /// <param name="dataFieldId">Gets or sets the data field id. (required).</param>
+        /// <param name="value">Gets or sets the collected value as string representation..</param>
         public DataFieldValueRequest(Guid dataFieldId = default(Guid), string value = default(string))
         {
             this.DataFieldId = dataFieldId;
@@ -50,14 +50,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets DataFieldId
+        /// Gets or sets the data field id.
         /// </summary>
+        /// <value>Gets or sets the data field id.</value>
         [DataMember(Name = "dataFieldId", IsRequired = true, EmitDefaultValue = true)]
         public Guid DataFieldId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the collected value as string representation.
         /// </summary>
+        /// <value>Gets or sets the collected value as string representation.</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 

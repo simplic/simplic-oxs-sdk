@@ -41,16 +41,18 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="organizationId">Gets or sets the organization identifier..</param>
         /// <param name="createdAt">Gets or sets the session creation time..</param>
         /// <param name="lastActivityAt">Gets or sets the last activity time..</param>
+        /// <param name="title">Gets or sets the short, LLM-generated conversation title, or &#x60;null&#x60; if not yet generated (e.g. before the first exchange completes)..</param>
         /// <param name="isActive">Gets or sets whether the session is active..</param>
         /// <param name="messageCount">Gets or sets the message count..</param>
         /// <param name="pendingApprovalCount">Gets or sets pending approval count..</param>
-        public AgentSessionResponse(Guid id = default(Guid), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), DateTime createdAt = default(DateTime), DateTime lastActivityAt = default(DateTime), bool isActive = default(bool), int messageCount = default(int), int pendingApprovalCount = default(int))
+        public AgentSessionResponse(Guid id = default(Guid), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), DateTime createdAt = default(DateTime), DateTime lastActivityAt = default(DateTime), string title = default(string), bool isActive = default(bool), int messageCount = default(int), int pendingApprovalCount = default(int))
         {
             this.Id = id;
             this.UserId = userId;
             this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.LastActivityAt = lastActivityAt;
+            this.Title = title;
             this.IsActive = isActive;
             this.MessageCount = messageCount;
             this.PendingApprovalCount = pendingApprovalCount;
@@ -92,6 +94,13 @@ namespace Simplic.OxS.SDK.Ai
         public DateTime LastActivityAt { get; set; }
 
         /// <summary>
+        /// Gets or sets the short, LLM-generated conversation title, or &#x60;null&#x60; if not yet generated (e.g. before the first exchange completes).
+        /// </summary>
+        /// <value>Gets or sets the short, LLM-generated conversation title, or &#x60;null&#x60; if not yet generated (e.g. before the first exchange completes).</value>
+        [DataMember(Name = "title", EmitDefaultValue = true)]
+        public string Title { get; set; }
+
+        /// <summary>
         /// Gets or sets whether the session is active.
         /// </summary>
         /// <value>Gets or sets whether the session is active.</value>
@@ -125,6 +134,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  LastActivityAt: ").Append(LastActivityAt).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  MessageCount: ").Append(MessageCount).Append("\n");
             sb.Append("  PendingApprovalCount: ").Append(PendingApprovalCount).Append("\n");
@@ -189,6 +199,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.LastActivityAt.Equals(input.LastActivityAt))
                 ) && 
                 (
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
+                ) && 
+                (
                     this.IsActive == input.IsActive ||
                     this.IsActive.Equals(input.IsActive)
                 ) && 
@@ -230,6 +245,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.LastActivityAt != null)
                 {
                     hashCode = (hashCode * 59) + this.LastActivityAt.GetHashCode();
+                }
+                if (this.Title != null)
+                {
+                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
                 hashCode = (hashCode * 59) + this.MessageCount.GetHashCode();

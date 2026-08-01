@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// WorkflowStepResponse
+    /// Represents the response of a workflow step request.
     /// </summary>
     [DataContract(Name = "WorkflowStepResponse")]
     public partial class WorkflowStepResponse : IEquatable<WorkflowStepResponse>, IValidatableObject
@@ -36,12 +36,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowStepResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="localizations">localizations.</param>
-        /// <param name="dataFields">dataFields.</param>
-        /// <param name="stepOrder">stepOrder.</param>
-        /// <param name="roles">roles.</param>
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="localizations">Gets or sets the localizations..</param>
+        /// <param name="dataFields">Gets or sets the list of attached data fields..</param>
+        /// <param name="stepOrder">Gets or sets the step order..</param>
+        /// <param name="roles">Gets or sets the roles this step fulfills within the order lifecycle. Allowed values: \&quot;order_started\&quot;, \&quot;order_completed\&quot;..</param>
         public WorkflowStepResponse(Guid id = default(Guid), string name = default(string), List<WorkflowStepLocalizationModel> localizations = default(List<WorkflowStepLocalizationModel>), List<WorkflowStepDataFieldModel> dataFields = default(List<WorkflowStepDataFieldModel>), int stepOrder = default(int), List<string> roles = default(List<string>))
         {
             this.Id = id;
@@ -53,38 +53,44 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Localizations
+        /// Gets or sets the localizations.
         /// </summary>
+        /// <value>Gets or sets the localizations.</value>
         [DataMember(Name = "localizations", EmitDefaultValue = true)]
         public List<WorkflowStepLocalizationModel> Localizations { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataFields
+        /// Gets or sets the list of attached data fields.
         /// </summary>
+        /// <value>Gets or sets the list of attached data fields.</value>
         [DataMember(Name = "dataFields", EmitDefaultValue = true)]
         public List<WorkflowStepDataFieldModel> DataFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets StepOrder
+        /// Gets or sets the step order.
         /// </summary>
+        /// <value>Gets or sets the step order.</value>
         [DataMember(Name = "stepOrder", EmitDefaultValue = false)]
         public int StepOrder { get; set; }
 
         /// <summary>
-        /// Gets or Sets Roles
+        /// Gets or sets the roles this step fulfills within the order lifecycle. Allowed values: \&quot;order_started\&quot;, \&quot;order_completed\&quot;.
         /// </summary>
+        /// <value>Gets or sets the roles this step fulfills within the order lifecycle. Allowed values: \&quot;order_started\&quot;, \&quot;order_completed\&quot;.</value>
         [DataMember(Name = "roles", EmitDefaultValue = true)]
         public List<string> Roles { get; set; }
 

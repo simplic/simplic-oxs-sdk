@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](DataFieldClient.md#datafieldiddelete) | **DELETE** /DataField/{id} |  |
-| [**Get**](DataFieldClient.md#datafieldidget) | **GET** /DataField/{id} |  |
-| [**Patch**](DataFieldClient.md#datafieldidpatch) | **PATCH** /DataField/{id} |  |
-| [**Post**](DataFieldClient.md#datafieldpost) | **POST** /DataField |  |
+| [**Delete**](DataFieldClient.md#datafieldiddelete) | **DELETE** /DataField/{id} | Deletes a data field. |
+| [**Get**](DataFieldClient.md#datafieldidget) | **GET** /DataField/{id} | Gets a data field. |
+| [**Patch**](DataFieldClient.md#datafieldidpatch) | **PATCH** /DataField/{id} | Patches a data field. |
+| [**Post**](DataFieldClient.md#datafieldpost) | **POST** /DataField | Creates a new data field. |
 
 <a id="datafieldiddelete"></a>
 # **Delete**
 > Object Delete (Guid id)
 
-
+Deletes a data field.
 
 ### Example
 ```csharp
@@ -38,10 +38,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DataFieldClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | A data field id.
 
             try
             {
+                // Deletes a data field.
                 Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
@@ -62,6 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a data field.
     ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -79,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | A data field id. |  |
 
 ### Return type
 
@@ -108,7 +110,7 @@ catch (ApiException e)
 # **Get**
 > DataFieldResponse Get (Guid id)
 
-
+Gets a data field.
 
 ### Example
 ```csharp
@@ -133,10 +135,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DataFieldClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | The data field id.
 
             try
             {
+                // Gets a data field.
                 DataFieldResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -157,6 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a data field.
     ApiResponse<DataFieldResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -174,7 +178,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | The data field id. |  |
 
 ### Return type
 
@@ -203,7 +207,7 @@ catch (ApiException e)
 # **Patch**
 > DataFieldResponse Patch (Guid id, PatchDataFieldRequest? patchDataFieldRequest = null)
 
-
+Patches a data field.
 
 ### Example
 ```csharp
@@ -228,11 +232,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DataFieldClient(config);
-            var id = "id_example";  // Guid | 
-            var patchDataFieldRequest = new PatchDataFieldRequest?(); // PatchDataFieldRequest? |  (optional) 
+            var id = "id_example";  // Guid | The data field id.
+            var patchDataFieldRequest = new PatchDataFieldRequest?(); // PatchDataFieldRequest? | The patch request. (optional) 
 
             try
             {
+                // Patches a data field.
                 DataFieldResponse result = apiInstance.Patch(id, patchDataFieldRequest);
                 Debug.WriteLine(result);
             }
@@ -253,6 +258,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a data field.
     ApiResponse<DataFieldResponse> response = apiInstance.PatchWithHttpInfo(id, patchDataFieldRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -270,8 +276,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
-| **patchDataFieldRequest** | [**PatchDataFieldRequest?**](PatchDataFieldRequest?.md) |  | [optional]  |
+| **id** | **Guid** | The data field id. |  |
+| **patchDataFieldRequest** | [**PatchDataFieldRequest?**](PatchDataFieldRequest?.md) | The patch request. | [optional]  |
 
 ### Return type
 
@@ -300,7 +306,7 @@ catch (ApiException e)
 # **Post**
 > DataFieldResponse Post (CreateDataFieldRequest? createDataFieldRequest = null)
 
-
+Creates a new data field.
 
 ### Example
 ```csharp
@@ -325,10 +331,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DataFieldClient(config);
-            var createDataFieldRequest = new CreateDataFieldRequest?(); // CreateDataFieldRequest? |  (optional) 
+            var createDataFieldRequest = new CreateDataFieldRequest?(); // CreateDataFieldRequest? | A create data field request. (optional) 
 
             try
             {
+                // Creates a new data field.
                 DataFieldResponse result = apiInstance.Post(createDataFieldRequest);
                 Debug.WriteLine(result);
             }
@@ -349,6 +356,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new data field.
     ApiResponse<DataFieldResponse> response = apiInstance.PostWithHttpInfo(createDataFieldRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -366,7 +374,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createDataFieldRequest** | [**CreateDataFieldRequest?**](CreateDataFieldRequest?.md) |  | [optional]  |
+| **createDataFieldRequest** | [**CreateDataFieldRequest?**](CreateDataFieldRequest?.md) | A create data field request. | [optional]  |
 
 ### Return type
 

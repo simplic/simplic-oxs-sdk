@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicOrderResponse
+    /// Represents an order in a telematic place.
     /// </summary>
     [DataContract(Name = "TelematicOrderResponse")]
     public partial class TelematicOrderResponse : IEquatable<TelematicOrderResponse>, IValidatableObject
@@ -36,21 +36,21 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicOrderResponse" /> class.
         /// </summary>
-        /// <param name="internalId">internalId.</param>
-        /// <param name="orderNumber">orderNumber.</param>
-        /// <param name="articleName">articleName.</param>
-        /// <param name="orderType">orderType.</param>
-        /// <param name="quantity">quantity.</param>
-        /// <param name="quantityUnit">quantityUnit.</param>
-        /// <param name="weight">weight.</param>
-        /// <param name="loadingMeter">loadingMeter.</param>
-        /// <param name="reference">reference.</param>
-        /// <param name="deliveryNumber">deliveryNumber.</param>
-        /// <param name="loadNumber">loadNumber.</param>
-        /// <param name="attachedResources">attachedResources.</param>
-        /// <param name="externalNotes">externalNotes.</param>
-        /// <param name="openingHours">openingHours.</param>
-        /// <param name="attachments">attachments.</param>
+        /// <param name="internalId">Gets or sets the internal id..</param>
+        /// <param name="orderNumber">Gets or sets the order number..</param>
+        /// <param name="articleName">Gets or sets the name of the article in the order..</param>
+        /// <param name="orderType">Gets or sets the order type..</param>
+        /// <param name="quantity">Gets or sets the quantity of the order..</param>
+        /// <param name="quantityUnit">Gets or sets the quantity unit of the order..</param>
+        /// <param name="weight">Gets or sets the weight of the order..</param>
+        /// <param name="loadingMeter">Gets or sets the loading meters of the order..</param>
+        /// <param name="reference">Gets or sets the reference..</param>
+        /// <param name="deliveryNumber">Gets or sets the delivery number..</param>
+        /// <param name="loadNumber">Gets or sets the load number..</param>
+        /// <param name="attachedResources">Gets or sets the attached resources..</param>
+        /// <param name="externalNotes">Gets or sets the external notes associated with the order..</param>
+        /// <param name="openingHours">Gets or sets the opening hours..</param>
+        /// <param name="attachments">Gets or sets the attachments..</param>
         /// <param name="workflow">workflow.</param>
         public TelematicOrderResponse(Guid? internalId = default(Guid?), string orderNumber = default(string), string articleName = default(string), string orderType = default(string), double? quantity = default(double?), string quantityUnit = default(string), double? weight = default(double?), double? loadingMeter = default(double?), string reference = default(string), string deliveryNumber = default(string), string loadNumber = default(string), List<TelematicResourceResponse> attachedResources = default(List<TelematicResourceResponse>), string externalNotes = default(string), List<OpeningHoursResponse> openingHours = default(List<OpeningHoursResponse>), List<OutgoingAttachmentResponse> attachments = default(List<OutgoingAttachmentResponse>), TelematicWorkflowResponse workflow = default(TelematicWorkflowResponse))
         {
@@ -73,92 +73,107 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets InternalId
+        /// Gets or sets the internal id.
         /// </summary>
+        /// <value>Gets or sets the internal id.</value>
         [DataMember(Name = "internalId", EmitDefaultValue = true)]
         public Guid? InternalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderNumber
+        /// Gets or sets the order number.
         /// </summary>
+        /// <value>Gets or sets the order number.</value>
         [DataMember(Name = "orderNumber", EmitDefaultValue = true)]
         public string OrderNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets ArticleName
+        /// Gets or sets the name of the article in the order.
         /// </summary>
+        /// <value>Gets or sets the name of the article in the order.</value>
         [DataMember(Name = "articleName", EmitDefaultValue = true)]
         public string ArticleName { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderType
+        /// Gets or sets the order type.
         /// </summary>
+        /// <value>Gets or sets the order type.</value>
         [DataMember(Name = "orderType", EmitDefaultValue = true)]
         public string OrderType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or sets the quantity of the order.
         /// </summary>
+        /// <value>Gets or sets the quantity of the order.</value>
         [DataMember(Name = "quantity", EmitDefaultValue = true)]
         public double? Quantity { get; set; }
 
         /// <summary>
-        /// Gets or Sets QuantityUnit
+        /// Gets or sets the quantity unit of the order.
         /// </summary>
+        /// <value>Gets or sets the quantity unit of the order.</value>
         [DataMember(Name = "quantityUnit", EmitDefaultValue = true)]
         public string QuantityUnit { get; set; }
 
         /// <summary>
-        /// Gets or Sets Weight
+        /// Gets or sets the weight of the order.
         /// </summary>
+        /// <value>Gets or sets the weight of the order.</value>
         [DataMember(Name = "weight", EmitDefaultValue = true)]
         public double? Weight { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadingMeter
+        /// Gets or sets the loading meters of the order.
         /// </summary>
+        /// <value>Gets or sets the loading meters of the order.</value>
         [DataMember(Name = "loadingMeter", EmitDefaultValue = true)]
         public double? LoadingMeter { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reference
+        /// Gets or sets the reference.
         /// </summary>
+        /// <value>Gets or sets the reference.</value>
         [DataMember(Name = "reference", EmitDefaultValue = true)]
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeliveryNumber
+        /// Gets or sets the delivery number.
         /// </summary>
+        /// <value>Gets or sets the delivery number.</value>
         [DataMember(Name = "deliveryNumber", EmitDefaultValue = true)]
         public string DeliveryNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadNumber
+        /// Gets or sets the load number.
         /// </summary>
+        /// <value>Gets or sets the load number.</value>
         [DataMember(Name = "loadNumber", EmitDefaultValue = true)]
         public string LoadNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets AttachedResources
+        /// Gets or sets the attached resources.
         /// </summary>
+        /// <value>Gets or sets the attached resources.</value>
         [DataMember(Name = "attachedResources", EmitDefaultValue = true)]
         public List<TelematicResourceResponse> AttachedResources { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExternalNotes
+        /// Gets or sets the external notes associated with the order.
         /// </summary>
+        /// <value>Gets or sets the external notes associated with the order.</value>
         [DataMember(Name = "externalNotes", EmitDefaultValue = true)]
         public string ExternalNotes { get; set; }
 
         /// <summary>
-        /// Gets or Sets OpeningHours
+        /// Gets or sets the opening hours.
         /// </summary>
+        /// <value>Gets or sets the opening hours.</value>
         [DataMember(Name = "openingHours", EmitDefaultValue = true)]
         public List<OpeningHoursResponse> OpeningHours { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attachments
+        /// Gets or sets the attachments.
         /// </summary>
+        /// <value>Gets or sets the attachments.</value>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<OutgoingAttachmentResponse> Attachments { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicWorkflowStepResponse
+    /// Represents a workflow step within a telematic workflow with execution state.
     /// </summary>
     [DataContract(Name = "TelematicWorkflowStepResponse")]
     public partial class TelematicWorkflowStepResponse : IEquatable<TelematicWorkflowStepResponse>, IValidatableObject
@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicWorkflowStepResponse" /> class.
         /// </summary>
-        /// <param name="workflowStepId">workflowStepId.</param>
-        /// <param name="order">order.</param>
-        /// <param name="name">name.</param>
-        /// <param name="localizations">localizations.</param>
-        /// <param name="dataFields">dataFields.</param>
-        /// <param name="isCompleted">isCompleted.</param>
-        /// <param name="completedAtUtc">completedAtUtc.</param>
-        /// <param name="roles">roles.</param>
+        /// <param name="workflowStepId">Gets or sets the workflow step id..</param>
+        /// <param name="order">Gets or sets the order of this step in the workflow..</param>
+        /// <param name="name">Gets or sets the name of the step..</param>
+        /// <param name="localizations">Gets or sets the localizations for the step..</param>
+        /// <param name="dataFields">Gets or sets the list of data fields for this step with their definitions..</param>
+        /// <param name="isCompleted">Gets or sets whether this step has been completed..</param>
+        /// <param name="completedAtUtc">Gets or sets the timestamp when the step was completed (UTC)..</param>
+        /// <param name="roles">Gets or sets the roles this step fulfills within the order lifecycle. Allowed values: \&quot;order_started\&quot;, \&quot;order_completed\&quot;..</param>
         public TelematicWorkflowStepResponse(Guid workflowStepId = default(Guid), int order = default(int), string name = default(string), List<WorkflowStepLocalizationResponse> localizations = default(List<WorkflowStepLocalizationResponse>), List<TelematicDataFieldResponse> dataFields = default(List<TelematicDataFieldResponse>), bool isCompleted = default(bool), DateTime? completedAtUtc = default(DateTime?), List<string> roles = default(List<string>))
         {
             this.WorkflowStepId = workflowStepId;
@@ -57,50 +57,58 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets WorkflowStepId
+        /// Gets or sets the workflow step id.
         /// </summary>
+        /// <value>Gets or sets the workflow step id.</value>
         [DataMember(Name = "workflowStepId", EmitDefaultValue = false)]
         public Guid WorkflowStepId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Order
+        /// Gets or sets the order of this step in the workflow.
         /// </summary>
+        /// <value>Gets or sets the order of this step in the workflow.</value>
         [DataMember(Name = "order", EmitDefaultValue = false)]
         public int Order { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the step.
         /// </summary>
+        /// <value>Gets or sets the name of the step.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Localizations
+        /// Gets or sets the localizations for the step.
         /// </summary>
+        /// <value>Gets or sets the localizations for the step.</value>
         [DataMember(Name = "localizations", EmitDefaultValue = true)]
         public List<WorkflowStepLocalizationResponse> Localizations { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataFields
+        /// Gets or sets the list of data fields for this step with their definitions.
         /// </summary>
+        /// <value>Gets or sets the list of data fields for this step with their definitions.</value>
         [DataMember(Name = "dataFields", EmitDefaultValue = true)]
         public List<TelematicDataFieldResponse> DataFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsCompleted
+        /// Gets or sets whether this step has been completed.
         /// </summary>
+        /// <value>Gets or sets whether this step has been completed.</value>
         [DataMember(Name = "isCompleted", EmitDefaultValue = true)]
         public bool IsCompleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompletedAtUtc
+        /// Gets or sets the timestamp when the step was completed (UTC).
         /// </summary>
+        /// <value>Gets or sets the timestamp when the step was completed (UTC).</value>
         [DataMember(Name = "completedAtUtc", EmitDefaultValue = true)]
         public DateTime? CompletedAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Roles
+        /// Gets or sets the roles this step fulfills within the order lifecycle. Allowed values: \&quot;order_started\&quot;, \&quot;order_completed\&quot;.
         /// </summary>
+        /// <value>Gets or sets the roles this step fulfills within the order lifecycle. Allowed values: \&quot;order_started\&quot;, \&quot;order_completed\&quot;.</value>
         [DataMember(Name = "roles", EmitDefaultValue = true)]
         public List<string> Roles { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// DeleteDtcoReadJobRequest
+    /// Request to delete a DTCO read job.
     /// </summary>
     [DataContract(Name = "DeleteDtcoReadJobRequest")]
     public partial class DeleteDtcoReadJobRequest : IEquatable<DeleteDtcoReadJobRequest>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteDtcoReadJobRequest" /> class.
         /// </summary>
-        /// <param name="providerName">providerName.</param>
+        /// <param name="providerName">The provider name. E.g: &#39;webfleet&#39;..</param>
         public DeleteDtcoReadJobRequest(string providerName = default(string))
         {
             this.ProviderName = providerName;
         }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// The provider name. E.g: &#39;webfleet&#39;.
         /// </summary>
+        /// <value>The provider name. E.g: &#39;webfleet&#39;.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 

@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// ImportVehicleTypeResponse
+    /// Represents the vehicle type of an imported vehicle.
     /// </summary>
     [DataContract(Name = "ImportVehicleTypeResponse")]
     public partial class ImportVehicleTypeResponse : IEquatable<ImportVehicleTypeResponse>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportVehicleTypeResponse" /> class.
         /// </summary>
-        /// <param name="vehicleTypeId">vehicleTypeId.</param>
-        /// <param name="vehicleSubTypeId">vehicleSubTypeId.</param>
-        /// <param name="vehicleTypeName">vehicleTypeName.</param>
-        /// <param name="vehicleSubTypeName">vehicleSubTypeName.</param>
-        /// <param name="externalTypeName">externalTypeName.</param>
+        /// <param name="vehicleTypeId">Gets or sets the id of the vehicle type..</param>
+        /// <param name="vehicleSubTypeId">Gets or sets the id of the vehicle sub type..</param>
+        /// <param name="vehicleTypeName">Gets or sets the name of the vehicle type..</param>
+        /// <param name="vehicleSubTypeName">Gets or sets the name of the vehicle sub type..</param>
+        /// <param name="externalTypeName">Gets or sets the name of the external type..</param>
         public ImportVehicleTypeResponse(Guid? vehicleTypeId = default(Guid?), Guid? vehicleSubTypeId = default(Guid?), string vehicleTypeName = default(string), string vehicleSubTypeName = default(string), string externalTypeName = default(string))
         {
             this.VehicleTypeId = vehicleTypeId;
@@ -51,32 +51,37 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets VehicleTypeId
+        /// Gets or sets the id of the vehicle type.
         /// </summary>
+        /// <value>Gets or sets the id of the vehicle type.</value>
         [DataMember(Name = "vehicleTypeId", EmitDefaultValue = true)]
         public Guid? VehicleTypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets VehicleSubTypeId
+        /// Gets or sets the id of the vehicle sub type.
         /// </summary>
+        /// <value>Gets or sets the id of the vehicle sub type.</value>
         [DataMember(Name = "vehicleSubTypeId", EmitDefaultValue = true)]
         public Guid? VehicleSubTypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets VehicleTypeName
+        /// Gets or sets the name of the vehicle type.
         /// </summary>
+        /// <value>Gets or sets the name of the vehicle type.</value>
         [DataMember(Name = "vehicleTypeName", EmitDefaultValue = true)]
         public string VehicleTypeName { get; set; }
 
         /// <summary>
-        /// Gets or Sets VehicleSubTypeName
+        /// Gets or sets the name of the vehicle sub type.
         /// </summary>
+        /// <value>Gets or sets the name of the vehicle sub type.</value>
         [DataMember(Name = "vehicleSubTypeName", EmitDefaultValue = true)]
         public string VehicleSubTypeName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExternalTypeName
+        /// Gets or sets the name of the external type.
         /// </summary>
+        /// <value>Gets or sets the name of the external type.</value>
         [DataMember(Name = "externalTypeName", EmitDefaultValue = true)]
         public string ExternalTypeName { get; set; }
 

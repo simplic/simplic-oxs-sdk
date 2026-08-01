@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **OrganizationId** | **Guid?** | Gets or sets the organization identifier. | [optional] 
 **CreatedAt** | **DateTime** | Gets or sets the session creation time. | [optional] 
 **LastActivityAt** | **DateTime** | Gets or sets the last activity time. | [optional] 
+**Title** | **string** | Gets or sets the short, LLM-generated conversation title, or &#x60;null&#x60; if not yet generated (e.g. before the first exchange completes). | [optional] 
 **IsActive** | **bool** | Gets or sets whether the session is active. | [optional] 
 **MessageCount** | **int** | Gets or sets the message count. | [optional] 
 **PendingApprovalCount** | **int** | Gets or sets pending approval count. | [optional] 

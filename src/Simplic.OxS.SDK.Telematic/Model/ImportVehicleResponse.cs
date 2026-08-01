@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// ImportVehicleResponse
+    /// Response of a vehicle import request.
     /// </summary>
     [DataContract(Name = "ImportVehicleResponse")]
     public partial class ImportVehicleResponse : IEquatable<ImportVehicleResponse>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportVehicleResponse" /> class.
         /// </summary>
-        /// <param name="registrationPlate">registrationPlate.</param>
-        /// <param name="matchCode">matchCode.</param>
-        /// <param name="externalIdentifier">externalIdentifier.</param>
+        /// <param name="registrationPlate">Gets or sets the registration plate..</param>
+        /// <param name="matchCode">Gets or sets the match code..</param>
+        /// <param name="externalIdentifier">Gets or sets the external identifier..</param>
         /// <param name="type">type.</param>
-        /// <param name="vin">vin.</param>
+        /// <param name="vin">Gets or sets the VIN (Vehicle Identification Number)..</param>
         public ImportVehicleResponse(string registrationPlate = default(string), string matchCode = default(string), string externalIdentifier = default(string), ImportVehicleTypeResponse type = default(ImportVehicleTypeResponse), string vin = default(string))
         {
             this.RegistrationPlate = registrationPlate;
@@ -51,20 +51,23 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets RegistrationPlate
+        /// Gets or sets the registration plate.
         /// </summary>
+        /// <value>Gets or sets the registration plate.</value>
         [DataMember(Name = "registrationPlate", EmitDefaultValue = true)]
         public string RegistrationPlate { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatchCode
+        /// Gets or sets the match code.
         /// </summary>
+        /// <value>Gets or sets the match code.</value>
         [DataMember(Name = "matchCode", EmitDefaultValue = true)]
         public string MatchCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExternalIdentifier
+        /// Gets or sets the external identifier.
         /// </summary>
+        /// <value>Gets or sets the external identifier.</value>
         [DataMember(Name = "externalIdentifier", EmitDefaultValue = true)]
         public string ExternalIdentifier { get; set; }
 
@@ -75,8 +78,9 @@ namespace Simplic.OxS.SDK.Telematic
         public ImportVehicleTypeResponse Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Vin
+        /// Gets or sets the VIN (Vehicle Identification Number).
         /// </summary>
+        /// <value>Gets or sets the VIN (Vehicle Identification Number).</value>
         [DataMember(Name = "vin", EmitDefaultValue = true)]
         public string Vin { get; set; }
 

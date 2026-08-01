@@ -351,7 +351,7 @@ public interface ITelematicClient
 
 
     /// <summary>
-    ///  
+    /// Gets a preview of vehicles from the telematic provider. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="importVehiclesRequest"> (optional)</param>
@@ -359,7 +359,7 @@ public interface ITelematicClient
     List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?));
 
     /// <summary>
-    ///  
+    /// Gets a preview of vehicles from the telematic provider. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="importVehiclesRequest"> (optional)</param>
@@ -367,7 +367,7 @@ public interface ITelematicClient
     ApiResponse<List<ImportVehicleResponse>> GetImportVehicleWithHttpInfo(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?));
         
     /// <summary>
-    ///  
+    /// Gets a preview of vehicles from the telematic provider. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="importVehiclesRequest"> (optional)</param>
@@ -376,7 +376,7 @@ public interface ITelematicClient
     Task<List<ImportVehicleResponse>> GetImportVehicleAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets a preview of vehicles from the telematic provider. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="importVehiclesRequest"> (optional)</param>
@@ -1183,7 +1183,7 @@ public interface ITelematicClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -1201,7 +1201,7 @@ public interface ITelematicClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -1219,7 +1219,7 @@ public interface ITelematicClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -1238,7 +1238,7 @@ public interface ITelematicClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -1593,7 +1593,7 @@ public interface ITelematicClient
         /// <returns>ApiResponse of ReadJobResponse</returns>
         ApiResponse<ReadJobResponse> GetDtcoReadJobWithHttpInfo(string providerName, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets a preview of vehicles from the telematic provider.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -1602,7 +1602,7 @@ public interface ITelematicClient
         List<ImportVehicleResponse> GetImportVehicle(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets a preview of vehicles from the telematic provider.
         /// </summary>
         /// <remarks>
         /// 
@@ -1885,7 +1885,7 @@ public interface ITelematicClient
         /// <returns>Task of ApiResponse (ReadJobResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ReadJobResponse>> GetDtcoReadJobWithHttpInfoAsync(string providerName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets a preview of vehicles from the telematic provider.
         /// </summary>
         /// <remarks>
         /// 
@@ -1898,7 +1898,7 @@ public interface ITelematicClient
         System.Threading.Tasks.Task<List<ImportVehicleResponse>> GetImportVehicleAsync(ImportVehiclesRequest? importVehiclesRequest = default(ImportVehiclesRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets a preview of vehicles from the telematic provider.
         /// </summary>
         /// <remarks>
         /// 
@@ -3540,7 +3540,7 @@ public interface ITelematicClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -3553,7 +3553,7 @@ public interface ITelematicClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -3620,7 +3620,7 @@ public interface ITelematicClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>
@@ -3634,7 +3634,7 @@ public interface ITelematicClient
         }
 
         /// <summary>
-        ///  
+        /// Gets a preview of vehicles from the telematic provider. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="importVehiclesRequest"> (optional)</param>

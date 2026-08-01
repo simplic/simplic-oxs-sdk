@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// ReadJobResponse
+    /// Represents the response containing the current read job configuration.
     /// </summary>
     [DataContract(Name = "ReadJobResponse")]
     public partial class ReadJobResponse : IEquatable<ReadJobResponse>, IValidatableObject
@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="ReadJobResponse" /> class.
         /// </summary>
-        /// <param name="providerName">providerName.</param>
-        /// <param name="cron">cron.</param>
-        /// <param name="nextExecution">nextExecution.</param>
-        /// <param name="lastExecution">lastExecution.</param>
+        /// <param name="providerName">Gets or sets the provider name..</param>
+        /// <param name="cron">Gets or sets the cron expression of the recurring job..</param>
+        /// <param name="nextExecution">Gets or sets the next execution time of the recurring job..</param>
+        /// <param name="lastExecution">Gets or sets the last execution time of the recurring job..</param>
         public ReadJobResponse(string providerName = default(string), string cron = default(string), DateTime? nextExecution = default(DateTime?), DateTime? lastExecution = default(DateTime?))
         {
             this.ProviderName = providerName;
@@ -49,26 +49,30 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// Gets or sets the provider name.
         /// </summary>
+        /// <value>Gets or sets the provider name.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Cron
+        /// Gets or sets the cron expression of the recurring job.
         /// </summary>
+        /// <value>Gets or sets the cron expression of the recurring job.</value>
         [DataMember(Name = "cron", EmitDefaultValue = true)]
         public string Cron { get; set; }
 
         /// <summary>
-        /// Gets or Sets NextExecution
+        /// Gets or sets the next execution time of the recurring job.
         /// </summary>
+        /// <value>Gets or sets the next execution time of the recurring job.</value>
         [DataMember(Name = "nextExecution", EmitDefaultValue = true)]
         public DateTime? NextExecution { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastExecution
+        /// Gets or sets the last execution time of the recurring job.
         /// </summary>
+        /// <value>Gets or sets the last execution time of the recurring job.</value>
         [DataMember(Name = "lastExecution", EmitDefaultValue = true)]
         public DateTime? LastExecution { get; set; }
 

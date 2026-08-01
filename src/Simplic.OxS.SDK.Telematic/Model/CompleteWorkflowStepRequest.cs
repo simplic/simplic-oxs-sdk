@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CompleteWorkflowStepRequest
+    /// Request model for completing a workflow step within a tour place.
     /// </summary>
     [DataContract(Name = "CompleteWorkflowStepRequest")]
     public partial class CompleteWorkflowStepRequest : IEquatable<CompleteWorkflowStepRequest>, IValidatableObject
@@ -41,8 +41,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="CompleteWorkflowStepRequest" /> class.
         /// </summary>
-        /// <param name="workflowStepId">workflowStepId (required).</param>
-        /// <param name="dataFields">dataFields.</param>
+        /// <param name="workflowStepId">Gets or sets the workflow step id to complete. (required).</param>
+        /// <param name="dataFields">Gets or sets the collected data field values for this step..</param>
         public CompleteWorkflowStepRequest(Guid workflowStepId = default(Guid), List<DataFieldValueRequest> dataFields = default(List<DataFieldValueRequest>))
         {
             this.WorkflowStepId = workflowStepId;
@@ -50,14 +50,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets WorkflowStepId
+        /// Gets or sets the workflow step id to complete.
         /// </summary>
+        /// <value>Gets or sets the workflow step id to complete.</value>
         [DataMember(Name = "workflowStepId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkflowStepId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataFields
+        /// Gets or sets the collected data field values for this step.
         /// </summary>
+        /// <value>Gets or sets the collected data field values for this step.</value>
         [DataMember(Name = "dataFields", EmitDefaultValue = true)]
         public List<DataFieldValueRequest> DataFields { get; set; }
 

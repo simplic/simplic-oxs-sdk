@@ -28,8 +28,9 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// Defines DataFieldTypeModel
+    /// Represents the data type of a field.
     /// </summary>
+    /// <value>Represents the data type of a field.</value>
     public enum DataFieldTypeModel
     {
         /// <summary>

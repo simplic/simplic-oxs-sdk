@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// OutMessageLogResponse
+    /// Represents the entry of a send message log.
     /// </summary>
     [DataContract(Name = "OutMessageLogResponse")]
     public partial class OutMessageLogResponse : IEquatable<OutMessageLogResponse>, IValidatableObject
@@ -36,18 +36,18 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="OutMessageLogResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="messageType">messageType.</param>
-        /// <param name="provider">provider.</param>
-        /// <param name="sourceMessageJson">sourceMessageJson.</param>
-        /// <param name="destinationMessageJson">destinationMessageJson.</param>
-        /// <param name="responseJson">responseJson.</param>
-        /// <param name="internalVehicleId">internalVehicleId.</param>
-        /// <param name="internalDriverId">internalDriverId.</param>
-        /// <param name="internalTourId">internalTourId.</param>
-        /// <param name="startDateTime">startDateTime.</param>
-        /// <param name="endDateTime">endDateTime.</param>
-        /// <param name="success">success.</param>
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="messageType">Gets or sets which message type is send. E.g. SendTour or SendTextMessage..</param>
+        /// <param name="provider">Gets or set the provider name..</param>
+        /// <param name="sourceMessageJson">Gets or sets the message before conversion as json..</param>
+        /// <param name="destinationMessageJson">Gets or sets the message after conversion as json.  This should be the direct message send to the provider system..</param>
+        /// <param name="responseJson">Gets or sets the resonse of the provider system as json..</param>
+        /// <param name="internalVehicleId">Gets or sets the id of the vehicle the message is send to..</param>
+        /// <param name="internalDriverId">Gets or sets the id of the driver the message is send to..</param>
+        /// <param name="internalTourId">Gets or sets a potential internal tour id..</param>
+        /// <param name="startDateTime">Gets or sets the start date time..</param>
+        /// <param name="endDateTime">Gets or sets the end date time..</param>
+        /// <param name="success">Gets or sets whether the send was successfull..</param>
         public OutMessageLogResponse(Guid id = default(Guid), string messageType = default(string), string provider = default(string), string sourceMessageJson = default(string), string destinationMessageJson = default(string), string responseJson = default(string), Guid? internalVehicleId = default(Guid?), Guid? internalDriverId = default(Guid?), Guid? internalTourId = default(Guid?), DateTime startDateTime = default(DateTime), DateTime endDateTime = default(DateTime), bool success = default(bool))
         {
             this.Id = id;
@@ -65,74 +65,86 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets MessageType
+        /// Gets or sets which message type is send. E.g. SendTour or SendTextMessage.
         /// </summary>
+        /// <value>Gets or sets which message type is send. E.g. SendTour or SendTextMessage.</value>
         [DataMember(Name = "messageType", EmitDefaultValue = true)]
         public string MessageType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Provider
+        /// Gets or set the provider name.
         /// </summary>
+        /// <value>Gets or set the provider name.</value>
         [DataMember(Name = "provider", EmitDefaultValue = true)]
         public string Provider { get; set; }
 
         /// <summary>
-        /// Gets or Sets SourceMessageJson
+        /// Gets or sets the message before conversion as json.
         /// </summary>
+        /// <value>Gets or sets the message before conversion as json.</value>
         [DataMember(Name = "sourceMessageJson", EmitDefaultValue = true)]
         public string SourceMessageJson { get; set; }
 
         /// <summary>
-        /// Gets or Sets DestinationMessageJson
+        /// Gets or sets the message after conversion as json.  This should be the direct message send to the provider system.
         /// </summary>
+        /// <value>Gets or sets the message after conversion as json.  This should be the direct message send to the provider system.</value>
         [DataMember(Name = "destinationMessageJson", EmitDefaultValue = true)]
         public string DestinationMessageJson { get; set; }
 
         /// <summary>
-        /// Gets or Sets ResponseJson
+        /// Gets or sets the resonse of the provider system as json.
         /// </summary>
+        /// <value>Gets or sets the resonse of the provider system as json.</value>
         [DataMember(Name = "responseJson", EmitDefaultValue = true)]
         public string ResponseJson { get; set; }
 
         /// <summary>
-        /// Gets or Sets InternalVehicleId
+        /// Gets or sets the id of the vehicle the message is send to.
         /// </summary>
+        /// <value>Gets or sets the id of the vehicle the message is send to.</value>
         [DataMember(Name = "internalVehicleId", EmitDefaultValue = true)]
         public Guid? InternalVehicleId { get; set; }
 
         /// <summary>
-        /// Gets or Sets InternalDriverId
+        /// Gets or sets the id of the driver the message is send to.
         /// </summary>
+        /// <value>Gets or sets the id of the driver the message is send to.</value>
         [DataMember(Name = "internalDriverId", EmitDefaultValue = true)]
         public Guid? InternalDriverId { get; set; }
 
         /// <summary>
-        /// Gets or Sets InternalTourId
+        /// Gets or sets a potential internal tour id.
         /// </summary>
+        /// <value>Gets or sets a potential internal tour id.</value>
         [DataMember(Name = "internalTourId", EmitDefaultValue = true)]
         public Guid? InternalTourId { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartDateTime
+        /// Gets or sets the start date time.
         /// </summary>
+        /// <value>Gets or sets the start date time.</value>
         [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
         public DateTime StartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDateTime
+        /// Gets or sets the end date time.
         /// </summary>
+        /// <value>Gets or sets the end date time.</value>
         [DataMember(Name = "endDateTime", EmitDefaultValue = false)]
         public DateTime EndDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets Success
+        /// Gets or sets whether the send was successfull.
         /// </summary>
+        /// <value>Gets or sets whether the send was successfull.</value>
         [DataMember(Name = "success", EmitDefaultValue = true)]
         public bool Success { get; set; }
 

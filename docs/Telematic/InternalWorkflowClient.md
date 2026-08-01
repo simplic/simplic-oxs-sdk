@@ -4,13 +4,13 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Get**](InternalWorkflowClient.md#internalinternalworkflowidget) | **GET** /internal/InternalWorkflow/{id} |  |
+| [**Get**](InternalWorkflowClient.md#internalinternalworkflowidget) | **GET** /internal/InternalWorkflow/{id} | Gets a telematic workflow. |
 
 <a id="internalinternalworkflowidget"></a>
 # **Get**
 > WorkflowResponse Get (Guid id)
 
-
+Gets a telematic workflow.
 
 ### Example
 ```csharp
@@ -35,10 +35,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new InternalWorkflowClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | The workflow id.
 
             try
             {
+                // Gets a telematic workflow.
                 WorkflowResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -59,6 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a telematic workflow.
     ApiResponse<WorkflowResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -76,7 +78,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | The workflow id. |  |
 
 ### Return type
 

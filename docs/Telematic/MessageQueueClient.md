@@ -4,18 +4,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](MessageQueueClient.md#messagequeueiddelete) | **DELETE** /MessageQueue/{id} |  |
-| [**Get**](MessageQueueClient.md#messagequeueidget) | **GET** /MessageQueue/{id} |  |
-| [**Patch**](MessageQueueClient.md#messagequeueidpatch) | **PATCH** /MessageQueue/{id} |  |
-| [**CommitMessage**](MessageQueueClient.md#messagequeuemessageidcommitmessageput) | **PUT** /MessageQueue/{messageId}/commit-message |  |
-| [**Post**](MessageQueueClient.md#messagequeuepost) | **POST** /MessageQueue |  |
-| [**ReadMessages**](MessageQueueClient.md#messagequeuequeueidreadmessagesget) | **GET** /MessageQueue/{queueId}/read-messages |  |
+| [**Delete**](MessageQueueClient.md#messagequeueiddelete) | **DELETE** /MessageQueue/{id} | Deletes a message queue |
+| [**Get**](MessageQueueClient.md#messagequeueidget) | **GET** /MessageQueue/{id} | Gets a message queue. |
+| [**Patch**](MessageQueueClient.md#messagequeueidpatch) | **PATCH** /MessageQueue/{id} | Patches a message queue. |
+| [**CommitMessage**](MessageQueueClient.md#messagequeuemessageidcommitmessageput) | **PUT** /MessageQueue/{messageId}/commit-message | Commit message inside a queue |
+| [**Post**](MessageQueueClient.md#messagequeuepost) | **POST** /MessageQueue | Creates a new message queue. |
+| [**ReadMessages**](MessageQueueClient.md#messagequeuequeueidreadmessagesget) | **GET** /MessageQueue/{queueId}/read-messages | Gets a message queue. |
 
 <a id="messagequeueiddelete"></a>
 # **Delete**
 > Object Delete (Guid id)
 
-
+Deletes a message queue
 
 ### Example
 ```csharp
@@ -40,10 +40,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new MessageQueueClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | A MessageQueue id.
 
             try
             {
+                // Deletes a message queue
                 Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
@@ -64,6 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a message queue
     ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -81,7 +83,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | A MessageQueue id. |  |
 
 ### Return type
 
@@ -110,7 +112,7 @@ catch (ApiException e)
 # **Get**
 > MessageQueueResponse Get (Guid id)
 
-
+Gets a message queue.
 
 ### Example
 ```csharp
@@ -135,10 +137,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new MessageQueueClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | The MessageQueue id.
 
             try
             {
+                // Gets a message queue.
                 MessageQueueResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -159,6 +162,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a message queue.
     ApiResponse<MessageQueueResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -176,7 +180,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | The MessageQueue id. |  |
 
 ### Return type
 
@@ -205,7 +209,7 @@ catch (ApiException e)
 # **Patch**
 > MessageQueueResponse Patch (Guid id, PatchMessageQueueRequest? patchMessageQueueRequest = null)
 
-
+Patches a message queue.
 
 ### Example
 ```csharp
@@ -235,6 +239,7 @@ namespace Example
 
             try
             {
+                // Patches a message queue.
                 MessageQueueResponse result = apiInstance.Patch(id, patchMessageQueueRequest);
                 Debug.WriteLine(result);
             }
@@ -255,6 +260,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a message queue.
     ApiResponse<MessageQueueResponse> response = apiInstance.PatchWithHttpInfo(id, patchMessageQueueRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -302,7 +308,7 @@ catch (ApiException e)
 # **CommitMessage**
 > List&lt;IncomingTelematicMessage&gt; CommitMessage (Guid messageId)
 
-
+Commit message inside a queue
 
 ### Example
 ```csharp
@@ -331,6 +337,7 @@ namespace Example
 
             try
             {
+                // Commit message inside a queue
                 List<IncomingTelematicMessage> result = apiInstance.CommitMessage(messageId);
                 Debug.WriteLine(result);
             }
@@ -351,6 +358,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Commit message inside a queue
     ApiResponse<List<IncomingTelematicMessage>> response = apiInstance.CommitMessageWithHttpInfo(messageId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -397,7 +405,7 @@ catch (ApiException e)
 # **Post**
 > MessageQueueResponse Post (CreateMessageQueueRequest? createMessageQueueRequest = null)
 
-
+Creates a new message queue.
 
 ### Example
 ```csharp
@@ -422,10 +430,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new MessageQueueClient(config);
-            var createMessageQueueRequest = new CreateMessageQueueRequest?(); // CreateMessageQueueRequest? |  (optional) 
+            var createMessageQueueRequest = new CreateMessageQueueRequest?(); // CreateMessageQueueRequest? | A create MessageQueue request. (optional) 
 
             try
             {
+                // Creates a new message queue.
                 MessageQueueResponse result = apiInstance.Post(createMessageQueueRequest);
                 Debug.WriteLine(result);
             }
@@ -446,6 +455,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new message queue.
     ApiResponse<MessageQueueResponse> response = apiInstance.PostWithHttpInfo(createMessageQueueRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -463,7 +473,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createMessageQueueRequest** | [**CreateMessageQueueRequest?**](CreateMessageQueueRequest?.md) |  | [optional]  |
+| **createMessageQueueRequest** | [**CreateMessageQueueRequest?**](CreateMessageQueueRequest?.md) | A create MessageQueue request. | [optional]  |
 
 ### Return type
 
@@ -492,7 +502,7 @@ catch (ApiException e)
 # **ReadMessages**
 > List&lt;IncomingTelematicMessage&gt; ReadMessages (Guid queueId)
 
-
+Gets a message queue.
 
 ### Example
 ```csharp
@@ -521,6 +531,7 @@ namespace Example
 
             try
             {
+                // Gets a message queue.
                 List<IncomingTelematicMessage> result = apiInstance.ReadMessages(queueId);
                 Debug.WriteLine(result);
             }
@@ -541,6 +552,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a message queue.
     ApiResponse<List<IncomingTelematicMessage>> response = apiInstance.ReadMessagesWithHttpInfo(queueId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

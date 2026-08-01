@@ -4,16 +4,16 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Delete**](WorkflowClient.md#workflowiddelete) | **DELETE** /Workflow/{id} |  |
-| [**Get**](WorkflowClient.md#workflowidget) | **GET** /Workflow/{id} |  |
-| [**Patch**](WorkflowClient.md#workflowidpatch) | **PATCH** /Workflow/{id} |  |
-| [**Post**](WorkflowClient.md#workflowpost) | **POST** /Workflow |  |
+| [**Delete**](WorkflowClient.md#workflowiddelete) | **DELETE** /Workflow/{id} | Deletes a telematic workflow |
+| [**Get**](WorkflowClient.md#workflowidget) | **GET** /Workflow/{id} | Gets a telematic workflow. |
+| [**Patch**](WorkflowClient.md#workflowidpatch) | **PATCH** /Workflow/{id} | Patches a telematic workflow. |
+| [**Post**](WorkflowClient.md#workflowpost) | **POST** /Workflow | Creates a new telematic workflow. |
 
 <a id="workflowiddelete"></a>
 # **Delete**
 > Object Delete (Guid id)
 
-
+Deletes a telematic workflow
 
 ### Example
 ```csharp
@@ -38,10 +38,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WorkflowClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | A workflow id.
 
             try
             {
+                // Deletes a telematic workflow
                 Object result = apiInstance.Delete(id);
                 Debug.WriteLine(result);
             }
@@ -62,6 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Deletes a telematic workflow
     ApiResponse<Object> response = apiInstance.DeleteWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -79,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | A workflow id. |  |
 
 ### Return type
 
@@ -108,7 +110,7 @@ catch (ApiException e)
 # **Get**
 > WorkflowResponse Get (Guid id)
 
-
+Gets a telematic workflow.
 
 ### Example
 ```csharp
@@ -133,10 +135,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WorkflowClient(config);
-            var id = "id_example";  // Guid | 
+            var id = "id_example";  // Guid | The workflow id.
 
             try
             {
+                // Gets a telematic workflow.
                 WorkflowResponse result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -157,6 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets a telematic workflow.
     ApiResponse<WorkflowResponse> response = apiInstance.GetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -174,7 +178,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **Guid** |  |  |
+| **id** | **Guid** | The workflow id. |  |
 
 ### Return type
 
@@ -203,7 +207,7 @@ catch (ApiException e)
 # **Patch**
 > WorkflowResponse Patch (Guid id, PatchWorkflowRequest? patchWorkflowRequest = null)
 
-
+Patches a telematic workflow.
 
 ### Example
 ```csharp
@@ -233,6 +237,7 @@ namespace Example
 
             try
             {
+                // Patches a telematic workflow.
                 WorkflowResponse result = apiInstance.Patch(id, patchWorkflowRequest);
                 Debug.WriteLine(result);
             }
@@ -253,6 +258,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Patches a telematic workflow.
     ApiResponse<WorkflowResponse> response = apiInstance.PatchWithHttpInfo(id, patchWorkflowRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -300,7 +306,7 @@ catch (ApiException e)
 # **Post**
 > WorkflowResponse Post (CreateWorkflowRequest? createWorkflowRequest = null)
 
-
+Creates a new telematic workflow.
 
 ### Example
 ```csharp
@@ -325,10 +331,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new WorkflowClient(config);
-            var createWorkflowRequest = new CreateWorkflowRequest?(); // CreateWorkflowRequest? |  (optional) 
+            var createWorkflowRequest = new CreateWorkflowRequest?(); // CreateWorkflowRequest? | A create workflow request. (optional) 
 
             try
             {
+                // Creates a new telematic workflow.
                 WorkflowResponse result = apiInstance.Post(createWorkflowRequest);
                 Debug.WriteLine(result);
             }
@@ -349,6 +356,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Creates a new telematic workflow.
     ApiResponse<WorkflowResponse> response = apiInstance.PostWithHttpInfo(createWorkflowRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -366,7 +374,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createWorkflowRequest** | [**CreateWorkflowRequest?**](CreateWorkflowRequest?.md) |  | [optional]  |
+| **createWorkflowRequest** | [**CreateWorkflowRequest?**](CreateWorkflowRequest?.md) | A create workflow request. | [optional]  |
 
 ### Return type
 

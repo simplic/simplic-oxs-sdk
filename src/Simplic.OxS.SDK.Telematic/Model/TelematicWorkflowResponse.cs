@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicWorkflowResponse
+    /// Represents a workflow snapshot embedded in a telematic message.
     /// </summary>
     [DataContract(Name = "TelematicWorkflowResponse")]
     public partial class TelematicWorkflowResponse : IEquatable<TelematicWorkflowResponse>, IValidatableObject
@@ -36,11 +36,11 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicWorkflowResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="value">value.</param>
-        /// <param name="description">description.</param>
-        /// <param name="steps">steps.</param>
+        /// <param name="id">Gets or sets the workflow id..</param>
+        /// <param name="name">Gets or sets the name of the workflow..</param>
+        /// <param name="value">Gets or sets the value that will be send towards the telematic system..</param>
+        /// <param name="description">Gets or sets the description..</param>
+        /// <param name="steps">Gets or sets the list of workflow steps with their embedded definitions..</param>
         public TelematicWorkflowResponse(Guid id = default(Guid), string name = default(string), string value = default(string), string description = default(string), List<TelematicWorkflowStepResponse> steps = default(List<TelematicWorkflowStepResponse>))
         {
             this.Id = id;
@@ -51,32 +51,37 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the workflow id.
         /// </summary>
+        /// <value>Gets or sets the workflow id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name of the workflow.
         /// </summary>
+        /// <value>Gets or sets the name of the workflow.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the value that will be send towards the telematic system.
         /// </summary>
+        /// <value>Gets or sets the value that will be send towards the telematic system.</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or sets the description.
         /// </summary>
+        /// <value>Gets or sets the description.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Steps
+        /// Gets or sets the list of workflow steps with their embedded definitions.
         /// </summary>
+        /// <value>Gets or sets the list of workflow steps with their embedded definitions.</value>
         [DataMember(Name = "steps", EmitDefaultValue = true)]
         public List<TelematicWorkflowStepResponse> Steps { get; set; }
 

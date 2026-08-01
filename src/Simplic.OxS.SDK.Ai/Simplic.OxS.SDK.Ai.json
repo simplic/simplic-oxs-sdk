@@ -5423,6 +5423,11 @@
                         "description": "Gets or sets the last activity time.",
                         "format": "date-time"
                     },
+                    "title": {
+                        "type": "string",
+                        "description": "Gets or sets the short, LLM-generated conversation title, or `null` if not\nyet generated (e.g. before the first exchange completes).",
+                        "nullable": true
+                    },
                     "isActive": {
                         "type": "boolean",
                         "description": "Gets or sets whether the session is active."

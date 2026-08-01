@@ -43,6 +43,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="providerVehicleIdentifier">providerVehicleIdentifier.</param>
         /// <param name="providerMessageType">providerMessageType.</param>
         /// <param name="internalVehicleIdentifier">internalVehicleIdentifier.</param>
+        /// <param name="tractorUnitId">tractorUnitId.</param>
+        /// <param name="trailerId">trailerId.</param>
+        /// <param name="driverId">driverId.</param>
         /// <param name="text">text.</param>
         /// <param name="reference">reference.</param>
         /// <param name="latitude">latitude.</param>
@@ -57,7 +60,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="messageType">messageType.</param>
         /// <param name="queueId">queueId.</param>
         /// <param name="attachments">attachments.</param>
-        public IncomingTelematicMessage(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string providerIdentifier = default(string), string providerVehicleIdentifier = default(string), string providerMessageType = default(string), Guid? internalVehicleIdentifier = default(Guid?), string text = default(string), string reference = default(string), double latitude = default(double), double longitude = default(double), IncomingTour tour = default(IncomingTour), IncomingPlace place = default(IncomingPlace), IncomingOrder order = default(IncomingOrder), FmsData fmsData = default(FmsData), Address locationInformation = default(Address), Driver driver = default(Driver), DateTime? messageTimeUtc = default(DateTime?), List<IncomingMessageType> messageType = default(List<IncomingMessageType>), Guid? queueId = default(Guid?), List<IncomingAttachment> attachments = default(List<IncomingAttachment>))
+        public IncomingTelematicMessage(Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool), string providerIdentifier = default(string), string providerVehicleIdentifier = default(string), string providerMessageType = default(string), Guid? internalVehicleIdentifier = default(Guid?), Guid? tractorUnitId = default(Guid?), Guid? trailerId = default(Guid?), Guid? driverId = default(Guid?), string text = default(string), string reference = default(string), double latitude = default(double), double longitude = default(double), IncomingTour tour = default(IncomingTour), IncomingPlace place = default(IncomingPlace), IncomingOrder order = default(IncomingOrder), FmsData fmsData = default(FmsData), Address locationInformation = default(Address), Driver driver = default(Driver), DateTime? messageTimeUtc = default(DateTime?), List<IncomingMessageType> messageType = default(List<IncomingMessageType>), Guid? queueId = default(Guid?), List<IncomingAttachment> attachments = default(List<IncomingAttachment>))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -66,6 +69,9 @@ namespace Simplic.OxS.SDK.Telematic
             this.ProviderVehicleIdentifier = providerVehicleIdentifier;
             this.ProviderMessageType = providerMessageType;
             this.InternalVehicleIdentifier = internalVehicleIdentifier;
+            this.TractorUnitId = tractorUnitId;
+            this.TrailerId = trailerId;
+            this.DriverId = driverId;
             this.Text = text;
             this.Reference = reference;
             this.Latitude = latitude;
@@ -123,6 +129,24 @@ namespace Simplic.OxS.SDK.Telematic
         /// </summary>
         [DataMember(Name = "internalVehicleIdentifier", EmitDefaultValue = true)]
         public Guid? InternalVehicleIdentifier { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TractorUnitId
+        /// </summary>
+        [DataMember(Name = "tractorUnitId", EmitDefaultValue = true)]
+        public Guid? TractorUnitId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TrailerId
+        /// </summary>
+        [DataMember(Name = "trailerId", EmitDefaultValue = true)]
+        public Guid? TrailerId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DriverId
+        /// </summary>
+        [DataMember(Name = "driverId", EmitDefaultValue = true)]
+        public Guid? DriverId { get; set; }
 
         /// <summary>
         /// Gets or Sets Text
@@ -223,6 +247,9 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  ProviderVehicleIdentifier: ").Append(ProviderVehicleIdentifier).Append("\n");
             sb.Append("  ProviderMessageType: ").Append(ProviderMessageType).Append("\n");
             sb.Append("  InternalVehicleIdentifier: ").Append(InternalVehicleIdentifier).Append("\n");
+            sb.Append("  TractorUnitId: ").Append(TractorUnitId).Append("\n");
+            sb.Append("  TrailerId: ").Append(TrailerId).Append("\n");
+            sb.Append("  DriverId: ").Append(DriverId).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Latitude: ").Append(Latitude).Append("\n");
@@ -305,6 +332,21 @@ namespace Simplic.OxS.SDK.Telematic
                     this.InternalVehicleIdentifier == input.InternalVehicleIdentifier ||
                     (this.InternalVehicleIdentifier != null &&
                     this.InternalVehicleIdentifier.Equals(input.InternalVehicleIdentifier))
+                ) && 
+                (
+                    this.TractorUnitId == input.TractorUnitId ||
+                    (this.TractorUnitId != null &&
+                    this.TractorUnitId.Equals(input.TractorUnitId))
+                ) && 
+                (
+                    this.TrailerId == input.TrailerId ||
+                    (this.TrailerId != null &&
+                    this.TrailerId.Equals(input.TrailerId))
+                ) && 
+                (
+                    this.DriverId == input.DriverId ||
+                    (this.DriverId != null &&
+                    this.DriverId.Equals(input.DriverId))
                 ) && 
                 (
                     this.Text == input.Text ||
@@ -411,6 +453,18 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.InternalVehicleIdentifier != null)
                 {
                     hashCode = (hashCode * 59) + this.InternalVehicleIdentifier.GetHashCode();
+                }
+                if (this.TractorUnitId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TractorUnitId.GetHashCode();
+                }
+                if (this.TrailerId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TrailerId.GetHashCode();
+                }
+                if (this.DriverId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DriverId.GetHashCode();
                 }
                 if (this.Text != null)
                 {

@@ -36,14 +36,14 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchProviderConfiguration" /> class.
         /// </summary>
-        /// <param name="username">username.</param>
-        /// <param name="password">password.</param>
-        /// <param name="accountName">accountName.</param>
-        /// <param name="apiKey">apiKey.</param>
-        /// <param name="systemNr">systemNr.</param>
-        /// <param name="integrator">integrator.</param>
-        /// <param name="company">company.</param>
-        /// <param name="importKey">importKey.</param>
+        /// <param name="username">Gets or sets the username.  Also used for the Dispatcher for Transics..</param>
+        /// <param name="password">Gets or sets the password..</param>
+        /// <param name="accountName">Gest or sets the account name..</param>
+        /// <param name="apiKey">Gets or sets the api key..</param>
+        /// <param name="systemNr">Gets or sets the system number..</param>
+        /// <param name="integrator">Gets or sets the integrator..</param>
+        /// <param name="company">Gets or sets the Yellowfox RTI company key..</param>
+        /// <param name="importKey">Gets or sets the Yellowfox RTI import key..</param>
         public PatchProviderConfiguration(string username = default(string), string password = default(string), string accountName = default(string), string apiKey = default(string), int? systemNr = default(int?), string integrator = default(string), string company = default(string), string importKey = default(string))
         {
             this.Username = username;
@@ -57,50 +57,58 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Username
+        /// Gets or sets the username.  Also used for the Dispatcher for Transics.
         /// </summary>
+        /// <value>Gets or sets the username.  Also used for the Dispatcher for Transics.</value>
         [DataMember(Name = "username", EmitDefaultValue = true)]
         public string Username { get; set; }
 
         /// <summary>
-        /// Gets or Sets Password
+        /// Gets or sets the password.
         /// </summary>
+        /// <value>Gets or sets the password.</value>
         [DataMember(Name = "password", EmitDefaultValue = true)]
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountName
+        /// Gest or sets the account name.
         /// </summary>
+        /// <value>Gest or sets the account name.</value>
         [DataMember(Name = "accountName", EmitDefaultValue = true)]
         public string AccountName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ApiKey
+        /// Gets or sets the api key.
         /// </summary>
+        /// <value>Gets or sets the api key.</value>
         [DataMember(Name = "apiKey", EmitDefaultValue = true)]
         public string ApiKey { get; set; }
 
         /// <summary>
-        /// Gets or Sets SystemNr
+        /// Gets or sets the system number.
         /// </summary>
+        /// <value>Gets or sets the system number.</value>
         [DataMember(Name = "systemNr", EmitDefaultValue = true)]
         public int? SystemNr { get; set; }
 
         /// <summary>
-        /// Gets or Sets Integrator
+        /// Gets or sets the integrator.
         /// </summary>
+        /// <value>Gets or sets the integrator.</value>
         [DataMember(Name = "integrator", EmitDefaultValue = true)]
         public string Integrator { get; set; }
 
         /// <summary>
-        /// Gets or Sets Company
+        /// Gets or sets the Yellowfox RTI company key.
         /// </summary>
+        /// <value>Gets or sets the Yellowfox RTI company key.</value>
         [DataMember(Name = "company", EmitDefaultValue = true)]
         public string Company { get; set; }
 
         /// <summary>
-        /// Gets or Sets ImportKey
+        /// Gets or sets the Yellowfox RTI import key.
         /// </summary>
+        /// <value>Gets or sets the Yellowfox RTI import key.</value>
         [DataMember(Name = "importKey", EmitDefaultValue = true)]
         public string ImportKey { get; set; }
 

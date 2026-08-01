@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// PatchTelematicConfigurationRequest
+    /// Represents a requestContext to patch a telematic configuration.
     /// </summary>
     [DataContract(Name = "PatchTelematicConfigurationRequest")]
     public partial class PatchTelematicConfigurationRequest : IEquatable<PatchTelematicConfigurationRequest>, IValidatableObject
@@ -37,7 +37,7 @@ namespace Simplic.OxS.SDK.Telematic
         /// Initializes a new instance of the <see cref="PatchTelematicConfigurationRequest" /> class.
         /// </summary>
         /// <param name="providerConfiguration">providerConfiguration.</param>
-        /// <param name="autoCreationSettings">autoCreationSettings.</param>
+        /// <param name="autoCreationSettings">Gets or sets the settings for automatically creating vehicle configurations.</param>
         public PatchTelematicConfigurationRequest(PatchProviderConfiguration providerConfiguration = default(PatchProviderConfiguration), List<AutomaticVehicleConfigurationCreationSettings> autoCreationSettings = default(List<AutomaticVehicleConfigurationCreationSettings>))
         {
             this.ProviderConfiguration = providerConfiguration;
@@ -51,8 +51,9 @@ namespace Simplic.OxS.SDK.Telematic
         public PatchProviderConfiguration ProviderConfiguration { get; set; }
 
         /// <summary>
-        /// Gets or Sets AutoCreationSettings
+        /// Gets or sets the settings for automatically creating vehicle configurations
         /// </summary>
+        /// <value>Gets or sets the settings for automatically creating vehicle configurations</value>
         [DataMember(Name = "autoCreationSettings", EmitDefaultValue = true)]
         public List<AutomaticVehicleConfigurationCreationSettings> AutoCreationSettings { get; set; }
 

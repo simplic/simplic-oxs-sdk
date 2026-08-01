@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CreateWorkflowRequest
+    /// Represents a request to create a telematic workflow.
     /// </summary>
     [DataContract(Name = "CreateWorkflowRequest")]
     public partial class CreateWorkflowRequest : IEquatable<CreateWorkflowRequest>, IValidatableObject
@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWorkflowRequest" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="value">value.</param>
-        /// <param name="description">description.</param>
-        /// <param name="steps">steps.</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="value">Gets or sets the value..</param>
+        /// <param name="description">Gets or sets the description..</param>
+        /// <param name="steps">Gets or sets the list of workflow steps..</param>
         public CreateWorkflowRequest(string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentSet> steps = default(List<WorkflowStepAssignmentSet>))
         {
             this.Name = name;
@@ -49,26 +49,30 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or sets the value.
         /// </summary>
+        /// <value>Gets or sets the value.</value>
         [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or sets the description.
         /// </summary>
+        /// <value>Gets or sets the description.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Steps
+        /// Gets or sets the list of workflow steps.
         /// </summary>
+        /// <value>Gets or sets the list of workflow steps.</value>
         [DataMember(Name = "steps", EmitDefaultValue = true)]
         public List<WorkflowStepAssignmentSet> Steps { get; set; }
 

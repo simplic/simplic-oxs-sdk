@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// WorkflowStepAssignmentModel
+    /// Represents a workflow step assignment model.
     /// </summary>
     [DataContract(Name = "WorkflowStepAssignmentModel")]
     public partial class WorkflowStepAssignmentModel : IEquatable<WorkflowStepAssignmentModel>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowStepAssignmentModel" /> class.
         /// </summary>
-        /// <param name="workflowStepId">workflowStepId.</param>
-        /// <param name="order">order.</param>
+        /// <param name="workflowStepId">Gets or sets the workflow step id..</param>
+        /// <param name="order">Gets or sets the order of this step in the workflow..</param>
         /// <param name="step">step.</param>
         public WorkflowStepAssignmentModel(Guid workflowStepId = default(Guid), int order = default(int), WorkflowStepResponse step = default(WorkflowStepResponse))
         {
@@ -47,14 +47,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets WorkflowStepId
+        /// Gets or sets the workflow step id.
         /// </summary>
+        /// <value>Gets or sets the workflow step id.</value>
         [DataMember(Name = "workflowStepId", EmitDefaultValue = false)]
         public Guid WorkflowStepId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Order
+        /// Gets or sets the order of this step in the workflow.
         /// </summary>
+        /// <value>Gets or sets the order of this step in the workflow.</value>
         [DataMember(Name = "order", EmitDefaultValue = false)]
         public int Order { get; set; }
 

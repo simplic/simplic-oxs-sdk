@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// WorkflowStepDataFieldSet
+    /// Represents a data field set for creating/updating a workflow step.
     /// </summary>
     [DataContract(Name = "WorkflowStepDataFieldSet")]
     public partial class WorkflowStepDataFieldSet : IEquatable<WorkflowStepDataFieldSet>, IValidatableObject
@@ -36,8 +36,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowStepDataFieldSet" /> class.
         /// </summary>
-        /// <param name="dataFieldId">dataFieldId.</param>
-        /// <param name="isRequired">isRequired.</param>
+        /// <param name="dataFieldId">Gets or sets the data field id..</param>
+        /// <param name="isRequired">Gets or sets whether the field is required..</param>
         public WorkflowStepDataFieldSet(Guid dataFieldId = default(Guid), bool isRequired = default(bool))
         {
             this.DataFieldId = dataFieldId;
@@ -45,14 +45,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets DataFieldId
+        /// Gets or sets the data field id.
         /// </summary>
+        /// <value>Gets or sets the data field id.</value>
         [DataMember(Name = "dataFieldId", EmitDefaultValue = false)]
         public Guid DataFieldId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsRequired
+        /// Gets or sets whether the field is required.
         /// </summary>
+        /// <value>Gets or sets whether the field is required.</value>
         [DataMember(Name = "isRequired", EmitDefaultValue = true)]
         public bool IsRequired { get; set; }
 

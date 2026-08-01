@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// UploadBlobResponse
+    /// Represents the response returned after successfully uploading a blob.
     /// </summary>
     [DataContract(Name = "UploadBlobResponse")]
     public partial class UploadBlobResponse : IEquatable<UploadBlobResponse>, IValidatableObject
@@ -36,9 +36,9 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadBlobResponse" /> class.
         /// </summary>
-        /// <param name="blobId">blobId.</param>
-        /// <param name="name">name.</param>
-        /// <param name="contentType">contentType.</param>
+        /// <param name="blobId">Gets or sets the CDN blob identifier assigned to the uploaded file..</param>
+        /// <param name="name">Gets or sets the stored file name of the uploaded blob..</param>
+        /// <param name="contentType">Gets or sets the content type of the uploaded file (e.g. image/png, application/pdf)..</param>
         public UploadBlobResponse(Guid blobId = default(Guid), string name = default(string), string contentType = default(string))
         {
             this.BlobId = blobId;
@@ -47,20 +47,23 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets BlobId
+        /// Gets or sets the CDN blob identifier assigned to the uploaded file.
         /// </summary>
+        /// <value>Gets or sets the CDN blob identifier assigned to the uploaded file.</value>
         [DataMember(Name = "blobId", EmitDefaultValue = false)]
         public Guid BlobId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the stored file name of the uploaded blob.
         /// </summary>
+        /// <value>Gets or sets the stored file name of the uploaded blob.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContentType
+        /// Gets or sets the content type of the uploaded file (e.g. image/png, application/pdf).
         /// </summary>
+        /// <value>Gets or sets the content type of the uploaded file (e.g. image/png, application/pdf).</value>
         [DataMember(Name = "contentType", EmitDefaultValue = true)]
         public string ContentType { get; set; }
 

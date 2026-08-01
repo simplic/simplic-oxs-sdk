@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// TelematicConfigurationResponse
+    /// Response for a telematic configuration get requestContext.
     /// </summary>
     [DataContract(Name = "TelematicConfigurationResponse")]
     public partial class TelematicConfigurationResponse : IEquatable<TelematicConfigurationResponse>, IValidatableObject
@@ -36,10 +36,10 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="TelematicConfigurationResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="providerName">providerName.</param>
+        /// <param name="id">Gets or sets the id..</param>
+        /// <param name="providerName">Gets or sets the name of the provider..</param>
         /// <param name="providerConfiguration">providerConfiguration.</param>
-        /// <param name="autoCreationSettings">autoCreationSettings.</param>
+        /// <param name="autoCreationSettings">Gets or sets the settings for automatically creating vehicle configurations.</param>
         /// <param name="createDateTime">createDateTime.</param>
         /// <param name="createUserId">createUserId.</param>
         /// <param name="createUserName">createUserName.</param>
@@ -61,14 +61,16 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the id.
         /// </summary>
+        /// <value>Gets or sets the id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// Gets or sets the name of the provider.
         /// </summary>
+        /// <value>Gets or sets the name of the provider.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 
@@ -79,8 +81,9 @@ namespace Simplic.OxS.SDK.Telematic
         public ProviderConfigurationModel ProviderConfiguration { get; set; }
 
         /// <summary>
-        /// Gets or Sets AutoCreationSettings
+        /// Gets or sets the settings for automatically creating vehicle configurations
         /// </summary>
+        /// <value>Gets or sets the settings for automatically creating vehicle configurations</value>
         [DataMember(Name = "autoCreationSettings", EmitDefaultValue = true)]
         public List<AutomaticVehicleConfigurationCreationSettings> AutoCreationSettings { get; set; }
 

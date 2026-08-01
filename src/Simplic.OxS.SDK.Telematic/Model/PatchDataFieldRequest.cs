@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// PatchDataFieldRequest
+    /// Represents a request to patch a data field.
     /// </summary>
     [DataContract(Name = "PatchDataFieldRequest")]
     public partial class PatchDataFieldRequest : IEquatable<PatchDataFieldRequest>, IValidatableObject
@@ -42,12 +42,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchDataFieldRequest" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="localizations">localizations.</param>
+        /// <param name="name">Gets or sets the name..</param>
+        /// <param name="localizations">Gets or sets the localizations..</param>
         /// <param name="dataType">dataType.</param>
-        /// <param name="defaultValue">defaultValue.</param>
-        /// <param name="setDefinition">setDefinition.</param>
-        /// <param name="format">format.</param>
+        /// <param name="defaultValue">Gets or sets the default value..</param>
+        /// <param name="setDefinition">Gets or sets the set definition..</param>
+        /// <param name="format">Gets or sets the format string for display (e.g., N2 for numbers, C2 for currency, dd/MM/yyyy for dates)..</param>
         public PatchDataFieldRequest(string name = default(string), List<DataFieldLocalizationModel> localizations = default(List<DataFieldLocalizationModel>), DataFieldTypeModel? dataType = default(DataFieldTypeModel?), string defaultValue = default(string), List<string> setDefinition = default(List<string>), string format = default(string))
         {
             this.Name = name;
@@ -59,32 +59,37 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or sets the name.
         /// </summary>
+        /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Localizations
+        /// Gets or sets the localizations.
         /// </summary>
+        /// <value>Gets or sets the localizations.</value>
         [DataMember(Name = "localizations", EmitDefaultValue = true)]
         public List<DataFieldLocalizationModel> Localizations { get; set; }
 
         /// <summary>
-        /// Gets or Sets DefaultValue
+        /// Gets or sets the default value.
         /// </summary>
+        /// <value>Gets or sets the default value.</value>
         [DataMember(Name = "defaultValue", EmitDefaultValue = true)]
         public string DefaultValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets SetDefinition
+        /// Gets or sets the set definition.
         /// </summary>
+        /// <value>Gets or sets the set definition.</value>
         [DataMember(Name = "setDefinition", EmitDefaultValue = true)]
         public List<string> SetDefinition { get; set; }
 
         /// <summary>
-        /// Gets or Sets Format
+        /// Gets or sets the format string for display (e.g., N2 for numbers, C2 for currency, dd/MM/yyyy for dates).
         /// </summary>
+        /// <value>Gets or sets the format string for display (e.g., N2 for numbers, C2 for currency, dd/MM/yyyy for dates).</value>
         [DataMember(Name = "format", EmitDefaultValue = true)]
         public string Format { get; set; }
 

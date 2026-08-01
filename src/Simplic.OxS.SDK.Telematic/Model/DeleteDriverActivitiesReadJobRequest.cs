@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// DeleteDriverActivitiesReadJobRequest
+    /// Request to delete a driver activity read job.
     /// </summary>
     [DataContract(Name = "DeleteDriverActivitiesReadJobRequest")]
     public partial class DeleteDriverActivitiesReadJobRequest : IEquatable<DeleteDriverActivitiesReadJobRequest>, IValidatableObject
@@ -36,15 +36,16 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteDriverActivitiesReadJobRequest" /> class.
         /// </summary>
-        /// <param name="providerName">providerName.</param>
+        /// <param name="providerName">The provider name. E.g: &#39;yellowfox&#39;..</param>
         public DeleteDriverActivitiesReadJobRequest(string providerName = default(string))
         {
             this.ProviderName = providerName;
         }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// The provider name. E.g: &#39;yellowfox&#39;.
         /// </summary>
+        /// <value>The provider name. E.g: &#39;yellowfox&#39;.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 

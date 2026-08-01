@@ -4,18 +4,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/telematic-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**TelematicToursDownloadBlobTourIdBlobIdGet**](GenericTelematicToursClient.md#telematictoursdownloadblobtouridblobidget) | **GET** /generic-telematic-tours/download-blob/{tourId}/{blobId} |  |
-| [**TelematicToursGet**](GenericTelematicToursClient.md#telematictoursget) | **GET** /generic-telematic-tours |  |
-| [**TelematicToursTourIdGet**](GenericTelematicToursClient.md#telematictourstouridget) | **GET** /generic-telematic-tours/{tourId} |  |
-| [**TelematicToursTourIdOrdersOrderIdCompleteStepPost**](GenericTelematicToursClient.md#telematictourstouridordersorderidcompletesteppost) | **POST** /generic-telematic-tours/{tourId}/orders/{orderId}/complete-step |  |
-| [**TelematicToursTourIdPlacesPlaceIdCompleteStepPost**](GenericTelematicToursClient.md#telematictourstouridplacesplaceidcompletesteppost) | **POST** /generic-telematic-tours/{tourId}/places/{placeId}/complete-step |  |
-| [**TelematicToursUploadBlobTourIdPlaceIdOrderIdPost**](GenericTelematicToursClient.md#telematictoursuploadblobtouridplaceidorderidpost) | **POST** /generic-telematic-tours/upload-blob/{tourId}/{placeId}/{orderId} |  |
+| [**TelematicToursDownloadBlobTourIdBlobIdGet**](GenericTelematicToursClient.md#telematictoursdownloadblobtouridblobidget) | **GET** /generic-telematic-tours/download-blob/{tourId}/{blobId} | Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. |
+| [**TelematicToursGet**](GenericTelematicToursClient.md#telematictoursget) | **GET** /generic-telematic-tours | Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. |
+| [**TelematicToursTourIdGet**](GenericTelematicToursClient.md#telematictourstouridget) | **GET** /generic-telematic-tours/{tourId} | Gets the current state of a specific tour for the authenticated vehicle. |
+| [**TelematicToursTourIdOrdersOrderIdCompleteStepPost**](GenericTelematicToursClient.md#telematictourstouridordersorderidcompletesteppost) | **POST** /generic-telematic-tours/{tourId}/orders/{orderId}/complete-step | Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. |
+| [**TelematicToursTourIdPlacesPlaceIdCompleteStepPost**](GenericTelematicToursClient.md#telematictourstouridplacesplaceidcompletesteppost) | **POST** /generic-telematic-tours/{tourId}/places/{placeId}/complete-step | Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. |
+| [**TelematicToursUploadBlobTourIdPlaceIdOrderIdPost**](GenericTelematicToursClient.md#telematictoursuploadblobtouridplaceidorderidpost) | **POST** /generic-telematic-tours/upload-blob/{tourId}/{placeId}/{orderId} | Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. |
 
 <a id="telematictoursdownloadblobtouridblobidget"></a>
 # **TelematicToursDownloadBlobTourIdBlobIdGet**
 > byte[] TelematicToursDownloadBlobTourIdBlobIdGet (Guid tourId, Guid blobId)
 
-
+Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.
 
 ### Example
 ```csharp
@@ -40,11 +40,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new GenericTelematicToursClient(config);
-            var tourId = "tourId_example";  // Guid | 
-            var blobId = "blobId_example";  // Guid | 
+            var tourId = "tourId_example";  // Guid | Tour id
+            var blobId = "blobId_example";  // Guid | Blob id
 
             try
             {
+                // Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.
                 byte[] result = apiInstance.TelematicToursDownloadBlobTourIdBlobIdGet(tourId, blobId);
                 Debug.WriteLine(result);
             }
@@ -65,6 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.
     ApiResponse<byte[]> response = apiInstance.TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(tourId, blobId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -82,8 +84,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **tourId** | **Guid** |  |  |
-| **blobId** | **Guid** |  |  |
+| **tourId** | **Guid** | Tour id |  |
+| **blobId** | **Guid** | Blob id |  |
 
 ### Return type
 
@@ -111,7 +113,7 @@ catch (ApiException e)
 # **TelematicToursGet**
 > List&lt;TelematicTourResponse&gt; TelematicToursGet ()
 
-
+Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state.
 
 ### Example
 ```csharp
@@ -139,6 +141,7 @@ namespace Example
 
             try
             {
+                // Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state.
                 List<TelematicTourResponse> result = apiInstance.TelematicToursGet();
                 Debug.WriteLine(result);
             }
@@ -159,6 +162,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state.
     ApiResponse<List<TelematicTourResponse>> response = apiInstance.TelematicToursGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -200,7 +204,7 @@ This endpoint does not need any parameter.
 # **TelematicToursTourIdGet**
 > TelematicTourResponse TelematicToursTourIdGet (Guid tourId)
 
-
+Gets the current state of a specific tour for the authenticated vehicle.
 
 ### Example
 ```csharp
@@ -225,10 +229,11 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new GenericTelematicToursClient(config);
-            var tourId = "tourId_example";  // Guid | 
+            var tourId = "tourId_example";  // Guid | The internal tour identifier.
 
             try
             {
+                // Gets the current state of a specific tour for the authenticated vehicle.
                 TelematicTourResponse result = apiInstance.TelematicToursTourIdGet(tourId);
                 Debug.WriteLine(result);
             }
@@ -249,6 +254,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Gets the current state of a specific tour for the authenticated vehicle.
     ApiResponse<TelematicTourResponse> response = apiInstance.TelematicToursTourIdGetWithHttpInfo(tourId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -266,7 +272,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **tourId** | **Guid** |  |  |
+| **tourId** | **Guid** | The internal tour identifier. |  |
 
 ### Return type
 
@@ -295,7 +301,7 @@ catch (ApiException e)
 # **TelematicToursTourIdOrdersOrderIdCompleteStepPost**
 > TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost (Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = null)
 
-
+Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic.
 
 ### Example
 ```csharp
@@ -320,12 +326,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new GenericTelematicToursClient(config);
-            var tourId = "tourId_example";  // Guid | 
-            var orderId = "orderId_example";  // Guid | 
-            var completeWorkflowStepRequest = new CompleteWorkflowStepRequest?(); // CompleteWorkflowStepRequest? |  (optional) 
+            var tourId = "tourId_example";  // Guid | The internal tour identifier.
+            var orderId = "orderId_example";  // Guid | The internal order identifier.
+            var completeWorkflowStepRequest = new CompleteWorkflowStepRequest?(); // CompleteWorkflowStepRequest? | The complete workflow step request containing step id and data field values. (optional) 
 
             try
             {
+                // Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic.
                 TelematicTourResponse result = apiInstance.TelematicToursTourIdOrdersOrderIdCompleteStepPost(tourId, orderId, completeWorkflowStepRequest);
                 Debug.WriteLine(result);
             }
@@ -346,6 +353,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic.
     ApiResponse<TelematicTourResponse> response = apiInstance.TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(tourId, orderId, completeWorkflowStepRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -363,9 +371,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **tourId** | **Guid** |  |  |
-| **orderId** | **Guid** |  |  |
-| **completeWorkflowStepRequest** | [**CompleteWorkflowStepRequest?**](CompleteWorkflowStepRequest?.md) |  | [optional]  |
+| **tourId** | **Guid** | The internal tour identifier. |  |
+| **orderId** | **Guid** | The internal order identifier. |  |
+| **completeWorkflowStepRequest** | [**CompleteWorkflowStepRequest?**](CompleteWorkflowStepRequest?.md) | The complete workflow step request containing step id and data field values. | [optional]  |
 
 ### Return type
 
@@ -395,7 +403,7 @@ catch (ApiException e)
 # **TelematicToursTourIdPlacesPlaceIdCompleteStepPost**
 > TelematicTourResponse TelematicToursTourIdPlacesPlaceIdCompleteStepPost (Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = null)
 
-
+Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step's role: - \"order_started\": OrderStarted; on first in tour also TourStarted + PlaceStarted. - \"order_completed\": OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done.
 
 ### Example
 ```csharp
@@ -420,12 +428,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new GenericTelematicToursClient(config);
-            var tourId = "tourId_example";  // Guid | 
-            var placeId = "placeId_example";  // Guid | 
-            var completeWorkflowStepRequest = new CompleteWorkflowStepRequest?(); // CompleteWorkflowStepRequest? |  (optional) 
+            var tourId = "tourId_example";  // Guid | The internal tour identifier.
+            var placeId = "placeId_example";  // Guid | The internal place identifier.
+            var completeWorkflowStepRequest = new CompleteWorkflowStepRequest?(); // CompleteWorkflowStepRequest? | The complete workflow step request containing step id and data field values. (optional) 
 
             try
             {
+                // Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step's role: - \"order_started\": OrderStarted; on first in tour also TourStarted + PlaceStarted. - \"order_completed\": OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done.
                 TelematicTourResponse result = apiInstance.TelematicToursTourIdPlacesPlaceIdCompleteStepPost(tourId, placeId, completeWorkflowStepRequest);
                 Debug.WriteLine(result);
             }
@@ -446,6 +455,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step's role: - \"order_started\": OrderStarted; on first in tour also TourStarted + PlaceStarted. - \"order_completed\": OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done.
     ApiResponse<TelematicTourResponse> response = apiInstance.TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfo(tourId, placeId, completeWorkflowStepRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -463,9 +473,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **tourId** | **Guid** |  |  |
-| **placeId** | **Guid** |  |  |
-| **completeWorkflowStepRequest** | [**CompleteWorkflowStepRequest?**](CompleteWorkflowStepRequest?.md) |  | [optional]  |
+| **tourId** | **Guid** | The internal tour identifier. |  |
+| **placeId** | **Guid** | The internal place identifier. |  |
+| **completeWorkflowStepRequest** | [**CompleteWorkflowStepRequest?**](CompleteWorkflowStepRequest?.md) | The complete workflow step request containing step id and data field values. | [optional]  |
 
 ### Return type
 
@@ -495,7 +505,7 @@ catch (ApiException e)
 # **TelematicToursUploadBlobTourIdPlaceIdOrderIdPost**
 > UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost (Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = null)
 
-
+Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order's ePOD attachments. Otherwise the blob is attached to the place's attachments.
 
 ### Example
 ```csharp
@@ -520,13 +530,14 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new GenericTelematicToursClient(config);
-            var tourId = "tourId_example";  // Guid | 
-            var placeId = "placeId_example";  // Guid | 
-            var orderId = "orderId_example";  // Guid | 
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
+            var tourId = "tourId_example";  // Guid | The internal tour identifier.
+            var placeId = "placeId_example";  // Guid | The internal place identifier.
+            var orderId = "orderId_example";  // Guid | The optional internal order identifier. When supplied the blob is added to the order.
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? | The file to upload. (optional) 
 
             try
             {
+                // Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order's ePOD attachments. Otherwise the blob is attached to the place's attachments.
                 UploadBlobResponse result = apiInstance.TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(tourId, placeId, orderId, file);
                 Debug.WriteLine(result);
             }
@@ -547,6 +558,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order's ePOD attachments. Otherwise the blob is attached to the place's attachments.
     ApiResponse<UploadBlobResponse> response = apiInstance.TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(tourId, placeId, orderId, file);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -564,10 +576,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **tourId** | **Guid** |  |  |
-| **placeId** | **Guid** |  |  |
-| **orderId** | **Guid** |  |  |
-| **file** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+| **tourId** | **Guid** | The internal tour identifier. |  |
+| **placeId** | **Guid** | The internal place identifier. |  |
+| **orderId** | **Guid** | The optional internal order identifier. When supplied the blob is added to the order. |  |
+| **file** | **System.IO.Stream?****System.IO.Stream?** | The file to upload. | [optional]  |
 
 ### Return type
 

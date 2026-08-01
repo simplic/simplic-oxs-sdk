@@ -28,7 +28,7 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Telematic
 {
     /// <summary>
-    /// CreateEmploymentConfigurationRequest
+    /// Request to create a employment configuration.
     /// </summary>
     [DataContract(Name = "CreateEmploymentConfigurationRequest")]
     public partial class CreateEmploymentConfigurationRequest : IEquatable<CreateEmploymentConfigurationRequest>, IValidatableObject
@@ -36,13 +36,13 @@ namespace Simplic.OxS.SDK.Telematic
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEmploymentConfigurationRequest" /> class.
         /// </summary>
-        /// <param name="employmentId">employmentId.</param>
-        /// <param name="matchCode">matchCode.</param>
-        /// <param name="providerName">providerName.</param>
-        /// <param name="externalDriverIdentifier">externalDriverIdentifier.</param>
-        /// <param name="validFrom">validFrom.</param>
-        /// <param name="validTo">validTo.</param>
-        /// <param name="activeServices">activeServices.</param>
+        /// <param name="employmentId">Gets or sets the employment identifer referencing OxS.Hr employment ids..</param>
+        /// <param name="matchCode">Gets or sets the matchcode..</param>
+        /// <param name="providerName">Gets or sets the telematic provider by its name. E.g. &#39;spedion&#39;..</param>
+        /// <param name="externalDriverIdentifier">Gets or sets the identifier from the telematic provider for the employment..</param>
+        /// <param name="validFrom">Gets or sets from when the configuration is valid..</param>
+        /// <param name="validTo">Gets or sets until when the configuration is valid..</param>
+        /// <param name="activeServices">Gets or sets a list of active services.  The full list of available services should be taken from the get available services endpoint. A * will mean all services are active for the configuration..</param>
         public CreateEmploymentConfigurationRequest(Guid employmentId = default(Guid), string matchCode = default(string), string providerName = default(string), string externalDriverIdentifier = default(string), DateTime validFrom = default(DateTime), DateTime validTo = default(DateTime), List<string> activeServices = default(List<string>))
         {
             this.EmploymentId = employmentId;
@@ -55,44 +55,51 @@ namespace Simplic.OxS.SDK.Telematic
         }
 
         /// <summary>
-        /// Gets or Sets EmploymentId
+        /// Gets or sets the employment identifer referencing OxS.Hr employment ids.
         /// </summary>
+        /// <value>Gets or sets the employment identifer referencing OxS.Hr employment ids.</value>
         [DataMember(Name = "employmentId", EmitDefaultValue = false)]
         public Guid EmploymentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatchCode
+        /// Gets or sets the matchcode.
         /// </summary>
+        /// <value>Gets or sets the matchcode.</value>
         [DataMember(Name = "matchCode", EmitDefaultValue = true)]
         public string MatchCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProviderName
+        /// Gets or sets the telematic provider by its name. E.g. &#39;spedion&#39;.
         /// </summary>
+        /// <value>Gets or sets the telematic provider by its name. E.g. &#39;spedion&#39;.</value>
         [DataMember(Name = "providerName", EmitDefaultValue = true)]
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExternalDriverIdentifier
+        /// Gets or sets the identifier from the telematic provider for the employment.
         /// </summary>
+        /// <value>Gets or sets the identifier from the telematic provider for the employment.</value>
         [DataMember(Name = "externalDriverIdentifier", EmitDefaultValue = true)]
         public string ExternalDriverIdentifier { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidFrom
+        /// Gets or sets from when the configuration is valid.
         /// </summary>
+        /// <value>Gets or sets from when the configuration is valid.</value>
         [DataMember(Name = "validFrom", EmitDefaultValue = false)]
         public DateTime ValidFrom { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidTo
+        /// Gets or sets until when the configuration is valid.
         /// </summary>
+        /// <value>Gets or sets until when the configuration is valid.</value>
         [DataMember(Name = "validTo", EmitDefaultValue = false)]
         public DateTime ValidTo { get; set; }
 
         /// <summary>
-        /// Gets or Sets ActiveServices
+        /// Gets or sets a list of active services.  The full list of available services should be taken from the get available services endpoint. A * will mean all services are active for the configuration.
         /// </summary>
+        /// <value>Gets or sets a list of active services.  The full list of available services should be taken from the get available services endpoint. A * will mean all services are active for the configuration.</value>
         [DataMember(Name = "activeServices", EmitDefaultValue = true)]
         public List<string> ActiveServices { get; set; }
 

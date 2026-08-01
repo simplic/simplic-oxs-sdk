@@ -40,60 +40,60 @@ public interface IGenericTelematicToursClient
 
 
     /// <summary>
-    ///  
+    /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="blobId"></param>
+    /// <param name="tourId">Tour id</param>
+    /// <param name="blobId">Blob id</param>
     /// <returns>byte[]</returns>
     byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId);
 
     /// <summary>
-    ///  
+    /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="blobId"></param>
+    /// <param name="tourId">Tour id</param>
+    /// <param name="blobId">Blob id</param>
     /// <returns>ApiResponse of byte[]</returns>
     ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId);
         
     /// <summary>
-    ///  
+    /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="blobId"></param>
+    /// <param name="tourId">Tour id</param>
+    /// <param name="blobId">Blob id</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of byte[]</returns>
     Task<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetAsync(Guid tourId, Guid blobId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="blobId"></param>
+    /// <param name="tourId">Tour id</param>
+    /// <param name="blobId">Blob id</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (byte[])</returns>
     Task<ApiResponse<byte[]>> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(Guid tourId, Guid blobId, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>List&lt;TelematicTourResponse&gt;</returns>
     List<TelematicTourResponse> TelematicToursGet();
 
     /// <summary>
-    ///  
+    /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of List&lt;TelematicTourResponse&gt;</returns>
     ApiResponse<List<TelematicTourResponse>> TelematicToursGetWithHttpInfo();
         
     /// <summary>
-    ///  
+    /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -101,7 +101,7 @@ public interface IGenericTelematicToursClient
     Task<List<TelematicTourResponse>> TelematicToursGetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -110,168 +110,168 @@ public interface IGenericTelematicToursClient
 
 
     /// <summary>
-    ///  
+    /// Gets the current state of a specific tour for the authenticated vehicle. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
+    /// <param name="tourId">The internal tour identifier.</param>
     /// <returns>TelematicTourResponse</returns>
     TelematicTourResponse TelematicToursTourIdGet(Guid tourId);
 
     /// <summary>
-    ///  
+    /// Gets the current state of a specific tour for the authenticated vehicle. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
+    /// <param name="tourId">The internal tour identifier.</param>
     /// <returns>ApiResponse of TelematicTourResponse</returns>
     ApiResponse<TelematicTourResponse> TelematicToursTourIdGetWithHttpInfo(Guid tourId);
         
     /// <summary>
-    ///  
+    /// Gets the current state of a specific tour for the authenticated vehicle. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
+    /// <param name="tourId">The internal tour identifier.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of TelematicTourResponse</returns>
     Task<TelematicTourResponse> TelematicToursTourIdGetAsync(Guid tourId, CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Gets the current state of a specific tour for the authenticated vehicle. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
+    /// <param name="tourId">The internal tour identifier.</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
     Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdGetWithHttpInfoAsync(Guid tourId, CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="orderId">The internal order identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <returns>TelematicTourResponse</returns>
     TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?));
 
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="orderId">The internal order identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <returns>ApiResponse of TelematicTourResponse</returns>
     ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?));
         
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="orderId">The internal order identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of TelematicTourResponse</returns>
     Task<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="orderId">The internal order identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
     Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <returns>TelematicTourResponse</returns>
     TelematicTourResponse TelematicToursTourIdPlacesPlaceIdCompleteStepPost(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?));
 
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <returns>ApiResponse of TelematicTourResponse</returns>
     ApiResponse<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfo(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?));
         
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of TelematicTourResponse</returns>
     Task<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="completeWorkflowStepRequest"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
     Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="file"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+    /// <param name="file">The file to upload. (optional)</param>
     /// <returns>UploadBlobResponse</returns>
     UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?));
 
     /// <summary>
-    ///  
+    /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="file"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+    /// <param name="file">The file to upload. (optional)</param>
     /// <returns>ApiResponse of UploadBlobResponse</returns>
     ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?));
         
     /// <summary>
-    ///  
+    /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="file"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+    /// <param name="file">The file to upload. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of UploadBlobResponse</returns>
     Task<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tourId"></param>
-    /// <param name="placeId"></param>
-    /// <param name="orderId"></param>
-    /// <param name="file"> (optional)</param>
+    /// <param name="tourId">The internal tour identifier.</param>
+    /// <param name="placeId">The internal place identifier.</param>
+    /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+    /// <param name="file">The file to upload. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
     Task<ApiResponse<UploadBlobResponse>> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), CancellationToken cancellationToken = default(CancellationToken));
@@ -352,11 +352,11 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <returns>byte[]</returns>
         public byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId)
         {
@@ -371,11 +371,11 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <returns>ApiResponse of byte[]</returns>
         public Simplic.OxS.SDK.ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId)
         {
@@ -390,11 +390,11 @@ public interface IGenericTelematicToursClient
         } 
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of byte[]</returns>
         public System.Threading.Tasks.Task<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetAsync(Guid tourId, Guid blobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -410,11 +410,11 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (byte[])</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<byte[]>> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(Guid tourId, Guid blobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -429,7 +429,7 @@ public interface IGenericTelematicToursClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;TelematicTourResponse&gt;</returns>
@@ -446,7 +446,7 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;TelematicTourResponse&gt;</returns>
@@ -463,7 +463,7 @@ public interface IGenericTelematicToursClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -481,7 +481,7 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -498,10 +498,10 @@ public interface IGenericTelematicToursClient
             }
         }    
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <returns>TelematicTourResponse</returns>
         public TelematicTourResponse TelematicToursTourIdGet(Guid tourId)
         {
@@ -516,10 +516,10 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdGetWithHttpInfo(Guid tourId)
         {
@@ -534,10 +534,10 @@ public interface IGenericTelematicToursClient
         } 
 
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
         public System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdGetAsync(Guid tourId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -553,10 +553,10 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicTourResponse>> TelematicToursTourIdGetWithHttpInfoAsync(Guid tourId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -571,12 +571,12 @@ public interface IGenericTelematicToursClient
             }
         }    
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <returns>TelematicTourResponse</returns>
         public TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?))
         {
@@ -591,12 +591,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?))
         {
@@ -611,12 +611,12 @@ public interface IGenericTelematicToursClient
         } 
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
         public System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -632,12 +632,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicTourResponse>> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -652,12 +652,12 @@ public interface IGenericTelematicToursClient
             }
         }    
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <returns>TelematicTourResponse</returns>
         public TelematicTourResponse TelematicToursTourIdPlacesPlaceIdCompleteStepPost(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?))
         {
@@ -672,12 +672,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfo(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?))
         {
@@ -692,12 +692,12 @@ public interface IGenericTelematicToursClient
         } 
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
         public System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -713,12 +713,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TelematicTourResponse>> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -733,13 +733,13 @@ public interface IGenericTelematicToursClient
             }
         }    
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <returns>UploadBlobResponse</returns>
         public UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?))
         {
@@ -754,13 +754,13 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <returns>ApiResponse of UploadBlobResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?))
         {
@@ -775,13 +775,13 @@ public interface IGenericTelematicToursClient
         } 
 
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadBlobResponse</returns>
         public System.Threading.Tasks.Task<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -797,13 +797,13 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
         public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<UploadBlobResponse>> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfoAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -831,29 +831,29 @@ public interface IGenericTelematicToursClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>byte[]</returns>
         byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of byte[]</returns>
         ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -861,7 +861,7 @@ public interface IGenericTelematicToursClient
         List<TelematicTourResponse> TelematicToursGet(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state.
         /// </summary>
         /// <remarks>
         /// 
@@ -871,96 +871,96 @@ public interface IGenericTelematicToursClient
         /// <returns>ApiResponse of List&lt;TelematicTourResponse&gt;</returns>
         ApiResponse<List<TelematicTourResponse>> TelematicToursGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Gets the current state of a specific tour for the authenticated vehicle.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicTourResponse</returns>
         TelematicTourResponse TelematicToursTourIdGet(Guid tourId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Gets the current state of a specific tour for the authenticated vehicle.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         ApiResponse<TelematicTourResponse> TelematicToursTourIdGetWithHttpInfo(Guid tourId, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicTourResponse</returns>
         TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicTourResponse</returns>
         TelematicTourResponse TelematicToursTourIdPlacesPlaceIdCompleteStepPost(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         ApiResponse<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfo(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadBlobResponse</returns>
         UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadBlobResponse</returns>
         ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0);
@@ -974,34 +974,34 @@ public interface IGenericTelematicToursClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of byte[]</returns>
         System.Threading.Tasks.Task<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetAsync(Guid tourId, Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (byte[])</returns>
         System.Threading.Tasks.Task<ApiResponse<byte[]>> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfoAsync(Guid tourId, Guid blobId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state.
         /// </summary>
         /// <remarks>
         /// 
@@ -1013,7 +1013,7 @@ public interface IGenericTelematicToursClient
         System.Threading.Tasks.Task<List<TelematicTourResponse>> TelematicToursGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state.
         /// </summary>
         /// <remarks>
         /// 
@@ -1024,115 +1024,115 @@ public interface IGenericTelematicToursClient
         /// <returns>Task of ApiResponse (List&lt;TelematicTourResponse&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TelematicTourResponse>>> TelematicToursGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Gets the current state of a specific tour for the authenticated vehicle.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
         System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdGetAsync(Guid tourId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Gets the current state of a specific tour for the authenticated vehicle.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdGetWithHttpInfoAsync(Guid tourId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
         System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
         System.Threading.Tasks.Task<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TelematicTourResponse>> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfoAsync(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadBlobResponse</returns>
         System.Threading.Tasks.Task<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostAsync(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
@@ -1260,11 +1260,11 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>byte[]</returns>
         public byte[] TelematicToursDownloadBlobTourIdBlobIdGet(Guid tourId, Guid blobId, int operationIndex = 0)
@@ -1274,11 +1274,11 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of byte[]</returns>
         public Simplic.OxS.SDK.ApiResponse<byte[]> TelematicToursDownloadBlobTourIdBlobIdGetWithHttpInfo(Guid tourId, Guid blobId, int operationIndex = 0)
@@ -1340,11 +1340,11 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of byte[]</returns>
@@ -1355,11 +1355,11 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Download blob file associated with a tour. The blob must have been previously uploaded to the internal CDN and its id stored in a workflow data field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="blobId"></param>
+        /// <param name="tourId">Tour id</param>
+        /// <param name="blobId">Blob id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (byte[])</returns>
@@ -1424,7 +1424,7 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1436,7 +1436,7 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1498,7 +1498,7 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1511,7 +1511,7 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets all tours for the TractorUnit specified in the x-bearer token. Returns tours with complete workflow steps and execution state. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1576,10 +1576,10 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicTourResponse</returns>
         public TelematicTourResponse TelematicToursTourIdGet(Guid tourId, int operationIndex = 0)
@@ -1589,10 +1589,10 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdGetWithHttpInfo(Guid tourId, int operationIndex = 0)
@@ -1653,10 +1653,10 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
@@ -1667,10 +1667,10 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Gets the current state of a specific tour for the authenticated vehicle. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
+        /// <param name="tourId">The internal tour identifier.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
@@ -1734,12 +1734,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicTourResponse</returns>
         public TelematicTourResponse TelematicToursTourIdOrdersOrderIdCompleteStepPost(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0)
@@ -1749,12 +1749,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdOrdersOrderIdCompleteStepPostWithHttpInfo(Guid tourId, Guid orderId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0)
@@ -1820,12 +1820,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
@@ -1836,12 +1836,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific order in a tour. Resolves the place that contains the given order and delegates to the place-level logic. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="orderId">The internal order identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
@@ -1910,12 +1910,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TelematicTourResponse</returns>
         public TelematicTourResponse TelematicToursTourIdPlacesPlaceIdCompleteStepPost(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0)
@@ -1925,12 +1925,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TelematicTourResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<TelematicTourResponse> TelematicToursTourIdPlacesPlaceIdCompleteStepPostWithHttpInfo(Guid tourId, Guid placeId, CompleteWorkflowStepRequest? completeWorkflowStepRequest = default(CompleteWorkflowStepRequest?), int operationIndex = 0)
@@ -1996,12 +1996,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TelematicTourResponse</returns>
@@ -2012,12 +2012,12 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Completes a workflow step for a specific place in a tour. Allows passing collected data field values and marks the step as completed. Events are fired based on the step&#39;s role: - \&quot;order_started\&quot;: OrderStarted; on first in tour also TourStarted + PlaceStarted. - \&quot;order_completed\&quot;: OrderEnded; PlaceReached when all orders in the place are done;   TourEnded when all orders in the tour are done. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="completeWorkflowStepRequest"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="completeWorkflowStepRequest">The complete workflow step request containing step id and data field values. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TelematicTourResponse)</returns>
@@ -2086,13 +2086,13 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UploadBlobResponse</returns>
         public UploadBlobResponse TelematicToursUploadBlobTourIdPlaceIdOrderIdPost(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
@@ -2102,13 +2102,13 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UploadBlobResponse</returns>
         public Simplic.OxS.SDK.ApiResponse<UploadBlobResponse> TelematicToursUploadBlobTourIdPlaceIdOrderIdPostWithHttpInfo(Guid tourId, Guid placeId, Guid orderId, System.IO.Stream? file = default(System.IO.Stream?), int operationIndex = 0)
@@ -2176,13 +2176,13 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UploadBlobResponse</returns>
@@ -2193,13 +2193,13 @@ public interface IGenericTelematicToursClient
         }
 
         /// <summary>
-        ///  
+        /// Uploads a blob file and attaches it to a place or order within a tour. If orderId is provided and the order exists, the blob is attached to the order&#39;s ePOD attachments. Otherwise the blob is attached to the place&#39;s attachments. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tourId"></param>
-        /// <param name="placeId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="file"> (optional)</param>
+        /// <param name="tourId">The internal tour identifier.</param>
+        /// <param name="placeId">The internal place identifier.</param>
+        /// <param name="orderId">The optional internal order identifier. When supplied the blob is added to the order.</param>
+        /// <param name="file">The file to upload. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UploadBlobResponse)</returns>
