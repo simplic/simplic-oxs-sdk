@@ -223,6 +223,45 @@ public interface IAgentSessionClient
 
 
     /// <summary>
+    /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="updateSessionTitleRequest"> (optional)</param>
+    /// <returns>AgentSessionResponse</returns>
+    AgentSessionResponse Title(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?));
+
+    /// <summary>
+    /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="updateSessionTitleRequest"> (optional)</param>
+    /// <returns>ApiResponse of AgentSessionResponse</returns>
+    ApiResponse<AgentSessionResponse> TitleWithHttpInfo(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?));
+        
+    /// <summary>
+    /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="updateSessionTitleRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of AgentSessionResponse</returns>
+    Task<AgentSessionResponse> TitleAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="updateSessionTitleRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (AgentSessionResponse)</returns>
+    Task<ApiResponse<AgentSessionResponse>> TitleWithHttpInfoAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Gets the workspace entries accumulated during tool executions in a session. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -705,6 +744,83 @@ public interface IAgentSessionClient
             }
         }    
         /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <returns>AgentSessionResponse</returns>
+        public AgentSessionResponse Title(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?))
+        {
+            try
+            {
+                return _internalClient.Title(sessionId, updateSessionTitleRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <returns>ApiResponse of AgentSessionResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<AgentSessionResponse> TitleWithHttpInfo(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?))
+        {
+            try
+            {
+                return _internalClient.TitleWithHttpInfo(sessionId, updateSessionTitleRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgentSessionResponse</returns>
+        public System.Threading.Tasks.Task<AgentSessionResponse> TitleAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TitleAsync(sessionId, updateSessionTitleRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgentSessionResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentSessionResponse>> TitleWithHttpInfoAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TitleWithHttpInfoAsync(sessionId, updateSessionTitleRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         /// Gets the workspace entries accumulated during tool executions in a session. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -895,6 +1011,28 @@ public interface IAgentSessionClient
         /// <returns>ApiResponse of List&lt;AgentMessageResponse&gt;</returns>
         ApiResponse<List<AgentMessageResponse>> MessagesWithHttpInfo(Guid sessionId, int operationIndex = 0);
         /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgentSessionResponse</returns>
+        AgentSessionResponse Title(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgentSessionResponse</returns>
+        ApiResponse<AgentSessionResponse> TitleWithHttpInfo(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0);
+        /// <summary>
         /// Gets the workspace entries accumulated during tool executions in a session.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1052,6 +1190,33 @@ public interface IAgentSessionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AgentMessageResponse&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<AgentMessageResponse>>> MessagesWithHttpInfoAsync(Guid sessionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgentSessionResponse</returns>
+        System.Threading.Tasks.Task<AgentSessionResponse> TitleAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgentSessionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AgentSessionResponse>> TitleWithHttpInfoAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Gets the workspace entries accumulated during tool executions in a session.
         /// </summary>
@@ -2000,6 +2165,176 @@ public interface IAgentSessionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AgentSessionSessionIdMessagesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgentSessionResponse</returns>
+        public AgentSessionResponse Title(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<AgentSessionResponse> localVarResponse = TitleWithHttpInfo(sessionId, updateSessionTitleRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgentSessionResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<AgentSessionResponse> TitleWithHttpInfo(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+            localVarRequestOptions.Data = updateSessionTitleRequest;
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdTitlePut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<AgentSessionResponse>("/AgentSession/{sessionId}/title", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdTitlePut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgentSessionResponse</returns>
+        public async System.Threading.Tasks.Task<AgentSessionResponse> TitleAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<AgentSessionResponse> localVarResponse = await TitleWithHttpInfoAsync(sessionId, updateSessionTitleRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="updateSessionTitleRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgentSessionResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentSessionResponse>> TitleWithHttpInfoAsync(Guid sessionId, UpdateSessionTitleRequest? updateSessionTitleRequest = default(UpdateSessionTitleRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+            localVarRequestOptions.Data = updateSessionTitleRequest;
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdTitlePut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<AgentSessionResponse>("/AgentSession/{sessionId}/title", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdTitlePut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
