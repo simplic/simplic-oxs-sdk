@@ -45,8 +45,8 @@ public interface IEmbeddingClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>EmbeddedDocument</returns>
-    EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
+    /// <returns>EmbeddedDocumentResponse</returns>
+    EmbeddedDocumentResponse Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
 
     /// <summary>
     /// Updates an embedded document by replacing it. 
@@ -54,8 +54,8 @@ public interface IEmbeddingClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
     /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>ApiResponse of EmbeddedDocument</returns>
-    ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
+    /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+    ApiResponse<EmbeddedDocumentResponse> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
         
     /// <summary>
     /// Updates an embedded document by replacing it. 
@@ -64,8 +64,8 @@ public interface IEmbeddingClient
     /// <param name="id"></param>
     /// <param name="embeddedDocumentModel"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of EmbeddedDocument</returns>
-    Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of EmbeddedDocumentResponse</returns>
+    Task<EmbeddedDocumentResponse> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Updates an embedded document by replacing it. 
@@ -74,8 +74,8 @@ public interface IEmbeddingClient
     /// <param name="id"></param>
     /// <param name="embeddedDocumentModel"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-    Task<ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+    Task<ApiResponse<EmbeddedDocumentResponse>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -83,16 +83,16 @@ public interface IEmbeddingClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>EmbeddedDocument</returns>
-    EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
+    /// <returns>EmbeddedDocumentResponse</returns>
+    EmbeddedDocumentResponse Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
 
     /// <summary>
     /// Creates a new embedded document. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
-    /// <returns>ApiResponse of EmbeddedDocument</returns>
-    ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
+    /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+    ApiResponse<EmbeddedDocumentResponse> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?));
         
     /// <summary>
     /// Creates a new embedded document. 
@@ -100,8 +100,8 @@ public interface IEmbeddingClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of EmbeddedDocument</returns>
-    Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of EmbeddedDocumentResponse</returns>
+    Task<EmbeddedDocumentResponse> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Creates a new embedded document. 
@@ -109,8 +109,8 @@ public interface IEmbeddingClient
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="embeddedDocumentModel"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-    Task<ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+    Task<ApiResponse<EmbeddedDocumentResponse>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -190,8 +190,8 @@ public interface IEmbeddingClient
     /// <param name="query"> (optional)</param>
     /// <param name="dataType"> (optional)</param>
     /// <param name="size"> (optional, default to 1)</param>
-    /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-    List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
+    /// <returns>List&lt;EmbeddedDocumentResponse&gt;</returns>
+    List<EmbeddedDocumentResponse> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
 
     /// <summary>
     /// Searches embedded documents by query. 
@@ -200,8 +200,8 @@ public interface IEmbeddingClient
     /// <param name="query"> (optional)</param>
     /// <param name="dataType"> (optional)</param>
     /// <param name="size"> (optional, default to 1)</param>
-    /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-    ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
+    /// <returns>ApiResponse of List&lt;EmbeddedDocumentResponse&gt;</returns>
+    ApiResponse<List<EmbeddedDocumentResponse>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?));
         
     /// <summary>
     /// Searches embedded documents by query. 
@@ -211,8 +211,8 @@ public interface IEmbeddingClient
     /// <param name="dataType"> (optional)</param>
     /// <param name="size"> (optional, default to 1)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-    Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;EmbeddedDocumentResponse&gt;</returns>
+    Task<List<EmbeddedDocumentResponse>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Searches embedded documents by query. 
@@ -222,8 +222,8 @@ public interface IEmbeddingClient
     /// <param name="dataType"> (optional)</param>
     /// <param name="size"> (optional, default to 1)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-    Task<ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (List&lt;EmbeddedDocumentResponse&gt;)</returns>
+    Task<ApiResponse<List<EmbeddedDocumentResponse>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -306,8 +306,8 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
+        /// <returns>EmbeddedDocumentResponse</returns>
+        public EmbeddedDocumentResponse Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
         {
             try
             {
@@ -325,8 +325,8 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
+        /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
         {
             try
             {
@@ -345,8 +345,8 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public System.Threading.Tasks.Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of EmbeddedDocumentResponse</returns>
+        public System.Threading.Tasks.Task<EmbeddedDocumentResponse> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -365,8 +365,8 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -382,8 +382,8 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
+        /// <returns>EmbeddedDocumentResponse</returns>
+        public EmbeddedDocumentResponse Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
         {
             try
             {
@@ -400,8 +400,8 @@ public interface IEmbeddingClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
+        /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?))
         {
             try
             {
@@ -419,8 +419,8 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public System.Threading.Tasks.Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of EmbeddedDocumentResponse</returns>
+        public System.Threading.Tasks.Task<EmbeddedDocumentResponse> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -438,8 +438,8 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -603,8 +603,8 @@ public interface IEmbeddingClient
         /// <param name="query"> (optional)</param>
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
-        /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-        public List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?))
+        /// <returns>List&lt;EmbeddedDocumentResponse&gt;</returns>
+        public List<EmbeddedDocumentResponse> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?))
         {
             try
             {
@@ -623,8 +623,8 @@ public interface IEmbeddingClient
         /// <param name="query"> (optional)</param>
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
-        /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?))
+        /// <returns>ApiResponse of List&lt;EmbeddedDocumentResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocumentResponse>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?))
         {
             try
             {
@@ -644,8 +644,8 @@ public interface IEmbeddingClient
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-        public System.Threading.Tasks.Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;EmbeddedDocumentResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<EmbeddedDocumentResponse>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -665,8 +665,8 @@ public interface IEmbeddingClient
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocumentResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocumentResponse>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -697,8 +697,8 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
+        /// <returns>EmbeddedDocumentResponse</returns>
+        EmbeddedDocumentResponse Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
 
         /// <summary>
         /// Updates an embedded document by replacing it.
@@ -710,16 +710,16 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
+        /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+        ApiResponse<EmbeddedDocumentResponse> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
         /// <summary>
         /// Creates a new embedded document.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
+        /// <returns>EmbeddedDocumentResponse</returns>
+        EmbeddedDocumentResponse Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
 
         /// <summary>
         /// Creates a new embedded document.
@@ -730,8 +730,8 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
+        /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+        ApiResponse<EmbeddedDocumentResponse> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0);
         /// <summary>
         /// Removes an embedded document by ID.
         /// </summary>
@@ -780,8 +780,8 @@ public interface IEmbeddingClient
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-        List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0);
+        /// <returns>List&lt;EmbeddedDocumentResponse&gt;</returns>
+        List<EmbeddedDocumentResponse> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// Searches embedded documents by query.
@@ -794,8 +794,8 @@ public interface IEmbeddingClient
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-        ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;EmbeddedDocumentResponse&gt;</returns>
+        ApiResponse<List<EmbeddedDocumentResponse>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -816,8 +816,8 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        System.Threading.Tasks.Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of EmbeddedDocumentResponse</returns>
+        System.Threading.Tasks.Task<EmbeddedDocumentResponse> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Updates an embedded document by replacing it.
@@ -830,8 +830,8 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EmbeddedDocumentResponse>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new embedded document.
         /// </summary>
@@ -842,8 +842,8 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        System.Threading.Tasks.Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of EmbeddedDocumentResponse</returns>
+        System.Threading.Tasks.Task<EmbeddedDocumentResponse> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new embedded document.
@@ -855,8 +855,8 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EmbeddedDocumentResponse>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Removes an embedded document by ID.
         /// </summary>
@@ -919,8 +919,8 @@ public interface IEmbeddingClient
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-        System.Threading.Tasks.Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;EmbeddedDocumentResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<EmbeddedDocumentResponse>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Searches embedded documents by query.
@@ -934,8 +934,8 @@ public interface IEmbeddingClient
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocumentResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<EmbeddedDocumentResponse>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1065,10 +1065,10 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns>EmbeddedDocumentResponse</returns>
+        public EmbeddedDocumentResponse Put(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = PutWithHttpInfo(id, embeddedDocumentModel);
+            Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> localVarResponse = PutWithHttpInfo(id, embeddedDocumentModel);
             return localVarResponse.Data;
         }
 
@@ -1079,8 +1079,8 @@ public interface IEmbeddingClient
         /// <param name="id"></param>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> PutWithHttpInfo(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1128,7 +1128,7 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<EmbeddedDocument>("/Embedding/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<EmbeddedDocumentResponse>("/Embedding/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EmbeddingIdPut", localVarResponse);
@@ -1149,10 +1149,10 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public async System.Threading.Tasks.Task<EmbeddedDocument> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of EmbeddedDocumentResponse</returns>
+        public async System.Threading.Tasks.Task<EmbeddedDocumentResponse> PutAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = await PutWithHttpInfoAsync(id, embeddedDocumentModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> localVarResponse = await PutWithHttpInfoAsync(id, embeddedDocumentModel, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1164,8 +1164,8 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse>> PutWithHttpInfoAsync(Guid id, EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1214,7 +1214,7 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<EmbeddedDocument>("/Embedding/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<EmbeddedDocumentResponse>("/Embedding/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1234,10 +1234,10 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>EmbeddedDocument</returns>
-        public EmbeddedDocument Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns>EmbeddedDocumentResponse</returns>
+        public EmbeddedDocumentResponse Post(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = PostWithHttpInfo(embeddedDocumentModel);
+            Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> localVarResponse = PostWithHttpInfo(embeddedDocumentModel);
             return localVarResponse.Data;
         }
 
@@ -1247,8 +1247,8 @@ public interface IEmbeddingClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of EmbeddedDocument</returns>
-        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
+        /// <returns>ApiResponse of EmbeddedDocumentResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> PostWithHttpInfo(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1295,7 +1295,7 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<EmbeddedDocument>("/Embedding", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<EmbeddedDocumentResponse>("/Embedding", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EmbeddingPost", localVarResponse);
@@ -1315,10 +1315,10 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of EmbeddedDocument</returns>
-        public async System.Threading.Tasks.Task<EmbeddedDocument> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of EmbeddedDocumentResponse</returns>
+        public async System.Threading.Tasks.Task<EmbeddedDocumentResponse> PostAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<EmbeddedDocument> localVarResponse = await PostWithHttpInfoAsync(embeddedDocumentModel, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse> localVarResponse = await PostWithHttpInfoAsync(embeddedDocumentModel, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1329,8 +1329,8 @@ public interface IEmbeddingClient
         /// <param name="embeddedDocumentModel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (EmbeddedDocument)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocument>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EmbeddedDocumentResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<EmbeddedDocumentResponse>> PostWithHttpInfoAsync(EmbeddedDocumentModel? embeddedDocumentModel = default(EmbeddedDocumentModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1378,7 +1378,7 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<EmbeddedDocument>("/Embedding", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<EmbeddedDocumentResponse>("/Embedding", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1724,10 +1724,10 @@ public interface IEmbeddingClient
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;EmbeddedDocument&gt;</returns>
-        public List<EmbeddedDocument> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0)
+        /// <returns>List&lt;EmbeddedDocumentResponse&gt;</returns>
+        public List<EmbeddedDocumentResponse> Search(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> localVarResponse = SearchWithHttpInfo(query, dataType, size);
+            Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocumentResponse>> localVarResponse = SearchWithHttpInfo(query, dataType, size);
             return localVarResponse.Data;
         }
 
@@ -1739,8 +1739,8 @@ public interface IEmbeddingClient
         /// <param name="dataType"> (optional)</param>
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;EmbeddedDocument&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;EmbeddedDocumentResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocumentResponse>> SearchWithHttpInfo(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1795,7 +1795,7 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<EmbeddedDocument>>("/Embedding/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<EmbeddedDocumentResponse>>("/Embedding/search", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EmbeddingSearchGet", localVarResponse);
@@ -1817,10 +1817,10 @@ public interface IEmbeddingClient
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;EmbeddedDocument&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EmbeddedDocument>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;EmbeddedDocumentResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<EmbeddedDocumentResponse>> SearchAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>> localVarResponse = await SearchWithHttpInfoAsync(query, dataType, size, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocumentResponse>> localVarResponse = await SearchWithHttpInfoAsync(query, dataType, size, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1833,8 +1833,8 @@ public interface IEmbeddingClient
         /// <param name="size"> (optional, default to 1)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocument&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocument>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;EmbeddedDocumentResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<EmbeddedDocumentResponse>>> SearchWithHttpInfoAsync(string? query = default(string?), string? dataType = default(string?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1890,7 +1890,7 @@ public interface IEmbeddingClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmbeddedDocument>>("/Embedding/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmbeddedDocumentResponse>>("/Embedding/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

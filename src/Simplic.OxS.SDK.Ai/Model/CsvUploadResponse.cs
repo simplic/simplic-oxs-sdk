@@ -36,12 +36,22 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="CsvUploadResponse" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected CsvUploadResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CsvUploadResponse" /> class.
+        /// </summary>
         /// <param name="invalidItems">Gets or sets items that could not be imported (duplicate key or validation failure)..</param>
-        /// <param name="dataSet">dataSet.</param>
+        /// <param name="dataSet">dataSet (required).</param>
         public CsvUploadResponse(List<DataSetItemModel> invalidItems = default(List<DataSetItemModel>), DataSetModel dataSet = default(DataSetModel))
         {
-            this.InvalidItems = invalidItems;
+            // to ensure "dataSet" is required (not null)
+            if (dataSet == null)
+            {
+                throw new ArgumentNullException("dataSet is a required property for CsvUploadResponse and cannot be null");
+            }
             this.DataSet = dataSet;
+            this.InvalidItems = invalidItems;
         }
 
         /// <summary>
@@ -54,7 +64,7 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Gets or Sets DataSet
         /// </summary>
-        [DataMember(Name = "dataSet", EmitDefaultValue = false)]
+        [DataMember(Name = "dataSet", IsRequired = true, EmitDefaultValue = true)]
         public DataSetModel DataSet { get; set; }
 
         /// <summary>

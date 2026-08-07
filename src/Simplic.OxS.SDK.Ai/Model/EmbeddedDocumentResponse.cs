@@ -28,57 +28,68 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// EmbeddedDocument
+    /// Response model for an embedded document. Excludes the embedding vector — callers only need the id/content/metadata, and the vector adds no value while inflating the payload.
     /// </summary>
-    [DataContract(Name = "EmbeddedDocument")]
-    public partial class EmbeddedDocument : IEquatable<EmbeddedDocument>, IValidatableObject
+    [DataContract(Name = "EmbeddedDocumentResponse")]
+    public partial class EmbeddedDocumentResponse : IEquatable<EmbeddedDocumentResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmbeddedDocument" /> class.
+        /// Initializes a new instance of the <see cref="EmbeddedDocumentResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="content">content.</param>
-        /// <param name="createDateTime">createDateTime.</param>
-        /// <param name="dataType">dataType.</param>
-        /// <param name="vector">vector.</param>
-        public EmbeddedDocument(Guid id = default(Guid), string content = default(string), DateTime createDateTime = default(DateTime), string dataType = default(string), List<float> vector = default(List<float>))
+        [JsonConstructorAttribute]
+        protected EmbeddedDocumentResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddedDocumentResponse" /> class.
+        /// </summary>
+        /// <param name="id">Gets or sets the connected data id..</param>
+        /// <param name="content">Gets or sets the search result content. (required).</param>
+        /// <param name="createDateTime">Gets or sets the create date time..</param>
+        /// <param name="dataType">Gets or sets the data type. (required).</param>
+        public EmbeddedDocumentResponse(Guid id = default(Guid), string content = default(string), DateTime createDateTime = default(DateTime), string dataType = default(string))
         {
-            this.Id = id;
+            // to ensure "content" is required (not null)
+            if (content == null)
+            {
+                throw new ArgumentNullException("content is a required property for EmbeddedDocumentResponse and cannot be null");
+            }
             this.Content = content;
-            this.CreateDateTime = createDateTime;
+            // to ensure "dataType" is required (not null)
+            if (dataType == null)
+            {
+                throw new ArgumentNullException("dataType is a required property for EmbeddedDocumentResponse and cannot be null");
+            }
             this.DataType = dataType;
-            this.Vector = vector;
+            this.Id = id;
+            this.CreateDateTime = createDateTime;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or sets the connected data id.
         /// </summary>
+        /// <value>Gets or sets the connected data id.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Content
+        /// Gets or sets the search result content.
         /// </summary>
-        [DataMember(Name = "content", EmitDefaultValue = true)]
+        /// <value>Gets or sets the search result content.</value>
+        [DataMember(Name = "content", IsRequired = true, EmitDefaultValue = true)]
         public string Content { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreateDateTime
+        /// Gets or sets the create date time.
         /// </summary>
+        /// <value>Gets or sets the create date time.</value>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataType
+        /// Gets or sets the data type.
         /// </summary>
-        [DataMember(Name = "dataType", EmitDefaultValue = true)]
+        /// <value>Gets or sets the data type.</value>
+        [DataMember(Name = "dataType", IsRequired = true, EmitDefaultValue = true)]
         public string DataType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Vector
-        /// </summary>
-        [DataMember(Name = "vector", EmitDefaultValue = true)]
-        public List<float> Vector { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,12 +98,11 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class EmbeddedDocument {\n");
+            sb.Append("class EmbeddedDocumentResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  DataType: ").Append(DataType).Append("\n");
-            sb.Append("  Vector: ").Append(Vector).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,15 +123,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EmbeddedDocument);
+            return this.Equals(input as EmbeddedDocumentResponse);
         }
 
         /// <summary>
-        /// Returns true if EmbeddedDocument instances are equal
+        /// Returns true if EmbeddedDocumentResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of EmbeddedDocument to be compared</param>
+        /// <param name="input">Instance of EmbeddedDocumentResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EmbeddedDocument input)
+        public bool Equals(EmbeddedDocumentResponse input)
         {
             if (input == null)
             {
@@ -147,12 +157,6 @@ namespace Simplic.OxS.SDK.Ai
                     this.DataType == input.DataType ||
                     (this.DataType != null &&
                     this.DataType.Equals(input.DataType))
-                ) && 
-                (
-                    this.Vector == input.Vector ||
-                    this.Vector != null &&
-                    input.Vector != null &&
-                    this.Vector.SequenceEqual(input.Vector)
                 );
         }
 
@@ -180,10 +184,6 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.DataType != null)
                 {
                     hashCode = (hashCode * 59) + this.DataType.GetHashCode();
-                }
-                if (this.Vector != null)
-                {
-                    hashCode = (hashCode * 59) + this.Vector.GetHashCode();
                 }
                 return hashCode;
             }

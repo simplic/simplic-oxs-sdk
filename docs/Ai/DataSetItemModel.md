@@ -5,8 +5,8 @@ Response model representing a single item in a data set.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | **string** | Gets or sets the item key. | [optional] 
-**Label** | **string** | Gets or sets the item label. | [optional] 
+**Key** | **string** | Gets or sets the item key. | 
+**Label** | **string** | Gets or sets the item label. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

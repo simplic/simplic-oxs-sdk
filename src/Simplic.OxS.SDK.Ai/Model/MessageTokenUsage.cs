@@ -28,46 +28,48 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// Represents a text classification result.
+    /// MessageTokenUsage
     /// </summary>
-    [DataContract(Name = "TextClassificationResultResponse")]
-    public partial class TextClassificationResultResponse : IEquatable<TextClassificationResultResponse>, IValidatableObject
+    [DataContract(Name = "MessageTokenUsage")]
+    public partial class MessageTokenUsage : IEquatable<MessageTokenUsage>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TextClassificationResultResponse" /> class.
+        /// Initializes a new instance of the <see cref="MessageTokenUsage" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TextClassificationResultResponse() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextClassificationResultResponse" /> class.
-        /// </summary>
-        /// <param name="label">Gets or sets the matched label. (required).</param>
-        /// <param name="confidence">Gets or sets the confidence, how good the label matches the text..</param>
-        public TextClassificationResultResponse(string label = default(string), double confidence = default(double))
+        /// <param name="inputTokens">inputTokens.</param>
+        /// <param name="outputTokens">outputTokens.</param>
+        public MessageTokenUsage(int inputTokens = default(int), int outputTokens = default(int))
         {
-            // to ensure "label" is required (not null)
-            if (label == null)
-            {
-                throw new ArgumentNullException("label is a required property for TextClassificationResultResponse and cannot be null");
-            }
-            this.Label = label;
-            this.Confidence = confidence;
+            this.InputTokens = inputTokens;
+            this.OutputTokens = outputTokens;
         }
 
         /// <summary>
-        /// Gets or sets the matched label.
+        /// Gets or Sets InputTokens
         /// </summary>
-        /// <value>Gets or sets the matched label.</value>
-        [DataMember(Name = "label", IsRequired = true, EmitDefaultValue = true)]
-        public string Label { get; set; }
+        [DataMember(Name = "inputTokens", EmitDefaultValue = false)]
+        public int InputTokens { get; set; }
 
         /// <summary>
-        /// Gets or sets the confidence, how good the label matches the text.
+        /// Gets or Sets OutputTokens
         /// </summary>
-        /// <value>Gets or sets the confidence, how good the label matches the text.</value>
-        [DataMember(Name = "confidence", EmitDefaultValue = false)]
-        public double Confidence { get; set; }
+        [DataMember(Name = "outputTokens", EmitDefaultValue = false)]
+        public int OutputTokens { get; set; }
 
+        /// <summary>
+        /// Gets or Sets TotalTokens
+        /// </summary>
+        [DataMember(Name = "totalTokens", EmitDefaultValue = false)]
+        public int TotalTokens { get; private set; }
+
+        /// <summary>
+        /// Returns false as TotalTokens should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeTotalTokens()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -75,9 +77,10 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TextClassificationResultResponse {\n");
-            sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("  Confidence: ").Append(Confidence).Append("\n");
+            sb.Append("class MessageTokenUsage {\n");
+            sb.Append("  InputTokens: ").Append(InputTokens).Append("\n");
+            sb.Append("  OutputTokens: ").Append(OutputTokens).Append("\n");
+            sb.Append("  TotalTokens: ").Append(TotalTokens).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +101,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TextClassificationResultResponse);
+            return this.Equals(input as MessageTokenUsage);
         }
 
         /// <summary>
-        /// Returns true if TextClassificationResultResponse instances are equal
+        /// Returns true if MessageTokenUsage instances are equal
         /// </summary>
-        /// <param name="input">Instance of TextClassificationResultResponse to be compared</param>
+        /// <param name="input">Instance of MessageTokenUsage to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TextClassificationResultResponse input)
+        public bool Equals(MessageTokenUsage input)
         {
             if (input == null)
             {
@@ -114,13 +117,16 @@ namespace Simplic.OxS.SDK.Ai
             }
             return 
                 (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
+                    this.InputTokens == input.InputTokens ||
+                    this.InputTokens.Equals(input.InputTokens)
                 ) && 
                 (
-                    this.Confidence == input.Confidence ||
-                    this.Confidence.Equals(input.Confidence)
+                    this.OutputTokens == input.OutputTokens ||
+                    this.OutputTokens.Equals(input.OutputTokens)
+                ) && 
+                (
+                    this.TotalTokens == input.TotalTokens ||
+                    this.TotalTokens.Equals(input.TotalTokens)
                 );
         }
 
@@ -133,11 +139,9 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Label != null)
-                {
-                    hashCode = (hashCode * 59) + this.Label.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Confidence.GetHashCode();
+                hashCode = (hashCode * 59) + this.InputTokens.GetHashCode();
+                hashCode = (hashCode * 59) + this.OutputTokens.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalTokens.GetHashCode();
                 return hashCode;
             }
         }

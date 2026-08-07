@@ -38,10 +38,12 @@ namespace Simplic.OxS.SDK.Telematic
         /// </summary>
         /// <param name="providerName">The provider name. E.g: &#39;yellowfox&#39;..</param>
         /// <param name="cron">The cron string for how often the driver activity read will be executed..</param>
-        public CreateDriverActivitiesReadJobRequest(string providerName = default(string), string cron = default(string))
+        /// <param name="fromUtc">Optional UTC start timestamp for the initial read window..</param>
+        public CreateDriverActivitiesReadJobRequest(string providerName = default(string), string cron = default(string), DateTime? fromUtc = default(DateTime?))
         {
             this.ProviderName = providerName;
             this.Cron = cron;
+            this.FromUtc = fromUtc;
         }
 
         /// <summary>
@@ -59,6 +61,13 @@ namespace Simplic.OxS.SDK.Telematic
         public string Cron { get; set; }
 
         /// <summary>
+        /// Optional UTC start timestamp for the initial read window.
+        /// </summary>
+        /// <value>Optional UTC start timestamp for the initial read window.</value>
+        [DataMember(Name = "fromUtc", EmitDefaultValue = true)]
+        public DateTime? FromUtc { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -68,6 +77,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("class CreateDriverActivitiesReadJobRequest {\n");
             sb.Append("  ProviderName: ").Append(ProviderName).Append("\n");
             sb.Append("  Cron: ").Append(Cron).Append("\n");
+            sb.Append("  FromUtc: ").Append(FromUtc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,6 +122,11 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Cron == input.Cron ||
                     (this.Cron != null &&
                     this.Cron.Equals(input.Cron))
+                ) && 
+                (
+                    this.FromUtc == input.FromUtc ||
+                    (this.FromUtc != null &&
+                    this.FromUtc.Equals(input.FromUtc))
                 );
         }
 
@@ -131,6 +146,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Cron != null)
                 {
                     hashCode = (hashCode * 59) + this.Cron.GetHashCode();
+                }
+                if (this.FromUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.FromUtc.GetHashCode();
                 }
                 return hashCode;
             }

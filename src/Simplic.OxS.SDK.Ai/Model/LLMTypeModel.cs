@@ -36,9 +36,19 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="LLMTypeModel" /> class.
         /// </summary>
-        /// <param name="name">Gets or sets the LLM provider type name..</param>
+        [JsonConstructorAttribute]
+        protected LLMTypeModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LLMTypeModel" /> class.
+        /// </summary>
+        /// <param name="name">Gets or sets the LLM provider type name. (required).</param>
         public LLMTypeModel(string name = default(string))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for LLMTypeModel and cannot be null");
+            }
             this.Name = name;
         }
 
@@ -46,7 +56,7 @@ namespace Simplic.OxS.SDK.Ai
         /// Gets or sets the LLM provider type name.
         /// </summary>
         /// <value>Gets or sets the LLM provider type name.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

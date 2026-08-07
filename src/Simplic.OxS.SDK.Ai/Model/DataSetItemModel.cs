@@ -36,11 +36,26 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSetItemModel" /> class.
         /// </summary>
-        /// <param name="key">Gets or sets the item key..</param>
-        /// <param name="label">Gets or sets the item label..</param>
+        [JsonConstructorAttribute]
+        protected DataSetItemModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataSetItemModel" /> class.
+        /// </summary>
+        /// <param name="key">Gets or sets the item key. (required).</param>
+        /// <param name="label">Gets or sets the item label. (required).</param>
         public DataSetItemModel(string key = default(string), string label = default(string))
         {
+            // to ensure "key" is required (not null)
+            if (key == null)
+            {
+                throw new ArgumentNullException("key is a required property for DataSetItemModel and cannot be null");
+            }
             this.Key = key;
+            // to ensure "label" is required (not null)
+            if (label == null)
+            {
+                throw new ArgumentNullException("label is a required property for DataSetItemModel and cannot be null");
+            }
             this.Label = label;
         }
 
@@ -48,14 +63,14 @@ namespace Simplic.OxS.SDK.Ai
         /// Gets or sets the item key.
         /// </summary>
         /// <value>Gets or sets the item key.</value>
-        [DataMember(Name = "key", EmitDefaultValue = true)]
+        [DataMember(Name = "key", IsRequired = true, EmitDefaultValue = true)]
         public string Key { get; set; }
 
         /// <summary>
         /// Gets or sets the item label.
         /// </summary>
         /// <value>Gets or sets the item label.</value>
-        [DataMember(Name = "label", EmitDefaultValue = true)]
+        [DataMember(Name = "label", IsRequired = true, EmitDefaultValue = true)]
         public string Label { get; set; }
 
         /// <summary>

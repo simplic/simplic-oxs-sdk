@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ToolResults** | [**List&lt;ToolExecutionResult&gt;**](ToolExecutionResult.md) |  | [optional] 
 **CorrelationId** | **Guid?** |  | [optional] 
 **Error** | [**AgentError**](AgentError.md) |  | [optional] 
+**TokenUsage** | [**MessageTokenUsage**](MessageTokenUsage.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,7 +5,7 @@ Model representing a hash algorithm.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Gets or sets the algorithm name. | [optional] 
+**Name** | **string** | Gets or sets the algorithm name. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

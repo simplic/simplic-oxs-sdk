@@ -45,7 +45,10 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="isActive">Gets or sets whether the session is active..</param>
         /// <param name="messageCount">Gets or sets the message count..</param>
         /// <param name="pendingApprovalCount">Gets or sets pending approval count..</param>
-        public AgentSessionResponse(Guid id = default(Guid), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), DateTime createdAt = default(DateTime), DateTime lastActivityAt = default(DateTime), string title = default(string), bool isActive = default(bool), int messageCount = default(int), int pendingApprovalCount = default(int))
+        /// <param name="totalTokens">Gets or sets the cumulative token usage (input + output) across all assistant turns in this session, for providers that report usage..</param>
+        /// <param name="totalInputTokens">Gets or sets the cumulative input/prompt token usage across all assistant turns in this session, for providers that report usage..</param>
+        /// <param name="totalOutputTokens">Gets or sets the cumulative output/completion token usage across all assistant turns in this session, for providers that report usage..</param>
+        public AgentSessionResponse(Guid id = default(Guid), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), DateTime createdAt = default(DateTime), DateTime lastActivityAt = default(DateTime), string title = default(string), bool isActive = default(bool), int messageCount = default(int), int pendingApprovalCount = default(int), int totalTokens = default(int), int totalInputTokens = default(int), int totalOutputTokens = default(int))
         {
             this.Id = id;
             this.UserId = userId;
@@ -56,6 +59,9 @@ namespace Simplic.OxS.SDK.Ai
             this.IsActive = isActive;
             this.MessageCount = messageCount;
             this.PendingApprovalCount = pendingApprovalCount;
+            this.TotalTokens = totalTokens;
+            this.TotalInputTokens = totalInputTokens;
+            this.TotalOutputTokens = totalOutputTokens;
         }
 
         /// <summary>
@@ -122,6 +128,27 @@ namespace Simplic.OxS.SDK.Ai
         public int PendingApprovalCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the cumulative token usage (input + output) across all assistant turns in this session, for providers that report usage.
+        /// </summary>
+        /// <value>Gets or sets the cumulative token usage (input + output) across all assistant turns in this session, for providers that report usage.</value>
+        [DataMember(Name = "totalTokens", EmitDefaultValue = false)]
+        public int TotalTokens { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cumulative input/prompt token usage across all assistant turns in this session, for providers that report usage.
+        /// </summary>
+        /// <value>Gets or sets the cumulative input/prompt token usage across all assistant turns in this session, for providers that report usage.</value>
+        [DataMember(Name = "totalInputTokens", EmitDefaultValue = false)]
+        public int TotalInputTokens { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cumulative output/completion token usage across all assistant turns in this session, for providers that report usage.
+        /// </summary>
+        /// <value>Gets or sets the cumulative output/completion token usage across all assistant turns in this session, for providers that report usage.</value>
+        [DataMember(Name = "totalOutputTokens", EmitDefaultValue = false)]
+        public int TotalOutputTokens { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +165,9 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  MessageCount: ").Append(MessageCount).Append("\n");
             sb.Append("  PendingApprovalCount: ").Append(PendingApprovalCount).Append("\n");
+            sb.Append("  TotalTokens: ").Append(TotalTokens).Append("\n");
+            sb.Append("  TotalInputTokens: ").Append(TotalInputTokens).Append("\n");
+            sb.Append("  TotalOutputTokens: ").Append(TotalOutputTokens).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -214,6 +244,18 @@ namespace Simplic.OxS.SDK.Ai
                 (
                     this.PendingApprovalCount == input.PendingApprovalCount ||
                     this.PendingApprovalCount.Equals(input.PendingApprovalCount)
+                ) && 
+                (
+                    this.TotalTokens == input.TotalTokens ||
+                    this.TotalTokens.Equals(input.TotalTokens)
+                ) && 
+                (
+                    this.TotalInputTokens == input.TotalInputTokens ||
+                    this.TotalInputTokens.Equals(input.TotalInputTokens)
+                ) && 
+                (
+                    this.TotalOutputTokens == input.TotalOutputTokens ||
+                    this.TotalOutputTokens.Equals(input.TotalOutputTokens)
                 );
         }
 
@@ -253,6 +295,9 @@ namespace Simplic.OxS.SDK.Ai
                 hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
                 hashCode = (hashCode * 59) + this.MessageCount.GetHashCode();
                 hashCode = (hashCode * 59) + this.PendingApprovalCount.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalTokens.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalInputTokens.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalOutputTokens.GetHashCode();
                 return hashCode;
             }
         }

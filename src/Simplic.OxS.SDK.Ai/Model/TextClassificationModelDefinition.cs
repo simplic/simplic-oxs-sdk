@@ -36,9 +36,19 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="TextClassificationModelDefinition" /> class.
         /// </summary>
-        /// <param name="name">Gets or sets the model definition name..</param>
+        [JsonConstructorAttribute]
+        protected TextClassificationModelDefinition() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextClassificationModelDefinition" /> class.
+        /// </summary>
+        /// <param name="name">Gets or sets the model definition name. (required).</param>
         public TextClassificationModelDefinition(string name = default(string))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for TextClassificationModelDefinition and cannot be null");
+            }
             this.Name = name;
         }
 
@@ -46,7 +56,7 @@ namespace Simplic.OxS.SDK.Ai
         /// Gets or sets the model definition name.
         /// </summary>
         /// <value>Gets or sets the model definition name.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

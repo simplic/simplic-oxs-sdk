@@ -12,7 +12,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 
 <a id="embeddingidput"></a>
 # **Put**
-> EmbeddedDocument Put (Guid id, EmbeddedDocumentModel? embeddedDocumentModel = null)
+> EmbeddedDocumentResponse Put (Guid id, EmbeddedDocumentModel? embeddedDocumentModel = null)
 
 Updates an embedded document by replacing it.
 
@@ -45,7 +45,7 @@ namespace Example
             try
             {
                 // Updates an embedded document by replacing it.
-                EmbeddedDocument result = apiInstance.Put(id, embeddedDocumentModel);
+                EmbeddedDocumentResponse result = apiInstance.Put(id, embeddedDocumentModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Updates an embedded document by replacing it.
-    ApiResponse<EmbeddedDocument> response = apiInstance.PutWithHttpInfo(id, embeddedDocumentModel);
+    ApiResponse<EmbeddedDocumentResponse> response = apiInstance.PutWithHttpInfo(id, embeddedDocumentModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,7 +88,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**EmbeddedDocument**](EmbeddedDocument.md)
+[**EmbeddedDocumentResponse**](EmbeddedDocumentResponse.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ catch (ApiException e)
 
 <a id="embeddingpost"></a>
 # **Post**
-> EmbeddedDocument Post (EmbeddedDocumentModel? embeddedDocumentModel = null)
+> EmbeddedDocumentResponse Post (EmbeddedDocumentModel? embeddedDocumentModel = null)
 
 Creates a new embedded document.
 
@@ -143,7 +143,7 @@ namespace Example
             try
             {
                 // Creates a new embedded document.
-                EmbeddedDocument result = apiInstance.Post(embeddedDocumentModel);
+                EmbeddedDocumentResponse result = apiInstance.Post(embeddedDocumentModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -164,7 +164,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Creates a new embedded document.
-    ApiResponse<EmbeddedDocument> response = apiInstance.PostWithHttpInfo(embeddedDocumentModel);
+    ApiResponse<EmbeddedDocumentResponse> response = apiInstance.PostWithHttpInfo(embeddedDocumentModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,7 +185,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**EmbeddedDocument**](EmbeddedDocument.md)
+[**EmbeddedDocumentResponse**](EmbeddedDocumentResponse.md)
 
 ### Authorization
 
@@ -394,7 +394,7 @@ void (empty response body)
 
 <a id="embeddingsearchget"></a>
 # **Search**
-> List&lt;EmbeddedDocument&gt; Search (string? query = null, string? dataType = null, int? size = null)
+> List&lt;EmbeddedDocumentResponse&gt; Search (string? query = null, string? dataType = null, int? size = null)
 
 Searches embedded documents by query.
 
@@ -428,7 +428,7 @@ namespace Example
             try
             {
                 // Searches embedded documents by query.
-                List<EmbeddedDocument> result = apiInstance.Search(query, dataType, size);
+                List<EmbeddedDocumentResponse> result = apiInstance.Search(query, dataType, size);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -449,7 +449,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Searches embedded documents by query.
-    ApiResponse<List<EmbeddedDocument>> response = apiInstance.SearchWithHttpInfo(query, dataType, size);
+    ApiResponse<List<EmbeddedDocumentResponse>> response = apiInstance.SearchWithHttpInfo(query, dataType, size);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -472,7 +472,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;EmbeddedDocument&gt;**](EmbeddedDocument.md)
+[**List&lt;EmbeddedDocumentResponse&gt;**](EmbeddedDocumentResponse.md)
 
 ### Authorization
 

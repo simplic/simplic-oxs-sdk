@@ -53,7 +53,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="toolResults">toolResults.</param>
         /// <param name="correlationId">correlationId.</param>
         /// <param name="error">error.</param>
-        public AgentResponse(AgentResponseType? type = default(AgentResponseType?), string message = default(string), Guid? sessionId = default(Guid?), AgentPlan plan = default(AgentPlan), OrchestrationPlan orchestrationPlan = default(OrchestrationPlan), List<string> approvalOptions = default(List<string>), Guid? planId = default(Guid?), Guid? approvalId = default(Guid?), List<ToolExecutionResult> toolResults = default(List<ToolExecutionResult>), Guid? correlationId = default(Guid?), AgentError error = default(AgentError))
+        /// <param name="tokenUsage">tokenUsage.</param>
+        public AgentResponse(AgentResponseType? type = default(AgentResponseType?), string message = default(string), Guid? sessionId = default(Guid?), AgentPlan plan = default(AgentPlan), OrchestrationPlan orchestrationPlan = default(OrchestrationPlan), List<string> approvalOptions = default(List<string>), Guid? planId = default(Guid?), Guid? approvalId = default(Guid?), List<ToolExecutionResult> toolResults = default(List<ToolExecutionResult>), Guid? correlationId = default(Guid?), AgentError error = default(AgentError), MessageTokenUsage tokenUsage = default(MessageTokenUsage))
         {
             this.Type = type;
             this.Message = message;
@@ -66,6 +67,7 @@ namespace Simplic.OxS.SDK.Ai
             this.ToolResults = toolResults;
             this.CorrelationId = correlationId;
             this.Error = error;
+            this.TokenUsage = tokenUsage;
         }
 
         /// <summary>
@@ -129,6 +131,12 @@ namespace Simplic.OxS.SDK.Ai
         public AgentError Error { get; set; }
 
         /// <summary>
+        /// Gets or Sets TokenUsage
+        /// </summary>
+        [DataMember(Name = "tokenUsage", EmitDefaultValue = false)]
+        public MessageTokenUsage TokenUsage { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +155,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  ToolResults: ").Append(ToolResults).Append("\n");
             sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("  TokenUsage: ").Append(TokenUsage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -237,6 +246,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Error == input.Error ||
                     (this.Error != null &&
                     this.Error.Equals(input.Error))
+                ) && 
+                (
+                    this.TokenUsage == input.TokenUsage ||
+                    (this.TokenUsage != null &&
+                    this.TokenUsage.Equals(input.TokenUsage))
                 );
         }
 
@@ -289,6 +303,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Error != null)
                 {
                     hashCode = (hashCode * 59) + this.Error.GetHashCode();
+                }
+                if (this.TokenUsage != null)
+                {
+                    hashCode = (hashCode * 59) + this.TokenUsage.GetHashCode();
                 }
                 return hashCode;
             }

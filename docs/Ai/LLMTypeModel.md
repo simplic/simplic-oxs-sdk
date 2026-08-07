@@ -5,7 +5,7 @@ Model representing an LLM provider type.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Gets or sets the LLM provider type name. | [optional] 
+**Name** | **string** | Gets or sets the LLM provider type name. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

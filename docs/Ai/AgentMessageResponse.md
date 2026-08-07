@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Content** | **string** | Gets or sets the message content. | [optional] 
 **Timestamp** | **DateTime** | Gets or sets the timestamp of the message. | [optional] 
 **ToolName** | **string** | Gets or sets the tool name, if this is a tool message. | [optional] 
+**TokenUsage** | [**MessageTokenUsage**](MessageTokenUsage.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

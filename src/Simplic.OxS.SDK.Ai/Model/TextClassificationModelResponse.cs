@@ -36,27 +36,72 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="TextClassificationModelResponse" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TextClassificationModelResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextClassificationModelResponse" /> class.
+        /// </summary>
         /// <param name="id">Gets or sets the id of the text classification model..</param>
-        /// <param name="name">Gets or sets the name of the model base..</param>
-        /// <param name="type">Gets or sets the type of the model base. as example. aws-comprehend-multi-classification.</param>
-        /// <param name="state">Gets or sets the state of the base model. new, training, completed and failed.s.</param>
-        /// <param name="stateText">Gets or sets the current state text. Its a text with more information about the state..</param>
-        /// <param name="trainingFormatData">Gets or sets the format of the training data. e.g. csv..</param>
-        /// <param name="delimiter">Gets or sets the delimiter for the data..</param>
-        /// <param name="labelDelimiter">Gets or sets the delimiter for the labels..</param>
-        /// <param name="trainingDataPath">Gets or sets the actually trainings data. Its a path to a csv file in a aws bucket..</param>
+        /// <param name="name">Gets or sets the name of the model base. (required).</param>
+        /// <param name="type">Gets or sets the type of the model base. as example. aws-comprehend-multi-classification (required).</param>
+        /// <param name="state">Gets or sets the state of the base model. new, training, completed and failed.s (required).</param>
+        /// <param name="stateText">Gets or sets the current state text. Its a text with more information about the state. (required).</param>
+        /// <param name="trainingFormatData">Gets or sets the format of the training data. e.g. csv. (required).</param>
+        /// <param name="delimiter">Gets or sets the delimiter for the data. (required).</param>
+        /// <param name="labelDelimiter">Gets or sets the delimiter for the labels. (required).</param>
+        /// <param name="trainingDataPath">Gets or sets the actually trainings data. Its a path to a csv file in a aws bucket. (required).</param>
         /// <param name="varVersion">Gets or sets the current model version.</param>
         public TextClassificationModelResponse(Guid id = default(Guid), string name = default(string), string type = default(string), string state = default(string), string stateText = default(string), string trainingFormatData = default(string), string delimiter = default(string), string labelDelimiter = default(string), string trainingDataPath = default(string), int varVersion = default(int))
         {
-            this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.Name = name;
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.Type = type;
+            // to ensure "state" is required (not null)
+            if (state == null)
+            {
+                throw new ArgumentNullException("state is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.State = state;
+            // to ensure "stateText" is required (not null)
+            if (stateText == null)
+            {
+                throw new ArgumentNullException("stateText is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.StateText = stateText;
+            // to ensure "trainingFormatData" is required (not null)
+            if (trainingFormatData == null)
+            {
+                throw new ArgumentNullException("trainingFormatData is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.TrainingFormatData = trainingFormatData;
+            // to ensure "delimiter" is required (not null)
+            if (delimiter == null)
+            {
+                throw new ArgumentNullException("delimiter is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.Delimiter = delimiter;
+            // to ensure "labelDelimiter" is required (not null)
+            if (labelDelimiter == null)
+            {
+                throw new ArgumentNullException("labelDelimiter is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.LabelDelimiter = labelDelimiter;
+            // to ensure "trainingDataPath" is required (not null)
+            if (trainingDataPath == null)
+            {
+                throw new ArgumentNullException("trainingDataPath is a required property for TextClassificationModelResponse and cannot be null");
+            }
             this.TrainingDataPath = trainingDataPath;
+            this.Id = id;
             this.VarVersion = varVersion;
         }
 
@@ -71,56 +116,56 @@ namespace Simplic.OxS.SDK.Ai
         /// Gets or sets the name of the model base.
         /// </summary>
         /// <value>Gets or sets the name of the model base.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the model base. as example. aws-comprehend-multi-classification
         /// </summary>
         /// <value>Gets or sets the type of the model base. as example. aws-comprehend-multi-classification</value>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or sets the state of the base model. new, training, completed and failed.s
         /// </summary>
         /// <value>Gets or sets the state of the base model. new, training, completed and failed.s</value>
-        [DataMember(Name = "state", EmitDefaultValue = true)]
+        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or sets the current state text. Its a text with more information about the state.
         /// </summary>
         /// <value>Gets or sets the current state text. Its a text with more information about the state.</value>
-        [DataMember(Name = "stateText", EmitDefaultValue = true)]
+        [DataMember(Name = "stateText", IsRequired = true, EmitDefaultValue = true)]
         public string StateText { get; set; }
 
         /// <summary>
         /// Gets or sets the format of the training data. e.g. csv.
         /// </summary>
         /// <value>Gets or sets the format of the training data. e.g. csv.</value>
-        [DataMember(Name = "trainingFormatData", EmitDefaultValue = true)]
+        [DataMember(Name = "trainingFormatData", IsRequired = true, EmitDefaultValue = true)]
         public string TrainingFormatData { get; set; }
 
         /// <summary>
         /// Gets or sets the delimiter for the data.
         /// </summary>
         /// <value>Gets or sets the delimiter for the data.</value>
-        [DataMember(Name = "delimiter", EmitDefaultValue = true)]
+        [DataMember(Name = "delimiter", IsRequired = true, EmitDefaultValue = true)]
         public string Delimiter { get; set; }
 
         /// <summary>
         /// Gets or sets the delimiter for the labels.
         /// </summary>
         /// <value>Gets or sets the delimiter for the labels.</value>
-        [DataMember(Name = "labelDelimiter", EmitDefaultValue = true)]
+        [DataMember(Name = "labelDelimiter", IsRequired = true, EmitDefaultValue = true)]
         public string LabelDelimiter { get; set; }
 
         /// <summary>
         /// Gets or sets the actually trainings data. Its a path to a csv file in a aws bucket.
         /// </summary>
         /// <value>Gets or sets the actually trainings data. Its a path to a csv file in a aws bucket.</value>
-        [DataMember(Name = "trainingDataPath", EmitDefaultValue = true)]
+        [DataMember(Name = "trainingDataPath", IsRequired = true, EmitDefaultValue = true)]
         public string TrainingDataPath { get; set; }
 
         /// <summary>

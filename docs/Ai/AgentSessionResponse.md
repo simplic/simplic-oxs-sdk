@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **IsActive** | **bool** | Gets or sets whether the session is active. | [optional] 
 **MessageCount** | **int** | Gets or sets the message count. | [optional] 
 **PendingApprovalCount** | **int** | Gets or sets pending approval count. | [optional] 
+**TotalTokens** | **int** | Gets or sets the cumulative token usage (input + output) across all assistant turns in this session, for providers that report usage. | [optional] 
+**TotalInputTokens** | **int** | Gets or sets the cumulative input/prompt token usage across all assistant turns in this session, for providers that report usage. | [optional] 
+**TotalOutputTokens** | **int** | Gets or sets the cumulative output/completion token usage across all assistant turns in this session, for providers that report usage. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

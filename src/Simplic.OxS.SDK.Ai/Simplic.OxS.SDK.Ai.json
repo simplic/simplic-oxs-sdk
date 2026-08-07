@@ -2313,17 +2313,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                    "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                    "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                    "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                 }
                             }
                         }
@@ -2413,17 +2413,17 @@
                         "content": {
                             "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                    "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                    "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                 }
                             },
                             "text/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/EmbeddedDocument"
+                                    "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                 }
                             }
                         }
@@ -2637,7 +2637,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/EmbeddedDocument"
+                                        "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                     }
                                 }
                             },
@@ -2645,7 +2645,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/EmbeddedDocument"
+                                        "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                     }
                                 }
                             },
@@ -2653,7 +2653,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/EmbeddedDocument"
+                                        "$ref": "#/components/schemas/EmbeddedDocumentResponse"
                                     }
                                 }
                             }
@@ -5237,6 +5237,9 @@
                         "type": "string",
                         "description": "Gets or sets the tool name, if this is a tool message.",
                         "nullable": true
+                    },
+                    "tokenUsage": {
+                        "$ref": "#/components/schemas/MessageTokenUsage"
                     }
                 },
                 "additionalProperties": false,
@@ -5497,6 +5500,9 @@
                     },
                     "error": {
                         "$ref": "#/components/schemas/AgentError"
+                    },
+                    "tokenUsage": {
+                        "$ref": "#/components/schemas/MessageTokenUsage"
                     }
                 },
                 "additionalProperties": false
@@ -5560,6 +5566,21 @@
                     "pendingApprovalCount": {
                         "type": "integer",
                         "description": "Gets or sets pending approval count.",
+                        "format": "int32"
+                    },
+                    "totalTokens": {
+                        "type": "integer",
+                        "description": "Gets or sets the cumulative token usage (input + output) across all assistant\nturns in this session, for providers that report usage.",
+                        "format": "int32"
+                    },
+                    "totalInputTokens": {
+                        "type": "integer",
+                        "description": "Gets or sets the cumulative input/prompt token usage across all assistant\nturns in this session, for providers that report usage.",
+                        "format": "int32"
+                    },
+                    "totalOutputTokens": {
+                        "type": "integer",
+                        "description": "Gets or sets the cumulative output/completion token usage across all assistant\nturns in this session, for providers that report usage.",
                         "format": "int32"
                     }
                 },
@@ -5737,6 +5758,10 @@
                 "description": "Represents an request to classify a text async."
             },
             "ClassifyTextAsyncResponse": {
+                "required": [
+                    "jobId",
+                    "state"
+                ],
                 "type": "object",
                 "properties": {
                     "jobId": {
@@ -5767,6 +5792,10 @@
                 "description": "Represents an response of a text classification action."
             },
             "CompareResultModel": {
+                "required": [
+                    "key",
+                    "predictedLabel"
+                ],
                 "type": "object",
                 "properties": {
                     "key": {
@@ -5900,6 +5929,9 @@
                 "description": "Represents an request to create a new model to text classification."
             },
             "CsvUploadResponse": {
+                "required": [
+                    "dataSet"
+                ],
                 "type": "object",
                 "properties": {
                     "invalidItems": {
@@ -5978,6 +6010,10 @@
                 "additionalProperties": false
             },
             "DataSetItemModel": {
+                "required": [
+                    "key",
+                    "label"
+                ],
                 "type": "object",
                 "properties": {
                     "key": {
@@ -5995,6 +6031,9 @@
                 "description": "Response model representing a single item in a data set."
             },
             "DataSetModel": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -6026,36 +6065,6 @@
                 "additionalProperties": false,
                 "description": "Request model for creating or updating a data set."
             },
-            "EmbeddedDocument": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "content": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "createDateTime": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "dataType": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "vector": {
-                        "type": "array",
-                        "items": {
-                            "type": "number",
-                            "format": "float"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
             "EmbeddedDocumentModel": {
                 "required": [
                     "content",
@@ -6081,6 +6090,37 @@
                 },
                 "additionalProperties": false,
                 "description": "Document model"
+            },
+            "EmbeddedDocumentResponse": {
+                "required": [
+                    "content",
+                    "dataType"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the connected data id.",
+                        "format": "uuid"
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Gets or sets the search result content.",
+                        "nullable": true
+                    },
+                    "createDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the create date time.",
+                        "format": "date-time"
+                    },
+                    "dataType": {
+                        "type": "string",
+                        "description": "Gets or sets the data type.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Response model for an embedded document. Excludes the embedding vector \u2014 callers only\nneed the id/content/metadata, and the vector adds no value while inflating the payload."
             },
             "EmbeddingModel": {
                 "type": "object",
@@ -6169,6 +6209,9 @@
                 "additionalProperties": false
             },
             "HashAlgorithmModel": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
@@ -6181,6 +6224,9 @@
                 "description": "Model representing a hash algorithm."
             },
             "LLMTypeModel": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
@@ -6320,6 +6366,25 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents a conversation message"
+            },
+            "MessageTokenUsage": {
+                "type": "object",
+                "properties": {
+                    "inputTokens": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "outputTokens": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalTokens": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false
             },
             "MessageType": {
                 "enum": [
@@ -6714,6 +6779,9 @@
                 "description": "Check training status result"
             },
             "TextClassificationModelDefinition": {
+                "required": [
+                    "name"
+                ],
                 "type": "object",
                 "properties": {
                     "name": {
@@ -6726,6 +6794,16 @@
                 "description": "Model definition for a text classification model type."
             },
             "TextClassificationModelResponse": {
+                "required": [
+                    "delimiter",
+                    "labelDelimiter",
+                    "name",
+                    "state",
+                    "stateText",
+                    "trainingDataPath",
+                    "trainingFormatData",
+                    "type"
+                ],
                 "type": "object",
                 "properties": {
                     "id": {
@@ -6783,6 +6861,9 @@
                 "description": "Response model representing a text classification model."
             },
             "TextClassificationResultResponse": {
+                "required": [
+                    "label"
+                ],
                 "type": "object",
                 "properties": {
                     "label": {

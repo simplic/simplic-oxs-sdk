@@ -42,7 +42,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="content">Gets or sets the message content..</param>
         /// <param name="timestamp">Gets or sets the timestamp of the message..</param>
         /// <param name="toolName">Gets or sets the tool name, if this is a tool message..</param>
-        public AgentMessageResponse(Guid id = default(Guid), Guid? turnId = default(Guid?), string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string))
+        /// <param name="tokenUsage">tokenUsage.</param>
+        public AgentMessageResponse(Guid id = default(Guid), Guid? turnId = default(Guid?), string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string), MessageTokenUsage tokenUsage = default(MessageTokenUsage))
         {
             this.Id = id;
             this.TurnId = turnId;
@@ -50,6 +51,7 @@ namespace Simplic.OxS.SDK.Ai
             this.Content = content;
             this.Timestamp = timestamp;
             this.ToolName = toolName;
+            this.TokenUsage = tokenUsage;
         }
 
         /// <summary>
@@ -95,6 +97,12 @@ namespace Simplic.OxS.SDK.Ai
         public string ToolName { get; set; }
 
         /// <summary>
+        /// Gets or Sets TokenUsage
+        /// </summary>
+        [DataMember(Name = "tokenUsage", EmitDefaultValue = false)]
+        public MessageTokenUsage TokenUsage { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -108,6 +116,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  ToolName: ").Append(ToolName).Append("\n");
+            sb.Append("  TokenUsage: ").Append(TokenUsage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -172,6 +181,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.ToolName == input.ToolName ||
                     (this.ToolName != null &&
                     this.ToolName.Equals(input.ToolName))
+                ) && 
+                (
+                    this.TokenUsage == input.TokenUsage ||
+                    (this.TokenUsage != null &&
+                    this.TokenUsage.Equals(input.TokenUsage))
                 );
         }
 
@@ -207,6 +221,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.ToolName != null)
                 {
                     hashCode = (hashCode * 59) + this.ToolName.GetHashCode();
+                }
+                if (this.TokenUsage != null)
+                {
+                    hashCode = (hashCode * 59) + this.TokenUsage.GetHashCode();
                 }
                 return hashCode;
             }

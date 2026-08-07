@@ -36,12 +36,22 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="DataSetModel" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected DataSetModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataSetModel" /> class.
+        /// </summary>
         /// <param name="id">Gets or sets the data set identifier..</param>
-        /// <param name="name">Gets or sets the data set name..</param>
+        /// <param name="name">Gets or sets the data set name. (required).</param>
         public DataSetModel(Guid id = default(Guid), string name = default(string))
         {
-            this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for DataSetModel and cannot be null");
+            }
             this.Name = name;
+            this.Id = id;
         }
 
         /// <summary>
@@ -55,7 +65,7 @@ namespace Simplic.OxS.SDK.Ai
         /// Gets or sets the data set name.
         /// </summary>
         /// <value>Gets or sets the data set name.</value>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

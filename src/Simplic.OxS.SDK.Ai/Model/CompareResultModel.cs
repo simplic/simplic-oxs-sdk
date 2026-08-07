@@ -36,21 +36,36 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="CompareResultModel" /> class.
         /// </summary>
-        /// <param name="key">Gets or sets the key..</param>
+        [JsonConstructorAttribute]
+        protected CompareResultModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompareResultModel" /> class.
+        /// </summary>
+        /// <param name="key">Gets or sets the key. (required).</param>
         /// <param name="similarity">Gets or sets the similarity..</param>
-        /// <param name="predictedLabel">Gets or sets the predicted label..</param>
+        /// <param name="predictedLabel">Gets or sets the predicted label. (required).</param>
         public CompareResultModel(string key = default(string), double similarity = default(double), string predictedLabel = default(string))
         {
+            // to ensure "key" is required (not null)
+            if (key == null)
+            {
+                throw new ArgumentNullException("key is a required property for CompareResultModel and cannot be null");
+            }
             this.Key = key;
-            this.Similarity = similarity;
+            // to ensure "predictedLabel" is required (not null)
+            if (predictedLabel == null)
+            {
+                throw new ArgumentNullException("predictedLabel is a required property for CompareResultModel and cannot be null");
+            }
             this.PredictedLabel = predictedLabel;
+            this.Similarity = similarity;
         }
 
         /// <summary>
         /// Gets or sets the key.
         /// </summary>
         /// <value>Gets or sets the key.</value>
-        [DataMember(Name = "key", EmitDefaultValue = true)]
+        [DataMember(Name = "key", IsRequired = true, EmitDefaultValue = true)]
         public string Key { get; set; }
 
         /// <summary>
@@ -64,7 +79,7 @@ namespace Simplic.OxS.SDK.Ai
         /// Gets or sets the predicted label.
         /// </summary>
         /// <value>Gets or sets the predicted label.</value>
-        [DataMember(Name = "predictedLabel", EmitDefaultValue = true)]
+        [DataMember(Name = "predictedLabel", IsRequired = true, EmitDefaultValue = true)]
         public string PredictedLabel { get; set; }
 
         /// <summary>

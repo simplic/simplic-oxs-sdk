@@ -6256,6 +6256,12 @@
                         "type": "string",
                         "description": "The cron string for how often the driver activity read will be executed.",
                         "nullable": true
+                    },
+                    "fromUtc": {
+                        "type": "string",
+                        "description": "Optional UTC start timestamp for the initial read window.",
+                        "format": "date-time",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
