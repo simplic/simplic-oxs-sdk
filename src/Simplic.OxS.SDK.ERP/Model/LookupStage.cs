@@ -45,7 +45,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="localPath">localPath (required).</param>
         /// <param name="foreignPath">foreignPath (required).</param>
         /// <param name="varAs">varAs (required).</param>
-        public LookupStage(string from = default(string), string localPath = default(string), string foreignPath = default(string), string varAs = default(string))
+        /// <param name="convert">convert.</param>
+        /// <param name="filter">filter.</param>
+        public LookupStage(string from = default(string), string localPath = default(string), string foreignPath = default(string), string varAs = default(string), string convert = default(string), MatchStage filter = default(MatchStage))
         {
             // to ensure "from" is required (not null)
             if (from == null)
@@ -71,6 +73,8 @@ namespace Simplic.OxS.SDK.ERP
                 throw new ArgumentNullException("varAs is a required property for LookupStage and cannot be null");
             }
             this.VarAs = varAs;
+            this.Convert = convert;
+            this.Filter = filter;
         }
 
         /// <summary>
@@ -98,6 +102,18 @@ namespace Simplic.OxS.SDK.ERP
         public string VarAs { get; set; }
 
         /// <summary>
+        /// Gets or Sets Convert
+        /// </summary>
+        [DataMember(Name = "convert", EmitDefaultValue = true)]
+        public string Convert { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Filter
+        /// </summary>
+        [DataMember(Name = "filter", EmitDefaultValue = false)]
+        public MatchStage Filter { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -109,6 +125,8 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  LocalPath: ").Append(LocalPath).Append("\n");
             sb.Append("  ForeignPath: ").Append(ForeignPath).Append("\n");
             sb.Append("  VarAs: ").Append(VarAs).Append("\n");
+            sb.Append("  Convert: ").Append(Convert).Append("\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +181,16 @@ namespace Simplic.OxS.SDK.ERP
                     this.VarAs == input.VarAs ||
                     (this.VarAs != null &&
                     this.VarAs.Equals(input.VarAs))
+                ) && 
+                (
+                    this.Convert == input.Convert ||
+                    (this.Convert != null &&
+                    this.Convert.Equals(input.Convert))
+                ) && 
+                (
+                    this.Filter == input.Filter ||
+                    (this.Filter != null &&
+                    this.Filter.Equals(input.Filter))
                 );
         }
 
@@ -190,6 +218,14 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.VarAs != null)
                 {
                     hashCode = (hashCode * 59) + this.VarAs.GetHashCode();
+                }
+                if (this.Convert != null)
+                {
+                    hashCode = (hashCode * 59) + this.Convert.GetHashCode();
+                }
+                if (this.Filter != null)
+                {
+                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
                 }
                 return hashCode;
             }

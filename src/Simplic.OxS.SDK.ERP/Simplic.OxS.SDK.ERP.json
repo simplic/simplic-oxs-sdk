@@ -11905,6 +11905,13 @@
                     "as": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "convert": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "filter": {
+                        "$ref": "#/components/schemas/MatchStage"
                     }
                 },
                 "additionalProperties": false
