@@ -38,15 +38,17 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="turnId">Gets or sets the turn identifier linking this entry to the assistant message that produced it..</param>
         /// <param name="label">Gets or sets the human-readable label shown in the workspace file tree..</param>
+        /// <param name="key">Gets or sets the stable resource identity used to match this entry across revisions (e.g. &#x60;flow:{flowId}&#x60;). Null for entries that only support label-based matching..</param>
         /// <param name="fileContent">Gets or sets the raw file content (e.g. pretty-printed JSON response body)..</param>
         /// <param name="fileLanguage">Gets or sets the Monaco language identifier, e.g. \&quot;json\&quot;..</param>
         /// <param name="type">Gets or sets the registry key for a dynamic component entry, e.g. \&quot;flow-editor\&quot;..</param>
         /// <param name="dataJson">Gets or sets the JSON-serialized data payload for dynamic component entries..</param>
         /// <param name="navigationUrl">Gets or sets an optional navigation URL shown as a \&quot;Go to …\&quot; button..</param>
-        public AgentWorkspaceEntryDto(Guid? turnId = default(Guid?), string label = default(string), string fileContent = default(string), string fileLanguage = default(string), string type = default(string), string dataJson = default(string), string navigationUrl = default(string))
+        public AgentWorkspaceEntryDto(Guid? turnId = default(Guid?), string label = default(string), string key = default(string), string fileContent = default(string), string fileLanguage = default(string), string type = default(string), string dataJson = default(string), string navigationUrl = default(string))
         {
             this.TurnId = turnId;
             this.Label = label;
+            this.Key = key;
             this.FileContent = fileContent;
             this.FileLanguage = fileLanguage;
             this.Type = type;
@@ -67,6 +69,13 @@ namespace Simplic.OxS.SDK.Ai
         /// <value>Gets or sets the human-readable label shown in the workspace file tree.</value>
         [DataMember(Name = "label", EmitDefaultValue = true)]
         public string Label { get; set; }
+
+        /// <summary>
+        /// Gets or sets the stable resource identity used to match this entry across revisions (e.g. &#x60;flow:{flowId}&#x60;). Null for entries that only support label-based matching.
+        /// </summary>
+        /// <value>Gets or sets the stable resource identity used to match this entry across revisions (e.g. &#x60;flow:{flowId}&#x60;). Null for entries that only support label-based matching.</value>
+        [DataMember(Name = "key", EmitDefaultValue = true)]
+        public string Key { get; set; }
 
         /// <summary>
         /// Gets or sets the raw file content (e.g. pretty-printed JSON response body).
@@ -113,6 +122,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class AgentWorkspaceEntryDto {\n");
             sb.Append("  TurnId: ").Append(TurnId).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  FileContent: ").Append(FileContent).Append("\n");
             sb.Append("  FileLanguage: ").Append(FileLanguage).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -164,6 +174,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Label.Equals(input.Label))
                 ) && 
                 (
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
+                ) && 
+                (
                     this.FileContent == input.FileContent ||
                     (this.FileContent != null &&
                     this.FileContent.Equals(input.FileContent))
@@ -206,6 +221,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Label != null)
                 {
                     hashCode = (hashCode * 59) + this.Label.GetHashCode();
+                }
+                if (this.Key != null)
+                {
+                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
                 }
                 if (this.FileContent != null)
                 {

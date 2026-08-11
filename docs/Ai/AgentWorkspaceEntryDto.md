@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TurnId** | **Guid?** | Gets or sets the turn identifier linking this entry to the assistant message that produced it. | [optional] 
 **Label** | **string** | Gets or sets the human-readable label shown in the workspace file tree. | [optional] 
+**Key** | **string** | Gets or sets the stable resource identity used to match this entry across revisions (e.g. &#x60;flow:{flowId}&#x60;). Null for entries that only support label-based matching. | [optional] 
 **FileContent** | **string** | Gets or sets the raw file content (e.g. pretty-printed JSON response body). | [optional] 
 **FileLanguage** | **string** | Gets or sets the Monaco language identifier, e.g. \&quot;json\&quot;. | [optional] 
 **Type** | **string** | Gets or sets the registry key for a dynamic component entry, e.g. \&quot;flow-editor\&quot;. | [optional] 

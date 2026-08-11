@@ -50,6 +50,7 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="prompt">prompt.</param>
         /// <param name="mode">mode.</param>
+        /// <param name="model">model.</param>
         /// <param name="planningMode">planningMode.</param>
         /// <param name="sessionId">sessionId.</param>
         /// <param name="userId">userId.</param>
@@ -63,10 +64,11 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="correlationId">correlationId.</param>
         /// <param name="documents">documents.</param>
         /// <param name="debug">debug.</param>
-        public AgentRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), List<string> allowedToolNames = default(List<string>), List<string> blockedToolNames = default(List<string>), string userName = default(string), string organizationName = default(string), bool stream = default(bool), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
+        public AgentRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), string model = default(string), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), List<string> allowedToolNames = default(List<string>), List<string> blockedToolNames = default(List<string>), string userName = default(string), string organizationName = default(string), bool stream = default(bool), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
         {
             this.Prompt = prompt;
             this.Mode = mode;
+            this.Model = model;
             this.PlanningMode = planningMode;
             this.SessionId = sessionId;
             this.UserId = userId;
@@ -87,6 +89,12 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         [DataMember(Name = "prompt", EmitDefaultValue = true)]
         public string Prompt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Model
+        /// </summary>
+        [DataMember(Name = "model", EmitDefaultValue = true)]
+        public string Model { get; set; }
 
         /// <summary>
         /// Gets or Sets SessionId
@@ -170,6 +178,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class AgentRequest {\n");
             sb.Append("  Prompt: ").Append(Prompt).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
+            sb.Append("  Model: ").Append(Model).Append("\n");
             sb.Append("  PlanningMode: ").Append(PlanningMode).Append("\n");
             sb.Append("  SessionId: ").Append(SessionId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
@@ -226,6 +235,11 @@ namespace Simplic.OxS.SDK.Ai
                 (
                     this.Mode == input.Mode ||
                     this.Mode.Equals(input.Mode)
+                ) && 
+                (
+                    this.Model == input.Model ||
+                    (this.Model != null &&
+                    this.Model.Equals(input.Model))
                 ) && 
                 (
                     this.PlanningMode == input.PlanningMode ||
@@ -309,6 +323,10 @@ namespace Simplic.OxS.SDK.Ai
                     hashCode = (hashCode * 59) + this.Prompt.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Mode.GetHashCode();
+                if (this.Model != null)
+                {
+                    hashCode = (hashCode * 59) + this.Model.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.PlanningMode.GetHashCode();
                 if (this.SessionId != null)
                 {

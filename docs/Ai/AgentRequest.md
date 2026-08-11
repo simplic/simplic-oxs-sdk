@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Prompt** | **string** |  | [optional] 
 **Mode** | **AgentMode** |  | [optional] 
+**Model** | **string** |  | [optional] 
 **PlanningMode** | **PlanningMode** |  | [optional] 
 **SessionId** | **Guid?** |  | [optional] 
 **UserId** | **Guid?** |  | [optional] 

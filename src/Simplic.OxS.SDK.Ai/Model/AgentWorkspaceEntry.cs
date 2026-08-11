@@ -38,14 +38,16 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         /// <param name="type">type.</param>
         /// <param name="label">label.</param>
+        /// <param name="key">key.</param>
         /// <param name="data">data.</param>
         /// <param name="navigationUrl">navigationUrl.</param>
         /// <param name="fileContent">fileContent.</param>
         /// <param name="fileLanguage">fileLanguage.</param>
-        public AgentWorkspaceEntry(string type = default(string), string label = default(string), Object data = default(Object), string navigationUrl = default(string), string fileContent = default(string), string fileLanguage = default(string))
+        public AgentWorkspaceEntry(string type = default(string), string label = default(string), string key = default(string), Object data = default(Object), string navigationUrl = default(string), string fileContent = default(string), string fileLanguage = default(string))
         {
             this.Type = type;
             this.Label = label;
+            this.Key = key;
             this.Data = data;
             this.NavigationUrl = navigationUrl;
             this.FileContent = fileContent;
@@ -63,6 +65,12 @@ namespace Simplic.OxS.SDK.Ai
         /// </summary>
         [DataMember(Name = "label", EmitDefaultValue = true)]
         public string Label { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Key
+        /// </summary>
+        [DataMember(Name = "key", EmitDefaultValue = true)]
+        public string Key { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
@@ -98,6 +106,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("class AgentWorkspaceEntry {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  NavigationUrl: ").Append(NavigationUrl).Append("\n");
             sb.Append("  FileContent: ").Append(FileContent).Append("\n");
@@ -148,6 +157,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.Label.Equals(input.Label))
                 ) && 
                 (
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
+                ) && 
+                (
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
@@ -185,6 +199,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.Label != null)
                 {
                     hashCode = (hashCode * 59) + this.Label.GetHashCode();
+                }
+                if (this.Key != null)
+                {
+                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
                 }
                 if (this.Data != null)
                 {

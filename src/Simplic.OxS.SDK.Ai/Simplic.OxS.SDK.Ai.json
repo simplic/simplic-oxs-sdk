@@ -5382,6 +5382,10 @@
                     "mode": {
                         "$ref": "#/components/schemas/AgentMode"
                     },
+                    "model": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "planningMode": {
                         "$ref": "#/components/schemas/PlanningMode"
                     },
@@ -5598,6 +5602,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "key": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "data": {
                         "nullable": true
                     },
@@ -5628,6 +5636,11 @@
                     "label": {
                         "type": "string",
                         "description": "Gets or sets the human-readable label shown in the workspace file tree.",
+                        "nullable": true
+                    },
+                    "key": {
+                        "type": "string",
+                        "description": "Gets or sets the stable resource identity used to match this entry across revisions\n(e.g. `flow:{flowId}`). Null for entries that only support label-based matching.",
                         "nullable": true
                     },
                     "fileContent": {

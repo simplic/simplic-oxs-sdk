@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | [optional] 
 **Label** | **string** |  | [optional] 
+**Key** | **string** |  | [optional] 
 **Data** | **Object** |  | [optional] 
 **NavigationUrl** | **string** |  | [optional] 
 **FileContent** | **string** |  | [optional] 
