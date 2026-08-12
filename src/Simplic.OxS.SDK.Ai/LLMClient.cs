@@ -69,6 +69,37 @@ public interface ILLMClient
     /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
     Task<ApiResponse<List<LLMTypeModel>>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;LLMTypeModel&gt;</returns>
+    List<LLMTypeModel> GetEfforts();
+
+    /// <summary>
+    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+    ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo();
+        
+    /// <summary>
+    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+    Task<List<LLMTypeModel>> GetEffortsAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+    Task<ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -213,6 +244,75 @@ public interface ILLMClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;LLMTypeModel&gt;</returns>
+        public List<LLMTypeModel> GetEfforts()
+        {
+            try
+            {
+                return _internalClient.GetEfforts();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo()
+        {
+            try
+            {
+                return _internalClient.GetEffortsWithHttpInfo();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetEffortsAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetEffortsWithHttpInfoAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -244,6 +344,24 @@ public interface ILLMClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
         ApiResponse<List<LLMTypeModel>> GetAllWithHttpInfo(int operationIndex = 0);
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LLMTypeModel&gt;</returns>
+        List<LLMTypeModel> GetEfforts(int operationIndex = 0);
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+        ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -276,6 +394,29 @@ public interface ILLMClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<LLMTypeModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+        System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -541,6 +682,158 @@ public interface ILLMClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("LLMGetAllGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LLMTypeModel&gt;</returns>
+        public List<LLMTypeModel> GetEfforts(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = GetEffortsWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "LLMClient.LLMGetEffortsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<LLMTypeModel>>("/LLM/get-efforts", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMGetEffortsGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = await GetEffortsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "LLMClient.LLMGetEffortsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<LLMTypeModel>>("/LLM/get-efforts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMGetEffortsGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

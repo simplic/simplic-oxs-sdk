@@ -39,12 +39,14 @@ namespace Simplic.OxS.SDK.Logistics
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="number">Gets or sets the number.     The number is a human readable identifier for the status.  .</param>
         /// <param name="roles">Gets or sets roles.     These roles will decide whether billing lines with the status can or can not to certain things.    A list of available roles at the moment:  &lt;list type&#x3D;\&quot;bullet\&quot;&gt;&lt;item&gt;is_default&lt;/item&gt; Will set the status as default, only one status should be a default status.&lt;item&gt;disable_edit&lt;/item&gt; Will diable editing of the billing lines.&lt;item&gt;billable&lt;/item&gt; Will set the billing line as billable.&lt;item&gt;disable_delete&lt;/item&gt; The user should be unable to delete the billing line if a status with this role is set.&lt;item&gt;billed&lt;/item&gt; If a status with this role is set the item is shown as billed.&lt;item&gt;update_instance_data&lt;/item&gt; If a status is set with this role the instance data, e.g. contact information will be automatically  updated when updated in a contact.&lt;/list&gt;.</param>
+        /// <param name="type">Gets or sets the type used to identify system status instances for mapping.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.     Examples: \&quot;open\&quot;, \&quot;drafted\&quot;, \&quot;locked\&quot;, \&quot;converted_to_transaction\&quot;  .</param>
         /// <param name="hexColor">Gets or sets the color as as hexadecimal value..</param>
-        public CreateBillingLineStatusRequest(string name = default(string), string number = default(string), List<string> roles = default(List<string>), string hexColor = default(string))
+        public CreateBillingLineStatusRequest(string name = default(string), string number = default(string), List<string> roles = default(List<string>), string type = default(string), string hexColor = default(string))
         {
             this.Name = name;
             this.Number = number;
             this.Roles = roles;
+            this.Type = type;
             this.HexColor = hexColor;
         }
 
@@ -70,6 +72,13 @@ namespace Simplic.OxS.SDK.Logistics
         public List<string> Roles { get; set; }
 
         /// <summary>
+        /// Gets or sets the type used to identify system status instances for mapping.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.     Examples: \&quot;open\&quot;, \&quot;drafted\&quot;, \&quot;locked\&quot;, \&quot;converted_to_transaction\&quot;  
+        /// </summary>
+        /// <value>Gets or sets the type used to identify system status instances for mapping.     Stable, human-readable identifier added specifically for referencing deployed documents from code.  Unlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time  and never changes afterwards.     Examples: \&quot;open\&quot;, \&quot;drafted\&quot;, \&quot;locked\&quot;, \&quot;converted_to_transaction\&quot;  </value>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
+
+        /// <summary>
         /// Gets or sets the color as as hexadecimal value.
         /// </summary>
         /// <value>Gets or sets the color as as hexadecimal value.</value>
@@ -87,6 +96,7 @@ namespace Simplic.OxS.SDK.Logistics
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  HexColor: ").Append(HexColor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -140,6 +150,11 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Roles.SequenceEqual(input.Roles)
                 ) && 
                 (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
                     this.HexColor == input.HexColor ||
                     (this.HexColor != null &&
                     this.HexColor.Equals(input.HexColor))
@@ -166,6 +181,10 @@ namespace Simplic.OxS.SDK.Logistics
                 if (this.Roles != null)
                 {
                     hashCode = (hashCode * 59) + this.Roles.GetHashCode();
+                }
+                if (this.Type != null)
+                {
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 }
                 if (this.HexColor != null)
                 {

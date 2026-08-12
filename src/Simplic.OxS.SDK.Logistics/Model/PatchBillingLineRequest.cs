@@ -42,25 +42,69 @@ namespace Simplic.OxS.SDK.Logistics
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchBillingLineRequest" /> class.
         /// </summary>
+        /// <param name="financialPartner">financialPartner.</param>
+        /// <param name="date">Gets or sets the date associated with this billing line..</param>
+        /// <param name="deliveryDate">Gets or sets the delivery date associated with this billing line..</param>
         /// <param name="type">type.</param>
         /// <param name="statusId">Gets or sets the status id..</param>
         /// <param name="singlePrice">Gets or sets the single price.     Represents the price of a single item.  .</param>
         /// <param name="totalPrice">Gets or sets the total price.     Represents the price of all items.  .</param>
-        /// <param name="quantity">quantity.</param>
+        /// <param name="isGross">Gets or sets a value indicating whether the billing line price is gross or net..</param>
+        /// <param name="costCenters">Gets or sets the cost center assignments associated with this billing line..</param>
+        /// <param name="costObjects">Gets or sets the cost object assignments associated with this billing line..</param>
+        /// <param name="taxRateId">Gets or sets the tax rate for this billing line..</param>
+        /// <param name="generalLedgerAccountGroupId">Gets or sets the general ledger account group for this billing line.     The general ledger account group is used in the financial accounting process to  determine the general ledger account.  .</param>
         /// <param name="reference">Gets or sets the external reference..</param>
-        /// <param name="text">Gets or sets the billing line text.</param>
+        /// <param name="references">Gets or sets a set of additional references..</param>
+        /// <param name="text">Gets or sets the billing line text..</param>
+        /// <param name="isManualBillingLine">Gets or sets the flag indicating whether the billing line was created manually..</param>
+        /// <param name="addon">Gets or sets a dictionary of addon properties to store any additional   information related to a billing line..</param>
         /// <param name="id">Gets or sets the id.     Represents the unique identifier of a billing line.  .</param>
-        public PatchBillingLineRequest(BillingLineType? type = default(BillingLineType?), Guid? statusId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), QuantityModel quantity = default(QuantityModel), string reference = default(string), string text = default(string), Guid id = default(Guid))
+        /// <param name="quantity">quantity.</param>
+        /// <param name="remove">Remove flag for the patch helper..</param>
+        public PatchBillingLineRequest(BillingLineContactRequest financialPartner = default(BillingLineContactRequest), DateTime? date = default(DateTime?), DateTime? deliveryDate = default(DateTime?), BillingLineType? type = default(BillingLineType?), Guid? statusId = default(Guid?), double? singlePrice = default(double?), double? totalPrice = default(double?), bool? isGross = default(bool?), List<BillingLineCostCenterAssignmentRequest> costCenters = default(List<BillingLineCostCenterAssignmentRequest>), List<BillingLineCostCenterAssignmentRequest> costObjects = default(List<BillingLineCostCenterAssignmentRequest>), Guid? taxRateId = default(Guid?), Guid? generalLedgerAccountGroupId = default(Guid?), string reference = default(string), List<BillingLineReferenceRequest> references = default(List<BillingLineReferenceRequest>), string text = default(string), bool? isManualBillingLine = default(bool?), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), QuantityPatchRequest quantity = default(QuantityPatchRequest), bool? remove = default(bool?))
         {
+            this.FinancialPartner = financialPartner;
+            this.Date = date;
+            this.DeliveryDate = deliveryDate;
             this.Type = type;
             this.StatusId = statusId;
             this.SinglePrice = singlePrice;
             this.TotalPrice = totalPrice;
-            this.Quantity = quantity;
+            this.IsGross = isGross;
+            this.CostCenters = costCenters;
+            this.CostObjects = costObjects;
+            this.TaxRateId = taxRateId;
+            this.GeneralLedgerAccountGroupId = generalLedgerAccountGroupId;
             this.Reference = reference;
+            this.References = references;
             this.Text = text;
+            this.IsManualBillingLine = isManualBillingLine;
+            this.Addon = addon;
             this.Id = id;
+            this.Quantity = quantity;
+            this.Remove = remove;
         }
+
+        /// <summary>
+        /// Gets or Sets FinancialPartner
+        /// </summary>
+        [DataMember(Name = "financialPartner", EmitDefaultValue = false)]
+        public BillingLineContactRequest FinancialPartner { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date associated with this billing line.
+        /// </summary>
+        /// <value>Gets or sets the date associated with this billing line.</value>
+        [DataMember(Name = "date", EmitDefaultValue = true)]
+        public DateTime? Date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the delivery date associated with this billing line.
+        /// </summary>
+        /// <value>Gets or sets the delivery date associated with this billing line.</value>
+        [DataMember(Name = "deliveryDate", EmitDefaultValue = true)]
+        public DateTime? DeliveryDate { get; set; }
 
         /// <summary>
         /// Gets or sets the status id.
@@ -84,10 +128,39 @@ namespace Simplic.OxS.SDK.Logistics
         public double? TotalPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or sets a value indicating whether the billing line price is gross or net.
         /// </summary>
-        [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public QuantityModel Quantity { get; set; }
+        /// <value>Gets or sets a value indicating whether the billing line price is gross or net.</value>
+        [DataMember(Name = "isGross", EmitDefaultValue = true)]
+        public bool? IsGross { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cost center assignments associated with this billing line.
+        /// </summary>
+        /// <value>Gets or sets the cost center assignments associated with this billing line.</value>
+        [DataMember(Name = "costCenters", EmitDefaultValue = true)]
+        public List<BillingLineCostCenterAssignmentRequest> CostCenters { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cost object assignments associated with this billing line.
+        /// </summary>
+        /// <value>Gets or sets the cost object assignments associated with this billing line.</value>
+        [DataMember(Name = "costObjects", EmitDefaultValue = true)]
+        public List<BillingLineCostCenterAssignmentRequest> CostObjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tax rate for this billing line.
+        /// </summary>
+        /// <value>Gets or sets the tax rate for this billing line.</value>
+        [DataMember(Name = "taxRateId", EmitDefaultValue = true)]
+        public Guid? TaxRateId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the general ledger account group for this billing line.     The general ledger account group is used in the financial accounting process to  determine the general ledger account.  
+        /// </summary>
+        /// <value>Gets or sets the general ledger account group for this billing line.     The general ledger account group is used in the financial accounting process to  determine the general ledger account.  </value>
+        [DataMember(Name = "generalLedgerAccountGroupId", EmitDefaultValue = true)]
+        public Guid? GeneralLedgerAccountGroupId { get; set; }
 
         /// <summary>
         /// Gets or sets the external reference.
@@ -97,11 +170,32 @@ namespace Simplic.OxS.SDK.Logistics
         public string Reference { get; set; }
 
         /// <summary>
-        /// Gets or sets the billing line text
+        /// Gets or sets a set of additional references.
         /// </summary>
-        /// <value>Gets or sets the billing line text</value>
+        /// <value>Gets or sets a set of additional references.</value>
+        [DataMember(Name = "references", EmitDefaultValue = true)]
+        public List<BillingLineReferenceRequest> References { get; set; }
+
+        /// <summary>
+        /// Gets or sets the billing line text.
+        /// </summary>
+        /// <value>Gets or sets the billing line text.</value>
         [DataMember(Name = "text", EmitDefaultValue = true)]
         public string Text { get; set; }
+
+        /// <summary>
+        /// Gets or sets the flag indicating whether the billing line was created manually.
+        /// </summary>
+        /// <value>Gets or sets the flag indicating whether the billing line was created manually.</value>
+        [DataMember(Name = "isManualBillingLine", EmitDefaultValue = true)]
+        public bool? IsManualBillingLine { get; set; }
+
+        /// <summary>
+        /// Gets or sets a dictionary of addon properties to store any additional   information related to a billing line.
+        /// </summary>
+        /// <value>Gets or sets a dictionary of addon properties to store any additional   information related to a billing line.</value>
+        [DataMember(Name = "addon", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Addon { get; set; }
 
         /// <summary>
         /// Gets or sets the id.     Represents the unique identifier of a billing line.  
@@ -111,6 +205,19 @@ namespace Simplic.OxS.SDK.Logistics
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets Quantity
+        /// </summary>
+        [DataMember(Name = "quantity", EmitDefaultValue = false)]
+        public QuantityPatchRequest Quantity { get; set; }
+
+        /// <summary>
+        /// Remove flag for the patch helper.
+        /// </summary>
+        /// <value>Remove flag for the patch helper.</value>
+        [DataMember(Name = "_remove", EmitDefaultValue = true)]
+        public bool? Remove { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -118,14 +225,26 @@ namespace Simplic.OxS.SDK.Logistics
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PatchBillingLineRequest {\n");
+            sb.Append("  FinancialPartner: ").Append(FinancialPartner).Append("\n");
+            sb.Append("  Date: ").Append(Date).Append("\n");
+            sb.Append("  DeliveryDate: ").Append(DeliveryDate).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  StatusId: ").Append(StatusId).Append("\n");
             sb.Append("  SinglePrice: ").Append(SinglePrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
-            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  IsGross: ").Append(IsGross).Append("\n");
+            sb.Append("  CostCenters: ").Append(CostCenters).Append("\n");
+            sb.Append("  CostObjects: ").Append(CostObjects).Append("\n");
+            sb.Append("  TaxRateId: ").Append(TaxRateId).Append("\n");
+            sb.Append("  GeneralLedgerAccountGroupId: ").Append(GeneralLedgerAccountGroupId).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
+            sb.Append("  References: ").Append(References).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  IsManualBillingLine: ").Append(IsManualBillingLine).Append("\n");
+            sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  Remove: ").Append(Remove).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -162,6 +281,21 @@ namespace Simplic.OxS.SDK.Logistics
             }
             return 
                 (
+                    this.FinancialPartner == input.FinancialPartner ||
+                    (this.FinancialPartner != null &&
+                    this.FinancialPartner.Equals(input.FinancialPartner))
+                ) && 
+                (
+                    this.Date == input.Date ||
+                    (this.Date != null &&
+                    this.Date.Equals(input.Date))
+                ) && 
+                (
+                    this.DeliveryDate == input.DeliveryDate ||
+                    (this.DeliveryDate != null &&
+                    this.DeliveryDate.Equals(input.DeliveryDate))
+                ) && 
+                (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
                 ) && 
@@ -181,9 +315,31 @@ namespace Simplic.OxS.SDK.Logistics
                     this.TotalPrice.Equals(input.TotalPrice))
                 ) && 
                 (
-                    this.Quantity == input.Quantity ||
-                    (this.Quantity != null &&
-                    this.Quantity.Equals(input.Quantity))
+                    this.IsGross == input.IsGross ||
+                    (this.IsGross != null &&
+                    this.IsGross.Equals(input.IsGross))
+                ) && 
+                (
+                    this.CostCenters == input.CostCenters ||
+                    this.CostCenters != null &&
+                    input.CostCenters != null &&
+                    this.CostCenters.SequenceEqual(input.CostCenters)
+                ) && 
+                (
+                    this.CostObjects == input.CostObjects ||
+                    this.CostObjects != null &&
+                    input.CostObjects != null &&
+                    this.CostObjects.SequenceEqual(input.CostObjects)
+                ) && 
+                (
+                    this.TaxRateId == input.TaxRateId ||
+                    (this.TaxRateId != null &&
+                    this.TaxRateId.Equals(input.TaxRateId))
+                ) && 
+                (
+                    this.GeneralLedgerAccountGroupId == input.GeneralLedgerAccountGroupId ||
+                    (this.GeneralLedgerAccountGroupId != null &&
+                    this.GeneralLedgerAccountGroupId.Equals(input.GeneralLedgerAccountGroupId))
                 ) && 
                 (
                     this.Reference == input.Reference ||
@@ -191,14 +347,41 @@ namespace Simplic.OxS.SDK.Logistics
                     this.Reference.Equals(input.Reference))
                 ) && 
                 (
+                    this.References == input.References ||
+                    this.References != null &&
+                    input.References != null &&
+                    this.References.SequenceEqual(input.References)
+                ) && 
+                (
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
                 ) && 
                 (
+                    this.IsManualBillingLine == input.IsManualBillingLine ||
+                    (this.IsManualBillingLine != null &&
+                    this.IsManualBillingLine.Equals(input.IsManualBillingLine))
+                ) && 
+                (
+                    this.Addon == input.Addon ||
+                    this.Addon != null &&
+                    input.Addon != null &&
+                    this.Addon.SequenceEqual(input.Addon)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Quantity == input.Quantity ||
+                    (this.Quantity != null &&
+                    this.Quantity.Equals(input.Quantity))
+                ) && 
+                (
+                    this.Remove == input.Remove ||
+                    (this.Remove != null &&
+                    this.Remove.Equals(input.Remove))
                 );
         }
 
@@ -211,6 +394,18 @@ namespace Simplic.OxS.SDK.Logistics
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.FinancialPartner != null)
+                {
+                    hashCode = (hashCode * 59) + this.FinancialPartner.GetHashCode();
+                }
+                if (this.Date != null)
+                {
+                    hashCode = (hashCode * 59) + this.Date.GetHashCode();
+                }
+                if (this.DeliveryDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.DeliveryDate.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 if (this.StatusId != null)
                 {
@@ -224,21 +419,57 @@ namespace Simplic.OxS.SDK.Logistics
                 {
                     hashCode = (hashCode * 59) + this.TotalPrice.GetHashCode();
                 }
-                if (this.Quantity != null)
+                if (this.IsGross != null)
                 {
-                    hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IsGross.GetHashCode();
+                }
+                if (this.CostCenters != null)
+                {
+                    hashCode = (hashCode * 59) + this.CostCenters.GetHashCode();
+                }
+                if (this.CostObjects != null)
+                {
+                    hashCode = (hashCode * 59) + this.CostObjects.GetHashCode();
+                }
+                if (this.TaxRateId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRateId.GetHashCode();
+                }
+                if (this.GeneralLedgerAccountGroupId != null)
+                {
+                    hashCode = (hashCode * 59) + this.GeneralLedgerAccountGroupId.GetHashCode();
                 }
                 if (this.Reference != null)
                 {
                     hashCode = (hashCode * 59) + this.Reference.GetHashCode();
                 }
+                if (this.References != null)
+                {
+                    hashCode = (hashCode * 59) + this.References.GetHashCode();
+                }
                 if (this.Text != null)
                 {
                     hashCode = (hashCode * 59) + this.Text.GetHashCode();
                 }
+                if (this.IsManualBillingLine != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsManualBillingLine.GetHashCode();
+                }
+                if (this.Addon != null)
+                {
+                    hashCode = (hashCode * 59) + this.Addon.GetHashCode();
+                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.Quantity != null)
+                {
+                    hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                }
+                if (this.Remove != null)
+                {
+                    hashCode = (hashCode * 59) + this.Remove.GetHashCode();
                 }
                 return hashCode;
             }

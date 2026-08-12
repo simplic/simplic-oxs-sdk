@@ -11283,6 +11283,232 @@
                 "additionalProperties": false,
                 "description": "Shared model of billable contact."
             },
+            "BillingLineAddressModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "street": {
+                        "type": "string",
+                        "description": "Gets or sets the street.",
+                        "nullable": true
+                    },
+                    "zipcode": {
+                        "type": "string",
+                        "description": "Gets or sets the zipcode.",
+                        "nullable": true
+                    },
+                    "district": {
+                        "type": "string",
+                        "description": "Gets or sets the district.",
+                        "nullable": true
+                    },
+                    "federalState": {
+                        "type": "string",
+                        "description": "Gets or sets the federal state.",
+                        "nullable": true
+                    },
+                    "country": {
+                        "type": "string",
+                        "description": "Gets or sets the country.",
+                        "nullable": true
+                    },
+                    "countryIso": {
+                        "type": "string",
+                        "description": "Gets or sets the country ISO.",
+                        "nullable": true
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "Gets or sets the city.",
+                        "nullable": true
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "description": "Gets or sets the latitude.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "description": "Gets or sets the longitude.",
+                        "format": "double",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents an address in a billing line."
+            },
+            "BillingLineContactModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "accountNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the account number.",
+                        "nullable": true
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "description": "Gets or sets the company name.",
+                        "nullable": true
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "description": "Gets or sets the first name.",
+                        "nullable": true
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "description": "Gets or sets the last name.",
+                        "nullable": true
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/BillingLineAddressModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a contact in a billing line."
+            },
+            "BillingLineContactRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the contact ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "personalAccountId": {
+                        "type": "string",
+                        "description": "Gets or sets the personal account ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to create or update a contact in a billing line."
+            },
+            "BillingLineCostCenterAssignmentModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "costCenter": {
+                        "$ref": "#/components/schemas/BillingLineCostCenterModel"
+                    },
+                    "percentage": {
+                        "type": "number",
+                        "description": "Gets or sets the percentage to assign as a value between 0 and 1.",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a cost center assignment in a billing line."
+            },
+            "BillingLineCostCenterAssignmentRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "costCenterId": {
+                        "type": "string",
+                        "description": "Gets or sets the cost center to assign by ID.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "percentage": {
+                        "type": "number",
+                        "description": "Gets or sets the percentage to assign.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "_remove": {
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to create or update a cost center assignment."
+            },
+            "BillingLineCostCenterModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "description": "Gets or sets the unique number.",
+                        "format": "int32"
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "description": "Gets or sets the valid from date.",
+                        "format": "date-time"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "description": "Gets or sets the valid to date.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a cost center in a billing line."
+            },
+            "BillingLineGeneralLedgerAccountGroupModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Gets or sets the number.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a general ledger account group in a billing line."
+            },
             "BillingLineModel": {
                 "type": "object",
                 "properties": {
@@ -11290,6 +11516,20 @@
                         "type": "string",
                         "description": "Gets or sets the id.\r\n\n\r\nRepresents the unique identifier of a billing line.\r\n",
                         "format": "uuid"
+                    },
+                    "financialPartner": {
+                        "$ref": "#/components/schemas/BillingLineContactModel"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date associated with this billing line.",
+                        "format": "date-time"
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
                     },
                     "type": {
                         "$ref": "#/components/schemas/BillingLineType"
@@ -11307,6 +11547,32 @@
                         "description": "Gets or sets the total price.\r\n\n\r\nRepresents the price of all items.\r\n",
                         "format": "double"
                     },
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the billing line price is gross or net."
+                    },
+                    "costCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineCostCenterAssignmentModel"
+                        },
+                        "description": "Gets or sets the cost center assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineCostCenterAssignmentModel"
+                        },
+                        "description": "Gets or sets the cost object assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "taxRate": {
+                        "$ref": "#/components/schemas/BillingLineTaxRateModel"
+                    },
+                    "generalLedgerAccountGroup": {
+                        "$ref": "#/components/schemas/BillingLineGeneralLedgerAccountGroupModel"
+                    },
                     "quantity": {
                         "$ref": "#/components/schemas/QuantityModel"
                     },
@@ -11315,14 +11581,86 @@
                         "description": "Gets or sets the external reference.",
                         "nullable": true
                     },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReferenceModel"
+                        },
+                        "description": "Gets or sets a set of additional references.",
+                        "nullable": true
+                    },
                     "text": {
                         "type": "string",
-                        "description": "Gets or sets the billing line text",
+                        "description": "Gets or sets the billing line text.",
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually."
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a set of additional properties that can be used to store any\r\nadditional information related to this billing line.",
+                        "nullable": true
+                    },
+                    "assignedTransactionId": {
+                        "type": "string",
+                        "description": "Gets or sets the transaction this billing line has been assigned to (either draft or finalized).",
+                        "format": "uuid",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
                 "description": "Shared model of billing line."
+            },
+            "BillingLineReferenceModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the unique identifier of this reference entry.",
+                        "format": "uuid"
+                    },
+                    "dataType": {
+                        "type": "string",
+                        "description": "Gets or sets the data type associated with the property.",
+                        "nullable": true
+                    },
+                    "referenceId": {
+                        "type": "string",
+                        "description": "Gets or sets the reference ID.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a reference entry in a billing line."
+            },
+            "BillingLineReferenceRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the unique identifier of this reference entry.",
+                        "format": "uuid"
+                    },
+                    "dataType": {
+                        "type": "string",
+                        "description": "Gets or sets the data type associated with the property.",
+                        "nullable": true
+                    },
+                    "referenceId": {
+                        "type": "string",
+                        "description": "Gets or sets the reference ID.",
+                        "nullable": true
+                    },
+                    "_remove": {
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request model for Simplic.OxS.Logistics.BillingLineReference."
             },
             "BillingLineStatusModel": {
                 "type": "object",
@@ -11342,7 +11680,12 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item>\nWill set the status as default, only one status should be a default status.<item>disable_edit</item>\nWill diable editing of the billing lines.<item>billable</item>\nWill set the billing line as billable.<item>disable_delete</item>\nThe user should be unable to delete the billing line if a status with this role is set.<item>billed</item>\nIf a status with this role is set the item is shown as billed.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\r\nupdated when updated in a contact.</list>",
+                        "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item>\nWill set the status as default, only one status should be a default status.<item>disable_edit</item>\nWill diable editing of the billing lines.<item>billable</item>\nWill set the billing line as billable.<item>disable_delete</item>\nThe user should be unable to delete the billing line if a status with this role is set.<item>billed</item>\nIf a status with this role is set the item is shown as billed.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\r\nupdated when updated in a contact.<item>is_manual</item>\nMarks the status as manually applied by a user rather than reached automatically by the system.</list>",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the type used to identify system status instances for mapping.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\r\nand never changes afterwards.\r\n\n\r\nExamples: \"open\", \"drafted\", \"locked\", \"converted_to_transaction\"\r\n",
                         "nullable": true
                     },
                     "hexColor": {
@@ -11362,6 +11705,28 @@
                 },
                 "additionalProperties": false,
                 "description": "Shared model of billing line status."
+            },
+            "BillingLineTaxRateModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the ID.",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "number": {
+                        "type": "integer",
+                        "description": "Gets or sets the unique number.",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a tax rate in a billing line."
             },
             "BillingLineType": {
                 "enum": [
@@ -11733,6 +12098,21 @@
             "CreateBillingLineRequest": {
                 "type": "object",
                 "properties": {
+                    "financialPartner": {
+                        "$ref": "#/components/schemas/BillingLineContactRequest"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "type": {
                         "$ref": "#/components/schemas/BillingLineType"
                     },
@@ -11754,18 +12134,70 @@
                         "format": "double",
                         "nullable": true
                     },
-                    "quantity": {
-                        "$ref": "#/components/schemas/QuantityModel"
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the billing line price is gross or net.",
+                        "nullable": true
+                    },
+                    "costCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineCostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost center assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineCostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost object assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate for this billing line.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "generalLedgerAccountGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the general ledger account group for this billing line.\r\n\n\r\nThe general ledger account group is used in the financial accounting process to\r\ndetermine the general ledger account.\r\n",
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "reference": {
                         "type": "string",
                         "description": "Gets or sets the external reference.",
                         "nullable": true
                     },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReferenceRequest"
+                        },
+                        "description": "Gets or sets a set of additional references.",
+                        "nullable": true
+                    },
                     "text": {
                         "type": "string",
-                        "description": "Gets or sets the billing line text",
+                        "description": "Gets or sets the billing line text.",
                         "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually.",
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties to store any additional \r\ninformation related to a billing line.",
+                        "nullable": true
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/QuantityRequest"
                     }
                 },
                 "additionalProperties": false,
@@ -11790,6 +12222,11 @@
                             "type": "string"
                         },
                         "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item>\nWill set the status as default, only one status should be a default status.<item>disable_edit</item>\nWill diable editing of the billing lines.<item>billable</item>\nWill set the billing line as billable.<item>disable_delete</item>\nThe user should be unable to delete the billing line if a status with this role is set.<item>billed</item>\nIf a status with this role is set the item is shown as billed.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\r\nupdated when updated in a contact.</list>",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the type used to identify system status instances for mapping.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\r\nand never changes afterwards.\r\n\n\r\nExamples: \"open\", \"drafted\", \"locked\", \"converted_to_transaction\"\r\n",
                         "nullable": true
                     },
                     "hexColor": {
@@ -13659,6 +14096,21 @@
             "PatchBillingLineRequest": {
                 "type": "object",
                 "properties": {
+                    "financialPartner": {
+                        "$ref": "#/components/schemas/BillingLineContactRequest"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Gets or sets the delivery date associated with this billing line.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "type": {
                         "$ref": "#/components/schemas/BillingLineType"
                     },
@@ -13680,23 +14132,80 @@
                         "format": "double",
                         "nullable": true
                     },
-                    "quantity": {
-                        "$ref": "#/components/schemas/QuantityModel"
+                    "isGross": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the billing line price is gross or net.",
+                        "nullable": true
+                    },
+                    "costCenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineCostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost center assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "costObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineCostCenterAssignmentRequest"
+                        },
+                        "description": "Gets or sets the cost object assignments associated with this billing line.",
+                        "nullable": true
+                    },
+                    "taxRateId": {
+                        "type": "string",
+                        "description": "Gets or sets the tax rate for this billing line.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "generalLedgerAccountGroupId": {
+                        "type": "string",
+                        "description": "Gets or sets the general ledger account group for this billing line.\r\n\n\r\nThe general ledger account group is used in the financial accounting process to\r\ndetermine the general ledger account.\r\n",
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "reference": {
                         "type": "string",
                         "description": "Gets or sets the external reference.",
                         "nullable": true
                     },
+                    "references": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BillingLineReferenceRequest"
+                        },
+                        "description": "Gets or sets a set of additional references.",
+                        "nullable": true
+                    },
                     "text": {
                         "type": "string",
-                        "description": "Gets or sets the billing line text",
+                        "description": "Gets or sets the billing line text.",
+                        "nullable": true
+                    },
+                    "isManualBillingLine": {
+                        "type": "boolean",
+                        "description": "Gets or sets the flag indicating whether the billing line was created manually.",
+                        "nullable": true
+                    },
+                    "addon": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Gets or sets a dictionary of addon properties to store any additional \r\ninformation related to a billing line.",
                         "nullable": true
                     },
                     "id": {
                         "type": "string",
                         "description": "Gets or sets the id.\r\n\n\r\nRepresents the unique identifier of a billing line.\r\n",
                         "format": "uuid"
+                    },
+                    "quantity": {
+                        "$ref": "#/components/schemas/QuantityPatchRequest"
+                    },
+                    "_remove": {
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -15018,6 +15527,42 @@
                     },
                     "quantityUnit": {
                         "$ref": "#/components/schemas/QuantityUnitModel"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Shared model of a quantity."
+            },
+            "QuantityPatchRequest": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the value as double.",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "quantityUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the quantity unit.",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Shared model of a quantity."
+            },
+            "QuantityRequest": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "Gets or sets the value as double.",
+                        "format": "double"
+                    },
+                    "quantityUnitId": {
+                        "type": "string",
+                        "description": "Gets or sets the quantity unit.",
+                        "format": "uuid"
                     }
                 },
                 "additionalProperties": false,
@@ -17163,6 +17708,11 @@
                             "type": "string"
                         },
                         "description": "Gets or sets roles.\r\n\n\r\nThese roles will decide whether billing lines with the status can or can not to certain things.\r\n\r\nA list of available roles at the moment:\r\n<list type=\"bullet\"><item>is_default</item>\nWill set the status as default, only one status should be a default status.<item>disable_edit</item>\nWill diable editing of the billing lines.<item>billable</item>\nWill set the billing line as billable.<item>disable_delete</item>\nThe user should be unable to delete the billing line if a status with this role is set.<item>billed</item>\nIf a status with this role is set the item is shown as billed.<item>update_instance_data</item>\nIf a status is set with this role the instance data, e.g. contact information will be automatically\r\nupdated when updated in a contact.</list>",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the type used to identify system status instances for mapping.\r\n\n\r\nStable, human-readable identifier added specifically for referencing deployed documents from code.\r\nUnlike the runtime-generated Guid Id and dynamic string Number, this value is known at deployment time\r\nand never changes afterwards.\r\n\n\r\nExamples: \"open\", \"drafted\", \"locked\", \"converted_to_transaction\"\r\n",
                         "nullable": true
                     },
                     "hexColor": {

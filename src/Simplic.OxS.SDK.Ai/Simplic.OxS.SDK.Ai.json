@@ -2870,6 +2870,65 @@
                 }
             }
         },
+        "/LLM/get-efforts": {
+            "get": {
+                "tags": [
+                    "LLM"
+                ],
+                "summary": "Gets all supported reasoning effort levels (\"low\", \"medium\", \"high\"), for models that\nsupport tunable reasoning effort (e.g. Claude extended thinking, GPT-5).",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Mcp/servers": {
             "get": {
                 "tags": [
@@ -5383,6 +5442,10 @@
                         "$ref": "#/components/schemas/AgentMode"
                     },
                     "model": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "effort": {
                         "type": "string",
                         "nullable": true
                     },
