@@ -43,62 +43,97 @@ public interface ILLMClient
     /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>List&lt;LLMTypeModel&gt;</returns>
-    List<LLMTypeModel> GetAll();
+    /// <returns>List&lt;LLMModelInfoModel&gt;</returns>
+    List<LLMModelInfoModel> GetAll();
 
     /// <summary>
     /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-    ApiResponse<List<LLMTypeModel>> GetAllWithHttpInfo();
+    /// <returns>ApiResponse of List&lt;LLMModelInfoModel&gt;</returns>
+    ApiResponse<List<LLMModelInfoModel>> GetAllWithHttpInfo();
         
     /// <summary>
     /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-    Task<List<LLMTypeModel>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;LLMModelInfoModel&gt;</returns>
+    Task<List<LLMModelInfoModel>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Gets all available LLM providers. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-    Task<ApiResponse<List<LLMTypeModel>>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (List&lt;LLMModelInfoModel&gt;)</returns>
+    Task<ApiResponse<List<LLMModelInfoModel>>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
     /// <returns>List&lt;LLMTypeModel&gt;</returns>
-    List<LLMTypeModel> GetEfforts();
+    List<LLMTypeModel> GetEfforts(string? model = default(string?));
 
     /// <summary>
-    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
     /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-    ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo();
+    ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(string? model = default(string?));
         
     /// <summary>
-    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-    Task<List<LLMTypeModel>> GetEffortsAsync(CancellationToken cancellationToken = default(CancellationToken));
+    Task<List<LLMTypeModel>> GetEffortsAsync(string? model = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+    /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+    Task<ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(string? model = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;LLMTierModel&gt;</returns>
+    List<LLMTierModel> GetTiers();
+
+    /// <summary>
+    /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;LLMTierModel&gt;</returns>
+    ApiResponse<List<LLMTierModel>> GetTiersWithHttpInfo();
+        
+    /// <summary>
+    /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-    Task<ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;LLMTierModel&gt;</returns>
+    Task<List<LLMTierModel>> GetTiersAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;LLMTierModel&gt;)</returns>
+    Task<ApiResponse<List<LLMTierModel>>> GetTiersWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -179,8 +214,8 @@ public interface ILLMClient
         /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;LLMTypeModel&gt;</returns>
-        public List<LLMTypeModel> GetAll()
+        /// <returns>List&lt;LLMModelInfoModel&gt;</returns>
+        public List<LLMModelInfoModel> GetAll()
         {
             try
             {
@@ -196,8 +231,8 @@ public interface ILLMClient
         /// Gets all available LLM providers. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetAllWithHttpInfo()
+        /// <returns>ApiResponse of List&lt;LLMModelInfoModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMModelInfoModel>> GetAllWithHttpInfo()
         {
             try
             {
@@ -214,8 +249,8 @@ public interface ILLMClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<LLMTypeModel>> GetAllAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;LLMModelInfoModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<LLMModelInfoModel>> GetAllAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -232,8 +267,8 @@ public interface ILLMClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetAllWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;LLMModelInfoModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMModelInfoModel>>> GetAllWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
@@ -245,15 +280,16 @@ public interface ILLMClient
             }
         }    
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <returns>List&lt;LLMTypeModel&gt;</returns>
-        public List<LLMTypeModel> GetEfforts()
+        public List<LLMTypeModel> GetEfforts(string? model = default(string?))
         {
             try
             {
-                return _internalClient.GetEfforts();
+                return _internalClient.GetEfforts(model);
             }
             catch (ApiException e)
             {
@@ -262,15 +298,16 @@ public interface ILLMClient
         }
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo()
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(string? model = default(string?))
         {
             try
             {
-                return _internalClient.GetEffortsWithHttpInfo();
+                return _internalClient.GetEffortsWithHttpInfo(model);
             }
             catch (ApiException e)
             {
@@ -279,16 +316,17 @@ public interface ILLMClient
         } 
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(string? model = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetEffortsAsync(cancellationToken: cancellationToken);
+                return _internalClient.GetEffortsAsync(model, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -297,16 +335,86 @@ public interface ILLMClient
         }
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(string? model = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetEffortsWithHttpInfoAsync(cancellationToken: cancellationToken);
+                return _internalClient.GetEffortsWithHttpInfoAsync(model, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;LLMTierModel&gt;</returns>
+        public List<LLMTierModel> GetTiers()
+        {
+            try
+            {
+                return _internalClient.GetTiers();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;LLMTierModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTierModel>> GetTiersWithHttpInfo()
+        {
+            try
+            {
+                return _internalClient.GetTiersWithHttpInfo();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;LLMTierModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<LLMTierModel>> GetTiersAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetTiersAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTierModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTierModel>>> GetTiersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.GetTiersWithHttpInfoAsync(cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -331,8 +439,8 @@ public interface ILLMClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;LLMTypeModel&gt;</returns>
-        List<LLMTypeModel> GetAll(int operationIndex = 0);
+        /// <returns>List&lt;LLMModelInfoModel&gt;</returns>
+        List<LLMModelInfoModel> GetAll(int operationIndex = 0);
 
         /// <summary>
         /// Gets all available LLM providers.
@@ -342,26 +450,46 @@ public interface ILLMClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-        ApiResponse<List<LLMTypeModel>> GetAllWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;LLMModelInfoModel&gt;</returns>
+        ApiResponse<List<LLMModelInfoModel>> GetAllWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LLMTypeModel&gt;</returns>
+        List<LLMTypeModel> GetEfforts(string? model = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
+        ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(string? model = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;LLMTypeModel&gt;</returns>
-        List<LLMTypeModel> GetEfforts(int operationIndex = 0);
+        /// <returns>List&lt;LLMTierModel&gt;</returns>
+        List<LLMTierModel> GetTiers(int operationIndex = 0);
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-        ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;LLMTierModel&gt;</returns>
+        ApiResponse<List<LLMTierModel>> GetTiersWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -380,8 +508,8 @@ public interface ILLMClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<LLMTypeModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;LLMModelInfoModel&gt;</returns>
+        System.Threading.Tasks.Task<List<LLMModelInfoModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Gets all available LLM providers.
@@ -392,22 +520,35 @@ public interface ILLMClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<LLMTypeModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;LLMModelInfoModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<LLMModelInfoModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-        System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(string? model = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5).
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(string? model = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor.
         /// </summary>
         /// <remarks>
         /// 
@@ -415,8 +556,20 @@ public interface ILLMClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;LLMTierModel&gt;</returns>
+        System.Threading.Tasks.Task<List<LLMTierModel>> GetTiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTierModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<LLMTierModel>>> GetTiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -544,10 +697,10 @@ public interface ILLMClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;LLMTypeModel&gt;</returns>
-        public List<LLMTypeModel> GetAll(int operationIndex = 0)
+        /// <returns>List&lt;LLMModelInfoModel&gt;</returns>
+        public List<LLMModelInfoModel> GetAll(int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = GetAllWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<LLMModelInfoModel>> localVarResponse = GetAllWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -556,8 +709,8 @@ public interface ILLMClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;LLMModelInfoModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMModelInfoModel>> GetAllWithHttpInfo(int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -600,7 +753,7 @@ public interface ILLMClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<LLMTypeModel>>("/LLM/get-all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<LLMModelInfoModel>>("/LLM/get-all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("LLMGetAllGet", localVarResponse);
@@ -619,10 +772,10 @@ public interface ILLMClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<LLMTypeModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;LLMModelInfoModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<LLMModelInfoModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<LLMModelInfoModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -632,8 +785,8 @@ public interface ILLMClient
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;LLMModelInfoModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMModelInfoModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -677,7 +830,7 @@ public interface ILLMClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<LLMTypeModel>>("/LLM/get-all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<LLMModelInfoModel>>("/LLM/get-all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -692,24 +845,26 @@ public interface ILLMClient
         }
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;LLMTypeModel&gt;</returns>
-        public List<LLMTypeModel> GetEfforts(int operationIndex = 0)
+        public List<LLMTypeModel> GetEfforts(string? model = default(string?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = GetEffortsWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = GetEffortsWithHttpInfo(model);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;LLMTypeModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> GetEffortsWithHttpInfo(string? model = default(string?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -735,6 +890,10 @@ public interface ILLMClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (model != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "model", model));
+            }
 
             localVarRequestOptions.Operation = "LLMClient.LLMGetEffortsGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -766,26 +925,184 @@ public interface ILLMClient
         }
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;LLMTypeModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<LLMTypeModel>> GetEffortsAsync(string? model = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = await GetEffortsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>> localVarResponse = await GetEffortsWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Gets all supported reasoning effort levels (\&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;), for models that support tunable reasoning effort (e.g. Claude extended thinking, GPT-5). 
+        /// Gets the reasoning effort levels supported by a specific model (e.g. \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, and provider-specific extensions like \&quot;xhigh\&quot;/\&quot;max\&quot;). Returns an empty list if the model has no tunable reasoning effort at all — callers should treat that as \&quot;no effort selector for this model\&quot;, not as an error. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(string? model = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (model != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "model", model));
+            }
+
+            localVarRequestOptions.Operation = "LLMClient.LLMGetEffortsGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<LLMTypeModel>>("/LLM/get-efforts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMGetEffortsGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;LLMTierModel&gt;</returns>
+        public List<LLMTierModel> GetTiers(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LLMTierModel>> localVarResponse = GetTiersWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;LLMTierModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<LLMTierModel>> GetTiersWithHttpInfo(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "LLMClient.LLMGetTiersGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<LLMTierModel>>("/LLM/get-tiers", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("LLMGetTiersGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;LLMTypeModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTypeModel>>> GetEffortsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;LLMTierModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<LLMTierModel>> GetTiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<LLMTierModel>> localVarResponse = await GetTiersWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for selection, each resolved to the concrete model + reasoning effort it currently maps to. Intended for end-user-facing selectors, replacing raw model/effort pickers that assume familiarity with specific model names — clients only need to remember which tier the user picked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort straight back as &#x60;Conversation.Model&#x60;/&#x60;Conversation.Effort&#x60;.  A tier is silently omitted if its mapped model is no longer registered, or no longer supports the mapped effort level — this can only happen after a provider change and should never occur in a correctly configured deployment, but failing open (fewer tiers) is safer than returning a tier the backend can&#39;t actually honor. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;LLMTierModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<LLMTierModel>>> GetTiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -813,7 +1130,7 @@ public interface ILLMClient
             }
 
 
-            localVarRequestOptions.Operation = "LLMClient.LLMGetEffortsGet";
+            localVarRequestOptions.Operation = "LLMClient.LLMGetTiersGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -829,11 +1146,11 @@ public interface ILLMClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<LLMTypeModel>>("/LLM/get-efforts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<LLMTierModel>>("/LLM/get-tiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("LLMGetEffortsGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("LLMGetTiersGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

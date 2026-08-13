@@ -2805,6 +2805,95 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
+                                        "$ref": "#/components/schemas/LLMModelInfoModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMModelInfoModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LLMModelInfoModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/LLM/get-efforts": {
+            "get": {
+                "tags": [
+                    "LLM"
+                ],
+                "summary": "Gets the reasoning effort levels supported by a specific model (e.g. \"low\", \"medium\",\n\"high\", and provider-specific extensions like \"xhigh\"/\"max\"). Returns an empty list if\nthe model has no tunable reasoning effort at all \u2014 callers should treat that as \"no\neffort selector for this model\", not as an error.",
+                "parameters": [
+                    {
+                        "name": "model",
+                        "in": "query",
+                        "description": "The model name to resolve, as returned by M:Simplic.OxS.AI.Server.Controllers.LLMController.GetAll(System.Threading.CancellationToken).",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
                                         "$ref": "#/components/schemas/LLMTypeModel"
                                     }
                                 }
@@ -2870,12 +2959,12 @@
                 }
             }
         },
-        "/LLM/get-efforts": {
+        "/LLM/get-tiers": {
             "get": {
                 "tags": [
                     "LLM"
                 ],
-                "summary": "Gets all supported reasoning effort levels (\"low\", \"medium\", \"high\"), for models that\nsupport tunable reasoning effort (e.g. Claude extended thinking, GPT-5).",
+                "summary": "Gets the simplified capability/cost tiers (see Simplic.OxS.AI.LLMTier) available for\nselection, each resolved to the concrete model + reasoning effort it currently maps to.\nIntended for end-user-facing selectors, replacing raw model/effort pickers that assume\nfamiliarity with specific model names \u2014 clients only need to remember which tier the user\npicked and send its Simplic.OxS.AI.Server.Model.LLMTierModel.Model/Simplic.OxS.AI.Server.Model.LLMTierModel.Effort\nstraight back as `Conversation.Model`/`Conversation.Effort`.\n\nA tier is silently omitted if its mapped model is no longer registered, or no longer\nsupports the mapped effort level \u2014 this can only happen after a provider change and\nshould never occur in a correctly configured deployment, but failing open (fewer tiers)\nis safer than returning a tier the backend can't actually honor.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2884,7 +2973,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                        "$ref": "#/components/schemas/LLMTierModel"
                                     }
                                 }
                             },
@@ -2892,7 +2981,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                        "$ref": "#/components/schemas/LLMTierModel"
                                     }
                                 }
                             },
@@ -2900,7 +2989,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/LLMTypeModel"
+                                        "$ref": "#/components/schemas/LLMTierModel"
                                     }
                                 }
                             }
@@ -5299,6 +5388,16 @@
                     },
                     "tokenUsage": {
                         "$ref": "#/components/schemas/MessageTokenUsage"
+                    },
+                    "model": {
+                        "type": "string",
+                        "description": "Gets or sets the LLM model that effectively produced this message (assistant\nmessages only), e.g. \"claude-sonnet-5\". This is the resolved model actually used \u2014\nthe caller-requested model when supported, otherwise the provider's default model \u2014\nnot necessarily the raw request value. Null for user/tool messages or older messages\nrecorded before this field existed.",
+                        "nullable": true
+                    },
+                    "effort": {
+                        "type": "string",
+                        "description": "Gets or sets the reasoning effort effectively used to produce this message (assistant\nmessages only), one of \"minimal\", \"low\", \"medium\", \"high\", \"xhigh\", \"max\" (see\nSimplic.OxS.AI.ReasoningEffort). This is cleared to null (rather than\nechoing the raw request) when the resolved model doesn't support the requested level,\nor for older messages recorded before this field existed.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -6298,6 +6397,64 @@
                 },
                 "additionalProperties": false,
                 "description": "Model representing a hash algorithm."
+            },
+            "LLMModelInfoModel": {
+                "required": [
+                    "displayName",
+                    "family",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the raw model id (e.g. \"claude-opus-4-7\"). This is the value clients\nmust send back in requests (e.g. as `Conversation.Model` or the `model`\nquery parameter of `get-efforts`).",
+                        "nullable": true
+                    },
+                    "vendor": {
+                        "type": "string",
+                        "description": "Gets or sets the vendor/company identifier that owns this model (e.g. \"anthropic\",\n\"openai\"), as reported by the owning Simplic.OxS.AI.ILLMProvider.Vendor. Clients can\nuse this to pick a matching brand icon without pattern-matching Simplic.OxS.AI.Server.Model.LLMModelInfoModel.Name.",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "Gets or sets the human-friendly display name for this model (e.g. \"Claude Opus 4.7\"),\nas reported by M:Simplic.OxS.AI.ILLMProvider.GetDisplayName(System.String).",
+                        "nullable": true
+                    },
+                    "family": {
+                        "type": "string",
+                        "description": "Gets or sets the product family/tier this model belongs to (e.g. \"opus\", \"sonnet\",\n\"haiku\", \"gpt\"), as reported by M:Simplic.OxS.AI.ILLMProvider.GetFamily(System.String). Clients key\ntheir localized description text by this, not by Simplic.OxS.AI.Server.Model.LLMModelInfoModel.Name, so a pinned\nsnapshot and its \"-latest\" rolling alias share one translation.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Model representing a selectable LLM model, enriched with vendor/display metadata so UIs\ndon't have to infer branding by pattern-matching the raw model id.\n\nDeliberately does NOT carry description text: that's localized presentation copy, which\nbelongs in the frontend's i18n catalog (translated per-locale, keyed by Simplic.OxS.AI.Server.Model.LLMModelInfoModel.Family),\nnot as a single-language string shipped from the backend. Simplic.OxS.AI.Server.Model.LLMModelInfoModel.DisplayName and\nSimplic.OxS.AI.Server.Model.LLMModelInfoModel.Family are different: they're the same value in every locale (a brand/version\nstring and a stable classifier, respectively), so the backend owns them directly instead of\nevery client keeping its own synced copy."
+            },
+            "LLMTierModel": {
+                "required": [
+                    "model",
+                    "tier"
+                ],
+                "type": "object",
+                "properties": {
+                    "tier": {
+                        "type": "string",
+                        "description": "Gets or sets the tier key (see Simplic.OxS.AI.LLMTier), e.g. \"fast\", \"balanced\",\n\"powerful\". Clients key their localized label/description text by this value.",
+                        "nullable": true
+                    },
+                    "model": {
+                        "type": "string",
+                        "description": "Gets or sets the raw model id this tier currently resolves to (e.g.\n\"claude-sonnet-4-6\"). Clients must send this back as `Conversation.Model` when\nthe user has this tier selected \u2014 it may change over time as the backend re-tunes\nwhich model backs each tier, without requiring a frontend deploy.",
+                        "nullable": true
+                    },
+                    "effort": {
+                        "type": "string",
+                        "description": "Gets or sets the reasoning effort (see Simplic.OxS.AI.ReasoningEffort) this tier\ncurrently resolves to, or `null` if the underlying model has no tunable\nreasoning effort. Clients must send this back as `Conversation.Effort`.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Model representing a single selectable capability/cost tier (see Simplic.OxS.AI.LLMTier),\nresolved to the concrete model + reasoning effort combination it currently maps to.\n\nDeliberately does NOT carry a label or description: those are localized presentation copy\n(\"Fast\", \"Good for quick answers, lower cost\", etc.), which belongs in the frontend's i18n\ncatalog keyed by Simplic.OxS.AI.Server.Model.LLMTierModel.Tier, not as single-language strings shipped from the\nbackend. Simplic.OxS.AI.Server.Model.LLMTierModel.Tier itself is a stable classifier, not translated content, so the\nbackend owns it directly."
             },
             "LLMTypeModel": {
                 "required": [

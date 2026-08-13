@@ -43,7 +43,9 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="timestamp">Gets or sets the timestamp of the message..</param>
         /// <param name="toolName">Gets or sets the tool name, if this is a tool message..</param>
         /// <param name="tokenUsage">tokenUsage.</param>
-        public AgentMessageResponse(Guid id = default(Guid), Guid? turnId = default(Guid?), string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string), MessageTokenUsage tokenUsage = default(MessageTokenUsage))
+        /// <param name="model">Gets or sets the LLM model that effectively produced this message (assistant messages only), e.g. \&quot;claude-sonnet-5\&quot;. This is the resolved model actually used — the caller-requested model when supported, otherwise the provider&#39;s default model — not necessarily the raw request value. Null for user/tool messages or older messages recorded before this field existed..</param>
+        /// <param name="effort">Gets or sets the reasoning effort effectively used to produce this message (assistant messages only), one of \&quot;minimal\&quot;, \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, \&quot;xhigh\&quot;, \&quot;max\&quot; (see Simplic.OxS.AI.ReasoningEffort). This is cleared to null (rather than echoing the raw request) when the resolved model doesn&#39;t support the requested level, or for older messages recorded before this field existed..</param>
+        public AgentMessageResponse(Guid id = default(Guid), Guid? turnId = default(Guid?), string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string), MessageTokenUsage tokenUsage = default(MessageTokenUsage), string model = default(string), string effort = default(string))
         {
             this.Id = id;
             this.TurnId = turnId;
@@ -52,6 +54,8 @@ namespace Simplic.OxS.SDK.Ai
             this.Timestamp = timestamp;
             this.ToolName = toolName;
             this.TokenUsage = tokenUsage;
+            this.Model = model;
+            this.Effort = effort;
         }
 
         /// <summary>
@@ -103,6 +107,20 @@ namespace Simplic.OxS.SDK.Ai
         public MessageTokenUsage TokenUsage { get; set; }
 
         /// <summary>
+        /// Gets or sets the LLM model that effectively produced this message (assistant messages only), e.g. \&quot;claude-sonnet-5\&quot;. This is the resolved model actually used — the caller-requested model when supported, otherwise the provider&#39;s default model — not necessarily the raw request value. Null for user/tool messages or older messages recorded before this field existed.
+        /// </summary>
+        /// <value>Gets or sets the LLM model that effectively produced this message (assistant messages only), e.g. \&quot;claude-sonnet-5\&quot;. This is the resolved model actually used — the caller-requested model when supported, otherwise the provider&#39;s default model — not necessarily the raw request value. Null for user/tool messages or older messages recorded before this field existed.</value>
+        [DataMember(Name = "model", EmitDefaultValue = true)]
+        public string Model { get; set; }
+
+        /// <summary>
+        /// Gets or sets the reasoning effort effectively used to produce this message (assistant messages only), one of \&quot;minimal\&quot;, \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, \&quot;xhigh\&quot;, \&quot;max\&quot; (see Simplic.OxS.AI.ReasoningEffort). This is cleared to null (rather than echoing the raw request) when the resolved model doesn&#39;t support the requested level, or for older messages recorded before this field existed.
+        /// </summary>
+        /// <value>Gets or sets the reasoning effort effectively used to produce this message (assistant messages only), one of \&quot;minimal\&quot;, \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, \&quot;xhigh\&quot;, \&quot;max\&quot; (see Simplic.OxS.AI.ReasoningEffort). This is cleared to null (rather than echoing the raw request) when the resolved model doesn&#39;t support the requested level, or for older messages recorded before this field existed.</value>
+        [DataMember(Name = "effort", EmitDefaultValue = true)]
+        public string Effort { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -117,6 +135,8 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  ToolName: ").Append(ToolName).Append("\n");
             sb.Append("  TokenUsage: ").Append(TokenUsage).Append("\n");
+            sb.Append("  Model: ").Append(Model).Append("\n");
+            sb.Append("  Effort: ").Append(Effort).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -186,6 +206,16 @@ namespace Simplic.OxS.SDK.Ai
                     this.TokenUsage == input.TokenUsage ||
                     (this.TokenUsage != null &&
                     this.TokenUsage.Equals(input.TokenUsage))
+                ) && 
+                (
+                    this.Model == input.Model ||
+                    (this.Model != null &&
+                    this.Model.Equals(input.Model))
+                ) && 
+                (
+                    this.Effort == input.Effort ||
+                    (this.Effort != null &&
+                    this.Effort.Equals(input.Effort))
                 );
         }
 
@@ -225,6 +255,14 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.TokenUsage != null)
                 {
                     hashCode = (hashCode * 59) + this.TokenUsage.GetHashCode();
+                }
+                if (this.Model != null)
+                {
+                    hashCode = (hashCode * 59) + this.Model.GetHashCode();
+                }
+                if (this.Effort != null)
+                {
+                    hashCode = (hashCode * 59) + this.Effort.GetHashCode();
                 }
                 return hashCode;
             }
