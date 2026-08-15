@@ -40,13 +40,15 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="value">Gets or sets the value..</param>
         /// <param name="description">Gets or sets the description..</param>
+        /// <param name="isTourIndependent">Gets or sets a value indicating whether the workflow can be used independently of a tour..</param>
         /// <param name="steps">Gets or sets the list of workflow steps..</param>
-        public WorkflowResponse(Guid id = default(Guid), string name = default(string), string value = default(string), string description = default(string), List<WorkflowStepAssignmentModel> steps = default(List<WorkflowStepAssignmentModel>))
+        public WorkflowResponse(Guid id = default(Guid), string name = default(string), string value = default(string), string description = default(string), bool isTourIndependent = default(bool), List<WorkflowStepAssignmentModel> steps = default(List<WorkflowStepAssignmentModel>))
         {
             this.Id = id;
             this.Name = name;
             this.Value = value;
             this.Description = description;
+            this.IsTourIndependent = isTourIndependent;
             this.Steps = steps;
         }
 
@@ -79,6 +81,13 @@ namespace Simplic.OxS.SDK.Telematic
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the workflow can be used independently of a tour.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the workflow can be used independently of a tour.</value>
+        [DataMember(Name = "isTourIndependent", EmitDefaultValue = true)]
+        public bool IsTourIndependent { get; set; }
+
+        /// <summary>
         /// Gets or sets the list of workflow steps.
         /// </summary>
         /// <value>Gets or sets the list of workflow steps.</value>
@@ -97,6 +106,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  IsTourIndependent: ").Append(IsTourIndependent).Append("\n");
             sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -154,6 +164,10 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.IsTourIndependent == input.IsTourIndependent ||
+                    this.IsTourIndependent.Equals(input.IsTourIndependent)
+                ) && 
+                (
                     this.Steps == input.Steps ||
                     this.Steps != null &&
                     input.Steps != null &&
@@ -186,6 +200,7 @@ namespace Simplic.OxS.SDK.Telematic
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsTourIndependent.GetHashCode();
                 if (this.Steps != null)
                 {
                     hashCode = (hashCode * 59) + this.Steps.GetHashCode();

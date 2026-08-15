@@ -6477,6 +6477,10 @@
                         "description": "Gets or sets the description.",
                         "nullable": true
                     },
+                    "isTourIndependent": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the workflow can be used independently of a tour."
+                    },
                     "steps": {
                         "type": "array",
                         "items": {
@@ -9137,6 +9141,10 @@
                         "type": "string",
                         "description": "Gets or sets the description.",
                         "nullable": true
+                    },
+                    "isTourIndependent": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the workflow can be used independently of a tour."
                     },
                     "steps": {
                         "type": "array",
