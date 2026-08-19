@@ -198,6 +198,7 @@ void (empty response body)
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
