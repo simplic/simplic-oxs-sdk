@@ -1703,6 +1703,7 @@ public interface IDataSetClient
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1785,6 +1786,7 @@ public interface IDataSetClient
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1863,7 +1865,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1943,7 +1946,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2019,7 +2023,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2096,7 +2101,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2173,7 +2179,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2253,7 +2260,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2336,7 +2344,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2422,7 +2431,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2504,7 +2514,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2587,7 +2598,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2664,6 +2676,7 @@ public interface IDataSetClient
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2746,6 +2759,7 @@ public interface IDataSetClient
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2832,7 +2846,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2918,7 +2933,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3000,7 +3016,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3083,7 +3100,8 @@ public interface IDataSetClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
