@@ -12558,6 +12558,11 @@
                         "description": "Gets or sets the longitude.",
                         "format": "double",
                         "nullable": true
+                    },
+                    "matchCode": {
+                        "type": "string",
+                        "description": "Gets or sets the matchcode of the address.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,

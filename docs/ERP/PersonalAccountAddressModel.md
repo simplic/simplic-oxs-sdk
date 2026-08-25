@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **CountryIso** | **string** | Gets or sets the country iso. | [optional] 
 **Latitude** | **double?** | Gets or sets the latitude. | [optional] 
 **Longitude** | **double?** | Gets or sets the longitude. | [optional] 
+**MatchCode** | **string** | Gets or sets the matchcode of the address. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

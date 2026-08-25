@@ -51,7 +51,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="countryIso">Gets or sets the country iso..</param>
         /// <param name="latitude">Gets or sets the latitude..</param>
         /// <param name="longitude">Gets or sets the longitude..</param>
-        public PersonalAccountAddressModel(Guid contactId = default(Guid), string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), double? latitude = default(double?), double? longitude = default(double?))
+        /// <param name="matchCode">Gets or sets the matchcode of the address..</param>
+        public PersonalAccountAddressModel(Guid contactId = default(Guid), string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), double? latitude = default(double?), double? longitude = default(double?), string matchCode = default(string))
         {
             this.ContactId = contactId;
             this.FirstName = firstName;
@@ -68,6 +69,7 @@ namespace Simplic.OxS.SDK.ERP
             this.CountryIso = countryIso;
             this.Latitude = latitude;
             this.Longitude = longitude;
+            this.MatchCode = matchCode;
         }
 
         /// <summary>
@@ -176,6 +178,13 @@ namespace Simplic.OxS.SDK.ERP
         public double? Longitude { get; set; }
 
         /// <summary>
+        /// Gets or sets the matchcode of the address.
+        /// </summary>
+        /// <value>Gets or sets the matchcode of the address.</value>
+        [DataMember(Name = "matchCode", EmitDefaultValue = true)]
+        public string MatchCode { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -198,6 +207,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  CountryIso: ").Append(CountryIso).Append("\n");
             sb.Append("  Latitude: ").Append(Latitude).Append("\n");
             sb.Append("  Longitude: ").Append(Longitude).Append("\n");
+            sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -307,6 +317,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.Longitude == input.Longitude ||
                     (this.Longitude != null &&
                     this.Longitude.Equals(input.Longitude))
+                ) && 
+                (
+                    this.MatchCode == input.MatchCode ||
+                    (this.MatchCode != null &&
+                    this.MatchCode.Equals(input.MatchCode))
                 );
         }
 
@@ -378,6 +393,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Longitude != null)
                 {
                     hashCode = (hashCode * 59) + this.Longitude.GetHashCode();
+                }
+                if (this.MatchCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.MatchCode.GetHashCode();
                 }
                 return hashCode;
             }
