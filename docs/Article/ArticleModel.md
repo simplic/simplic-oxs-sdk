@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **OrganizationId** | **Guid** |  | [optional] 
 **ArticleGroup** | [**ArticleGroupModel**](ArticleGroupModel.md) |  | [optional] 
 **QuantityUnit** | [**QuantityUnitReferenceModel**](QuantityUnitReferenceModel.md) |  | [optional] 
+**TaxRate** | [**TaxRateSubsetModel**](TaxRateSubsetModel.md) |  | [optional] 
 **CreateDateTime** | **DateTime** |  | [optional] 
 **CreateUserId** | **Guid?** |  | [optional] 
 **CreateUserName** | **string** |  | [optional] 

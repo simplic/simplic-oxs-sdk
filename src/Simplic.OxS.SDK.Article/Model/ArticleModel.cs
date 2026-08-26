@@ -46,6 +46,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="organizationId">organizationId.</param>
         /// <param name="articleGroup">articleGroup.</param>
         /// <param name="quantityUnit">quantityUnit.</param>
+        /// <param name="taxRate">taxRate.</param>
         /// <param name="createDateTime">createDateTime.</param>
         /// <param name="createUserId">createUserId.</param>
         /// <param name="createUserName">createUserName.</param>
@@ -53,7 +54,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public ArticleModel(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), Guid organizationId = default(Guid), ArticleGroupModel articleGroup = default(ArticleGroupModel), QuantityUnitReferenceModel quantityUnit = default(QuantityUnitReferenceModel), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
+        public ArticleModel(string shortName = default(string), string fullName = default(string), string number = default(string), Guid? taxRateId = default(Guid?), string ean = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), Guid organizationId = default(Guid), ArticleGroupModel articleGroup = default(ArticleGroupModel), QuantityUnitReferenceModel quantityUnit = default(QuantityUnitReferenceModel), TaxRateSubsetModel taxRate = default(TaxRateSubsetModel), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
         {
             this.ShortName = shortName;
             this.FullName = fullName;
@@ -65,6 +66,7 @@ namespace Simplic.OxS.SDK.Article
             this.OrganizationId = organizationId;
             this.ArticleGroup = articleGroup;
             this.QuantityUnit = quantityUnit;
+            this.TaxRate = taxRate;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -135,6 +137,12 @@ namespace Simplic.OxS.SDK.Article
         public QuantityUnitReferenceModel QuantityUnit { get; set; }
 
         /// <summary>
+        /// Gets or Sets TaxRate
+        /// </summary>
+        [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+        public TaxRateSubsetModel TaxRate { get; set; }
+
+        /// <summary>
         /// Gets or Sets CreateDateTime
         /// </summary>
         [DataMember(Name = "createDateTime", EmitDefaultValue = false)]
@@ -194,6 +202,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  ArticleGroup: ").Append(ArticleGroup).Append("\n");
             sb.Append("  QuantityUnit: ").Append(QuantityUnit).Append("\n");
+            sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -288,6 +297,11 @@ namespace Simplic.OxS.SDK.Article
                     this.QuantityUnit.Equals(input.QuantityUnit))
                 ) && 
                 (
+                    this.TaxRate == input.TaxRate ||
+                    (this.TaxRate != null &&
+                    this.TaxRate.Equals(input.TaxRate))
+                ) && 
+                (
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
@@ -371,6 +385,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.QuantityUnit != null)
                 {
                     hashCode = (hashCode * 59) + this.QuantityUnit.GetHashCode();
+                }
+                if (this.TaxRate != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
                 }
                 if (this.CreateDateTime != null)
                 {
