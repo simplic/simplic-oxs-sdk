@@ -47,13 +47,15 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// <param name="type">type.</param>
         /// <param name="state">state.</param>
         /// <param name="installationDate">installationDate.</param>
-        public Sensor(string sensorId = default(string), string name = default(string), string type = default(string), SensorState? state = default(SensorState?), DateTime? installationDate = default(DateTime?))
+        /// <param name="timeoutAlert">timeoutAlert.</param>
+        public Sensor(string sensorId = default(string), string name = default(string), string type = default(string), SensorState? state = default(SensorState?), DateTime? installationDate = default(DateTime?), TimeoutAlertConfiguration timeoutAlert = default(TimeoutAlertConfiguration))
         {
             this.SensorId = sensorId;
             this.Name = name;
             this.Type = type;
             this.State = state;
             this.InstallationDate = installationDate;
+            this.TimeoutAlert = timeoutAlert;
         }
 
         /// <summary>
@@ -81,6 +83,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         public DateTime? InstallationDate { get; set; }
 
         /// <summary>
+        /// Gets or Sets TimeoutAlert
+        /// </summary>
+        [DataMember(Name = "timeoutAlert", EmitDefaultValue = false)]
+        public TimeoutAlertConfiguration TimeoutAlert { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +101,7 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  InstallationDate: ").Append(InstallationDate).Append("\n");
+            sb.Append("  TimeoutAlert: ").Append(TimeoutAlert).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +160,11 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                     this.InstallationDate == input.InstallationDate ||
                     (this.InstallationDate != null &&
                     this.InstallationDate.Equals(input.InstallationDate))
+                ) && 
+                (
+                    this.TimeoutAlert == input.TimeoutAlert ||
+                    (this.TimeoutAlert != null &&
+                    this.TimeoutAlert.Equals(input.TimeoutAlert))
                 );
         }
 
@@ -179,6 +193,10 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 if (this.InstallationDate != null)
                 {
                     hashCode = (hashCode * 59) + this.InstallationDate.GetHashCode();
+                }
+                if (this.TimeoutAlert != null)
+                {
+                    hashCode = (hashCode * 59) + this.TimeoutAlert.GetHashCode();
                 }
                 return hashCode;
             }

@@ -43,21 +43,25 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// Initializes a new instance of the <see cref="PostVehicleConfigurationRequest" /> class.
         /// </summary>
         /// <param name="vehicleId">vehicleId.</param>
+        /// <param name="alertSetting">alertSetting.</param>
         /// <param name="imei">imei.</param>
         /// <param name="sensors">sensors.</param>
         /// <param name="reportConfigurationDenmark">reportConfigurationDenmark.</param>
         /// <param name="tags">tags.</param>
         /// <param name="notes">notes.</param>
         /// <param name="gpsDataSource">gpsDataSource.</param>
-        public PostVehicleConfigurationRequest(Guid vehicleId = default(Guid), string imei = default(string), List<Sensor> sensors = default(List<Sensor>), ReportConfigurationDenmark reportConfigurationDenmark = default(ReportConfigurationDenmark), List<string> tags = default(List<string>), string notes = default(string), GPSDataSource? gpsDataSource = default(GPSDataSource?))
+        /// <param name="notificationTeamId">notificationTeamId.</param>
+        public PostVehicleConfigurationRequest(Guid vehicleId = default(Guid), AlertSetting alertSetting = default(AlertSetting), string imei = default(string), List<Sensor> sensors = default(List<Sensor>), ReportConfigurationDenmark reportConfigurationDenmark = default(ReportConfigurationDenmark), List<string> tags = default(List<string>), string notes = default(string), GPSDataSource? gpsDataSource = default(GPSDataSource?), Guid? notificationTeamId = default(Guid?))
         {
             this.VehicleId = vehicleId;
+            this.AlertSetting = alertSetting;
             this.Imei = imei;
             this.Sensors = sensors;
             this.ReportConfigurationDenmark = reportConfigurationDenmark;
             this.Tags = tags;
             this.Notes = notes;
             this.GpsDataSource = gpsDataSource;
+            this.NotificationTeamId = notificationTeamId;
         }
 
         /// <summary>
@@ -65,6 +69,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         /// </summary>
         [DataMember(Name = "vehicleId", EmitDefaultValue = false)]
         public Guid VehicleId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AlertSetting
+        /// </summary>
+        [DataMember(Name = "alertSetting", EmitDefaultValue = false)]
+        public AlertSetting AlertSetting { get; set; }
 
         /// <summary>
         /// Gets or Sets Imei
@@ -97,6 +107,12 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
         public string Notes { get; set; }
 
         /// <summary>
+        /// Gets or Sets NotificationTeamId
+        /// </summary>
+        [DataMember(Name = "notificationTeamId", EmitDefaultValue = true)]
+        public Guid? NotificationTeamId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -105,12 +121,14 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
             StringBuilder sb = new StringBuilder();
             sb.Append("class PostVehicleConfigurationRequest {\n");
             sb.Append("  VehicleId: ").Append(VehicleId).Append("\n");
+            sb.Append("  AlertSetting: ").Append(AlertSetting).Append("\n");
             sb.Append("  Imei: ").Append(Imei).Append("\n");
             sb.Append("  Sensors: ").Append(Sensors).Append("\n");
             sb.Append("  ReportConfigurationDenmark: ").Append(ReportConfigurationDenmark).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  GpsDataSource: ").Append(GpsDataSource).Append("\n");
+            sb.Append("  NotificationTeamId: ").Append(NotificationTeamId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -152,6 +170,11 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                     this.VehicleId.Equals(input.VehicleId))
                 ) && 
                 (
+                    this.AlertSetting == input.AlertSetting ||
+                    (this.AlertSetting != null &&
+                    this.AlertSetting.Equals(input.AlertSetting))
+                ) && 
+                (
                     this.Imei == input.Imei ||
                     (this.Imei != null &&
                     this.Imei.Equals(input.Imei))
@@ -181,6 +204,11 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 (
                     this.GpsDataSource == input.GpsDataSource ||
                     this.GpsDataSource.Equals(input.GpsDataSource)
+                ) && 
+                (
+                    this.NotificationTeamId == input.NotificationTeamId ||
+                    (this.NotificationTeamId != null &&
+                    this.NotificationTeamId.Equals(input.NotificationTeamId))
                 );
         }
 
@@ -196,6 +224,10 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                 if (this.VehicleId != null)
                 {
                     hashCode = (hashCode * 59) + this.VehicleId.GetHashCode();
+                }
+                if (this.AlertSetting != null)
+                {
+                    hashCode = (hashCode * 59) + this.AlertSetting.GetHashCode();
                 }
                 if (this.Imei != null)
                 {
@@ -218,6 +250,10 @@ namespace Simplic.OxS.SDK.Vehicle.Temperature
                     hashCode = (hashCode * 59) + this.Notes.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.GpsDataSource.GetHashCode();
+                if (this.NotificationTeamId != null)
+                {
+                    hashCode = (hashCode * 59) + this.NotificationTeamId.GetHashCode();
+                }
                 return hashCode;
             }
         }

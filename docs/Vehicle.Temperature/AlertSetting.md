@@ -1,14 +1,11 @@
-# Simplic.OxS.SDK.Vehicle.Temperature.Sensor
+# Simplic.OxS.SDK.Vehicle.Temperature.AlertSetting
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SensorId** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Type** | **string** |  | [optional] 
-**State** | **SensorState** |  | [optional] 
-**InstallationDate** | **DateTime?** |  | [optional] 
+**MinTemperature** | **double** |  | [optional] 
+**MaxTemperature** | **double** |  | [optional] 
 **TimeoutAlert** | [**TimeoutAlertConfiguration**](TimeoutAlertConfiguration.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

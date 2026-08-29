@@ -1960,6 +1960,23 @@
                 },
                 "additionalProperties": false
             },
+            "AlertSetting": {
+                "type": "object",
+                "properties": {
+                    "minTemperature": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "maxTemperature": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "timeoutAlert": {
+                        "$ref": "#/components/schemas/TimeoutAlertConfiguration"
+                    }
+                },
+                "additionalProperties": false
+            },
             "ConfigurationModel": {
                 "type": "object",
                 "properties": {
@@ -2231,6 +2248,9 @@
             "PatchVehicleConfigurationRequest": {
                 "type": "object",
                 "properties": {
+                    "alertSetting": {
+                        "$ref": "#/components/schemas/AlertSetting"
+                    },
                     "sensors": {
                         "type": "array",
                         "items": {
@@ -2258,6 +2278,11 @@
                     },
                     "gpsDataSource": {
                         "$ref": "#/components/schemas/GPSDataSource"
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2310,6 +2335,9 @@
                         "type": "string",
                         "format": "uuid"
                     },
+                    "alertSetting": {
+                        "$ref": "#/components/schemas/AlertSetting"
+                    },
                     "imei": {
                         "type": "string",
                         "nullable": true
@@ -2337,6 +2365,11 @@
                     },
                     "gpsDataSource": {
                         "$ref": "#/components/schemas/GPSDataSource"
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2587,6 +2620,9 @@
                         "type": "string",
                         "format": "date-time",
                         "nullable": true
+                    },
+                    "timeoutAlert": {
+                        "$ref": "#/components/schemas/TimeoutAlertConfiguration"
                     }
                 },
                 "additionalProperties": false
@@ -2654,12 +2690,28 @@
                 },
                 "additionalProperties": false
             },
+            "TimeoutAlertConfiguration": {
+                "type": "object",
+                "properties": {
+                    "expectedInterval": {
+                        "type": "string",
+                        "format": "date-span"
+                    },
+                    "enabled": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
             "UpdateConfigurationRequest": {
                 "type": "object",
                 "properties": {
                     "imei": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "alertSetting": {
+                        "$ref": "#/components/schemas/AlertSetting"
                     },
                     "sensors": {
                         "type": "array",
@@ -2684,6 +2736,11 @@
                     },
                     "gpsDataSource": {
                         "$ref": "#/components/schemas/GPSDataSource"
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2716,6 +2773,9 @@
                         "type": "string",
                         "format": "uuid"
                     },
+                    "alertSetting": {
+                        "$ref": "#/components/schemas/AlertSetting"
+                    },
                     "sensors": {
                         "type": "array",
                         "items": {
@@ -2743,6 +2803,11 @@
                     },
                     "gpsDataSource": {
                         "$ref": "#/components/schemas/GPSDataSource"
+                    },
+                    "notificationTeamId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
