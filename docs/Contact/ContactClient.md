@@ -12,6 +12,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/contact-api/v1*
 | [**Patch**](ContactClient.md#contactidpatch) | **PATCH** /Contact/{id} |  |
 | [**Put**](ContactClient.md#contactidput) | **PUT** /Contact/{id} |  |
 | [**Post**](ContactClient.md#contactpost) | **POST** /Contact |  |
+| [**Reindex**](ContactClient.md#contactreindexpost) | **POST** /Contact/reindex |  |
 | [**ResolveGeoLocations**](ContactClient.md#contactresolvegeolocationspost) | **POST** /Contact/resolve-geo-locations |  |
 | [**Search**](ContactClient.md#contactsearchget) | **GET** /Contact/search |  |
 
@@ -791,6 +792,94 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="contactreindexpost"></a>
+# **Reindex**
+> void Reindex ()
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Contact;
+
+namespace Example
+{
+    public class ReindexExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/contact-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ContactClient(config);
+
+            try
+            {
+                apiInstance.Reindex();
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ContactClient.Reindex: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ReindexWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.ReindexWithHttpInfo();
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ContactClient.ReindexWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 
