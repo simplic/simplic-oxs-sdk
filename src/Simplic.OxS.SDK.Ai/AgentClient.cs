@@ -43,140 +43,140 @@ public interface IAgentClient
     /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="askRequest"> (optional)</param>
     /// <returns>AgentResponse</returns>
-    AgentResponse Ask(AgentRequest? agentRequest = default(AgentRequest?));
+    AgentResponse Ask(AskRequest? askRequest = default(AskRequest?));
 
     /// <summary>
     /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="askRequest"> (optional)</param>
     /// <returns>ApiResponse of AgentResponse</returns>
-    ApiResponse<AgentResponse> AskWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?));
+    ApiResponse<AgentResponse> AskWithHttpInfo(AskRequest? askRequest = default(AskRequest?));
         
     /// <summary>
     /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="askRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of AgentResponse</returns>
-    Task<AgentResponse> AskAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<AgentResponse> AskAsync(AskRequest? askRequest = default(AskRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="askRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (AgentResponse)</returns>
-    Task<ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AskRequest? askRequest = default(AskRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="executeRequest"> (optional)</param>
     /// <returns>AgentResponse</returns>
-    AgentResponse Execute(AgentRequest? agentRequest = default(AgentRequest?));
+    AgentResponse Execute(ExecuteRequest? executeRequest = default(ExecuteRequest?));
 
     /// <summary>
     /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="executeRequest"> (optional)</param>
     /// <returns>ApiResponse of AgentResponse</returns>
-    ApiResponse<AgentResponse> ExecuteWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?));
+    ApiResponse<AgentResponse> ExecuteWithHttpInfo(ExecuteRequest? executeRequest = default(ExecuteRequest?));
         
     /// <summary>
     /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="executeRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of AgentResponse</returns>
-    Task<AgentResponse> ExecuteAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<AgentResponse> ExecuteAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="executeRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (AgentResponse)</returns>
-    Task<ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="planRequest"> (optional)</param>
     /// <returns>AgentPlan</returns>
-    AgentPlan Plan(AgentRequest? agentRequest = default(AgentRequest?));
+    AgentPlan Plan(PlanRequest? planRequest = default(PlanRequest?));
 
     /// <summary>
-    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="planRequest"> (optional)</param>
     /// <returns>ApiResponse of AgentPlan</returns>
-    ApiResponse<AgentPlan> PlanWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?));
+    ApiResponse<AgentPlan> PlanWithHttpInfo(PlanRequest? planRequest = default(PlanRequest?));
         
     /// <summary>
-    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="planRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of AgentPlan</returns>
-    Task<AgentPlan> PlanAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<AgentPlan> PlanAsync(PlanRequest? planRequest = default(PlanRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+    /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="planRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (AgentPlan)</returns>
-    Task<ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(PlanRequest? planRequest = default(PlanRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
     /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="streamRequest"> (optional)</param>
     /// <returns></returns>
-    void Stream(AgentRequest? agentRequest = default(AgentRequest?));
+    void Stream(StreamRequest? streamRequest = default(StreamRequest?));
 
     /// <summary>
     /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="streamRequest"> (optional)</param>
     /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> StreamWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?));
+    ApiResponse<Object> StreamWithHttpInfo(StreamRequest? streamRequest = default(StreamRequest?));
         
     /// <summary>
     /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="streamRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of void</returns>
-    Task StreamAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task StreamAsync(StreamRequest? streamRequest = default(StreamRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="agentRequest"> (optional)</param>
+    /// <param name="streamRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> StreamWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<Object>> StreamWithHttpInfoAsync(StreamRequest? streamRequest = default(StreamRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -257,13 +257,13 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <returns>AgentResponse</returns>
-        public AgentResponse Ask(AgentRequest? agentRequest = default(AgentRequest?))
+        public AgentResponse Ask(AskRequest? askRequest = default(AskRequest?))
         {
             try
             {
-                return _internalClient.Ask(agentRequest);
+                return _internalClient.Ask(askRequest);
             }
             catch (ApiException e)
             {
@@ -275,13 +275,13 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <returns>ApiResponse of AgentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<AgentResponse> AskWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?))
+        public Simplic.OxS.SDK.ApiResponse<AgentResponse> AskWithHttpInfo(AskRequest? askRequest = default(AskRequest?))
         {
             try
             {
-                return _internalClient.AskWithHttpInfo(agentRequest);
+                return _internalClient.AskWithHttpInfo(askRequest);
             }
             catch (ApiException e)
             {
@@ -293,14 +293,14 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentResponse</returns>
-        public System.Threading.Tasks.Task<AgentResponse> AskAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<AgentResponse> AskAsync(AskRequest? askRequest = default(AskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.AskAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.AskAsync(askRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -312,14 +312,14 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AskRequest? askRequest = default(AskRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.AskWithHttpInfoAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.AskWithHttpInfoAsync(askRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -330,13 +330,13 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <returns>AgentResponse</returns>
-        public AgentResponse Execute(AgentRequest? agentRequest = default(AgentRequest?))
+        public AgentResponse Execute(ExecuteRequest? executeRequest = default(ExecuteRequest?))
         {
             try
             {
-                return _internalClient.Execute(agentRequest);
+                return _internalClient.Execute(executeRequest);
             }
             catch (ApiException e)
             {
@@ -348,13 +348,13 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <returns>ApiResponse of AgentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<AgentResponse> ExecuteWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?))
+        public Simplic.OxS.SDK.ApiResponse<AgentResponse> ExecuteWithHttpInfo(ExecuteRequest? executeRequest = default(ExecuteRequest?))
         {
             try
             {
-                return _internalClient.ExecuteWithHttpInfo(agentRequest);
+                return _internalClient.ExecuteWithHttpInfo(executeRequest);
             }
             catch (ApiException e)
             {
@@ -366,14 +366,14 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentResponse</returns>
-        public System.Threading.Tasks.Task<AgentResponse> ExecuteAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<AgentResponse> ExecuteAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ExecuteAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.ExecuteAsync(executeRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -385,14 +385,14 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentResponse)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.ExecuteWithHttpInfoAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.ExecuteWithHttpInfoAsync(executeRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -400,16 +400,16 @@ public interface IAgentClient
             }
         }    
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <returns>AgentPlan</returns>
-        public AgentPlan Plan(AgentRequest? agentRequest = default(AgentRequest?))
+        public AgentPlan Plan(PlanRequest? planRequest = default(PlanRequest?))
         {
             try
             {
-                return _internalClient.Plan(agentRequest);
+                return _internalClient.Plan(planRequest);
             }
             catch (ApiException e)
             {
@@ -418,16 +418,16 @@ public interface IAgentClient
         }
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <returns>ApiResponse of AgentPlan</returns>
-        public Simplic.OxS.SDK.ApiResponse<AgentPlan> PlanWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?))
+        public Simplic.OxS.SDK.ApiResponse<AgentPlan> PlanWithHttpInfo(PlanRequest? planRequest = default(PlanRequest?))
         {
             try
             {
-                return _internalClient.PlanWithHttpInfo(agentRequest);
+                return _internalClient.PlanWithHttpInfo(planRequest);
             }
             catch (ApiException e)
             {
@@ -436,17 +436,17 @@ public interface IAgentClient
         } 
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentPlan</returns>
-        public System.Threading.Tasks.Task<AgentPlan> PlanAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<AgentPlan> PlanAsync(PlanRequest? planRequest = default(PlanRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PlanAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.PlanAsync(planRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -455,17 +455,17 @@ public interface IAgentClient
         }
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentPlan)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(PlanRequest? planRequest = default(PlanRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PlanWithHttpInfoAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.PlanWithHttpInfoAsync(planRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -476,13 +476,13 @@ public interface IAgentClient
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <returns></returns>
-        public void Stream(AgentRequest? agentRequest = default(AgentRequest?))
+        public void Stream(StreamRequest? streamRequest = default(StreamRequest?))
         {
             try
             {
-                _internalClient.Stream(agentRequest);
+                _internalClient.Stream(streamRequest);
             }
             catch (ApiException e)
             {
@@ -494,13 +494,13 @@ public interface IAgentClient
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> StreamWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?))
+        public Simplic.OxS.SDK.ApiResponse<Object> StreamWithHttpInfo(StreamRequest? streamRequest = default(StreamRequest?))
         {
             try
             {
-                return _internalClient.StreamWithHttpInfo(agentRequest);
+                return _internalClient.StreamWithHttpInfo(streamRequest);
             }
             catch (ApiException e)
             {
@@ -512,14 +512,14 @@ public interface IAgentClient
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task StreamAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task StreamAsync(StreamRequest? streamRequest = default(StreamRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.StreamAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.StreamAsync(streamRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -531,14 +531,14 @@ public interface IAgentClient
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> StreamWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> StreamWithHttpInfoAsync(StreamRequest? streamRequest = default(StreamRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.StreamWithHttpInfoAsync(agentRequest, cancellationToken: cancellationToken);
+                return _internalClient.StreamWithHttpInfoAsync(streamRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -562,10 +562,10 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AgentResponse</returns>
-        AgentResponse Ask(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        AgentResponse Ask(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
@@ -574,18 +574,18 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AgentResponse</returns>
-        ApiResponse<AgentResponse> AskWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        ApiResponse<AgentResponse> AskWithHttpInfo(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0);
         /// <summary>
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AgentResponse</returns>
-        AgentResponse Execute(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        AgentResponse Execute(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
@@ -594,38 +594,38 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AgentResponse</returns>
-        ApiResponse<AgentResponse> ExecuteWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        ApiResponse<AgentResponse> ExecuteWithHttpInfo(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0);
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AgentPlan</returns>
-        AgentPlan Plan(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        AgentPlan Plan(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AgentPlan</returns>
-        ApiResponse<AgentPlan> PlanWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        ApiResponse<AgentPlan> PlanWithHttpInfo(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0);
         /// <summary>
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void Stream(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        void Stream(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0);
 
         /// <summary>
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
@@ -634,10 +634,10 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> StreamWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0);
+        ApiResponse<Object> StreamWithHttpInfo(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -654,11 +654,11 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentResponse</returns>
-        System.Threading.Tasks.Task<AgentResponse> AskAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AgentResponse> AskAsync(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
@@ -667,11 +667,11 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
         /// </summary>
@@ -679,11 +679,11 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentResponse</returns>
-        System.Threading.Tasks.Task<AgentResponse> ExecuteAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AgentResponse> ExecuteAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
@@ -692,36 +692,36 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentPlan</returns>
-        System.Threading.Tasks.Task<AgentPlan> PlanAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AgentPlan> PlanAsync(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentPlan)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
         /// </summary>
@@ -729,11 +729,11 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task StreamAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task StreamAsync(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
@@ -742,11 +742,11 @@ public interface IAgentClient
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> StreamWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> StreamWithHttpInfoAsync(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -873,12 +873,12 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AgentResponse</returns>
-        public AgentResponse Ask(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public AgentResponse Ask(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = AskWithHttpInfo(agentRequest);
+            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = AskWithHttpInfo(askRequest);
             return localVarResponse.Data;
         }
 
@@ -886,10 +886,10 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AgentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<AgentResponse> AskWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AgentResponse> AskWithHttpInfo(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -917,7 +917,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = askRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentAskPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -952,13 +952,13 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentResponse</returns>
-        public async System.Threading.Tasks.Task<AgentResponse> AskAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AgentResponse> AskAsync(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = await AskWithHttpInfoAsync(agentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = await AskWithHttpInfoAsync(askRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -966,11 +966,11 @@ public interface IAgentClient
         /// Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="askRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -999,7 +999,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = askRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentAskPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1035,12 +1035,12 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AgentResponse</returns>
-        public AgentResponse Execute(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public AgentResponse Execute(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = ExecuteWithHttpInfo(agentRequest);
+            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = ExecuteWithHttpInfo(executeRequest);
             return localVarResponse.Data;
         }
 
@@ -1048,10 +1048,10 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AgentResponse</returns>
-        public Simplic.OxS.SDK.ApiResponse<AgentResponse> ExecuteWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AgentResponse> ExecuteWithHttpInfo(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1079,7 +1079,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = executeRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentExecutePost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1114,13 +1114,13 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentResponse</returns>
-        public async System.Threading.Tasks.Task<AgentResponse> ExecuteAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AgentResponse> ExecuteAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = await ExecuteWithHttpInfoAsync(agentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AgentResponse> localVarResponse = await ExecuteWithHttpInfoAsync(executeRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1128,11 +1128,11 @@ public interface IAgentClient
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="executeRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentResponse)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentResponse>> ExecuteWithHttpInfoAsync(ExecuteRequest? executeRequest = default(ExecuteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1161,7 +1161,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = executeRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentExecutePost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1194,26 +1194,26 @@ public interface IAgentClient
         }
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AgentPlan</returns>
-        public AgentPlan Plan(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public AgentPlan Plan(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<AgentPlan> localVarResponse = PlanWithHttpInfo(agentRequest);
+            Simplic.OxS.SDK.ApiResponse<AgentPlan> localVarResponse = PlanWithHttpInfo(planRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AgentPlan</returns>
-        public Simplic.OxS.SDK.ApiResponse<AgentPlan> PlanWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<AgentPlan> PlanWithHttpInfo(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1241,7 +1241,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = planRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentPlanPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1273,28 +1273,28 @@ public interface IAgentClient
         }
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgentPlan</returns>
-        public async System.Threading.Tasks.Task<AgentPlan> PlanAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AgentPlan> PlanAsync(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<AgentPlan> localVarResponse = await PlanWithHttpInfoAsync(agentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<AgentPlan> localVarResponse = await PlanWithHttpInfoAsync(planRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
+        /// Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="planRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentPlan)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<AgentPlan>> PlanWithHttpInfoAsync(PlanRequest? planRequest = default(PlanRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1323,7 +1323,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = planRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentPlanPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1359,22 +1359,22 @@ public interface IAgentClient
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Stream(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public void Stream(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0)
         {
-            StreamWithHttpInfo(agentRequest);
+            StreamWithHttpInfo(streamRequest);
         }
 
         /// <summary>
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> StreamWithHttpInfo(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<Object> StreamWithHttpInfo(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -1402,7 +1402,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = streamRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentStreamPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1437,24 +1437,24 @@ public interface IAgentClient
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task StreamAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task StreamAsync(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await StreamWithHttpInfoAsync(agentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            await StreamWithHttpInfoAsync(streamRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentRequest"> (optional)</param>
+        /// <param name="streamRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> StreamWithHttpInfoAsync(AgentRequest? agentRequest = default(AgentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> StreamWithHttpInfoAsync(StreamRequest? streamRequest = default(StreamRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -1483,7 +1483,7 @@ public interface IAgentClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = agentRequest;
+            localVarRequestOptions.Data = streamRequest;
 
             localVarRequestOptions.Operation = "AgentClient.AgentStreamPost";
             localVarRequestOptions.OperationIndex = operationIndex;

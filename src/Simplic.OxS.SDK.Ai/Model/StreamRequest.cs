@@ -28,10 +28,10 @@ using Simplic.OxS.SDK;
 namespace Simplic.OxS.SDK.Ai
 {
     /// <summary>
-    /// AgentRequest
+    /// StreamRequest
     /// </summary>
-    [DataContract(Name = "AgentRequest")]
-    public partial class AgentRequest : IEquatable<AgentRequest>, IValidatableObject
+    [DataContract(Name = "StreamRequest")]
+    public partial class StreamRequest : IEquatable<StreamRequest>, IValidatableObject
     {
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Simplic.OxS.SDK.Ai
         [DataMember(Name = "planningMode", EmitDefaultValue = false)]
         public PlanningMode? PlanningMode { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AgentRequest" /> class.
+        /// Initializes a new instance of the <see cref="StreamRequest" /> class.
         /// </summary>
         /// <param name="prompt">prompt.</param>
         /// <param name="mode">mode.</param>
@@ -54,18 +54,11 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="effort">effort.</param>
         /// <param name="planningMode">planningMode.</param>
         /// <param name="sessionId">sessionId.</param>
-        /// <param name="userId">userId.</param>
-        /// <param name="organizationId">organizationId.</param>
         /// <param name="variables">variables.</param>
-        /// <param name="allowedToolNames">allowedToolNames.</param>
-        /// <param name="blockedToolNames">blockedToolNames.</param>
-        /// <param name="userName">userName.</param>
-        /// <param name="organizationName">organizationName.</param>
-        /// <param name="stream">stream.</param>
         /// <param name="correlationId">correlationId.</param>
         /// <param name="documents">documents.</param>
         /// <param name="debug">debug.</param>
-        public AgentRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), string model = default(string), string effort = default(string), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Guid? userId = default(Guid?), Guid? organizationId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), List<string> allowedToolNames = default(List<string>), List<string> blockedToolNames = default(List<string>), string userName = default(string), string organizationName = default(string), bool stream = default(bool), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
+        public StreamRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), string model = default(string), string effort = default(string), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
         {
             this.Prompt = prompt;
             this.Mode = mode;
@@ -73,14 +66,7 @@ namespace Simplic.OxS.SDK.Ai
             this.Effort = effort;
             this.PlanningMode = planningMode;
             this.SessionId = sessionId;
-            this.UserId = userId;
-            this.OrganizationId = organizationId;
             this.Variables = variables;
-            this.AllowedToolNames = allowedToolNames;
-            this.BlockedToolNames = blockedToolNames;
-            this.UserName = userName;
-            this.OrganizationName = organizationName;
-            this.Stream = stream;
             this.CorrelationId = correlationId;
             this.Documents = documents;
             this.Debug = debug;
@@ -111,52 +97,10 @@ namespace Simplic.OxS.SDK.Ai
         public Guid? SessionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets UserId
-        /// </summary>
-        [DataMember(Name = "userId", EmitDefaultValue = true)]
-        public Guid? UserId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OrganizationId
-        /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = true)]
-        public Guid? OrganizationId { get; set; }
-
-        /// <summary>
         /// Gets or Sets Variables
         /// </summary>
         [DataMember(Name = "variables", EmitDefaultValue = true)]
         public Dictionary<string, Object> Variables { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AllowedToolNames
-        /// </summary>
-        [DataMember(Name = "allowedToolNames", EmitDefaultValue = true)]
-        public List<string> AllowedToolNames { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BlockedToolNames
-        /// </summary>
-        [DataMember(Name = "blockedToolNames", EmitDefaultValue = true)]
-        public List<string> BlockedToolNames { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UserName
-        /// </summary>
-        [DataMember(Name = "userName", EmitDefaultValue = true)]
-        public string UserName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OrganizationName
-        /// </summary>
-        [DataMember(Name = "organizationName", EmitDefaultValue = true)]
-        public string OrganizationName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Stream
-        /// </summary>
-        [DataMember(Name = "stream", EmitDefaultValue = true)]
-        public bool Stream { get; set; }
 
         /// <summary>
         /// Gets or Sets CorrelationId
@@ -183,21 +127,14 @@ namespace Simplic.OxS.SDK.Ai
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AgentRequest {\n");
+            sb.Append("class StreamRequest {\n");
             sb.Append("  Prompt: ").Append(Prompt).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  Model: ").Append(Model).Append("\n");
             sb.Append("  Effort: ").Append(Effort).Append("\n");
             sb.Append("  PlanningMode: ").Append(PlanningMode).Append("\n");
             sb.Append("  SessionId: ").Append(SessionId).Append("\n");
-            sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  Variables: ").Append(Variables).Append("\n");
-            sb.Append("  AllowedToolNames: ").Append(AllowedToolNames).Append("\n");
-            sb.Append("  BlockedToolNames: ").Append(BlockedToolNames).Append("\n");
-            sb.Append("  UserName: ").Append(UserName).Append("\n");
-            sb.Append("  OrganizationName: ").Append(OrganizationName).Append("\n");
-            sb.Append("  Stream: ").Append(Stream).Append("\n");
             sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("  Debug: ").Append(Debug).Append("\n");
@@ -221,15 +158,15 @@ namespace Simplic.OxS.SDK.Ai
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AgentRequest);
+            return this.Equals(input as StreamRequest);
         }
 
         /// <summary>
-        /// Returns true if AgentRequest instances are equal
+        /// Returns true if StreamRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of AgentRequest to be compared</param>
+        /// <param name="input">Instance of StreamRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AgentRequest input)
+        public bool Equals(StreamRequest input)
         {
             if (input == null)
             {
@@ -265,46 +202,10 @@ namespace Simplic.OxS.SDK.Ai
                     this.SessionId.Equals(input.SessionId))
                 ) && 
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
-                ) && 
-                (
                     this.Variables == input.Variables ||
                     this.Variables != null &&
                     input.Variables != null &&
                     this.Variables.SequenceEqual(input.Variables)
-                ) && 
-                (
-                    this.AllowedToolNames == input.AllowedToolNames ||
-                    this.AllowedToolNames != null &&
-                    input.AllowedToolNames != null &&
-                    this.AllowedToolNames.SequenceEqual(input.AllowedToolNames)
-                ) && 
-                (
-                    this.BlockedToolNames == input.BlockedToolNames ||
-                    this.BlockedToolNames != null &&
-                    input.BlockedToolNames != null &&
-                    this.BlockedToolNames.SequenceEqual(input.BlockedToolNames)
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.OrganizationName == input.OrganizationName ||
-                    (this.OrganizationName != null &&
-                    this.OrganizationName.Equals(input.OrganizationName))
-                ) && 
-                (
-                    this.Stream == input.Stream ||
-                    this.Stream.Equals(input.Stream)
                 ) && 
                 (
                     this.CorrelationId == input.CorrelationId ||
@@ -350,35 +251,10 @@ namespace Simplic.OxS.SDK.Ai
                 {
                     hashCode = (hashCode * 59) + this.SessionId.GetHashCode();
                 }
-                if (this.UserId != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserId.GetHashCode();
-                }
-                if (this.OrganizationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
-                }
                 if (this.Variables != null)
                 {
                     hashCode = (hashCode * 59) + this.Variables.GetHashCode();
                 }
-                if (this.AllowedToolNames != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowedToolNames.GetHashCode();
-                }
-                if (this.BlockedToolNames != null)
-                {
-                    hashCode = (hashCode * 59) + this.BlockedToolNames.GetHashCode();
-                }
-                if (this.UserName != null)
-                {
-                    hashCode = (hashCode * 59) + this.UserName.GetHashCode();
-                }
-                if (this.OrganizationName != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrganizationName.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Stream.GetHashCode();
                 if (this.CorrelationId != null)
                 {
                     hashCode = (hashCode * 59) + this.CorrelationId.GetHashCode();

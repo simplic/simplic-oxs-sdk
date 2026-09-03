@@ -812,7 +812,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AgentRequest"
+                                "$ref": "#/components/schemas/AskRequest"
                             }
                         }
                     }
@@ -941,7 +941,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AgentRequest"
+                                "$ref": "#/components/schemas/ExecuteRequest"
                             }
                         }
                     }
@@ -1065,12 +1065,12 @@
                 "tags": [
                     "Agent"
                 ],
-                "summary": "Create an execution plan without executing it.\nAccepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument\nwith base64-encoded bytes in the `content` field.",
+                "summary": "Create an execution plan without executing it.\nAccepts `application/json`.",
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AgentRequest"
+                                "$ref": "#/components/schemas/PlanRequest"
                             }
                         }
                     }
@@ -1199,7 +1199,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AgentRequest"
+                                "$ref": "#/components/schemas/StreamRequest"
                             }
                         }
                     }
@@ -10167,90 +10167,6 @@
                 "type": "integer",
                 "format": "int32"
             },
-            "AgentRequest": {
-                "type": "object",
-                "properties": {
-                    "prompt": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "mode": {
-                        "$ref": "#/components/schemas/AgentMode"
-                    },
-                    "model": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "effort": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "planningMode": {
-                        "$ref": "#/components/schemas/PlanningMode"
-                    },
-                    "sessionId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "userId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "organizationId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "variables": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "nullable": true
-                    },
-                    "allowedToolNames": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "blockedToolNames": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true
-                    },
-                    "userName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "organizationName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "stream": {
-                        "type": "boolean"
-                    },
-                    "correlationId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "documents": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AgentDocument"
-                        },
-                        "nullable": true
-                    },
-                    "debug": {
-                        "type": "boolean"
-                    }
-                },
-                "additionalProperties": false
-            },
             "AgentResponse": {
                 "type": "object",
                 "properties": {
@@ -10567,6 +10483,52 @@
                 },
                 "additionalProperties": false,
                 "description": "DTO representing a pending approval request returned by the API."
+            },
+            "AskRequest": {
+                "type": "object",
+                "properties": {
+                    "prompt": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "model": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "effort": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "planningMode": {
+                        "$ref": "#/components/schemas/PlanningMode"
+                    },
+                    "sessionId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "variables": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "nullable": true
+                    },
+                    "correlationId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "documents": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AgentDocument"
+                        },
+                        "nullable": true
+                    },
+                    "debug": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
             },
             "ClassifyTextAsyncRequest": {
                 "type": "object",
@@ -11053,6 +11015,52 @@
                     "endpoint": {
                         "type": "string",
                         "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ExecuteRequest": {
+                "type": "object",
+                "properties": {
+                    "prompt": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "model": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "effort": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "planningMode": {
+                        "$ref": "#/components/schemas/PlanningMode"
+                    },
+                    "sessionId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "variables": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "nullable": true
+                    },
+                    "correlationId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "documents": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AgentDocument"
+                        },
+                        "nullable": true
+                    },
+                    "debug": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -11780,6 +11788,28 @@
                 },
                 "additionalProperties": false
             },
+            "PlanRequest": {
+                "type": "object",
+                "properties": {
+                    "prompt": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mode": {
+                        "$ref": "#/components/schemas/AgentMode"
+                    },
+                    "effort": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "sessionId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "PlanningMode": {
                 "enum": [
                     0,
@@ -12178,6 +12208,55 @@
                 },
                 "additionalProperties": false,
                 "description": "Check training status result"
+            },
+            "StreamRequest": {
+                "type": "object",
+                "properties": {
+                    "prompt": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mode": {
+                        "$ref": "#/components/schemas/AgentMode"
+                    },
+                    "model": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "effort": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "planningMode": {
+                        "$ref": "#/components/schemas/PlanningMode"
+                    },
+                    "sessionId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "variables": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "nullable": true
+                    },
+                    "correlationId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "documents": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AgentDocument"
+                        },
+                        "nullable": true
+                    },
+                    "debug": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
             },
             "TextClassificationModelDefinition": {
                 "required": [

@@ -6,12 +6,12 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 |--------|--------------|-------------|
 | [**Ask**](AgentClient.md#agentaskpost) | **POST** /Agent/ask | Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. |
 | [**Execute**](AgentClient.md#agentexecutepost) | **POST** /Agent/execute | Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. |
-| [**Plan**](AgentClient.md#agentplanpost) | **POST** /Agent/plan | Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. |
+| [**Plan**](AgentClient.md#agentplanpost) | **POST** /Agent/plan | Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. |
 | [**Stream**](AgentClient.md#agentstreampost) | **POST** /Agent/stream | Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. |
 
 <a id="agentaskpost"></a>
 # **Ask**
-> AgentResponse Ask (AgentRequest? agentRequest = null)
+> AgentResponse Ask (AskRequest? askRequest = null)
 
 Ask mode: research and answer questions without executing write operations. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
 
@@ -38,12 +38,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AgentClient(config);
-            var agentRequest = new AgentRequest?(); // AgentRequest? |  (optional) 
+            var askRequest = new AskRequest?(); // AskRequest? |  (optional) 
 
             try
             {
                 // Ask mode: research and answer questions without executing write operations. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-                AgentResponse result = apiInstance.Ask(agentRequest);
+                AgentResponse result = apiInstance.Ask(askRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Ask mode: research and answer questions without executing write operations. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-    ApiResponse<AgentResponse> response = apiInstance.AskWithHttpInfo(agentRequest);
+    ApiResponse<AgentResponse> response = apiInstance.AskWithHttpInfo(askRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **agentRequest** | [**AgentRequest?**](AgentRequest?.md) |  | [optional]  |
+| **askRequest** | [**AskRequest?**](AskRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -113,7 +113,7 @@ catch (ApiException e)
 
 <a id="agentexecutepost"></a>
 # **Execute**
-> AgentResponse Execute (AgentRequest? agentRequest = null)
+> AgentResponse Execute (ExecuteRequest? executeRequest = null)
 
 Agent mode: execute tool-based actions with approval workflows. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
 
@@ -140,12 +140,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AgentClient(config);
-            var agentRequest = new AgentRequest?(); // AgentRequest? |  (optional) 
+            var executeRequest = new ExecuteRequest?(); // ExecuteRequest? |  (optional) 
 
             try
             {
                 // Agent mode: execute tool-based actions with approval workflows. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-                AgentResponse result = apiInstance.Execute(agentRequest);
+                AgentResponse result = apiInstance.Execute(executeRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -166,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Agent mode: execute tool-based actions with approval workflows. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-    ApiResponse<AgentResponse> response = apiInstance.ExecuteWithHttpInfo(agentRequest);
+    ApiResponse<AgentResponse> response = apiInstance.ExecuteWithHttpInfo(executeRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -183,7 +183,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **agentRequest** | [**AgentRequest?**](AgentRequest?.md) |  | [optional]  |
+| **executeRequest** | [**ExecuteRequest?**](ExecuteRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -215,9 +215,9 @@ catch (ApiException e)
 
 <a id="agentplanpost"></a>
 # **Plan**
-> AgentPlan Plan (AgentRequest? agentRequest = null)
+> AgentPlan Plan (PlanRequest? planRequest = null)
 
-Create an execution plan without executing it. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
+Create an execution plan without executing it. Accepts `application/json`.
 
 ### Example
 ```csharp
@@ -242,12 +242,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AgentClient(config);
-            var agentRequest = new AgentRequest?(); // AgentRequest? |  (optional) 
+            var planRequest = new PlanRequest?(); // PlanRequest? |  (optional) 
 
             try
             {
-                // Create an execution plan without executing it. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-                AgentPlan result = apiInstance.Plan(agentRequest);
+                // Create an execution plan without executing it. Accepts `application/json`.
+                AgentPlan result = apiInstance.Plan(planRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -267,8 +267,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create an execution plan without executing it. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-    ApiResponse<AgentPlan> response = apiInstance.PlanWithHttpInfo(agentRequest);
+    // Create an execution plan without executing it. Accepts `application/json`.
+    ApiResponse<AgentPlan> response = apiInstance.PlanWithHttpInfo(planRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -285,7 +285,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **agentRequest** | [**AgentRequest?**](AgentRequest?.md) |  | [optional]  |
+| **planRequest** | [**PlanRequest?**](PlanRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -317,7 +317,7 @@ catch (ApiException e)
 
 <a id="agentstreampost"></a>
 # **Stream**
-> void Stream (AgentRequest? agentRequest = null)
+> void Stream (StreamRequest? streamRequest = null)
 
 Stream agent execution events using Server-Sent Events. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
 
@@ -344,12 +344,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new AgentClient(config);
-            var agentRequest = new AgentRequest?(); // AgentRequest? |  (optional) 
+            var streamRequest = new StreamRequest?(); // StreamRequest? |  (optional) 
 
             try
             {
                 // Stream agent execution events using Server-Sent Events. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-                apiInstance.Stream(agentRequest);
+                apiInstance.Stream(streamRequest);
             }
             catch (ApiException  e)
             {
@@ -369,7 +369,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Stream agent execution events using Server-Sent Events. Accepts `application/json`. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the `content` field.
-    apiInstance.StreamWithHttpInfo(agentRequest);
+    apiInstance.StreamWithHttpInfo(streamRequest);
 }
 catch (ApiException e)
 {
@@ -383,7 +383,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **agentRequest** | [**AgentRequest?**](AgentRequest?.md) |  | [optional]  |
+| **streamRequest** | [**StreamRequest?**](StreamRequest?.md) |  | [optional]  |
 
 ### Return type
 
