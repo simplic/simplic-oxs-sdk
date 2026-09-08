@@ -25,6 +25,11 @@ Name | Type | Description | Notes
 **UnitPrice** | **double?** | Gets or sets the price for a single unit. | [optional] 
 **TotalPrice** | **double?** | Gets or sets the total price. | [optional] 
 **PriceUnit** | [**QuantityUnitModel**](QuantityUnitModel.md) |  | [optional] 
+**Approved** | **bool** | Gets or sets a value indicating whether the item has been approved. | [optional] 
+**StartLoadDateTime** | **DateTime?** | Gets or sets the start date and time of the load. | [optional] 
+**EndLoadDateTime** | **DateTime?** | Gets or sets the end date and time of the load. | [optional] 
+**StartDeliveryDateTime** | **DateTime?** | Gets or sets the start date and time of the delivery. | [optional] 
+**EndDeliveryDateTime** | **DateTime?** | Gets or sets the end date and time of the delivery. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

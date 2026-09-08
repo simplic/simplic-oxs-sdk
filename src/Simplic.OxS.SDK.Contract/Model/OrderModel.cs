@@ -53,7 +53,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="updateDateTime">Gets or sets the update date time..</param>
         /// <param name="updateUserId">Gets or sets the update user id..</param>
         /// <param name="updateUserName">Gets or sets the update user name..</param>
-        public OrderModel(Guid id = default(Guid), Guid organizationId = default(Guid), string number = default(string), Guid? contractId = default(Guid?), string contractNumber = default(string), BillableContactModel customer = default(BillableContactModel), OrderStatusModel status = default(OrderStatusModel), string reference = default(string), string notes = default(string), OrderSourceModel source = default(OrderSourceModel), List<OrderItemModel> items = default(List<OrderItemModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        /// <param name="contactPerson">contactPerson.</param>
+        public OrderModel(Guid id = default(Guid), Guid organizationId = default(Guid), string number = default(string), Guid? contractId = default(Guid?), string contractNumber = default(string), BillableContactModel customer = default(BillableContactModel), OrderStatusModel status = default(OrderStatusModel), string reference = default(string), string notes = default(string), OrderSourceModel source = default(OrderSourceModel), List<OrderItemModel> items = default(List<OrderItemModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), OrderContactPersonModel contactPerson = default(OrderContactPersonModel))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -72,6 +73,7 @@ namespace Simplic.OxS.SDK.Contract
             this.UpdateDateTime = updateDateTime;
             this.UpdateUserId = updateUserId;
             this.UpdateUserName = updateUserName;
+            this.ContactPerson = contactPerson;
         }
 
         /// <summary>
@@ -191,6 +193,12 @@ namespace Simplic.OxS.SDK.Contract
         public string UpdateUserName { get; set; }
 
         /// <summary>
+        /// Gets or Sets ContactPerson
+        /// </summary>
+        [DataMember(Name = "contactPerson", EmitDefaultValue = false)]
+        public OrderContactPersonModel ContactPerson { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -215,6 +223,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  UpdateDateTime: ").Append(UpdateDateTime).Append("\n");
             sb.Append("  UpdateUserId: ").Append(UpdateUserId).Append("\n");
             sb.Append("  UpdateUserName: ").Append(UpdateUserName).Append("\n");
+            sb.Append("  ContactPerson: ").Append(ContactPerson).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -335,6 +344,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.UpdateUserName == input.UpdateUserName ||
                     (this.UpdateUserName != null &&
                     this.UpdateUserName.Equals(input.UpdateUserName))
+                ) && 
+                (
+                    this.ContactPerson == input.ContactPerson ||
+                    (this.ContactPerson != null &&
+                    this.ContactPerson.Equals(input.ContactPerson))
                 );
         }
 
@@ -414,6 +428,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.UpdateUserName != null)
                 {
                     hashCode = (hashCode * 59) + this.UpdateUserName.GetHashCode();
+                }
+                if (this.ContactPerson != null)
+                {
+                    hashCode = (hashCode * 59) + this.ContactPerson.GetHashCode();
                 }
                 return hashCode;
             }

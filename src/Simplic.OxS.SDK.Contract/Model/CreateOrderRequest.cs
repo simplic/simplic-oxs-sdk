@@ -37,24 +37,26 @@ namespace Simplic.OxS.SDK.Contract
         /// Initializes a new instance of the <see cref="CreateOrderRequest" /> class.
         /// </summary>
         /// <param name="number">Gets or sets the number..</param>
+        /// <param name="date">Gets or sets the date of the order..</param>
         /// <param name="contractId">Gets or sets the id of the referenced contract..</param>
         /// <param name="contractNumber">Gets or sets the number of the referenced contract..</param>
         /// <param name="customer">customer.</param>
-        /// <param name="statusId">Gets or sets the id of the status.  If not set, the status with the role &#x60;is_default&#x60; will be used..</param>
         /// <param name="reference">Gets or sets the reference of the order..</param>
         /// <param name="notes">Gets or sets the notes of the order..</param>
         /// <param name="sourceId">Gets or sets the id of the source..</param>
+        /// <param name="contactPerson">contactPerson.</param>
         /// <param name="items">Gets or sets the items of the order..</param>
-        public CreateOrderRequest(string number = default(string), Guid? contractId = default(Guid?), string contractNumber = default(string), BillableContactRequestModel customer = default(BillableContactRequestModel), Guid? statusId = default(Guid?), string reference = default(string), string notes = default(string), Guid? sourceId = default(Guid?), List<OrderItemRequestModel> items = default(List<OrderItemRequestModel>))
+        public CreateOrderRequest(string number = default(string), DateTime? date = default(DateTime?), Guid? contractId = default(Guid?), string contractNumber = default(string), BillableContactRequestModel customer = default(BillableContactRequestModel), string reference = default(string), string notes = default(string), Guid? sourceId = default(Guid?), OrderContactPersonModel contactPerson = default(OrderContactPersonModel), List<OrderItemRequestModel> items = default(List<OrderItemRequestModel>))
         {
             this.Number = number;
+            this.Date = date;
             this.ContractId = contractId;
             this.ContractNumber = contractNumber;
             this.Customer = customer;
-            this.StatusId = statusId;
             this.Reference = reference;
             this.Notes = notes;
             this.SourceId = sourceId;
+            this.ContactPerson = contactPerson;
             this.Items = items;
         }
 
@@ -64,6 +66,13 @@ namespace Simplic.OxS.SDK.Contract
         /// <value>Gets or sets the number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date of the order.
+        /// </summary>
+        /// <value>Gets or sets the date of the order.</value>
+        [DataMember(Name = "date", EmitDefaultValue = true)]
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// Gets or sets the id of the referenced contract.
@@ -84,13 +93,6 @@ namespace Simplic.OxS.SDK.Contract
         /// </summary>
         [DataMember(Name = "customer", EmitDefaultValue = false)]
         public BillableContactRequestModel Customer { get; set; }
-
-        /// <summary>
-        /// Gets or sets the id of the status.  If not set, the status with the role &#x60;is_default&#x60; will be used.
-        /// </summary>
-        /// <value>Gets or sets the id of the status.  If not set, the status with the role &#x60;is_default&#x60; will be used.</value>
-        [DataMember(Name = "statusId", EmitDefaultValue = true)]
-        public Guid? StatusId { get; set; }
 
         /// <summary>
         /// Gets or sets the reference of the order.
@@ -114,6 +116,12 @@ namespace Simplic.OxS.SDK.Contract
         public Guid? SourceId { get; set; }
 
         /// <summary>
+        /// Gets or Sets ContactPerson
+        /// </summary>
+        [DataMember(Name = "contactPerson", EmitDefaultValue = false)]
+        public OrderContactPersonModel ContactPerson { get; set; }
+
+        /// <summary>
         /// Gets or sets the items of the order.
         /// </summary>
         /// <value>Gets or sets the items of the order.</value>
@@ -129,13 +137,14 @@ namespace Simplic.OxS.SDK.Contract
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateOrderRequest {\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  ContractId: ").Append(ContractId).Append("\n");
             sb.Append("  ContractNumber: ").Append(ContractNumber).Append("\n");
             sb.Append("  Customer: ").Append(Customer).Append("\n");
-            sb.Append("  StatusId: ").Append(StatusId).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  SourceId: ").Append(SourceId).Append("\n");
+            sb.Append("  ContactPerson: ").Append(ContactPerson).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -178,6 +187,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.Number.Equals(input.Number))
                 ) && 
                 (
+                    this.Date == input.Date ||
+                    (this.Date != null &&
+                    this.Date.Equals(input.Date))
+                ) && 
+                (
                     this.ContractId == input.ContractId ||
                     (this.ContractId != null &&
                     this.ContractId.Equals(input.ContractId))
@@ -193,11 +207,6 @@ namespace Simplic.OxS.SDK.Contract
                     this.Customer.Equals(input.Customer))
                 ) && 
                 (
-                    this.StatusId == input.StatusId ||
-                    (this.StatusId != null &&
-                    this.StatusId.Equals(input.StatusId))
-                ) && 
-                (
                     this.Reference == input.Reference ||
                     (this.Reference != null &&
                     this.Reference.Equals(input.Reference))
@@ -211,6 +220,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.SourceId == input.SourceId ||
                     (this.SourceId != null &&
                     this.SourceId.Equals(input.SourceId))
+                ) && 
+                (
+                    this.ContactPerson == input.ContactPerson ||
+                    (this.ContactPerson != null &&
+                    this.ContactPerson.Equals(input.ContactPerson))
                 ) && 
                 (
                     this.Items == input.Items ||
@@ -233,6 +247,10 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 }
+                if (this.Date != null)
+                {
+                    hashCode = (hashCode * 59) + this.Date.GetHashCode();
+                }
                 if (this.ContractId != null)
                 {
                     hashCode = (hashCode * 59) + this.ContractId.GetHashCode();
@@ -245,10 +263,6 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.Customer.GetHashCode();
                 }
-                if (this.StatusId != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusId.GetHashCode();
-                }
                 if (this.Reference != null)
                 {
                     hashCode = (hashCode * 59) + this.Reference.GetHashCode();
@@ -260,6 +274,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.SourceId != null)
                 {
                     hashCode = (hashCode * 59) + this.SourceId.GetHashCode();
+                }
+                if (this.ContactPerson != null)
+                {
+                    hashCode = (hashCode * 59) + this.ContactPerson.GetHashCode();
                 }
                 if (this.Items != null)
                 {

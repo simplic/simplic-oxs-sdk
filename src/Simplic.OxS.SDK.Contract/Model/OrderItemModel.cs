@@ -56,7 +56,12 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="unitPrice">Gets or sets the price for a single unit..</param>
         /// <param name="totalPrice">Gets or sets the total price..</param>
         /// <param name="priceUnit">priceUnit.</param>
-        public OrderItemModel(Guid id = default(Guid), int index = default(int), Guid? contractItemId = default(Guid?), string contractItemReference = default(string), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), OrderQuantityModel transportationQuantity = default(OrderQuantityModel), OrderQuantityModel quantity = default(OrderQuantityModel), OrderQuantityModel bookedQuantity = default(OrderQuantityModel), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), QuantityUnitModel priceUnit = default(QuantityUnitModel))
+        /// <param name="approved">Gets or sets a value indicating whether the item has been approved..</param>
+        /// <param name="startLoadDateTime">Gets or sets the start date and time of the load..</param>
+        /// <param name="endLoadDateTime">Gets or sets the end date and time of the load..</param>
+        /// <param name="startDeliveryDateTime">Gets or sets the start date and time of the delivery..</param>
+        /// <param name="endDeliveryDateTime">Gets or sets the end date and time of the delivery..</param>
+        public OrderItemModel(Guid id = default(Guid), int index = default(int), Guid? contractItemId = default(Guid?), string contractItemReference = default(string), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), OrderQuantityModel transportationQuantity = default(OrderQuantityModel), OrderQuantityModel quantity = default(OrderQuantityModel), OrderQuantityModel bookedQuantity = default(OrderQuantityModel), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), QuantityUnitModel priceUnit = default(QuantityUnitModel), bool approved = default(bool), DateTime? startLoadDateTime = default(DateTime?), DateTime? endLoadDateTime = default(DateTime?), DateTime? startDeliveryDateTime = default(DateTime?), DateTime? endDeliveryDateTime = default(DateTime?))
         {
             this.Id = id;
             this.Index = index;
@@ -78,6 +83,11 @@ namespace Simplic.OxS.SDK.Contract
             this.UnitPrice = unitPrice;
             this.TotalPrice = totalPrice;
             this.PriceUnit = priceUnit;
+            this.Approved = approved;
+            this.StartLoadDateTime = startLoadDateTime;
+            this.EndLoadDateTime = endLoadDateTime;
+            this.StartDeliveryDateTime = startDeliveryDateTime;
+            this.EndDeliveryDateTime = endDeliveryDateTime;
         }
 
         /// <summary>
@@ -215,6 +225,41 @@ namespace Simplic.OxS.SDK.Contract
         public QuantityUnitModel PriceUnit { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the item has been approved.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the item has been approved.</value>
+        [DataMember(Name = "approved", EmitDefaultValue = true)]
+        public bool Approved { get; set; }
+
+        /// <summary>
+        /// Gets or sets the start date and time of the load.
+        /// </summary>
+        /// <value>Gets or sets the start date and time of the load.</value>
+        [DataMember(Name = "startLoadDateTime", EmitDefaultValue = true)]
+        public DateTime? StartLoadDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the end date and time of the load.
+        /// </summary>
+        /// <value>Gets or sets the end date and time of the load.</value>
+        [DataMember(Name = "endLoadDateTime", EmitDefaultValue = true)]
+        public DateTime? EndLoadDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the start date and time of the delivery.
+        /// </summary>
+        /// <value>Gets or sets the start date and time of the delivery.</value>
+        [DataMember(Name = "startDeliveryDateTime", EmitDefaultValue = true)]
+        public DateTime? StartDeliveryDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the end date and time of the delivery.
+        /// </summary>
+        /// <value>Gets or sets the end date and time of the delivery.</value>
+        [DataMember(Name = "endDeliveryDateTime", EmitDefaultValue = true)]
+        public DateTime? EndDeliveryDateTime { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -242,6 +287,11 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  PriceUnit: ").Append(PriceUnit).Append("\n");
+            sb.Append("  Approved: ").Append(Approved).Append("\n");
+            sb.Append("  StartLoadDateTime: ").Append(StartLoadDateTime).Append("\n");
+            sb.Append("  EndLoadDateTime: ").Append(EndLoadDateTime).Append("\n");
+            sb.Append("  StartDeliveryDateTime: ").Append(StartDeliveryDateTime).Append("\n");
+            sb.Append("  EndDeliveryDateTime: ").Append(EndDeliveryDateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -375,6 +425,30 @@ namespace Simplic.OxS.SDK.Contract
                     this.PriceUnit == input.PriceUnit ||
                     (this.PriceUnit != null &&
                     this.PriceUnit.Equals(input.PriceUnit))
+                ) && 
+                (
+                    this.Approved == input.Approved ||
+                    this.Approved.Equals(input.Approved)
+                ) && 
+                (
+                    this.StartLoadDateTime == input.StartLoadDateTime ||
+                    (this.StartLoadDateTime != null &&
+                    this.StartLoadDateTime.Equals(input.StartLoadDateTime))
+                ) && 
+                (
+                    this.EndLoadDateTime == input.EndLoadDateTime ||
+                    (this.EndLoadDateTime != null &&
+                    this.EndLoadDateTime.Equals(input.EndLoadDateTime))
+                ) && 
+                (
+                    this.StartDeliveryDateTime == input.StartDeliveryDateTime ||
+                    (this.StartDeliveryDateTime != null &&
+                    this.StartDeliveryDateTime.Equals(input.StartDeliveryDateTime))
+                ) && 
+                (
+                    this.EndDeliveryDateTime == input.EndDeliveryDateTime ||
+                    (this.EndDeliveryDateTime != null &&
+                    this.EndDeliveryDateTime.Equals(input.EndDeliveryDateTime))
                 );
         }
 
@@ -463,6 +537,23 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.PriceUnit != null)
                 {
                     hashCode = (hashCode * 59) + this.PriceUnit.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Approved.GetHashCode();
+                if (this.StartLoadDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.StartLoadDateTime.GetHashCode();
+                }
+                if (this.EndLoadDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.EndLoadDateTime.GetHashCode();
+                }
+                if (this.StartDeliveryDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.StartDeliveryDateTime.GetHashCode();
+                }
+                if (this.EndDeliveryDateTime != null)
+                {
+                    hashCode = (hashCode * 59) + this.EndDeliveryDateTime.GetHashCode();
                 }
                 return hashCode;
             }

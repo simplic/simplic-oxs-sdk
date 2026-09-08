@@ -4,19 +4,18 @@ All URIs are relative to *https://dev-oxs.simplic.io/contract-api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetAll**](OrderClient.md#ordergetallget) | **GET** /Order/get-all | Gets all orders of the current organization. |
+| [**ConvertToShipment**](OrderClient.md#orderconverttoshipmentpost) | **POST** /Order/convert-to-shipment | Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. |
 | [**Delete**](OrderClient.md#orderiddelete) | **DELETE** /Order/{id} | Deletes an order. |
 | [**Get**](OrderClient.md#orderidget) | **GET** /Order/{id} | Gets an order by its id. |
 | [**Patch**](OrderClient.md#orderidpatch) | **PATCH** /Order/{id} | Updates an existing order. |
 | [**Status**](OrderClient.md#orderidstatuspost) | **POST** /Order/{id}/status | Sets the status of an order. |
 | [**Post**](OrderClient.md#orderpost) | **POST** /Order | Creates a new order. |
-| [**Search**](OrderClient.md#ordersearchget) | **GET** /Order/search | Searches orders by customer, contract and status. |
 
-<a id="ordergetallget"></a>
-# **GetAll**
-> List&lt;OrderModel&gt; GetAll ()
+<a id="orderconverttoshipmentpost"></a>
+# **ConvertToShipment**
+> List&lt;ShipmentResponse&gt; ConvertToShipment (ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = null)
 
-Gets all orders of the current organization.
+Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item.
 
 ### Example
 ```csharp
@@ -27,7 +26,7 @@ using Simplic.OxS.SDK.Contract;
 
 namespace Example
 {
-    public class GetAllExample
+    public class ConvertToShipmentExample
     {
         public static void Main()
         {
@@ -41,16 +40,17 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new OrderClient(config);
+            var convertOrderItemToShipmentRequest = new ConvertOrderItemToShipmentRequest?(); // ConvertOrderItemToShipmentRequest? |  (optional) 
 
             try
             {
-                // Gets all orders of the current organization.
-                List<OrderModel> result = apiInstance.GetAll();
+                // Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item.
+                List<ShipmentResponse> result = apiInstance.ConvertToShipment(convertOrderItemToShipmentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrderClient.GetAll: " + e.Message);
+                Debug.Print("Exception when calling OrderClient.ConvertToShipment: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,31 +59,35 @@ namespace Example
 }
 ```
 
-#### Using the GetAllWithHttpInfo variant
+#### Using the ConvertToShipmentWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Gets all orders of the current organization.
-    ApiResponse<List<OrderModel>> response = apiInstance.GetAllWithHttpInfo();
+    // Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item.
+    ApiResponse<List<ShipmentResponse>> response = apiInstance.ConvertToShipmentWithHttpInfo(convertOrderItemToShipmentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrderClient.GetAllWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrderClient.ConvertToShipmentWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **convertOrderItemToShipmentRequest** | [**ConvertOrderItemToShipmentRequest?**](ConvertOrderItemToShipmentRequest?.md) |  | [optional]  |
+
 ### Return type
 
-[**List&lt;OrderModel&gt;**](OrderModel.md)
+[**List&lt;ShipmentResponse&gt;**](ShipmentResponse.md)
 
 ### Authorization
 
@@ -91,7 +95,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 
@@ -577,107 +581,6 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="ordersearchget"></a>
-# **Search**
-> List&lt;OrderModel&gt; Search (Guid? customerContactId = null, Guid? contractId = null, Guid? statusId = null)
-
-Searches orders by customer, contract and status.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Simplic.OxS.SDK.Contract;
-
-namespace Example
-{
-    public class SearchExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev-oxs.simplic.io/contract-api/v1";
-            // Configure API key authorization: ApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure Bearer token for authorization: Bearer
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new OrderClient(config);
-            var customerContactId = "customerContactId_example";  // Guid? |  (optional) 
-            var contractId = "contractId_example";  // Guid? |  (optional) 
-            var statusId = "statusId_example";  // Guid? |  (optional) 
-
-            try
-            {
-                // Searches orders by customer, contract and status.
-                List<OrderModel> result = apiInstance.Search(customerContactId, contractId, statusId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrderClient.Search: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SearchWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Searches orders by customer, contract and status.
-    ApiResponse<List<OrderModel>> response = apiInstance.SearchWithHttpInfo(customerContactId, contractId, statusId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling OrderClient.SearchWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **customerContactId** | **Guid?** |  | [optional]  |
-| **contractId** | **Guid?** |  | [optional]  |
-| **statusId** | **Guid?** |  | [optional]  |
-
-### Return type
-
-[**List&lt;OrderModel&gt;**](OrderModel.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 

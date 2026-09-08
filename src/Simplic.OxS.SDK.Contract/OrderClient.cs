@@ -40,34 +40,38 @@ public interface IOrderClient
 
 
     /// <summary>
-    /// Gets all orders of the current organization. 
+    /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>List&lt;OrderModel&gt;</returns>
-    List<OrderModel> GetAll();
+    /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
+    /// <returns>List&lt;ShipmentResponse&gt;</returns>
+    List<ShipmentResponse> ConvertToShipment(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?));
 
     /// <summary>
-    /// Gets all orders of the current organization. 
+    /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-    ApiResponse<List<OrderModel>> GetAllWithHttpInfo();
+    /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
+    /// <returns>ApiResponse of List&lt;ShipmentResponse&gt;</returns>
+    ApiResponse<List<ShipmentResponse>> ConvertToShipmentWithHttpInfo(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?));
         
     /// <summary>
-    /// Gets all orders of the current organization. 
+    /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;OrderModel&gt;</returns>
-    Task<List<OrderModel>> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of List&lt;ShipmentResponse&gt;</returns>
+    Task<List<ShipmentResponse>> ConvertToShipmentAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    /// Gets all orders of the current organization. 
+    /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-    Task<ApiResponse<List<OrderModel>>> GetAllWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (List&lt;ShipmentResponse&gt;)</returns>
+    Task<ApiResponse<List<ShipmentResponse>>> ConvertToShipmentWithHttpInfoAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -252,49 +256,6 @@ public interface IOrderClient
     /// <returns>Task of ApiResponse (OrderModel)</returns>
     Task<ApiResponse<OrderModel>> PostWithHttpInfoAsync(CreateOrderRequest? createOrderRequest = default(CreateOrderRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
-
-    /// <summary>
-    /// Searches orders by customer, contract and status. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerContactId"> (optional)</param>
-    /// <param name="contractId"> (optional)</param>
-    /// <param name="statusId"> (optional)</param>
-    /// <returns>List&lt;OrderModel&gt;</returns>
-    List<OrderModel> Search(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?));
-
-    /// <summary>
-    /// Searches orders by customer, contract and status. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerContactId"> (optional)</param>
-    /// <param name="contractId"> (optional)</param>
-    /// <param name="statusId"> (optional)</param>
-    /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-    ApiResponse<List<OrderModel>> SearchWithHttpInfo(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?));
-        
-    /// <summary>
-    /// Searches orders by customer, contract and status. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerContactId"> (optional)</param>
-    /// <param name="contractId"> (optional)</param>
-    /// <param name="statusId"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;OrderModel&gt;</returns>
-    Task<List<OrderModel>> SearchAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
-
-    /// <summary>
-    /// Searches orders by customer, contract and status. 
-    /// </summary>
-    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerContactId"> (optional)</param>
-    /// <param name="contractId"> (optional)</param>
-    /// <param name="statusId"> (optional)</param>
-    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-    Task<ApiResponse<List<OrderModel>>> SearchWithHttpInfoAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), CancellationToken cancellationToken = default(CancellationToken));
-
 }
 
 
@@ -371,15 +332,16 @@ public interface IOrderClient
         }
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;OrderModel&gt;</returns>
-        public List<OrderModel> GetAll()
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
+        /// <returns>List&lt;ShipmentResponse&gt;</returns>
+        public List<ShipmentResponse> ConvertToShipment(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?))
         {
             try
             {
-                return _internalClient.GetAll();
+                return _internalClient.ConvertToShipment(convertOrderItemToShipmentRequest);
             }
             catch (ApiException e)
             {
@@ -388,15 +350,16 @@ public interface IOrderClient
         }
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrderModel>> GetAllWithHttpInfo()
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;ShipmentResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ShipmentResponse>> ConvertToShipmentWithHttpInfo(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?))
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfo();
+                return _internalClient.ConvertToShipmentWithHttpInfo(convertOrderItemToShipmentRequest);
             }
             catch (ApiException e)
             {
@@ -405,16 +368,17 @@ public interface IOrderClient
         } 
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OrderModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<OrderModel>> GetAllAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ShipmentResponse&gt;</returns>
+        public System.Threading.Tasks.Task<List<ShipmentResponse>> ConvertToShipmentAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllAsync(cancellationToken: cancellationToken);
+                return _internalClient.ConvertToShipmentAsync(convertOrderItemToShipmentRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -423,16 +387,17 @@ public interface IOrderClient
         }
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrderModel>>> GetAllWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ShipmentResponse&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShipmentResponse>>> ConvertToShipmentWithHttpInfoAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.GetAllWithHttpInfoAsync(cancellationToken: cancellationToken);
+                return _internalClient.ConvertToShipmentWithHttpInfoAsync(convertOrderItemToShipmentRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -812,87 +777,6 @@ public interface IOrderClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <returns>List&lt;OrderModel&gt;</returns>
-        public List<OrderModel> Search(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?))
-        {
-            try
-            {
-                return _internalClient.Search(customerContactId, contractId, statusId);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrderModel>> SearchWithHttpInfo(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?))
-        {
-            try
-            {
-                return _internalClient.SearchWithHttpInfo(customerContactId, contractId, statusId);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        } 
-
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OrderModel&gt;</returns>
-        public System.Threading.Tasks.Task<List<OrderModel>> SearchAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.SearchAsync(customerContactId, contractId, statusId, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }
-
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrderModel>>> SearchWithHttpInfoAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            try
-            {
-                return _internalClient.SearchWithHttpInfoAsync(customerContactId, contractId, statusId, cancellationToken: cancellationToken);
-            }
-            catch (ApiException e)
-            {
-                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
-            }
-        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -907,23 +791,25 @@ public interface IOrderClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// Gets all orders of the current organization.
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;OrderModel&gt;</returns>
-        List<OrderModel> GetAll(int operationIndex = 0);
+        /// <returns>List&lt;ShipmentResponse&gt;</returns>
+        List<ShipmentResponse> ConvertToShipment(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0);
 
         /// <summary>
-        /// Gets all orders of the current organization.
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-        ApiResponse<List<OrderModel>> GetAllWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;ShipmentResponse&gt;</returns>
+        ApiResponse<List<ShipmentResponse>> ConvertToShipmentWithHttpInfo(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0);
         /// <summary>
         /// Deletes an order.
         /// </summary>
@@ -1028,30 +914,6 @@ public interface IOrderClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrderModel</returns>
         ApiResponse<OrderModel> PostWithHttpInfo(CreateOrderRequest? createOrderRequest = default(CreateOrderRequest?), int operationIndex = 0);
-        /// <summary>
-        /// Searches orders by customer, contract and status.
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;OrderModel&gt;</returns>
-        List<OrderModel> Search(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0);
-
-        /// <summary>
-        /// Searches orders by customer, contract and status.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-        ApiResponse<List<OrderModel>> SearchWithHttpInfo(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -1062,28 +924,30 @@ public interface IOrderClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Gets all orders of the current organization.
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OrderModel&gt;</returns>
-        System.Threading.Tasks.Task<List<OrderModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;ShipmentResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<ShipmentResponse>> ConvertToShipmentAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Gets all orders of the current organization.
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<OrderModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ShipmentResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ShipmentResponse>>> ConvertToShipmentWithHttpInfoAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes an order.
         /// </summary>
@@ -1213,35 +1077,6 @@ public interface IOrderClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrderModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrderModel>> PostWithHttpInfoAsync(CreateOrderRequest? createOrderRequest = default(CreateOrderRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Searches orders by customer, contract and status.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OrderModel&gt;</returns>
-        System.Threading.Tasks.Task<List<OrderModel>> SearchAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Searches orders by customer, contract and status.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<OrderModel>>> SearchWithHttpInfoAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1365,28 +1200,33 @@ public interface IOrderClient
         }
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;OrderModel&gt;</returns>
-        public List<OrderModel> GetAll(int operationIndex = 0)
+        /// <returns>List&lt;ShipmentResponse&gt;</returns>
+        public List<ShipmentResponse> ConvertToShipment(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrderModel>> localVarResponse = GetAllWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<List<ShipmentResponse>> localVarResponse = ConvertToShipmentWithHttpInfo(convertOrderItemToShipmentRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrderModel>> GetAllWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;ShipmentResponse&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<ShipmentResponse>> ConvertToShipmentWithHttpInfo(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -1408,8 +1248,9 @@ public interface IOrderClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.Data = convertOrderItemToShipmentRequest;
 
-            localVarRequestOptions.Operation = "OrderClient.OrderGetAllGet";
+            localVarRequestOptions.Operation = "OrderClient.OrderConvertToShipmentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1425,10 +1266,10 @@ public interface IOrderClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<OrderModel>>("/Order/get-all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<ShipmentResponse>>("/Order/convert-to-shipment", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrderGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrderConvertToShipmentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1439,31 +1280,36 @@ public interface IOrderClient
         }
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OrderModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<OrderModel>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ShipmentResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ShipmentResponse>> ConvertToShipmentAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<List<OrderModel>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<List<ShipmentResponse>> localVarResponse = await ConvertToShipmentWithHttpInfoAsync(convertOrderItemToShipmentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Gets all orders of the current organization. 
+        /// Converts an order item into one or more shipments and creates the corresponding shipment bookings, linked to the order and order item. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="convertOrderItemToShipmentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrderModel>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ShipmentResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<ShipmentResponse>>> ConvertToShipmentWithHttpInfoAsync(ConvertOrderItemToShipmentRequest? convertOrderItemToShipmentRequest = default(ConvertOrderItemToShipmentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
             };
 
             // to determine the Accept header
@@ -1485,8 +1331,9 @@ public interface IOrderClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.Data = convertOrderItemToShipmentRequest;
 
-            localVarRequestOptions.Operation = "OrderClient.OrderGetAllGet";
+            localVarRequestOptions.Operation = "OrderClient.OrderConvertToShipmentPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (ApiKey) required
@@ -1502,11 +1349,11 @@ public interface IOrderClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<OrderModel>>("/Order/get-all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ShipmentResponse>>("/Order/convert-to-shipment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("OrderGetAllGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("OrderConvertToShipmentPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2325,194 +2172,6 @@ public interface IOrderClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OrderPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;OrderModel&gt;</returns>
-        public List<OrderModel> Search(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<List<OrderModel>> localVarResponse = SearchWithHttpInfo(customerContactId, contractId, statusId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;OrderModel&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OrderModel>> SearchWithHttpInfo(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (customerContactId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "customerContactId", customerContactId));
-            }
-            if (contractId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "contractId", contractId));
-            }
-            if (statusId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "statusId", statusId));
-            }
-
-            localVarRequestOptions.Operation = "OrderClient.OrderSearchGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<OrderModel>>("/Order/search", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OrderSearchGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OrderModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<OrderModel>> SearchAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<List<OrderModel>> localVarResponse = await SearchWithHttpInfoAsync(customerContactId, contractId, statusId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Searches orders by customer, contract and status. 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="customerContactId"> (optional)</param>
-        /// <param name="contractId"> (optional)</param>
-        /// <param name="statusId"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OrderModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OrderModel>>> SearchWithHttpInfoAsync(Guid? customerContactId = default(Guid?), Guid? contractId = default(Guid?), Guid? statusId = default(Guid?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (customerContactId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "customerContactId", customerContactId));
-            }
-            if (contractId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "contractId", contractId));
-            }
-            if (statusId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "statusId", statusId));
-            }
-
-            localVarRequestOptions.Operation = "OrderClient.OrderSearchGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<OrderModel>>("/Order/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OrderSearchGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

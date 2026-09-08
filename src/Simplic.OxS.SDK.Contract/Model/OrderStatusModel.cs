@@ -36,32 +36,27 @@ namespace Simplic.OxS.SDK.Contract
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderStatusModel" /> class.
         /// </summary>
-        /// <param name="id">Gets or sets the id of the status..</param>
         /// <param name="name">Gets or sets the name of the status..</param>
         /// <param name="number">Gets or sets the number of the status..</param>
         /// <param name="roles">Gets or sets the roles of the status.  Available values: &#x60;is_default&#x60;, &#x60;disable_edit&#x60;, &#x60;disable_delete&#x60;..</param>
         /// <param name="index">Gets or sets the order of the status in a status list..</param>
         /// <param name="hexCode">Gets or sets the color of the status as hexadecimal value..</param>
+        /// <param name="resolver">Gets or sets the name of the resolver that determines whether an order currently qualifies for this status.  If this is null or whitespace, the status is considered manual/final and is never automatically resolved..</param>
+        /// <param name="id">Gets or sets the id of the status..</param>
         /// <param name="organizationId">Gets or sets the organization id..</param>
         /// <param name="isDeleted">Gets or sets whether the status is deleted..</param>
-        public OrderStatusModel(Guid id = default(Guid), string name = default(string), string number = default(string), List<string> roles = default(List<string>), int index = default(int), string hexCode = default(string), Guid organizationId = default(Guid), bool isDeleted = default(bool))
+        public OrderStatusModel(string name = default(string), string number = default(string), List<string> roles = default(List<string>), int index = default(int), string hexCode = default(string), string resolver = default(string), Guid id = default(Guid), Guid organizationId = default(Guid), bool isDeleted = default(bool))
         {
-            this.Id = id;
             this.Name = name;
             this.Number = number;
             this.Roles = roles;
             this.Index = index;
             this.HexCode = hexCode;
+            this.Resolver = resolver;
+            this.Id = id;
             this.OrganizationId = organizationId;
             this.IsDeleted = isDeleted;
         }
-
-        /// <summary>
-        /// Gets or sets the id of the status.
-        /// </summary>
-        /// <value>Gets or sets the id of the status.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the status.
@@ -99,6 +94,20 @@ namespace Simplic.OxS.SDK.Contract
         public string HexCode { get; set; }
 
         /// <summary>
+        /// Gets or sets the name of the resolver that determines whether an order currently qualifies for this status.  If this is null or whitespace, the status is considered manual/final and is never automatically resolved.
+        /// </summary>
+        /// <value>Gets or sets the name of the resolver that determines whether an order currently qualifies for this status.  If this is null or whitespace, the status is considered manual/final and is never automatically resolved.</value>
+        [DataMember(Name = "resolver", EmitDefaultValue = true)]
+        public string Resolver { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the status.
+        /// </summary>
+        /// <value>Gets or sets the id of the status.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public Guid Id { get; set; }
+
+        /// <summary>
         /// Gets or sets the organization id.
         /// </summary>
         /// <value>Gets or sets the organization id.</value>
@@ -120,12 +129,13 @@ namespace Simplic.OxS.SDK.Contract
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderStatusModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("  Index: ").Append(Index).Append("\n");
             sb.Append("  HexCode: ").Append(HexCode).Append("\n");
+            sb.Append("  Resolver: ").Append(Resolver).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
@@ -164,11 +174,6 @@ namespace Simplic.OxS.SDK.Contract
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -194,6 +199,16 @@ namespace Simplic.OxS.SDK.Contract
                     this.HexCode.Equals(input.HexCode))
                 ) && 
                 (
+                    this.Resolver == input.Resolver ||
+                    (this.Resolver != null &&
+                    this.Resolver.Equals(input.Resolver))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.OrganizationId == input.OrganizationId ||
                     (this.OrganizationId != null &&
                     this.OrganizationId.Equals(input.OrganizationId))
@@ -213,10 +228,6 @@ namespace Simplic.OxS.SDK.Contract
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -233,6 +244,14 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.HexCode != null)
                 {
                     hashCode = (hashCode * 59) + this.HexCode.GetHashCode();
+                }
+                if (this.Resolver != null)
+                {
+                    hashCode = (hashCode * 59) + this.Resolver.GetHashCode();
+                }
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 if (this.OrganizationId != null)
                 {

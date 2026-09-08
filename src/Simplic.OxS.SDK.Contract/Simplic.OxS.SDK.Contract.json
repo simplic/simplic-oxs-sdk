@@ -1995,190 +1995,6 @@
                 }
             }
         },
-        "/Order/get-all": {
-            "get": {
-                "tags": [
-                    "Order"
-                ],
-                "summary": "Gets all orders of the current organization.",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OrderModel"
-                                    }
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OrderModel"
-                                    }
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OrderModel"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/Order/search": {
-            "get": {
-                "tags": [
-                    "Order"
-                ],
-                "summary": "Searches orders by customer, contract and status.",
-                "parameters": [
-                    {
-                        "name": "customerContactId",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    },
-                    {
-                        "name": "contractId",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    },
-                    {
-                        "name": "statusId",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OrderModel"
-                                    }
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OrderModel"
-                                    }
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OrderModel"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            },
-                            "text/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProblemDetails"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/Order": {
             "post": {
                 "tags": [
@@ -2321,6 +2137,104 @@
                             "text/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/OrderModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Order/convert-to-shipment": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Converts an order item into one or more shipments and creates the corresponding\nshipment bookings, linked to the order and order item.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConvertOrderItemToShipmentRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConvertOrderItemToShipmentRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ConvertOrderItemToShipmentRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ShipmentResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ShipmentResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ShipmentResponse"
+                                    }
                                 }
                             }
                         }
@@ -3039,6 +2953,193 @@
                         "application/*+json": {
                             "schema": {
                                 "$ref": "#/components/schemas/CreateOrderStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/OrderStatusDeployment": {
+            "post": {
+                "tags": [
+                    "OrderStatusDeployment"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateOrderStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateOrderStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateOrderStatusRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderStatusModel"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderStatusModel"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrderStatusModel"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/OrderStatusDeployment/{id}": {
+            "patch": {
+                "tags": [
+                    "OrderStatusDeployment"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchOrderStatusRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchOrderStatusRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchOrderStatusRequest"
                             }
                         }
                     }
@@ -3880,6 +3981,134 @@
                     }
                 }
             }
+        },
+        "/Shipment/{id}/confirm": {
+            "post": {
+                "tags": [
+                    "Shipment"
+                ],
+                "summary": "Confirms a pending shipment booking.\n\nCreating a shipment booking is an asynchronous process. Only once a booking is\nconfirmed, the booked quantity of a linked order item is increased.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Shipment/{id}/cancel": {
+            "post": {
+                "tags": [
+                    "Shipment"
+                ],
+                "summary": "Cancels a shipment booking.\n\nIf the booking was already confirmed, the booked quantity of a linked order item is\nreduced again.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -3996,7 +4225,8 @@
                     "contactId": {
                         "type": "string",
                         "description": "Gets or set the contact id.",
-                        "format": "uuid"
+                        "format": "uuid",
+                        "nullable": true
                     },
                     "firstName": {
                         "type": "string",
@@ -4071,12 +4301,14 @@
                     "latitude": {
                         "type": "number",
                         "description": "Gets or sets the latitude.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     },
                     "longitude": {
                         "type": "number",
                         "description": "Gets or sets the longitude.",
-                        "format": "double"
+                        "format": "double",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -4723,6 +4955,31 @@
                 "additionalProperties": false,
                 "description": "Represents the status of a contract.\n\nThe status woll allow or forbin certian actions of a billing line."
             },
+            "ConvertOrderItemToShipmentRequest": {
+                "type": "object",
+                "properties": {
+                    "orderId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the order the item belongs to.",
+                        "format": "uuid"
+                    },
+                    "orderItemId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the order item that should be converted.",
+                        "format": "uuid"
+                    },
+                    "dates": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Dates"
+                        },
+                        "description": "Gets or sets the dates the shipments should be created for.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a request to convert an order item into one or more shipments."
+            },
             "ConvertToShipmentRequest": {
                 "type": "object",
                 "properties": {
@@ -5265,6 +5522,12 @@
                         "description": "Gets or sets the number.",
                         "nullable": true
                     },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date of the order.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "contractId": {
                         "type": "string",
                         "description": "Gets or sets the id of the referenced contract.",
@@ -5278,12 +5541,6 @@
                     },
                     "customer": {
                         "$ref": "#/components/schemas/BillableContactRequestModel"
-                    },
-                    "statusId": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the status.\n\nIf not set, the status with the role `is_default` will be used.",
-                        "format": "uuid",
-                        "nullable": true
                     },
                     "reference": {
                         "type": "string",
@@ -5300,6 +5557,9 @@
                         "description": "Gets or sets the id of the source.",
                         "format": "uuid",
                         "nullable": true
+                    },
+                    "contactPerson": {
+                        "$ref": "#/components/schemas/OrderContactPersonModel"
                     },
                     "items": {
                         "type": "array",
@@ -5346,11 +5606,6 @@
             "CreateOrderStatusRequest": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the status.",
-                        "format": "uuid"
-                    },
                     "name": {
                         "type": "string",
                         "description": "Gets or sets the name of the status.",
@@ -5377,6 +5632,11 @@
                     "hexCode": {
                         "type": "string",
                         "description": "Gets or sets the color of the status as hexadecimal value.",
+                        "nullable": true
+                    },
+                    "resolver": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the resolver that determines whether an order currently qualifies\nfor this status.\n\nIf this is null or whitespace, the status is considered manual/final and is never\nautomatically resolved.",
                         "nullable": true
                     }
                 },
@@ -5810,6 +6070,33 @@
                 "description": "Represents a type of which the loading / unloading time is set.",
                 "format": "int32"
             },
+            "OrderContactPersonModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the contact person.",
+                        "nullable": true
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the phone number of the contact person.",
+                        "nullable": true
+                    },
+                    "mailAddress": {
+                        "type": "string",
+                        "description": "Gets or sets the mail address of the contact person.",
+                        "nullable": true
+                    },
+                    "mobilePhoneNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the mobile phone number of the contact person.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents the contact person of an order."
+            },
             "OrderItemModel": {
                 "type": "object",
                 "properties": {
@@ -5904,6 +6191,34 @@
                     },
                     "priceUnit": {
                         "$ref": "#/components/schemas/QuantityUnitModel"
+                    },
+                    "approved": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the item has been approved."
+                    },
+                    "startLoadDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the start date and time of the load.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endLoadDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the end date and time of the load.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "startDeliveryDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the start date and time of the delivery.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDeliveryDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the end date and time of the delivery.",
+                        "format": "date-time",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -6006,6 +6321,35 @@
                         "description": "Gets or sets the id of the unit the price refers to.",
                         "format": "uuid",
                         "nullable": true
+                    },
+                    "approved": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the item has been approved.",
+                        "nullable": true
+                    },
+                    "startLoadDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the start date and time of the load.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endLoadDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the end date and time of the load.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "startDeliveryDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the start date and time of the delivery.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "endDeliveryDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the end date and time of the delivery.",
+                        "format": "date-time",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -6098,6 +6442,9 @@
                         "type": "string",
                         "description": "Gets or sets the update user name.",
                         "nullable": true
+                    },
+                    "contactPerson": {
+                        "$ref": "#/components/schemas/OrderContactPersonModel"
                     }
                 },
                 "additionalProperties": false,
@@ -6160,11 +6507,6 @@
             "OrderStatusModel": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the status.",
-                        "format": "uuid"
-                    },
                     "name": {
                         "type": "string",
                         "description": "Gets or sets the name of the status.",
@@ -6192,6 +6534,16 @@
                         "type": "string",
                         "description": "Gets or sets the color of the status as hexadecimal value.",
                         "nullable": true
+                    },
+                    "resolver": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the resolver that determines whether an order currently qualifies\nfor this status.\n\nIf this is null or whitespace, the status is considered manual/final and is never\nautomatically resolved.",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the status.",
+                        "format": "uuid"
                     },
                     "organizationId": {
                         "type": "string",
@@ -6573,11 +6925,6 @@
             "PatchOrderStatusRequest": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the status.",
-                        "format": "uuid"
-                    },
                     "name": {
                         "type": "string",
                         "description": "Gets or sets the name of the status.",
@@ -6604,6 +6951,11 @@
                     "hexCode": {
                         "type": "string",
                         "description": "Gets or sets the color of the status as hexadecimal value.",
+                        "nullable": true
+                    },
+                    "resolver": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the resolver that determines whether an order currently qualifies\nfor this status.\n\nIf this is null or whitespace, the status is considered manual/final and is never\nautomatically resolved.",
                         "nullable": true
                     }
                 },
@@ -7290,6 +7642,12 @@
                         "description": "Gets or sets the number.",
                         "nullable": true
                     },
+                    "date": {
+                        "type": "string",
+                        "description": "Gets or sets the date of the order.",
+                        "format": "date-time",
+                        "nullable": true
+                    },
                     "contractId": {
                         "type": "string",
                         "description": "Gets or sets the id of the referenced contract.",
@@ -7303,12 +7661,6 @@
                     },
                     "customer": {
                         "$ref": "#/components/schemas/BillableContactRequestModel"
-                    },
-                    "statusId": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the status.\n\nIf not set, the status with the role `is_default` will be used.",
-                        "format": "uuid",
-                        "nullable": true
                     },
                     "reference": {
                         "type": "string",
@@ -7325,6 +7677,9 @@
                         "description": "Gets or sets the id of the source.",
                         "format": "uuid",
                         "nullable": true
+                    },
+                    "contactPerson": {
+                        "$ref": "#/components/schemas/OrderContactPersonModel"
                     },
                     "items": {
                         "type": "array",
@@ -7426,6 +7781,9 @@
             "name": "OrderStatus"
         },
         {
+            "name": "OrderStatusDeployment"
+        },
+        {
             "name": "OrganizationSettings"
         },
         {
@@ -7436,6 +7794,9 @@
         },
         {
             "name": "ServiceDefinition"
+        },
+        {
+            "name": "Shipment"
         }
     ]
 }

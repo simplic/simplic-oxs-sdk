@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **UpdateDateTime** | **DateTime** | Gets or sets the update date time. | [optional] 
 **UpdateUserId** | **Guid?** | Gets or sets the update user id. | [optional] 
 **UpdateUserName** | **string** | Gets or sets the update user name. | [optional] 
+**ContactPerson** | [**OrderContactPersonModel**](OrderContactPersonModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

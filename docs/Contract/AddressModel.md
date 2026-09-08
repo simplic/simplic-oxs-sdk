@@ -5,7 +5,7 @@ Represents the address of a contact.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContactId** | **Guid** | Gets or set the contact id. | [optional] 
+**ContactId** | **Guid?** | Gets or set the contact id. | [optional] 
 **FirstName** | **string** | Gets or sets the first name. | [optional] 
 **LastName** | **string** | Gets or sets the last name. | [optional] 
 **CompanyName** | **string** | Gets or sets the company name. | [optional] 
@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **CountryIso** | **string** | Gets or sets the country iso. | [optional] 
 **Country** | **string** | Gets or sets the country. | [optional] 
 **MatchCode** | **string** | Gets or sets the match code. | [optional] 
-**Latitude** | **double** | Gets or sets the latitude. | [optional] 
-**Longitude** | **double** | Gets or sets the longitude. | [optional] 
+**Latitude** | **double?** | Gets or sets the latitude. | [optional] 
+**Longitude** | **double?** | Gets or sets the longitude. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

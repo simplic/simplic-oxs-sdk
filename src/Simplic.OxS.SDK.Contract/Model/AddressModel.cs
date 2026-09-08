@@ -53,7 +53,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="matchCode">Gets or sets the match code..</param>
         /// <param name="latitude">Gets or sets the latitude..</param>
         /// <param name="longitude">Gets or sets the longitude..</param>
-        public AddressModel(Guid contactId = default(Guid), string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), string country = default(string), string matchCode = default(string), double latitude = default(double), double longitude = default(double))
+        public AddressModel(Guid? contactId = default(Guid?), string firstName = default(string), string lastName = default(string), string companyName = default(string), string additional01 = default(string), string additional02 = default(string), string street = default(string), string houseNumber = default(string), string zipcode = default(string), string city = default(string), string district = default(string), string federalState = default(string), string countryIso = default(string), string country = default(string), string matchCode = default(string), double? latitude = default(double?), double? longitude = default(double?))
         {
             this.ContactId = contactId;
             this.FirstName = firstName;
@@ -78,8 +78,8 @@ namespace Simplic.OxS.SDK.Contract
         /// Gets or set the contact id.
         /// </summary>
         /// <value>Gets or set the contact id.</value>
-        [DataMember(Name = "contactId", EmitDefaultValue = false)]
-        public Guid ContactId { get; set; }
+        [DataMember(Name = "contactId", EmitDefaultValue = true)]
+        public Guid? ContactId { get; set; }
 
         /// <summary>
         /// Gets or sets the first name.
@@ -183,15 +183,15 @@ namespace Simplic.OxS.SDK.Contract
         /// Gets or sets the latitude.
         /// </summary>
         /// <value>Gets or sets the latitude.</value>
-        [DataMember(Name = "latitude", EmitDefaultValue = false)]
-        public double Latitude { get; set; }
+        [DataMember(Name = "latitude", EmitDefaultValue = true)]
+        public double? Latitude { get; set; }
 
         /// <summary>
         /// Gets or sets the longitude.
         /// </summary>
         /// <value>Gets or sets the longitude.</value>
-        [DataMember(Name = "longitude", EmitDefaultValue = false)]
-        public double Longitude { get; set; }
+        [DataMember(Name = "longitude", EmitDefaultValue = true)]
+        public double? Longitude { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -330,11 +330,13 @@ namespace Simplic.OxS.SDK.Contract
                 ) && 
                 (
                     this.Latitude == input.Latitude ||
-                    this.Latitude.Equals(input.Latitude)
+                    (this.Latitude != null &&
+                    this.Latitude.Equals(input.Latitude))
                 ) && 
                 (
                     this.Longitude == input.Longitude ||
-                    this.Longitude.Equals(input.Longitude)
+                    (this.Longitude != null &&
+                    this.Longitude.Equals(input.Longitude))
                 );
         }
 
@@ -407,8 +409,14 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.MatchCode.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Latitude.GetHashCode();
-                hashCode = (hashCode * 59) + this.Longitude.GetHashCode();
+                if (this.Latitude != null)
+                {
+                    hashCode = (hashCode * 59) + this.Latitude.GetHashCode();
+                }
+                if (this.Longitude != null)
+                {
+                    hashCode = (hashCode * 59) + this.Longitude.GetHashCode();
+                }
                 return hashCode;
             }
         }
