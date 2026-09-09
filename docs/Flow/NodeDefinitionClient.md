@@ -7,6 +7,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 | [**GetAll**](NodeDefinitionClient.md#nodedefinitiongetallget) | **GET** /NodeDefinition/get-all |  |
 | [**Delete**](NodeDefinitionClient.md#nodedefinitioniddelete) | **DELETE** /NodeDefinition/{id} |  |
 | [**Get**](NodeDefinitionClient.md#nodedefinitionidget) | **GET** /NodeDefinition/{id} |  |
+| [**Patch**](NodeDefinitionClient.md#nodedefinitionidpatch) | **PATCH** /NodeDefinition/{id} |  |
 | [**Put**](NodeDefinitionClient.md#nodedefinitionidput) | **PUT** /NodeDefinition/{id} |  |
 | [**Post**](NodeDefinitionClient.md#nodedefinitionpost) | **POST** /NodeDefinition |  |
 | [**Restore**](NodeDefinitionClient.md#nodedefinitionrestorepost) | **POST** /NodeDefinition/restore |  |
@@ -289,6 +290,106 @@ catch (ApiException e)
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **500** | Internal Server Error |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="nodedefinitionidpatch"></a>
+# **Patch**
+> PatchNodeDefinitionResponse Patch (string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class PatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new NodeDefinitionClient(config);
+            var id = "id_example";  // string | 
+            var patchNodeDefinitionRequest = new PatchNodeDefinitionRequest?(); // PatchNodeDefinitionRequest? |  (optional) 
+
+            try
+            {
+                PatchNodeDefinitionResponse result = apiInstance.Patch(id, patchNodeDefinitionRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NodeDefinitionClient.Patch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<PatchNodeDefinitionResponse> response = apiInstance.PatchWithHttpInfo(id, patchNodeDefinitionRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling NodeDefinitionClient.PatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** |  |  |
+| **patchNodeDefinitionRequest** | [**PatchNodeDefinitionRequest?**](PatchNodeDefinitionRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**PatchNodeDefinitionResponse**](PatchNodeDefinitionResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

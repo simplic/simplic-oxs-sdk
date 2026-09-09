@@ -145,6 +145,45 @@ public interface INodeDefinitionClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
+    /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+    /// <returns>PatchNodeDefinitionResponse</returns>
+    PatchNodeDefinitionResponse Patch(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+    /// <returns>ApiResponse of PatchNodeDefinitionResponse</returns>
+    ApiResponse<PatchNodeDefinitionResponse> PatchWithHttpInfo(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?));
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of PatchNodeDefinitionResponse</returns>
+    Task<PatchNodeDefinitionResponse> PatchAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
+    /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (PatchNodeDefinitionResponse)</returns>
+    Task<ApiResponse<PatchNodeDefinitionResponse>> PatchWithHttpInfoAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id"></param>
     /// <param name="putNodeDefinitionRequest"> (optional)</param>
     /// <returns>PutNodeDefinitionResponse</returns>
     PutNodeDefinitionResponse Put(string id, PutNodeDefinitionRequest? putNodeDefinitionRequest = default(PutNodeDefinitionRequest?));
@@ -543,6 +582,83 @@ public interface INodeDefinitionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <returns>PatchNodeDefinitionResponse</returns>
+        public PatchNodeDefinitionResponse Patch(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?))
+        {
+            try
+            {
+                return _internalClient.Patch(id, patchNodeDefinitionRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <returns>ApiResponse of PatchNodeDefinitionResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<PatchNodeDefinitionResponse> PatchWithHttpInfo(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?))
+        {
+            try
+            {
+                return _internalClient.PatchWithHttpInfo(id, patchNodeDefinitionRequest);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PatchNodeDefinitionResponse</returns>
+        public System.Threading.Tasks.Task<PatchNodeDefinitionResponse> PatchAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PatchAsync(id, patchNodeDefinitionRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PatchNodeDefinitionResponse)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PatchNodeDefinitionResponse>> PatchWithHttpInfoAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.PatchWithHttpInfoAsync(id, patchNodeDefinitionRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
         /// <param name="putNodeDefinitionRequest"> (optional)</param>
         /// <returns>PutNodeDefinitionResponse</returns>
         public PutNodeDefinitionResponse Put(string id, PutNodeDefinitionRequest? putNodeDefinitionRequest = default(PutNodeDefinitionRequest?))
@@ -837,6 +953,28 @@ public interface INodeDefinitionClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PatchNodeDefinitionResponse</returns>
+        PatchNodeDefinitionResponse Patch(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PatchNodeDefinitionResponse</returns>
+        ApiResponse<PatchNodeDefinitionResponse> PatchWithHttpInfo(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
         /// <param name="putNodeDefinitionRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PutNodeDefinitionResponse</returns>
@@ -976,6 +1114,33 @@ public interface INodeDefinitionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetNodeDefinitionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetNodeDefinitionResponse>> GetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PatchNodeDefinitionResponse</returns>
+        System.Threading.Tasks.Task<PatchNodeDefinitionResponse> PatchAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PatchNodeDefinitionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PatchNodeDefinitionResponse>> PatchWithHttpInfoAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1650,6 +1815,186 @@ public interface INodeDefinitionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("NodeDefinitionIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PatchNodeDefinitionResponse</returns>
+        public PatchNodeDefinitionResponse Patch(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<PatchNodeDefinitionResponse> localVarResponse = PatchWithHttpInfo(id, patchNodeDefinitionRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PatchNodeDefinitionResponse</returns>
+        public Simplic.OxS.SDK.ApiResponse<PatchNodeDefinitionResponse> PatchWithHttpInfo(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling NodeDefinitionClient->NodeDefinitionIdPatch");
+            }
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = patchNodeDefinitionRequest;
+
+            localVarRequestOptions.Operation = "NodeDefinitionClient.NodeDefinitionIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<PatchNodeDefinitionResponse>("/NodeDefinition/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("NodeDefinitionIdPatch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PatchNodeDefinitionResponse</returns>
+        public async System.Threading.Tasks.Task<PatchNodeDefinitionResponse> PatchAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<PatchNodeDefinitionResponse> localVarResponse = await PatchWithHttpInfoAsync(id, patchNodeDefinitionRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <param name="patchNodeDefinitionRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PatchNodeDefinitionResponse)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<PatchNodeDefinitionResponse>> PatchWithHttpInfoAsync(string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = default(PatchNodeDefinitionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'id' when calling NodeDefinitionClient->NodeDefinitionIdPatch");
+            }
+
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = patchNodeDefinitionRequest;
+
+            localVarRequestOptions.Operation = "NodeDefinitionClient.NodeDefinitionIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<PatchNodeDefinitionResponse>("/NodeDefinition/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("NodeDefinitionIdPatch", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

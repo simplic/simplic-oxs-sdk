@@ -1128,6 +1128,122 @@
                     }
                 }
             },
+            "patch": {
+                "tags": [
+                    "NodeDefinition"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchNodeDefinitionRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchNodeDefinitionRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchNodeDefinitionRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PatchNodeDefinitionResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PatchNodeDefinitionResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PatchNodeDefinitionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "delete": {
                 "tags": [
                     "NodeDefinition"
@@ -2191,6 +2307,188 @@
                     "name",
                     "version"
                 ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "version": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "assemblyName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "className": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchNodeDefinitionRequest": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow",
+                            "pure"
+                        ],
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eventName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "markdown": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "target": {
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
+                    },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customDataInPinTemplate": {
+                        "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
+                    },
+                    "customFlowOutPinTemplate": {
+                        "$ref": "#/components/schemas/CustomFlowOutPinTemplateDefinition"
+                    },
+                    "dataInPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataInPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "dataOutPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataOutPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "flowOutPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FlowOutPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/PatchNodePackageRequest"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchNodeDefinitionResponse": {
+                "required": [
+                    "id",
+                    "markdown",
+                    "package",
+                    "target",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "enum": [
+                            "action",
+                            "onEvent",
+                            "controlFlow",
+                            "pure"
+                        ],
+                        "type": "string"
+                    },
+                    "eventName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "category": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "markdown": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "target": {
+                        "$ref": "#/components/schemas/NodeDefinitionTarget"
+                    },
+                    "deploymentHook": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customDataInPinTemplate": {
+                        "$ref": "#/components/schemas/CustomDataInPinTemplateDefinition"
+                    },
+                    "customFlowOutPinTemplate": {
+                        "$ref": "#/components/schemas/CustomFlowOutPinTemplateDefinition"
+                    },
+                    "dataInPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataInPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "dataOutPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DataOutPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "flowOutPins": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FlowOutPinDefinition"
+                        },
+                        "nullable": true
+                    },
+                    "package": {
+                        "$ref": "#/components/schemas/NodePackageResponse"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PatchNodePackageRequest": {
                 "type": "object",
                 "properties": {
                     "name": {
