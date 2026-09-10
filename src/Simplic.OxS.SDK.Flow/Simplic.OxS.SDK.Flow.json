@@ -1042,7 +1042,8 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "format": "uuid"
                         }
                     }
                 ],
@@ -1138,7 +1139,8 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "format": "uuid"
                         }
                     }
                 ],
@@ -1410,6 +1412,220 @@
                     },
                     "400": {
                         "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/NodeDefinition/type/{typeId}": {
+            "put": {
+                "tags": [
+                    "NodeDefinition"
+                ],
+                "parameters": [
+                    {
+                        "name": "typeId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PutNodeDefinitionRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PutNodeDefinitionRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PutNodeDefinitionRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PutNodeDefinitionResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PutNodeDefinitionResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PutNodeDefinitionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "NodeDefinition"
+                ],
+                "parameters": [
+                    {
+                        "name": "typeId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchNodeDefinitionRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchNodeDefinitionRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatchNodeDefinitionRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PatchNodeDefinitionResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PatchNodeDefinitionResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PatchNodeDefinitionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1956,6 +2172,7 @@
             },
             "GetNodeDefinitionResponse": {
                 "required": [
+                    "definitionId",
                     "id",
                     "markdown",
                     "package",
@@ -1965,6 +2182,10 @@
                 "type": "object",
                 "properties": {
                     "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "definitionId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2116,6 +2337,7 @@
             },
             "NodeDefinitionResponse": {
                 "required": [
+                    "definitionId",
                     "id",
                     "markdown",
                     "package",
@@ -2125,6 +2347,10 @@
                 "type": "object",
                 "properties": {
                     "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "definitionId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2403,6 +2629,7 @@
             },
             "PatchNodeDefinitionResponse": {
                 "required": [
+                    "definitionId",
                     "id",
                     "markdown",
                     "package",
@@ -2412,6 +2639,10 @@
                 "type": "object",
                 "properties": {
                     "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "definitionId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2681,6 +2912,7 @@
             },
             "PostNodeDefinitionResponse": {
                 "required": [
+                    "definitionId",
                     "id",
                     "markdown",
                     "package",
@@ -2690,6 +2922,10 @@
                 "type": "object",
                 "properties": {
                     "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "definitionId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2910,6 +3146,7 @@
             },
             "PutNodeDefinitionResponse": {
                 "required": [
+                    "definitionId",
                     "id",
                     "markdown",
                     "package",
@@ -2919,6 +3156,10 @@
                 "type": "object",
                 "properties": {
                     "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "definitionId": {
                         "type": "string",
                         "nullable": true
                     },

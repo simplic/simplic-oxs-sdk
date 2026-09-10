@@ -85,6 +85,7 @@ namespace Simplic.OxS.SDK.Flow
         /// Initializes a new instance of the <see cref="PutNodeDefinitionResponse" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
+        /// <param name="definitionId">definitionId (required).</param>
         /// <param name="type">type (required).</param>
         /// <param name="eventName">eventName.</param>
         /// <param name="displayName">displayName.</param>
@@ -100,14 +101,15 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package (required).</param>
-        public PutNodeDefinitionResponse(string id = default(string), TypeEnum type = default(TypeEnum), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string category = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), string deploymentHook = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageResponse package = default(NodePackageResponse))
+        public PutNodeDefinitionResponse(Guid id = default(Guid), string definitionId = default(string), TypeEnum type = default(TypeEnum), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string category = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), string deploymentHook = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageResponse package = default(NodePackageResponse))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new ArgumentNullException("id is a required property for PutNodeDefinitionResponse and cannot be null");
-            }
             this.Id = id;
+            // to ensure "definitionId" is required (not null)
+            if (definitionId == null)
+            {
+                throw new ArgumentNullException("definitionId is a required property for PutNodeDefinitionResponse and cannot be null");
+            }
+            this.DefinitionId = definitionId;
             this.Type = type;
             // to ensure "markdown" is required (not null)
             if (markdown == null)
@@ -139,7 +141,13 @@ namespace Simplic.OxS.SDK.Flow
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DefinitionId
+        /// </summary>
+        [DataMember(Name = "definitionId", IsRequired = true, EmitDefaultValue = true)]
+        public string DefinitionId { get; set; }
 
         /// <summary>
         /// Gets or Sets EventName
@@ -228,6 +236,7 @@ namespace Simplic.OxS.SDK.Flow
             StringBuilder sb = new StringBuilder();
             sb.Append("class PutNodeDefinitionResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  DefinitionId: ").Append(DefinitionId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
@@ -282,6 +291,11 @@ namespace Simplic.OxS.SDK.Flow
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.DefinitionId == input.DefinitionId ||
+                    (this.DefinitionId != null &&
+                    this.DefinitionId.Equals(input.DefinitionId))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -373,6 +387,10 @@ namespace Simplic.OxS.SDK.Flow
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.DefinitionId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DefinitionId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 if (this.EventName != null)

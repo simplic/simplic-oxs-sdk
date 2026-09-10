@@ -11,6 +11,8 @@ All URIs are relative to *https://dev-oxs.simplic.io/flow-api/v1*
 | [**Put**](NodeDefinitionClient.md#nodedefinitionidput) | **PUT** /NodeDefinition/{id} |  |
 | [**Post**](NodeDefinitionClient.md#nodedefinitionpost) | **POST** /NodeDefinition |  |
 | [**Restore**](NodeDefinitionClient.md#nodedefinitionrestorepost) | **POST** /NodeDefinition/restore |  |
+| [**Type**](NodeDefinitionClient.md#nodedefinitiontypetypeidpatch) | **PATCH** /NodeDefinition/type/{typeId} |  |
+| [**Type**](NodeDefinitionClient.md#nodedefinitiontypetypeidput) | **PUT** /NodeDefinition/type/{typeId} |  |
 
 <a id="nodedefinitiongetallget"></a>
 # **GetAll**
@@ -296,7 +298,7 @@ catch (ApiException e)
 
 <a id="nodedefinitionidpatch"></a>
 # **Patch**
-> PatchNodeDefinitionResponse Patch (string id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = null)
+> PatchNodeDefinitionResponse Patch (Guid id, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = null)
 
 
 
@@ -325,7 +327,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new NodeDefinitionClient(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // Guid | 
             var patchNodeDefinitionRequest = new PatchNodeDefinitionRequest?(); // PatchNodeDefinitionRequest? |  (optional) 
 
             try
@@ -367,7 +369,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **Guid** |  |  |
 | **patchNodeDefinitionRequest** | [**PatchNodeDefinitionRequest?**](PatchNodeDefinitionRequest?.md) |  | [optional]  |
 
 ### Return type
@@ -396,7 +398,7 @@ catch (ApiException e)
 
 <a id="nodedefinitionidput"></a>
 # **Put**
-> PutNodeDefinitionResponse Put (string id, PutNodeDefinitionRequest? putNodeDefinitionRequest = null)
+> PutNodeDefinitionResponse Put (Guid id, PutNodeDefinitionRequest? putNodeDefinitionRequest = null)
 
 
 
@@ -425,7 +427,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new NodeDefinitionClient(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // Guid | 
             var putNodeDefinitionRequest = new PutNodeDefinitionRequest?(); // PutNodeDefinitionRequest? |  (optional) 
 
             try
@@ -467,7 +469,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **Guid** |  |  |
 | **putNodeDefinitionRequest** | [**PutNodeDefinitionRequest?**](PutNodeDefinitionRequest?.md) |  | [optional]  |
 
 ### Return type
@@ -671,6 +673,205 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="nodedefinitiontypetypeidpatch"></a>
+# **Type**
+> PatchNodeDefinitionResponse Type (string typeId, PatchNodeDefinitionRequest? patchNodeDefinitionRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class TypeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new NodeDefinitionClient(config);
+            var typeId = "typeId_example";  // string | 
+            var patchNodeDefinitionRequest = new PatchNodeDefinitionRequest?(); // PatchNodeDefinitionRequest? |  (optional) 
+
+            try
+            {
+                PatchNodeDefinitionResponse result = apiInstance.Type(typeId, patchNodeDefinitionRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NodeDefinitionClient.Type: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the TypeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<PatchNodeDefinitionResponse> response = apiInstance.TypeWithHttpInfo(typeId, patchNodeDefinitionRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling NodeDefinitionClient.TypeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **typeId** | **string** |  |  |
+| **patchNodeDefinitionRequest** | [**PatchNodeDefinitionRequest?**](PatchNodeDefinitionRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**PatchNodeDefinitionResponse**](PatchNodeDefinitionResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="nodedefinitiontypetypeidput"></a>
+# **Type**
+> PutNodeDefinitionResponse Type (string typeId, PutNodeDefinitionRequest? putNodeDefinitionRequest = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Flow;
+
+namespace Example
+{
+    public class TypeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/flow-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: Bearer
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new NodeDefinitionClient(config);
+            var typeId = "typeId_example";  // string | 
+            var putNodeDefinitionRequest = new PutNodeDefinitionRequest?(); // PutNodeDefinitionRequest? |  (optional) 
+
+            try
+            {
+                PutNodeDefinitionResponse result = apiInstance.Type(typeId, putNodeDefinitionRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NodeDefinitionClient.Type: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the TypeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<PutNodeDefinitionResponse> response = apiInstance.TypeWithHttpInfo(typeId, putNodeDefinitionRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling NodeDefinitionClient.TypeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **typeId** | **string** |  |  |
+| **putNodeDefinitionRequest** | [**PutNodeDefinitionRequest?**](PutNodeDefinitionRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**PutNodeDefinitionResponse**](PutNodeDefinitionResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 

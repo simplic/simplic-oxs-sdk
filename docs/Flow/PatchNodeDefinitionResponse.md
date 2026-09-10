@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
+**Id** | **Guid** |  | 
+**DefinitionId** | **string** |  | 
 **Type** | **string** |  | 
 **EventName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
