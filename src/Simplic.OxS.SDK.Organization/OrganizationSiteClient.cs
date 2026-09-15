@@ -213,6 +213,37 @@ public interface IOrganizationSiteClient
     /// <returns>Task of ApiResponse (OrganizationSiteModel)</returns>
     Task<ApiResponse<OrganizationSiteModel>> PostWithHttpInfoAsync(CreateOrganizationSiteRequest? createOrganizationSiteRequest = default(CreateOrganizationSiteRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;TimeZoneModel&gt;</returns>
+    List<TimeZoneModel> TimeZones();
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;TimeZoneModel&gt;</returns>
+    ApiResponse<List<TimeZoneModel>> TimeZonesWithHttpInfo();
+        
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;TimeZoneModel&gt;</returns>
+    Task<List<TimeZoneModel>> TimeZonesAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;TimeZoneModel&gt;)</returns>
+    Task<ApiResponse<List<TimeZoneModel>>> TimeZonesWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -653,6 +684,75 @@ public interface IOrganizationSiteClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;TimeZoneModel&gt;</returns>
+        public List<TimeZoneModel> TimeZones()
+        {
+            try
+            {
+                return _internalClient.TimeZones();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;TimeZoneModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<TimeZoneModel>> TimeZonesWithHttpInfo()
+        {
+            try
+            {
+                return _internalClient.TimeZonesWithHttpInfo();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TimeZoneModel&gt;</returns>
+        public System.Threading.Tasks.Task<List<TimeZoneModel>> TimeZonesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TimeZonesAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TimeZoneModel&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TimeZoneModel>>> TimeZonesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TimeZonesWithHttpInfoAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -766,6 +866,24 @@ public interface IOrganizationSiteClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OrganizationSiteModel</returns>
         ApiResponse<OrganizationSiteModel> PostWithHttpInfo(CreateOrganizationSiteRequest? createOrganizationSiteRequest = default(CreateOrganizationSiteRequest?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;TimeZoneModel&gt;</returns>
+        List<TimeZoneModel> TimeZones(int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;TimeZoneModel&gt;</returns>
+        ApiResponse<List<TimeZoneModel>> TimeZonesWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -900,6 +1018,29 @@ public interface IOrganizationSiteClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationSiteModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationSiteModel>> PostWithHttpInfoAsync(CreateOrganizationSiteRequest? createOrganizationSiteRequest = default(CreateOrganizationSiteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TimeZoneModel&gt;</returns>
+        System.Threading.Tasks.Task<List<TimeZoneModel>> TimeZonesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TimeZoneModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TimeZoneModel>>> TimeZonesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1803,6 +1944,156 @@ public interface IOrganizationSiteClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OrganizationSitePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;TimeZoneModel&gt;</returns>
+        public List<TimeZoneModel> TimeZones(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<TimeZoneModel>> localVarResponse = TimeZonesWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;TimeZoneModel&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<TimeZoneModel>> TimeZonesWithHttpInfo(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteTimeZonesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<TimeZoneModel>>("/OrganizationSite/time-zones", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrganizationSiteTimeZonesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;TimeZoneModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TimeZoneModel>> TimeZonesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<TimeZoneModel>> localVarResponse = await TimeZonesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;TimeZoneModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<TimeZoneModel>>> TimeZonesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "OrganizationSiteClient.OrganizationSiteTimeZonesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TimeZoneModel>>("/OrganizationSite/time-zones", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrganizationSiteTimeZonesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

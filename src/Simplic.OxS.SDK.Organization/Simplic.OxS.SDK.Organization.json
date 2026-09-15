@@ -3562,6 +3562,64 @@
                 }
             }
         },
+        "/OrganizationSite/time-zones": {
+            "get": {
+                "tags": [
+                    "OrganizationSite"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TimeZoneModel"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TimeZoneModel"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TimeZoneModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/OrganizationSite": {
             "post": {
                 "tags": [
@@ -4711,6 +4769,11 @@
                     },
                     "address": {
                         "$ref": "#/components/schemas/AddressModelRequest"
+                    },
+                    "timeZoneId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the time zone of the organization site. Must be one of the ids\r\nreturned by the time zone endpoint. Defaults to the IANA id \"Europe/Berlin\" so it also\r\nresolves on Linux based microservices.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -5466,6 +5529,11 @@
                     "address": {
                         "$ref": "#/components/schemas/AddressModelResponse"
                     },
+                    "timeZoneId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the time zone of the organization site, as used by\r\nM:System.TimeZoneInfo.FindSystemTimeZoneById(System.String). Defaults to the IANA id\r\n\"Europe/Berlin\" so it also resolves on Linux based microservices.",
+                        "nullable": true
+                    },
                     "isDeleted": {
                         "type": "boolean",
                         "description": "Gets or sets a is deleted flag.",
@@ -5485,6 +5553,11 @@
                     },
                     "address": {
                         "$ref": "#/components/schemas/AddressModelRequest"
+                    },
+                    "timeZoneId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the time zone of the organization site. Must be one of the ids\r\nreturned by the time zone endpoint.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -5585,6 +5658,32 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents an team."
+            },
+            "TimeZoneModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the time zone, as used by\r\nM:System.TimeZoneInfo.FindSystemTimeZoneById(System.String)",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "Gets or sets the localized display name of the time zone",
+                        "nullable": true
+                    },
+                    "baseUtcOffset": {
+                        "type": "string",
+                        "description": "Gets or sets the base utc offset of the time zone",
+                        "format": "date-span"
+                    },
+                    "supportsDaylightSavingTime": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the time zone supports daylight saving time"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a single time zone that can be assigned to an organization site"
             },
             "UpdateMemberRequest": {
                 "required": [

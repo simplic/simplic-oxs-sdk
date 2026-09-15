@@ -39,12 +39,14 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="id">Gets or sets the unique id of the organization site.</param>
         /// <param name="name">Gets or sets the display name of the organization site.</param>
         /// <param name="address">address.</param>
+        /// <param name="timeZoneId">Gets or sets the id of the time zone of the organization site, as used by  M:System.TimeZoneInfo.FindSystemTimeZoneById(System.String). Defaults to the IANA id  \&quot;Europe/Berlin\&quot; so it also resolves on Linux based microservices..</param>
         /// <param name="isDeleted">Gets or sets a is deleted flag..</param>
-        public OrganizationSiteModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), bool? isDeleted = default(bool?))
+        public OrganizationSiteModel(Guid id = default(Guid), string name = default(string), AddressModelResponse address = default(AddressModelResponse), string timeZoneId = default(string), bool? isDeleted = default(bool?))
         {
             this.Id = id;
             this.Name = name;
             this.Address = address;
+            this.TimeZoneId = timeZoneId;
             this.IsDeleted = isDeleted;
         }
 
@@ -69,6 +71,13 @@ namespace Simplic.OxS.SDK.Organization
         public AddressModelResponse Address { get; set; }
 
         /// <summary>
+        /// Gets or sets the id of the time zone of the organization site, as used by  M:System.TimeZoneInfo.FindSystemTimeZoneById(System.String). Defaults to the IANA id  \&quot;Europe/Berlin\&quot; so it also resolves on Linux based microservices.
+        /// </summary>
+        /// <value>Gets or sets the id of the time zone of the organization site, as used by  M:System.TimeZoneInfo.FindSystemTimeZoneById(System.String). Defaults to the IANA id  \&quot;Europe/Berlin\&quot; so it also resolves on Linux based microservices.</value>
+        [DataMember(Name = "timeZoneId", EmitDefaultValue = true)]
+        public string TimeZoneId { get; set; }
+
+        /// <summary>
         /// Gets or sets a is deleted flag.
         /// </summary>
         /// <value>Gets or sets a is deleted flag.</value>
@@ -86,6 +95,7 @@ namespace Simplic.OxS.SDK.Organization
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  TimeZoneId: ").Append(TimeZoneId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -138,6 +148,11 @@ namespace Simplic.OxS.SDK.Organization
                     this.Address.Equals(input.Address))
                 ) && 
                 (
+                    this.TimeZoneId == input.TimeZoneId ||
+                    (this.TimeZoneId != null &&
+                    this.TimeZoneId.Equals(input.TimeZoneId))
+                ) && 
+                (
                     this.IsDeleted == input.IsDeleted ||
                     (this.IsDeleted != null &&
                     this.IsDeleted.Equals(input.IsDeleted))
@@ -164,6 +179,10 @@ namespace Simplic.OxS.SDK.Organization
                 if (this.Address != null)
                 {
                     hashCode = (hashCode * 59) + this.Address.GetHashCode();
+                }
+                if (this.TimeZoneId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TimeZoneId.GetHashCode();
                 }
                 if (this.IsDeleted != null)
                 {

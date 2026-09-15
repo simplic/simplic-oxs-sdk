@@ -38,10 +38,12 @@ namespace Simplic.OxS.SDK.Organization
         /// </summary>
         /// <param name="name">Gets or sets the name of the organization site.</param>
         /// <param name="address">address.</param>
-        public PatchOrganizationSiteRequest(string name = default(string), AddressModelRequest address = default(AddressModelRequest))
+        /// <param name="timeZoneId">Gets or sets the id of the time zone of the organization site. Must be one of the ids  returned by the time zone endpoint..</param>
+        public PatchOrganizationSiteRequest(string name = default(string), AddressModelRequest address = default(AddressModelRequest), string timeZoneId = default(string))
         {
             this.Name = name;
             this.Address = address;
+            this.TimeZoneId = timeZoneId;
         }
 
         /// <summary>
@@ -58,6 +60,13 @@ namespace Simplic.OxS.SDK.Organization
         public AddressModelRequest Address { get; set; }
 
         /// <summary>
+        /// Gets or sets the id of the time zone of the organization site. Must be one of the ids  returned by the time zone endpoint.
+        /// </summary>
+        /// <value>Gets or sets the id of the time zone of the organization site. Must be one of the ids  returned by the time zone endpoint.</value>
+        [DataMember(Name = "timeZoneId", EmitDefaultValue = true)]
+        public string TimeZoneId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -67,6 +76,7 @@ namespace Simplic.OxS.SDK.Organization
             sb.Append("class PatchOrganizationSiteRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  TimeZoneId: ").Append(TimeZoneId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,6 +121,11 @@ namespace Simplic.OxS.SDK.Organization
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
+                ) && 
+                (
+                    this.TimeZoneId == input.TimeZoneId ||
+                    (this.TimeZoneId != null &&
+                    this.TimeZoneId.Equals(input.TimeZoneId))
                 );
         }
 
@@ -130,6 +145,10 @@ namespace Simplic.OxS.SDK.Organization
                 if (this.Address != null)
                 {
                     hashCode = (hashCode * 59) + this.Address.GetHashCode();
+                }
+                if (this.TimeZoneId != null)
+                {
+                    hashCode = (hashCode * 59) + this.TimeZoneId.GetHashCode();
                 }
                 return hashCode;
             }
