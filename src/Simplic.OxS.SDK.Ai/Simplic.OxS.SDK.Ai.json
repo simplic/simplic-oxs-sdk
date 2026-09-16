@@ -10526,6 +10526,11 @@
                     },
                     "debug": {
                         "type": "boolean"
+                    },
+                    "regenerateFromTurnId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -11061,6 +11066,11 @@
                     },
                     "debug": {
                         "type": "boolean"
+                    },
+                    "regenerateFromTurnId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -12254,6 +12264,11 @@
                     },
                     "debug": {
                         "type": "boolean"
+                    },
+                    "regenerateFromTurnId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

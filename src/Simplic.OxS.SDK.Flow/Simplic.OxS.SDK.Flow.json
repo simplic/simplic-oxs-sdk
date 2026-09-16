@@ -2172,12 +2172,12 @@
             },
             "GetNodeDefinitionResponse": {
                 "required": [
-                    "definitionId",
                     "id",
                     "markdown",
                     "package",
                     "target",
-                    "type"
+                    "type",
+                    "typeId"
                 ],
                 "type": "object",
                 "properties": {
@@ -2185,7 +2185,7 @@
                         "type": "string",
                         "format": "uuid"
                     },
-                    "definitionId": {
+                    "typeId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2337,12 +2337,12 @@
             },
             "NodeDefinitionResponse": {
                 "required": [
-                    "definitionId",
                     "id",
                     "markdown",
                     "package",
                     "target",
-                    "type"
+                    "type",
+                    "typeId"
                 ],
                 "type": "object",
                 "properties": {
@@ -2350,7 +2350,7 @@
                         "type": "string",
                         "format": "uuid"
                     },
-                    "definitionId": {
+                    "typeId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2629,12 +2629,12 @@
             },
             "PatchNodeDefinitionResponse": {
                 "required": [
-                    "definitionId",
                     "id",
                     "markdown",
                     "package",
                     "target",
-                    "type"
+                    "type",
+                    "typeId"
                 ],
                 "type": "object",
                 "properties": {
@@ -2642,7 +2642,7 @@
                         "type": "string",
                         "format": "uuid"
                     },
-                    "definitionId": {
+                    "typeId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -2825,15 +2825,15 @@
             },
             "PostNodeDefinitionRequest": {
                 "required": [
-                    "id",
                     "markdown",
                     "package",
                     "target",
-                    "type"
+                    "type",
+                    "typeId"
                 ],
                 "type": "object",
                 "properties": {
-                    "id": {
+                    "typeId": {
                         "minLength": 1,
                         "type": "string"
                     },
@@ -2912,12 +2912,12 @@
             },
             "PostNodeDefinitionResponse": {
                 "required": [
-                    "definitionId",
                     "id",
                     "markdown",
                     "package",
                     "target",
-                    "type"
+                    "type",
+                    "typeId"
                 ],
                 "type": "object",
                 "properties": {
@@ -2925,7 +2925,7 @@
                         "type": "string",
                         "format": "uuid"
                     },
-                    "definitionId": {
+                    "typeId": {
                         "type": "string",
                         "nullable": true
                     },
@@ -3059,15 +3059,15 @@
             },
             "PutNodeDefinitionRequest": {
                 "required": [
-                    "id",
                     "markdown",
                     "package",
                     "target",
-                    "type"
+                    "type",
+                    "typeId"
                 ],
                 "type": "object",
                 "properties": {
-                    "id": {
+                    "typeId": {
                         "minLength": 1,
                         "type": "string"
                     },
@@ -3146,12 +3146,12 @@
             },
             "PutNodeDefinitionResponse": {
                 "required": [
-                    "definitionId",
                     "id",
                     "markdown",
                     "package",
                     "target",
-                    "type"
+                    "type",
+                    "typeId"
                 ],
                 "type": "object",
                 "properties": {
@@ -3159,7 +3159,7 @@
                         "type": "string",
                         "format": "uuid"
                     },
-                    "definitionId": {
+                    "typeId": {
                         "type": "string",
                         "nullable": true
                     },

@@ -84,7 +84,7 @@ namespace Simplic.OxS.SDK.Flow
         /// <summary>
         /// Initializes a new instance of the <see cref="PostNodeDefinitionRequest" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
+        /// <param name="typeId">typeId (required).</param>
         /// <param name="type">type (required).</param>
         /// <param name="eventName">eventName.</param>
         /// <param name="displayName">displayName.</param>
@@ -100,14 +100,14 @@ namespace Simplic.OxS.SDK.Flow
         /// <param name="dataOutPins">dataOutPins.</param>
         /// <param name="flowOutPins">flowOutPins.</param>
         /// <param name="package">package (required).</param>
-        public PostNodeDefinitionRequest(string id = default(string), TypeEnum type = default(TypeEnum), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string category = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), string deploymentHook = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageRequest package = default(NodePackageRequest))
+        public PostNodeDefinitionRequest(string typeId = default(string), TypeEnum type = default(TypeEnum), string eventName = default(string), string displayName = default(string), string displayKey = default(string), string description = default(string), string category = default(string), string markdown = default(string), NodeDefinitionTarget target = default(NodeDefinitionTarget), string deploymentHook = default(string), CustomDataInPinTemplateDefinition customDataInPinTemplate = default(CustomDataInPinTemplateDefinition), CustomFlowOutPinTemplateDefinition customFlowOutPinTemplate = default(CustomFlowOutPinTemplateDefinition), List<DataInPinDefinition> dataInPins = default(List<DataInPinDefinition>), List<DataOutPinDefinition> dataOutPins = default(List<DataOutPinDefinition>), List<FlowOutPinDefinition> flowOutPins = default(List<FlowOutPinDefinition>), NodePackageRequest package = default(NodePackageRequest))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
+            // to ensure "typeId" is required (not null)
+            if (typeId == null)
             {
-                throw new ArgumentNullException("id is a required property for PostNodeDefinitionRequest and cannot be null");
+                throw new ArgumentNullException("typeId is a required property for PostNodeDefinitionRequest and cannot be null");
             }
-            this.Id = id;
+            this.TypeId = typeId;
             this.Type = type;
             // to ensure "markdown" is required (not null)
             if (markdown == null)
@@ -136,10 +136,10 @@ namespace Simplic.OxS.SDK.Flow
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets TypeId
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public string Id { get; set; }
+        [DataMember(Name = "typeId", IsRequired = true, EmitDefaultValue = true)]
+        public string TypeId { get; set; }
 
         /// <summary>
         /// Gets or Sets EventName
@@ -227,7 +227,7 @@ namespace Simplic.OxS.SDK.Flow
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PostNodeDefinitionRequest {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  TypeId: ").Append(TypeId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
@@ -279,9 +279,9 @@ namespace Simplic.OxS.SDK.Flow
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.TypeId == input.TypeId ||
+                    (this.TypeId != null &&
+                    this.TypeId.Equals(input.TypeId))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -370,9 +370,9 @@ namespace Simplic.OxS.SDK.Flow
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.TypeId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TypeId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 if (this.EventName != null)
@@ -439,10 +439,10 @@ namespace Simplic.OxS.SDK.Flow
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Id (string) minLength
-            if (this.Id != null && this.Id.Length < 1)
+            // TypeId (string) minLength
+            if (this.TypeId != null && this.TypeId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be greater than 1.", new [] { "Id" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TypeId, length must be greater than 1.", new [] { "TypeId" });
             }
 
             // Markdown (string) minLength

@@ -58,7 +58,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="correlationId">correlationId.</param>
         /// <param name="documents">documents.</param>
         /// <param name="debug">debug.</param>
-        public StreamRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), string model = default(string), string effort = default(string), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool))
+        /// <param name="regenerateFromTurnId">regenerateFromTurnId.</param>
+        public StreamRequest(string prompt = default(string), AgentMode? mode = default(AgentMode?), string model = default(string), string effort = default(string), PlanningMode? planningMode = default(PlanningMode?), Guid? sessionId = default(Guid?), Dictionary<string, Object> variables = default(Dictionary<string, Object>), Guid? correlationId = default(Guid?), List<AgentDocument> documents = default(List<AgentDocument>), bool debug = default(bool), Guid? regenerateFromTurnId = default(Guid?))
         {
             this.Prompt = prompt;
             this.Mode = mode;
@@ -70,6 +71,7 @@ namespace Simplic.OxS.SDK.Ai
             this.CorrelationId = correlationId;
             this.Documents = documents;
             this.Debug = debug;
+            this.RegenerateFromTurnId = regenerateFromTurnId;
         }
 
         /// <summary>
@@ -121,6 +123,12 @@ namespace Simplic.OxS.SDK.Ai
         public bool Debug { get; set; }
 
         /// <summary>
+        /// Gets or Sets RegenerateFromTurnId
+        /// </summary>
+        [DataMember(Name = "regenerateFromTurnId", EmitDefaultValue = true)]
+        public Guid? RegenerateFromTurnId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +146,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("  Debug: ").Append(Debug).Append("\n");
+            sb.Append("  RegenerateFromTurnId: ").Append(RegenerateFromTurnId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +230,11 @@ namespace Simplic.OxS.SDK.Ai
                 (
                     this.Debug == input.Debug ||
                     this.Debug.Equals(input.Debug)
+                ) && 
+                (
+                    this.RegenerateFromTurnId == input.RegenerateFromTurnId ||
+                    (this.RegenerateFromTurnId != null &&
+                    this.RegenerateFromTurnId.Equals(input.RegenerateFromTurnId))
                 );
         }
 
@@ -264,6 +278,10 @@ namespace Simplic.OxS.SDK.Ai
                     hashCode = (hashCode * 59) + this.Documents.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Debug.GetHashCode();
+                if (this.RegenerateFromTurnId != null)
+                {
+                    hashCode = (hashCode * 59) + this.RegenerateFromTurnId.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
-**DefinitionId** | **string** |  | 
+**TypeId** | **string** |  | 
 **Type** | **string** |  | 
 **EventName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
