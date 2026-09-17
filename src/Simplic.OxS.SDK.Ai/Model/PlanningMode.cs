@@ -30,27 +30,32 @@ namespace Simplic.OxS.SDK.Ai
     /// <summary>
     /// Defines PlanningMode
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum PlanningMode
     {
         /// <summary>
-        /// Enum NUMBER_0 for value: 0
+        /// Enum None for value: none
         /// </summary>
-        NUMBER_0 = 0,
+        [EnumMember(Value = "none")]
+        None,
 
         /// <summary>
-        /// Enum NUMBER_1 for value: 1
+        /// Enum CreatePlan for value: createPlan
         /// </summary>
-        NUMBER_1 = 1,
+        [EnumMember(Value = "createPlan")]
+        CreatePlan,
 
         /// <summary>
-        /// Enum NUMBER_2 for value: 2
+        /// Enum CreatePlanAndWaitForApproval for value: createPlanAndWaitForApproval
         /// </summary>
-        NUMBER_2 = 2,
+        [EnumMember(Value = "createPlanAndWaitForApproval")]
+        CreatePlanAndWaitForApproval,
 
         /// <summary>
-        /// Enum NUMBER_3 for value: 3
+        /// Enum CreatePlanAndExecuteIfSafe for value: createPlanAndExecuteIfSafe
         /// </summary>
-        NUMBER_3 = 3
+        [EnumMember(Value = "createPlanAndExecuteIfSafe")]
+        CreatePlanAndExecuteIfSafe
     }
 
 }

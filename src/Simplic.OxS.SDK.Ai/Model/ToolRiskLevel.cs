@@ -30,37 +30,44 @@ namespace Simplic.OxS.SDK.Ai
     /// <summary>
     /// Defines ToolRiskLevel
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum ToolRiskLevel
     {
         /// <summary>
-        /// Enum NUMBER_0 for value: 0
+        /// Enum ReadOnly for value: readOnly
         /// </summary>
-        NUMBER_0 = 0,
+        [EnumMember(Value = "readOnly")]
+        ReadOnly,
 
         /// <summary>
-        /// Enum NUMBER_1 for value: 1
+        /// Enum LowRiskWrite for value: lowRiskWrite
         /// </summary>
-        NUMBER_1 = 1,
+        [EnumMember(Value = "lowRiskWrite")]
+        LowRiskWrite,
 
         /// <summary>
-        /// Enum NUMBER_2 for value: 2
+        /// Enum HighRiskWrite for value: highRiskWrite
         /// </summary>
-        NUMBER_2 = 2,
+        [EnumMember(Value = "highRiskWrite")]
+        HighRiskWrite,
 
         /// <summary>
-        /// Enum NUMBER_3 for value: 3
+        /// Enum Destructive for value: destructive
         /// </summary>
-        NUMBER_3 = 3,
+        [EnumMember(Value = "destructive")]
+        Destructive,
 
         /// <summary>
-        /// Enum NUMBER_4 for value: 4
+        /// Enum Deployment for value: deployment
         /// </summary>
-        NUMBER_4 = 4,
+        [EnumMember(Value = "deployment")]
+        Deployment,
 
         /// <summary>
-        /// Enum NUMBER_5 for value: 5
+        /// Enum ScriptExecution for value: scriptExecution
         /// </summary>
-        NUMBER_5 = 5
+        [EnumMember(Value = "scriptExecution")]
+        ScriptExecution
     }
 
 }

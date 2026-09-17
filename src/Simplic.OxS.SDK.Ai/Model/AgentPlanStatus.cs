@@ -30,42 +30,50 @@ namespace Simplic.OxS.SDK.Ai
     /// <summary>
     /// Defines AgentPlanStatus
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum AgentPlanStatus
     {
         /// <summary>
-        /// Enum NUMBER_0 for value: 0
+        /// Enum Pending for value: pending
         /// </summary>
-        NUMBER_0 = 0,
+        [EnumMember(Value = "pending")]
+        Pending,
 
         /// <summary>
-        /// Enum NUMBER_1 for value: 1
+        /// Enum AwaitingApproval for value: awaitingApproval
         /// </summary>
-        NUMBER_1 = 1,
+        [EnumMember(Value = "awaitingApproval")]
+        AwaitingApproval,
 
         /// <summary>
-        /// Enum NUMBER_2 for value: 2
+        /// Enum Approved for value: approved
         /// </summary>
-        NUMBER_2 = 2,
+        [EnumMember(Value = "approved")]
+        Approved,
 
         /// <summary>
-        /// Enum NUMBER_3 for value: 3
+        /// Enum Executing for value: executing
         /// </summary>
-        NUMBER_3 = 3,
+        [EnumMember(Value = "executing")]
+        Executing,
 
         /// <summary>
-        /// Enum NUMBER_4 for value: 4
+        /// Enum Completed for value: completed
         /// </summary>
-        NUMBER_4 = 4,
+        [EnumMember(Value = "completed")]
+        Completed,
 
         /// <summary>
-        /// Enum NUMBER_5 for value: 5
+        /// Enum Failed for value: failed
         /// </summary>
-        NUMBER_5 = 5,
+        [EnumMember(Value = "failed")]
+        Failed,
 
         /// <summary>
-        /// Enum NUMBER_6 for value: 6
+        /// Enum Cancelled for value: cancelled
         /// </summary>
-        NUMBER_6 = 6
+        [EnumMember(Value = "cancelled")]
+        Cancelled
     }
 
 }

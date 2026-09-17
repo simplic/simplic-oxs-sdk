@@ -10042,11 +10042,10 @@
             },
             "AgentMode": {
                 "enum": [
-                    0,
-                    1
+                    "ask",
+                    "agent"
                 ],
-                "type": "integer",
-                "format": "int32"
+                "type": "string"
             },
             "AgentPlan": {
                 "type": "object",
@@ -10110,16 +10109,15 @@
             },
             "AgentPlanStatus": {
                 "enum": [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6
+                    "pending",
+                    "awaitingApproval",
+                    "approved",
+                    "executing",
+                    "completed",
+                    "failed",
+                    "cancelled"
                 ],
-                "type": "integer",
-                "format": "int32"
+                "type": "string"
             },
             "AgentPlanStep": {
                 "type": "object",
@@ -10157,15 +10155,14 @@
             },
             "AgentPlanStepStatus": {
                 "enum": [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5
+                    "pending",
+                    "awaitingApproval",
+                    "executing",
+                    "completed",
+                    "failed",
+                    "skipped"
                 ],
-                "type": "integer",
-                "format": "int32"
+                "type": "string"
             },
             "AgentResponse": {
                 "type": "object",
@@ -10228,15 +10225,14 @@
             },
             "AgentResponseType": {
                 "enum": [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5
+                    "finalAnswer",
+                    "clarificationQuestion",
+                    "planProposal",
+                    "approvalRequest",
+                    "toolExecutionUpdate",
+                    "errorResponse"
                 ],
-                "type": "integer",
-                "format": "int32"
+                "type": "string"
             },
             "AgentSessionResponse": {
                 "type": "object",
@@ -10894,6 +10890,38 @@
                         "nullable": true
                     },
                     "unit": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "DialogWriteClientAction": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "actionId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "agentId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dialogId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "expectedRevision": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "patch": {},
+                    "message": {
                         "type": "string",
                         "nullable": true
                     }
@@ -11822,13 +11850,12 @@
             },
             "PlanningMode": {
                 "enum": [
-                    0,
-                    1,
-                    2,
-                    3
+                    "none",
+                    "createPlan",
+                    "createPlanAndWaitForApproval",
+                    "createPlanAndExecuteIfSafe"
                 ],
-                "type": "integer",
-                "format": "int32"
+                "type": "string"
             },
             "ProblemDetails": {
                 "type": "object",
@@ -12491,6 +12518,9 @@
                             "$ref": "#/components/schemas/AgentFileArtifact"
                         },
                         "nullable": true
+                    },
+                    "clientAction": {
+                        "$ref": "#/components/schemas/DialogWriteClientAction"
                     }
                 },
                 "additionalProperties": false
@@ -12518,15 +12548,14 @@
             },
             "ToolRiskLevel": {
                 "enum": [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4,
-                    5
+                    "readOnly",
+                    "lowRiskWrite",
+                    "highRiskWrite",
+                    "destructive",
+                    "deployment",
+                    "scriptExecution"
                 ],
-                "type": "integer",
-                "format": "int32"
+                "type": "string"
             },
             "UnwindStage": {
                 "required": [

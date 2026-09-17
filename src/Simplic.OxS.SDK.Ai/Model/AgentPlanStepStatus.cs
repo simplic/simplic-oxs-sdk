@@ -30,37 +30,44 @@ namespace Simplic.OxS.SDK.Ai
     /// <summary>
     /// Defines AgentPlanStepStatus
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum AgentPlanStepStatus
     {
         /// <summary>
-        /// Enum NUMBER_0 for value: 0
+        /// Enum Pending for value: pending
         /// </summary>
-        NUMBER_0 = 0,
+        [EnumMember(Value = "pending")]
+        Pending,
 
         /// <summary>
-        /// Enum NUMBER_1 for value: 1
+        /// Enum AwaitingApproval for value: awaitingApproval
         /// </summary>
-        NUMBER_1 = 1,
+        [EnumMember(Value = "awaitingApproval")]
+        AwaitingApproval,
 
         /// <summary>
-        /// Enum NUMBER_2 for value: 2
+        /// Enum Executing for value: executing
         /// </summary>
-        NUMBER_2 = 2,
+        [EnumMember(Value = "executing")]
+        Executing,
 
         /// <summary>
-        /// Enum NUMBER_3 for value: 3
+        /// Enum Completed for value: completed
         /// </summary>
-        NUMBER_3 = 3,
+        [EnumMember(Value = "completed")]
+        Completed,
 
         /// <summary>
-        /// Enum NUMBER_4 for value: 4
+        /// Enum Failed for value: failed
         /// </summary>
-        NUMBER_4 = 4,
+        [EnumMember(Value = "failed")]
+        Failed,
 
         /// <summary>
-        /// Enum NUMBER_5 for value: 5
+        /// Enum Skipped for value: skipped
         /// </summary>
-        NUMBER_5 = 5
+        [EnumMember(Value = "skipped")]
+        Skipped
     }
 
 }

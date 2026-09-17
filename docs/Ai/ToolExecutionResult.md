@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **RiskLevel** | **ToolRiskLevel** |  | [optional] 
 **WorkspaceEntry** | [**AgentWorkspaceEntry**](AgentWorkspaceEntry.md) |  | [optional] 
 **FileArtifacts** | [**List&lt;AgentFileArtifact&gt;**](AgentFileArtifact.md) |  | [optional] 
+**ClientAction** | [**DialogWriteClientAction**](DialogWriteClientAction.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

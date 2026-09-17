@@ -30,37 +30,44 @@ namespace Simplic.OxS.SDK.Ai
     /// <summary>
     /// Defines AgentResponseType
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum AgentResponseType
     {
         /// <summary>
-        /// Enum NUMBER_0 for value: 0
+        /// Enum FinalAnswer for value: finalAnswer
         /// </summary>
-        NUMBER_0 = 0,
+        [EnumMember(Value = "finalAnswer")]
+        FinalAnswer,
 
         /// <summary>
-        /// Enum NUMBER_1 for value: 1
+        /// Enum ClarificationQuestion for value: clarificationQuestion
         /// </summary>
-        NUMBER_1 = 1,
+        [EnumMember(Value = "clarificationQuestion")]
+        ClarificationQuestion,
 
         /// <summary>
-        /// Enum NUMBER_2 for value: 2
+        /// Enum PlanProposal for value: planProposal
         /// </summary>
-        NUMBER_2 = 2,
+        [EnumMember(Value = "planProposal")]
+        PlanProposal,
 
         /// <summary>
-        /// Enum NUMBER_3 for value: 3
+        /// Enum ApprovalRequest for value: approvalRequest
         /// </summary>
-        NUMBER_3 = 3,
+        [EnumMember(Value = "approvalRequest")]
+        ApprovalRequest,
 
         /// <summary>
-        /// Enum NUMBER_4 for value: 4
+        /// Enum ToolExecutionUpdate for value: toolExecutionUpdate
         /// </summary>
-        NUMBER_4 = 4,
+        [EnumMember(Value = "toolExecutionUpdate")]
+        ToolExecutionUpdate,
 
         /// <summary>
-        /// Enum NUMBER_5 for value: 5
+        /// Enum ErrorResponse for value: errorResponse
         /// </summary>
-        NUMBER_5 = 5
+        [EnumMember(Value = "errorResponse")]
+        ErrorResponse
     }
 
 }

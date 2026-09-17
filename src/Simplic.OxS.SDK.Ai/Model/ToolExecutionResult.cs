@@ -52,7 +52,8 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="riskLevel">riskLevel.</param>
         /// <param name="workspaceEntry">workspaceEntry.</param>
         /// <param name="fileArtifacts">fileArtifacts.</param>
-        public ToolExecutionResult(bool success = default(bool), string toolName = default(string), Object output = default(Object), string outputSummary = default(string), string error = default(string), string duration = default(string), Object rollbackMetadata = default(Object), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), AgentWorkspaceEntry workspaceEntry = default(AgentWorkspaceEntry), List<AgentFileArtifact> fileArtifacts = default(List<AgentFileArtifact>))
+        /// <param name="clientAction">clientAction.</param>
+        public ToolExecutionResult(bool success = default(bool), string toolName = default(string), Object output = default(Object), string outputSummary = default(string), string error = default(string), string duration = default(string), Object rollbackMetadata = default(Object), ToolRiskLevel? riskLevel = default(ToolRiskLevel?), AgentWorkspaceEntry workspaceEntry = default(AgentWorkspaceEntry), List<AgentFileArtifact> fileArtifacts = default(List<AgentFileArtifact>), DialogWriteClientAction clientAction = default(DialogWriteClientAction))
         {
             this.Success = success;
             this.ToolName = toolName;
@@ -64,6 +65,7 @@ namespace Simplic.OxS.SDK.Ai
             this.RiskLevel = riskLevel;
             this.WorkspaceEntry = workspaceEntry;
             this.FileArtifacts = fileArtifacts;
+            this.ClientAction = clientAction;
         }
 
         /// <summary>
@@ -121,6 +123,12 @@ namespace Simplic.OxS.SDK.Ai
         public List<AgentFileArtifact> FileArtifacts { get; set; }
 
         /// <summary>
+        /// Gets or Sets ClientAction
+        /// </summary>
+        [DataMember(Name = "clientAction", EmitDefaultValue = false)]
+        public DialogWriteClientAction ClientAction { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -138,6 +146,7 @@ namespace Simplic.OxS.SDK.Ai
             sb.Append("  RiskLevel: ").Append(RiskLevel).Append("\n");
             sb.Append("  WorkspaceEntry: ").Append(WorkspaceEntry).Append("\n");
             sb.Append("  FileArtifacts: ").Append(FileArtifacts).Append("\n");
+            sb.Append("  ClientAction: ").Append(ClientAction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +230,11 @@ namespace Simplic.OxS.SDK.Ai
                     this.FileArtifacts != null &&
                     input.FileArtifacts != null &&
                     this.FileArtifacts.SequenceEqual(input.FileArtifacts)
+                ) && 
+                (
+                    this.ClientAction == input.ClientAction ||
+                    (this.ClientAction != null &&
+                    this.ClientAction.Equals(input.ClientAction))
                 );
         }
 
@@ -266,6 +280,10 @@ namespace Simplic.OxS.SDK.Ai
                 if (this.FileArtifacts != null)
                 {
                     hashCode = (hashCode * 59) + this.FileArtifacts.GetHashCode();
+                }
+                if (this.ClientAction != null)
+                {
+                    hashCode = (hashCode * 59) + this.ClientAction.GetHashCode();
                 }
                 return hashCode;
             }

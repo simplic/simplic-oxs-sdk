@@ -30,17 +30,20 @@ namespace Simplic.OxS.SDK.Ai
     /// <summary>
     /// Defines AgentMode
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum AgentMode
     {
         /// <summary>
-        /// Enum NUMBER_0 for value: 0
+        /// Enum Ask for value: ask
         /// </summary>
-        NUMBER_0 = 0,
+        [EnumMember(Value = "ask")]
+        Ask,
 
         /// <summary>
-        /// Enum NUMBER_1 for value: 1
+        /// Enum Agent for value: agent
         /// </summary>
-        NUMBER_1 = 1
+        [EnumMember(Value = "agent")]
+        Agent
     }
 
 }
