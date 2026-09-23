@@ -41,6 +41,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="contractId">Gets or sets the id of the referenced contract..</param>
         /// <param name="contractNumber">Gets or sets the number of the referenced contract..</param>
+        /// <param name="projectId">Gets or sets the project id.  References projects like e.g. construction sites..</param>
+        /// <param name="projectName">Gets or sets the name of the referenced project..</param>
         /// <param name="customer">customer.</param>
         /// <param name="status">status.</param>
         /// <param name="reference">Gets or sets the reference of the order..</param>
@@ -54,13 +56,15 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="updateUserId">Gets or sets the update user id..</param>
         /// <param name="updateUserName">Gets or sets the update user name..</param>
         /// <param name="contactPerson">contactPerson.</param>
-        public OrderModel(Guid id = default(Guid), Guid organizationId = default(Guid), string number = default(string), Guid? contractId = default(Guid?), string contractNumber = default(string), BillableContactModel customer = default(BillableContactModel), OrderStatusModel status = default(OrderStatusModel), string reference = default(string), string notes = default(string), OrderSourceModel source = default(OrderSourceModel), List<OrderItemModel> items = default(List<OrderItemModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), OrderContactPersonModel contactPerson = default(OrderContactPersonModel))
+        public OrderModel(Guid id = default(Guid), Guid organizationId = default(Guid), string number = default(string), Guid? contractId = default(Guid?), string contractNumber = default(string), Guid? projectId = default(Guid?), string projectName = default(string), BillableContactModel customer = default(BillableContactModel), OrderStatusModel status = default(OrderStatusModel), string reference = default(string), string notes = default(string), OrderSourceModel source = default(OrderSourceModel), List<OrderItemModel> items = default(List<OrderItemModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), OrderContactPersonModel contactPerson = default(OrderContactPersonModel))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.Number = number;
             this.ContractId = contractId;
             this.ContractNumber = contractNumber;
+            this.ProjectId = projectId;
+            this.ProjectName = projectName;
             this.Customer = customer;
             this.Status = status;
             this.Reference = reference;
@@ -110,6 +114,20 @@ namespace Simplic.OxS.SDK.Contract
         /// <value>Gets or sets the number of the referenced contract.</value>
         [DataMember(Name = "contractNumber", EmitDefaultValue = true)]
         public string ContractNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the project id.  References projects like e.g. construction sites.
+        /// </summary>
+        /// <value>Gets or sets the project id.  References projects like e.g. construction sites.</value>
+        [DataMember(Name = "projectId", EmitDefaultValue = true)]
+        public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the referenced project.
+        /// </summary>
+        /// <value>Gets or sets the name of the referenced project.</value>
+        [DataMember(Name = "projectName", EmitDefaultValue = true)]
+        public string ProjectName { get; set; }
 
         /// <summary>
         /// Gets or Sets Customer
@@ -211,6 +229,8 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  ContractId: ").Append(ContractId).Append("\n");
             sb.Append("  ContractNumber: ").Append(ContractNumber).Append("\n");
+            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  ProjectName: ").Append(ProjectName).Append("\n");
             sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
@@ -283,6 +303,16 @@ namespace Simplic.OxS.SDK.Contract
                     this.ContractNumber == input.ContractNumber ||
                     (this.ContractNumber != null &&
                     this.ContractNumber.Equals(input.ContractNumber))
+                ) && 
+                (
+                    this.ProjectId == input.ProjectId ||
+                    (this.ProjectId != null &&
+                    this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.ProjectName == input.ProjectName ||
+                    (this.ProjectName != null &&
+                    this.ProjectName.Equals(input.ProjectName))
                 ) && 
                 (
                     this.Customer == input.Customer ||
@@ -380,6 +410,14 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.ContractNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.ContractNumber.GetHashCode();
+                }
+                if (this.ProjectId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
+                }
+                if (this.ProjectName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectName.GetHashCode();
                 }
                 if (this.Customer != null)
                 {

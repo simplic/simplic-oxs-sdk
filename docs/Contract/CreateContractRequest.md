@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **EndDate** | **DateTime?** | Gets or sets the end date of the contract.  Should only contain the date. | [optional] 
 **BillingType** | **BillingTypeModel** |  | [optional] 
 **ProjectId** | **Guid?** | Gets or sets the project id.  References projects like e.g. construction sites. | [optional] 
+**ProjectName** | **string** | Gets or sets the name of the referenced project. | [optional] 
 **TermOfPayment** | [**TermsOfPaymentModel**](TermsOfPaymentModel.md) |  | [optional] 
 **SubmissionDate** | **string** | Gets or sets the submission date. | [optional] 
 **Insurance** | **double?** | Gets the insurance amount. | [optional] 

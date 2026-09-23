@@ -50,6 +50,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="endDate">Gets or sets the end date of the contract.  Should only contain the date..</param>
         /// <param name="billingType">billingType.</param>
         /// <param name="projectId">Gets or sets the project id.  References projects like e.g. construction sites..</param>
+        /// <param name="projectName">Gets or sets the name of the referenced project..</param>
         /// <param name="termOfPayment">termOfPayment.</param>
         /// <param name="submissionDate">Gets or sets the submission date..</param>
         /// <param name="insurance">Gets the insurance amount..</param>
@@ -72,7 +73,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="updateUserId">Gets or sets the update user id..</param>
         /// <param name="updateUserName">Gets or sets the update user name..</param>
         /// <param name="externalOrderLink">Gets or sets the link for external ordering..</param>
-        public ContractModel(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), string internalNote = default(string), bool? isDeleted = default(bool?), Guid id = default(Guid), Guid organizationId = default(Guid), ContractStatusModel status = default(ContractStatusModel), BillableContactModel businessPartner = default(BillableContactModel), BillableContactModel customer = default(BillableContactModel), UserModel representativeUser = default(UserModel), AddressModel contactPerson = default(AddressModel), List<ContractItemModel> items = default(List<ContractItemModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), string externalOrderLink = default(string))
+        public ContractModel(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), string projectName = default(string), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), string internalNote = default(string), bool? isDeleted = default(bool?), Guid id = default(Guid), Guid organizationId = default(Guid), ContractStatusModel status = default(ContractStatusModel), BillableContactModel businessPartner = default(BillableContactModel), BillableContactModel customer = default(BillableContactModel), UserModel representativeUser = default(UserModel), AddressModel contactPerson = default(AddressModel), List<ContractItemModel> items = default(List<ContractItemModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), string externalOrderLink = default(string))
         {
             this.Number = number;
             this.Name = name;
@@ -82,6 +83,7 @@ namespace Simplic.OxS.SDK.Contract
             this.EndDate = endDate;
             this.BillingType = billingType;
             this.ProjectId = projectId;
+            this.ProjectName = projectName;
             this.TermOfPayment = termOfPayment;
             this.SubmissionDate = submissionDate;
             this.Insurance = insurance;
@@ -154,6 +156,13 @@ namespace Simplic.OxS.SDK.Contract
         /// <value>Gets or sets the project id.  References projects like e.g. construction sites.</value>
         [DataMember(Name = "projectId", EmitDefaultValue = true)]
         public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the referenced project.
+        /// </summary>
+        /// <value>Gets or sets the name of the referenced project.</value>
+        [DataMember(Name = "projectName", EmitDefaultValue = true)]
+        public string ProjectName { get; set; }
 
         /// <summary>
         /// Gets or Sets TermOfPayment
@@ -319,6 +328,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  BillingType: ").Append(BillingType).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  ProjectName: ").Append(ProjectName).Append("\n");
             sb.Append("  TermOfPayment: ").Append(TermOfPayment).Append("\n");
             sb.Append("  SubmissionDate: ").Append(SubmissionDate).Append("\n");
             sb.Append("  Insurance: ").Append(Insurance).Append("\n");
@@ -414,6 +424,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.ProjectName == input.ProjectName ||
+                    (this.ProjectName != null &&
+                    this.ProjectName.Equals(input.ProjectName))
                 ) && 
                 (
                     this.TermOfPayment == input.TermOfPayment ||
@@ -565,6 +580,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.ProjectId != null)
                 {
                     hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
+                }
+                if (this.ProjectName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectName.GetHashCode();
                 }
                 if (this.TermOfPayment != null)
                 {

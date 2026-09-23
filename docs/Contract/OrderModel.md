@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **Number** | **string** | Gets or sets the number. | [optional] 
 **ContractId** | **Guid?** | Gets or sets the id of the referenced contract. | [optional] 
 **ContractNumber** | **string** | Gets or sets the number of the referenced contract. | [optional] 
+**ProjectId** | **Guid?** | Gets or sets the project id.  References projects like e.g. construction sites. | [optional] 
+**ProjectName** | **string** | Gets or sets the name of the referenced project. | [optional] 
 **Customer** | [**BillableContactModel**](BillableContactModel.md) |  | [optional] 
 **Status** | [**OrderStatusModel**](OrderStatusModel.md) |  | [optional] 
 **Reference** | **string** | Gets or sets the reference of the order. | [optional] 

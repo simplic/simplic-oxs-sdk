@@ -50,6 +50,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="endDate">Gets or sets the end date of the contract.  Should only contain the date..</param>
         /// <param name="billingType">billingType.</param>
         /// <param name="projectId">Gets or sets the project id.  References projects like e.g. construction sites..</param>
+        /// <param name="projectName">Gets or sets the name of the referenced project..</param>
         /// <param name="termOfPayment">termOfPayment.</param>
         /// <param name="submissionDate">Gets or sets the submission date..</param>
         /// <param name="insurance">Gets the insurance amount..</param>
@@ -65,7 +66,7 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="contactPersonContactId">Gets or sets the contact id for the contact person..</param>
         /// <param name="items">Gets or sets the items of the contrat..</param>
         /// <param name="statusId">Gets or sets the contract status..</param>
-        public CreateContractRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), string internalNote = default(string), bool? isDeleted = default(bool?), Guid? businessPartnerContactId = default(Guid?), Guid? businessPartnerPersonalAccountId = default(Guid?), Guid? customerContactId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? representativeUserId = default(Guid?), Guid? contactPersonContactId = default(Guid?), List<CreateItemModel> items = default(List<CreateItemModel>), Guid? statusId = default(Guid?))
+        public CreateContractRequest(string number = default(string), string name = default(string), string referenceNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BillingTypeModel? billingType = default(BillingTypeModel?), Guid? projectId = default(Guid?), string projectName = default(string), TermsOfPaymentModel termOfPayment = default(TermsOfPaymentModel), string submissionDate = default(string), double? insurance = default(double?), string creditworthiness = default(string), string creditLimit = default(string), string internalNote = default(string), bool? isDeleted = default(bool?), Guid? businessPartnerContactId = default(Guid?), Guid? businessPartnerPersonalAccountId = default(Guid?), Guid? customerContactId = default(Guid?), Guid? customerPersonalAccountId = default(Guid?), Guid? representativeUserId = default(Guid?), Guid? contactPersonContactId = default(Guid?), List<CreateItemModel> items = default(List<CreateItemModel>), Guid? statusId = default(Guid?))
         {
             this.Number = number;
             this.Name = name;
@@ -75,6 +76,7 @@ namespace Simplic.OxS.SDK.Contract
             this.EndDate = endDate;
             this.BillingType = billingType;
             this.ProjectId = projectId;
+            this.ProjectName = projectName;
             this.TermOfPayment = termOfPayment;
             this.SubmissionDate = submissionDate;
             this.Insurance = insurance;
@@ -140,6 +142,13 @@ namespace Simplic.OxS.SDK.Contract
         /// <value>Gets or sets the project id.  References projects like e.g. construction sites.</value>
         [DataMember(Name = "projectId", EmitDefaultValue = true)]
         public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the referenced project.
+        /// </summary>
+        /// <value>Gets or sets the name of the referenced project.</value>
+        [DataMember(Name = "projectName", EmitDefaultValue = true)]
+        public string ProjectName { get; set; }
 
         /// <summary>
         /// Gets or Sets TermOfPayment
@@ -261,6 +270,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  BillingType: ").Append(BillingType).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  ProjectName: ").Append(ProjectName).Append("\n");
             sb.Append("  TermOfPayment: ").Append(TermOfPayment).Append("\n");
             sb.Append("  SubmissionDate: ").Append(SubmissionDate).Append("\n");
             sb.Append("  Insurance: ").Append(Insurance).Append("\n");
@@ -349,6 +359,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.ProjectId == input.ProjectId ||
                     (this.ProjectId != null &&
                     this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.ProjectName == input.ProjectName ||
+                    (this.ProjectName != null &&
+                    this.ProjectName.Equals(input.ProjectName))
                 ) && 
                 (
                     this.TermOfPayment == input.TermOfPayment ||
@@ -465,6 +480,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.ProjectId != null)
                 {
                     hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
+                }
+                if (this.ProjectName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectName.GetHashCode();
                 }
                 if (this.TermOfPayment != null)
                 {

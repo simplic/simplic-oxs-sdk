@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **TemplateName** | **string** | Gets or sets the template name.  A name for the template to give the user the option to find it easier | [optional] 
 **Tags** | **List&lt;Guid&gt;** | Gets or sets the tags.  Tags are short texts to add information to a shipment without the need to add new properties. These are e.g. used in the pricing module to add some additional conditions. | [optional] 
 **Notes** | **string** | Gets or sets the notes.  This gives the user the possibillity to add some more sentences about this shipment. | [optional] 
+**ExternalNotes** | **string** | Gets or sets the external notes. | [optional] [readonly] 
 **LoadWorkflowId** | **Guid?** | Gets or sets the load workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the loading process. Usually these workflows need to be enabled and added within their telematic system. | [optional] 
 **DeliveryWorkflowId** | **Guid?** | Gets or sets the delivery workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the delivery / unload process. Usually these workflows need to be enabled and added within their telematic system. | [optional] 
 **ConstructionSiteId** | **Guid?** | Gets or sets a construction site id.  The id will be resolved by the construction site api. | [optional] 

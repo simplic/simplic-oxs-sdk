@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Date** | **DateTime?** | Gets or sets the date of the order. | [optional] 
 **ContractId** | **Guid?** | Gets or sets the id of the referenced contract. | [optional] 
 **ContractNumber** | **string** | Gets or sets the number of the referenced contract. | [optional] 
+**ProjectId** | **Guid?** | Gets or sets the project id.  References projects like e.g. construction sites. | [optional] 
+**ProjectName** | **string** | Gets or sets the name of the referenced project. | [optional] 
 **Customer** | [**BillableContactRequestModel**](BillableContactRequestModel.md) |  | [optional] 
 **Reference** | **string** | Gets or sets the reference of the order. | [optional] 
 **Notes** | **string** | Gets or sets the notes of the order. | [optional] 

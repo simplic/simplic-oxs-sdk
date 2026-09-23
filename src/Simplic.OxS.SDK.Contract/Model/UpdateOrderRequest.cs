@@ -40,18 +40,22 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="date">Gets or sets the date of the order..</param>
         /// <param name="contractId">Gets or sets the id of the referenced contract..</param>
         /// <param name="contractNumber">Gets or sets the number of the referenced contract..</param>
+        /// <param name="projectId">Gets or sets the project id.  References projects like e.g. construction sites..</param>
+        /// <param name="projectName">Gets or sets the name of the referenced project..</param>
         /// <param name="customer">customer.</param>
         /// <param name="reference">Gets or sets the reference of the order..</param>
         /// <param name="notes">Gets or sets the notes of the order..</param>
         /// <param name="sourceId">Gets or sets the id of the source..</param>
         /// <param name="contactPerson">contactPerson.</param>
         /// <param name="items">Gets or sets the items of the order..</param>
-        public UpdateOrderRequest(string number = default(string), DateTime? date = default(DateTime?), Guid? contractId = default(Guid?), string contractNumber = default(string), BillableContactRequestModel customer = default(BillableContactRequestModel), string reference = default(string), string notes = default(string), Guid? sourceId = default(Guid?), OrderContactPersonModel contactPerson = default(OrderContactPersonModel), List<OrderItemRequestModel> items = default(List<OrderItemRequestModel>))
+        public UpdateOrderRequest(string number = default(string), DateTime? date = default(DateTime?), Guid? contractId = default(Guid?), string contractNumber = default(string), Guid? projectId = default(Guid?), string projectName = default(string), BillableContactRequestModel customer = default(BillableContactRequestModel), string reference = default(string), string notes = default(string), Guid? sourceId = default(Guid?), OrderContactPersonModel contactPerson = default(OrderContactPersonModel), List<OrderItemRequestModel> items = default(List<OrderItemRequestModel>))
         {
             this.Number = number;
             this.Date = date;
             this.ContractId = contractId;
             this.ContractNumber = contractNumber;
+            this.ProjectId = projectId;
+            this.ProjectName = projectName;
             this.Customer = customer;
             this.Reference = reference;
             this.Notes = notes;
@@ -87,6 +91,20 @@ namespace Simplic.OxS.SDK.Contract
         /// <value>Gets or sets the number of the referenced contract.</value>
         [DataMember(Name = "contractNumber", EmitDefaultValue = true)]
         public string ContractNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the project id.  References projects like e.g. construction sites.
+        /// </summary>
+        /// <value>Gets or sets the project id.  References projects like e.g. construction sites.</value>
+        [DataMember(Name = "projectId", EmitDefaultValue = true)]
+        public Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the referenced project.
+        /// </summary>
+        /// <value>Gets or sets the name of the referenced project.</value>
+        [DataMember(Name = "projectName", EmitDefaultValue = true)]
+        public string ProjectName { get; set; }
 
         /// <summary>
         /// Gets or Sets Customer
@@ -140,6 +158,8 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  ContractId: ").Append(ContractId).Append("\n");
             sb.Append("  ContractNumber: ").Append(ContractNumber).Append("\n");
+            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  ProjectName: ").Append(ProjectName).Append("\n");
             sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
@@ -202,6 +222,16 @@ namespace Simplic.OxS.SDK.Contract
                     this.ContractNumber.Equals(input.ContractNumber))
                 ) && 
                 (
+                    this.ProjectId == input.ProjectId ||
+                    (this.ProjectId != null &&
+                    this.ProjectId.Equals(input.ProjectId))
+                ) && 
+                (
+                    this.ProjectName == input.ProjectName ||
+                    (this.ProjectName != null &&
+                    this.ProjectName.Equals(input.ProjectName))
+                ) && 
+                (
                     this.Customer == input.Customer ||
                     (this.Customer != null &&
                     this.Customer.Equals(input.Customer))
@@ -258,6 +288,14 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.ContractNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.ContractNumber.GetHashCode();
+                }
+                if (this.ProjectId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectId.GetHashCode();
+                }
+                if (this.ProjectName != null)
+                {
+                    hashCode = (hashCode * 59) + this.ProjectName.GetHashCode();
                 }
                 if (this.Customer != null)
                 {

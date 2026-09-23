@@ -408,6 +408,21 @@ namespace Simplic.OxS.SDK.Contract
         public string Notes { get; set; }
 
         /// <summary>
+        /// Gets or sets the external notes.
+        /// </summary>
+        /// <value>Gets or sets the external notes.</value>
+        [DataMember(Name = "externalNotes", EmitDefaultValue = true)]
+        public string ExternalNotes { get; private set; }
+
+        /// <summary>
+        /// Returns false as ExternalNotes should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeExternalNotes()
+        {
+            return false;
+        }
+        /// <summary>
         /// Gets or sets the load workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the loading process. Usually these workflows need to be enabled and added within their telematic system.
         /// </summary>
         /// <value>Gets or sets the load workflow.  Represents a telematic workflow that can be set to give the driver  additional instructions during the loading process. Usually these workflows need to be enabled and added within their telematic system.</value>
@@ -505,6 +520,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  TemplateName: ").Append(TemplateName).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
+            sb.Append("  ExternalNotes: ").Append(ExternalNotes).Append("\n");
             sb.Append("  LoadWorkflowId: ").Append(LoadWorkflowId).Append("\n");
             sb.Append("  DeliveryWorkflowId: ").Append(DeliveryWorkflowId).Append("\n");
             sb.Append("  ConstructionSiteId: ").Append(ConstructionSiteId).Append("\n");
@@ -751,6 +767,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.Notes.Equals(input.Notes))
                 ) && 
                 (
+                    this.ExternalNotes == input.ExternalNotes ||
+                    (this.ExternalNotes != null &&
+                    this.ExternalNotes.Equals(input.ExternalNotes))
+                ) && 
+                (
                     this.LoadWorkflowId == input.LoadWorkflowId ||
                     (this.LoadWorkflowId != null &&
                     this.LoadWorkflowId.Equals(input.LoadWorkflowId))
@@ -953,6 +974,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.Notes != null)
                 {
                     hashCode = (hashCode * 59) + this.Notes.GetHashCode();
+                }
+                if (this.ExternalNotes != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalNotes.GetHashCode();
                 }
                 if (this.LoadWorkflowId != null)
                 {

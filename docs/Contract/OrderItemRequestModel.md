@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **TotalPrice** | **double?** | Gets or sets the total price. | [optional] 
 **PriceUnitId** | **Guid?** | Gets or sets the id of the unit the price refers to. | [optional] 
 **Approved** | **bool?** | Gets or sets a value indicating whether the item has been approved. | [optional] 
+**ProductIsAvailable** | **bool?** | Gets or sets a value indicating whether the product is available. | [optional] 
 **StartLoadDateTime** | **DateTime?** | Gets or sets the start date and time of the load. | [optional] 
 **EndLoadDateTime** | **DateTime?** | Gets or sets the end date and time of the load. | [optional] 
 **StartDeliveryDateTime** | **DateTime?** | Gets or sets the start date and time of the delivery. | [optional] 

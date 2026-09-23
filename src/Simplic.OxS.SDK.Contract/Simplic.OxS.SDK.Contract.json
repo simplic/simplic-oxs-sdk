@@ -4665,6 +4665,11 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the referenced project.",
+                        "nullable": true
+                    },
                     "termOfPayment": {
                         "$ref": "#/components/schemas/TermsOfPaymentModel"
                     },
@@ -5153,6 +5158,11 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the referenced project.",
+                        "nullable": true
+                    },
                     "termOfPayment": {
                         "$ref": "#/components/schemas/TermsOfPaymentModel"
                     },
@@ -5537,6 +5547,17 @@
                     "contractNumber": {
                         "type": "string",
                         "description": "Gets or sets the number of the referenced contract.",
+                        "nullable": true
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "description": "Gets or sets the project id.\n\nReferences projects like e.g. construction sites.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the referenced project.",
                         "nullable": true
                     },
                     "customer": {
@@ -6196,6 +6217,10 @@
                         "type": "boolean",
                         "description": "Gets or sets a value indicating whether the item has been approved."
                     },
+                    "productIsAvailable": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the product is available."
+                    },
                     "startLoadDateTime": {
                         "type": "string",
                         "description": "Gets or sets the start date and time of the load.",
@@ -6327,6 +6352,11 @@
                         "description": "Gets or sets a value indicating whether the item has been approved.",
                         "nullable": true
                     },
+                    "productIsAvailable": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the product is available.",
+                        "nullable": true
+                    },
                     "startLoadDateTime": {
                         "type": "string",
                         "description": "Gets or sets the start date and time of the load.",
@@ -6382,6 +6412,17 @@
                     "contractNumber": {
                         "type": "string",
                         "description": "Gets or sets the number of the referenced contract.",
+                        "nullable": true
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "description": "Gets or sets the project id.\n\nReferences projects like e.g. construction sites.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the referenced project.",
                         "nullable": true
                     },
                     "customer": {
@@ -7419,6 +7460,12 @@
                         "description": "Gets or sets the notes.\n\nThis gives the user the possibillity to add some more sentences about this shipment.",
                         "nullable": true
                     },
+                    "externalNotes": {
+                        "type": "string",
+                        "description": "Gets or sets the external notes.",
+                        "nullable": true,
+                        "readOnly": true
+                    },
                     "loadWorkflowId": {
                         "type": "string",
                         "description": "Gets or sets the load workflow.\n\nRepresents a telematic workflow that can be set to give the driver \nadditional instructions during the loading process.\nUsually these workflows need to be enabled and added within their telematic system.",
@@ -7546,6 +7593,11 @@
                         "format": "uuid",
                         "nullable": true
                     },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the referenced project.",
+                        "nullable": true
+                    },
                     "termOfPayment": {
                         "$ref": "#/components/schemas/TermsOfPaymentModel"
                     },
@@ -7657,6 +7709,17 @@
                     "contractNumber": {
                         "type": "string",
                         "description": "Gets or sets the number of the referenced contract.",
+                        "nullable": true
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "description": "Gets or sets the project id.\n\nReferences projects like e.g. construction sites.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Gets or sets the name of the referenced project.",
                         "nullable": true
                     },
                     "customer": {
