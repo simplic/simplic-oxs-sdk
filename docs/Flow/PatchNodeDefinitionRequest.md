@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**TypeId** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **EventName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
