@@ -2667,6 +2667,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "category": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "markdown": {
                         "type": "string",
                         "nullable": true
