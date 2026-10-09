@@ -6139,6 +6139,13 @@
                             "type": "string"
                         },
                         "nullable": true
+                    },
+                    "webfleetV2": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -8242,6 +8249,11 @@
                     "accountName": {
                         "type": "string",
                         "description": "Gets or sets the account name.",
+                        "nullable": true
+                    },
+                    "accessGrantId": {
+                        "type": "string",
+                        "description": "Gets or sets the WebfleetV2 access grant id that authorises the application for the\nconfigured Webfleet account.",
                         "nullable": true
                     },
                     "apiKey": {

@@ -39,17 +39,19 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="username">Gets or sets the username.  Also used for the Dispatcher for Transics..</param>
         /// <param name="password">Gets or sets the password..</param>
         /// <param name="accountName">Gets or sets the account name..</param>
+        /// <param name="accessGrantId">Gets or sets the WebfleetV2 access grant id that authorises the application for the configured Webfleet account..</param>
         /// <param name="apiKey">Gets or sest the api key..</param>
         /// <param name="externalId">Gets or sets the external id.  Used for the Fleethand provider..</param>
         /// <param name="systemNr">Gets or sets the system number..</param>
         /// <param name="integrator">Gets or sets the integrator..</param>
         /// <param name="company">Gets or sets the Yellowfox RTI company key..</param>
         /// <param name="importKey">Gets or sets the Yellowfox RTI import key..</param>
-        public ProviderConfigurationModel(string username = default(string), string password = default(string), string accountName = default(string), string apiKey = default(string), string externalId = default(string), int systemNr = default(int), string integrator = default(string), string company = default(string), string importKey = default(string))
+        public ProviderConfigurationModel(string username = default(string), string password = default(string), string accountName = default(string), string accessGrantId = default(string), string apiKey = default(string), string externalId = default(string), int systemNr = default(int), string integrator = default(string), string company = default(string), string importKey = default(string))
         {
             this.Username = username;
             this.Password = password;
             this.AccountName = accountName;
+            this.AccessGrantId = accessGrantId;
             this.ApiKey = apiKey;
             this.ExternalId = externalId;
             this.SystemNr = systemNr;
@@ -78,6 +80,13 @@ namespace Simplic.OxS.SDK.Telematic
         /// <value>Gets or sets the account name.</value>
         [DataMember(Name = "accountName", EmitDefaultValue = true)]
         public string AccountName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the WebfleetV2 access grant id that authorises the application for the configured Webfleet account.
+        /// </summary>
+        /// <value>Gets or sets the WebfleetV2 access grant id that authorises the application for the configured Webfleet account.</value>
+        [DataMember(Name = "accessGrantId", EmitDefaultValue = true)]
+        public string AccessGrantId { get; set; }
 
         /// <summary>
         /// Gets or sest the api key.
@@ -132,6 +141,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  Username: ").Append(Username).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("  AccountName: ").Append(AccountName).Append("\n");
+            sb.Append("  AccessGrantId: ").Append(AccessGrantId).Append("\n");
             sb.Append("  ApiKey: ").Append(ApiKey).Append("\n");
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  SystemNr: ").Append(SystemNr).Append("\n");
@@ -189,6 +199,11 @@ namespace Simplic.OxS.SDK.Telematic
                     this.AccountName.Equals(input.AccountName))
                 ) && 
                 (
+                    this.AccessGrantId == input.AccessGrantId ||
+                    (this.AccessGrantId != null &&
+                    this.AccessGrantId.Equals(input.AccessGrantId))
+                ) && 
+                (
                     this.ApiKey == input.ApiKey ||
                     (this.ApiKey != null &&
                     this.ApiKey.Equals(input.ApiKey))
@@ -239,6 +254,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.AccountName != null)
                 {
                     hashCode = (hashCode * 59) + this.AccountName.GetHashCode();
+                }
+                if (this.AccessGrantId != null)
+                {
+                    hashCode = (hashCode * 59) + this.AccessGrantId.GetHashCode();
                 }
                 if (this.ApiKey != null)
                 {

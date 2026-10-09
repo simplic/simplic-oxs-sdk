@@ -44,7 +44,8 @@ namespace Simplic.OxS.SDK.Telematic
         /// <param name="none">none.</param>
         /// <param name="fleethand">fleethand.</param>
         /// <param name="yellowfox">yellowfox.</param>
-        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> generic = default(List<string>), List<string> none = default(List<string>), List<string> fleethand = default(List<string>), List<string> yellowfox = default(List<string>))
+        /// <param name="webfleetV2">webfleetV2.</param>
+        public AvailableServices(List<string> spedion = default(List<string>), List<string> transics = default(List<string>), List<string> webfleet = default(List<string>), List<string> sms = default(List<string>), List<string> generic = default(List<string>), List<string> none = default(List<string>), List<string> fleethand = default(List<string>), List<string> yellowfox = default(List<string>), List<string> webfleetV2 = default(List<string>))
         {
             this.Spedion = spedion;
             this.Transics = transics;
@@ -54,6 +55,7 @@ namespace Simplic.OxS.SDK.Telematic
             this.None = none;
             this.Fleethand = fleethand;
             this.Yellowfox = yellowfox;
+            this.WebfleetV2 = webfleetV2;
         }
 
         /// <summary>
@@ -105,6 +107,12 @@ namespace Simplic.OxS.SDK.Telematic
         public List<string> Yellowfox { get; set; }
 
         /// <summary>
+        /// Gets or Sets WebfleetV2
+        /// </summary>
+        [DataMember(Name = "webfleetV2", EmitDefaultValue = true)]
+        public List<string> WebfleetV2 { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,6 +128,7 @@ namespace Simplic.OxS.SDK.Telematic
             sb.Append("  None: ").Append(None).Append("\n");
             sb.Append("  Fleethand: ").Append(Fleethand).Append("\n");
             sb.Append("  Yellowfox: ").Append(Yellowfox).Append("\n");
+            sb.Append("  WebfleetV2: ").Append(WebfleetV2).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +211,12 @@ namespace Simplic.OxS.SDK.Telematic
                     this.Yellowfox != null &&
                     input.Yellowfox != null &&
                     this.Yellowfox.SequenceEqual(input.Yellowfox)
+                ) && 
+                (
+                    this.WebfleetV2 == input.WebfleetV2 ||
+                    this.WebfleetV2 != null &&
+                    input.WebfleetV2 != null &&
+                    this.WebfleetV2.SequenceEqual(input.WebfleetV2)
                 );
         }
 
@@ -245,6 +260,10 @@ namespace Simplic.OxS.SDK.Telematic
                 if (this.Yellowfox != null)
                 {
                     hashCode = (hashCode * 59) + this.Yellowfox.GetHashCode();
+                }
+                if (this.WebfleetV2 != null)
+                {
+                    hashCode = (hashCode * 59) + this.WebfleetV2.GetHashCode();
                 }
                 return hashCode;
             }

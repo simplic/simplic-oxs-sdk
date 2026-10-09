@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Username** | **string** | Gets or sets the username.  Also used for the Dispatcher for Transics. | [optional] 
 **Password** | **string** | Gets or sets the password. | [optional] 
 **AccountName** | **string** | Gets or sets the account name. | [optional] 
+**AccessGrantId** | **string** | Gets or sets the WebfleetV2 access grant id that authorises the application for the configured Webfleet account. | [optional] 
 **ApiKey** | **string** | Gets or sest the api key. | [optional] 
 **ExternalId** | **string** | Gets or sets the external id.  Used for the Fleethand provider. | [optional] 
 **SystemNr** | **int** | Gets or sets the system number. | [optional] 
