@@ -45,9 +45,11 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="functions">functions.</param>
         /// <param name="openingHours">openingHours.</param>
         /// <param name="closedDays">closedDays.</param>
+        /// <param name="tariff">tariff.</param>
+        /// <param name="carrierTariff">carrierTariff.</param>
         /// <param name="externalReference">externalReference.</param>
         /// <param name="addon">addon.</param>
-        public UpdateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), string externalReference = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        public UpdateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), TariffModel tariff = default(TariffModel), TariffModel carrierTariff = default(TariffModel), string externalReference = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -58,6 +60,8 @@ namespace Simplic.OxS.SDK.Contact
             this.Functions = functions;
             this.OpeningHours = openingHours;
             this.ClosedDays = closedDays;
+            this.Tariff = tariff;
+            this.CarrierTariff = carrierTariff;
             this.ExternalReference = externalReference;
             this.Addon = addon;
         }
@@ -117,6 +121,18 @@ namespace Simplic.OxS.SDK.Contact
         public List<ClosedDayModel> ClosedDays { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tariff
+        /// </summary>
+        [DataMember(Name = "tariff", EmitDefaultValue = false)]
+        public TariffModel Tariff { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CarrierTariff
+        /// </summary>
+        [DataMember(Name = "carrierTariff", EmitDefaultValue = false)]
+        public TariffModel CarrierTariff { get; set; }
+
+        /// <summary>
         /// Gets or Sets ExternalReference
         /// </summary>
         [DataMember(Name = "externalReference", EmitDefaultValue = true)]
@@ -145,6 +161,8 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  Functions: ").Append(Functions).Append("\n");
             sb.Append("  OpeningHours: ").Append(OpeningHours).Append("\n");
             sb.Append("  ClosedDays: ").Append(ClosedDays).Append("\n");
+            sb.Append("  Tariff: ").Append(Tariff).Append("\n");
+            sb.Append("  CarrierTariff: ").Append(CarrierTariff).Append("\n");
             sb.Append("  ExternalReference: ").Append(ExternalReference).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("}\n");
@@ -233,6 +251,16 @@ namespace Simplic.OxS.SDK.Contact
                     this.ClosedDays.SequenceEqual(input.ClosedDays)
                 ) && 
                 (
+                    this.Tariff == input.Tariff ||
+                    (this.Tariff != null &&
+                    this.Tariff.Equals(input.Tariff))
+                ) && 
+                (
+                    this.CarrierTariff == input.CarrierTariff ||
+                    (this.CarrierTariff != null &&
+                    this.CarrierTariff.Equals(input.CarrierTariff))
+                ) && 
+                (
                     this.ExternalReference == input.ExternalReference ||
                     (this.ExternalReference != null &&
                     this.ExternalReference.Equals(input.ExternalReference))
@@ -289,6 +317,14 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.ClosedDays != null)
                 {
                     hashCode = (hashCode * 59) + this.ClosedDays.GetHashCode();
+                }
+                if (this.Tariff != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tariff.GetHashCode();
+                }
+                if (this.CarrierTariff != null)
+                {
+                    hashCode = (hashCode * 59) + this.CarrierTariff.GetHashCode();
                 }
                 if (this.ExternalReference != null)
                 {

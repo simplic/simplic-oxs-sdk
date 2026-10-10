@@ -1647,6 +1647,12 @@
                         },
                         "nullable": true
                     },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
                     "externalReference": {
                         "type": "string",
                         "nullable": true
@@ -1748,6 +1754,12 @@
                             "$ref": "#/components/schemas/ClosedDayModel"
                         },
                         "nullable": true
+                    },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
                     },
                     "externalReference": {
                         "type": "string",
@@ -1934,6 +1946,60 @@
                 },
                 "additionalProperties": false
             },
+            "TariffModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "parameters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffParameterModel"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TariffParameterModel": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "UpdateContactRequest": {
                 "type": "object",
                 "properties": {
@@ -1984,6 +2050,12 @@
                             "$ref": "#/components/schemas/ClosedDayModel"
                         },
                         "nullable": true
+                    },
+                    "tariff": {
+                        "$ref": "#/components/schemas/TariffModel"
+                    },
+                    "carrierTariff": {
+                        "$ref": "#/components/schemas/TariffModel"
                     },
                     "externalReference": {
                         "type": "string",

@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **Functions** | **List&lt;string&gt;** |  | [optional] 
 **OpeningHours** | [**List&lt;OpeningHoursModel&gt;**](OpeningHoursModel.md) |  | [optional] 
 **ClosedDays** | [**List&lt;ClosedDayModel&gt;**](ClosedDayModel.md) |  | [optional] 
+**Tariff** | [**TariffModel**](TariffModel.md) |  | [optional] 
+**CarrierTariff** | [**TariffModel**](TariffModel.md) |  | [optional] 
 **ExternalReference** | **string** |  | [optional] 
 **Addon** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 
