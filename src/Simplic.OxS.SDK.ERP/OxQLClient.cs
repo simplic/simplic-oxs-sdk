@@ -40,100 +40,171 @@ public interface IOxQLClient
 
 
     /// <summary>
-    ///  
+    /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns></returns>
-    void Health();
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLBatchBody">The queries. (optional)</param>
+    /// <returns>OxQLBatchAnswer</returns>
+    OxQLBatchAnswer Batch(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?));
 
     /// <summary>
-    ///  
+    /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of Object(void)</returns>
-    ApiResponse<Object> HealthWithHttpInfo();
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLBatchBody">The queries. (optional)</param>
+    /// <returns>ApiResponse of OxQLBatchAnswer</returns>
+    ApiResponse<OxQLBatchAnswer> BatchWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?));
         
     /// <summary>
-    ///  
+    /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLBatchBody">The queries. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of void</returns>
-    Task HealthAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of OxQLBatchAnswer</returns>
+    Task<OxQLBatchAnswer> BatchAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLBatchBody">The queries. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse</returns>
-    Task<ApiResponse<Object>> HealthWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (OxQLBatchAnswer)</returns>
+    Task<ApiResponse<OxQLBatchAnswer>> BatchWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="queryRequest"> (optional)</param>
-    /// <returns>OxQLQueryResult</returns>
-    OxQLQueryResult Query(QueryRequest? queryRequest = default(QueryRequest?));
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+    /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+    /// <returns>OxQLExplainAnswer</returns>
+    OxQLExplainAnswer Explain(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?));
 
     /// <summary>
-    ///  
+    /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="queryRequest"> (optional)</param>
-    /// <returns>ApiResponse of OxQLQueryResult</returns>
-    ApiResponse<OxQLQueryResult> QueryWithHttpInfo(QueryRequest? queryRequest = default(QueryRequest?));
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+    /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+    /// <returns>ApiResponse of OxQLExplainAnswer</returns>
+    ApiResponse<OxQLExplainAnswer> ExplainWithHttpInfo(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?));
         
     /// <summary>
-    ///  
+    /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="queryRequest"> (optional)</param>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+    /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of OxQLQueryResult</returns>
-    Task<OxQLQueryResult> QueryAsync(QueryRequest? queryRequest = default(QueryRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of OxQLExplainAnswer</returns>
+    Task<OxQLExplainAnswer> ExplainAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <param name="queryRequest"> (optional)</param>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+    /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (OxQLQueryResult)</returns>
-    Task<ApiResponse<OxQLQueryResult>> QueryWithHttpInfoAsync(QueryRequest? queryRequest = default(QueryRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (OxQLExplainAnswer)</returns>
+    Task<ApiResponse<OxQLExplainAnswer>> ExplainWithHttpInfoAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
-    ///  
+    /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>List&lt;OxQLTypeDescriptor&gt;</returns>
-    List<OxQLTypeDescriptor> Types();
+    /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <returns>OxQLHealthAnswer</returns>
+    OxQLHealthAnswer Health(bool? shallow = default(bool?), string? xOxQLContract = default(string?));
 
     /// <summary>
-    ///  
+    /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of List&lt;OxQLTypeDescriptor&gt;</returns>
-    ApiResponse<List<OxQLTypeDescriptor>> TypesWithHttpInfo();
+    /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <returns>ApiResponse of OxQLHealthAnswer</returns>
+    ApiResponse<OxQLHealthAnswer> HealthWithHttpInfo(bool? shallow = default(bool?), string? xOxQLContract = default(string?));
         
     /// <summary>
-    ///  
+    /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of List&lt;OxQLTypeDescriptor&gt;</returns>
-    Task<List<OxQLTypeDescriptor>> TypesAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of OxQLHealthAnswer</returns>
+    Task<OxQLHealthAnswer> HealthAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
-    ///  
+    /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-    /// <returns>Task of ApiResponse (List&lt;OxQLTypeDescriptor&gt;)</returns>
-    Task<ApiResponse<List<OxQLTypeDescriptor>>> TypesWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+    /// <returns>Task of ApiResponse (OxQLHealthAnswer)</returns>
+    Task<ApiResponse<OxQLHealthAnswer>> HealthWithHttpInfoAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLQueryBody">The query. (optional)</param>
+    /// <returns>OxQLQueryAnswer</returns>
+    OxQLQueryAnswer Query(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?));
+
+    /// <summary>
+    /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLQueryBody">The query. (optional)</param>
+    /// <returns>ApiResponse of OxQLQueryAnswer</returns>
+    ApiResponse<OxQLQueryAnswer> QueryWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?));
+        
+    /// <summary>
+    /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLQueryBody">The query. (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of OxQLQueryAnswer</returns>
+    Task<OxQLQueryAnswer> QueryAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+    /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+    /// <param name="oxQLQueryBody">The query. (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (OxQLQueryAnswer)</returns>
+    Task<ApiResponse<OxQLQueryAnswer>> QueryWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), CancellationToken cancellationToken = default(CancellationToken));
 
 }
 
@@ -211,15 +282,18 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns></returns>
-        public void Health()
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
+        /// <returns>OxQLBatchAnswer</returns>
+        public OxQLBatchAnswer Batch(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?))
         {
             try
             {
-                _internalClient.Health();
+                return _internalClient.Batch(xOxQLContract, xOxQLTiming, oxQLBatchBody);
             }
             catch (ApiException e)
             {
@@ -228,15 +302,18 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> HealthWithHttpInfo()
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
+        /// <returns>ApiResponse of OxQLBatchAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLBatchAnswer> BatchWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?))
         {
             try
             {
-                return _internalClient.HealthWithHttpInfo();
+                return _internalClient.BatchWithHttpInfo(xOxQLContract, xOxQLTiming, oxQLBatchBody);
             }
             catch (ApiException e)
             {
@@ -245,16 +322,19 @@ public interface IOxQLClient
         } 
 
         /// <summary>
-        ///  
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public System.Threading.Tasks.Task HealthAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of OxQLBatchAnswer</returns>
+        public System.Threading.Tasks.Task<OxQLBatchAnswer> BatchAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.HealthAsync(cancellationToken: cancellationToken);
+                return _internalClient.BatchAsync(xOxQLContract, xOxQLTiming, oxQLBatchBody, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -263,16 +343,19 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> HealthWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (OxQLBatchAnswer)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLBatchAnswer>> BatchWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.HealthWithHttpInfoAsync(cancellationToken: cancellationToken);
+                return _internalClient.BatchWithHttpInfoAsync(xOxQLContract, xOxQLTiming, oxQLBatchBody, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -280,16 +363,18 @@ public interface IOxQLClient
             }
         }    
         /// <summary>
-        ///  
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
-        /// <returns>OxQLQueryResult</returns>
-        public OxQLQueryResult Query(QueryRequest? queryRequest = default(QueryRequest?))
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+        /// <returns>OxQLExplainAnswer</returns>
+        public OxQLExplainAnswer Explain(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?))
         {
             try
             {
-                return _internalClient.Query(queryRequest);
+                return _internalClient.Explain(xOxQLContract, ifNoneMatch, oxQLExplainBody);
             }
             catch (ApiException e)
             {
@@ -298,16 +383,18 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
-        /// <returns>ApiResponse of OxQLQueryResult</returns>
-        public Simplic.OxS.SDK.ApiResponse<OxQLQueryResult> QueryWithHttpInfo(QueryRequest? queryRequest = default(QueryRequest?))
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+        /// <returns>ApiResponse of OxQLExplainAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLExplainAnswer> ExplainWithHttpInfo(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?))
         {
             try
             {
-                return _internalClient.QueryWithHttpInfo(queryRequest);
+                return _internalClient.ExplainWithHttpInfo(xOxQLContract, ifNoneMatch, oxQLExplainBody);
             }
             catch (ApiException e)
             {
@@ -316,17 +403,19 @@ public interface IOxQLClient
         } 
 
         /// <summary>
-        ///  
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OxQLQueryResult</returns>
-        public System.Threading.Tasks.Task<OxQLQueryResult> QueryAsync(QueryRequest? queryRequest = default(QueryRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of OxQLExplainAnswer</returns>
+        public System.Threading.Tasks.Task<OxQLExplainAnswer> ExplainAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.QueryAsync(queryRequest, cancellationToken: cancellationToken);
+                return _internalClient.ExplainAsync(xOxQLContract, ifNoneMatch, oxQLExplainBody, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -335,17 +424,19 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OxQLQueryResult)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLQueryResult>> QueryWithHttpInfoAsync(QueryRequest? queryRequest = default(QueryRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (OxQLExplainAnswer)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLExplainAnswer>> ExplainWithHttpInfoAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.QueryWithHttpInfoAsync(queryRequest, cancellationToken: cancellationToken);
+                return _internalClient.ExplainWithHttpInfoAsync(xOxQLContract, ifNoneMatch, oxQLExplainBody, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -353,15 +444,17 @@ public interface IOxQLClient
             }
         }    
         /// <summary>
-        ///  
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;OxQLTypeDescriptor&gt;</returns>
-        public List<OxQLTypeDescriptor> Types()
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <returns>OxQLHealthAnswer</returns>
+        public OxQLHealthAnswer Health(bool? shallow = default(bool?), string? xOxQLContract = default(string?))
         {
             try
             {
-                return _internalClient.Types();
+                return _internalClient.Health(shallow, xOxQLContract);
             }
             catch (ApiException e)
             {
@@ -370,15 +463,17 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;OxQLTypeDescriptor&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OxQLTypeDescriptor>> TypesWithHttpInfo()
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <returns>ApiResponse of OxQLHealthAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLHealthAnswer> HealthWithHttpInfo(bool? shallow = default(bool?), string? xOxQLContract = default(string?))
         {
             try
             {
-                return _internalClient.TypesWithHttpInfo();
+                return _internalClient.HealthWithHttpInfo(shallow, xOxQLContract);
             }
             catch (ApiException e)
             {
@@ -387,16 +482,18 @@ public interface IOxQLClient
         } 
 
         /// <summary>
-        ///  
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OxQLTypeDescriptor&gt;</returns>
-        public System.Threading.Tasks.Task<List<OxQLTypeDescriptor>> TypesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of OxQLHealthAnswer</returns>
+        public System.Threading.Tasks.Task<OxQLHealthAnswer> HealthAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.TypesAsync(cancellationToken: cancellationToken);
+                return _internalClient.HealthAsync(shallow, xOxQLContract, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -405,16 +502,99 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OxQLTypeDescriptor&gt;)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OxQLTypeDescriptor>>> TypesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (OxQLHealthAnswer)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLHealthAnswer>> HealthWithHttpInfoAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.TypesWithHttpInfoAsync(cancellationToken: cancellationToken);
+                return _internalClient.HealthWithHttpInfoAsync(shallow, xOxQLContract, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <returns>OxQLQueryAnswer</returns>
+        public OxQLQueryAnswer Query(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?))
+        {
+            try
+            {
+                return _internalClient.Query(xOxQLContract, xOxQLTiming, oxQLQueryBody);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <returns>ApiResponse of OxQLQueryAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLQueryAnswer> QueryWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?))
+        {
+            try
+            {
+                return _internalClient.QueryWithHttpInfo(xOxQLContract, xOxQLTiming, oxQLQueryBody);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OxQLQueryAnswer</returns>
+        public System.Threading.Tasks.Task<OxQLQueryAnswer> QueryAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.QueryAsync(xOxQLContract, xOxQLTiming, oxQLQueryBody, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OxQLQueryAnswer)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLQueryAnswer>> QueryWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.QueryWithHttpInfoAsync(xOxQLContract, xOxQLTiming, oxQLQueryBody, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -435,61 +615,111 @@ public interface IOxQLClient
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void Health(int operationIndex = 0);
-
-        /// <summary>
-        /// 
+        /// Runs several OxQL queries in one request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> HealthWithHttpInfo(int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OxQLQueryResult</returns>
-        OxQLQueryResult Query(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0);
+        /// <returns>OxQLBatchAnswer</returns>
+        OxQLBatchAnswer Batch(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Runs several OxQL queries in one request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OxQLQueryResult</returns>
-        ApiResponse<OxQLQueryResult> QueryWithHttpInfo(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of OxQLBatchAnswer</returns>
+        ApiResponse<OxQLBatchAnswer> BatchWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Explains an OxQL query without running it.
         /// </summary>
+        /// <remarks>
+        /// Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
+        /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;OxQLTypeDescriptor&gt;</returns>
-        List<OxQLTypeDescriptor> Types(int operationIndex = 0);
+        /// <returns>OxQLExplainAnswer</returns>
+        OxQLExplainAnswer Explain(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Explains an OxQL query without running it.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;OxQLTypeDescriptor&gt;</returns>
-        ApiResponse<List<OxQLTypeDescriptor>> TypesWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of OxQLExplainAnswer</returns>
+        ApiResponse<OxQLExplainAnswer> ExplainWithHttpInfo(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0);
+        /// <summary>
+        /// The engine&#39;s version, contract, capabilities and limits on this host.
+        /// </summary>
+        /// <remarks>
+        /// Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OxQLHealthAnswer</returns>
+        OxQLHealthAnswer Health(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// The engine&#39;s version, contract, capabilities and limits on this host.
+        /// </summary>
+        /// <remarks>
+        /// Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OxQLHealthAnswer</returns>
+        ApiResponse<OxQLHealthAnswer> HealthWithHttpInfo(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows.
+        /// </summary>
+        /// <remarks>
+        /// Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OxQLQueryAnswer</returns>
+        OxQLQueryAnswer Query(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0);
+
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows.
+        /// </summary>
+        /// <remarks>
+        /// Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OxQLQueryAnswer</returns>
+        ApiResponse<OxQLQueryAnswer> QueryWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -500,76 +730,119 @@ public interface IOxQLClient
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Runs several OxQL queries in one request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HealthAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of OxQLBatchAnswer</returns>
+        System.Threading.Tasks.Task<OxQLBatchAnswer> BatchAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Runs several OxQL queries in one request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HealthWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (OxQLBatchAnswer)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OxQLBatchAnswer>> BatchWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Explains an OxQL query without running it.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OxQLQueryResult</returns>
-        System.Threading.Tasks.Task<OxQLQueryResult> QueryAsync(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of OxQLExplainAnswer</returns>
+        System.Threading.Tasks.Task<OxQLExplainAnswer> ExplainAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Explains an OxQL query without running it.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OxQLQueryResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OxQLQueryResult>> QueryWithHttpInfoAsync(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (OxQLExplainAnswer)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OxQLExplainAnswer>> ExplainWithHttpInfoAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// The engine&#39;s version, contract, capabilities and limits on this host.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OxQLTypeDescriptor&gt;</returns>
-        System.Threading.Tasks.Task<List<OxQLTypeDescriptor>> TypesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of OxQLHealthAnswer</returns>
+        System.Threading.Tasks.Task<OxQLHealthAnswer> HealthAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// The engine&#39;s version, contract, capabilities and limits on this host.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OxQLTypeDescriptor&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<OxQLTypeDescriptor>>> TypesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (OxQLHealthAnswer)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OxQLHealthAnswer>> HealthWithHttpInfoAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows.
+        /// </summary>
+        /// <remarks>
+        /// Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OxQLQueryAnswer</returns>
+        System.Threading.Tasks.Task<OxQLQueryAnswer> QueryAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Runs one OxQL query and answers a page of rows.
+        /// </summary>
+        /// <remarks>
+        /// Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OxQLQueryAnswer)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OxQLQueryAnswer>> QueryWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -693,31 +966,41 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void Health(int operationIndex = 0)
+        /// <returns>OxQLBatchAnswer</returns>
+        public OxQLBatchAnswer Batch(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0)
         {
-            HealthWithHttpInfo();
+            Simplic.OxS.SDK.ApiResponse<OxQLBatchAnswer> localVarResponse = BatchWithHttpInfo(xOxQLContract, xOxQLTiming, oxQLBatchBody);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Simplic.OxS.SDK.ApiResponse<Object> HealthWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of OxQLBatchAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLBatchAnswer> BatchWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -732,6 +1015,374 @@ public interface IOxQLClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
+            if (xOxQLTiming != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Timing", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLTiming)); // header parameter
+            }
+            localVarRequestOptions.Data = oxQLBatchBody;
+
+            localVarRequestOptions.Operation = "OxQLClient.OxQLBatchPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OxQLBatchAnswer>("/OxQL/batch", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OxQLBatchPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OxQLBatchAnswer</returns>
+        public async System.Threading.Tasks.Task<OxQLBatchAnswer> BatchAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<OxQLBatchAnswer> localVarResponse = await BatchWithHttpInfoAsync(xOxQLContract, xOxQLTiming, oxQLBatchBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Runs several OxQL queries in one request. Runs the queries in order under one time ceiling and answers each in its place of &#x60;results&#x60;: a page, or the refusal of that query. The status is 200 unless the batch itself is refused. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLBatchBody">The queries. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OxQLBatchAnswer)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLBatchAnswer>> BatchWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLBatchBody? oxQLBatchBody = default(OxQLBatchBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
+            if (xOxQLTiming != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Timing", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLTiming)); // header parameter
+            }
+            localVarRequestOptions.Data = oxQLBatchBody;
+
+            localVarRequestOptions.Operation = "OxQLClient.OxQLBatchPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OxQLBatchAnswer>("/OxQL/batch", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OxQLBatchPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OxQLExplainAnswer</returns>
+        public OxQLExplainAnswer Explain(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<OxQLExplainAnswer> localVarResponse = ExplainWithHttpInfo(xOxQLContract, ifNoneMatch, oxQLExplainBody);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OxQLExplainAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLExplainAnswer> ExplainWithHttpInfo(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
+            if (ifNoneMatch != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("If-None-Match", Simplic.OxS.SDK.ClientUtils.ParameterToString(ifNoneMatch)); // header parameter
+            }
+            localVarRequestOptions.Data = oxQLExplainBody;
+
+            localVarRequestOptions.Operation = "OxQLClient.OxQLExplainPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OxQLExplainAnswer>("/OxQL/explain", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OxQLExplainPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OxQLExplainAnswer</returns>
+        public async System.Threading.Tasks.Task<OxQLExplainAnswer> ExplainAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<OxQLExplainAnswer> localVarResponse = await ExplainWithHttpInfoAsync(xOxQLContract, ifNoneMatch, oxQLExplainBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Explains an OxQL query without running it. Says whether a query binds and can run on this host, with every error, the stages, the shape of the rows and, on request, the plan. The body is a query or an envelope around one. A query that does not bind is answered 200 with &#x60;valid: false&#x60;. The answer is described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md).
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="ifNoneMatch">The &#x60;ETag&#x60; of the answer the caller holds. The route answers 304 without a body while that answer still stands. (optional)</param>
+        /// <param name="oxQLExplainBody">The query, or the envelope around it. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OxQLExplainAnswer)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLExplainAnswer>> ExplainWithHttpInfoAsync(string? xOxQLContract = default(string?), string? ifNoneMatch = default(string?), OxQLExplainBody? oxQLExplainBody = default(OxQLExplainBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
+            if (ifNoneMatch != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("If-None-Match", Simplic.OxS.SDK.ClientUtils.ParameterToString(ifNoneMatch)); // header parameter
+            }
+            localVarRequestOptions.Data = oxQLExplainBody;
+
+            localVarRequestOptions.Operation = "OxQLClient.OxQLExplainPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OxQLExplainAnswer>("/OxQL/explain", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OxQLExplainPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>OxQLHealthAnswer</returns>
+        public OxQLHealthAnswer Health(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<OxQLHealthAnswer> localVarResponse = HealthWithHttpInfo(shallow, xOxQLContract);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of OxQLHealthAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLHealthAnswer> HealthWithHttpInfo(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (shallow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shallow", shallow));
+            }
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "OxQLClient.OxQLHealthGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -749,7 +1400,7 @@ public interface IOxQLClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/OxQL/health", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OxQLHealthAnswer>("/OxQL/health", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OxQLHealthGet", localVarResponse);
@@ -763,25 +1414,30 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HealthAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of OxQLHealthAnswer</returns>
+        public async System.Threading.Tasks.Task<OxQLHealthAnswer> HealthAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await HealthWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<OxQLHealthAnswer> localVarResponse = await HealthWithHttpInfoAsync(shallow, xOxQLContract, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// The engine&#39;s version, contract, capabilities and limits on this host. Anonymous and always 200. Publishes the limits a request is checked against, what this host can do, the state of the services its model joins into and of its model. A request with &#x60;X-OxQL-Contract: 2&#x60; reads every member; one without the header reads the members contract 1 has. The members are described in https://github.com/simplic/oxql/blob/master/src/docs/oxql-operations.md.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shallow">&#x60;true&#x60; leaves &#x60;remote&#x60; out and measures nothing: the form one service asks of another. (optional, default to false)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> HealthWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (OxQLHealthAnswer)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLHealthAnswer>> HealthWithHttpInfoAsync(bool? shallow = default(bool?), string? xOxQLContract = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -791,6 +1447,7 @@ public interface IOxQLClient
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -805,6 +1462,14 @@ public interface IOxQLClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (shallow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Simplic.OxS.SDK.ClientUtils.ParameterToMultiMap("", "shallow", shallow));
+            }
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "OxQLClient.OxQLHealthGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -822,7 +1487,7 @@ public interface IOxQLClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/OxQL/health", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OxQLHealthAnswer>("/OxQL/health", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -837,40 +1502,41 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OxQLQueryResult</returns>
-        public OxQLQueryResult Query(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0)
+        /// <returns>OxQLQueryAnswer</returns>
+        public OxQLQueryAnswer Query(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<OxQLQueryResult> localVarResponse = QueryWithHttpInfo(queryRequest);
+            Simplic.OxS.SDK.ApiResponse<OxQLQueryAnswer> localVarResponse = QueryWithHttpInfo(xOxQLContract, xOxQLTiming, oxQLQueryBody);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OxQLQueryResult</returns>
-        public Simplic.OxS.SDK.ApiResponse<OxQLQueryResult> QueryWithHttpInfo(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of OxQLQueryAnswer</returns>
+        public Simplic.OxS.SDK.ApiResponse<OxQLQueryAnswer> QueryWithHttpInfo(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
                 "application/json",
-                "text/json"
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -885,7 +1551,15 @@ public interface IOxQLClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = queryRequest;
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
+            if (xOxQLTiming != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Timing", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLTiming)); // header parameter
+            }
+            localVarRequestOptions.Data = oxQLQueryBody;
 
             localVarRequestOptions.Operation = "OxQLClient.OxQLQueryPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -903,7 +1577,7 @@ public interface IOxQLClient
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<OxQLQueryResult>("/OxQL/query", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<OxQLQueryAnswer>("/OxQL/query", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OxQLQueryPost", localVarResponse);
@@ -917,43 +1591,44 @@ public interface IOxQLClient
         }
 
         /// <summary>
-        ///  
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OxQLQueryResult</returns>
-        public async System.Threading.Tasks.Task<OxQLQueryResult> QueryAsync(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of OxQLQueryAnswer</returns>
+        public async System.Threading.Tasks.Task<OxQLQueryAnswer> QueryAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<OxQLQueryResult> localVarResponse = await QueryWithHttpInfoAsync(queryRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<OxQLQueryAnswer> localVarResponse = await QueryWithHttpInfoAsync(xOxQLContract, xOxQLTiming, oxQLQueryBody, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Runs one OxQL query and answers a page of rows. Reads one entity of this service through a pipeline of stages and answers a page of rows with what is known of their count, or a refusal with a code. The language is described in the OxQL documentation (https://github.com/simplic/oxql/blob/master/src/docs/oxql-query-syntax.md); the limits of this host are published by &#x60;GET /OxQL/health&#x60;. Send the header &#x60;X-OxQL-Contract: 2&#x60;; a request without it is read as contract 1 (legacy, see https://github.com/simplic/oxql/blob/master/src/docs/LEGACY.md). Contract 1 is not what this operation describes: its body and answer are the deprecated schemas &#x60;OxQLContract1QueryBody&#x60; and &#x60;OxQLContract1QueryAnswer&#x60;.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="queryRequest"> (optional)</param>
+        /// <param name="xOxQLContract">The contract the request is written for. &#x60;2&#x60; is the current contract. Absent, empty or &#x60;1&#x60; is contract 1 (legacy): another request language and another answer. Any other value is refused with 400 on the query, batch and explain routes. (optional)</param>
+        /// <param name="xOxQLTiming">&#x60;1&#x60; or &#x60;true&#x60; asks for the &#x60;timing&#x60; member of the answer: where the request&#39;s time went (the database commands, the owners asked, this host&#39;s own share). Contract 2 only. (optional)</param>
+        /// <param name="oxQLQueryBody">The query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OxQLQueryResult)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLQueryResult>> QueryWithHttpInfoAsync(QueryRequest? queryRequest = default(QueryRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (OxQLQueryAnswer)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<OxQLQueryAnswer>> QueryWithHttpInfoAsync(string? xOxQLContract = default(string?), string? xOxQLTiming = default(string?), OxQLQueryBody? oxQLQueryBody = default(OxQLQueryBody?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
                 "application/json",
-                "text/json"
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -968,7 +1643,15 @@ public interface IOxQLClient
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = queryRequest;
+            if (xOxQLContract != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Contract", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLContract)); // header parameter
+            }
+            if (xOxQLTiming != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-OxQL-Timing", Simplic.OxS.SDK.ClientUtils.ParameterToString(xOxQLTiming)); // header parameter
+            }
+            localVarRequestOptions.Data = oxQLQueryBody;
 
             localVarRequestOptions.Operation = "OxQLClient.OxQLQueryPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -986,163 +1669,11 @@ public interface IOxQLClient
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<OxQLQueryResult>("/OxQL/query", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OxQLQueryAnswer>("/OxQL/query", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OxQLQueryPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;OxQLTypeDescriptor&gt;</returns>
-        public List<OxQLTypeDescriptor> Types(int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.ApiResponse<List<OxQLTypeDescriptor>> localVarResponse = TypesWithHttpInfo();
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;OxQLTypeDescriptor&gt;</returns>
-        public Simplic.OxS.SDK.ApiResponse<List<OxQLTypeDescriptor>> TypesWithHttpInfo(int operationIndex = 0)
-        {
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "OxQLClient.OxQLTypesGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<OxQLTypeDescriptor>>("/OxQL/types", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OxQLTypesGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;OxQLTypeDescriptor&gt;</returns>
-        public async System.Threading.Tasks.Task<List<OxQLTypeDescriptor>> TypesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Simplic.OxS.SDK.ApiResponse<List<OxQLTypeDescriptor>> localVarResponse = await TypesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;OxQLTypeDescriptor&gt;)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<OxQLTypeDescriptor>>> TypesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-
-            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "OxQLClient.OxQLTypesGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (ApiKey) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (Bearer) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<OxQLTypeDescriptor>>("/OxQL/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OxQLTypesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
