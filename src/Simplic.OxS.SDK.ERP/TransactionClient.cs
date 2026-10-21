@@ -433,6 +433,41 @@ public interface ITransactionClient
 
 
     /// <summary>
+    /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The transaction ID.</param>
+    /// <returns>TransactionModel</returns>
+    TransactionModel BillingLineContext(Guid id);
+
+    /// <summary>
+    /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The transaction ID.</param>
+    /// <returns>ApiResponse of TransactionModel</returns>
+    ApiResponse<TransactionModel> BillingLineContextWithHttpInfo(Guid id);
+        
+    /// <summary>
+    /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The transaction ID.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of TransactionModel</returns>
+    Task<TransactionModel> BillingLineContextAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="id">The transaction ID.</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (TransactionModel)</returns>
+    Task<ApiResponse<TransactionModel>> BillingLineContextWithHttpInfoAsync(Guid id, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Deletes a transaction. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1606,6 +1641,79 @@ public interface ITransactionClient
             }
         }    
         /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <returns>TransactionModel</returns>
+        public TransactionModel BillingLineContext(Guid id)
+        {
+            try
+            {
+                return _internalClient.BillingLineContext(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <returns>ApiResponse of TransactionModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionModel> BillingLineContextWithHttpInfo(Guid id)
+        {
+            try
+            {
+                return _internalClient.BillingLineContextWithHttpInfo(id);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionModel</returns>
+        public System.Threading.Tasks.Task<TransactionModel> BillingLineContextAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.BillingLineContextAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionModel)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> BillingLineContextWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.BillingLineContextWithHttpInfoAsync(id, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         /// Deletes a transaction. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -2435,6 +2543,26 @@ public interface ITransactionClient
         /// <returns>ApiResponse of DraftTransactionsResultModel</returns>
         ApiResponse<DraftTransactionsResultModel> DraftsWithHttpInfo(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0);
         /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionModel</returns>
+        TransactionModel BillingLineContext(Guid id, int operationIndex = 0);
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionModel</returns>
+        ApiResponse<TransactionModel> BillingLineContextWithHttpInfo(Guid id, int operationIndex = 0);
+        /// <summary>
         /// Deletes a transaction.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -2886,6 +3014,31 @@ public interface ITransactionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DraftTransactionsResultModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<DraftTransactionsResultModel>> DraftsWithHttpInfoAsync(CreateDraftTransactionsRequest? createDraftTransactionsRequest = default(CreateDraftTransactionsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionModel</returns>
+        System.Threading.Tasks.Task<TransactionModel> BillingLineContextAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionModel)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransactionModel>> BillingLineContextWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes a transaction.
         /// </summary>
@@ -5047,6 +5200,166 @@ public interface ITransactionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TransactionDraftsPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>TransactionModel</returns>
+        public TransactionModel BillingLineContext(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionModel> localVarResponse = BillingLineContextWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of TransactionModel</returns>
+        public Simplic.OxS.SDK.ApiResponse<TransactionModel> BillingLineContextWithHttpInfo(Guid id, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdBillingLineContextGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<TransactionModel>("/Transaction/{id}/billing-line-context", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionIdBillingLineContextGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransactionModel</returns>
+        public async System.Threading.Tasks.Task<TransactionModel> BillingLineContextAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<TransactionModel> localVarResponse = await BillingLineContextWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The transaction ID.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransactionModel)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<TransactionModel>> BillingLineContextWithHttpInfoAsync(Guid id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "TransactionClient.TransactionIdBillingLineContextGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TransactionModel>("/Transaction/{id}/billing-line-context", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("TransactionIdBillingLineContextGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

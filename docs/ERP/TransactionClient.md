@@ -15,6 +15,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**DraftsBillingLines**](TransactionClient.md#transactiondraftsidbillinglinespatch) | **PATCH** /Transaction/drafts/{id}/billing-lines | Adds a set of billing lines to an existing draft transaction. |
 | [**DraftsConvert**](TransactionClient.md#transactiondraftsidconvertpatch) | **PATCH** /Transaction/drafts/{id}/convert | Converts a draft transaction to a regular, non-draft transaction. |
 | [**Drafts**](TransactionClient.md#transactiondraftspost) | **POST** /Transaction/drafts | Creates a set of draft transactions resulting from a set of billing lines. |
+| [**BillingLineContext**](TransactionClient.md#transactionidbillinglinecontextget) | **GET** /Transaction/{id}/billing-line-context | Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line. |
 | [**Delete**](TransactionClient.md#transactioniddelete) | **DELETE** /Transaction/{id} | Deletes a transaction. |
 | [**Get**](TransactionClient.md#transactionidget) | **GET** /Transaction/{id} | Gets a transaction by ID. |
 | [**Patch**](TransactionClient.md#transactionidpatch) | **PATCH** /Transaction/{id} | Patches a transaction. |
@@ -1140,6 +1141,108 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Content |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="transactionidbillinglinecontextget"></a>
+# **BillingLineContext**
+> TransactionModel BillingLineContext (Guid id)
+
+Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.ERP;
+
+namespace Example
+{
+    public class BillingLineContextExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new TransactionClient(config);
+            var id = "id_example";  // Guid | The transaction ID.
+
+            try
+            {
+                // Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line.
+                TransactionModel result = apiInstance.BillingLineContext(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TransactionClient.BillingLineContext: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BillingLineContextWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets a transaction as a single tree. Each billing line transaction item contains its billing line and the tour/shipment it originated from, which in turn contains the originating billing line.
+    ApiResponse<TransactionModel> response = apiInstance.BillingLineContextWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TransactionClient.BillingLineContextWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | The transaction ID. |  |
+
+### Return type
+
+[**TransactionModel**](TransactionModel.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/problem+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Content |  -  |

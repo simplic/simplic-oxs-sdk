@@ -1647,11 +1647,19 @@
                         },
                         "nullable": true
                     },
-                    "tariff": {
-                        "$ref": "#/components/schemas/TariffModel"
+                    "tariffs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffModel"
+                        },
+                        "nullable": true
                     },
-                    "carrierTariff": {
-                        "$ref": "#/components/schemas/TariffModel"
+                    "carrierTariffs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffModel"
+                        },
+                        "nullable": true
                     },
                     "externalReference": {
                         "type": "string",
@@ -1755,11 +1763,19 @@
                         },
                         "nullable": true
                     },
-                    "tariff": {
-                        "$ref": "#/components/schemas/TariffModel"
+                    "tariffs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffModel"
+                        },
+                        "nullable": true
                     },
-                    "carrierTariff": {
-                        "$ref": "#/components/schemas/TariffModel"
+                    "carrierTariffs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffModel"
+                        },
+                        "nullable": true
                     },
                     "externalReference": {
                         "type": "string",
@@ -2051,11 +2067,19 @@
                         },
                         "nullable": true
                     },
-                    "tariff": {
-                        "$ref": "#/components/schemas/TariffModel"
+                    "tariffs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffModel"
+                        },
+                        "nullable": true
                     },
-                    "carrierTariff": {
-                        "$ref": "#/components/schemas/TariffModel"
+                    "carrierTariffs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TariffModel"
+                        },
+                        "nullable": true
                     },
                     "externalReference": {
                         "type": "string",
