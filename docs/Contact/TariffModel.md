@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | [optional] 
 **DisplayKey** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
+**IsPrimary** | **bool** |  | [optional] 
 **Parameters** | [**List&lt;TariffParameterModel&gt;**](TariffParameterModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

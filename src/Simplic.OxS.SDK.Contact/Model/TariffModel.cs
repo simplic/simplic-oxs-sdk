@@ -40,13 +40,15 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="displayName">displayName.</param>
         /// <param name="displayKey">displayKey.</param>
         /// <param name="name">name.</param>
+        /// <param name="isPrimary">isPrimary.</param>
         /// <param name="parameters">parameters.</param>
-        public TariffModel(Guid id = default(Guid), string displayName = default(string), string displayKey = default(string), string name = default(string), List<TariffParameterModel> parameters = default(List<TariffParameterModel>))
+        public TariffModel(Guid id = default(Guid), string displayName = default(string), string displayKey = default(string), string name = default(string), bool isPrimary = default(bool), List<TariffParameterModel> parameters = default(List<TariffParameterModel>))
         {
             this.Id = id;
             this.DisplayName = displayName;
             this.DisplayKey = displayKey;
             this.Name = name;
+            this.IsPrimary = isPrimary;
             this.Parameters = parameters;
         }
 
@@ -75,6 +77,12 @@ namespace Simplic.OxS.SDK.Contact
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsPrimary
+        /// </summary>
+        [DataMember(Name = "isPrimary", EmitDefaultValue = true)]
+        public bool IsPrimary { get; set; }
+
+        /// <summary>
         /// Gets or Sets Parameters
         /// </summary>
         [DataMember(Name = "parameters", EmitDefaultValue = true)]
@@ -92,6 +100,7 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  DisplayKey: ").Append(DisplayKey).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsPrimary: ").Append(IsPrimary).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -149,6 +158,10 @@ namespace Simplic.OxS.SDK.Contact
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.IsPrimary == input.IsPrimary ||
+                    this.IsPrimary.Equals(input.IsPrimary)
+                ) && 
+                (
                     this.Parameters == input.Parameters ||
                     this.Parameters != null &&
                     input.Parameters != null &&
@@ -181,6 +194,7 @@ namespace Simplic.OxS.SDK.Contact
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsPrimary.GetHashCode();
                 if (this.Parameters != null)
                 {
                     hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
