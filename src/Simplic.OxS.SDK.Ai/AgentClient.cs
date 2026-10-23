@@ -75,6 +75,45 @@ public interface IAgentClient
 
 
     /// <summary>
+    /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="actionId"></param>
+    /// <param name="clientActionSubmission"> (optional)</param>
+    /// <returns></returns>
+    void ClientActionsResult(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?));
+
+    /// <summary>
+    /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="actionId"></param>
+    /// <param name="clientActionSubmission"> (optional)</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    ApiResponse<Object> ClientActionsResultWithHttpInfo(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?));
+        
+    /// <summary>
+    /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="actionId"></param>
+    /// <param name="clientActionSubmission"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of void</returns>
+    Task ClientActionsResultAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="actionId"></param>
+    /// <param name="clientActionSubmission"> (optional)</param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse</returns>
+    Task<ApiResponse<Object>> ClientActionsResultWithHttpInfoAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -320,6 +359,83 @@ public interface IAgentClient
             try
             {
                 return _internalClient.AskWithHttpInfoAsync(askRequest, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <returns></returns>
+        public void ClientActionsResult(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?))
+        {
+            try
+            {
+                _internalClient.ClientActionsResult(actionId, clientActionSubmission);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> ClientActionsResultWithHttpInfo(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?))
+        {
+            try
+            {
+                return _internalClient.ClientActionsResultWithHttpInfo(actionId, clientActionSubmission);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public System.Threading.Tasks.Task ClientActionsResultAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ClientActionsResultAsync(actionId, clientActionSubmission, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ClientActionsResultWithHttpInfoAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.ClientActionsResultWithHttpInfoAsync(actionId, clientActionSubmission, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -579,6 +695,28 @@ public interface IAgentClient
         /// <returns>ApiResponse of AgentResponse</returns>
         ApiResponse<AgentResponse> AskWithHttpInfo(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0);
         /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void ClientActionsResult(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0);
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ClientActionsResultWithHttpInfo(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0);
+        /// <summary>
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -672,6 +810,33 @@ public interface IAgentClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgentResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<AgentResponse>> AskWithHttpInfoAsync(AskRequest? askRequest = default(AskRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ClientActionsResultAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ClientActionsResultWithHttpInfoAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field.
         /// </summary>
@@ -1022,6 +1187,184 @@ public interface IAgentClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AgentAskPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void ClientActionsResult(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0)
+        {
+            ClientActionsResultWithHttpInfo(actionId, clientActionSubmission);
+        }
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Simplic.OxS.SDK.ApiResponse<Object> ClientActionsResultWithHttpInfo(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0)
+        {
+            // verify the required parameter 'actionId' is set
+            if (actionId == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'actionId' when calling AgentClient->AgentClientActionsActionIdResultPost");
+            }
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("actionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(actionId)); // path parameter
+            localVarRequestOptions.Data = clientActionSubmission;
+
+            localVarRequestOptions.Operation = "AgentClient.AgentClientActionsActionIdResultPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/Agent/client-actions/{actionId}/result", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentClientActionsActionIdResultPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ClientActionsResultAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await ClientActionsResultWithHttpInfoAsync(actionId, clientActionSubmission, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Returns a browser tool result to its waiting streaming invocation without creating a chat turn. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="actionId"></param>
+        /// <param name="clientActionSubmission"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<Object>> ClientActionsResultWithHttpInfoAsync(string actionId, ClientActionSubmission? clientActionSubmission = default(ClientActionSubmission?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'actionId' is set
+            if (actionId == null)
+            {
+                throw new Simplic.OxS.SDK.ApiException(400, "Missing required parameter 'actionId' when calling AgentClient->AgentClientActionsActionIdResultPost");
+            }
+
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("actionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(actionId)); // path parameter
+            localVarRequestOptions.Data = clientActionSubmission;
+
+            localVarRequestOptions.Operation = "AgentClient.AgentClientActionsActionIdResultPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/Agent/client-actions/{actionId}/result", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentClientActionsActionIdResultPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

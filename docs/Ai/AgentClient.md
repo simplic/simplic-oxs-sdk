@@ -5,6 +5,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**Ask**](AgentClient.md#agentaskpost) | **POST** /Agent/ask | Ask mode: research and answer questions without executing write operations. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. |
+| [**ClientActionsResult**](AgentClient.md#agentclientactionsactionidresultpost) | **POST** /Agent/client-actions/{actionId}/result | Returns a browser tool result to its waiting streaming invocation without creating a chat turn. |
 | [**Execute**](AgentClient.md#agentexecutepost) | **POST** /Agent/execute | Agent mode: execute tool-based actions with approval workflows. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. |
 | [**Plan**](AgentClient.md#agentplanpost) | **POST** /Agent/plan | Create an execution plan without executing it. Accepts &#x60;application/json&#x60;. |
 | [**Stream**](AgentClient.md#agentstreampost) | **POST** /Agent/stream | Stream agent execution events using Server-Sent Events. Accepts &#x60;application/json&#x60;. Attach documents via Simplic.OxS.AI.Agent.Models.AgentDocument with base64-encoded bytes in the &#x60;content&#x60; field. |
@@ -106,6 +107,106 @@ catch (ApiException e)
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
+| **422** | Unprocessable Content |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="agentclientactionsactionidresultpost"></a>
+# **ClientActionsResult**
+> void ClientActionsResult (string actionId, ClientActionSubmission? clientActionSubmission = null)
+
+Returns a browser tool result to its waiting streaming invocation without creating a chat turn.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Ai;
+
+namespace Example
+{
+    public class ClientActionsResultExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/ai-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new AgentClient(config);
+            var actionId = "actionId_example";  // string | 
+            var clientActionSubmission = new ClientActionSubmission?(); // ClientActionSubmission? |  (optional) 
+
+            try
+            {
+                // Returns a browser tool result to its waiting streaming invocation without creating a chat turn.
+                apiInstance.ClientActionsResult(actionId, clientActionSubmission);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AgentClient.ClientActionsResult: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ClientActionsResultWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Returns a browser tool result to its waiting streaming invocation without creating a chat turn.
+    apiInstance.ClientActionsResultWithHttpInfo(actionId, clientActionSubmission);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AgentClient.ClientActionsResultWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **actionId** | **string** |  |  |
+| **clientActionSubmission** | [**ClientActionSubmission?**](ClientActionSubmission?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json, application/problem+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 | **422** | Unprocessable Content |  -  |
 | **500** | Internal Server Error |  -  |
 
