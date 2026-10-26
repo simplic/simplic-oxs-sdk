@@ -6118,6 +6118,33 @@
                 "additionalProperties": false,
                 "description": "Represents the contact person of an order."
             },
+            "OrderItemContractReferenceModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the referenced contract item.",
+                        "format": "uuid"
+                    },
+                    "contractId": {
+                        "type": "string",
+                        "description": "Gets or sets the id of the contract the item belongs to.",
+                        "format": "uuid"
+                    },
+                    "contractNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the human readable number of the contract.",
+                        "nullable": true
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the reference number of the contract item.",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a reference from an order item to the contract item it was created from,\nincluding the human readable contract number so it can be displayed on the frontend."
+            },
             "OrderItemModel": {
                 "type": "object",
                 "properties": {
@@ -6131,16 +6158,8 @@
                         "description": "Gets or sets the index of the item.",
                         "format": "int32"
                     },
-                    "contractItemId": {
-                        "type": "string",
-                        "description": "Gets or sets the id of the referenced contract item.",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "contractItemReference": {
-                        "type": "string",
-                        "description": "Gets or sets the reference of the referenced contract item.",
-                        "nullable": true
+                    "contractItem": {
+                        "$ref": "#/components/schemas/OrderItemContractReferenceModel"
                     },
                     "articleId": {
                         "type": "string",
@@ -6380,6 +6399,10 @@
                         "description": "Gets or sets the end date and time of the delivery.",
                         "format": "date-time",
                         "nullable": true
+                    },
+                    "_remove": {
+                        "type": "boolean",
+                        "description": "Remove flag for the patch helper."
                     }
                 },
                 "additionalProperties": false,

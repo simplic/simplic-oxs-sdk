@@ -7,8 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Gets or sets the id of the order item. | [optional] 
 **Index** | **int** | Gets or sets the index of the item. | [optional] 
-**ContractItemId** | **Guid?** | Gets or sets the id of the referenced contract item. | [optional] 
-**ContractItemReference** | **string** | Gets or sets the reference of the referenced contract item. | [optional] 
+**ContractItem** | [**OrderItemContractReferenceModel**](OrderItemContractReferenceModel.md) |  | [optional] 
 **ArticleId** | **Guid?** | Gets or sets the id of the article. | [optional] 
 **ArticleName** | **string** | Gets or sets the name of the article. | [optional] 
 **Text** | **string** | Gets or sets the text of the item. | [optional] 

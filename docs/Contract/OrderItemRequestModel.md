@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **EndLoadDateTime** | **DateTime?** | Gets or sets the end date and time of the load. | [optional] 
 **StartDeliveryDateTime** | **DateTime?** | Gets or sets the start date and time of the delivery. | [optional] 
 **EndDeliveryDateTime** | **DateTime?** | Gets or sets the end date and time of the delivery. | [optional] 
+**Remove** | **bool** | Remove flag for the patch helper. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

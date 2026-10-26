@@ -62,7 +62,8 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="endLoadDateTime">Gets or sets the end date and time of the load..</param>
         /// <param name="startDeliveryDateTime">Gets or sets the start date and time of the delivery..</param>
         /// <param name="endDeliveryDateTime">Gets or sets the end date and time of the delivery..</param>
-        public OrderItemRequestModel(Guid id = default(Guid), int index = default(int), Guid? contractItemId = default(Guid?), string contractItemReference = default(string), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), QuantityRequest transportationQuantity = default(QuantityRequest), QuantityRequest quantity = default(QuantityRequest), QuantityRequest bookedQuantity = default(QuantityRequest), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), Guid? priceUnitId = default(Guid?), bool? approved = default(bool?), bool? productIsAvailable = default(bool?), DateTime? startLoadDateTime = default(DateTime?), DateTime? endLoadDateTime = default(DateTime?), DateTime? startDeliveryDateTime = default(DateTime?), DateTime? endDeliveryDateTime = default(DateTime?))
+        /// <param name="remove">Remove flag for the patch helper..</param>
+        public OrderItemRequestModel(Guid id = default(Guid), int index = default(int), Guid? contractItemId = default(Guid?), string contractItemReference = default(string), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), QuantityRequest transportationQuantity = default(QuantityRequest), QuantityRequest quantity = default(QuantityRequest), QuantityRequest bookedQuantity = default(QuantityRequest), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), Guid? priceUnitId = default(Guid?), bool? approved = default(bool?), bool? productIsAvailable = default(bool?), DateTime? startLoadDateTime = default(DateTime?), DateTime? endLoadDateTime = default(DateTime?), DateTime? startDeliveryDateTime = default(DateTime?), DateTime? endDeliveryDateTime = default(DateTime?), bool remove = default(bool))
         {
             this.Id = id;
             this.Index = index;
@@ -90,6 +91,7 @@ namespace Simplic.OxS.SDK.Contract
             this.EndLoadDateTime = endLoadDateTime;
             this.StartDeliveryDateTime = startDeliveryDateTime;
             this.EndDeliveryDateTime = endDeliveryDateTime;
+            this.Remove = remove;
         }
 
         /// <summary>
@@ -270,6 +272,13 @@ namespace Simplic.OxS.SDK.Contract
         public DateTime? EndDeliveryDateTime { get; set; }
 
         /// <summary>
+        /// Remove flag for the patch helper.
+        /// </summary>
+        /// <value>Remove flag for the patch helper.</value>
+        [DataMember(Name = "_remove", EmitDefaultValue = true)]
+        public bool Remove { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -303,6 +312,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  EndLoadDateTime: ").Append(EndLoadDateTime).Append("\n");
             sb.Append("  StartDeliveryDateTime: ").Append(StartDeliveryDateTime).Append("\n");
             sb.Append("  EndDeliveryDateTime: ").Append(EndDeliveryDateTime).Append("\n");
+            sb.Append("  Remove: ").Append(Remove).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -466,6 +476,10 @@ namespace Simplic.OxS.SDK.Contract
                     this.EndDeliveryDateTime == input.EndDeliveryDateTime ||
                     (this.EndDeliveryDateTime != null &&
                     this.EndDeliveryDateTime.Equals(input.EndDeliveryDateTime))
+                ) && 
+                (
+                    this.Remove == input.Remove ||
+                    this.Remove.Equals(input.Remove)
                 );
         }
 
@@ -579,6 +593,7 @@ namespace Simplic.OxS.SDK.Contract
                 {
                     hashCode = (hashCode * 59) + this.EndDeliveryDateTime.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Remove.GetHashCode();
                 return hashCode;
             }
         }

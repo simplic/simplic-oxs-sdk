@@ -38,8 +38,7 @@ namespace Simplic.OxS.SDK.Contract
         /// </summary>
         /// <param name="id">Gets or sets the id of the order item..</param>
         /// <param name="index">Gets or sets the index of the item..</param>
-        /// <param name="contractItemId">Gets or sets the id of the referenced contract item..</param>
-        /// <param name="contractItemReference">Gets or sets the reference of the referenced contract item..</param>
+        /// <param name="contractItem">contractItem.</param>
         /// <param name="articleId">Gets or sets the id of the article..</param>
         /// <param name="articleName">Gets or sets the name of the article..</param>
         /// <param name="text">Gets or sets the text of the item..</param>
@@ -62,12 +61,11 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="endLoadDateTime">Gets or sets the end date and time of the load..</param>
         /// <param name="startDeliveryDateTime">Gets or sets the start date and time of the delivery..</param>
         /// <param name="endDeliveryDateTime">Gets or sets the end date and time of the delivery..</param>
-        public OrderItemModel(Guid id = default(Guid), int index = default(int), Guid? contractItemId = default(Guid?), string contractItemReference = default(string), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), OrderQuantityModel transportationQuantity = default(OrderQuantityModel), OrderQuantityModel quantity = default(OrderQuantityModel), OrderQuantityModel bookedQuantity = default(OrderQuantityModel), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), QuantityUnitModel priceUnit = default(QuantityUnitModel), bool approved = default(bool), bool productIsAvailable = default(bool), DateTime? startLoadDateTime = default(DateTime?), DateTime? endLoadDateTime = default(DateTime?), DateTime? startDeliveryDateTime = default(DateTime?), DateTime? endDeliveryDateTime = default(DateTime?))
+        public OrderItemModel(Guid id = default(Guid), int index = default(int), OrderItemContractReferenceModel contractItem = default(OrderItemContractReferenceModel), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), OrderQuantityModel transportationQuantity = default(OrderQuantityModel), OrderQuantityModel quantity = default(OrderQuantityModel), OrderQuantityModel bookedQuantity = default(OrderQuantityModel), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), QuantityUnitModel priceUnit = default(QuantityUnitModel), bool approved = default(bool), bool productIsAvailable = default(bool), DateTime? startLoadDateTime = default(DateTime?), DateTime? endLoadDateTime = default(DateTime?), DateTime? startDeliveryDateTime = default(DateTime?), DateTime? endDeliveryDateTime = default(DateTime?))
         {
             this.Id = id;
             this.Index = index;
-            this.ContractItemId = contractItemId;
-            this.ContractItemReference = contractItemReference;
+            this.ContractItem = contractItem;
             this.ArticleId = articleId;
             this.ArticleName = articleName;
             this.Text = text;
@@ -107,18 +105,10 @@ namespace Simplic.OxS.SDK.Contract
         public int Index { get; set; }
 
         /// <summary>
-        /// Gets or sets the id of the referenced contract item.
+        /// Gets or Sets ContractItem
         /// </summary>
-        /// <value>Gets or sets the id of the referenced contract item.</value>
-        [DataMember(Name = "contractItemId", EmitDefaultValue = true)]
-        public Guid? ContractItemId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the reference of the referenced contract item.
-        /// </summary>
-        /// <value>Gets or sets the reference of the referenced contract item.</value>
-        [DataMember(Name = "contractItemReference", EmitDefaultValue = true)]
-        public string ContractItemReference { get; set; }
+        [DataMember(Name = "contractItem", EmitDefaultValue = false)]
+        public OrderItemContractReferenceModel ContractItem { get; set; }
 
         /// <summary>
         /// Gets or sets the id of the article.
@@ -278,8 +268,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("class OrderItemModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  ContractItemId: ").Append(ContractItemId).Append("\n");
-            sb.Append("  ContractItemReference: ").Append(ContractItemReference).Append("\n");
+            sb.Append("  ContractItem: ").Append(ContractItem).Append("\n");
             sb.Append("  ArticleId: ").Append(ArticleId).Append("\n");
             sb.Append("  ArticleName: ").Append(ArticleName).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
@@ -347,14 +336,9 @@ namespace Simplic.OxS.SDK.Contract
                     this.Index.Equals(input.Index)
                 ) && 
                 (
-                    this.ContractItemId == input.ContractItemId ||
-                    (this.ContractItemId != null &&
-                    this.ContractItemId.Equals(input.ContractItemId))
-                ) && 
-                (
-                    this.ContractItemReference == input.ContractItemReference ||
-                    (this.ContractItemReference != null &&
-                    this.ContractItemReference.Equals(input.ContractItemReference))
+                    this.ContractItem == input.ContractItem ||
+                    (this.ContractItem != null &&
+                    this.ContractItem.Equals(input.ContractItem))
                 ) && 
                 (
                     this.ArticleId == input.ArticleId ||
@@ -480,13 +464,9 @@ namespace Simplic.OxS.SDK.Contract
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Index.GetHashCode();
-                if (this.ContractItemId != null)
+                if (this.ContractItem != null)
                 {
-                    hashCode = (hashCode * 59) + this.ContractItemId.GetHashCode();
-                }
-                if (this.ContractItemReference != null)
-                {
-                    hashCode = (hashCode * 59) + this.ContractItemReference.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ContractItem.GetHashCode();
                 }
                 if (this.ArticleId != null)
                 {
