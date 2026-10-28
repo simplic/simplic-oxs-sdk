@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **EmailAddresses** | [**List&lt;EmailAddressModel&gt;**](EmailAddressModel.md) |  | [optional] 
 **PhoneNumbers** | [**List&lt;PhoneNumberModel&gt;**](PhoneNumberModel.md) |  | [optional] 
 **MatchCode** | **string** |  | [optional] 
+**ContactType** | [**ContactTypeSubsetModel**](ContactTypeSubsetModel.md) |  | [optional] 
 **Functions** | **List&lt;string&gt;** |  | [optional] 
 **OpeningHours** | [**List&lt;OpeningHoursModel&gt;**](OpeningHoursModel.md) |  | [optional] 
 **ClosedDays** | [**List&lt;ClosedDayModel&gt;**](ClosedDayModel.md) |  | [optional] 

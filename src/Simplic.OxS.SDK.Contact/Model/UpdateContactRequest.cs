@@ -42,6 +42,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="emailAddresses">emailAddresses.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="matchCode">matchCode.</param>
+        /// <param name="contactType">contactType.</param>
         /// <param name="functions">functions.</param>
         /// <param name="openingHours">openingHours.</param>
         /// <param name="closedDays">closedDays.</param>
@@ -49,7 +50,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="carrierTariffs">carrierTariffs.</param>
         /// <param name="externalReference">externalReference.</param>
         /// <param name="addon">addon.</param>
-        public UpdateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), List<TariffModel> tariffs = default(List<TariffModel>), List<TariffModel> carrierTariffs = default(List<TariffModel>), string externalReference = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
+        public UpdateContactRequest(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), ContactTypeSubsetModel contactType = default(ContactTypeSubsetModel), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), List<TariffModel> tariffs = default(List<TariffModel>), List<TariffModel> carrierTariffs = default(List<TariffModel>), string externalReference = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -57,6 +58,7 @@ namespace Simplic.OxS.SDK.Contact
             this.EmailAddresses = emailAddresses;
             this.PhoneNumbers = phoneNumbers;
             this.MatchCode = matchCode;
+            this.ContactType = contactType;
             this.Functions = functions;
             this.OpeningHours = openingHours;
             this.ClosedDays = closedDays;
@@ -101,6 +103,12 @@ namespace Simplic.OxS.SDK.Contact
         /// </summary>
         [DataMember(Name = "matchCode", EmitDefaultValue = true)]
         public string MatchCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ContactType
+        /// </summary>
+        [DataMember(Name = "contactType", EmitDefaultValue = false)]
+        public ContactTypeSubsetModel ContactType { get; set; }
 
         /// <summary>
         /// Gets or Sets Functions
@@ -158,6 +166,7 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  EmailAddresses: ").Append(EmailAddresses).Append("\n");
             sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
             sb.Append("  MatchCode: ").Append(MatchCode).Append("\n");
+            sb.Append("  ContactType: ").Append(ContactType).Append("\n");
             sb.Append("  Functions: ").Append(Functions).Append("\n");
             sb.Append("  OpeningHours: ").Append(OpeningHours).Append("\n");
             sb.Append("  ClosedDays: ").Append(ClosedDays).Append("\n");
@@ -231,6 +240,11 @@ namespace Simplic.OxS.SDK.Contact
                     this.MatchCode == input.MatchCode ||
                     (this.MatchCode != null &&
                     this.MatchCode.Equals(input.MatchCode))
+                ) && 
+                (
+                    this.ContactType == input.ContactType ||
+                    (this.ContactType != null &&
+                    this.ContactType.Equals(input.ContactType))
                 ) && 
                 (
                     this.Functions == input.Functions ||
@@ -307,6 +321,10 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.MatchCode != null)
                 {
                     hashCode = (hashCode * 59) + this.MatchCode.GetHashCode();
+                }
+                if (this.ContactType != null)
+                {
+                    hashCode = (hashCode * 59) + this.ContactType.GetHashCode();
                 }
                 if (this.Functions != null)
                 {
