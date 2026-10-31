@@ -45,20 +45,37 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "category", EmitDefaultValue = false)]
         public TaxCategory? Category { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExemptionReasonCode
+        /// </summary>
+        [DataMember(Name = "exemptionReasonCode", EmitDefaultValue = false)]
+        public TaxExemptionReasonCode? ExemptionReasonCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxRequest" /> class.
         /// </summary>
         /// <param name="type">type.</param>
         /// <param name="category">category.</param>
+        /// <param name="exemptionReasonCode">exemptionReasonCode.</param>
+        /// <param name="exemptionReason">Gets or sets the optional VAT exemption reason as free text. If neither this nor Simplic.OxS.ERP.Server.ElectronicInvoicing.TaxRequest.ExemptionReasonCode is provided, a default is derived from the tax category..</param>
         /// <param name="rate">Gets or sets the tax rate in percent..</param>
         /// <param name="assignedItems">Gets or sets the billable invoice items assigned to the tax by ID..</param>
-        public TaxRequest(TaxType? type = default(TaxType?), TaxCategory? category = default(TaxCategory?), double rate = default(double), List<string> assignedItems = default(List<string>))
+        public TaxRequest(TaxType? type = default(TaxType?), TaxCategory? category = default(TaxCategory?), TaxExemptionReasonCode? exemptionReasonCode = default(TaxExemptionReasonCode?), string exemptionReason = default(string), double rate = default(double), List<string> assignedItems = default(List<string>))
         {
             this.Type = type;
             this.Category = category;
+            this.ExemptionReasonCode = exemptionReasonCode;
+            this.ExemptionReason = exemptionReason;
             this.Rate = rate;
             this.AssignedItems = assignedItems;
         }
+
+        /// <summary>
+        /// Gets or sets the optional VAT exemption reason as free text. If neither this nor Simplic.OxS.ERP.Server.ElectronicInvoicing.TaxRequest.ExemptionReasonCode is provided, a default is derived from the tax category.
+        /// </summary>
+        /// <value>Gets or sets the optional VAT exemption reason as free text. If neither this nor Simplic.OxS.ERP.Server.ElectronicInvoicing.TaxRequest.ExemptionReasonCode is provided, a default is derived from the tax category.</value>
+        [DataMember(Name = "exemptionReason", EmitDefaultValue = true)]
+        public string ExemptionReason { get; set; }
 
         /// <summary>
         /// Gets or sets the tax rate in percent.
@@ -84,6 +101,8 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("class TaxRequest {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Category: ").Append(Category).Append("\n");
+            sb.Append("  ExemptionReasonCode: ").Append(ExemptionReasonCode).Append("\n");
+            sb.Append("  ExemptionReason: ").Append(ExemptionReason).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
             sb.Append("  AssignedItems: ").Append(AssignedItems).Append("\n");
             sb.Append("}\n");
@@ -130,6 +149,15 @@ namespace Simplic.OxS.SDK.ERP
                     this.Category.Equals(input.Category)
                 ) && 
                 (
+                    this.ExemptionReasonCode == input.ExemptionReasonCode ||
+                    this.ExemptionReasonCode.Equals(input.ExemptionReasonCode)
+                ) && 
+                (
+                    this.ExemptionReason == input.ExemptionReason ||
+                    (this.ExemptionReason != null &&
+                    this.ExemptionReason.Equals(input.ExemptionReason))
+                ) && 
+                (
                     this.Rate == input.Rate ||
                     this.Rate.Equals(input.Rate)
                 ) && 
@@ -152,6 +180,11 @@ namespace Simplic.OxS.SDK.ERP
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 hashCode = (hashCode * 59) + this.Category.GetHashCode();
+                hashCode = (hashCode * 59) + this.ExemptionReasonCode.GetHashCode();
+                if (this.ExemptionReason != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExemptionReason.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Rate.GetHashCode();
                 if (this.AssignedItems != null)
                 {
