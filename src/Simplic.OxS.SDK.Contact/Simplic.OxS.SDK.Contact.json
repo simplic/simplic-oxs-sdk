@@ -2384,6 +2384,52 @@
                 },
                 "additionalProperties": false
             },
+            "BankAccountModel": {
+                "type": "object",
+                "properties": {
+                    "bank": {
+                        "$ref": "#/components/schemas/BankModel"
+                    },
+                    "iban": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountHolder": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isDefault": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BankModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "bic": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "bankCode": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "ClosedDayModel": {
                 "type": "object",
                 "properties": {
@@ -2497,6 +2543,13 @@
                     },
                     "externalReference": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "bankAccounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BankAccountModel"
+                        },
                         "nullable": true
                     },
                     "addon": {
@@ -2729,6 +2782,13 @@
                     },
                     "externalReference": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "bankAccounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BankAccountModel"
+                        },
                         "nullable": true
                     },
                     "addon": {
@@ -3068,6 +3128,13 @@
                     },
                     "externalReference": {
                         "type": "string",
+                        "nullable": true
+                    },
+                    "bankAccounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BankAccountModel"
+                        },
                         "nullable": true
                     },
                     "addon": {

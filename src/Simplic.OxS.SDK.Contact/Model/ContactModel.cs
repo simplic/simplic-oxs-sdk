@@ -49,6 +49,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="tariffs">tariffs.</param>
         /// <param name="carrierTariffs">carrierTariffs.</param>
         /// <param name="externalReference">externalReference.</param>
+        /// <param name="bankAccounts">bankAccounts.</param>
         /// <param name="addon">addon.</param>
         /// <param name="id">id.</param>
         /// <param name="isDeleted">isDeleted.</param>
@@ -59,7 +60,7 @@ namespace Simplic.OxS.SDK.Contact
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="organizationId">organizationId.</param>
-        public ContactModel(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), ContactTypeSubsetModel contactType = default(ContactTypeSubsetModel), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), List<TariffModel> tariffs = default(List<TariffModel>), List<TariffModel> carrierTariffs = default(List<TariffModel>), string externalReference = default(string), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
+        public ContactModel(AddressModel address = default(AddressModel), EmailAddressModel primaryEmailAddress = default(EmailAddressModel), PhoneNumber primaryPhoneNumber = default(PhoneNumber), List<EmailAddressModel> emailAddresses = default(List<EmailAddressModel>), List<PhoneNumberModel> phoneNumbers = default(List<PhoneNumberModel>), string matchCode = default(string), ContactTypeSubsetModel contactType = default(ContactTypeSubsetModel), List<string> functions = default(List<string>), List<OpeningHoursModel> openingHours = default(List<OpeningHoursModel>), List<ClosedDayModel> closedDays = default(List<ClosedDayModel>), List<TariffModel> tariffs = default(List<TariffModel>), List<TariffModel> carrierTariffs = default(List<TariffModel>), string externalReference = default(string), List<BankAccountModel> bankAccounts = default(List<BankAccountModel>), Dictionary<string, Object> addon = default(Dictionary<string, Object>), Guid id = default(Guid), bool isDeleted = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), Guid organizationId = default(Guid))
         {
             this.Address = address;
             this.PrimaryEmailAddress = primaryEmailAddress;
@@ -74,6 +75,7 @@ namespace Simplic.OxS.SDK.Contact
             this.Tariffs = tariffs;
             this.CarrierTariffs = carrierTariffs;
             this.ExternalReference = externalReference;
+            this.BankAccounts = bankAccounts;
             this.Addon = addon;
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -165,6 +167,12 @@ namespace Simplic.OxS.SDK.Contact
         public string ExternalReference { get; set; }
 
         /// <summary>
+        /// Gets or Sets BankAccounts
+        /// </summary>
+        [DataMember(Name = "bankAccounts", EmitDefaultValue = true)]
+        public List<BankAccountModel> BankAccounts { get; set; }
+
+        /// <summary>
         /// Gets or Sets Addon
         /// </summary>
         [DataMember(Name = "addon", EmitDefaultValue = true)]
@@ -245,6 +253,7 @@ namespace Simplic.OxS.SDK.Contact
             sb.Append("  Tariffs: ").Append(Tariffs).Append("\n");
             sb.Append("  CarrierTariffs: ").Append(CarrierTariffs).Append("\n");
             sb.Append("  ExternalReference: ").Append(ExternalReference).Append("\n");
+            sb.Append("  BankAccounts: ").Append(BankAccounts).Append("\n");
             sb.Append("  Addon: ").Append(Addon).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
@@ -363,6 +372,12 @@ namespace Simplic.OxS.SDK.Contact
                     this.ExternalReference.Equals(input.ExternalReference))
                 ) && 
                 (
+                    this.BankAccounts == input.BankAccounts ||
+                    this.BankAccounts != null &&
+                    input.BankAccounts != null &&
+                    this.BankAccounts.SequenceEqual(input.BankAccounts)
+                ) && 
+                (
                     this.Addon == input.Addon ||
                     this.Addon != null &&
                     input.Addon != null &&
@@ -474,6 +489,10 @@ namespace Simplic.OxS.SDK.Contact
                 if (this.ExternalReference != null)
                 {
                     hashCode = (hashCode * 59) + this.ExternalReference.GetHashCode();
+                }
+                if (this.BankAccounts != null)
+                {
+                    hashCode = (hashCode * 59) + this.BankAccounts.GetHashCode();
                 }
                 if (this.Addon != null)
                 {
