@@ -59,7 +59,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="faxNumber">faxNumber.</param>
         /// <param name="taxRegistrations">taxRegistrations.</param>
         /// <param name="electronicAddressType">electronicAddressType.</param>
-        public ImportedParty(string contactName = default(string), string companyName = default(string), string zipcode = default(string), string city = default(string), string street = default(string), CountryCode? country = default(CountryCode?), string emailAddress = default(string), string phoneNumber = default(string), string faxNumber = default(string), List<TaxRegistration> taxRegistrations = default(List<TaxRegistration>), ElectronicAddressType? electronicAddressType = default(ElectronicAddressType?))
+        /// <param name="electronicAddress">electronicAddress.</param>
+        public ImportedParty(string contactName = default(string), string companyName = default(string), string zipcode = default(string), string city = default(string), string street = default(string), CountryCode? country = default(CountryCode?), string emailAddress = default(string), string phoneNumber = default(string), string faxNumber = default(string), List<TaxRegistration> taxRegistrations = default(List<TaxRegistration>), ElectronicAddressType? electronicAddressType = default(ElectronicAddressType?), ImportedElectronicAddress electronicAddress = default(ImportedElectronicAddress))
         {
             this.ContactName = contactName;
             this.CompanyName = companyName;
@@ -72,6 +73,7 @@ namespace Simplic.OxS.SDK.ERP
             this.FaxNumber = faxNumber;
             this.TaxRegistrations = taxRegistrations;
             this.ElectronicAddressType = electronicAddressType;
+            this.ElectronicAddress = electronicAddress;
         }
 
         /// <summary>
@@ -129,6 +131,12 @@ namespace Simplic.OxS.SDK.ERP
         public List<TaxRegistration> TaxRegistrations { get; set; }
 
         /// <summary>
+        /// Gets or Sets ElectronicAddress
+        /// </summary>
+        [DataMember(Name = "electronicAddress", EmitDefaultValue = false)]
+        public ImportedElectronicAddress ElectronicAddress { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +155,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  FaxNumber: ").Append(FaxNumber).Append("\n");
             sb.Append("  TaxRegistrations: ").Append(TaxRegistrations).Append("\n");
             sb.Append("  ElectronicAddressType: ").Append(ElectronicAddressType).Append("\n");
+            sb.Append("  ElectronicAddress: ").Append(ElectronicAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +244,11 @@ namespace Simplic.OxS.SDK.ERP
                 (
                     this.ElectronicAddressType == input.ElectronicAddressType ||
                     this.ElectronicAddressType.Equals(input.ElectronicAddressType)
+                ) && 
+                (
+                    this.ElectronicAddress == input.ElectronicAddress ||
+                    (this.ElectronicAddress != null &&
+                    this.ElectronicAddress.Equals(input.ElectronicAddress))
                 );
         }
 
@@ -285,6 +299,10 @@ namespace Simplic.OxS.SDK.ERP
                     hashCode = (hashCode * 59) + this.TaxRegistrations.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ElectronicAddressType.GetHashCode();
+                if (this.ElectronicAddress != null)
+                {
+                    hashCode = (hashCode * 59) + this.ElectronicAddress.GetHashCode();
+                }
                 return hashCode;
             }
         }

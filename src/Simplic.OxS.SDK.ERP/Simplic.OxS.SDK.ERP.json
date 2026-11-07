@@ -18515,6 +18515,19 @@
                 },
                 "additionalProperties": false
             },
+            "ImportedElectronicAddress": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/ElectronicAddressType"
+                    }
+                },
+                "additionalProperties": false
+            },
             "ImportedInvoiceData": {
                 "type": "object",
                 "properties": {
@@ -18772,6 +18785,9 @@
                     },
                     "electronicAddressType": {
                         "$ref": "#/components/schemas/ElectronicAddressType"
+                    },
+                    "electronicAddress": {
+                        "$ref": "#/components/schemas/ImportedElectronicAddress"
                     }
                 },
                 "additionalProperties": false

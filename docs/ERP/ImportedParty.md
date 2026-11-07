@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **FaxNumber** | **string** |  | [optional] 
 **TaxRegistrations** | [**List&lt;TaxRegistration&gt;**](TaxRegistration.md) |  | [optional] 
 **ElectronicAddressType** | **ElectronicAddressType** |  | [optional] 
+**ElectronicAddress** | [**ImportedElectronicAddress**](ImportedElectronicAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
