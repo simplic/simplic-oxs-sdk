@@ -42,8 +42,9 @@ namespace Simplic.OxS.SDK.Organization
         /// <param name="zipCode">Gets or sets the zipcode.</param>
         /// <param name="city">Gets or sets the city.</param>
         /// <param name="countryIso">Gets or sets the country iso code (e.g. DE, FR, EN, US, ...).</param>
+        /// <param name="vatId">Gets or sets the VAT id..</param>
         /// <param name="federalState">federalState.</param>
-        public AddressModelResponse(string additional01 = default(string), string street = default(string), string houseNumber = default(string), string zipCode = default(string), string city = default(string), string countryIso = default(string), FederalStateModel federalState = default(FederalStateModel))
+        public AddressModelResponse(string additional01 = default(string), string street = default(string), string houseNumber = default(string), string zipCode = default(string), string city = default(string), string countryIso = default(string), string vatId = default(string), FederalStateModel federalState = default(FederalStateModel))
         {
             this.Additional01 = additional01;
             this.Street = street;
@@ -51,6 +52,7 @@ namespace Simplic.OxS.SDK.Organization
             this.ZipCode = zipCode;
             this.City = city;
             this.CountryIso = countryIso;
+            this.VatId = vatId;
             this.FederalState = federalState;
         }
 
@@ -97,6 +99,13 @@ namespace Simplic.OxS.SDK.Organization
         public string CountryIso { get; set; }
 
         /// <summary>
+        /// Gets or sets the VAT id.
+        /// </summary>
+        /// <value>Gets or sets the VAT id.</value>
+        [DataMember(Name = "vatId", EmitDefaultValue = true)]
+        public string VatId { get; set; }
+
+        /// <summary>
         /// Gets or Sets FederalState
         /// </summary>
         [DataMember(Name = "federalState", EmitDefaultValue = false)]
@@ -116,6 +125,7 @@ namespace Simplic.OxS.SDK.Organization
             sb.Append("  ZipCode: ").Append(ZipCode).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("  CountryIso: ").Append(CountryIso).Append("\n");
+            sb.Append("  VatId: ").Append(VatId).Append("\n");
             sb.Append("  FederalState: ").Append(FederalState).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -183,6 +193,11 @@ namespace Simplic.OxS.SDK.Organization
                     this.CountryIso.Equals(input.CountryIso))
                 ) && 
                 (
+                    this.VatId == input.VatId ||
+                    (this.VatId != null &&
+                    this.VatId.Equals(input.VatId))
+                ) && 
+                (
                     this.FederalState == input.FederalState ||
                     (this.FederalState != null &&
                     this.FederalState.Equals(input.FederalState))
@@ -221,6 +236,10 @@ namespace Simplic.OxS.SDK.Organization
                 if (this.CountryIso != null)
                 {
                     hashCode = (hashCode * 59) + this.CountryIso.GetHashCode();
+                }
+                if (this.VatId != null)
+                {
+                    hashCode = (hashCode * 59) + this.VatId.GetHashCode();
                 }
                 if (this.FederalState != null)
                 {

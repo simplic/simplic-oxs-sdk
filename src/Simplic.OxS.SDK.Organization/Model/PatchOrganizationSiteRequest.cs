@@ -38,11 +38,17 @@ namespace Simplic.OxS.SDK.Organization
         /// </summary>
         /// <param name="name">Gets or sets the name of the organization site.</param>
         /// <param name="address">address.</param>
+        /// <param name="email">Gets or sets the site contact email..</param>
+        /// <param name="phoneNumber">Gets or sets the site contact phone number..</param>
+        /// <param name="sepaCreditorIdentificationNumber">Gets or sets the SEPA creditor identification number..</param>
         /// <param name="timeZoneId">Gets or sets the id of the time zone of the organization site. Must be one of the ids  returned by the time zone endpoint..</param>
-        public PatchOrganizationSiteRequest(string name = default(string), AddressModelRequest address = default(AddressModelRequest), string timeZoneId = default(string))
+        public PatchOrganizationSiteRequest(string name = default(string), AddressModelRequest address = default(AddressModelRequest), string email = default(string), string phoneNumber = default(string), string sepaCreditorIdentificationNumber = default(string), string timeZoneId = default(string))
         {
             this.Name = name;
             this.Address = address;
+            this.Email = email;
+            this.PhoneNumber = phoneNumber;
+            this.SepaCreditorIdentificationNumber = sepaCreditorIdentificationNumber;
             this.TimeZoneId = timeZoneId;
         }
 
@@ -58,6 +64,27 @@ namespace Simplic.OxS.SDK.Organization
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
         public AddressModelRequest Address { get; set; }
+
+        /// <summary>
+        /// Gets or sets the site contact email.
+        /// </summary>
+        /// <value>Gets or sets the site contact email.</value>
+        [DataMember(Name = "email", EmitDefaultValue = true)]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Gets or sets the site contact phone number.
+        /// </summary>
+        /// <value>Gets or sets the site contact phone number.</value>
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = true)]
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the SEPA creditor identification number.
+        /// </summary>
+        /// <value>Gets or sets the SEPA creditor identification number.</value>
+        [DataMember(Name = "sepaCreditorIdentificationNumber", EmitDefaultValue = true)]
+        public string SepaCreditorIdentificationNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the id of the time zone of the organization site. Must be one of the ids  returned by the time zone endpoint.
@@ -76,6 +103,9 @@ namespace Simplic.OxS.SDK.Organization
             sb.Append("class PatchOrganizationSiteRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  SepaCreditorIdentificationNumber: ").Append(SepaCreditorIdentificationNumber).Append("\n");
             sb.Append("  TimeZoneId: ").Append(TimeZoneId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -123,6 +153,21 @@ namespace Simplic.OxS.SDK.Organization
                     this.Address.Equals(input.Address))
                 ) && 
                 (
+                    this.Email == input.Email ||
+                    (this.Email != null &&
+                    this.Email.Equals(input.Email))
+                ) && 
+                (
+                    this.PhoneNumber == input.PhoneNumber ||
+                    (this.PhoneNumber != null &&
+                    this.PhoneNumber.Equals(input.PhoneNumber))
+                ) && 
+                (
+                    this.SepaCreditorIdentificationNumber == input.SepaCreditorIdentificationNumber ||
+                    (this.SepaCreditorIdentificationNumber != null &&
+                    this.SepaCreditorIdentificationNumber.Equals(input.SepaCreditorIdentificationNumber))
+                ) && 
+                (
                     this.TimeZoneId == input.TimeZoneId ||
                     (this.TimeZoneId != null &&
                     this.TimeZoneId.Equals(input.TimeZoneId))
@@ -145,6 +190,18 @@ namespace Simplic.OxS.SDK.Organization
                 if (this.Address != null)
                 {
                     hashCode = (hashCode * 59) + this.Address.GetHashCode();
+                }
+                if (this.Email != null)
+                {
+                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                }
+                if (this.PhoneNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.PhoneNumber.GetHashCode();
+                }
+                if (this.SepaCreditorIdentificationNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.SepaCreditorIdentificationNumber.GetHashCode();
                 }
                 if (this.TimeZoneId != null)
                 {

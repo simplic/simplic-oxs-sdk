@@ -2545,6 +2545,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "eInvoiceType": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "bankAccounts": {
                         "type": "array",
                         "items": {
@@ -2781,6 +2785,10 @@
                         "nullable": true
                     },
                     "externalReference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eInvoiceType": {
                         "type": "string",
                         "nullable": true
                     },
@@ -3127,6 +3135,10 @@
                         "nullable": true
                     },
                     "externalReference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "eInvoiceType": {
                         "type": "string",
                         "nullable": true
                     },

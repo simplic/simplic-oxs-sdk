@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ZipCode** | **string** | Gets or sets the zipcode | [optional] 
 **City** | **string** | Gets or sets the city | [optional] 
 **CountryIso** | **string** | Gets or sets the country iso code (e.g. DE, FR, EN, US, ...) | [optional] 
+**VatId** | **string** | Gets or sets the VAT id. | [optional] 
 **FederalState** | [**FederalStateModel**](FederalStateModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

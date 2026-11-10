@@ -4545,6 +4545,11 @@
                         "description": "Gets or sets the country iso code (e.g. de, fr, en, us, ...)",
                         "nullable": true
                     },
+                    "vatId": {
+                        "type": "string",
+                        "description": "Gets or sets the VAT id.",
+                        "nullable": true
+                    },
                     "federalStateIso": {
                         "type": "string",
                         "description": "Gets or sets the federal state iso",
@@ -4585,6 +4590,11 @@
                     "countryIso": {
                         "type": "string",
                         "description": "Gets or sets the country iso code (e.g. DE, FR, EN, US, ...)",
+                        "nullable": true
+                    },
+                    "vatId": {
+                        "type": "string",
+                        "description": "Gets or sets the VAT id.",
                         "nullable": true
                     },
                     "federalState": {
@@ -4769,6 +4779,21 @@
                     },
                     "address": {
                         "$ref": "#/components/schemas/AddressModelRequest"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Gets or sets the site contact email.",
+                        "nullable": true
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the site contact phone number.",
+                        "nullable": true
+                    },
+                    "sepaCreditorIdentificationNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the SEPA creditor identification number.",
+                        "nullable": true
                     },
                     "timeZoneId": {
                         "type": "string",
@@ -5529,6 +5554,21 @@
                     "address": {
                         "$ref": "#/components/schemas/AddressModelResponse"
                     },
+                    "email": {
+                        "type": "string",
+                        "description": "Gets or sets the site contact email.",
+                        "nullable": true
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the site contact phone number.",
+                        "nullable": true
+                    },
+                    "sepaCreditorIdentificationNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the SEPA creditor identification number.",
+                        "nullable": true
+                    },
                     "timeZoneId": {
                         "type": "string",
                         "description": "Gets or sets the id of the time zone of the organization site, as used by\r\nM:System.TimeZoneInfo.FindSystemTimeZoneById(System.String). Defaults to the IANA id\r\n\"Europe/Berlin\" so it also resolves on Linux based microservices.",
@@ -5553,6 +5593,21 @@
                     },
                     "address": {
                         "$ref": "#/components/schemas/AddressModelRequest"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Gets or sets the site contact email.",
+                        "nullable": true
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the site contact phone number.",
+                        "nullable": true
+                    },
+                    "sepaCreditorIdentificationNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the SEPA creditor identification number.",
+                        "nullable": true
                     },
                     "timeZoneId": {
                         "type": "string",
