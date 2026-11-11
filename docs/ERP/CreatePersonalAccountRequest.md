@@ -12,6 +12,9 @@ Name | Type | Description | Notes
 **PersonalAccountGroupId** | **Guid?** | Gets or sets the id of the personal account group. | [optional] 
 **Number** | **string** | gets or sets the number. | [optional] 
 **VatId** | **string** | Gets or sets the vat id. | [optional] 
+**BuyerReference** | **string** | Gets or sets the buyer reference. | [optional] 
+**UseBuyerReferenceAsLeitwegId** | **bool** | Gets or sets a value indicating whether the buyer reference should also be used as Leitweg-ID. | [optional] 
+**SepaMandateReference** | **string** | Gets or sets the SEPA mandate reference. | [optional] 
 **Type** | **string** | Gets or sets the personal account type. (creditor / debitor) | [optional] 
 **CreditLimit** | [**CreditLimitModel**](CreditLimitModel.md) |  | [optional] 
 

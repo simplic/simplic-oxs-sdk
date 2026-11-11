@@ -39,6 +39,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="number">gets or sets the number..</param>
         /// <param name="vatId">Gets or sets the vat id..</param>
+        /// <param name="buyerReference">Gets or sets the buyer reference..</param>
+        /// <param name="useBuyerReferenceAsLeitwegId">Gets or sets a value indicating whether the buyer reference should also be used as Leitweg-ID..</param>
+        /// <param name="sepaMandateReference">Gets or sets the SEPA mandate reference..</param>
         /// <param name="type">Gets or sets the personal account type. (creditor / debitor).</param>
         /// <param name="creditLimit">creditLimit.</param>
         /// <param name="addressContactIds">addressContactIds.</param>
@@ -46,11 +49,14 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="purchaseTermsOfPaymentId">Gets or sets the id of the purchase terms of payment..</param>
         /// <param name="taxGroupId">Gets or sets the id of the tax group..</param>
         /// <param name="personalAccountGroupId">Gets or sets the id of the personal account group..</param>
-        public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?), Guid? personalAccountGroupId = default(Guid?))
+        public UpdatePersonalAccountRequest(Guid id = default(Guid), string number = default(string), string vatId = default(string), string buyerReference = default(string), bool useBuyerReferenceAsLeitwegId = default(bool), string sepaMandateReference = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?), Guid? personalAccountGroupId = default(Guid?))
         {
             this.Id = id;
             this.Number = number;
             this.VatId = vatId;
+            this.BuyerReference = buyerReference;
+            this.UseBuyerReferenceAsLeitwegId = useBuyerReferenceAsLeitwegId;
+            this.SepaMandateReference = sepaMandateReference;
             this.Type = type;
             this.CreditLimit = creditLimit;
             this.AddressContactIds = addressContactIds;
@@ -80,6 +86,27 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the vat id.</value>
         [DataMember(Name = "vatId", EmitDefaultValue = true)]
         public string VatId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the buyer reference.
+        /// </summary>
+        /// <value>Gets or sets the buyer reference.</value>
+        [DataMember(Name = "buyerReference", EmitDefaultValue = true)]
+        public string BuyerReference { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the buyer reference should also be used as Leitweg-ID.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the buyer reference should also be used as Leitweg-ID.</value>
+        [DataMember(Name = "useBuyerReferenceAsLeitwegId", EmitDefaultValue = true)]
+        public bool UseBuyerReferenceAsLeitwegId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the SEPA mandate reference.
+        /// </summary>
+        /// <value>Gets or sets the SEPA mandate reference.</value>
+        [DataMember(Name = "sepaMandateReference", EmitDefaultValue = true)]
+        public string SepaMandateReference { get; set; }
 
         /// <summary>
         /// Gets or sets the personal account type. (creditor / debitor)
@@ -139,6 +166,9 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  VatId: ").Append(VatId).Append("\n");
+            sb.Append("  BuyerReference: ").Append(BuyerReference).Append("\n");
+            sb.Append("  UseBuyerReferenceAsLeitwegId: ").Append(UseBuyerReferenceAsLeitwegId).Append("\n");
+            sb.Append("  SepaMandateReference: ").Append(SepaMandateReference).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
             sb.Append("  AddressContactIds: ").Append(AddressContactIds).Append("\n");
@@ -195,6 +225,20 @@ namespace Simplic.OxS.SDK.ERP
                     this.VatId == input.VatId ||
                     (this.VatId != null &&
                     this.VatId.Equals(input.VatId))
+                ) && 
+                (
+                    this.BuyerReference == input.BuyerReference ||
+                    (this.BuyerReference != null &&
+                    this.BuyerReference.Equals(input.BuyerReference))
+                ) && 
+                (
+                    this.UseBuyerReferenceAsLeitwegId == input.UseBuyerReferenceAsLeitwegId ||
+                    this.UseBuyerReferenceAsLeitwegId.Equals(input.UseBuyerReferenceAsLeitwegId)
+                ) && 
+                (
+                    this.SepaMandateReference == input.SepaMandateReference ||
+                    (this.SepaMandateReference != null &&
+                    this.SepaMandateReference.Equals(input.SepaMandateReference))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -254,6 +298,15 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.VatId != null)
                 {
                     hashCode = (hashCode * 59) + this.VatId.GetHashCode();
+                }
+                if (this.BuyerReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.BuyerReference.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.UseBuyerReferenceAsLeitwegId.GetHashCode();
+                if (this.SepaMandateReference != null)
+                {
+                    hashCode = (hashCode * 59) + this.SepaMandateReference.GetHashCode();
                 }
                 if (this.Type != null)
                 {

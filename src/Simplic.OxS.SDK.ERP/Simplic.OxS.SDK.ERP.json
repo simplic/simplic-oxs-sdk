@@ -17354,6 +17354,20 @@
                         "description": "Gets or sets the vat id.",
                         "nullable": true
                     },
+                    "buyerReference": {
+                        "type": "string",
+                        "description": "Gets or sets the buyer reference.",
+                        "nullable": true
+                    },
+                    "useBuyerReferenceAsLeitwegId": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the buyer reference should also be used as Leitweg-ID."
+                    },
+                    "sepaMandateReference": {
+                        "type": "string",
+                        "description": "Gets or sets the SEPA mandate reference.",
+                        "nullable": true
+                    },
                     "type": {
                         "type": "string",
                         "description": "Gets or sets the personal account type. (creditor / debitor)",
@@ -21583,6 +21597,20 @@
                         "description": "Gets or sets the vat id.",
                         "nullable": true
                     },
+                    "buyerReference": {
+                        "type": "string",
+                        "description": "Gets or sets the buyer reference.",
+                        "nullable": true
+                    },
+                    "useBuyerReferenceAsLeitwegId": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the buyer reference should also be used as Leitweg-ID."
+                    },
+                    "sepaMandateReference": {
+                        "type": "string",
+                        "description": "Gets or sets the SEPA mandate reference.",
+                        "nullable": true
+                    },
                     "type": {
                         "type": "string",
                         "description": "Gets or sets the personal account type. (creditor / debitor)",
@@ -25439,6 +25467,20 @@
                     "vatId": {
                         "type": "string",
                         "description": "Gets or sets the vat id.",
+                        "nullable": true
+                    },
+                    "buyerReference": {
+                        "type": "string",
+                        "description": "Gets or sets the buyer reference.",
+                        "nullable": true
+                    },
+                    "useBuyerReferenceAsLeitwegId": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the buyer reference should also be used as Leitweg-ID."
+                    },
+                    "sepaMandateReference": {
+                        "type": "string",
+                        "description": "Gets or sets the SEPA mandate reference.",
                         "nullable": true
                     },
                     "type": {
