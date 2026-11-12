@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Type** | **InvoiceType** |  | [optional] 
 **Items** | [**List&lt;InvoiceItemRequest&gt;**](InvoiceItemRequest.md) | Gets or sets the set of invoice items. | [optional] 
 **AdditionalReferencedDocuments** | [**List&lt;AdditionalReferencedDocumentRequest&gt;**](AdditionalReferencedDocumentRequest.md) | Gets or sets the set of additional referenced documents. | [optional] 
+**InvoiceReferencedDocument** | [**InvoiceReferencedDocumentRequest**](InvoiceReferencedDocumentRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

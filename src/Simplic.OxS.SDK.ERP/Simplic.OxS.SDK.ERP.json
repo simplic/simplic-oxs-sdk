@@ -18978,6 +18978,9 @@
                         },
                         "description": "Gets or sets the set of additional referenced documents.",
                         "nullable": true
+                    },
+                    "invoiceReferencedDocument": {
+                        "$ref": "#/components/schemas/InvoiceReferencedDocumentRequest"
                     }
                 },
                 "additionalProperties": false,
@@ -19039,6 +19042,27 @@
                 },
                 "additionalProperties": false,
                 "description": "Represents the request object for an electronic invoice item."
+            },
+            "InvoiceReferencedDocumentRequest": {
+                "required": [
+                    "id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the number of the referenced invoice."
+                    },
+                    "issueDateTime": {
+                        "type": "string",
+                        "description": "Gets or sets the issue date of the referenced invoice.",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a reference to a preceding invoice (e.g. for cancellations)."
             },
             "InvoiceType": {
                 "enum": [

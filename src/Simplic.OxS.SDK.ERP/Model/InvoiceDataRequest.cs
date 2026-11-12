@@ -67,7 +67,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="type">type.</param>
         /// <param name="items">Gets or sets the set of invoice items..</param>
         /// <param name="additionalReferencedDocuments">Gets or sets the set of additional referenced documents..</param>
-        public InvoiceDataRequest(string number = default(string), DateTime invoiceDate = default(DateTime), DateTime deliveryDate = default(DateTime), BillingPeriodRequest billingPeriod = default(BillingPeriodRequest), CurrencyCode? currency = default(CurrencyCode?), string businessProcess = default(string), string referenceNumber = default(string), string buyerReference = default(string), PartyRequest buyer = default(PartyRequest), PartyRequest seller = default(PartyRequest), List<BankAccountRequest> debitorBankAccounts = default(List<BankAccountRequest>), List<BankAccountRequest> creditorBankAccounts = default(List<BankAccountRequest>), List<string> notes = default(List<string>), ElectronicInvoicingPaymentMethodRequest paymentMethod = default(ElectronicInvoicingPaymentMethodRequest), ElectronicInvoicingTermsOfPaymentRequest termsOfPayment = default(ElectronicInvoicingTermsOfPaymentRequest), List<TaxRequest> taxes = default(List<TaxRequest>), InvoiceType? type = default(InvoiceType?), List<InvoiceItemRequest> items = default(List<InvoiceItemRequest>), List<AdditionalReferencedDocumentRequest> additionalReferencedDocuments = default(List<AdditionalReferencedDocumentRequest>))
+        /// <param name="invoiceReferencedDocument">invoiceReferencedDocument.</param>
+        public InvoiceDataRequest(string number = default(string), DateTime invoiceDate = default(DateTime), DateTime deliveryDate = default(DateTime), BillingPeriodRequest billingPeriod = default(BillingPeriodRequest), CurrencyCode? currency = default(CurrencyCode?), string businessProcess = default(string), string referenceNumber = default(string), string buyerReference = default(string), PartyRequest buyer = default(PartyRequest), PartyRequest seller = default(PartyRequest), List<BankAccountRequest> debitorBankAccounts = default(List<BankAccountRequest>), List<BankAccountRequest> creditorBankAccounts = default(List<BankAccountRequest>), List<string> notes = default(List<string>), ElectronicInvoicingPaymentMethodRequest paymentMethod = default(ElectronicInvoicingPaymentMethodRequest), ElectronicInvoicingTermsOfPaymentRequest termsOfPayment = default(ElectronicInvoicingTermsOfPaymentRequest), List<TaxRequest> taxes = default(List<TaxRequest>), InvoiceType? type = default(InvoiceType?), List<InvoiceItemRequest> items = default(List<InvoiceItemRequest>), List<AdditionalReferencedDocumentRequest> additionalReferencedDocuments = default(List<AdditionalReferencedDocumentRequest>), InvoiceReferencedDocumentRequest invoiceReferencedDocument = default(InvoiceReferencedDocumentRequest))
         {
             this.Number = number;
             this.InvoiceDate = invoiceDate;
@@ -88,6 +89,7 @@ namespace Simplic.OxS.SDK.ERP
             this.Type = type;
             this.Items = items;
             this.AdditionalReferencedDocuments = additionalReferencedDocuments;
+            this.InvoiceReferencedDocument = invoiceReferencedDocument;
         }
 
         /// <summary>
@@ -205,6 +207,12 @@ namespace Simplic.OxS.SDK.ERP
         public List<AdditionalReferencedDocumentRequest> AdditionalReferencedDocuments { get; set; }
 
         /// <summary>
+        /// Gets or Sets InvoiceReferencedDocument
+        /// </summary>
+        [DataMember(Name = "invoiceReferencedDocument", EmitDefaultValue = false)]
+        public InvoiceReferencedDocumentRequest InvoiceReferencedDocument { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -231,6 +239,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  AdditionalReferencedDocuments: ").Append(AdditionalReferencedDocuments).Append("\n");
+            sb.Append("  InvoiceReferencedDocument: ").Append(InvoiceReferencedDocument).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -364,6 +373,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.AdditionalReferencedDocuments != null &&
                     input.AdditionalReferencedDocuments != null &&
                     this.AdditionalReferencedDocuments.SequenceEqual(input.AdditionalReferencedDocuments)
+                ) && 
+                (
+                    this.InvoiceReferencedDocument == input.InvoiceReferencedDocument ||
+                    (this.InvoiceReferencedDocument != null &&
+                    this.InvoiceReferencedDocument.Equals(input.InvoiceReferencedDocument))
                 );
         }
 
@@ -445,6 +459,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.AdditionalReferencedDocuments != null)
                 {
                     hashCode = (hashCode * 59) + this.AdditionalReferencedDocuments.GetHashCode();
+                }
+                if (this.InvoiceReferencedDocument != null)
+                {
+                    hashCode = (hashCode * 59) + this.InvoiceReferencedDocument.GetHashCode();
                 }
                 return hashCode;
             }
