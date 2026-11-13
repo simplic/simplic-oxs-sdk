@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Ident** | **int** |  | [optional] 
 **ShortName** | **string** |  | [optional] 
+**Code** | **string** |  | [optional] 
 **Digits** | **int** |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **OrganizationId** | **Guid** |  | [optional] 

@@ -39,6 +39,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="name">name.</param>
         /// <param name="ident">ident.</param>
         /// <param name="shortName">shortName.</param>
+        /// <param name="code">code.</param>
         /// <param name="digits">digits.</param>
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
@@ -49,11 +50,12 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public QuantityUnitModel(string name = default(string), int ident = default(int), string shortName = default(string), int digits = default(int), Guid id = default(Guid), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
+        public QuantityUnitModel(string name = default(string), int ident = default(int), string shortName = default(string), string code = default(string), int digits = default(int), Guid id = default(Guid), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
         {
             this.Name = name;
             this.Ident = ident;
             this.ShortName = shortName;
+            this.Code = code;
             this.Digits = digits;
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -83,6 +85,12 @@ namespace Simplic.OxS.SDK.Article
         /// </summary>
         [DataMember(Name = "shortName", EmitDefaultValue = true)]
         public string ShortName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Code
+        /// </summary>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Digits
@@ -155,6 +163,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Ident: ").Append(Ident).Append("\n");
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Digits: ").Append(Digits).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
@@ -213,6 +222,11 @@ namespace Simplic.OxS.SDK.Article
                     this.ShortName == input.ShortName ||
                     (this.ShortName != null &&
                     this.ShortName.Equals(input.ShortName))
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 ) && 
                 (
                     this.Digits == input.Digits ||
@@ -281,6 +295,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.ShortName != null)
                 {
                     hashCode = (hashCode * 59) + this.ShortName.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Digits.GetHashCode();
                 if (this.Id != null)

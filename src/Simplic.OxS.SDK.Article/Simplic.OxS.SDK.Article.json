@@ -2671,6 +2671,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "code": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "digits": {
                         "type": "integer",
                         "format": "int32"
@@ -2830,6 +2834,10 @@
                         "format": "int32"
                     },
                     "shortName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "code": {
                         "type": "string",
                         "nullable": true
                     },
@@ -3110,6 +3118,10 @@
                         "format": "int32"
                     },
                     "shortName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "code": {
                         "type": "string",
                         "nullable": true
                     },

@@ -39,12 +39,14 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="name">name.</param>
         /// <param name="ident">ident.</param>
         /// <param name="shortName">shortName.</param>
+        /// <param name="code">code.</param>
         /// <param name="digits">digits.</param>
-        public CreateQuantityUnitRequest(string name = default(string), int ident = default(int), string shortName = default(string), int digits = default(int))
+        public CreateQuantityUnitRequest(string name = default(string), int ident = default(int), string shortName = default(string), string code = default(string), int digits = default(int))
         {
             this.Name = name;
             this.Ident = ident;
             this.ShortName = shortName;
+            this.Code = code;
             this.Digits = digits;
         }
 
@@ -67,6 +69,12 @@ namespace Simplic.OxS.SDK.Article
         public string ShortName { get; set; }
 
         /// <summary>
+        /// Gets or Sets Code
+        /// </summary>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// Gets or Sets Digits
         /// </summary>
         [DataMember(Name = "digits", EmitDefaultValue = false)]
@@ -83,6 +91,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Ident: ").Append(Ident).Append("\n");
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Digits: ").Append(Digits).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -134,6 +143,11 @@ namespace Simplic.OxS.SDK.Article
                     this.ShortName.Equals(input.ShortName))
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.Digits == input.Digits ||
                     this.Digits.Equals(input.Digits)
                 );
@@ -156,6 +170,10 @@ namespace Simplic.OxS.SDK.Article
                 if (this.ShortName != null)
                 {
                     hashCode = (hashCode * 59) + this.ShortName.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Digits.GetHashCode();
                 return hashCode;
