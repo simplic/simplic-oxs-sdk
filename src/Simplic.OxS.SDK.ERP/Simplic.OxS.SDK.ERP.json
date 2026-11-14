@@ -22237,6 +22237,11 @@
                         "type": "string",
                         "description": "Gets or sets the short name.",
                         "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Gets or sets the quantity code.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,

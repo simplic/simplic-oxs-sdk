@@ -39,11 +39,13 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="id">Gets or sets the ID..</param>
         /// <param name="name">Gets or sets the name..</param>
         /// <param name="shortName">Gets or sets the short name..</param>
-        public QuantityUnitModel(Guid id = default(Guid), string name = default(string), string shortName = default(string))
+        /// <param name="code">Gets or sets the quantity code..</param>
+        public QuantityUnitModel(Guid id = default(Guid), string name = default(string), string shortName = default(string), string code = default(string))
         {
             this.Id = id;
             this.Name = name;
             this.ShortName = shortName;
+            this.Code = code;
         }
 
         /// <summary>
@@ -68,6 +70,13 @@ namespace Simplic.OxS.SDK.ERP
         public string ShortName { get; set; }
 
         /// <summary>
+        /// Gets or sets the quantity code.
+        /// </summary>
+        /// <value>Gets or sets the quantity code.</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -78,6 +87,7 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,6 +137,11 @@ namespace Simplic.OxS.SDK.ERP
                     this.ShortName == input.ShortName ||
                     (this.ShortName != null &&
                     this.ShortName.Equals(input.ShortName))
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 );
         }
 
@@ -150,6 +165,10 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.ShortName != null)
                 {
                     hashCode = (hashCode * 59) + this.ShortName.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 return hashCode;
             }

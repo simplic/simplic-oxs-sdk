@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Id** | **Guid** | Gets or sets the ID. | [optional] 
 **Name** | **string** | Gets or sets the name. | [optional] 
 **ShortName** | **string** | Gets or sets the short name. | [optional] 
+**Code** | **string** | Gets or sets the quantity code. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
