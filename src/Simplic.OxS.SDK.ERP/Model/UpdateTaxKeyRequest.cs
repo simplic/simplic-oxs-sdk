@@ -43,7 +43,11 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="validFrom">Gets or sets the point in time this tax rate is valid from..</param>
         /// <param name="validTo">Gets or sets the point in time this tax rate is valid to..</param>
         /// <param name="buNumber">Gets or sets the BU number. This number is important for tax keys in germany..</param>
-        public UpdateTaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double? value = default(double?), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?), int? buNumber = default(int?))
+        /// <param name="eInvoiceTaxCategoryCode">Gets or sets the e-invoice tax category code..</param>
+        /// <param name="eInvoiceTaxExemptionReasonCode">Gets or sets the e-invoice tax exemption reason code..</param>
+        /// <param name="eInvoiceTaxExemptionReasonText">Gets or sets the e-invoice free-text tax exemption reason..</param>
+        /// <param name="eInvoiceTaxExemptionReasonIsFreeText">Gets or sets whether the tax exemption reason is entered as free text..</param>
+        public UpdateTaxKeyRequest(string name = default(string), Guid? taxGroupId = default(Guid?), Guid? taxRateId = default(Guid?), double? value = default(double?), DateTime? validFrom = default(DateTime?), DateTime? validTo = default(DateTime?), int? buNumber = default(int?), string eInvoiceTaxCategoryCode = default(string), string eInvoiceTaxExemptionReasonCode = default(string), string eInvoiceTaxExemptionReasonText = default(string), bool? eInvoiceTaxExemptionReasonIsFreeText = default(bool?))
         {
             this.Name = name;
             this.TaxGroupId = taxGroupId;
@@ -52,6 +56,10 @@ namespace Simplic.OxS.SDK.ERP
             this.ValidFrom = validFrom;
             this.ValidTo = validTo;
             this.BuNumber = buNumber;
+            this.EInvoiceTaxCategoryCode = eInvoiceTaxCategoryCode;
+            this.EInvoiceTaxExemptionReasonCode = eInvoiceTaxExemptionReasonCode;
+            this.EInvoiceTaxExemptionReasonText = eInvoiceTaxExemptionReasonText;
+            this.EInvoiceTaxExemptionReasonIsFreeText = eInvoiceTaxExemptionReasonIsFreeText;
         }
 
         /// <summary>
@@ -103,6 +111,34 @@ namespace Simplic.OxS.SDK.ERP
         public int? BuNumber { get; set; }
 
         /// <summary>
+        /// Gets or sets the e-invoice tax category code.
+        /// </summary>
+        /// <value>Gets or sets the e-invoice tax category code.</value>
+        [DataMember(Name = "eInvoiceTaxCategoryCode", EmitDefaultValue = true)]
+        public string EInvoiceTaxCategoryCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the e-invoice tax exemption reason code.
+        /// </summary>
+        /// <value>Gets or sets the e-invoice tax exemption reason code.</value>
+        [DataMember(Name = "eInvoiceTaxExemptionReasonCode", EmitDefaultValue = true)]
+        public string EInvoiceTaxExemptionReasonCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the e-invoice free-text tax exemption reason.
+        /// </summary>
+        /// <value>Gets or sets the e-invoice free-text tax exemption reason.</value>
+        [DataMember(Name = "eInvoiceTaxExemptionReasonText", EmitDefaultValue = true)]
+        public string EInvoiceTaxExemptionReasonText { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the tax exemption reason is entered as free text.
+        /// </summary>
+        /// <value>Gets or sets whether the tax exemption reason is entered as free text.</value>
+        [DataMember(Name = "eInvoiceTaxExemptionReasonIsFreeText", EmitDefaultValue = true)]
+        public bool? EInvoiceTaxExemptionReasonIsFreeText { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -117,6 +153,10 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  ValidTo: ").Append(ValidTo).Append("\n");
             sb.Append("  BuNumber: ").Append(BuNumber).Append("\n");
+            sb.Append("  EInvoiceTaxCategoryCode: ").Append(EInvoiceTaxCategoryCode).Append("\n");
+            sb.Append("  EInvoiceTaxExemptionReasonCode: ").Append(EInvoiceTaxExemptionReasonCode).Append("\n");
+            sb.Append("  EInvoiceTaxExemptionReasonText: ").Append(EInvoiceTaxExemptionReasonText).Append("\n");
+            sb.Append("  EInvoiceTaxExemptionReasonIsFreeText: ").Append(EInvoiceTaxExemptionReasonIsFreeText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -186,6 +226,26 @@ namespace Simplic.OxS.SDK.ERP
                     this.BuNumber == input.BuNumber ||
                     (this.BuNumber != null &&
                     this.BuNumber.Equals(input.BuNumber))
+                ) && 
+                (
+                    this.EInvoiceTaxCategoryCode == input.EInvoiceTaxCategoryCode ||
+                    (this.EInvoiceTaxCategoryCode != null &&
+                    this.EInvoiceTaxCategoryCode.Equals(input.EInvoiceTaxCategoryCode))
+                ) && 
+                (
+                    this.EInvoiceTaxExemptionReasonCode == input.EInvoiceTaxExemptionReasonCode ||
+                    (this.EInvoiceTaxExemptionReasonCode != null &&
+                    this.EInvoiceTaxExemptionReasonCode.Equals(input.EInvoiceTaxExemptionReasonCode))
+                ) && 
+                (
+                    this.EInvoiceTaxExemptionReasonText == input.EInvoiceTaxExemptionReasonText ||
+                    (this.EInvoiceTaxExemptionReasonText != null &&
+                    this.EInvoiceTaxExemptionReasonText.Equals(input.EInvoiceTaxExemptionReasonText))
+                ) && 
+                (
+                    this.EInvoiceTaxExemptionReasonIsFreeText == input.EInvoiceTaxExemptionReasonIsFreeText ||
+                    (this.EInvoiceTaxExemptionReasonIsFreeText != null &&
+                    this.EInvoiceTaxExemptionReasonIsFreeText.Equals(input.EInvoiceTaxExemptionReasonIsFreeText))
                 );
         }
 
@@ -226,6 +286,22 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.BuNumber.GetHashCode();
                 }
+                if (this.EInvoiceTaxCategoryCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceTaxCategoryCode.GetHashCode();
+                }
+                if (this.EInvoiceTaxExemptionReasonCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceTaxExemptionReasonCode.GetHashCode();
+                }
+                if (this.EInvoiceTaxExemptionReasonText != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceTaxExemptionReasonText.GetHashCode();
+                }
+                if (this.EInvoiceTaxExemptionReasonIsFreeText != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceTaxExemptionReasonIsFreeText.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -237,6 +313,42 @@ namespace Simplic.OxS.SDK.ERP
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // EInvoiceTaxCategoryCode (string) maxLength
+            if (this.EInvoiceTaxCategoryCode != null && this.EInvoiceTaxCategoryCode.Length > 10)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EInvoiceTaxCategoryCode, length must be less than 10.", new [] { "EInvoiceTaxCategoryCode" });
+            }
+
+            // EInvoiceTaxCategoryCode (string) minLength
+            if (this.EInvoiceTaxCategoryCode != null && this.EInvoiceTaxCategoryCode.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EInvoiceTaxCategoryCode, length must be greater than 1.", new [] { "EInvoiceTaxCategoryCode" });
+            }
+
+            // EInvoiceTaxExemptionReasonCode (string) maxLength
+            if (this.EInvoiceTaxExemptionReasonCode != null && this.EInvoiceTaxExemptionReasonCode.Length > 20)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EInvoiceTaxExemptionReasonCode, length must be less than 20.", new [] { "EInvoiceTaxExemptionReasonCode" });
+            }
+
+            // EInvoiceTaxExemptionReasonCode (string) minLength
+            if (this.EInvoiceTaxExemptionReasonCode != null && this.EInvoiceTaxExemptionReasonCode.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EInvoiceTaxExemptionReasonCode, length must be greater than 1.", new [] { "EInvoiceTaxExemptionReasonCode" });
+            }
+
+            // EInvoiceTaxExemptionReasonText (string) maxLength
+            if (this.EInvoiceTaxExemptionReasonText != null && this.EInvoiceTaxExemptionReasonText.Length > 512)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EInvoiceTaxExemptionReasonText, length must be less than 512.", new [] { "EInvoiceTaxExemptionReasonText" });
+            }
+
+            // EInvoiceTaxExemptionReasonText (string) minLength
+            if (this.EInvoiceTaxExemptionReasonText != null && this.EInvoiceTaxExemptionReasonText.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EInvoiceTaxExemptionReasonText, length must be greater than 1.", new [] { "EInvoiceTaxExemptionReasonText" });
+            }
+
             yield break;
         }
     }

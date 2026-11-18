@@ -44,13 +44,17 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="validFrom">Gets or sets the point in time this tax key is valid from..</param>
         /// <param name="validTo">Gets or sets the point in time this tax rate is valid to..</param>
         /// <param name="buNumber">Gets or sets the BU number. This number is important for tax keys in germany..</param>
+        /// <param name="eInvoiceTaxCategoryCode">Gets or sets the e-invoice tax category code..</param>
+        /// <param name="eInvoiceTaxExemptionReasonCode">Gets or sets the e-invoice tax exemption reason code..</param>
+        /// <param name="eInvoiceTaxExemptionReasonText">Gets or sets the e-invoice free-text tax exemption reason..</param>
+        /// <param name="eInvoiceTaxExemptionReasonIsFreeText">Gets or sets whether the tax exemption reason is entered as free text..</param>
         /// <param name="createDateTime">Gets or sets the date and time the tax key is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the tax key..</param>
         /// <param name="createUserName">Gets or sets the name of the user that created the tax key..</param>
         /// <param name="updateDateTime">Gets or sets the date and time the tax key is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the tax key..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the tax key..</param>
-        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxGroupSubsetModel taxGroup = default(TaxGroupSubsetModel), TaxRateSubsetModel taxRate = default(TaxRateSubsetModel), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?), int? buNumber = default(int?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public TaxKeyModel(Guid id = default(Guid), string name = default(string), TaxGroupSubsetModel taxGroup = default(TaxGroupSubsetModel), TaxRateSubsetModel taxRate = default(TaxRateSubsetModel), double value = default(double), DateTime validFrom = default(DateTime), DateTime? validTo = default(DateTime?), int? buNumber = default(int?), string eInvoiceTaxCategoryCode = default(string), string eInvoiceTaxExemptionReasonCode = default(string), string eInvoiceTaxExemptionReasonText = default(string), bool eInvoiceTaxExemptionReasonIsFreeText = default(bool), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -60,6 +64,10 @@ namespace Simplic.OxS.SDK.ERP
             this.ValidFrom = validFrom;
             this.ValidTo = validTo;
             this.BuNumber = buNumber;
+            this.EInvoiceTaxCategoryCode = eInvoiceTaxCategoryCode;
+            this.EInvoiceTaxExemptionReasonCode = eInvoiceTaxExemptionReasonCode;
+            this.EInvoiceTaxExemptionReasonText = eInvoiceTaxExemptionReasonText;
+            this.EInvoiceTaxExemptionReasonIsFreeText = eInvoiceTaxExemptionReasonIsFreeText;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -123,6 +131,34 @@ namespace Simplic.OxS.SDK.ERP
         public int? BuNumber { get; set; }
 
         /// <summary>
+        /// Gets or sets the e-invoice tax category code.
+        /// </summary>
+        /// <value>Gets or sets the e-invoice tax category code.</value>
+        [DataMember(Name = "eInvoiceTaxCategoryCode", EmitDefaultValue = true)]
+        public string EInvoiceTaxCategoryCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the e-invoice tax exemption reason code.
+        /// </summary>
+        /// <value>Gets or sets the e-invoice tax exemption reason code.</value>
+        [DataMember(Name = "eInvoiceTaxExemptionReasonCode", EmitDefaultValue = true)]
+        public string EInvoiceTaxExemptionReasonCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the e-invoice free-text tax exemption reason.
+        /// </summary>
+        /// <value>Gets or sets the e-invoice free-text tax exemption reason.</value>
+        [DataMember(Name = "eInvoiceTaxExemptionReasonText", EmitDefaultValue = true)]
+        public string EInvoiceTaxExemptionReasonText { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the tax exemption reason is entered as free text.
+        /// </summary>
+        /// <value>Gets or sets whether the tax exemption reason is entered as free text.</value>
+        [DataMember(Name = "eInvoiceTaxExemptionReasonIsFreeText", EmitDefaultValue = true)]
+        public bool EInvoiceTaxExemptionReasonIsFreeText { get; set; }
+
+        /// <summary>
         /// Gets or sets the date and time the tax key is created.
         /// </summary>
         /// <value>Gets or sets the date and time the tax key is created.</value>
@@ -180,6 +216,10 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  ValidFrom: ").Append(ValidFrom).Append("\n");
             sb.Append("  ValidTo: ").Append(ValidTo).Append("\n");
             sb.Append("  BuNumber: ").Append(BuNumber).Append("\n");
+            sb.Append("  EInvoiceTaxCategoryCode: ").Append(EInvoiceTaxCategoryCode).Append("\n");
+            sb.Append("  EInvoiceTaxExemptionReasonCode: ").Append(EInvoiceTaxExemptionReasonCode).Append("\n");
+            sb.Append("  EInvoiceTaxExemptionReasonText: ").Append(EInvoiceTaxExemptionReasonText).Append("\n");
+            sb.Append("  EInvoiceTaxExemptionReasonIsFreeText: ").Append(EInvoiceTaxExemptionReasonIsFreeText).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -261,6 +301,25 @@ namespace Simplic.OxS.SDK.ERP
                     this.BuNumber.Equals(input.BuNumber))
                 ) && 
                 (
+                    this.EInvoiceTaxCategoryCode == input.EInvoiceTaxCategoryCode ||
+                    (this.EInvoiceTaxCategoryCode != null &&
+                    this.EInvoiceTaxCategoryCode.Equals(input.EInvoiceTaxCategoryCode))
+                ) && 
+                (
+                    this.EInvoiceTaxExemptionReasonCode == input.EInvoiceTaxExemptionReasonCode ||
+                    (this.EInvoiceTaxExemptionReasonCode != null &&
+                    this.EInvoiceTaxExemptionReasonCode.Equals(input.EInvoiceTaxExemptionReasonCode))
+                ) && 
+                (
+                    this.EInvoiceTaxExemptionReasonText == input.EInvoiceTaxExemptionReasonText ||
+                    (this.EInvoiceTaxExemptionReasonText != null &&
+                    this.EInvoiceTaxExemptionReasonText.Equals(input.EInvoiceTaxExemptionReasonText))
+                ) && 
+                (
+                    this.EInvoiceTaxExemptionReasonIsFreeText == input.EInvoiceTaxExemptionReasonIsFreeText ||
+                    this.EInvoiceTaxExemptionReasonIsFreeText.Equals(input.EInvoiceTaxExemptionReasonIsFreeText)
+                ) && 
+                (
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
@@ -330,6 +389,19 @@ namespace Simplic.OxS.SDK.ERP
                 {
                     hashCode = (hashCode * 59) + this.BuNumber.GetHashCode();
                 }
+                if (this.EInvoiceTaxCategoryCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceTaxCategoryCode.GetHashCode();
+                }
+                if (this.EInvoiceTaxExemptionReasonCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceTaxExemptionReasonCode.GetHashCode();
+                }
+                if (this.EInvoiceTaxExemptionReasonText != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceTaxExemptionReasonText.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.EInvoiceTaxExemptionReasonIsFreeText.GetHashCode();
                 if (this.CreateDateTime != null)
                 {
                     hashCode = (hashCode * 59) + this.CreateDateTime.GetHashCode();

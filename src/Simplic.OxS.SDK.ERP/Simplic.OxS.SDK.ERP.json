@@ -10979,6 +10979,354 @@
                 }
             }
         },
+        "/TaxKey/e-invoice/tax-categories": {
+            "get": {
+                "tags": [
+                    "TaxKey"
+                ],
+                "summary": "Gets available e-invoice tax categories.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TaxKeyCodeOption"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TaxKeyCodeOption"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TaxKeyCodeOption"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TaxKey/e-invoice/exemption-reasons": {
+            "get": {
+                "tags": [
+                    "TaxKey"
+                ],
+                "summary": "Gets available e-invoice tax exemption reason options.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TaxKeyCodeOption"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TaxKeyCodeOption"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/TaxKeyCodeOption"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TaxKey/e-invoice/selection-info": {
+            "get": {
+                "tags": [
+                    "TaxKey"
+                ],
+                "summary": "Gets all e-invoice selection data for the frontend, including display and tooltip translation keys.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyEInvoiceSelectionInfo"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyEInvoiceSelectionInfo"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TaxKeyEInvoiceSelectionInfo"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/TaxRate": {
             "post": {
                 "tags": [
@@ -22761,6 +23109,40 @@
                 "additionalProperties": false,
                 "description": "Represents the shared model for Simplic.OxS.ERP.TaxGroupSubset."
             },
+            "TaxKeyCodeOption": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "displayKey": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TaxKeyEInvoiceSelectionInfo": {
+                "type": "object",
+                "properties": {
+                    "taxCategories": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxKeyCodeOption"
+                        },
+                        "nullable": true
+                    },
+                    "exemptionReasons": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxKeyCodeOption"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "TaxKeyModel": {
                 "type": "object",
                 "properties": {
@@ -22801,6 +23183,25 @@
                         "description": "Gets or sets the BU number.\nThis number is important for tax keys in germany.",
                         "format": "int32",
                         "nullable": true
+                    },
+                    "eInvoiceTaxCategoryCode": {
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice tax category code.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonCode": {
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice tax exemption reason code.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonText": {
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice free-text tax exemption reason.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonIsFreeText": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the tax exemption reason is entered as free text."
                     },
                     "createDateTime": {
                         "type": "string",
@@ -22884,6 +23285,31 @@
                         "description": "Gets or sets the BU number.\nThis number is important for tax keys in germany.",
                         "format": "int32",
                         "nullable": true
+                    },
+                    "eInvoiceTaxCategoryCode": {
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice tax category code.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonCode": {
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice tax exemption reason code.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonText": {
+                        "maxLength": 512,
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice free-text tax exemption reason.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonIsFreeText": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the tax exemption reason is entered as free text."
                     }
                 },
                 "additionalProperties": false,
@@ -25657,6 +26083,32 @@
                         "type": "integer",
                         "description": "Gets or sets the BU number.\nThis number is important for tax keys in germany.",
                         "format": "int32",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxCategoryCode": {
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice tax category code.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonCode": {
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice tax exemption reason code.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonText": {
+                        "maxLength": 512,
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice free-text tax exemption reason.",
+                        "nullable": true
+                    },
+                    "eInvoiceTaxExemptionReasonIsFreeText": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether the tax exemption reason is entered as free text.",
                         "nullable": true
                     }
                 },
