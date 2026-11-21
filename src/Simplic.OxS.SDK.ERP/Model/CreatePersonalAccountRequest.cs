@@ -48,7 +48,9 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="sepaMandateReference">Gets or sets the SEPA mandate reference..</param>
         /// <param name="type">Gets or sets the personal account type. (creditor / debitor).</param>
         /// <param name="creditLimit">creditLimit.</param>
-        public CreatePersonalAccountRequest(List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?), Guid? personalAccountGroupId = default(Guid?), string number = default(string), string vatId = default(string), string buyerReference = default(string), bool useBuyerReferenceAsLeitwegId = default(bool), string sepaMandateReference = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel))
+        /// <param name="bankAccounts">Gets or sets the bank accounts..</param>
+        /// <param name="eInvoiceType">Gets or sets the e-invoice type as open text (e.g. PDF, XML)..</param>
+        public CreatePersonalAccountRequest(List<Guid> addressContactIds = default(List<Guid>), Guid? saleTermsOfPaymentId = default(Guid?), Guid? purchaseTermsOfPaymentId = default(Guid?), Guid? taxGroupId = default(Guid?), Guid? personalAccountGroupId = default(Guid?), string number = default(string), string vatId = default(string), string buyerReference = default(string), bool useBuyerReferenceAsLeitwegId = default(bool), string sepaMandateReference = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<BankAccountModel> bankAccounts = default(List<BankAccountModel>), string eInvoiceType = default(string))
         {
             this.AddressContactIds = addressContactIds;
             this.SaleTermsOfPaymentId = saleTermsOfPaymentId;
@@ -62,6 +64,8 @@ namespace Simplic.OxS.SDK.ERP
             this.SepaMandateReference = sepaMandateReference;
             this.Type = type;
             this.CreditLimit = creditLimit;
+            this.BankAccounts = bankAccounts;
+            this.EInvoiceType = eInvoiceType;
         }
 
         /// <summary>
@@ -148,6 +152,20 @@ namespace Simplic.OxS.SDK.ERP
         public CreditLimitModel CreditLimit { get; set; }
 
         /// <summary>
+        /// Gets or sets the bank accounts.
+        /// </summary>
+        /// <value>Gets or sets the bank accounts.</value>
+        [DataMember(Name = "bankAccounts", EmitDefaultValue = true)]
+        public List<BankAccountModel> BankAccounts { get; set; }
+
+        /// <summary>
+        /// Gets or sets the e-invoice type as open text (e.g. PDF, XML).
+        /// </summary>
+        /// <value>Gets or sets the e-invoice type as open text (e.g. PDF, XML).</value>
+        [DataMember(Name = "eInvoiceType", EmitDefaultValue = true)]
+        public string EInvoiceType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -167,6 +185,8 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SepaMandateReference: ").Append(SepaMandateReference).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
+            sb.Append("  BankAccounts: ").Append(BankAccounts).Append("\n");
+            sb.Append("  EInvoiceType: ").Append(EInvoiceType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -261,6 +281,17 @@ namespace Simplic.OxS.SDK.ERP
                     this.CreditLimit == input.CreditLimit ||
                     (this.CreditLimit != null &&
                     this.CreditLimit.Equals(input.CreditLimit))
+                ) && 
+                (
+                    this.BankAccounts == input.BankAccounts ||
+                    this.BankAccounts != null &&
+                    input.BankAccounts != null &&
+                    this.BankAccounts.SequenceEqual(input.BankAccounts)
+                ) && 
+                (
+                    this.EInvoiceType == input.EInvoiceType ||
+                    (this.EInvoiceType != null &&
+                    this.EInvoiceType.Equals(input.EInvoiceType))
                 );
         }
 
@@ -317,6 +348,14 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CreditLimit != null)
                 {
                     hashCode = (hashCode * 59) + this.CreditLimit.GetHashCode();
+                }
+                if (this.BankAccounts != null)
+                {
+                    hashCode = (hashCode * 59) + this.BankAccounts.GetHashCode();
+                }
+                if (this.EInvoiceType != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceType.GetHashCode();
                 }
                 return hashCode;
             }

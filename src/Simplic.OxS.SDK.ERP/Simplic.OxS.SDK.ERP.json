@@ -16585,6 +16585,35 @@
                 },
                 "additionalProperties": false
             },
+            "BankAccountModel": {
+                "type": "object",
+                "properties": {
+                    "bank": {
+                        "$ref": "#/components/schemas/BankModel"
+                    },
+                    "iban": {
+                        "type": "string",
+                        "description": "Gets or sets the iban.",
+                        "nullable": true
+                    },
+                    "accountNumber": {
+                        "type": "string",
+                        "description": "Gets or sets the account number.",
+                        "nullable": true
+                    },
+                    "accountHolder": {
+                        "type": "string",
+                        "description": "Gets or sets the account holder.",
+                        "nullable": true
+                    },
+                    "isDefault": {
+                        "type": "boolean",
+                        "description": "Gets or sets whether this is the default account."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Represents a bank account assigned to a personal account."
+            },
             "BankAccountRequest": {
                 "type": "object",
                 "properties": {
@@ -17723,6 +17752,19 @@
                     },
                     "creditLimit": {
                         "$ref": "#/components/schemas/CreditLimitModel"
+                    },
+                    "bankAccounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BankAccountModel"
+                        },
+                        "description": "Gets or sets the bank accounts.",
+                        "nullable": true
+                    },
+                    "eInvoiceType": {
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice type as open text (e.g. PDF, XML).",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -21991,6 +22033,19 @@
                     "creditLimit": {
                         "$ref": "#/components/schemas/CreditLimitModel"
                     },
+                    "bankAccounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BankAccountModel"
+                        },
+                        "description": "Gets or sets the bank accounts.",
+                        "nullable": true
+                    },
+                    "eInvoiceType": {
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice type as open text (e.g. PDF, XML).",
+                        "nullable": true
+                    },
                     "saleTermsOfPayment": {
                         "$ref": "#/components/schemas/TermsOfPaymentModel"
                     },
@@ -25945,6 +26000,19 @@
                     },
                     "creditLimit": {
                         "$ref": "#/components/schemas/CreditLimitModel"
+                    },
+                    "bankAccounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BankAccountModel"
+                        },
+                        "description": "Gets or sets the bank accounts.",
+                        "nullable": true
+                    },
+                    "eInvoiceType": {
+                        "type": "string",
+                        "description": "Gets or sets the e-invoice type as open text (e.g. PDF, XML).",
+                        "nullable": true
                     },
                     "addressContactIds": {
                         "type": "array",

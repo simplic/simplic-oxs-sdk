@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **SepaMandateReference** | **string** | Gets or sets the SEPA mandate reference. | [optional] 
 **Type** | **string** | Gets or sets the personal account type. (creditor / debitor) | [optional] 
 **CreditLimit** | [**CreditLimitModel**](CreditLimitModel.md) |  | [optional] 
+**BankAccounts** | [**List&lt;BankAccountModel&gt;**](BankAccountModel.md) | Gets or sets the bank accounts. | [optional] 
+**EInvoiceType** | **string** | Gets or sets the e-invoice type as open text (e.g. PDF, XML). | [optional] 
 **SaleTermsOfPayment** | [**TermsOfPaymentModel**](TermsOfPaymentModel.md) |  | [optional] 
 **PurchaseTermsOfPayment** | [**TermsOfPaymentModel**](TermsOfPaymentModel.md) |  | [optional] 
 **TaxGroup** | [**TaxGroupModel**](TaxGroupModel.md) |  | [optional] 

@@ -44,6 +44,8 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="sepaMandateReference">Gets or sets the SEPA mandate reference..</param>
         /// <param name="type">Gets or sets the personal account type. (creditor / debitor).</param>
         /// <param name="creditLimit">creditLimit.</param>
+        /// <param name="bankAccounts">Gets or sets the bank accounts..</param>
+        /// <param name="eInvoiceType">Gets or sets the e-invoice type as open text (e.g. PDF, XML)..</param>
         /// <param name="saleTermsOfPayment">saleTermsOfPayment.</param>
         /// <param name="purchaseTermsOfPayment">purchaseTermsOfPayment.</param>
         /// <param name="taxGroup">taxGroup.</param>
@@ -55,7 +57,7 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="updateDateTime">Gets or sets the update date time..</param>
         /// <param name="updateUserId">Gets or sets the update user id..</param>
         /// <param name="updateUserName">Gets or sets the udate user name..</param>
-        public PersonalAccountModel(Guid id = default(Guid), string number = default(string), string vatId = default(string), string buyerReference = default(string), bool useBuyerReferenceAsLeitwegId = default(bool), string sepaMandateReference = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), TermsOfPaymentModel saleTermsOfPayment = default(TermsOfPaymentModel), TermsOfPaymentModel purchaseTermsOfPayment = default(TermsOfPaymentModel), TaxGroupModel taxGroup = default(TaxGroupModel), PersonalAccountGroupSubsetModel personalAccountGroup = default(PersonalAccountGroupSubsetModel), List<PersonalAccountAddressModel> addresses = default(List<PersonalAccountAddressModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public PersonalAccountModel(Guid id = default(Guid), string number = default(string), string vatId = default(string), string buyerReference = default(string), bool useBuyerReferenceAsLeitwegId = default(bool), string sepaMandateReference = default(string), string type = default(string), CreditLimitModel creditLimit = default(CreditLimitModel), List<BankAccountModel> bankAccounts = default(List<BankAccountModel>), string eInvoiceType = default(string), TermsOfPaymentModel saleTermsOfPayment = default(TermsOfPaymentModel), TermsOfPaymentModel purchaseTermsOfPayment = default(TermsOfPaymentModel), TaxGroupModel taxGroup = default(TaxGroupModel), PersonalAccountGroupSubsetModel personalAccountGroup = default(PersonalAccountGroupSubsetModel), List<PersonalAccountAddressModel> addresses = default(List<PersonalAccountAddressModel>), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.Number = number;
@@ -65,6 +67,8 @@ namespace Simplic.OxS.SDK.ERP
             this.SepaMandateReference = sepaMandateReference;
             this.Type = type;
             this.CreditLimit = creditLimit;
+            this.BankAccounts = bankAccounts;
+            this.EInvoiceType = eInvoiceType;
             this.SaleTermsOfPayment = saleTermsOfPayment;
             this.PurchaseTermsOfPayment = purchaseTermsOfPayment;
             this.TaxGroup = taxGroup;
@@ -132,6 +136,20 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         [DataMember(Name = "creditLimit", EmitDefaultValue = false)]
         public CreditLimitModel CreditLimit { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank accounts.
+        /// </summary>
+        /// <value>Gets or sets the bank accounts.</value>
+        [DataMember(Name = "bankAccounts", EmitDefaultValue = true)]
+        public List<BankAccountModel> BankAccounts { get; set; }
+
+        /// <summary>
+        /// Gets or sets the e-invoice type as open text (e.g. PDF, XML).
+        /// </summary>
+        /// <value>Gets or sets the e-invoice type as open text (e.g. PDF, XML).</value>
+        [DataMember(Name = "eInvoiceType", EmitDefaultValue = true)]
+        public string EInvoiceType { get; set; }
 
         /// <summary>
         /// Gets or Sets SaleTermsOfPayment
@@ -222,6 +240,8 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  SepaMandateReference: ").Append(SepaMandateReference).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  CreditLimit: ").Append(CreditLimit).Append("\n");
+            sb.Append("  BankAccounts: ").Append(BankAccounts).Append("\n");
+            sb.Append("  EInvoiceType: ").Append(EInvoiceType).Append("\n");
             sb.Append("  SaleTermsOfPayment: ").Append(SaleTermsOfPayment).Append("\n");
             sb.Append("  PurchaseTermsOfPayment: ").Append(PurchaseTermsOfPayment).Append("\n");
             sb.Append("  TaxGroup: ").Append(TaxGroup).Append("\n");
@@ -306,6 +326,17 @@ namespace Simplic.OxS.SDK.ERP
                     this.CreditLimit == input.CreditLimit ||
                     (this.CreditLimit != null &&
                     this.CreditLimit.Equals(input.CreditLimit))
+                ) && 
+                (
+                    this.BankAccounts == input.BankAccounts ||
+                    this.BankAccounts != null &&
+                    input.BankAccounts != null &&
+                    this.BankAccounts.SequenceEqual(input.BankAccounts)
+                ) && 
+                (
+                    this.EInvoiceType == input.EInvoiceType ||
+                    (this.EInvoiceType != null &&
+                    this.EInvoiceType.Equals(input.EInvoiceType))
                 ) && 
                 (
                     this.SaleTermsOfPayment == input.SaleTermsOfPayment ||
@@ -402,6 +433,14 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.CreditLimit != null)
                 {
                     hashCode = (hashCode * 59) + this.CreditLimit.GetHashCode();
+                }
+                if (this.BankAccounts != null)
+                {
+                    hashCode = (hashCode * 59) + this.BankAccounts.GetHashCode();
+                }
+                if (this.EInvoiceType != null)
+                {
+                    hashCode = (hashCode * 59) + this.EInvoiceType.GetHashCode();
                 }
                 if (this.SaleTermsOfPayment != null)
                 {
