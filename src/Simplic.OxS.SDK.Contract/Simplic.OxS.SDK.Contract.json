@@ -6232,6 +6232,9 @@
                     "priceUnit": {
                         "$ref": "#/components/schemas/QuantityUnitModel"
                     },
+                    "department": {
+                        "$ref": "#/components/schemas/DepartmentModel"
+                    },
                     "approved": {
                         "type": "boolean",
                         "description": "Gets or sets a value indicating whether the item has been approved."
@@ -6363,6 +6366,12 @@
                     "priceUnitId": {
                         "type": "string",
                         "description": "Gets or sets the id of the unit the price refers to.",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "departmentId": {
+                        "type": "string",
+                        "description": "Gets or sets the department id.",
                         "format": "uuid",
                         "nullable": true
                     },

@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **UnitPrice** | **double?** | Gets or sets the price for a single unit. | [optional] 
 **TotalPrice** | **double?** | Gets or sets the total price. | [optional] 
 **PriceUnit** | [**QuantityUnitModel**](QuantityUnitModel.md) |  | [optional] 
+**Department** | [**DepartmentModel**](DepartmentModel.md) |  | [optional] 
 **Approved** | **bool** | Gets or sets a value indicating whether the item has been approved. | [optional] 
 **ProductIsAvailable** | **bool** | Gets or sets a value indicating whether the product is available. | [optional] 
 **StartLoadDateTime** | **DateTime?** | Gets or sets the start date and time of the load. | [optional] 

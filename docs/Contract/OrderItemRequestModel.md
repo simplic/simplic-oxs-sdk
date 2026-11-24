@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **UnitPrice** | **double?** | Gets or sets the price for a single unit. | [optional] 
 **TotalPrice** | **double?** | Gets or sets the total price. | [optional] 
 **PriceUnitId** | **Guid?** | Gets or sets the id of the unit the price refers to. | [optional] 
+**DepartmentId** | **Guid?** | Gets or sets the department id. | [optional] 
 **Approved** | **bool?** | Gets or sets a value indicating whether the item has been approved. | [optional] 
 **ProductIsAvailable** | **bool?** | Gets or sets a value indicating whether the product is available. | [optional] 
 **StartLoadDateTime** | **DateTime?** | Gets or sets the start date and time of the load. | [optional] 

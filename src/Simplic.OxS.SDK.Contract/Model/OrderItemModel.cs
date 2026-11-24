@@ -55,13 +55,14 @@ namespace Simplic.OxS.SDK.Contract
         /// <param name="unitPrice">Gets or sets the price for a single unit..</param>
         /// <param name="totalPrice">Gets or sets the total price..</param>
         /// <param name="priceUnit">priceUnit.</param>
+        /// <param name="department">department.</param>
         /// <param name="approved">Gets or sets a value indicating whether the item has been approved..</param>
         /// <param name="productIsAvailable">Gets or sets a value indicating whether the product is available..</param>
         /// <param name="startLoadDateTime">Gets or sets the start date and time of the load..</param>
         /// <param name="endLoadDateTime">Gets or sets the end date and time of the load..</param>
         /// <param name="startDeliveryDateTime">Gets or sets the start date and time of the delivery..</param>
         /// <param name="endDeliveryDateTime">Gets or sets the end date and time of the delivery..</param>
-        public OrderItemModel(Guid id = default(Guid), int index = default(int), OrderItemContractReferenceModel contractItem = default(OrderItemContractReferenceModel), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), OrderQuantityModel transportationQuantity = default(OrderQuantityModel), OrderQuantityModel quantity = default(OrderQuantityModel), OrderQuantityModel bookedQuantity = default(OrderQuantityModel), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), QuantityUnitModel priceUnit = default(QuantityUnitModel), bool approved = default(bool), bool productIsAvailable = default(bool), DateTime? startLoadDateTime = default(DateTime?), DateTime? endLoadDateTime = default(DateTime?), DateTime? startDeliveryDateTime = default(DateTime?), DateTime? endDeliveryDateTime = default(DateTime?))
+        public OrderItemModel(Guid id = default(Guid), int index = default(int), OrderItemContractReferenceModel contractItem = default(OrderItemContractReferenceModel), Guid? articleId = default(Guid?), string articleName = default(string), string text = default(string), OrderQuantityModel transportationQuantity = default(OrderQuantityModel), OrderQuantityModel quantity = default(OrderQuantityModel), OrderQuantityModel bookedQuantity = default(OrderQuantityModel), string reference = default(string), string loadNumber = default(string), string deliveryNumber = default(string), string notes = default(string), string externalNotes = default(string), AddressModel loadAddress = default(AddressModel), AddressModel deliveryAddress = default(AddressModel), double? unitPrice = default(double?), double? totalPrice = default(double?), QuantityUnitModel priceUnit = default(QuantityUnitModel), DepartmentModel department = default(DepartmentModel), bool approved = default(bool), bool productIsAvailable = default(bool), DateTime? startLoadDateTime = default(DateTime?), DateTime? endLoadDateTime = default(DateTime?), DateTime? startDeliveryDateTime = default(DateTime?), DateTime? endDeliveryDateTime = default(DateTime?))
         {
             this.Id = id;
             this.Index = index;
@@ -82,6 +83,7 @@ namespace Simplic.OxS.SDK.Contract
             this.UnitPrice = unitPrice;
             this.TotalPrice = totalPrice;
             this.PriceUnit = priceUnit;
+            this.Department = department;
             this.Approved = approved;
             this.ProductIsAvailable = productIsAvailable;
             this.StartLoadDateTime = startLoadDateTime;
@@ -217,6 +219,12 @@ namespace Simplic.OxS.SDK.Contract
         public QuantityUnitModel PriceUnit { get; set; }
 
         /// <summary>
+        /// Gets or Sets Department
+        /// </summary>
+        [DataMember(Name = "department", EmitDefaultValue = false)]
+        public DepartmentModel Department { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether the item has been approved.
         /// </summary>
         /// <value>Gets or sets a value indicating whether the item has been approved.</value>
@@ -285,6 +293,7 @@ namespace Simplic.OxS.SDK.Contract
             sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  PriceUnit: ").Append(PriceUnit).Append("\n");
+            sb.Append("  Department: ").Append(Department).Append("\n");
             sb.Append("  Approved: ").Append(Approved).Append("\n");
             sb.Append("  ProductIsAvailable: ").Append(ProductIsAvailable).Append("\n");
             sb.Append("  StartLoadDateTime: ").Append(StartLoadDateTime).Append("\n");
@@ -421,6 +430,11 @@ namespace Simplic.OxS.SDK.Contract
                     this.PriceUnit.Equals(input.PriceUnit))
                 ) && 
                 (
+                    this.Department == input.Department ||
+                    (this.Department != null &&
+                    this.Department.Equals(input.Department))
+                ) && 
+                (
                     this.Approved == input.Approved ||
                     this.Approved.Equals(input.Approved)
                 ) && 
@@ -531,6 +545,10 @@ namespace Simplic.OxS.SDK.Contract
                 if (this.PriceUnit != null)
                 {
                     hashCode = (hashCode * 59) + this.PriceUnit.GetHashCode();
+                }
+                if (this.Department != null)
+                {
+                    hashCode = (hashCode * 59) + this.Department.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Approved.GetHashCode();
                 hashCode = (hashCode * 59) + this.ProductIsAvailable.GetHashCode();
