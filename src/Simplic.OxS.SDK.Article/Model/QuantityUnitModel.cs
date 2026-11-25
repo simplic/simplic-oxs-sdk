@@ -41,6 +41,7 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="shortName">shortName.</param>
         /// <param name="code">code.</param>
         /// <param name="digits">digits.</param>
+        /// <param name="isActive">isActive.</param>
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
         /// <param name="createDateTime">createDateTime.</param>
@@ -50,13 +51,14 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="updateUserId">updateUserId.</param>
         /// <param name="updateUserName">updateUserName.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public QuantityUnitModel(string name = default(string), int ident = default(int), string shortName = default(string), string code = default(string), int digits = default(int), Guid id = default(Guid), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
+        public QuantityUnitModel(string name = default(string), int ident = default(int), string shortName = default(string), string code = default(string), int digits = default(int), bool? isActive = default(bool?), Guid id = default(Guid), Guid organizationId = default(Guid), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string), bool isDeleted = default(bool))
         {
             this.Name = name;
             this.Ident = ident;
             this.ShortName = shortName;
             this.Code = code;
             this.Digits = digits;
+            this.IsActive = isActive;
             this.Id = id;
             this.OrganizationId = organizationId;
             this.CreateDateTime = createDateTime;
@@ -97,6 +99,12 @@ namespace Simplic.OxS.SDK.Article
         /// </summary>
         [DataMember(Name = "digits", EmitDefaultValue = false)]
         public int Digits { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsActive
+        /// </summary>
+        [DataMember(Name = "isActive", EmitDefaultValue = true)]
+        public bool? IsActive { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -165,6 +173,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Digits: ").Append(Digits).Append("\n");
+            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
@@ -231,6 +240,11 @@ namespace Simplic.OxS.SDK.Article
                 (
                     this.Digits == input.Digits ||
                     this.Digits.Equals(input.Digits)
+                ) && 
+                (
+                    this.IsActive == input.IsActive ||
+                    (this.IsActive != null &&
+                    this.IsActive.Equals(input.IsActive))
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -301,6 +315,10 @@ namespace Simplic.OxS.SDK.Article
                     hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Digits.GetHashCode();
+                if (this.IsActive != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
+                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();

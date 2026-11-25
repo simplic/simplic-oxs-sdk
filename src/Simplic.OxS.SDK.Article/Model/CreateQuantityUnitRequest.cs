@@ -41,13 +41,15 @@ namespace Simplic.OxS.SDK.Article
         /// <param name="shortName">shortName.</param>
         /// <param name="code">code.</param>
         /// <param name="digits">digits.</param>
-        public CreateQuantityUnitRequest(string name = default(string), int ident = default(int), string shortName = default(string), string code = default(string), int digits = default(int))
+        /// <param name="isActive">isActive.</param>
+        public CreateQuantityUnitRequest(string name = default(string), int ident = default(int), string shortName = default(string), string code = default(string), int digits = default(int), bool? isActive = default(bool?))
         {
             this.Name = name;
             this.Ident = ident;
             this.ShortName = shortName;
             this.Code = code;
             this.Digits = digits;
+            this.IsActive = isActive;
         }
 
         /// <summary>
@@ -81,6 +83,12 @@ namespace Simplic.OxS.SDK.Article
         public int Digits { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsActive
+        /// </summary>
+        [DataMember(Name = "isActive", EmitDefaultValue = true)]
+        public bool? IsActive { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +101,7 @@ namespace Simplic.OxS.SDK.Article
             sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Digits: ").Append(Digits).Append("\n");
+            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,6 +159,11 @@ namespace Simplic.OxS.SDK.Article
                 (
                     this.Digits == input.Digits ||
                     this.Digits.Equals(input.Digits)
+                ) && 
+                (
+                    this.IsActive == input.IsActive ||
+                    (this.IsActive != null &&
+                    this.IsActive.Equals(input.IsActive))
                 );
         }
 
@@ -176,6 +190,10 @@ namespace Simplic.OxS.SDK.Article
                     hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Digits.GetHashCode();
+                if (this.IsActive != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
+                }
                 return hashCode;
             }
         }

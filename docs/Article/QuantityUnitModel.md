@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ShortName** | **string** |  | [optional] 
 **Code** | **string** |  | [optional] 
 **Digits** | **int** |  | [optional] 
+**IsActive** | **bool?** |  | [optional] 
 **Id** | **Guid** |  | [optional] 
 **OrganizationId** | **Guid** |  | [optional] 
 **CreateDateTime** | **DateTime** |  | [optional] 

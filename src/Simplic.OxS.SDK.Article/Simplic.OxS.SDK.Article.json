@@ -1971,17 +1971,17 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/UpdateQuantityUnitRequest"
+                                "$ref": "#/components/schemas/PatchQuantityUnitDeploymentRequest"
                             }
                         },
                         "text/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/UpdateQuantityUnitRequest"
+                                "$ref": "#/components/schemas/PatchQuantityUnitDeploymentRequest"
                             }
                         },
                         "application/*+json": {
                             "schema": {
-                                "$ref": "#/components/schemas/UpdateQuantityUnitRequest"
+                                "$ref": "#/components/schemas/PatchQuantityUnitDeploymentRequest"
                             }
                         }
                     }
@@ -2678,6 +2678,10 @@
                     "digits": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "isActive": {
+                        "type": "boolean",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false
@@ -2795,6 +2799,38 @@
                 },
                 "additionalProperties": false
             },
+            "PatchQuantityUnitDeploymentRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ident": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "digits": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "isActive": {
+                        "type": "boolean",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
             "ProblemDetails": {
                 "type": "object",
                 "properties": {
@@ -2844,6 +2880,10 @@
                     "digits": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "isActive": {
+                        "type": "boolean",
+                        "nullable": true
                     },
                     "id": {
                         "type": "string",
@@ -3128,6 +3168,10 @@
                     "digits": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "isActive": {
+                        "type": "boolean",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false

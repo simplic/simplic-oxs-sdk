@@ -44,38 +44,38 @@ public interface IQuantityUnitDeploymentClient
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateQuantityUnitRequest"> (optional)</param>
+    /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
     /// <returns>QuantityUnitModel</returns>
-    QuantityUnitModel Patch(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?));
+    QuantityUnitModel Patch(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateQuantityUnitRequest"> (optional)</param>
+    /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
     /// <returns>ApiResponse of QuantityUnitModel</returns>
-    ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?));
+    ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?));
         
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateQuantityUnitRequest"> (optional)</param>
+    /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of QuantityUnitModel</returns>
-    Task<QuantityUnitModel> PatchAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<QuantityUnitModel> PatchAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
     /// <summary>
     ///  
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
     /// <param name="id"></param>
-    /// <param name="updateQuantityUnitRequest"> (optional)</param>
+    /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
     /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
     /// <returns>Task of ApiResponse (QuantityUnitModel)</returns>
-    Task<ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), CancellationToken cancellationToken = default(CancellationToken));
+    Task<ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
 
     /// <summary>
@@ -192,13 +192,13 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <returns>QuantityUnitModel</returns>
-        public QuantityUnitModel Patch(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?))
+        public QuantityUnitModel Patch(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?))
         {
             try
             {
-                return _internalClient.Patch(id, updateQuantityUnitRequest);
+                return _internalClient.Patch(id, patchQuantityUnitDeploymentRequest);
             }
             catch (ApiException e)
             {
@@ -211,13 +211,13 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <returns>ApiResponse of QuantityUnitModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?))
+        public Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfo(id, updateQuantityUnitRequest);
+                return _internalClient.PatchWithHttpInfo(id, patchQuantityUnitDeploymentRequest);
             }
             catch (ApiException e)
             {
@@ -230,14 +230,14 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuantityUnitModel</returns>
-        public System.Threading.Tasks.Task<QuantityUnitModel> PatchAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<QuantityUnitModel> PatchAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchAsync(id, updateQuantityUnitRequest, cancellationToken: cancellationToken);
+                return _internalClient.PatchAsync(id, patchQuantityUnitDeploymentRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -250,14 +250,14 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuantityUnitModel)</returns>
-        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             try
             {
-                return _internalClient.PatchWithHttpInfoAsync(id, updateQuantityUnitRequest, cancellationToken: cancellationToken);
+                return _internalClient.PatchWithHttpInfoAsync(id, patchQuantityUnitDeploymentRequest, cancellationToken: cancellationToken);
             }
             catch (ApiException e)
             {
@@ -355,10 +355,10 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>QuantityUnitModel</returns>
-        QuantityUnitModel Patch(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0);
+        QuantityUnitModel Patch(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -368,10 +368,10 @@ public interface IQuantityUnitDeploymentClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of QuantityUnitModel</returns>
-        ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0);
+        ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -409,11 +409,11 @@ public interface IQuantityUnitDeploymentClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuantityUnitModel</returns>
-        System.Threading.Tasks.Task<QuantityUnitModel> PatchAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QuantityUnitModel> PatchAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -423,11 +423,11 @@ public interface IQuantityUnitDeploymentClient
         /// </remarks>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuantityUnitModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -580,12 +580,12 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>QuantityUnitModel</returns>
-        public QuantityUnitModel Patch(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0)
+        public QuantityUnitModel Patch(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0)
         {
-            Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> localVarResponse = PatchWithHttpInfo(id, updateQuantityUnitRequest);
+            Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> localVarResponse = PatchWithHttpInfo(id, patchQuantityUnitDeploymentRequest);
             return localVarResponse.Data;
         }
 
@@ -594,10 +594,10 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of QuantityUnitModel</returns>
-        public Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0)
+        public Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> PatchWithHttpInfo(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0)
         {
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
 
@@ -627,7 +627,7 @@ public interface IQuantityUnitDeploymentClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateQuantityUnitRequest;
+            localVarRequestOptions.Data = patchQuantityUnitDeploymentRequest;
 
             localVarRequestOptions.Operation = "QuantityUnitDeploymentClient.QuantityUnitDeploymentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -663,13 +663,13 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuantityUnitModel</returns>
-        public async System.Threading.Tasks.Task<QuantityUnitModel> PatchAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QuantityUnitModel> PatchAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> localVarResponse = await PatchWithHttpInfoAsync(id, updateQuantityUnitRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Simplic.OxS.SDK.ApiResponse<QuantityUnitModel> localVarResponse = await PatchWithHttpInfoAsync(id, patchQuantityUnitDeploymentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -678,11 +678,11 @@ public interface IQuantityUnitDeploymentClient
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="updateQuantityUnitRequest"> (optional)</param>
+        /// <param name="patchQuantityUnitDeploymentRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuantityUnitModel)</returns>
-        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = default(UpdateQuantityUnitRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<QuantityUnitModel>> PatchWithHttpInfoAsync(Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = default(PatchQuantityUnitDeploymentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
@@ -713,7 +713,7 @@ public interface IQuantityUnitDeploymentClient
             }
 
             localVarRequestOptions.PathParameters.Add("id", Simplic.OxS.SDK.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateQuantityUnitRequest;
+            localVarRequestOptions.Data = patchQuantityUnitDeploymentRequest;
 
             localVarRequestOptions.Operation = "QuantityUnitDeploymentClient.QuantityUnitDeploymentIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;

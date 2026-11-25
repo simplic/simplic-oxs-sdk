@@ -9,7 +9,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/article-api/v1*
 
 <a id="quantityunitdeploymentidpatch"></a>
 # **Patch**
-> QuantityUnitModel Patch (Guid id, UpdateQuantityUnitRequest? updateQuantityUnitRequest = null)
+> QuantityUnitModel Patch (Guid id, PatchQuantityUnitDeploymentRequest? patchQuantityUnitDeploymentRequest = null)
 
 
 
@@ -37,11 +37,11 @@ namespace Example
 
             var apiInstance = new QuantityUnitDeploymentClient(config);
             var id = "id_example";  // Guid | 
-            var updateQuantityUnitRequest = new UpdateQuantityUnitRequest?(); // UpdateQuantityUnitRequest? |  (optional) 
+            var patchQuantityUnitDeploymentRequest = new PatchQuantityUnitDeploymentRequest?(); // PatchQuantityUnitDeploymentRequest? |  (optional) 
 
             try
             {
-                QuantityUnitModel result = apiInstance.Patch(id, updateQuantityUnitRequest);
+                QuantityUnitModel result = apiInstance.Patch(id, patchQuantityUnitDeploymentRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -61,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<QuantityUnitModel> response = apiInstance.PatchWithHttpInfo(id, updateQuantityUnitRequest);
+    ApiResponse<QuantityUnitModel> response = apiInstance.PatchWithHttpInfo(id, patchQuantityUnitDeploymentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -79,7 +79,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **Guid** |  |  |
-| **updateQuantityUnitRequest** | [**UpdateQuantityUnitRequest?**](UpdateQuantityUnitRequest?.md) |  | [optional]  |
+| **patchQuantityUnitDeploymentRequest** | [**PatchQuantityUnitDeploymentRequest?**](PatchQuantityUnitDeploymentRequest?.md) |  | [optional]  |
 
 ### Return type
 

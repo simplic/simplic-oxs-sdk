@@ -1,0 +1,15 @@
+# Simplic.OxS.SDK.Article.PatchQuantityUnitDeploymentRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Name** | **string** |  | [optional] 
+**Ident** | **int?** |  | [optional] 
+**ShortName** | **string** |  | [optional] 
+**Code** | **string** |  | [optional] 
+**Digits** | **int?** |  | [optional] 
+**IsActive** | **bool?** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
