@@ -182,6 +182,37 @@ public interface IPaymentMethodClient
     /// <returns>Task of ApiResponse (PaymentMethodModel)</returns>
     Task<ApiResponse<PaymentMethodModel>> PostWithHttpInfoAsync(PaymentMethodRequest? paymentMethodRequest = default(PaymentMethodRequest?), CancellationToken cancellationToken = default(CancellationToken));
 
+
+    /// <summary>
+    /// Gets available payment method types for UI selection. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>List&lt;PaymentMethodTypeOption&gt;</returns>
+    List<PaymentMethodTypeOption> Types();
+
+    /// <summary>
+    /// Gets available payment method types for UI selection. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of List&lt;PaymentMethodTypeOption&gt;</returns>
+    ApiResponse<List<PaymentMethodTypeOption>> TypesWithHttpInfo();
+        
+    /// <summary>
+    /// Gets available payment method types for UI selection. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of List&lt;PaymentMethodTypeOption&gt;</returns>
+    Task<List<PaymentMethodTypeOption>> TypesAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Gets available payment method types for UI selection. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (List&lt;PaymentMethodTypeOption&gt;)</returns>
+    Task<ApiResponse<List<PaymentMethodTypeOption>>> TypesWithHttpInfoAsync(CancellationToken cancellationToken = default(CancellationToken));
+
 }
 
 
@@ -553,6 +584,75 @@ public interface IPaymentMethodClient
                 throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
             }
         }    
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;PaymentMethodTypeOption&gt;</returns>
+        public List<PaymentMethodTypeOption> Types()
+        {
+            try
+            {
+                return _internalClient.Types();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;PaymentMethodTypeOption&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<PaymentMethodTypeOption>> TypesWithHttpInfo()
+        {
+            try
+            {
+                return _internalClient.TypesWithHttpInfo();
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PaymentMethodTypeOption&gt;</returns>
+        public System.Threading.Tasks.Task<List<PaymentMethodTypeOption>> TypesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TypesAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PaymentMethodTypeOption&gt;)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PaymentMethodTypeOption>>> TypesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.TypesWithHttpInfoAsync(cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
 
         private string FormatErrorMessage(string message, int errorCode) => $"<{errorCode} - {(HttpStatusCode)errorCode}> {message}";
     }
@@ -648,6 +748,24 @@ public interface IPaymentMethodClient
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentMethodModel</returns>
         ApiResponse<PaymentMethodModel> PostWithHttpInfo(PaymentMethodRequest? paymentMethodRequest = default(PaymentMethodRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Gets available payment method types for UI selection.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PaymentMethodTypeOption&gt;</returns>
+        List<PaymentMethodTypeOption> Types(int operationIndex = 0);
+
+        /// <summary>
+        /// Gets available payment method types for UI selection.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PaymentMethodTypeOption&gt;</returns>
+        ApiResponse<List<PaymentMethodTypeOption>> TypesWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -759,6 +877,29 @@ public interface IPaymentMethodClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentMethodModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<PaymentMethodModel>> PostWithHttpInfoAsync(PaymentMethodRequest? paymentMethodRequest = default(PaymentMethodRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Gets available payment method types for UI selection.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PaymentMethodTypeOption&gt;</returns>
+        System.Threading.Tasks.Task<List<PaymentMethodTypeOption>> TypesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Gets available payment method types for UI selection.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PaymentMethodTypeOption&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<PaymentMethodTypeOption>>> TypesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1528,6 +1669,160 @@ public interface IPaymentMethodClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PaymentMethodPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PaymentMethodTypeOption&gt;</returns>
+        public List<PaymentMethodTypeOption> Types(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<List<PaymentMethodTypeOption>> localVarResponse = TypesWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PaymentMethodTypeOption&gt;</returns>
+        public Simplic.OxS.SDK.ApiResponse<List<PaymentMethodTypeOption>> TypesWithHttpInfo(int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PaymentMethodClient.PaymentMethodTypesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<PaymentMethodTypeOption>>("/PaymentMethod/types", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PaymentMethodTypesGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PaymentMethodTypeOption&gt;</returns>
+        public async System.Threading.Tasks.Task<List<PaymentMethodTypeOption>> TypesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<List<PaymentMethodTypeOption>> localVarResponse = await TypesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets available payment method types for UI selection. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PaymentMethodTypeOption&gt;)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<List<PaymentMethodTypeOption>>> TypesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PaymentMethodClient.PaymentMethodTypesGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<PaymentMethodTypeOption>>("/PaymentMethod/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PaymentMethodTypesGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

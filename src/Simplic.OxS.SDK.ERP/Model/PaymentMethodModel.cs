@@ -40,18 +40,24 @@ namespace Simplic.OxS.SDK.ERP
         /// <param name="isDeleted">Gets or sets the is deleted flag..</param>
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="name">Gets or sets the name..</param>
+        /// <param name="isActive">Gets or sets a value indicating whether the payment method is active..</param>
+        /// <param name="type">Gets or sets the payment method type..</param>
+        /// <param name="value">Gets or sets the payment method value..</param>
         /// <param name="createDateTime">Gets or sets the date and time the payment method is created..</param>
         /// <param name="createUserId">Gets or sets the id of the user that created the payment method..</param>
         /// <param name="createUserName">Gets or sets the name of the user that created the payment method..</param>
         /// <param name="updateDateTime">Gets or sets the date and time the payment method is updated..</param>
         /// <param name="updateUserId">Gets or sets the id of the user that updated the payment method..</param>
         /// <param name="updateUserName">Gets or sets the name of the user that updated the payment method..</param>
-        public PaymentMethodModel(Guid id = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
+        public PaymentMethodModel(Guid id = default(Guid), bool isDeleted = default(bool), int number = default(int), string name = default(string), bool? isActive = default(bool?), string type = default(string), int? value = default(int?), DateTime createDateTime = default(DateTime), Guid? createUserId = default(Guid?), string createUserName = default(string), DateTime updateDateTime = default(DateTime), Guid? updateUserId = default(Guid?), string updateUserName = default(string))
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
             this.Number = number;
             this.Name = name;
+            this.IsActive = isActive;
+            this.Type = type;
+            this.Value = value;
             this.CreateDateTime = createDateTime;
             this.CreateUserId = createUserId;
             this.CreateUserName = createUserName;
@@ -87,6 +93,27 @@ namespace Simplic.OxS.SDK.ERP
         /// <value>Gets or sets the name.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the payment method is active.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the payment method is active.</value>
+        [DataMember(Name = "isActive", EmitDefaultValue = true)]
+        public bool? IsActive { get; set; }
+
+        /// <summary>
+        /// Gets or sets the payment method type.
+        /// </summary>
+        /// <value>Gets or sets the payment method type.</value>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the payment method value.
+        /// </summary>
+        /// <value>Gets or sets the payment method value.</value>
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public int? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time the payment method is created.
@@ -142,6 +169,9 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  CreateDateTime: ").Append(CreateDateTime).Append("\n");
             sb.Append("  CreateUserId: ").Append(CreateUserId).Append("\n");
             sb.Append("  CreateUserName: ").Append(CreateUserName).Append("\n");
@@ -202,6 +232,21 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.IsActive == input.IsActive ||
+                    (this.IsActive != null &&
+                    this.IsActive.Equals(input.IsActive))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
+                ) && 
+                (
                     this.CreateDateTime == input.CreateDateTime ||
                     (this.CreateDateTime != null &&
                     this.CreateDateTime.Equals(input.CreateDateTime))
@@ -251,6 +296,18 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.IsActive != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
+                }
+                if (this.Type != null)
+                {
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                }
+                if (this.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
                 if (this.CreateDateTime != null)
                 {

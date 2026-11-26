@@ -6469,6 +6469,125 @@
                 }
             }
         },
+        "/PaymentMethod/types": {
+            "get": {
+                "tags": [
+                    "PaymentMethod"
+                ],
+                "summary": "Gets available payment method types for UI selection.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PaymentMethodTypeOption"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PaymentMethodTypeOption"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PaymentMethodTypeOption"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/PersonalAccount": {
             "post": {
                 "tags": [
@@ -21678,6 +21797,22 @@
                         "description": "Gets or sets the name.",
                         "nullable": true
                     },
+                    "isActive": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the payment method is active.",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the payment method type.",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "Gets or sets the payment method value.",
+                        "format": "int32",
+                        "nullable": true
+                    },
                     "createDateTime": {
                         "type": "string",
                         "description": "Gets or sets the date and time the payment method is created.",
@@ -21731,6 +21866,16 @@
                         "minLength": 2,
                         "type": "string",
                         "description": "Gets or sets the name."
+                    },
+                    "isActive": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the payment method is active.",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the payment method type.",
+                        "nullable": true
                     }
                 },
                 "additionalProperties": false,
@@ -21755,6 +21900,24 @@
                 ],
                 "type": "integer",
                 "format": "int32"
+            },
+            "PaymentMethodTypeOption": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
             },
             "PeriodModel": {
                 "type": "object",
@@ -25938,6 +26101,22 @@
                     "name": {
                         "type": "string",
                         "description": "Gets or sets the name.",
+                        "nullable": true
+                    },
+                    "isActive": {
+                        "type": "boolean",
+                        "description": "Gets or sets a value indicating whether the payment method is active.",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the payment method type.",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "Gets or sets the payment method value.",
+                        "format": "int32",
                         "nullable": true
                     }
                 },

@@ -38,10 +38,16 @@ namespace Simplic.OxS.SDK.ERP
         /// </summary>
         /// <param name="number">Gets or sets the number..</param>
         /// <param name="name">Gets or sets the name..</param>
-        public UpdatePaymentMethodRequest(int? number = default(int?), string name = default(string))
+        /// <param name="isActive">Gets or sets a value indicating whether the payment method is active..</param>
+        /// <param name="type">Gets or sets the payment method type..</param>
+        /// <param name="value">Gets or sets the payment method value..</param>
+        public UpdatePaymentMethodRequest(int? number = default(int?), string name = default(string), bool? isActive = default(bool?), string type = default(string), int? value = default(int?))
         {
             this.Number = number;
             this.Name = name;
+            this.IsActive = isActive;
+            this.Type = type;
+            this.Value = value;
         }
 
         /// <summary>
@@ -59,6 +65,27 @@ namespace Simplic.OxS.SDK.ERP
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the payment method is active.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the payment method is active.</value>
+        [DataMember(Name = "isActive", EmitDefaultValue = true)]
+        public bool? IsActive { get; set; }
+
+        /// <summary>
+        /// Gets or sets the payment method type.
+        /// </summary>
+        /// <value>Gets or sets the payment method type.</value>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the payment method value.
+        /// </summary>
+        /// <value>Gets or sets the payment method value.</value>
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public int? Value { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -68,6 +95,9 @@ namespace Simplic.OxS.SDK.ERP
             sb.Append("class UpdatePaymentMethodRequest {\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,6 +142,21 @@ namespace Simplic.OxS.SDK.ERP
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.IsActive == input.IsActive ||
+                    (this.IsActive != null &&
+                    this.IsActive.Equals(input.IsActive))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 );
         }
 
@@ -131,6 +176,18 @@ namespace Simplic.OxS.SDK.ERP
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.IsActive != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
+                }
+                if (this.Type != null)
+                {
+                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                }
+                if (this.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
                 return hashCode;
             }

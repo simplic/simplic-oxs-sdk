@@ -8,6 +8,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/erp-api/v1*
 | [**Get**](PaymentMethodClient.md#paymentmethodidget) | **GET** /PaymentMethod/{id} | Gets a payment method by ID. |
 | [**Patch**](PaymentMethodClient.md#paymentmethodidpatch) | **PATCH** /PaymentMethod/{id} | Patches a payment method. |
 | [**Post**](PaymentMethodClient.md#paymentmethodpost) | **POST** /PaymentMethod | Creates a new payment method. |
+| [**Types**](PaymentMethodClient.md#paymentmethodtypesget) | **GET** /PaymentMethod/types | Gets available payment method types for UI selection. |
 
 <a id="paymentmethodiddelete"></a>
 # **Delete**
@@ -407,6 +408,103 @@ catch (ApiException e)
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Content |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="paymentmethodtypesget"></a>
+# **Types**
+> List&lt;PaymentMethodTypeOption&gt; Types ()
+
+Gets available payment method types for UI selection.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.ERP;
+
+namespace Example
+{
+    public class TypesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/erp-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new PaymentMethodClient(config);
+
+            try
+            {
+                // Gets available payment method types for UI selection.
+                List<PaymentMethodTypeOption> result = apiInstance.Types();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PaymentMethodClient.Types: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the TypesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets available payment method types for UI selection.
+    ApiResponse<List<PaymentMethodTypeOption>> response = apiInstance.TypesWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PaymentMethodClient.TypesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**List&lt;PaymentMethodTypeOption&gt;**](PaymentMethodTypeOption.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/problem+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
