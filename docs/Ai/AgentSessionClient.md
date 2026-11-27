@@ -7,6 +7,7 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 | [**Answer**](AgentSessionClient.md#agentsessionsessionidanswerpost) | **POST** /AgentSession/{sessionId}/answer | Answers a clarification question from the agent. |
 | [**Approvals**](AgentSessionClient.md#agentsessionsessionidapprovalsget) | **GET** /AgentSession/{sessionId}/approvals | Gets pending approvals for a session. |
 | [**Approve**](AgentSessionClient.md#agentsessionsessionidapprovepost) | **POST** /AgentSession/{sessionId}/approve | Approves or rejects a pending action in a session. |
+| [**Delete**](AgentSessionClient.md#agentsessionsessioniddelete) | **DELETE** /AgentSession/{sessionId} | Deletes a conversation and queues early removal of its uploaded files. |
 | [**Get**](AgentSessionClient.md#agentsessionsessionidget) | **GET** /AgentSession/{sessionId} | Gets a session by identifier. |
 | [**Messages**](AgentSessionClient.md#agentsessionsessionidmessagesget) | **GET** /AgentSession/{sessionId}/messages | Gets all messages for a session. |
 | [**Title**](AgentSessionClient.md#agentsessionsessionidtitleput) | **PUT** /AgentSession/{sessionId}/title | Renames a session by setting an explicit, user-provided title. Overrides any LLM-generated title and prevents the background title generator from overwriting it (it only fills in a title when one isn&#39;t already set). |
@@ -306,6 +307,104 @@ void (empty response body)
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Content |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="agentsessionsessioniddelete"></a>
+# **Delete**
+> void Delete (Guid sessionId)
+
+Deletes a conversation and queues early removal of its uploaded files.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Ai;
+
+namespace Example
+{
+    public class DeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/ai-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new AgentSessionClient(config);
+            var sessionId = "sessionId_example";  // Guid | 
+
+            try
+            {
+                // Deletes a conversation and queues early removal of its uploaded files.
+                apiInstance.Delete(sessionId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AgentSessionClient.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Deletes a conversation and queues early removal of its uploaded files.
+    apiInstance.DeleteWithHttpInfo(sessionId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AgentSessionClient.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sessionId** | **Guid** |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/problem+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **404** | Not Found |  -  |
+| **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **409** | Conflict |  -  |

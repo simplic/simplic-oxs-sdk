@@ -5,6 +5,7 @@ DTO representing a single message in an agent session, returned by the API.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Attachments** | [**List&lt;AgentAttachmentResponse&gt;**](AgentAttachmentResponse.md) | Original upload metadata, retained after file expiration. | [optional] 
 **Id** | **Guid** | Gets or sets the stable identifier for this message. | [optional] 
 **TurnId** | **Guid?** | Gets or sets the turn identifier shared by the assistant message and all workspace entries produced during the same request turn. | [optional] 
 **Role** | **string** | Gets or sets the message role (user, assistant, system, tool). | [optional] 

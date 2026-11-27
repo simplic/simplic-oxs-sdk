@@ -36,6 +36,7 @@ namespace Simplic.OxS.SDK.Ai
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentMessageResponse" /> class.
         /// </summary>
+        /// <param name="attachments">Original upload metadata, retained after file expiration..</param>
         /// <param name="id">Gets or sets the stable identifier for this message..</param>
         /// <param name="turnId">Gets or sets the turn identifier shared by the assistant message and all workspace entries produced during the same request turn..</param>
         /// <param name="role">Gets or sets the message role (user, assistant, system, tool)..</param>
@@ -45,8 +46,9 @@ namespace Simplic.OxS.SDK.Ai
         /// <param name="tokenUsage">tokenUsage.</param>
         /// <param name="model">Gets or sets the LLM model that effectively produced this message (assistant messages only), e.g. \&quot;claude-sonnet-5\&quot;. This is the resolved model actually used — the caller-requested model when supported, otherwise the provider&#39;s default model — not necessarily the raw request value. Null for user/tool messages or older messages recorded before this field existed..</param>
         /// <param name="effort">Gets or sets the reasoning effort effectively used to produce this message (assistant messages only), one of \&quot;minimal\&quot;, \&quot;low\&quot;, \&quot;medium\&quot;, \&quot;high\&quot;, \&quot;xhigh\&quot;, \&quot;max\&quot; (see Simplic.OxS.AI.ReasoningEffort). This is cleared to null (rather than echoing the raw request) when the resolved model doesn&#39;t support the requested level, or for older messages recorded before this field existed..</param>
-        public AgentMessageResponse(Guid id = default(Guid), Guid? turnId = default(Guid?), string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string), MessageTokenUsage tokenUsage = default(MessageTokenUsage), string model = default(string), string effort = default(string))
+        public AgentMessageResponse(List<AgentAttachmentResponse> attachments = default(List<AgentAttachmentResponse>), Guid id = default(Guid), Guid? turnId = default(Guid?), string role = default(string), string content = default(string), DateTime timestamp = default(DateTime), string toolName = default(string), MessageTokenUsage tokenUsage = default(MessageTokenUsage), string model = default(string), string effort = default(string))
         {
+            this.Attachments = attachments;
             this.Id = id;
             this.TurnId = turnId;
             this.Role = role;
@@ -57,6 +59,13 @@ namespace Simplic.OxS.SDK.Ai
             this.Model = model;
             this.Effort = effort;
         }
+
+        /// <summary>
+        /// Original upload metadata, retained after file expiration.
+        /// </summary>
+        /// <value>Original upload metadata, retained after file expiration.</value>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<AgentAttachmentResponse> Attachments { get; set; }
 
         /// <summary>
         /// Gets or sets the stable identifier for this message.
@@ -128,6 +137,7 @@ namespace Simplic.OxS.SDK.Ai
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AgentMessageResponse {\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  TurnId: ").Append(TurnId).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
@@ -172,6 +182,12 @@ namespace Simplic.OxS.SDK.Ai
                 return false;
             }
             return 
+                (
+                    this.Attachments == input.Attachments ||
+                    this.Attachments != null &&
+                    input.Attachments != null &&
+                    this.Attachments.SequenceEqual(input.Attachments)
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -228,6 +244,10 @@ namespace Simplic.OxS.SDK.Ai
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Attachments != null)
+                {
+                    hashCode = (hashCode * 59) + this.Attachments.GetHashCode();
+                }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
