@@ -1247,7 +1247,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1333,7 +1334,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1412,7 +1414,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1492,7 +1495,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1576,7 +1580,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1662,7 +1667,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1748,7 +1754,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1837,7 +1844,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1927,7 +1935,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2019,7 +2028,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2104,7 +2114,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2190,7 +2201,8 @@ public interface IExternalOrderingClient
             string[] _accepts = new string[] {
                 "text/plain",
                 "application/json",
-                "text/json"
+                "text/json",
+                "application/problem+json"
             };
 
             var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);

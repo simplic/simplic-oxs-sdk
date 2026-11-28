@@ -7,6 +7,8 @@ All URIs are relative to *https://dev-oxs.simplic.io/ai-api/v1*
 | [**Answer**](AgentSessionClient.md#agentsessionsessionidanswerpost) | **POST** /AgentSession/{sessionId}/answer | Answers a clarification question from the agent. |
 | [**Approvals**](AgentSessionClient.md#agentsessionsessionidapprovalsget) | **GET** /AgentSession/{sessionId}/approvals | Gets pending approvals for a session. |
 | [**Approve**](AgentSessionClient.md#agentsessionsessionidapprovepost) | **POST** /AgentSession/{sessionId}/approve | Approves or rejects a pending action in a session. |
+| [**AttachmentsAttachmentId**](AgentSessionClient.md#agentsessionsessionidattachmentsattachmentidget) | **GET** /AgentSession/{sessionId}/attachments/{attachmentId} | Downloads an original attachment from an accessible session before its fixed expiry. |
+| [**AttachmentsAttachmentIdThumbnail**](AgentSessionClient.md#agentsessionsessionidattachmentsattachmentidthumbnailget) | **GET** /AgentSession/{sessionId}/attachments/{attachmentId}/thumbnail | Gets a bounded image thumbnail without downloading the original file. |
 | [**Delete**](AgentSessionClient.md#agentsessionsessioniddelete) | **DELETE** /AgentSession/{sessionId} | Deletes a conversation and queues early removal of its uploaded files. |
 | [**Get**](AgentSessionClient.md#agentsessionsessionidget) | **GET** /AgentSession/{sessionId} | Gets a session by identifier. |
 | [**Messages**](AgentSessionClient.md#agentsessionsessionidmessagesget) | **GET** /AgentSession/{sessionId}/messages | Gets all messages for a session. |
@@ -308,6 +310,214 @@ void (empty response body)
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Content |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="agentsessionsessionidattachmentsattachmentidget"></a>
+# **AttachmentsAttachmentId**
+> System.IO.Stream AttachmentsAttachmentId (Guid sessionId, Guid attachmentId)
+
+Downloads an original attachment from an accessible session before its fixed expiry.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Ai;
+
+namespace Example
+{
+    public class AttachmentsAttachmentIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/ai-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new AgentSessionClient(config);
+            var sessionId = "sessionId_example";  // Guid | 
+            var attachmentId = "attachmentId_example";  // Guid | 
+
+            try
+            {
+                // Downloads an original attachment from an accessible session before its fixed expiry.
+                System.IO.Stream result = apiInstance.AttachmentsAttachmentId(sessionId, attachmentId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AgentSessionClient.AttachmentsAttachmentId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the AttachmentsAttachmentIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Downloads an original attachment from an accessible session before its fixed expiry.
+    ApiResponse<System.IO.Stream> response = apiInstance.AttachmentsAttachmentIdWithHttpInfo(sessionId, attachmentId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AgentSessionClient.AttachmentsAttachmentIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sessionId** | **Guid** |  |  |
+| **attachmentId** | **Guid** |  |  |
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream, application/problem+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Content |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="agentsessionsessionidattachmentsattachmentidthumbnailget"></a>
+# **AttachmentsAttachmentIdThumbnail**
+> System.IO.Stream AttachmentsAttachmentIdThumbnail (Guid sessionId, Guid attachmentId)
+
+Gets a bounded image thumbnail without downloading the original file.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using Simplic.OxS.SDK.Ai;
+
+namespace Example
+{
+    public class AttachmentsAttachmentIdThumbnailExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev-oxs.simplic.io/ai-api/v1";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: Bearer
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new AgentSessionClient(config);
+            var sessionId = "sessionId_example";  // Guid | 
+            var attachmentId = "attachmentId_example";  // Guid | 
+
+            try
+            {
+                // Gets a bounded image thumbnail without downloading the original file.
+                System.IO.Stream result = apiInstance.AttachmentsAttachmentIdThumbnail(sessionId, attachmentId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AgentSessionClient.AttachmentsAttachmentIdThumbnail: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the AttachmentsAttachmentIdThumbnailWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets a bounded image thumbnail without downloading the original file.
+    ApiResponse<System.IO.Stream> response = apiInstance.AttachmentsAttachmentIdThumbnailWithHttpInfo(sessionId, attachmentId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AgentSessionClient.AttachmentsAttachmentIdThumbnailWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sessionId** | **Guid** |  |  |
+| **attachmentId** | **Guid** |  |  |
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: image/webp, application/problem+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **404** | Not Found |  -  |
+| **401** | Unauthorized |  -  |
+| **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Content |  -  |

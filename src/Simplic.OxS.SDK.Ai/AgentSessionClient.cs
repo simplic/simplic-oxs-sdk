@@ -153,6 +153,84 @@ public interface IAgentSessionClient
 
 
     /// <summary>
+    /// Downloads an original attachment from an accessible session before its fixed expiry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <returns>System.IO.Stream</returns>
+    System.IO.Stream AttachmentsAttachmentId(Guid sessionId, Guid attachmentId);
+
+    /// <summary>
+    /// Downloads an original attachment from an accessible session before its fixed expiry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <returns>ApiResponse of System.IO.Stream</returns>
+    ApiResponse<System.IO.Stream> AttachmentsAttachmentIdWithHttpInfo(Guid sessionId, Guid attachmentId);
+        
+    /// <summary>
+    /// Downloads an original attachment from an accessible session before its fixed expiry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of System.IO.Stream</returns>
+    Task<System.IO.Stream> AttachmentsAttachmentIdAsync(Guid sessionId, Guid attachmentId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Downloads an original attachment from an accessible session before its fixed expiry. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+    Task<ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdWithHttpInfoAsync(Guid sessionId, Guid attachmentId, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
+    /// Gets a bounded image thumbnail without downloading the original file. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <returns>System.IO.Stream</returns>
+    System.IO.Stream AttachmentsAttachmentIdThumbnail(Guid sessionId, Guid attachmentId);
+
+    /// <summary>
+    /// Gets a bounded image thumbnail without downloading the original file. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <returns>ApiResponse of System.IO.Stream</returns>
+    ApiResponse<System.IO.Stream> AttachmentsAttachmentIdThumbnailWithHttpInfo(Guid sessionId, Guid attachmentId);
+        
+    /// <summary>
+    /// Gets a bounded image thumbnail without downloading the original file. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of System.IO.Stream</returns>
+    Task<System.IO.Stream> AttachmentsAttachmentIdThumbnailAsync(Guid sessionId, Guid attachmentId, CancellationToken cancellationToken = default(CancellationToken));
+
+    /// <summary>
+    /// Gets a bounded image thumbnail without downloading the original file. 
+    /// </summary>
+    /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="sessionId"></param>
+    /// <param name="attachmentId"></param>
+    /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+    /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+    Task<ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdThumbnailWithHttpInfoAsync(Guid sessionId, Guid attachmentId, CancellationToken cancellationToken = default(CancellationToken));
+
+
+    /// <summary>
     /// Deletes a conversation and queues early removal of its uploaded files. 
     /// </summary>
     /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -633,6 +711,160 @@ public interface IAgentSessionClient
             }
         }    
         /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream AttachmentsAttachmentId(Guid sessionId, Guid attachmentId)
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentId(sessionId, attachmentId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public Simplic.OxS.SDK.ApiResponse<System.IO.Stream> AttachmentsAttachmentIdWithHttpInfo(Guid sessionId, Guid attachmentId)
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentIdWithHttpInfo(sessionId, attachmentId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public System.Threading.Tasks.Task<System.IO.Stream> AttachmentsAttachmentIdAsync(Guid sessionId, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentIdAsync(sessionId, attachmentId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdWithHttpInfoAsync(Guid sessionId, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentIdWithHttpInfoAsync(sessionId, attachmentId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream AttachmentsAttachmentIdThumbnail(Guid sessionId, Guid attachmentId)
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentIdThumbnail(sessionId, attachmentId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public Simplic.OxS.SDK.ApiResponse<System.IO.Stream> AttachmentsAttachmentIdThumbnailWithHttpInfo(Guid sessionId, Guid attachmentId)
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentIdThumbnailWithHttpInfo(sessionId, attachmentId);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        } 
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public System.Threading.Tasks.Task<System.IO.Stream> AttachmentsAttachmentIdThumbnailAsync(Guid sessionId, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentIdThumbnailAsync(sessionId, attachmentId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdThumbnailWithHttpInfoAsync(Guid sessionId, Guid attachmentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            try
+            {
+                return _internalClient.AttachmentsAttachmentIdThumbnailWithHttpInfoAsync(sessionId, attachmentId, cancellationToken: cancellationToken);
+            }
+            catch (ApiException e)
+            {
+                throw new ApiException(e.ErrorCode, FormatErrorMessage(e.Message, e.ErrorCode), e.ErrorContent, e.Headers);
+            }
+        }    
+        /// <summary>
         /// Deletes a conversation and queues early removal of its uploaded files. 
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1079,6 +1311,50 @@ public interface IAgentSessionClient
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApproveWithHttpInfo(Guid sessionId, ApprovalDecisionRequest? approvalDecisionRequest = default(ApprovalDecisionRequest?), int operationIndex = 0);
         /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream AttachmentsAttachmentId(Guid sessionId, Guid attachmentId, int operationIndex = 0);
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> AttachmentsAttachmentIdWithHttpInfo(Guid sessionId, Guid attachmentId, int operationIndex = 0);
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file.
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream AttachmentsAttachmentIdThumbnail(Guid sessionId, Guid attachmentId, int operationIndex = 0);
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> AttachmentsAttachmentIdThumbnailWithHttpInfo(Guid sessionId, Guid attachmentId, int operationIndex = 0);
+        /// <summary>
         /// Deletes a conversation and queues early removal of its uploaded files.
         /// </summary>
         /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
@@ -1268,6 +1544,60 @@ public interface IAgentSessionClient
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApproveWithHttpInfoAsync(Guid sessionId, ApprovalDecisionRequest? approvalDecisionRequest = default(ApprovalDecisionRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> AttachmentsAttachmentIdAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdWithHttpInfoAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> AttachmentsAttachmentIdThumbnailAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdThumbnailWithHttpInfoAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Deletes a conversation and queues early removal of its uploaded files.
         /// </summary>
@@ -2008,6 +2338,330 @@ public interface IAgentSessionClient
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AgentSessionSessionIdApprovePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream AttachmentsAttachmentId(Guid sessionId, Guid attachmentId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = AttachmentsAttachmentIdWithHttpInfo(sessionId, attachmentId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public Simplic.OxS.SDK.ApiResponse<System.IO.Stream> AttachmentsAttachmentIdWithHttpInfo(Guid sessionId, Guid attachmentId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/octet-stream",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(attachmentId)); // path parameter
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdAttachmentsAttachmentIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<System.IO.Stream>("/AgentSession/{sessionId}/attachments/{attachmentId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdAttachmentsAttachmentIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> AttachmentsAttachmentIdAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = await AttachmentsAttachmentIdWithHttpInfoAsync(sessionId, attachmentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Downloads an original attachment from an accessible session before its fixed expiry. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdWithHttpInfoAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/octet-stream",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(attachmentId)); // path parameter
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdAttachmentsAttachmentIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/AgentSession/{sessionId}/attachments/{attachmentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdAttachmentsAttachmentIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream AttachmentsAttachmentIdThumbnail(Guid sessionId, Guid attachmentId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = AttachmentsAttachmentIdThumbnailWithHttpInfo(sessionId, attachmentId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public Simplic.OxS.SDK.ApiResponse<System.IO.Stream> AttachmentsAttachmentIdThumbnailWithHttpInfo(Guid sessionId, Guid attachmentId, int operationIndex = 0)
+        {
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "image/webp",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(attachmentId)); // path parameter
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdAttachmentsAttachmentIdThumbnailGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<System.IO.Stream>("/AgentSession/{sessionId}/attachments/{attachmentId}/thumbnail", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdAttachmentsAttachmentIdThumbnailGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> AttachmentsAttachmentIdThumbnailAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Simplic.OxS.SDK.ApiResponse<System.IO.Stream> localVarResponse = await AttachmentsAttachmentIdThumbnailWithHttpInfoAsync(sessionId, attachmentId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a bounded image thumbnail without downloading the original file. 
+        /// </summary>
+        /// <exception cref="Simplic.OxS.SDK.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionId"></param>
+        /// <param name="attachmentId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<Simplic.OxS.SDK.ApiResponse<System.IO.Stream>> AttachmentsAttachmentIdThumbnailWithHttpInfoAsync(Guid sessionId, Guid attachmentId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Simplic.OxS.SDK.RequestOptions localVarRequestOptions = new Simplic.OxS.SDK.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "image/webp",
+                "application/problem+json"
+            };
+
+            var localVarContentType = Simplic.OxS.SDK.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Simplic.OxS.SDK.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("sessionId", Simplic.OxS.SDK.ClientUtils.ParameterToString(sessionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("attachmentId", Simplic.OxS.SDK.ClientUtils.ParameterToString(attachmentId)); // path parameter
+
+            localVarRequestOptions.Operation = "AgentSessionClient.AgentSessionSessionIdAttachmentsAttachmentIdThumbnailGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (Bearer) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/AgentSession/{sessionId}/attachments/{attachmentId}/thumbnail", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AgentSessionSessionIdAttachmentsAttachmentIdThumbnailGet", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
